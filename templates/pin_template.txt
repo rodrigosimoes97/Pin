@@ -1,6 +1,0 @@
-PIN TEMPLATE (1000x1500)
-- Header strip with brand/collection label
-- Main benefit-focused headline in center
-- Sub footer with CTA: "Save this tip"
-- Colors: sage green, white, dark charcoal
-- Font style: bold sans-serif for headline
