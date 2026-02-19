@@ -1,7 +1,11 @@
 {
-  "runs": 0,
+  "runs": 1,
   "offer_runs": 0,
-  "recent_topics": [],
-  "recent_slugs": [],
-  "last_run": null
+  "recent_topics": [
+    "anti-inflammatory-foods"
+  ],
+  "recent_slugs": [
+    "anti-inflammatory-foods-everyday-ingredients"
+  ],
+  "last_run": "2026-02-19"
 }
