@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Turmeric Curcumin Complex",
+    "link": "https://example-affiliate.com/turmeric",
+    "tags": ["anti-inflammatory", "us"]
+  },
+  {
+    "name": "Magnesium Glycinate Sleep Support",
+    "link": "https://example-affiliate.com/magnesium",
+    "tags": ["sleep", "us"]
+  },
+  {
+    "name": "Daily Probiotic 50B",
+    "link": "https://example-affiliate.com/probiotic",
+    "tags": ["gut", "us"]
+  },
+  {
+    "name": "High-Protein Meal Replacement",
+    "link": "https://example-affiliate.com/meal-replacement",
+    "tags": ["weight", "meal-prep", "us"]
+  },
+  {
+    "name": "Omega-3 Fish Oil",
+    "link": "https://example-affiliate.com/omega3",
+    "tags": ["anti-inflammatory", "heart", "us"]
+  }
+]
