@@ -1,2 +1,2 @@
-requests
-pillow
+requests>=2.32.0
+Pillow>=10.4.0
