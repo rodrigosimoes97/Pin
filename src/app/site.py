@@ -269,7 +269,7 @@ def _write_tag_pages(docs_dir: Path, base_url: str, site_title: str, posts: list
 </head>
 <body>
 <main class='container'>
-<p><a href='../index.html'>← Home</a></p>
+<p><a href='../index.html'>Home</a></p>
 <h1>{escape(tag)} posts</h1>
 <ul>{items}</ul>
 </main>
