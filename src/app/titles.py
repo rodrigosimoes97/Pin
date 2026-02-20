@@ -77,3 +77,44 @@ def generate_titles(client: GeminiClient, topic: Topic, max_output_tokens: int =
         )
 
     return cleaned[:10]
+
+def pick_best_title(titles: list[str]) -> str:
+    """
+    Pick a best candidate title from a list.
+    Simple heuristic: prefer titles in a good length range with strong intent words.
+    """
+    if not titles:
+        return "Practical Health Tips You Can Use Today"
+
+    intent_words = {
+        "how", "why", "what", "best", "easy", "simple", "steps", "fix", "improve",
+        "habits", "routine", "foods", "exercise", "sleep", "stress", "gut"
+    }
+
+    scored: list[tuple[int, str]] = []
+    for t in titles:
+        tt = (t or "").strip()
+        if not tt:
+            continue
+
+        words = re.findall(r"[a-zA-Z']+", tt.lower())
+        length = len(tt)
+
+        score = 0
+        # prefer 45–72 chars (often good for SERP)
+        if 45 <= length <= 72:
+            score += 6
+        elif 35 <= length <= 85:
+            score += 3
+
+        # add points for intent words presence
+        score += sum(1 for w in words if w in intent_words)
+
+        # slight penalty if too long
+        if length > 95:
+            score -= 3
+
+        scored.append((score, tt))
+
+    scored.sort(key=lambda x: x[0], reverse=True)
+    return scored[0][1] if scored else titles[0]
