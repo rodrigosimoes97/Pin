@@ -27,6 +27,8 @@ Rules:
 - output complete valid HTML fragment in `html` with <h2>, <h3>, <p>, <ul>/<ol>.
 """
 
+    payload["slug"] = _clean_slug(payload["slug"])
+    payload["tag"] = normalize_tag(str(payload.get("tag", ""))) or normalize_tag(topic.tag) or "health"
 
 def generate_article(
     client: GeminiClient,
