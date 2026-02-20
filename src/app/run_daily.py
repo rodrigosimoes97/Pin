@@ -75,7 +75,13 @@ def main() -> None:
     fetch_hero_image(settings.pexels_api_key, post["image_query"], settings.repo_root / "docs" / hero_rel)
 
     pin_rel = f"generated/pinterest/{today.isoformat()}_{post['slug']}.png"
-    create_pinterest_image(settings.pexels_api_key, post["image_query"], post["pin_title"], settings.repo_root / pin_rel)
+    create_pinterest_image(
+        settings.pexels_api_key,
+        post["image_query"],
+        post["pin_title"],
+        settings.repo_root / pin_rel,
+        source_image_path=settings.repo_root / "docs" / hero_rel,
+    )
 
     record = publish_post(
         docs_dir=settings.repo_root / "docs",

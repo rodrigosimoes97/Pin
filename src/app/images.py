@@ -1,10 +1,9 @@
 from __future__ import annotations
 
-from io import BytesIO
+import shutil
 from pathlib import Path
 
 import requests
-from PIL import Image, ImageDraw, ImageFont
 
 
 def _pexels_photo_url(api_key: str, query: str) -> str:
@@ -29,36 +28,20 @@ def fetch_hero_image(api_key: str, query: str, out_path: Path) -> None:
     out_path.write_bytes(content)
 
 
-def create_pinterest_image(api_key: str, query: str, title: str, out_path: Path) -> None:
-    url = _pexels_photo_url(api_key, query)
-    image_bytes = requests.get(url, timeout=40).content
-    bg = Image.open(BytesIO(image_bytes)).convert("RGB").resize((1000, 1500))
-
-    overlay = Image.new("RGBA", bg.size, (0, 0, 0, 0))
-    draw = ImageDraw.Draw(overlay)
-    draw.rectangle((0, 900, 1000, 1500), fill=(0, 0, 0, 150))
-    bg = Image.alpha_composite(bg.convert("RGBA"), overlay)
-
-    text_draw = ImageDraw.Draw(bg)
-    font = ImageFont.load_default()
-    wrapped = _wrap_text(title, 28)
-    text_draw.multiline_text((70, 980), wrapped, font=font, fill=(255, 255, 255), spacing=10)
-
+def create_pinterest_image(
+    api_key: str,
+    query: str,
+    title: str,
+    out_path: Path,
+    source_image_path: Path | None = None,
+) -> None:
+    _ = title  # retained for backward compatibility in call sites.
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    bg.convert("RGB").save(out_path, format="PNG")
 
+    if source_image_path and source_image_path.exists():
+        shutil.copyfile(source_image_path, out_path)
+        return
 
-def _wrap_text(text: str, width: int) -> str:
-    words = text.split()
-    lines: list[str] = []
-    line: list[str] = []
-    for word in words:
-        candidate = " ".join(line + [word])
-        if len(candidate) > width and line:
-            lines.append(" ".join(line))
-            line = [word]
-        else:
-            line.append(word)
-    if line:
-        lines.append(" ".join(line))
-    return "\n".join(lines[:7])
+    # Fallback to direct Pexels download when no source image path is provided.
+    url = _pexels_photo_url(api_key, query)
+    out_path.write_bytes(requests.get(url, timeout=40).content)
