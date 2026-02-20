@@ -5,22 +5,9 @@ from typing import Any
 from .gemini_client import GeminiClient
 from .topics import Topic
 
-ALLOWED_TAGS = {
-    "sleep",
-    "stress",
-    "recipes",
-    "home-workouts",
-    "gut",
-    "weight",
-    "anti-inflammatory",
-    "longevity",
-    "mental-wellness",
-    "healthy-habits",
-}
-
 CONTENT_PROMPT = """Write a US-focused health article.
-Return strict JSON object only with keys in this exact order:
-title,slug,meta_description,html,image_query,pin_title,pin_description,alt_text,tag
+Return strict JSON object with keys:
+slug,title,meta_description,image_query,pin_title,pin_description,alt_text,html
 Input:
 - topic_name: {topic_name}
 - angle: {angle}
@@ -28,27 +15,20 @@ Input:
 - mode: {mode}
 - offer_name: {offer_name}
 - offer_link: {offer_link}
-Allowed tag values (lowercase, hyphenated only):
-{allowed_tags}
 Rules:
 - informational-first; practical tips readers can apply today.
 - natural, human tone. no hype or medical promises.
 - structure: intro, H2/H3 sections, practical steps, FAQ, closing encouragement.
+- include exactly 3 internal link placeholders with href="#recent-1|2|3" in HTML body.
 - include sentence: Educational only — not medical advice.
 - if mode=offer: include soft contextual recommendation and exact disclosure sentence:
   Disclosure: This page may contain affiliate links.
 - if mode=info: do not include affiliate links.
-- output valid HTML fragment in `html` using <h2>, <h3>, <p>, <ul>/<ol>.
+- output complete valid HTML fragment in `html` with <h2>, <h3>, <p>, <ul>/<ol>.
 """
 
-
-def normalize_tag(tag: str) -> str:
-    cleaned = "".join(ch.lower() if ch.isalnum() else "-" for ch in (tag or ""))
-    while "--" in cleaned:
-        cleaned = cleaned.replace("--", "-")
-    cleaned = cleaned.strip("-")
-    return cleaned if cleaned in ALLOWED_TAGS else ""
-
+    payload["slug"] = _clean_slug(payload["slug"])
+    payload["tag"] = normalize_tag(str(payload.get("tag", ""))) or normalize_tag(topic.tag) or "health"
 
 def generate_article(
     client: GeminiClient,
@@ -65,33 +45,18 @@ def generate_article(
             mode=mode,
             offer_name=(offer or {}).get("name", ""),
             offer_link=(offer or {}).get("link", ""),
-            allowed_tags=", ".join(sorted(ALLOWED_TAGS)),
         ),
         max_output_tokens=3200,
     )
 
-    required = [
-        "slug",
-        "title",
-        "meta_description",
-        "image_query",
-        "pin_title",
-        "pin_description",
-        "alt_text",
-        "html",
-    ]
+    required = ["slug", "title", "meta_description", "image_query", "pin_title", "pin_description", "alt_text", "html"]
     for key in required:
         if key not in payload or not isinstance(payload[key], str) or not payload[key].strip():
             raise ValueError(f"Missing or invalid article field: {key}")
 
     payload["slug"] = _clean_slug(payload["slug"])
-    payload["tag"] = normalize_tag(str(payload.get("tag", ""))) or normalize_tag(topic.tag) or "health"
-
     if mode == "info":
         payload["html"] = payload["html"].replace("Disclosure: This page may contain affiliate links.", "")
-    elif "Disclosure: This page may contain affiliate links." not in payload["html"]:
-        payload["html"] += "\n<p><em>Disclosure: This page may contain affiliate links.</em></p>"
-
     return payload
 
 
