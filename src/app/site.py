@@ -235,7 +235,7 @@ def _write_index(docs_dir: Path, base_url: str, site_title: str, posts: list[dic
         {items_html}
       </ul>
     </div>
-  </div>
+  
 </body>
 </html>"""
     (docs_dir / "index.html").write_text(html, encoding="utf-8")
