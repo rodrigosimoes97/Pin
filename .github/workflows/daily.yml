@@ -3,7 +3,6 @@ name: Daily Health Content Engine
 on:
   workflow_dispatch:
   schedule:
-    # Runs every day at 12:20 UTC (09:20 in Brazil / America/Sao_Paulo)
     - cron: "20 12 * * *"
 
 permissions:
@@ -40,7 +39,7 @@ jobs:
         run: python -m src.app.run_daily
 
       - name: Validate internal links
-        run: python -m src.app.validate_links --docs-dir docs
+        run: python -m src.app.validate_links
 
       - name: Commit generated output
         run: |

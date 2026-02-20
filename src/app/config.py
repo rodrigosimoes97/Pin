@@ -42,7 +42,7 @@ def _load_gemini_keys() -> list[str]:
 def load_settings() -> Settings:
     return Settings(
         gemini_api_keys=_load_gemini_keys(),
-        gemini_model="gemini-2.5-flash-lite",
+        gemini_model="gemini-2.0-flash",
         pexels_api_key=_required("PEXELS_API_KEY"),
         base_url=_required("BASE_URL").rstrip("/"),
         site_title=os.getenv("SITE_TITLE", "Practical US Health Notes").strip(),

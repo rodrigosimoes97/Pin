@@ -6,7 +6,7 @@ import random
 from datetime import datetime, timezone
 
 from .config import load_settings
-from .content import generate_article
+from .content import generate_article, normalize_tag
 from .gemini_client import GeminiClient
 from .images import create_pinterest_image, fetch_hero_image
 from .pinterest_api import create_pin
@@ -43,8 +43,7 @@ def _pick_offer(repo_root, topic_tag: str) -> dict | None:
 def _should_generate_today(posts_per_week: int) -> bool:
     if posts_per_week >= 7:
         return True
-    today_weekday = datetime.now(timezone.utc).weekday()
-    return today_weekday < posts_per_week
+    return datetime.now(timezone.utc).weekday() < posts_per_week
 
 
 def main() -> None:
@@ -66,6 +65,7 @@ def main() -> None:
     titles = generate_titles(client, topic)
     chosen_title = pick_best_title(titles)
     post = generate_article(client, topic, chosen_title, mode, offer)
+    post["tag"] = normalize_tag(post.get("tag", "")) or normalize_tag(topic.tag) or "health"
 
     recent_slugs = set(state.get("recent_slugs", [])[-40:])
     if post["slug"] in recent_slugs:
@@ -114,7 +114,8 @@ def main() -> None:
     state["recent_slugs"] = (state.get("recent_slugs", []) + [post["slug"]])[-80:]
     state["last_run"] = today.isoformat()
     save_state(state_path, state)
-    LOG.info("Published %s (%s)", record["url"], mode)
+
+    LOG.info("Published %s (%s) tag=%s", record["url"], mode, post["tag"])
 
 
 if __name__ == "__main__":

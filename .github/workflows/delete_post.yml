@@ -1,23 +1,23 @@
-name: Delete Post (by slug)
+name: Delete Generated Post
 
 on:
   workflow_dispatch:
     inputs:
       slug:
-        description: "Slug to delete (example: natural-discomfort-relief-daily-habits)"
+        description: "Post slug to delete (without .html)"
         required: true
         type: string
       delete_hero:
-        description: "Also delete hero image (if referenced)"
+        description: "Also delete linked hero image from docs/assets"
         required: false
-        type: boolean
         default: false
+        type: boolean
 
 permissions:
   contents: write
 
 jobs:
-  delete:
+  delete-post:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -31,28 +31,25 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Delete post by slug
+      - name: Delete post and rebuild site files
         env:
+          GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           BASE_URL: ${{ secrets.BASE_URL }}
           SITE_TITLE: ${{ vars.SITE_TITLE }}
         run: |
-          python -m src.app.delete_post \
-            --slug "${{ inputs.slug }}" \
-            --docs-dir docs \
-            --base-url "${BASE_URL}" \
-            --site-title "${SITE_TITLE}" \
-            $( [ "${{ inputs.delete_hero }}" = "true" ] && echo "--delete-hero" )
+          python -m src.app.delete_post --slug "${{ inputs.slug }}" ${{ inputs.delete_hero && '--delete-hero' || '' }}
 
       - name: Validate internal links
-        run: python -m src.app.validate_links --docs-dir docs
+        run: python -m src.app.validate_links
 
-      - name: Commit changes
+      - name: Commit post deletion
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs generated
+          git add docs
           if git diff --cached --quiet; then
-            echo "No changes after delete"
+            echo "No changes after deletion"
             exit 0
           fi
           git commit -m "chore: delete post ${{ inputs.slug }}"

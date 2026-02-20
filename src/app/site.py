@@ -1,7 +1,10 @@
 from __future__ import annotations
 
 import json
+import re
+from collections import Counter, defaultdict
 from datetime import date
+from html import escape
 from pathlib import Path
 
 
@@ -17,12 +20,45 @@ def publish_post(
     posts_path = docs_dir / "posts.json"
     posts = _load_posts(posts_path)
 
+    related = _pick_related(posts, post.get("tag", "health"), post.get("slug", ""))
+    body_html, toc_items = _inject_h2_ids_and_collect_toc(post["html"])
+    body_html = _inject_internal_links(body_html, related)
+    body_html = _inject_related_reading(body_html, related)
+
+    page = _render_post_html(
+        base_url=base_url,
+        site_title=site_title,
+        post=post,
+        hero=hero_path_rel,
+        html=body_html,
+        toc_items=toc_items,
+        run_date=run_date,
+    )
+    (docs_dir / f"{post['slug']}.html").write_text(page, encoding="utf-8")
+
+    record = {
+        "slug": post["slug"],
+        "title": post["title"],
+        "description": post["meta_description"],
+        "date": run_date.isoformat(),
+        "url": f"{post['slug']}.html",
+        "hero": hero_path_rel,
+        "tag": post.get("tag", "health"),
+    }
+    posts = [record] + [p for p in posts if p.get("slug") != post["slug"]]
+    write_site_state(docs_dir, base_url, site_title, posts)
+    return record
+
     recent_links = [f"{p['slug']}.html" for p in posts[:3]]
     html = _inject_internal_links(post["html"], recent_links)
 
-    page = _render_post_html(base_url, site_title, post, hero_path_rel, html, run_date)
-    page_path = docs_dir / f"{post['slug']}.html"
-    page_path.write_text(page, encoding="utf-8")
+def write_site_state(docs_dir: Path, base_url: str, site_title: str, posts: list[dict[str, str]]) -> None:
+    docs_dir.mkdir(parents=True, exist_ok=True)
+    (docs_dir / "posts.json").write_text(json.dumps(posts[:200], indent=2), encoding="utf-8")
+    _write_index(docs_dir, base_url, site_title, posts)
+    tag_pages = _write_tag_pages(docs_dir, base_url, site_title, posts)
+    _write_sitemap(docs_dir, base_url, posts, tag_pages)
+    _write_robots(docs_dir, base_url)
 
     record = {
         "slug": post["slug"],
@@ -40,26 +76,63 @@ def publish_post(
     _write_robots(docs_dir, base_url)
     return record
 
-
 def _load_posts(path: Path) -> list[dict[str, str]]:
     if not path.exists():
         return []
     try:
-        data = json.loads(path.read_text(encoding="utf-8"))
-        return data if isinstance(data, list) else []
+        posts = json.loads(path.read_text(encoding="utf-8"))
     except json.JSONDecodeError:
         return []
+    return posts if isinstance(posts, list) else []
 
 
-def _inject_internal_links(html: str, links: list[str]) -> str:
+def _inject_h2_ids_and_collect_toc(html: str) -> tuple[str, list[tuple[str, str]]]:
+    pattern = re.compile(r"<h2([^>]*)>(.*?)</h2>", flags=re.IGNORECASE | re.DOTALL)
+    toc: list[tuple[str, str]] = []
+
+    def _replace(match: re.Match[str]) -> str:
+        attrs = match.group(1) or ""
+        inner = match.group(2) or ""
+        text = re.sub(r"<[^>]+>", "", inner).strip()
+        found = re.search(r'id\s*=\s*["\']([^"\']+)["\']', attrs, flags=re.IGNORECASE)
+        h2_id = _slugify(found.group(1) if found else text)
+        toc.append((text, h2_id))
+        if found:
+            return f"<h2{attrs}>{inner}</h2>"
+        return f"<h2{attrs} id=\"{h2_id}\">{inner}</h2>"
+
+    return pattern.sub(_replace, html), toc[:6]
+
+
+def _pick_related(posts: list[dict[str, str]], tag: str, current_slug: str) -> list[dict[str, str]]:
+    same_tag = [p for p in posts if p.get("tag") == tag and p.get("slug") != current_slug]
+    if len(same_tag) >= 3:
+        return same_tag[:3]
+    recent = [p for p in posts if p.get("slug") != current_slug and p not in same_tag]
+    return (same_tag + recent)[:3]
+
+
+def _inject_internal_links(html: str, related: list[dict[str, str]]) -> str:
     mapped = {
-        "#recent-1": links[0] if len(links) > 0 else "index.html",
-        "#recent-2": links[1] if len(links) > 1 else "index.html",
-        "#recent-3": links[2] if len(links) > 2 else "index.html",
+        "#recent-1": related[0]["url"] if len(related) > 0 else "index.html",
+        "#recent-2": related[1]["url"] if len(related) > 1 else "index.html",
+        "#recent-3": related[2]["url"] if len(related) > 2 else "index.html",
     }
     for placeholder, target in mapped.items():
         html = html.replace(f'href="{placeholder}"', f'href="{target}"')
+        html = html.replace(f"href='{placeholder}'", f"href='{target}'")
     return html
+
+
+def _inject_related_reading(html: str, related: list[dict[str, str]]) -> str:
+    if not related:
+        return html
+    items = "".join(
+        f"<li><a href='{escape(item['url'])}'>{escape(item['title'])}</a> "
+        f"<a class='tag-pill' href='tag/{escape(item.get('tag', 'health'))}.html'>{escape(item.get('tag', 'health'))}</a></li>"
+        for item in related
+    )
+    return f"{html}\n<section class='related'><h2>Related reading</h2><ul>{items}</ul></section>"
 
 
 def _render_post_html(
@@ -68,191 +141,94 @@ def _render_post_html(
     post: dict[str, str],
     hero: str,
     html: str,
+    toc_items: list[tuple[str, str]],
     run_date: date,
 ) -> str:
     canonical = f"{base_url}/{post['slug']}.html"
-    title = post["title"].strip()
-    meta = (post.get("meta_description") or "").strip()
-    alt = (post.get("alt_text") or title).strip()
+    tag = post.get("tag", "health")
+    og_image = f"{base_url}/{hero}"
+    toc_html = ""
+    if len(toc_items) >= 2:
+        items = "".join(f"<li><a href='#{escape(h2_id)}'>{escape(title)}</a></li>" for title, h2_id in toc_items[:6])
+        toc_html = f"<nav class='toc'><h2>Table of contents</h2><ol>{items}</ol></nav>"
 
-    # Optional: if your content pipeline sets these keys for offer posts
-    offer_name = (post.get("offer_name") or "").strip()
-    offer_link = (post.get("offer_link") or "").strip()
-    is_offer = bool(offer_link)
-
-    offer_box = ""
-    if is_offer:
-        offer_box = f"""
-        <section class="callout" aria-label="Disclosure and recommended resource">
-          <strong>Recommended resource</strong>
-          <p class="muted">Disclosure: This page may contain affiliate links.</p>
-          <p><a class="btn" href="{offer_link}" rel="nofollow sponsored noopener" target="_blank">
-            {offer_name or "Check it here"} →
-          </a></p>
-        </section>
-        """
-
-    # Basic OG tags (helps sharing, not ranking)
-    og_image = f"{base_url}/{hero.lstrip('./')}" if not hero.startswith("http") else hero
+    schema = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": post["title"],
+        "description": post["meta_description"],
+        "datePublished": run_date.isoformat(),
+        "dateModified": run_date.isoformat(),
+        "author": {"@type": "Organization", "name": site_title},
+        "mainEntityOfPage": canonical,
+        "image": og_image,
+        "about": tag,
+    }
 
     return f"""<!doctype html>
-<html lang="en">
+<html lang='en'>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{_escape_html(title)}</title>
-  <meta name="description" content="{_escape_attr(meta)}">
-  <link rel="canonical" href="{canonical}">
-  <meta name="robots" content="index,follow">
-
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="{_escape_attr(title)}">
-  <meta property="og:description" content="{_escape_attr(meta)}">
-  <meta property="og:url" content="{canonical}">
-  <meta property="og:image" content="{_escape_attr(og_image)}">
-
-  <style>
-    :root {{
-      --bg:#0b0f14;
-      --card:#0f1720;
-      --text:#e8eef5;
-      --muted:#a9b4c0;
-      --line:#1f2a37;
-      --accent:#7dd3fc;
-      --accent2:#22c55e;
-    }}
-    *{{box-sizing:border-box}}
-    body{{
-      margin:0;
-      background:var(--bg);
-      color:var(--text);
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-      line-height:1.75;
-      font-size:17px;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }}
-    a{{color:var(--accent); text-decoration:none}}
-    a:hover{{text-decoration:underline}}
-    .wrap{{max-width:880px; margin:0 auto; padding:18px 14px 60px}}
-    .topbar{{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:14px}}
-    .brand a{{color:var(--text); font-weight:700}}
-    .brand small{{display:block; color:var(--muted); font-weight:400; margin-top:2px; font-size:12px}}
-    .card{{
-      background:var(--card);
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:18px;
-      box-shadow:0 10px 28px rgba(0,0,0,.28);
-    }}
-    h1{{font-size:clamp(28px, 4.6vw, 42px); line-height:1.15; margin:8px 0 10px; letter-spacing:-0.02em}}
-    .meta{{color:var(--muted); font-size:14px; margin:0 0 14px}}
-    .hero{{width:100%; height:auto; border-radius:14px; display:block; margin:12px 0 18px; max-height:520px; object-fit:cover}}
-    .content h2{{margin:26px 0 10px; font-size:22px; line-height:1.25}}
-    .content h3{{margin:18px 0 8px; font-size:18px}}
-    .content p{{margin:0 0 14px}}
-    .content ul, .content ol{{padding-left:20px; margin: 0 0 14px}}
-    .content li{{margin:8px 0}}
-    .content blockquote{{margin:16px 0; padding:12px 14px; border-left:3px solid var(--accent); background:rgba(125,211,252,.08); border-radius:12px}}
-    .callout{{margin:18px 0; padding:14px 14px; border-radius:14px; border:1px solid rgba(34,197,94,.35); background:rgba(34,197,94,.08)}}
-    .muted{{color:var(--muted)}}
-    .btn{{display:inline-block; padding:10px 12px; border-radius:12px; background:rgba(125,211,252,.16); border:1px solid rgba(125,211,252,.35)}}
-    .footer{{margin-top:22px; padding-top:16px; border-top:1px solid var(--line); color:var(--muted); font-size:14px; display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between}}
-    @media (prefers-color-scheme: light){{
-      :root{{--bg:#f6f7fb; --card:#ffffff; --text:#0b1220; --muted:#5b6777; --line:#e5e7eb; --accent:#0369a1; --accent2:#16a34a;}}
-      .card{{box-shadow:0 8px 22px rgba(15,23,42,.08);}}
-      .btn{{background:rgba(3,105,161,.08); border:1px solid rgba(3,105,161,.25)}}
-    }}
-  </style>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>{escape(post['title'])}</title>
+<meta name='description' content='{escape(post['meta_description'])}'>
+<meta name='robots' content='index,follow'>
+<link rel='canonical' href='{canonical}'>
+<meta property='og:type' content='article'>
+<meta property='og:title' content='{escape(post['title'])}'>
+<meta property='og:description' content='{escape(post['meta_description'])}'>
+<meta property='og:url' content='{canonical}'>
+<meta property='og:image' content='{og_image}'>
+<style>{_base_css()}</style>
+<script type='application/ld+json'>{json.dumps(schema)}</script>
 </head>
 
 <body>
-  <div class="wrap">
-    <div class="topbar">
-      <div class="brand">
-        <a href="index.html">{_escape_html(site_title)}</a>
-        <small>Educational health content for US readers</small>
-      </div>
-      <div><a href="{base_url}/sitemap.xml">Sitemap</a></div>
-    </div>
-
-    <div class="card">
-      <p class="meta"><em>Educational only — not medical advice.</em> • Updated: {run_date.isoformat()}</p>
-      <h1>{_escape_html(title)}</h1>
-
-      <img class="hero" src="{hero}" alt="{_escape_attr(alt)}" loading="lazy">
-
-      <div class="content">
-        {html}
-      </div>
-
-      {offer_box}
-
-      <div class="footer">
-        <div><a href="index.html">← Back to home</a></div>
-        <div><a href="{canonical}">Permalink</a></div>
-      </div>
-    </div>
-  </div>
+<main class='container'>
+<header class='header'><a href='index.html'>{escape(site_title)}</a></header>
+<article>
+<h1>{escape(post['title'])}</h1>
+<p class='meta'>{run_date.isoformat()} · <a class='tag-pill' href='tag/{escape(tag)}.html'>{escape(tag)}</a></p>
+<img src='{escape(hero)}' alt='{escape(post['alt_text'])}' fetchpriority='high'>
+{toc_html}
+{html}
+</article>
+</main>
 </body>
 </html>"""
 
 
 def _write_index(docs_dir: Path, base_url: str, site_title: str, posts: list[dict[str, str]]) -> None:
-    items = []
-    for p in posts[:60]:
-        title = _escape_html(p["title"])
-        desc = _escape_html((p.get("description") or "")[:160])
-        items.append(
-            f"""
-            <li class="item">
-              <a class="t" href="{p['url']}">{title}</a>
-              <div class="d">{desc}</div>
-              <div class="m">{p['date']}</div>
-            </li>
-            """.strip()
-        )
-    items_html = "\n".join(items)
-
+    counts = Counter((p.get("tag") or "health") for p in posts)
+    top_tags = [tag for tag, _ in counts.most_common(10)]
+    chips = "".join(f"<a class='tag-pill' href='tag/{escape(tag)}.html'>{escape(tag)}</a>" for tag in top_tags)
+    items = "".join(
+        f"<li><a href='{escape(p['url'])}'>{escape(p['title'])}</a> "
+        f"<small>{escape(p['date'])}</small> "
+        f"<a class='tag-pill' href='tag/{escape(p.get('tag', 'health'))}.html'>{escape(p.get('tag', 'health'))}</a></li>"
+        for p in posts[:50]
+    )
     html = f"""<!doctype html>
-<html lang="en">
+<html lang='en'>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{_escape_html(site_title)}</title>
-  <meta name="description" content="Fresh US health content: recipes, home workouts, habits, and practical wellness tips.">
-  <link rel="canonical" href="{base_url}/index.html">
-  <style>
-    :root{{--bg:#0b0f14;--card:#0f1720;--text:#e8eef5;--muted:#a9b4c0;--line:#1f2a37;--accent:#7dd3fc}}
-    *{{box-sizing:border-box}}
-    body{{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.7;font-size:17px}}
-    a{{color:var(--accent);text-decoration:none}} a:hover{{text-decoration:underline}}
-    .wrap{{max-width:880px;margin:0 auto;padding:18px 14px 60px}}
-    .card{{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 10px 28px rgba(0,0,0,.28)}}
-    h1{{font-size:clamp(26px,4.2vw,38px);margin:8px 0 6px}}
-    .sub{{color:var(--muted);margin:0 0 14px}}
-    ul{{list-style:none;padding:0;margin:0}}
-    .item{{padding:14px 0;border-top:1px solid var(--line)}}
-    .item:first-child{{border-top:none}}
-    .t{{display:block;font-weight:700;font-size:18px;margin-bottom:6px}}
-    .d{{color:var(--muted);font-size:14px;margin-bottom:6px}}
-    .m{{color:var(--muted);font-size:12px}}
-    .top{{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:12px}}
-    @media (prefers-color-scheme: light){{
-      :root{{--bg:#f6f7fb;--card:#ffffff;--text:#0b1220;--muted:#5b6777;--line:#e5e7eb;--accent:#0369a1}}
-      .card{{box-shadow:0 8px 22px rgba(15,23,42,.08)}}
-    }}
-  </style>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>{escape(site_title)}</title>
+<meta name='description' content='Practical US health content for daily routines, nutrition, sleep, and wellness.'>
+<meta name='robots' content='index,follow'>
+<link rel='canonical' href='{base_url}/index.html'>
+<style>{_base_css()}</style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="top">
-      <div>
-        <h1>{_escape_html(site_title)}</h1>
-        <p class="sub">Recipes, home workouts, habits, and practical wellness tips. Educational only.</p>
-      </div>
-      <div><a href="{base_url}/sitemap.xml">Sitemap</a></div>
-    </div>
+<main class='container'>
+<h1>{escape(site_title)}</h1>
+<p>Informational health content for US readers.</p>
+<div class='tag-row'>{chips}</div>
+<ul>{items}</ul>
+</main>
+</body>
+</html>"""
+    (docs_dir / "index.html").write_text(html, encoding="utf-8")
 
     <div class="card">
       <ul>
@@ -264,10 +240,48 @@ def _write_index(docs_dir: Path, base_url: str, site_title: str, posts: list[dic
 </html>"""
     (docs_dir / "index.html").write_text(html, encoding="utf-8")
 
+def _write_tag_pages(docs_dir: Path, base_url: str, site_title: str, posts: list[dict[str, str]]) -> list[str]:
+    tag_dir = docs_dir / "tag"
+    tag_dir.mkdir(parents=True, exist_ok=True)
+    grouped: dict[str, list[dict[str, str]]] = defaultdict(list)
+    for post in posts:
+        grouped[post.get("tag", "health")].append(post)
 
-def _write_sitemap(docs_dir: Path, base_url: str, posts: list[dict[str, str]]) -> None:
+    urls: list[str] = []
+    for tag, entries in grouped.items():
+        file_name = f"{tag}.html"
+        urls.append(f"tag/{file_name}")
+        items = "".join(
+            f"<li><a href='../{escape(item['url'])}'>{escape(item['title'])}</a> <small>{escape(item['date'])}</small></li>"
+            for item in entries[:100]
+        )
+        html = f"""<!doctype html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>{escape(tag)} posts | {escape(site_title)}</title>
+<meta name='description' content='Newest {escape(tag)} posts'>
+<meta name='robots' content='index,follow'>
+<link rel='canonical' href='{base_url}/tag/{escape(file_name)}'>
+<style>{_base_css()}</style>
+</head>
+<body>
+<main class='container'>
+<p><a href='../index.html'>← Home</a></p>
+<h1>{escape(tag)} posts</h1>
+<ul>{items}</ul>
+</main>
+</body>
+</html>"""
+        (tag_dir / file_name).write_text(html, encoding="utf-8")
+    return urls
+
+
+def _write_sitemap(docs_dir: Path, base_url: str, posts: list[dict[str, str]], tag_pages: list[str]) -> None:
     rows = [f"<url><loc>{base_url}/index.html</loc></url>"]
-    rows.extend(f"<url><loc>{base_url}/{p['url']}</loc></url>" for p in posts[:200])
+    rows.extend(f"<url><loc>{base_url}/{escape(post['url'])}</loc></url>" for post in posts[:200])
+    rows.extend(f"<url><loc>{base_url}/{escape(tag_url)}</loc></url>" for tag_url in sorted(set(tag_pages)))
     xml = (
         "<?xml version='1.0' encoding='UTF-8'?>\n"
         "<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>"
@@ -284,17 +298,24 @@ def _write_robots(docs_dir: Path, base_url: str) -> None:
     )
 
 
-def _escape_html(s: str) -> str:
+def _slugify(value: str) -> str:
+    cleaned = re.sub(r"<[^>]+>", "", value).strip().lower()
+    cleaned = re.sub(r"[^a-z0-9]+", "-", cleaned)
+    cleaned = re.sub(r"-+", "-", cleaned)
+    return cleaned.strip("-") or "section"
+
+
+def _base_css() -> str:
     return (
-        (s or "")
-        .replace("&", "&amp;")
-        .replace("<", "&lt;")
-        .replace(">", "&gt;")
-        .replace('"', "&quot;")
-        .replace("'", "&#39;")
+        "body{margin:0;background:#f8fafc;color:#0f172a;font-family:Arial,sans-serif;line-height:1.65;}"
+        ".container{max-width:760px;margin:0 auto;padding:16px;}"
+        "h1{font-size:1.7rem;line-height:1.25;margin:8px 0 12px;}"
+        "h2{margin-top:24px;} p,li{font-size:1rem;}"
+        "img{max-width:100%;height:auto;border-radius:12px;}"
+        "a{color:#0f766e;text-decoration:none;}a:hover{text-decoration:underline;}"
+        ".meta{color:#475569;font-size:.92rem;margin-bottom:12px;}"
+        ".tag-row{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 16px;}"
+        ".tag-pill{display:inline-block;background:#e2e8f0;color:#0f172a;border-radius:999px;padding:2px 10px;font-size:.82rem;}"
+        ".toc,.related{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;margin:16px 0;}"
+        "ul,ol{padding-left:22px;}"
     )
-
-
-def _escape_attr(s: str) -> str:
-    # same as html escape; kept separate for clarity
-    return _escape_html(s)
