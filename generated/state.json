@@ -1,13 +1,15 @@
 {
-  "runs": 2,
-  "offer_runs": 0,
+  "runs": 3,
+  "offer_runs": 1,
   "recent_topics": [
     "anti-inflammatory-foods",
-    "natural-remedies"
+    "natural-remedies",
+    "mental-wellness-basics"
   ],
   "recent_slugs": [
     "anti-inflammatory-foods-everyday-ingredients",
-    "natural-discomfort-relief-daily-habits"
+    "natural-discomfort-relief-daily-habits",
+    "how-to-reset-your-stress-emotional-resilience"
   ],
   "last_run": "2026-02-20"
 }
