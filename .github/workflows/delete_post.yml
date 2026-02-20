@@ -1,0 +1,59 @@
+name: Delete Post (by slug)
+
+on:
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: "Slug to delete (example: natural-discomfort-relief-daily-habits)"
+        required: true
+        type: string
+      delete_hero:
+        description: "Also delete hero image (if referenced)"
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  delete:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Delete post by slug
+        env:
+          BASE_URL: ${{ secrets.BASE_URL }}
+          SITE_TITLE: ${{ vars.SITE_TITLE }}
+        run: |
+          python -m src.app.delete_post \
+            --slug "${{ inputs.slug }}" \
+            --docs-dir docs \
+            --base-url "${BASE_URL}" \
+            --site-title "${SITE_TITLE}" \
+            $( [ "${{ inputs.delete_hero }}" = "true" ] && echo "--delete-hero" )
+
+      - name: Validate internal links
+        run: python -m src.app.validate_links --docs-dir docs
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs generated
+          if git diff --cached --quiet; then
+            echo "No changes after delete"
+            exit 0
+          fi
+          git commit -m "chore: delete post ${{ inputs.slug }}"
+          git push
