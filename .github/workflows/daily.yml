@@ -38,6 +38,12 @@ jobs:
           POSTS_PER_WEEK: "5"
         run: python -m src.app.run_daily
 
+      - name: Repair site (remove broken links)
+        env:
+          BASE_URL: ${{ secrets.BASE_URL }}
+          SITE_TITLE: ${{ vars.SITE_TITLE }}
+        run: python -m src.app.repair_site
+
       - name: Validate internal links
         run: python -m src.app.validate_links
 
