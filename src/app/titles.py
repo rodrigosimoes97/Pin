@@ -5,7 +5,7 @@ from .topics import Topic
 
 
 TITLE_PROMPT = """You are an SEO editor for US health informational content.
-Return JSON only with schema: {"titles": ["...", "..."]}.
+Return JSON only with schema: {{"titles": ["...", "..."]}}.
 Create exactly 10 unique titles in US English for topic '{topic_name}' and angle '{angle}'.
 Rules:
 - high-intent informational keywords for Google US.
