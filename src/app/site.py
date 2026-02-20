@@ -49,6 +49,8 @@ def publish_post(
     write_site_state(docs_dir, base_url, site_title, posts)
     return record
 
+    recent_links = [f"{p['slug']}.html" for p in posts[:3]]
+    html = _inject_internal_links(post["html"], recent_links)
 
 def write_site_state(docs_dir: Path, base_url: str, site_title: str, posts: list[dict[str, str]]) -> None:
     docs_dir.mkdir(parents=True, exist_ok=True)
@@ -58,6 +60,21 @@ def write_site_state(docs_dir: Path, base_url: str, site_title: str, posts: list
     _write_sitemap(docs_dir, base_url, posts, tag_pages)
     _write_robots(docs_dir, base_url)
 
+    record = {
+        "slug": post["slug"],
+        "title": post["title"],
+        "description": post["meta_description"],
+        "date": run_date.isoformat(),
+        "url": f"{post['slug']}.html",
+        "hero": hero_path_rel,
+    }
+    posts = [record] + [p for p in posts if p.get("slug") != post["slug"]]
+    posts_path.write_text(json.dumps(posts[:200], indent=2), encoding="utf-8")
+
+    _write_index(docs_dir, base_url, site_title, posts)
+    _write_sitemap(docs_dir, base_url, posts)
+    _write_robots(docs_dir, base_url)
+    return record
 
 def _load_posts(path: Path) -> list[dict[str, str]]:
     if not path.exists():
@@ -165,6 +182,7 @@ def _render_post_html(
 <style>{_base_css()}</style>
 <script type='application/ld+json'>{json.dumps(schema)}</script>
 </head>
+
 <body>
 <main class='container'>
 <header class='header'><a href='index.html'>{escape(site_title)}</a></header>
@@ -212,6 +230,15 @@ def _write_index(docs_dir: Path, base_url: str, site_title: str, posts: list[dic
 </html>"""
     (docs_dir / "index.html").write_text(html, encoding="utf-8")
 
+    <div class="card">
+      <ul>
+        {items_html}
+      </ul>
+    </div>
+  </div>
+</body>
+</html>"""
+    (docs_dir / "index.html").write_text(html, encoding="utf-8")
 
 def _write_tag_pages(docs_dir: Path, base_url: str, site_title: str, posts: list[dict[str, str]]) -> list[str]:
     tag_dir = docs_dir / "tag"
