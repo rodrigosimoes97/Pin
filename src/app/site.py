@@ -250,6 +250,7 @@ def _render_post_html(
 {faq_jsonld}
 <script type='application/ld+json'>{json.dumps(breadcrumb_schema)}</script>
 </head>
+
 <body>
 <main class='container'>
 <header class='header'><a href='index.html'>{escape(site_title)}</a></header>

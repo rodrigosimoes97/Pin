@@ -92,7 +92,6 @@ def main() -> None:
         run_date=today,
     )
     post_link = f"{settings.base_url}/{record['url']}"
-
     write_draft_pack(
         out_dir=settings.repo_root / "generated" / "pinterest",
         run_date=today,
