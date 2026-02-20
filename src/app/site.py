@@ -187,12 +187,14 @@ def _render_post_html(
 def _write_index(docs_dir: Path, base_url: str, site_title: str, posts: list[dict[str, str]]) -> None:
     top_tags = [tag for tag, _ in Counter((p.get("tag") or "health") for p in posts).most_common(10)]
     chips = "".join(f"<a class='tag-pill' href='tag/{escape(tag)}.html'>{escape(tag)}</a>" for tag in top_tags)
+
     items = "".join(
         f"<li><a href='{escape(post['url'])}'>{escape(post['title'])}</a> "
         f"<small>{escape(post['date'])}</small> "
         f"<a class='tag-pill' href='tag/{escape(post.get('tag', 'health'))}.html'>{escape(post.get('tag', 'health'))}</a></li>"
         for post in posts[:50]
     )
+
     html = f"""<!doctype html>
 <html lang='en'>
 <head>
@@ -211,16 +213,6 @@ def _write_index(docs_dir: Path, base_url: str, site_title: str, posts: list[dic
 <div class='tag-row'>{chips}</div>
 <ul>{items}</ul>
 </main>
-</body>
-</html>"""
-    (docs_dir / "index.html").write_text(html, encoding="utf-8")
-
-    <div class="card">
-      <ul>
-        {items_html}
-      </ul>
-    </div>
-  
 </body>
 </html>"""
     (docs_dir / "index.html").write_text(html, encoding="utf-8")
