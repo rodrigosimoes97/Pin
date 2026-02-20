@@ -34,6 +34,9 @@ def delete_post(slug: str, delete_hero: bool = False) -> None:
         if hero_path.exists() and hero_path.is_file():
             hero_path.unlink()
 
+    # after building `kept`
+    posts_path.write_text(json.dumps(kept, ensure_ascii=False, indent=2), encoding="utf-8")
+
     write_site_state(docs_dir, settings.base_url, settings.site_title, kept)
 
 
