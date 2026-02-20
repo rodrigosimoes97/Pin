@@ -1,10 +1,7 @@
 from __future__ import annotations
 
 import json
-import re
-from collections import Counter, defaultdict
 from datetime import date
-from html import escape
 from pathlib import Path
 
 
