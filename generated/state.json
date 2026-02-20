@@ -1,15 +1,17 @@
 {
-  "runs": 3,
+  "runs": 4,
   "offer_runs": 1,
   "recent_topics": [
     "anti-inflammatory-foods",
     "natural-remedies",
-    "mental-wellness-basics"
+    "mental-wellness-basics",
+    "gut-health"
   ],
   "recent_slugs": [
     "anti-inflammatory-foods-everyday-ingredients",
     "natural-discomfort-relief-daily-habits",
-    "how-to-reset-your-stress-emotional-resilience"
+    "how-to-reset-your-stress-emotional-resilience",
+    "feeling-bloated-gut-health-fiber-fermented-foods-meal-timing"
   ],
   "last_run": "2026-02-20"
 }
