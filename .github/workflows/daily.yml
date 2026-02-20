@@ -38,12 +38,6 @@ jobs:
           POSTS_PER_WEEK: "5"
         run: python -m src.app.run_daily
 
-      - name: Repair site (remove broken links)
-        env:
-          BASE_URL: ${{ secrets.BASE_URL }}
-          SITE_TITLE: ${{ vars.SITE_TITLE }}
-        run: python -m src.app.repair_site
-
       - name: Validate internal links
         run: python -m src.app.validate_links
 
@@ -58,3 +52,14 @@ jobs:
           fi
           git commit -m "chore: run daily health content engine"
           git push
+
+      - name: Ping search engines (best effort)
+        if: always()
+        run: |
+          SITEMAP_URL="https://rodrigosimoes97.github.io/Pin/sitemap.xml"
+          curl -fsS "https://www.google.com/ping?sitemap=${SITEMAP_URL}" || true
+          if [ -n "${INDEXNOW_KEY:-}" ]; then
+            curl -fsS "https://api.indexnow.org/IndexNow?urlset=${SITEMAP_URL}&key=${INDEXNOW_KEY}" || true
+          fi
+        env:
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}

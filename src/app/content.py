@@ -35,7 +35,7 @@ Rules:
 - informational-first; practical tips readers can apply today.
 - natural, human tone; avoid medical promises and hype.
 - structure: intro, H2/H3 sections, practical steps, FAQ, closing encouragement.
-- include exactly 3 internal link placeholders in body: href="#recent-1", href="#recent-2", href="#recent-3".
+- include exactly 5 internal link placeholders in body: href="#recent-1", href="#recent-2", href="#recent-3", href="#recent-4", href="#recent-5".
 - include sentence: Educational only — not medical advice.
 - if mode=offer include soft recommendation and exact sentence:
   Disclosure: This page may contain affiliate links.

@@ -40,12 +40,6 @@ jobs:
         run: |
           python -m src.app.delete_post --slug "${{ inputs.slug }}" ${{ inputs.delete_hero && '--delete-hero' || '' }}
 
-      - name: Repair site (remove broken links)
-        env:
-          BASE_URL: ${{ secrets.BASE_URL }}
-          SITE_TITLE: ${{ vars.SITE_TITLE }}
-        run: python -m src.app.repair_site
-  
       - name: Validate internal links
         run: python -m src.app.validate_links
 

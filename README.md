@@ -61,3 +61,11 @@ python -m src.app.run_daily
   - FAQ
   - Closing encouragement
   - `Educational only — not medical advice.`
+
+## SEO improvements
+
+- Standard XML sitemap output now includes `<url>`, `<loc>`, and `<lastmod>` for index, posts, and tag hub pages.
+- Generated post pages include expanded SEO/social metadata: canonical, OpenGraph, Twitter cards, Article JSON-LD, FAQPage JSON-LD (when FAQ exists), and BreadcrumbList JSON-LD.
+- Tag pages now behave as deterministic hub pages with intro text and grouped internal links.
+- Internal linking density on posts now supports placeholders `#recent-1` through `#recent-5`, including a tag hub link.
+- Daily workflow includes best-effort Google and optional IndexNow sitemap pings after publish updates.
