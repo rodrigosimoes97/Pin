@@ -15,7 +15,7 @@ def publish_post(
     docs_dir: Path,
     base_url: str,
     site_title: str,
-    post: dict[str, str],
+    post: dict[str, object],
     hero_path_rel: str,
     run_date: date,
 ) -> dict[str, str]:
@@ -166,7 +166,7 @@ def _extract_faq_items(article_html: str) -> list[dict[str, str]]:
 def _render_post_html(
     base_url: str,
     site_title: str,
-    post: dict[str, str],
+    post: dict[str, object],
     hero_path_rel: str,
     article_html: str,
     toc_items: list[tuple[str, str]],
@@ -195,13 +195,14 @@ def _render_post_html(
         "description": description,
         "datePublished": run_date.isoformat(),
         "dateModified": run_date.isoformat(),
-        "author": {"@type": "Organization", "name": site_title},
+        "author": {"@type": "Person", "name": "RodrigoS"},
         "mainEntityOfPage": canonical,
         "image": og_image,
         "about": tag,
     }
 
-    faq_items = _extract_faq_items(article_html)
+    faq_items_raw = post.get("faq")
+    faq_items = faq_items_raw if isinstance(faq_items_raw, list) else _extract_faq_items(article_html)
     faq_schema = {
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -255,6 +256,7 @@ def _render_post_html(
 <main class='container'>
 <header class='header'><a href='index.html'>{escape(site_title)}</a></header>
 <article>
+<nav class='top-nav'><a href='/Pin/'>Home</a><span>·</span><a href='/Pin/tag/{escape(tag)}.html'>{escape(tag)}</a></nav>
 <h1>{escape(post['title'])}</h1>
 <div class='quick-answer'><strong>Quick answer:</strong> {escape(quick_answer)}</div>
 <p class='meta'>{run_date.isoformat()} · <a class='tag-pill' href='tag/{escape(tag)}.html'>{escape(tag)}</a></p>
@@ -416,30 +418,32 @@ def _slugify(value: str) -> str:
 
 def _base_css() -> str:
     return (
-        "body{margin:0;background:#0b0f14;color:#e8eef5;"
+        "body{margin:0;background:#070b12;color:#e6edf6;"
         "font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;"
         "line-height:1.7;}"
         ".container{max-width:820px;margin:0 auto;padding:18px 14px 60px;}"
         ".header{margin:10px 0 14px;font-weight:700;}"
+        ".header a{color:#f8fbff;}"
+        ".top-nav{display:flex;align-items:center;gap:8px;margin:2px 0 10px;font-size:14px;color:#9fb0c3;}"
+        ".top-nav a{color:#98d8ff;font-weight:600;}"
+        ".top-nav span{opacity:.7;}"
         "h1{font-size:clamp(26px,4.2vw,40px);line-height:1.15;margin:10px 0 12px;letter-spacing:-0.02em;}"
         "h2{margin-top:26px;font-size:22px;line-height:1.25;}"
         "h3{margin-top:18px;font-size:18px;}"
         "p,li{font-size:17px;}"
-        "img{max-width:100%;height:auto;border-radius:14px;display:block;margin:14px 0;}"
+        "img{max-width:100%;height:auto;border-radius:14px;display:block;margin:14px 0;border:1px solid #1f2a3a;}"
         "a{color:#7dd3fc;text-decoration:none;}a:hover{text-decoration:underline;}"
-        ".meta{color:#a9b4c0;font-size:14px;margin:8px 0 14px;}"
+        ".meta{color:#9fb0c3;font-size:14px;margin:8px 0 14px;}"
+        ".quick-answer{background:#0c1624;border:1px solid #223247;border-radius:12px;padding:10px 12px;}"
         ".tag-row{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 18px;}"
-        ".tag-pill{display:inline-block;background:rgba(125,211,252,.12);"
-        "border:1px solid rgba(125,211,252,.25);color:#e8eef5;border-radius:999px;"
+        ".tag-pill{display:inline-block;background:rgba(125,211,252,.16);"
+        "border:1px solid rgba(125,211,252,.32);color:#e8eef5;border-radius:999px;"
         "padding:3px 10px;font-size:12px;}"
-        ".toc,.related{background:#0f1720;border:1px solid #1f2a37;border-radius:14px;"
+        ".toc,.related{background:#101a29;border:1px solid #26374b;border-radius:14px;"
         "padding:12px 14px;margin:16px 0;}"
+        ".related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;}"
+        ".related-card{background:#0a1320;border:1px solid #1f3148;border-radius:12px;padding:10px;}"
+        ".related-card h3{margin:8px 0;}"
         "ul,ol{padding-left:22px;}"
-        "small{color:#a9b4c0;}"
-        "@media (prefers-color-scheme: light){"
-        "body{background:#f6f7fb;color:#0b1220;}"
-        "a{color:#0369a1;}"
-        ".toc,.related{background:#fff;border:1px solid #e5e7eb;}"
-        ".tag-pill{background:rgba(3,105,161,.08);border:1px solid rgba(3,105,161,.22);color:#0b1220;}"
-        "}"
+        "small{color:#9fb0c3;}"
     )
