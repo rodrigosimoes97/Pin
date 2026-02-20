@@ -21,7 +21,7 @@ ALLOWED_TAGS = {
 
 CONTENT_PROMPT = """Write a US-focused health article.
 Return strict JSON object only (no markdown) with keys exactly:
-title,slug,meta_description,html,image_query,pin_title,pin_description,alt_text,tag
+title,slug,meta_description,html,image_query,pin_title,pin_description,alt_text,tag,faq
 Input:
 - topic_name: {topic_name}
 - angle: {angle}
@@ -40,6 +40,7 @@ Rules:
 - if mode=offer include soft recommendation and exact sentence:
   Disclosure: This page may contain affiliate links.
 - if mode=info do not include affiliate links.
+- faq must be an array of objects using this shape: [{"question":"...","answer":"..."}]. Keep answers concise.
 """
 
 
@@ -57,7 +58,7 @@ def generate_article(
     title: str,
     mode: str,
     offer: dict[str, Any] | None,
-) -> dict[str, str]:
+) -> dict[str, Any]:
     payload = client.generate_json(
         CONTENT_PROMPT.format(
             topic_name=topic.name,
@@ -91,7 +92,23 @@ def generate_article(
     if mode == "info":
         payload["html"] = payload["html"].replace("Disclosure: This page may contain affiliate links.", "")
 
+    payload["faq"] = _normalize_faq(payload.get("faq"))
+
     return payload
+
+
+def _normalize_faq(raw: Any) -> list[dict[str, str]]:
+    if not isinstance(raw, list):
+        return []
+    items: list[dict[str, str]] = []
+    for item in raw[:8]:
+        if not isinstance(item, dict):
+            continue
+        question = str(item.get("question", "")).strip()
+        answer = str(item.get("answer", "")).strip()
+        if question and answer:
+            items.append({"question": question, "answer": answer})
+    return items
 
 
 def _clean_slug(raw: str) -> str:
