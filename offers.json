@@ -1,27 +1,27 @@
 [
   {
-    "name": "Turmeric Curcumin Complex",
-    "link": "https://example-affiliate.com/turmeric",
-    "tags": ["anti-inflammatory", "us"]
+    "name": "Daily Synbiotic Capsule",
+    "link": "https://www.amazon.com/s?k=daily+synbiotic+capsule",
+    "tags": ["gut", "us", "habits"]
   },
   {
-    "name": "Magnesium Glycinate Sleep Support",
-    "link": "https://example-affiliate.com/magnesium",
-    "tags": ["sleep", "us"]
+    "name": "Magnesium Glycinate",
+    "link": "https://www.amazon.com/s?k=magnesium+glycinate",
+    "tags": ["sleep", "mental", "us"]
   },
   {
-    "name": "Daily Probiotic 50B",
-    "link": "https://example-affiliate.com/probiotic",
-    "tags": ["gut", "us"]
+    "name": "Resistance Bands Set",
+    "link": "https://www.amazon.com/s?k=resistance+bands+set",
+    "tags": ["exercise", "weight", "longevity", "us"]
   },
   {
-    "name": "High-Protein Meal Replacement",
-    "link": "https://example-affiliate.com/meal-replacement",
-    "tags": ["weight", "meal-prep", "us"]
+    "name": "Extra Virgin Olive Oil",
+    "link": "https://www.amazon.com/s?k=extra+virgin+olive+oil",
+    "tags": ["anti-inflammatory", "recipes", "us"]
   },
   {
-    "name": "Omega-3 Fish Oil",
-    "link": "https://example-affiliate.com/omega3",
-    "tags": ["anti-inflammatory", "heart", "us"]
+    "name": "White Noise Machine",
+    "link": "https://www.amazon.com/s?k=white+noise+machine",
+    "tags": ["sleep", "habits", "us"]
   }
 ]

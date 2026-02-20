@@ -25,13 +25,9 @@ def write_draft_pack(
             "alt_text": alt_text,
         }
     ]
-
     csv_path = out_dir / f"{run_date.isoformat()}_pins.csv"
-    with csv_path.open("w", newline="", encoding="utf-8") as fh:
-        writer = csv.DictWriter(
-            fh,
-            fieldnames=["title", "description", "link", "image_path", "alt_text"],
-        )
+    with csv_path.open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=list(payload[0].keys()))
         writer.writeheader()
         writer.writerows(payload)
 

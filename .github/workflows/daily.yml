@@ -1,9 +1,9 @@
-name: Daily Content Automation
+name: Daily Health Content Engine
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: "17 13 * * *"
+    - cron: "20 12 * * *"
 
 permissions:
   contents: write
@@ -23,17 +23,22 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run daily pipeline
+      - name: Run pipeline
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+          GEMINI_API_KEY_4: ${{ secrets.GEMINI_API_KEY_4 }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           BASE_URL: ${{ secrets.BASE_URL }}
+          SITE_TITLE: ${{ vars.SITE_TITLE }}
           PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
           PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
           PINTEREST_ENABLE_PUBLISH: ${{ secrets.PINTEREST_ENABLE_PUBLISH }}
+          POSTS_PER_WEEK: "5"
         run: python -m src.app.run_daily
 
-      - name: Commit and push output
+      - name: Commit generated output
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -42,5 +47,5 @@ jobs:
             echo "No generated changes"
             exit 0
           fi
-          git commit -m "chore: daily content generation"
+          git commit -m "chore: run daily health content engine"
           git push

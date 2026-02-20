@@ -1,5 +1,7 @@
 {
   "runs": 0,
   "offer_runs": 0,
-  "recent_topics": []
+  "recent_topics": [],
+  "recent_slugs": [],
+  "last_run": null
 }
