@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "slug": "longevity-daily-routine",
+    "title": "What Does a Longevity-Focused Daily Routine Look Like?",
+    "description": "Discover an evidence-aligned daily rhythm to support a longer, healthier life. Learn practical tips for sleep, meals, movement, and stress management.",
+    "date": "2026-02-20",
+    "url": "longevity-daily-routine.html",
+    "hero": "assets/2026-02-20_longevity-daily-routine.jpg"
+  },
+  {
+    "slug": "feeling-bloated-gut-health-fiber-fermented-foods-meal-timing",
+    "title": "Feeling Bloated? How to Fix Your Gut Health with Fiber, Fermented Foods, and Meal Timing",
+    "description": "Discover how fiber, fermented foods, and mindful meal timing can improve your gut health and reduce bloating. Practical tips for a happier digestive system.",
+    "date": "2026-02-20",
+    "url": "feeling-bloated-gut-health-fiber-fermented-foods-meal-timing.html",
+    "hero": "assets/2026-02-20_feeling-bloated-gut-health-fiber-fermented-foods-meal-timing.jpg"
+  },
+  {
+    "slug": "how-to-reset-your-stress-emotional-resilience",
+    "title": "How to Reset Your Stress: Simple Steps for Emotional Resilience",
+    "description": "Feeling overwhelmed? Learn practical techniques to reset your stress response and build lasting emotional resilience with these simple, actionable steps.",
+    "date": "2026-02-20",
+    "url": "how-to-reset-your-stress-emotional-resilience.html",
+    "hero": "assets/2026-02-20_how-to-reset-your-stress-emotional-resilience.jpg"
+  },
+  {
+    "slug": "natural-discomfort-relief-daily-habits",
+    "title": "Beyond Pills: How to Naturally Ease Discomfort Through Daily Habits",
+    "description": "Discover safe, lifestyle-based comfort strategies to naturally ease everyday discomfort. Explore practical tips for a healthier, more comfortable life.",
+    "date": "2026-02-20",
+    "url": "natural-discomfort-relief-daily-habits.html",
+    "hero": "assets/2026-02-20_natural-discomfort-relief-daily-habits.jpg"
+  },
+  {
+    "slug": "anti-inflammatory-foods-everyday-ingredients",
+    "title": "How to Eat Anti-Inflammatory Foods Without a Special Diet",
+    "description": "Discover how to incorporate anti-inflammatory foods into your daily meals using common ingredients. Reduce inflammation naturally with simple dietary changes.",
+    "date": "2026-02-19",
+    "url": "anti-inflammatory-foods-everyday-ingredients.html",
+    "hero": "assets/2026-02-19_anti-inflammatory-foods-everyday-ingredients.jpg"
+  }
+]

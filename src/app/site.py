@@ -168,6 +168,7 @@ def _render_post_html(
 <style>{_base_css()}</style>
 <script type='application/ld+json'>{json.dumps(schema)}</script>
 </head>
+
 <body>
 <main class='container'>
 <header class='header'><a href='index.html'>{escape(site_title)}</a></header>
@@ -214,6 +215,15 @@ def _write_index(docs_dir: Path, base_url: str, site_title: str, posts: list[dic
 </html>"""
     (docs_dir / "index.html").write_text(html, encoding="utf-8")
 
+    <div class="card">
+      <ul>
+        {items_html}
+      </ul>
+    </div>
+  
+</body>
+</html>"""
+    (docs_dir / "index.html").write_text(html, encoding="utf-8")
 
 def _write_tag_pages(docs_dir: Path, base_url: str, site_title: str, posts: list[dict[str, str]]) -> list[str]:
     tag_dir = docs_dir / "tag"
