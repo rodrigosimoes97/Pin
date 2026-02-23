@@ -13,6 +13,12 @@ jobs:
       GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
       GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
       GEMINI_API_KEY_4: ${{ secrets.GEMINI_API_KEY_4 }}
+      PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+      BASE_URL: ${{ secrets.BASE_URL }}
+      SITE_TITLE: ${{ vars.SITE_TITLE }}
+      PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
+      PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
+      PINTEREST_ENABLE_PUBLISH: ${{ secrets.PINTEREST_ENABLE_PUBLISH }}
 
     steps:
       - name: Checkout Pin (dev)
