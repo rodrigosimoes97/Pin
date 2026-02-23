@@ -24,8 +24,9 @@ def publish_post(
 
     tag = post.get("tag", "health")
     related = _pick_related(posts, tag, post.get("slug", ""))
+    same_tag_more = _pick_more_in_tag(posts, tag, post.get("slug", ""), 2)
     next_post = _pick_next_post(posts, tag, post.get("slug", ""))
-    article_html, toc_items = _inject_h2_ids_and_collect_toc(post["html"])
+    article_html, toc_items = _inject_h2_ids_and_collect_toc(_normalize_article_headings(post["html"]))
     article_html = _inject_internal_links(article_html, related, tag)
 
     page_html = _render_post_html(
@@ -37,6 +38,7 @@ def publish_post(
         toc_items=toc_items,
         run_date=run_date,
         related=related,
+        same_tag_more=same_tag_more,
         next_post=next_post,
     )
     (docs_dir / f"{post['slug']}.html").write_text(page_html, encoding="utf-8")
@@ -127,6 +129,10 @@ def _pick_next_post(posts: list[dict[str, str]], tag: str, current_slug: str) ->
     return fallback[0] if fallback else None
 
 
+def _pick_more_in_tag(posts: list[dict[str, str]], tag: str, current_slug: str, limit: int) -> list[dict[str, str]]:
+    return [post for post in posts if post.get("slug") != current_slug and post.get("tag") == tag][:limit]
+
+
 def _append_related_posts_cards(html: str, related: list[dict[str, str]]) -> str:
     if not related:
         return html
@@ -143,6 +149,27 @@ def _build_quick_answer(article_html: str) -> str:
         return "Practical steps and key takeaways are summarized below."
     parts = re.split(r"(?<=[.!?])\s+", text)
     return " ".join(parts[:2])[:260]
+
+
+def _normalize_article_headings(article_html: str) -> str:
+    article_html = re.sub(r"<h1(\\b[^>]*)>", r"<h2\1>", article_html, flags=re.IGNORECASE)
+    article_html = re.sub(r"</h1>", "</h2>", article_html, flags=re.IGNORECASE)
+    return article_html
+
+
+def _truncate_meta_description(description: str, limit: int = 156) -> str:
+    clean = re.sub(r"\s+", " ", str(description or "").strip())
+    if len(clean) <= limit:
+        return clean
+    cropped = clean[: limit + 1]
+    if " " in cropped:
+        cropped = cropped.rsplit(" ", 1)[0]
+    return cropped.rstrip(" ,;:-")
+
+
+def _iso_date_or_fallback(value: object, fallback: str) -> str:
+    text = str(value or "").strip()
+    return text if re.fullmatch(r"\d{4}-\d{2}-\d{2}", text) else fallback
 
 
 def _extract_faq_items(article_html: str) -> list[dict[str, str]]:
@@ -173,6 +200,7 @@ def _render_post_html(
     toc_items: list[tuple[str, str]],
     run_date: date,
     related: list[dict[str, str]],
+    same_tag_more: list[dict[str, str]],
     next_post: dict[str, str] | None,
 ) -> str:
     public_base = _effective_base_url(base_url)
@@ -180,7 +208,9 @@ def _render_post_html(
     tag = post.get("tag", "health")
     tag_url = f"{public_base}/tag/{tag}.html"
     og_image = f"{public_base}/{hero_path_rel}"
-    description = post["meta_description"]
+    description = _truncate_meta_description(str(post["meta_description"]))
+    published_date = _iso_date_or_fallback(post.get("datePublished") or post.get("date"), run_date.isoformat())
+    modified_date = _iso_date_or_fallback(post.get("dateModified") or post.get("date_modified"), published_date)
     is_recipe = str(tag) == "recipes"
     recipe_data = post.get("recipe") if is_recipe and isinstance(post.get("recipe"), dict) else None
 
@@ -200,8 +230,8 @@ def _render_post_html(
         "@type": "Article",
         "headline": post["title"],
         "description": description,
-        "datePublished": run_date.isoformat(),
-        "dateModified": run_date.isoformat(),
+        "datePublished": published_date,
+        "dateModified": modified_date,
         "author": {"@type": "Person", "name": "RodrigoS"},
         "mainEntityOfPage": canonical,
         "image": og_image,
@@ -261,7 +291,6 @@ def _render_post_html(
         related_cards = "".join(_render_post_card(item, Path("."), "") for item in related)
         related_block = f"<section class='related'><h2>Related posts</h2><div class='post-grid'>{related_cards}</div></section>"
 
-    same_tag_more = [item for item in related if item.get("tag") == tag][:2]
     same_tag_cards = "".join(_render_post_card(item, Path("."), "") for item in same_tag_more)
     same_tag_cta = (
         f"<a class='btn-secondary' href='tag/{escape(tag)}.html'>Visit {escape(str(tag))} hub</a>"
@@ -317,7 +346,7 @@ def _render_post_html(
 {recipe_summary}
 <div class='quick-answer'><strong>Quick answer:</strong> {escape(quick_answer)}</div>
 <div class='takeaways'><h2>Key takeaways</h2><ul>{takeaway_items}</ul></div>
-<p class='meta'>{run_date.isoformat()} · {reading_time} min read · <a class='tag-pill' href='tag/{escape(tag)}.html'>{escape(tag)}</a></p>
+<p class='meta'>{published_date} · {reading_time} min read · <a class='tag-pill' href='tag/{escape(tag)}.html'>{escape(tag)}</a>{f" · Updated: {modified_date}" if modified_date != published_date else ""}</p>
 <img src='{escape(hero_path_rel)}' alt='{escape(post['alt_text'])}' fetchpriority='high' loading='eager'>
 {toc_block}
 {article_html}
@@ -361,7 +390,7 @@ def _write_index(docs_dir: Path, base_url: str, site_title: str, posts: list[dic
 <title>{escape(site_title)}</title>
 <meta name='description' content='Practical US health content for sleep, gut health, workouts, and habits.'>
 <meta name='robots' content='index,follow'>
-<link rel='canonical' href='{public_base}/index.html'>
+<link rel='canonical' href='{public_base}/'>
 <style>{_base_css()}</style>
 </head>
 <body>
@@ -697,7 +726,7 @@ def _write_tag_pages(docs_dir: Path, base_url: str, site_title: str, posts: list
     for tag, group in grouped.items():
         file_name = f"{tag}.html"
         urls.append(f"tag/{file_name}")
-        unique_posts = group[:]
+        unique_posts = sorted(group[:], key=lambda item: item.get("date", ""), reverse=True)
         start_here = unique_posts[:4]
         latest = unique_posts[4:]
         tag_pills = "".join(
@@ -745,14 +774,27 @@ def _write_tag_pages(docs_dir: Path, base_url: str, site_title: str, posts: list
 
 def _write_sitemap(docs_dir: Path, base_url: str, posts: list[dict[str, str]], tag_pages: list[str]) -> None:
     public_base = _effective_base_url(base_url)
+    default_lastmod = date.today().isoformat()
+    post_lastmods = {
+        post.get("url", ""): _iso_date_or_fallback(post.get("date"), default_lastmod)
+        for post in posts[:200]
+        if post.get("url")
+    }
+    newest_post_lastmod = max(post_lastmods.values(), default=default_lastmod)
+    tag_lastmods: dict[str, str] = {}
+    for post in posts[:200]:
+        tag = post.get("tag", "health")
+        lastmod = _iso_date_or_fallback(post.get("date"), default_lastmod)
+        tag_lastmods[tag] = max(tag_lastmods.get(tag, "0000-00-00"), lastmod)
+
     rows = [
         "  <url>",
-        f"    <loc>{public_base}/index.html</loc>",
-        f"    <lastmod>{date.today().isoformat()}</lastmod>",
+        f"    <loc>{public_base}/</loc>",
+        f"    <lastmod>{newest_post_lastmod}</lastmod>",
         "  </url>",
         "  <url>",
         f"    <loc>{public_base}/about.html</loc>",
-        f"    <lastmod>{date.today().isoformat()}</lastmod>",
+        f"    <lastmod>{newest_post_lastmod}</lastmod>",
         "  </url>",
     ]
     for post in posts[:200]:
@@ -760,16 +802,17 @@ def _write_sitemap(docs_dir: Path, base_url: str, posts: list[dict[str, str]], t
             [
                 "  <url>",
                 f"    <loc>{public_base}/{escape(post['url'])}</loc>",
-                f"    <lastmod>{escape(post.get('date', date.today().isoformat()))}</lastmod>",
+                f"    <lastmod>{escape(post_lastmods.get(post.get('url', ''), default_lastmod))}</lastmod>",
                 "  </url>",
             ]
         )
     for tag_page in sorted(set(tag_pages)):
+        tag_name = Path(tag_page).stem
         rows.extend(
             [
                 "  <url>",
                 f"    <loc>{public_base}/{escape(tag_page)}</loc>",
-                f"    <lastmod>{date.today().isoformat()}</lastmod>",
+                f"    <lastmod>{tag_lastmods.get(tag_name, newest_post_lastmod)}</lastmod>",
                 "  </url>",
             ]
         )
