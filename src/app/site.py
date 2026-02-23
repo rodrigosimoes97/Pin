@@ -57,6 +57,7 @@ def write_site_state(docs_dir: Path, base_url: str, site_title: str, posts: list
     docs_dir.mkdir(parents=True, exist_ok=True)
     (docs_dir / "posts.json").write_text(json.dumps(posts[:200], indent=2), encoding="utf-8")
     _write_index(docs_dir, base_url, site_title, posts)
+    _write_about_page(docs_dir, base_url, site_title)
     tag_pages = _write_tag_pages(docs_dir, base_url, site_title, posts)
     _write_sitemap(docs_dir, base_url, posts, tag_pages)
     _write_robots(docs_dir, base_url)
@@ -278,12 +279,8 @@ def _write_index(docs_dir: Path, base_url: str, site_title: str, posts: list[dic
     public_base = _effective_base_url(base_url)
     top_tags = [tag for tag, _ in Counter((p.get("tag") or "health") for p in posts).most_common(10)]
     chips = "".join(f"<a class='tag-pill' href='tag/{escape(tag)}.html'>{escape(tag)}</a>" for tag in top_tags)
-    items = "".join(
-        f"<li><a href='{escape(post['url'])}'>{escape(post['title'])}</a> "
-        f"<small>{escape(post['date'])}</small> "
-        f"<a class='tag-pill' href='tag/{escape(post.get('tag', 'health'))}.html'>{escape(post.get('tag', 'health'))}</a></li>"
-        for post in posts[:50]
-    )
+    latest_url = escape(posts[0]["url"]) if posts else "#posts"
+    cards = "".join(_render_index_card(post, docs_dir) for post in posts[:50])
     html = f"""<!doctype html>
 <html lang='en'>
 <head>
@@ -296,15 +293,104 @@ def _write_index(docs_dir: Path, base_url: str, site_title: str, posts: list[dic
 <style>{_base_css()}</style>
 </head>
 <body>
+<header class='site-header'>
+<div class='container header-inner'>
+<div>
+<a class='site-title' href='/Pin/'>{escape(site_title)}</a>
+<p class='site-subtitle'>US-focused health tips, habits, and recipes</p>
+</div>
+<nav class='site-nav'>
+<a class='active' href='index.html'>Home</a>
+<a href='#tags'>Tags</a>
+<a href='about.html'>About</a>
+</nav>
+</div>
+</header>
 <main class='container'>
+<section class='hero'>
 <h1>{escape(site_title)}</h1>
-<p>Informational health content for US readers.</p>
+<p class='hero-intro'>Evidence-informed, practical health guides for US readers on sleep, longevity, gut health, stress, and simple recipes.</p>
+<a class='btn-primary' href='{latest_url}'>Read the latest</a>
+</section>
+
+<section id='posts'>
+<h2 class='section-title'>Latest posts</h2>
+<div class='post-grid'>{cards}</div>
+</section>
+
+<section id='tags'>
+<h2 class='section-title'>Browse by topic</h2>
 <div class='tag-row'>{chips}</div>
-<ul>{items}</ul>
+</section>
 </main>
 </body>
 </html>"""
     (docs_dir / "index.html").write_text(html, encoding="utf-8")
+
+
+def _render_index_card(post: dict[str, str], docs_dir: Path) -> str:
+    hero = (post.get("hero") or "").strip()
+    title = escape(post["title"])
+    tag = escape(post.get("tag", "health"))
+    excerpt = escape(_post_excerpt(post, docs_dir))
+    media = (
+        f"<img src='{escape(hero)}' alt='{title}' loading='lazy'>"
+        if hero
+        else "<div class='placeholder' aria-hidden='true'></div>"
+    )
+    return (
+        "<article class='post-card'>"
+        f"<a class='card-media' href='{escape(post['url'])}'>{media}</a>"
+        f"<h3><a href='{escape(post['url'])}'>{title}</a></h3>"
+        f"<p class='meta'>{escape(post['date'])} · "
+        f"<a class='tag-pill' href='tag/{tag}.html'>{tag}</a></p>"
+        f"<p class='excerpt'>{excerpt}</p>"
+        f"<a class='read-more' href='{escape(post['url'])}'>Read more →</a>"
+        "</article>"
+    )
+
+
+def _post_excerpt(post: dict[str, str], docs_dir: Path) -> str:
+    description = (post.get("description") or "").strip()
+    if description:
+        return description[:140].rstrip()
+    url = post.get("url", "")
+    target = docs_dir / url
+    if target.exists():
+        html = target.read_text(encoding="utf-8")
+        text = re.sub(r"<[^>]+>", " ", html)
+        text = re.sub(r"\s+", " ", text).strip()
+        if text:
+            return text[:140].rstrip()
+    return "Practical, easy-to-read tips to support your daily health habits."
+
+
+def _write_about_page(docs_dir: Path, base_url: str, site_title: str) -> None:
+    public_base = _effective_base_url(base_url)
+    html = f"""<!doctype html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>About | {escape(site_title)}</title>
+<meta name='description' content='About this health content site and editorial standards.'>
+<meta name='robots' content='index,follow'>
+<link rel='canonical' href='{public_base}/about.html'>
+<style>{_base_css()}</style>
+</head>
+<body>
+<main class='container'>
+<header class='header'><a href='index.html'>{escape(site_title)}</a></header>
+<h1>About</h1>
+<p>This site publishes practical, US-focused health content designed to be clear, useful, and easy to apply in daily life.</p>
+<h2>Editorial note</h2>
+<p>Content is for informational purposes only and is not medical advice, diagnosis, or treatment. Always consult a qualified healthcare professional for personal medical guidance.</p>
+<h2>Contact</h2>
+<p>Questions or suggestions are welcome. A contact channel may be added in a future update.</p>
+</main>
+</body>
+</html>"""
+    (docs_dir / "about.html").write_text(html, encoding="utf-8")
 
 
 def _write_tag_pages(docs_dir: Path, base_url: str, site_title: str, posts: list[dict[str, str]]) -> list[str]:
@@ -371,6 +457,10 @@ def _write_sitemap(docs_dir: Path, base_url: str, posts: list[dict[str, str]], t
         f"    <loc>{public_base}/index.html</loc>",
         f"    <lastmod>{date.today().isoformat()}</lastmod>",
         "  </url>",
+        "  <url>",
+        f"    <loc>{public_base}/about.html</loc>",
+        f"    <lastmod>{date.today().isoformat()}</lastmod>",
+        "  </url>",
     ]
     for post in posts[:200]:
         rows.extend(
@@ -421,12 +511,34 @@ def _base_css() -> str:
         "body{margin:0;background:#070b12;color:#e6edf6;"
         "font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;"
         "line-height:1.7;}"
-        ".container{max-width:820px;margin:0 auto;padding:18px 14px 60px;}"
+        ".container{max-width:1080px;margin:0 auto;padding:18px 14px 60px;}"
+        ".site-header{position:sticky;top:0;z-index:20;background:rgba(7,11,18,.92);backdrop-filter:blur(8px);border-bottom:1px solid #1b2533;}"
+        ".header-inner{padding-top:10px;padding-bottom:10px;display:flex;justify-content:space-between;gap:18px;align-items:center;}"
+        ".site-title{font-size:18px;font-weight:700;color:#f8fbff;}"
+        ".site-subtitle{margin:2px 0 0;color:#9fb0c3;font-size:13px;line-height:1.4;}"
+        ".site-nav{display:flex;flex-wrap:wrap;gap:14px;font-size:14px;}"
+        ".site-nav a{color:#b8d8ff;font-weight:600;}"
+        ".site-nav a.active{color:#f4f8ff;}"
         ".header{margin:10px 0 14px;font-weight:700;}"
         ".header a{color:#f8fbff;}"
         ".top-nav{display:flex;align-items:center;gap:8px;margin:2px 0 10px;font-size:14px;color:#9fb0c3;}"
         ".top-nav a{color:#98d8ff;font-weight:600;}"
         ".top-nav span{opacity:.7;}"
+        ".hero{padding:20px 0 10px;}"
+        ".hero-intro{max-width:740px;color:#c3cfde;margin-top:0;}"
+        ".btn-primary{display:inline-block;margin-top:8px;background:#1d4ed8;border:1px solid #3765e6;color:#f8fbff;padding:9px 14px;border-radius:10px;font-weight:600;transition:transform .16s ease,background .16s ease;}"
+        ".btn-primary:hover{text-decoration:none;background:#2a5ce8;transform:translateY(-1px);}"
+        ".section-title{margin:18px 0 12px;}"
+        ".post-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;}"
+        ".post-card{background:#0b1320;border:1px solid #223247;border-radius:14px;padding:12px;box-shadow:0 10px 24px rgba(0,0,0,.22);transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease;}"
+        ".post-card:hover{transform:translateY(-2px);border-color:#355176;box-shadow:0 14px 28px rgba(0,0,0,.28);}"
+        ".card-media{display:block;border-radius:12px;overflow:hidden;border:1px solid #1f2a3a;aspect-ratio:16/10;background:#0f1a2a;margin-bottom:10px;}"
+        ".card-media img{width:100%;height:100%;object-fit:cover;margin:0;border:none;border-radius:0;}"
+        ".card-media .placeholder{width:100%;height:100%;background:linear-gradient(135deg,#0e1b2f,#17263d);}"
+        ".post-card h3{margin:6px 0 6px;font-size:19px;line-height:1.35;}"
+        ".post-card .meta{margin:0 0 8px;}"
+        ".excerpt{margin:0 0 8px;color:#c5d2e3;font-size:15px;line-height:1.55;}"
+        ".read-more{font-size:14px;font-weight:600;color:#9ad8ff;}"
         "h1{font-size:clamp(26px,4.2vw,40px);line-height:1.15;margin:10px 0 12px;letter-spacing:-0.02em;}"
         "h2{margin-top:26px;font-size:22px;line-height:1.25;}"
         "h3{margin-top:18px;font-size:18px;}"
@@ -446,4 +558,5 @@ def _base_css() -> str:
         ".related-card h3{margin:8px 0;}"
         "ul,ol{padding-left:22px;}"
         "small{color:#9fb0c3;}"
+        "@media (max-width:760px){.site-header{position:static;}.header-inner{display:block;}.site-nav{margin-top:8px;gap:10px;}.site-subtitle{font-size:12px;}.container{padding-top:14px;}}"
     )
