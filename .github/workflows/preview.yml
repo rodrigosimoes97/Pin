@@ -8,6 +8,11 @@ on:
 jobs:
   build-and-publish-preview:
     runs-on: ubuntu-latest
+    env:
+      GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }}
+      GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+      GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+      GEMINI_API_KEY_4: ${{ secrets.GEMINI_API_KEY_4 }}
 
     steps:
       - name: Checkout Pin (dev)
