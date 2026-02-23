@@ -1,15 +1,17 @@
 {
-  "runs": 3,
+  "runs": 4,
   "offer_runs": 1,
   "recent_topics": [
     "gut-health",
     "sleep-improvement",
-    "longevity-daily-routines"
+    "longevity-daily-routines",
+    "healthy-habits"
   ],
   "recent_slugs": [
     "fiber-vs-fermented-foods-gut-health",
     "best-way-to-prepare-for-sleep",
-    "longevity-daily-routine-evidence-aligned"
+    "longevity-daily-routine-evidence-aligned",
+    "small-habits-improve-health"
   ],
   "last_run": "2026-02-23"
 }
