@@ -181,6 +181,8 @@ def _render_post_html(
     tag_url = f"{public_base}/tag/{tag}.html"
     og_image = f"{public_base}/{hero_path_rel}"
     description = post["meta_description"]
+    is_recipe = str(tag) == "recipes"
+    recipe_data = post.get("recipe") if is_recipe and isinstance(post.get("recipe"), dict) else None
 
     toc_block = ""
     if len(toc_items) >= 2:
@@ -232,6 +234,19 @@ def _render_post_html(
     }
 
     faq_jsonld = f"<script type='application/ld+json'>{json.dumps(faq_schema)}</script>" if faq_items else ""
+    recipe_jsonld = ""
+    recipe_summary = ""
+    recipe_toolbar = ""
+    more_in_tag_block = ""
+    if recipe_data:
+        recipe_jsonld = f"<script type='application/ld+json'>{json.dumps(_build_recipe_schema(post, recipe_data, canonical, og_image, run_date))}</script>"
+        recipe_summary = _render_recipe_summary(recipe_data)
+        recipe_toolbar = (
+            "<div class='recipe-toolbar'>"
+            "<a class='btn-primary recipe-cta' href='#recipe'>Jump to recipe</a>"
+            "<button type='button' class='btn-secondary print-recipe' onclick='window.print()'>Print recipe</button>"
+            "</div>"
+        )
     next_block = ""
     if next_post:
         next_block = (
@@ -245,6 +260,24 @@ def _render_post_html(
     if related:
         related_cards = "".join(_render_post_card(item, Path("."), "") for item in related)
         related_block = f"<section class='related'><h2>Related posts</h2><div class='post-grid'>{related_cards}</div></section>"
+
+    same_tag_more = [item for item in related if item.get("tag") == tag][:2]
+    same_tag_cards = "".join(_render_post_card(item, Path("."), "") for item in same_tag_more)
+    same_tag_cta = (
+        f"<a class='btn-secondary' href='tag/{escape(tag)}.html'>Visit {escape(str(tag))} hub</a>"
+        if tag
+        else ""
+    )
+    if same_tag_cards:
+        more_in_tag_block = (
+            "<section class='related more-in-tag'>"
+            f"<h2>More in {escape(str(tag))}</h2>"
+            f"<div class='topic-row-actions'>{same_tag_cta}</div>"
+            f"<div class='post-grid'>{same_tag_cards}</div>"
+            "</section>"
+        )
+
+    recipe_back_to_top = "<p class='micro-link'><a href='#top'>Back to top ↑</a></p>" if recipe_data else ""
 
     takeaway_items = "".join(f"<li>{escape(item)}</li>" for item in key_takeaways)
 
@@ -270,21 +303,27 @@ def _render_post_html(
 <script type='application/ld+json'>{json.dumps(article_schema)}</script>
 {faq_jsonld}
 <script type='application/ld+json'>{json.dumps(breadcrumb_schema)}</script>
+{recipe_jsonld}
 </head>
 
 <body>
+<a id='top'></a>
 <main class='container'>
 <header class='header'><a href='index.html'>{escape(site_title)}</a></header>
 <article>
 <nav class='top-nav'><a href='index.html'>Home</a><span>·</span><a href='tag/{escape(tag)}.html'>{escape(tag)} hub</a></nav>
 <h1>{escape(post['title'])}</h1>
+{recipe_toolbar}
+{recipe_summary}
 <div class='quick-answer'><strong>Quick answer:</strong> {escape(quick_answer)}</div>
 <div class='takeaways'><h2>Key takeaways</h2><ul>{takeaway_items}</ul></div>
 <p class='meta'>{run_date.isoformat()} · {reading_time} min read · <a class='tag-pill' href='tag/{escape(tag)}.html'>{escape(tag)}</a></p>
 <img src='{escape(hero_path_rel)}' alt='{escape(post['alt_text'])}' fetchpriority='high' loading='eager'>
 {toc_block}
 {article_html}
+{recipe_back_to_top}
 {next_block}
+{more_in_tag_block}
 {related_block}
 </article>
 <footer class='site-footer'>
@@ -292,6 +331,8 @@ def _render_post_html(
 <p>Educational only — not medical advice.</p>
 </footer>
 </main>
+<button type='button' class='back-to-top' aria-label='Back to top'>↑</button>
+<script>{_back_to_top_js()}</script>
 </body>
 </html>"""
 
@@ -311,6 +352,7 @@ def _write_index(docs_dir: Path, base_url: str, site_title: str, posts: list[dic
     latest_url = escape(posts[0]["url"]) if posts else "#posts"
     latest_cards = "".join(_render_post_card(post, docs_dir, "") for post in posts[:12])
     start_here_cards = "".join(_render_post_card(post, docs_dir, "") for post in _start_here_posts(posts, 6))
+    continue_cards = "".join(_render_post_card(post, docs_dir, "") for post in _continue_reading_posts(posts, 3))
     html = f"""<!doctype html>
 <html lang='en'>
 <head>
@@ -359,8 +401,13 @@ def _write_index(docs_dir: Path, base_url: str, site_title: str, posts: list[dic
 </section>
 
 <section id='posts'>
-<h2 class='section-title'>Latest posts</h2>
+<h2 class='section-title'>Latest</h2>
 <div class='post-grid' id='post-grid'>{latest_cards}</div>
+</section>
+
+<section id='continue'>
+<h2 class='section-title'>Continue reading</h2>
+<div class='post-grid'>{continue_cards}</div>
 </section>
 
 <section id='tags'>
@@ -375,6 +422,8 @@ def _write_index(docs_dir: Path, base_url: str, site_title: str, posts: list[dic
 <p>© {date.today().year} {escape(site_title)}</p>
 </div>
 </footer>
+<button type='button' class='back-to-top' aria-label='Back to top'>↑</button>
+<script>{_back_to_top_js()}</script>
 <script>
 (() => {{
   const input = document.getElementById('search-input');
@@ -471,6 +520,27 @@ def _start_here_posts(posts: list[dict[str, str]], limit: int) -> list[dict[str,
     return list(per_tag.values())[:limit]
 
 
+def _continue_reading_posts(posts: list[dict[str, str]], limit: int) -> list[dict[str, str]]:
+    picks: list[dict[str, str]] = []
+    seen_tags: set[str] = set()
+    for post in posts:
+        tag = post.get("tag", "health")
+        if tag in seen_tags:
+            continue
+        picks.append(post)
+        seen_tags.add(tag)
+        if len(picks) >= limit:
+            break
+    if len(picks) < limit:
+        for post in posts:
+            if post in picks:
+                continue
+            picks.append(post)
+            if len(picks) >= limit:
+                break
+    return picks[:limit]
+
+
 def _build_key_takeaways(article_html: str, quick_answer: str) -> list[str]:
     bullets: list[str] = []
     if quick_answer:
@@ -497,6 +567,74 @@ def _build_key_takeaways(article_html: str, quick_answer: str) -> list[str]:
     while len(bullets) < 3:
         bullets.append(defaults[len(bullets)])
     return bullets[:3]
+
+
+def _render_recipe_summary(recipe: dict[str, object]) -> str:
+    rows = [
+        ("Prep", f"{recipe.get('prep_time_minutes', '')} min"),
+        ("Cook", f"{recipe.get('cook_time_minutes', '')} min"),
+        ("Total", f"{recipe.get('total_time_minutes', '')} min"),
+        ("Servings", str(recipe.get('servings', ''))),
+    ]
+    calories = str(recipe.get("calories_per_serving", "")).strip()
+    if calories:
+        rows.append(("Calories", calories))
+    items = "".join(f"<li><span>{escape(label)}</span><strong>{escape(value)}</strong></li>" for label, value in rows if value)
+    return f"<section class='recipe-glance'><h2>Recipe at a glance</h2><ul>{items}</ul></section>"
+
+
+def _duration(minutes: object) -> str:
+    try:
+        value = max(1, int(minutes))
+    except (TypeError, ValueError):
+        value = 1
+    return f"PT{value}M"
+
+
+def _build_recipe_schema(
+    post: dict[str, object],
+    recipe: dict[str, object],
+    canonical: str,
+    og_image: str,
+    run_date: date,
+) -> dict[str, object]:
+    ingredients = [str(item).strip() for item in recipe.get("ingredients", []) if str(item).strip()]
+    instructions = [str(item).strip() for item in recipe.get("instructions", []) if str(item).strip()]
+    data: dict[str, object] = {
+        "@context": "https://schema.org",
+        "@type": "Recipe",
+        "name": str(post.get("title", "")).strip(),
+        "description": str(post.get("meta_description", "")).strip(),
+        "image": og_image,
+        "datePublished": run_date.isoformat(),
+        "author": {"@type": "Person", "name": "RodrigoS"},
+        "mainEntityOfPage": canonical,
+        "recipeYield": str(recipe.get("servings", "")).strip(),
+        "prepTime": _duration(recipe.get("prep_time_minutes")),
+        "cookTime": _duration(recipe.get("cook_time_minutes")),
+        "totalTime": _duration(recipe.get("total_time_minutes")),
+        "recipeIngredient": ingredients,
+        "recipeInstructions": [{"@type": "HowToStep", "text": item} for item in instructions],
+    }
+    calories = str(recipe.get("calories_per_serving", "")).strip()
+    if calories:
+        data["nutrition"] = {"@type": "NutritionInformation", "calories": calories}
+    return data
+
+
+def _back_to_top_js() -> str:
+    return """(() => {
+  const button = document.querySelector('.back-to-top');
+  if (!button) return;
+  const refresh = () => {
+    button.classList.toggle('visible', window.scrollY > 400);
+  };
+  button.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+  window.addEventListener('scroll', refresh, { passive: true });
+  refresh();
+})();"""
 
 
 def _write_about_page(docs_dir: Path, base_url: str, site_title: str) -> None:
@@ -526,11 +664,13 @@ def _write_about_page(docs_dir: Path, base_url: str, site_title: str) -> None:
 </div>
 </header>
 <main class='container'>
+<section class='hero'>
 <h1>About</h1>
 <p>This site publishes practical, US-focused health content designed to be clear, useful, and easy to apply in daily life.</p>
 <h2>Editorial note</h2>
 <p>Content is for informational purposes only and is not medical advice, diagnosis, or treatment. Always consult a qualified healthcare professional for personal medical guidance.</p>
 <p><a href='sitemap.xml'>View sitemap.xml</a></p>
+</section>
 </main>
 <footer class='site-footer'>
 <div class='container'>
@@ -538,6 +678,8 @@ def _write_about_page(docs_dir: Path, base_url: str, site_title: str) -> None:
 <p>Educational only — not medical advice.</p>
 </div>
 </footer>
+<button type='button' class='back-to-top' aria-label='Back to top'>↑</button>
+<script>{_back_to_top_js()}</script>
 </body>
 </html>"""
     (docs_dir / "about.html").write_text(html, encoding="utf-8")
@@ -579,9 +721,12 @@ def _write_tag_pages(docs_dir: Path, base_url: str, site_title: str, posts: list
 </head>
 <body>
 <main class='container'>
+<section class='hero tag-hero'>
 <p><a href='../index.html'>← Back to home</a></p>
 <h1>{escape(tag.title())} hub</h1>
 <p>{escape(_tag_intro(tag))}</p>
+<p class='trust-line'>Your topic hub for practical steps and latest posts.</p>
+</section>
 <h2>Start here in {escape(tag)}</h2>
 <div class='post-grid'>{start_cards}</div>
 <h2>Latest in {escape(tag)}</h2>
@@ -589,6 +734,8 @@ def _write_tag_pages(docs_dir: Path, base_url: str, site_title: str, posts: list
 <h2>Explore other topics</h2>
 <div class='tag-row'>{tag_pills}</div>
 </main>
+<button type='button' class='back-to-top' aria-label='Back to top'>↑</button>
+<script>{_back_to_top_js()}</script>
 </body>
 </html>"""
         (tag_dir / file_name).write_text(page, encoding="utf-8")
@@ -654,14 +801,14 @@ def _slugify(value: str) -> str:
 
 def _base_css() -> str:
     return (
-        "body{margin:0;background:#070b12;color:#e6edf6;"
+        "body{margin:0;background:radial-gradient(circle at top,#111a2b 0,#070b12 45%,#05080f 100%);color:#eaf1fb;"
         "font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;"
-        "line-height:1.7;}"
-        ".container{max-width:1080px;margin:0 auto;padding:18px 14px 60px;}"
+        "line-height:1.75;}"
+        ".container{max-width:1100px;margin:0 auto;padding:22px 16px 68px;}"
         ".site-header{position:sticky;top:0;z-index:20;background:rgba(7,11,18,.92);backdrop-filter:blur(8px);border-bottom:1px solid #1b2533;}"
         ".header-inner{padding-top:10px;padding-bottom:10px;display:flex;justify-content:space-between;gap:18px;align-items:center;}"
         ".site-title{font-size:18px;font-weight:700;color:#f8fbff;}"
-        ".site-subtitle{margin:2px 0 0;color:#9fb0c3;font-size:13px;line-height:1.4;}"
+        ".site-subtitle{margin:2px 0 0;color:#a9bad0;font-size:13px;line-height:1.45;}"
         ".site-nav{display:flex;flex-wrap:wrap;gap:14px;font-size:14px;}"
         ".site-nav a{color:#b8d8ff;font-weight:600;}"
         ".site-nav a.active{color:#f4f8ff;}"
@@ -683,7 +830,7 @@ def _base_css() -> str:
         ".section-title{margin:18px 0 12px;}"
         ".post-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;}"
         ".post-card{background:#0b1320;border:1px solid #223247;border-radius:14px;padding:12px;box-shadow:0 10px 24px rgba(0,0,0,.22);transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease;}"
-        ".post-card:hover{transform:translateY(-2px);border-color:#355176;box-shadow:0 14px 28px rgba(0,0,0,.28);}"
+        ".post-card:hover{transform:translateY(-3px);border-color:#4a78a8;box-shadow:0 18px 32px rgba(0,0,0,.34);}"
         ".card-link{display:block;color:inherit;}"
         ".card-link:hover{text-decoration:none;}"
         ".card-media{display:block;border-radius:12px;overflow:hidden;border:1px solid #1f2a3a;height:170px;background:#0f1a2a;margin-bottom:10px;}"
@@ -696,9 +843,9 @@ def _base_css() -> str:
         ".card-tag-link{font-size:13px;color:#9ad8ff;}"
         ".post-card:focus-within{outline:2px solid #7dd3fc;outline-offset:2px;}"
         "h1{font-size:clamp(26px,4.2vw,40px);line-height:1.15;margin:10px 0 12px;letter-spacing:-0.02em;}"
-        "h2{margin-top:26px;font-size:22px;line-height:1.25;}"
-        "h3{margin-top:18px;font-size:18px;}"
-        "p,li{font-size:17px;}"
+        "h2{margin-top:30px;font-size:24px;line-height:1.24;letter-spacing:-.01em;}"
+        "h3{margin-top:20px;font-size:20px;}"
+        "p,li{font-size:18px;}"
         "img{max-width:100%;height:auto;border-radius:14px;display:block;margin:14px 0;border:1px solid #1f2a3a;}"
         "a{color:#7dd3fc;text-decoration:none;}a:hover{text-decoration:underline;}"
         ".meta{color:#9fb0c3;font-size:14px;margin:8px 0 14px;}"
@@ -716,5 +863,5 @@ def _base_css() -> str:
         ".footer-links{display:flex;flex-wrap:wrap;gap:12px;font-size:14px;}"
         "ul,ol{padding-left:22px;}"
         "small{color:#9fb0c3;}"
-        "@media (max-width:760px){.site-header{position:static;}.header-inner{display:block;}.site-nav{margin-top:8px;gap:10px;}.site-subtitle{font-size:12px;}.container{padding-top:14px;}}"
+        ".recipe-toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0 14px;}"        ".recipe-glance{background:#0f1a2a;border:1px solid #2a3d53;border-radius:14px;padding:10px 14px;margin:12px 0 18px;}"        ".recipe-glance h2{font-size:18px;margin:0 0 8px;}"        ".recipe-glance ul{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;list-style:none;padding:0;margin:0;}"        ".recipe-glance li{background:#0b1320;border:1px solid #1d2d44;border-radius:10px;padding:8px 10px;display:flex;flex-direction:column;gap:2px;font-size:14px;}"        ".recipe-glance li span{color:#9fb0c3;font-size:12px;text-transform:uppercase;letter-spacing:.06em;}"        "h3#ingredients + ul li{list-style:none;position:relative;padding-left:28px;margin:8px 0;}"        "h3#ingredients + ul li::before{content:'☐';position:absolute;left:0;top:0;color:#9ad8ff;}"        "h3#instructions + ol li{margin:10px 0;padding-left:2px;}"        ".micro-link{margin-top:12px;font-size:14px;}"        ".topic-row-actions{display:flex;justify-content:flex-end;margin:-4px 0 10px;}"        ".back-to-top{position:fixed;right:16px;bottom:18px;width:42px;height:42px;border-radius:999px;border:1px solid #3b5472;background:#0f1a2a;color:#dbeafe;font-size:18px;display:none;cursor:pointer;box-shadow:0 10px 24px rgba(0,0,0,.3);}"        ".back-to-top.visible{display:block;}"        "@media (max-width:760px){.site-header{position:static;}.header-inner{display:block;}.site-nav{margin-top:8px;gap:10px;}.site-subtitle{font-size:12px;}.container{padding-top:14px;}}"
     )
