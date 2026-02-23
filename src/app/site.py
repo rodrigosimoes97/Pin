@@ -24,9 +24,9 @@ def publish_post(
 
     tag = post.get("tag", "health")
     related = _pick_related(posts, tag, post.get("slug", ""))
+    next_post = _pick_next_post(posts, tag, post.get("slug", ""))
     article_html, toc_items = _inject_h2_ids_and_collect_toc(post["html"])
     article_html = _inject_internal_links(article_html, related, tag)
-    article_html = _append_related_posts_cards(article_html, related)
 
     page_html = _render_post_html(
         base_url=base_url,
@@ -36,6 +36,8 @@ def publish_post(
         article_html=article_html,
         toc_items=toc_items,
         run_date=run_date,
+        related=related,
+        next_post=next_post,
     )
     (docs_dir / f"{post['slug']}.html").write_text(page_html, encoding="utf-8")
 
@@ -117,21 +119,19 @@ def _pick_related(posts: list[dict[str, str]], tag: str, current_slug: str) -> l
     return (same_tag + fallback)[:3]
 
 
+def _pick_next_post(posts: list[dict[str, str]], tag: str, current_slug: str) -> dict[str, str] | None:
+    same_tag = [post for post in posts if post.get("slug") != current_slug and post.get("tag") == tag]
+    if same_tag:
+        return same_tag[0]
+    fallback = [post for post in posts if post.get("slug") != current_slug]
+    return fallback[0] if fallback else None
+
+
 def _append_related_posts_cards(html: str, related: list[dict[str, str]]) -> str:
     if not related:
         return html
-    cards = []
-    for item in related:
-        image_html = ""
-        if item.get("hero"):
-            image_html = f"<img src='{escape(item['hero'])}' alt='{escape(item['title'])}' loading='lazy'>"
-        cards.append(
-            "<article class='related-card'>"
-            f"{image_html}<h3><a href='{escape(item['url'])}'>{escape(item['title'])}</a></h3>"
-            f"<p><a class='tag-pill' href='tag/{escape(item.get('tag', 'health'))}.html'>{escape(item.get('tag', 'health'))}</a></p>"
-            "</article>"
-        )
-    return f"{html}\n<section class='related'><h2>Related posts</h2><div class='related-grid'>{''.join(cards)}</div></section>"
+    cards = "".join(_render_post_card(item, Path("."), "") for item in related)
+    return f"{html}\n<section class='related'><h2>Related posts</h2><div class='post-grid'>{cards}</div></section>"
 
 
 def _build_quick_answer(article_html: str) -> str:
@@ -172,6 +172,8 @@ def _render_post_html(
     article_html: str,
     toc_items: list[tuple[str, str]],
     run_date: date,
+    related: list[dict[str, str]],
+    next_post: dict[str, str] | None,
 ) -> str:
     public_base = _effective_base_url(base_url)
     canonical = f"{public_base}/{post['slug']}.html"
@@ -188,6 +190,8 @@ def _render_post_html(
         toc_block = f"<nav class='toc'><h2>Table of contents</h2><ol>{toc_links}</ol></nav>"
 
     quick_answer = _build_quick_answer(article_html)
+    reading_time = _reading_time_minutes_from_html(article_html)
+    key_takeaways = _build_key_takeaways(article_html, quick_answer)
 
     article_schema = {
         "@context": "https://schema.org",
@@ -228,6 +232,21 @@ def _render_post_html(
     }
 
     faq_jsonld = f"<script type='application/ld+json'>{json.dumps(faq_schema)}</script>" if faq_items else ""
+    next_block = ""
+    if next_post:
+        next_block = (
+            "<section class='next-article'>"
+            "<h2>Next article</h2>"
+            f"<a class='next-link' href='{escape(next_post['url'])}'>{escape(next_post['title'])} →</a>"
+            "</section>"
+        )
+
+    related_block = ""
+    if related:
+        related_cards = "".join(_render_post_card(item, Path("."), "") for item in related)
+        related_block = f"<section class='related'><h2>Related posts</h2><div class='post-grid'>{related_cards}</div></section>"
+
+    takeaway_items = "".join(f"<li>{escape(item)}</li>" for item in key_takeaways)
 
     return f"""<!doctype html>
 <html lang='en'>
@@ -257,14 +276,21 @@ def _render_post_html(
 <main class='container'>
 <header class='header'><a href='index.html'>{escape(site_title)}</a></header>
 <article>
-<nav class='top-nav'><a href='/Pin/'>Home</a><span>·</span><a href='/Pin/tag/{escape(tag)}.html'>{escape(tag)}</a></nav>
+<nav class='top-nav'><a href='index.html'>Home</a><span>·</span><a href='tag/{escape(tag)}.html'>{escape(tag)} hub</a></nav>
 <h1>{escape(post['title'])}</h1>
 <div class='quick-answer'><strong>Quick answer:</strong> {escape(quick_answer)}</div>
-<p class='meta'>{run_date.isoformat()} · <a class='tag-pill' href='tag/{escape(tag)}.html'>{escape(tag)}</a></p>
+<div class='takeaways'><h2>Key takeaways</h2><ul>{takeaway_items}</ul></div>
+<p class='meta'>{run_date.isoformat()} · {reading_time} min read · <a class='tag-pill' href='tag/{escape(tag)}.html'>{escape(tag)}</a></p>
 <img src='{escape(hero_path_rel)}' alt='{escape(post['alt_text'])}' fetchpriority='high' loading='eager'>
 {toc_block}
 {article_html}
+{next_block}
+{related_block}
 </article>
+<footer class='site-footer'>
+<div class='footer-links'><a href='index.html'>Home</a><a href='tag/{escape(tag)}.html'>Tags</a><a href='about.html'>About</a><a href='sitemap.xml'>Sitemap</a><a href='#top'>Back to top</a></div>
+<p>Educational only — not medical advice.</p>
+</footer>
 </main>
 </body>
 </html>"""
@@ -279,8 +305,12 @@ def _write_index(docs_dir: Path, base_url: str, site_title: str, posts: list[dic
     public_base = _effective_base_url(base_url)
     top_tags = [tag for tag, _ in Counter((p.get("tag") or "health") for p in posts).most_common(10)]
     chips = "".join(f"<a class='tag-pill' href='tag/{escape(tag)}.html'>{escape(tag)}</a>" for tag in top_tags)
+    filter_chips = "".join(
+        f"<button type='button' class='filter-chip' data-filter-tag='{escape(tag)}'>{escape(tag)}</button>" for tag in top_tags
+    )
     latest_url = escape(posts[0]["url"]) if posts else "#posts"
-    cards = "".join(_render_index_card(post, docs_dir) for post in posts[:50])
+    latest_cards = "".join(_render_post_card(post, docs_dir, "") for post in posts[:12])
+    start_here_cards = "".join(_render_post_card(post, docs_dir, "") for post in _start_here_posts(posts, 6))
     html = f"""<!doctype html>
 <html lang='en'>
 <head>
@@ -296,7 +326,7 @@ def _write_index(docs_dir: Path, base_url: str, site_title: str, posts: list[dic
 <header class='site-header'>
 <div class='container header-inner'>
 <div>
-<a class='site-title' href='/Pin/'>{escape(site_title)}</a>
+<a class='site-title' href='index.html'>{escape(site_title)}</a>
 <p class='site-subtitle'>US-focused health tips, habits, and recipes</p>
 </div>
 <nav class='site-nav'>
@@ -308,14 +338,29 @@ def _write_index(docs_dir: Path, base_url: str, site_title: str, posts: list[dic
 </header>
 <main class='container'>
 <section class='hero'>
-<h1>{escape(site_title)}</h1>
+<h1>{escape(site_title)}: practical habits that help you feel better, daily</h1>
 <p class='hero-intro'>Evidence-informed, practical health guides for US readers on sleep, longevity, gut health, stress, and simple recipes.</p>
-<a class='btn-primary' href='{latest_url}'>Read the latest</a>
+<p class='trust-line'>Updated regularly • Evidence-informed • Educational only</p>
+<div class='hero-actions'>
+<a class='btn-primary' href='#start-here'>Start here</a>
+<a class='btn-secondary' href='{latest_url}'>Read the latest</a>
+</div>
+</section>
+
+<section id='start-here'>
+<h2 class='section-title'>Start here</h2>
+<div class='post-grid'>{start_here_cards}</div>
+</section>
+
+<section id='search'>
+<h2 class='section-title'>Find what you need</h2>
+<input id='search-input' class='search-input' type='search' placeholder='Search by title, excerpt, or topic'>
+<div class='tag-row'><button type='button' class='filter-chip active' data-filter-tag='all'>All</button>{filter_chips}</div>
 </section>
 
 <section id='posts'>
 <h2 class='section-title'>Latest posts</h2>
-<div class='post-grid'>{cards}</div>
+<div class='post-grid' id='post-grid'>{latest_cards}</div>
 </section>
 
 <section id='tags'>
@@ -323,29 +368,65 @@ def _write_index(docs_dir: Path, base_url: str, site_title: str, posts: list[dic
 <div class='tag-row'>{chips}</div>
 </section>
 </main>
+<footer class='site-footer'>
+<div class='container'>
+<div class='footer-links'><a href='index.html'>Home</a><a href='about.html'>About</a><a href='sitemap.xml'>Sitemap</a><a href='#top'>Top</a></div>
+<p>Educational only — not medical advice.</p>
+<p>© {date.today().year} {escape(site_title)}</p>
+</div>
+</footer>
+<script>
+(() => {{
+  const input = document.getElementById('search-input');
+  const cards = Array.from(document.querySelectorAll('#post-grid .post-card'));
+  const chips = Array.from(document.querySelectorAll('.filter-chip'));
+  let selectedTag = 'all';
+  const apply = () => {{
+    const q = (input?.value || '').toLowerCase().trim();
+    cards.forEach((card) => {{
+      const text = [card.dataset.title, card.dataset.excerpt, card.dataset.tag].join(' ').toLowerCase();
+      const tagOk = selectedTag === 'all' || (card.dataset.tag || '') === selectedTag;
+      const queryOk = !q || text.includes(q);
+      card.style.display = (tagOk && queryOk) ? '' : 'none';
+    }});
+  }};
+  input?.addEventListener('input', apply);
+  chips.forEach((chip) => chip.addEventListener('click', () => {{
+    selectedTag = chip.dataset.filterTag || 'all';
+    chips.forEach((c) => c.classList.toggle('active', c === chip));
+    apply();
+  }}));
+}})();
+</script>
 </body>
 </html>"""
     (docs_dir / "index.html").write_text(html, encoding="utf-8")
 
 
-def _render_index_card(post: dict[str, str], docs_dir: Path) -> str:
+def _render_post_card(post: dict[str, str], docs_dir: Path, link_prefix: str) -> str:
     hero = (post.get("hero") or "").strip()
     title = escape(post["title"])
     tag = escape(post.get("tag", "health"))
     excerpt = escape(_post_excerpt(post, docs_dir))
+    reading = _reading_time_minutes_for_post(post, docs_dir)
+    link = f"{link_prefix}{escape(post['url'])}"
+    tag_link = f"{link_prefix}tag/{tag}.html"
     media = (
         f"<img src='{escape(hero)}' alt='{title}' loading='lazy'>"
         if hero
-        else "<div class='placeholder' aria-hidden='true'></div>"
+        else "<div class='placeholder' aria-hidden='true'>✦</div>"
     )
     return (
-        "<article class='post-card'>"
-        f"<a class='card-media' href='{escape(post['url'])}'>{media}</a>"
-        f"<h3><a href='{escape(post['url'])}'>{title}</a></h3>"
+        f"<article class='post-card' data-title='{title}' data-excerpt='{excerpt}' data-tag='{tag}'>"
+        f"<a class='card-link' href='{link}'>"
+        f"<span class='card-media'>{media}</span>"
+        f"<h3>{title}</h3>"
         f"<p class='meta'>{escape(post['date'])} · "
-        f"<a class='tag-pill' href='tag/{tag}.html'>{tag}</a></p>"
+        f"{reading} min read · <span class='tag-pill'>{tag}</span></p>"
         f"<p class='excerpt'>{excerpt}</p>"
-        f"<a class='read-more' href='{escape(post['url'])}'>Read more →</a>"
+        "<span class='read-more'>Read more →</span>"
+        "</a>"
+        f"<p><a class='card-tag-link' href='{tag_link}'>Explore {tag}</a></p>"
         "</article>"
     )
 
@@ -365,6 +446,59 @@ def _post_excerpt(post: dict[str, str], docs_dir: Path) -> str:
     return "Practical, easy-to-read tips to support your daily health habits."
 
 
+def _reading_time_minutes_from_html(html: str) -> int:
+    text = re.sub(r"<[^>]+>", " ", html)
+    words = len(re.findall(r"\b\w+\b", text))
+    return max(1, round(words / 200))
+
+
+def _reading_time_minutes_for_post(post: dict[str, str], docs_dir: Path) -> int:
+    html_value = (post.get("html") or "").strip()
+    if html_value:
+        return _reading_time_minutes_from_html(html_value)
+    target = docs_dir / post.get("url", "")
+    if target.exists():
+        return _reading_time_minutes_from_html(target.read_text(encoding="utf-8"))
+    return 1
+
+
+def _start_here_posts(posts: list[dict[str, str]], limit: int) -> list[dict[str, str]]:
+    per_tag: dict[str, dict[str, str]] = {}
+    for post in posts:
+        tag = post.get("tag", "health")
+        if tag not in per_tag:
+            per_tag[tag] = post
+    return list(per_tag.values())[:limit]
+
+
+def _build_key_takeaways(article_html: str, quick_answer: str) -> list[str]:
+    bullets: list[str] = []
+    if quick_answer:
+        sentences = [p.strip() for p in re.split(r"(?<=[.!?])\s+", quick_answer) if p.strip()]
+        bullets.extend(sentences[:2])
+    heading_hits = re.findall(r"<h2[^>]*>(.*?)</h2>", article_html, flags=re.IGNORECASE | re.DOTALL)
+    for heading in heading_hits:
+        clean = re.sub(r"<[^>]+>", "", heading).strip()
+        if clean and clean.lower() != "faq":
+            bullets.append(f"Focus on: {clean}.")
+        if len(bullets) >= 3:
+            break
+    if len(bullets) < 3:
+        first_para = re.search(r"<p[^>]*>(.*?)</p>", article_html, flags=re.IGNORECASE | re.DOTALL)
+        if first_para:
+            clean_para = re.sub(r"<[^>]+>", "", first_para.group(1)).strip()
+            if clean_para:
+                bullets.append(clean_para[:160].rstrip(" .,;:") + ".")
+    defaults = [
+        "Use simple, consistent actions you can repeat this week.",
+        "Prioritize evidence-informed habits over one-off hacks.",
+        "Track what feels sustainable and adjust gradually.",
+    ]
+    while len(bullets) < 3:
+        bullets.append(defaults[len(bullets)])
+    return bullets[:3]
+
+
 def _write_about_page(docs_dir: Path, base_url: str, site_title: str) -> None:
     public_base = _effective_base_url(base_url)
     html = f"""<!doctype html>
@@ -379,15 +513,31 @@ def _write_about_page(docs_dir: Path, base_url: str, site_title: str) -> None:
 <style>{_base_css()}</style>
 </head>
 <body>
+<header class='site-header'>
+<div class='container header-inner'>
+<div>
+<a class='site-title' href='index.html'>{escape(site_title)}</a>
+<p class='site-subtitle'>US-focused health tips, habits, and recipes</p>
+</div>
+<nav class='site-nav'>
+<a href='index.html'>Home</a>
+<a class='active' href='about.html'>About</a>
+</nav>
+</div>
+</header>
 <main class='container'>
-<header class='header'><a href='index.html'>{escape(site_title)}</a></header>
 <h1>About</h1>
 <p>This site publishes practical, US-focused health content designed to be clear, useful, and easy to apply in daily life.</p>
 <h2>Editorial note</h2>
 <p>Content is for informational purposes only and is not medical advice, diagnosis, or treatment. Always consult a qualified healthcare professional for personal medical guidance.</p>
-<h2>Contact</h2>
-<p>Questions or suggestions are welcome. A contact channel may be added in a future update.</p>
+<p><a href='sitemap.xml'>View sitemap.xml</a></p>
 </main>
+<footer class='site-footer'>
+<div class='container'>
+<div class='footer-links'><a href='index.html'>Home</a><a href='about.html'>About</a><a href='sitemap.xml'>Sitemap</a></div>
+<p>Educational only — not medical advice.</p>
+</div>
+</footer>
 </body>
 </html>"""
     (docs_dir / "about.html").write_text(html, encoding="utf-8")
@@ -406,18 +556,15 @@ def _write_tag_pages(docs_dir: Path, base_url: str, site_title: str, posts: list
         file_name = f"{tag}.html"
         urls.append(f"tag/{file_name}")
         unique_posts = group[:]
-        latest = unique_posts[:8]
-        popular = unique_posts[:8]
-        start_here = unique_posts[:8]
-
-        def list_html(entries: list[dict[str, str]]) -> str:
-            return "".join(
-                f"<li><a href='../{escape(item['url'])}'>{escape(item['title'])}</a> <small>{escape(item['date'])}</small></li>"
-                for item in entries
-            )
-
-        links_count = len({p["url"] for p in unique_posts[:8]})
-        note = "" if links_count >= 8 else "<p>More posts will appear here as new content is published.</p>"
+        start_here = unique_posts[:4]
+        latest = unique_posts[4:]
+        tag_pills = "".join(
+            f"<a class='tag-pill' href='{escape(other)}.html'>{escape(other)}</a>"
+            for other in grouped.keys()
+            if other != tag
+        )
+        start_cards = "".join(_render_post_card(item, docs_dir, "../") for item in start_here)
+        latest_cards = "".join(_render_post_card(item, docs_dir, "../") for item in latest)
 
         page = f"""<!doctype html>
 <html lang='en'>
@@ -432,16 +579,15 @@ def _write_tag_pages(docs_dir: Path, base_url: str, site_title: str, posts: list
 </head>
 <body>
 <main class='container'>
-<p><a href='../index.html'>Back to home</a></p>
-<h1>{escape(tag)} hub</h1>
+<p><a href='../index.html'>← Back to home</a></p>
+<h1>{escape(tag.title())} hub</h1>
 <p>{escape(_tag_intro(tag))}</p>
-<h2>Latest</h2>
-<ul>{list_html(latest)}</ul>
-<h2>Popular</h2>
-<ul>{list_html(popular)}</ul>
-<h2>Start here</h2>
-<ul>{list_html(start_here)}</ul>
-{note}
+<h2>Start here in {escape(tag)}</h2>
+<div class='post-grid'>{start_cards}</div>
+<h2>Latest in {escape(tag)}</h2>
+<div class='post-grid'>{latest_cards}</div>
+<h2>Explore other topics</h2>
+<div class='tag-row'>{tag_pills}</div>
 </main>
 </body>
 </html>"""
@@ -526,19 +672,29 @@ def _base_css() -> str:
         ".top-nav span{opacity:.7;}"
         ".hero{padding:20px 0 10px;}"
         ".hero-intro{max-width:740px;color:#c3cfde;margin-top:0;}"
+        ".trust-line{color:#9fb0c3;font-size:14px;margin:8px 0 0;}"
+        ".hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;}"
         ".btn-primary{display:inline-block;margin-top:8px;background:#1d4ed8;border:1px solid #3765e6;color:#f8fbff;padding:9px 14px;border-radius:10px;font-weight:600;transition:transform .16s ease,background .16s ease;}"
         ".btn-primary:hover{text-decoration:none;background:#2a5ce8;transform:translateY(-1px);}"
+        ".btn-secondary{display:inline-block;margin-top:8px;background:#101a29;border:1px solid #355176;color:#dce9f9;padding:9px 14px;border-radius:10px;font-weight:600;}"
+        ".search-input{width:min(560px,100%);padding:10px 12px;border-radius:10px;background:#0c1624;border:1px solid #2a3d53;color:#e6edf6;}"
+        ".filter-chip{background:#101a29;border:1px solid #355176;color:#cfe3fb;padding:6px 10px;border-radius:999px;cursor:pointer;}"
+        ".filter-chip.active{background:#1d4ed8;border-color:#4a78ff;}"
         ".section-title{margin:18px 0 12px;}"
         ".post-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;}"
         ".post-card{background:#0b1320;border:1px solid #223247;border-radius:14px;padding:12px;box-shadow:0 10px 24px rgba(0,0,0,.22);transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease;}"
         ".post-card:hover{transform:translateY(-2px);border-color:#355176;box-shadow:0 14px 28px rgba(0,0,0,.28);}"
-        ".card-media{display:block;border-radius:12px;overflow:hidden;border:1px solid #1f2a3a;aspect-ratio:16/10;background:#0f1a2a;margin-bottom:10px;}"
+        ".card-link{display:block;color:inherit;}"
+        ".card-link:hover{text-decoration:none;}"
+        ".card-media{display:block;border-radius:12px;overflow:hidden;border:1px solid #1f2a3a;height:170px;background:#0f1a2a;margin-bottom:10px;}"
         ".card-media img{width:100%;height:100%;object-fit:cover;margin:0;border:none;border-radius:0;}"
-        ".card-media .placeholder{width:100%;height:100%;background:linear-gradient(135deg,#0e1b2f,#17263d);}"
+        ".card-media .placeholder{width:100%;height:100%;background:linear-gradient(135deg,#0e1b2f,#17263d);display:grid;place-items:center;font-size:24px;color:#9bc8f7;}"
         ".post-card h3{margin:6px 0 6px;font-size:19px;line-height:1.35;}"
         ".post-card .meta{margin:0 0 8px;}"
         ".excerpt{margin:0 0 8px;color:#c5d2e3;font-size:15px;line-height:1.55;}"
         ".read-more{font-size:14px;font-weight:600;color:#9ad8ff;}"
+        ".card-tag-link{font-size:13px;color:#9ad8ff;}"
+        ".post-card:focus-within{outline:2px solid #7dd3fc;outline-offset:2px;}"
         "h1{font-size:clamp(26px,4.2vw,40px);line-height:1.15;margin:10px 0 12px;letter-spacing:-0.02em;}"
         "h2{margin-top:26px;font-size:22px;line-height:1.25;}"
         "h3{margin-top:18px;font-size:18px;}"
@@ -547,15 +703,17 @@ def _base_css() -> str:
         "a{color:#7dd3fc;text-decoration:none;}a:hover{text-decoration:underline;}"
         ".meta{color:#9fb0c3;font-size:14px;margin:8px 0 14px;}"
         ".quick-answer{background:#0c1624;border:1px solid #223247;border-radius:12px;padding:10px 12px;}"
+        ".takeaways{background:#101a29;border:1px solid #2a3d53;border-radius:12px;padding:10px 14px;margin:12px 0;}"
+        ".takeaways h2{font-size:18px;margin:2px 0 8px;}"
         ".tag-row{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 18px;}"
         ".tag-pill{display:inline-block;background:rgba(125,211,252,.16);"
         "border:1px solid rgba(125,211,252,.32);color:#e8eef5;border-radius:999px;"
         "padding:3px 10px;font-size:12px;}"
-        ".toc,.related{background:#101a29;border:1px solid #26374b;border-radius:14px;"
+        ".toc,.related,.next-article{background:#101a29;border:1px solid #26374b;border-radius:14px;"
         "padding:12px 14px;margin:16px 0;}"
-        ".related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;}"
-        ".related-card{background:#0a1320;border:1px solid #1f3148;border-radius:12px;padding:10px;}"
-        ".related-card h3{margin:8px 0;}"
+        ".next-link{font-size:18px;font-weight:700;}"
+        ".site-footer{border-top:1px solid #223247;background:#08101a;padding:18px 0;margin-top:30px;}"
+        ".footer-links{display:flex;flex-wrap:wrap;gap:12px;font-size:14px;}"
         "ul,ol{padding-left:22px;}"
         "small{color:#9fb0c3;}"
         "@media (max-width:760px){.site-header{position:static;}.header-inner{display:block;}.site-nav{margin-top:8px;gap:10px;}.site-subtitle{font-size:12px;}.container{padding-top:14px;}}"
