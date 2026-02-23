@@ -24,6 +24,15 @@ def validate_links(docs_dir: Path) -> list[str]:
             if not href.endswith(".html"):
                 continue
 
+            # Normalize GitHub Pages base path
+            if href.startswith("/Pin/"):
+                href = href[len("/Pin/"):]  # "/Pin/tag/x.html" -> "tag/x.html"
+
+            if href.startswith('/'):
+                target = (docs_root / href.lstrip('/')).resolve()
+            else:
+                target = (html_file.parent / href).resolve()
+
             if href.startswith('/'):
                 target = (docs_root / href.lstrip('/')).resolve()
             else:
