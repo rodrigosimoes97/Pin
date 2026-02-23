@@ -774,7 +774,8 @@ def _write_tag_pages(docs_dir: Path, base_url: str, site_title: str, posts: list
 
 def _write_sitemap(docs_dir: Path, base_url: str, posts: list[dict[str, str]], tag_pages: list[str]) -> None:
     public_base = _effective_base_url(base_url)
-    default_lastmod = date.today().isoformat()
+    known_dates = [str(post.get("date", "")).strip() for post in posts[:200] if re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(post.get("date", "")).strip())]
+    default_lastmod = max(known_dates, default=date.today().isoformat())
     post_lastmods = {
         post.get("url", ""): _iso_date_or_fallback(post.get("date"), default_lastmod)
         for post in posts[:200]

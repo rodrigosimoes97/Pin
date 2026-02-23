@@ -33,8 +33,12 @@ Allowed tag values (lowercase, hyphenated):
 {allowed_tags}
 Rules:
 - informational-first; practical tips readers can apply today.
-- natural, human tone; avoid medical promises and hype.
-- structure: intro, H2/H3 sections, practical steps, FAQ, closing encouragement.
+- natural, human tone; clear US English; avoid medical promises and hype.
+- prioritize practical advice over theory; avoid generic filler phrases.
+- include at least one concrete real-life example.
+- include one short actionable checklist.
+- include one "common mistakes" section when relevant.
+- structure: strong hook in introduction, scannable H2/H3 sections, short paragraphs, practical takeaways, FAQ, closing encouragement.
 - include exactly 5 internal link placeholders in body: href="#recent-1", href="#recent-2", href="#recent-3", href="#recent-4", href="#recent-5".
 - include sentence: Educational only — not medical advice.
 - if mode=offer include soft recommendation and exact sentence:
@@ -56,8 +60,8 @@ Rules:
 - Recipe safety rules when tag=recipes:
   - Use realistic US kitchen ingredient units (cups, tbsp, oz) and practical preparation steps.
   - Keep ingredients realistic, avoid risky techniques, and avoid medical promises.
-  - html must include: <h2 id="recipe">Recipe</h2>, <h3 id="ingredients">Ingredients</h3> with <ul>, and <h3 id="instructions">Instructions</h3> with <ol>.
-  - Optional html sections: <h3 id="tips">Tips</h3>, <h3 id="storage">Storage</h3>.
+  - html must include anchors and sections: <h2 id="recipe">Recipe</h2>, <h3 id="ingredients">Ingredients</h3> with <ul>, and <h3 id="instructions">Instructions</h3> with <ol>.
+  - Include a tips section and storage guidance in html (<h3 id="tips">Tips</h3>, <h3 id="storage">Storage</h3>) unless genuinely not applicable.
 - If tag is not recipes, omit recipe or set recipe to null.
 """
 
