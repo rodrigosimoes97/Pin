@@ -107,7 +107,7 @@ def _normalize_faq(raw: Any) -> list[dict[str, str]]:
         question = str(item.get("question", "")).strip()
         answer = str(item.get("answer", "")).strip()
         if question and answer:
-            items.append({"question": question, "answer": answer})
+            items.append({{"question": question, "answer": answer}})
     return items
 
 
