@@ -40,7 +40,7 @@ Rules:
 - if mode=offer include soft recommendation and exact sentence:
   Disclosure: This page may contain affiliate links.
 - if mode=info do not include affiliate links.
-- faq must be an array of objects using this shape: [{"question":"...","answer":"..."}]. Keep answers concise.
+- faq must be an array of objects using this shape: [{{"question":"...","answer":"..."}}]. Keep answers concise.
 """
 
 
@@ -107,7 +107,7 @@ def _normalize_faq(raw: Any) -> list[dict[str, str]]:
         question = str(item.get("question", "")).strip()
         answer = str(item.get("answer", "")).strip()
         if question and answer:
-            items.append({{"question": question, "answer": answer}})
+            items.append({"question": question, "answer": answer})
     return items
 
 
