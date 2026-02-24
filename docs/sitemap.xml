@@ -1,12 +1,20 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://rodrigosimoes97.github.io/Pin/</loc>
-    <lastmod>2026-02-23</lastmod>
+    <lastmod>2026-02-24</lastmod>
   </url>
   <url>
     <loc>https://rodrigosimoes97.github.io/Pin/about.html</loc>
-    <lastmod>2026-02-23</lastmod>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://rodrigosimoes97.github.io/Pin/can-fermented-foods-improve-digestion.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://rodrigosimoes97.github.io/Pin/wind-down-before-bed.html</loc>
+    <lastmod>2026-02-24</lastmod>
   </url>
   <url>
     <loc>https://rodrigosimoes97.github.io/Pin/calorie-counting-vs-awareness-weight-loss.html</loc>
@@ -38,7 +46,7 @@
   </url>
   <url>
     <loc>https://rodrigosimoes97.github.io/Pin/tag/gut.html</loc>
-    <lastmod>2026-02-20</lastmod>
+    <lastmod>2026-02-24</lastmod>
   </url>
   <url>
     <loc>https://rodrigosimoes97.github.io/Pin/tag/healthy-habits.html</loc>
@@ -58,6 +66,6 @@
   </url>
   <url>
     <loc>https://rodrigosimoes97.github.io/Pin/tag/sleep.html</loc>
-    <lastmod>2026-02-22</lastmod>
+    <lastmod>2026-02-24</lastmod>
   </url>
 </urlset>
