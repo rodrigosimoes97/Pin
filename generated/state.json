@@ -1,13 +1,20 @@
 {
-  "runs": 6,
-  "offer_runs": 2,
+  "runs": 10,
+  "offer_runs": 4,
   "recent_topics": [
     "gut-health",
     "sleep-improvement",
     "longevity-daily-routines",
     "healthy-habits",
     "mental-wellness-basics",
-    "weight-loss-lifestyle"
+    "weight-loss-lifestyle",
+    "sleep-improvement",
+    "gut-health",
+    "stress-reset",
+    "stress-reset",
+    "healthy-habits",
+    "longevity-daily-routines",
+    "healthy-recipes"
   ],
   "recent_slugs": [
     "fiber-vs-fermented-foods-gut-health",
@@ -15,7 +22,40 @@
     "longevity-daily-routine-evidence-aligned",
     "small-habits-improve-health",
     "what-is-emotional-resilience-and-how-to-build-it",
-    "calorie-counting-vs-awareness-weight-loss"
+    "calorie-counting-vs-awareness-weight-loss",
+    "wind-down-before-bed",
+    "can-fermented-foods-improve-digestion",
+    "daily-habits-lower-stress",
+    "daily-routines-stress-reduction",
+    "small-changes-big-health-wins",
+    "daily-habits-longevity",
+    "easy-recipes-busy-weeknights"
   ],
-  "last_run": "2026-02-23"
+  "last_run": "2026-02-24",
+  "recent_tags": [
+    "sleep",
+    "gut",
+    "mental-wellness",
+    "stress",
+    "healthy-habits",
+    "longevity",
+    "recipes"
+  ],
+  "tag_counts": {
+    "sleep": 1,
+    "gut": 1,
+    "mental-wellness": 1,
+    "stress": 1,
+    "healthy-habits": 1,
+    "longevity": 1,
+    "recipes": 1
+  },
+  "topic_rotation": {
+    "sleep": 1,
+    "gut": 1,
+    "stress": 2,
+    "healthy-habits": 1,
+    "longevity": 1,
+    "recipes": 1
+  }
 }

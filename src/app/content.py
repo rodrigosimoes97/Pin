@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import hashlib
+import re
 from typing import Any
 
 from .gemini_client import GeminiClient
@@ -108,8 +110,18 @@ def generate_article(
         if key not in payload or not isinstance(payload[key], str) or not payload[key].strip():
             raise ValueError(f"Missing or invalid article field: {key}")
 
-    payload["slug"] = _clean_slug(payload["slug"])
-    payload["tag"] = normalize_tag(str(payload.get("tag", ""))) or normalize_tag(topic.tag) or "health"
+    cleaned_slug = _clean_slug(payload["slug"])
+    final_tag = normalize_tag(str(payload.get("tag", ""))) or normalize_tag(topic.tag) or "health"
+    payload["slug"] = cleaned_slug
+    payload["tag"] = final_tag
+    payload["pin_title"] = _build_pin_title(payload["title"], cleaned_slug, payload.get("meta_description", ""), final_tag)
+    payload["pin_description"] = _build_pin_description(
+        payload["title"],
+        cleaned_slug,
+        final_tag,
+        payload.get("meta_description", ""),
+        payload.get("html", ""),
+    )
 
     if mode == "info":
         payload["html"] = payload["html"].replace("Disclosure: This page may contain affiliate links.", "")
@@ -139,6 +151,160 @@ def _clean_slug(raw: str) -> str:
     while "--" in cleaned:
         cleaned = cleaned.replace("--", "-")
     return cleaned.strip("-")[:80]
+
+
+def _normalize_whitespace(text: str) -> str:
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def _trim_at_word_boundary(text: str, max_chars: int) -> str:
+    normalized = _normalize_whitespace(text)
+    if len(normalized) <= max_chars:
+        return normalized
+    trimmed = normalized[: max_chars + 1].rsplit(" ", 1)[0]
+    return trimmed if trimmed else normalized[:max_chars].strip()
+
+
+def _stable_template_index(seed: str, size: int) -> int:
+    digest = hashlib.sha256(seed.encode("utf-8")).hexdigest()
+    hashed = int(digest[:8], 16)
+    spread = sum(ord(ch) for ch in seed)
+    return (hashed + spread) % size
+
+
+def _extract_first_sentence(html: str) -> str:
+    plain = re.sub(r"<[^>]+>", " ", html or "")
+    plain = _normalize_whitespace(plain)
+    if not plain:
+        return ""
+    first = re.split(r"(?<=[.!?])\s", plain, maxsplit=1)[0]
+    return _trim_at_word_boundary(first, 100)
+
+
+def _build_pin_title(title: str, slug: str, meta_description: str, tag: str) -> str:
+    normalized_title = _normalize_whitespace(title)
+    if 40 <= len(normalized_title) <= 70:
+        return normalized_title
+
+    keyword = _trim_at_word_boundary(normalized_title, 38)
+    benefit_hint = _trim_at_word_boundary(meta_description or f"easy {tag.replace('-', ' ')} plan", 32)
+    templates = [
+        "Feel Better Faster: {keyword}",
+        "A Simpler Way to {keyword}",
+        "Build a Better Week With {keyword}",
+        "What to Do This Week: {keyword}",
+        "Small Changes, Real Results: {keyword}",
+        "Your Practical Plan for {keyword}",
+    ]
+    idx = _stable_template_index(slug or normalized_title, len(templates))
+    candidate = templates[idx].format(keyword=keyword.lower())
+    if len(candidate) < 40:
+        candidate = _normalize_whitespace(f"{candidate}: {benefit_hint}")
+    return _trim_at_word_boundary(candidate, 70)
+
+
+import re
+
+_DUP_WORD_RE = re.compile(r"\b(\w+)(\s+\1\b)+", re.IGNORECASE)
+_LEADING_LABEL_RE = re.compile(r"^\s*(question|tip|guide)\s*:\s*", re.IGNORECASE)
+
+def _cleanup_pin_description(text: str, cta: str) -> str:
+    # Normalize whitespace first
+    text = _normalize_whitespace(text)
+
+    # Remove leading labels like "Question:"
+    text = _LEADING_LABEL_RE.sub("", text).strip()
+
+    # Remove "based on ..." artifacts (drop everything after "based on")
+    # This prevents broken endings like "Save this based on tired of takeout?."
+    lower = text.lower()
+    pos = lower.find(" based on ")
+    if pos != -1:
+        text = text[:pos].rstrip()
+        if not text.endswith((".", "?", "!")):
+            text += "."
+
+    # Fix duplicated consecutive words: "this this" -> "this"
+    while True:
+        new = _DUP_WORD_RE.sub(r"\1", text)
+        if new == text:
+            break
+        text = new
+
+    # Normalize weird punctuation
+    text = text.replace("?.", "?").replace(".?", "?")
+    text = re.sub(r"\.\.+", ".", text)   # ".." -> "."
+    text = re.sub(r"\?\?+", "?", text)   # "??" -> "?"
+    text = re.sub(r"!!+", "!", text)     # "!!" -> "!"
+
+    # Ensure exactly ONE CTA sentence at end
+    cta_clean = cta.strip().rstrip(".!?")
+    # Remove any existing CTA variants at end to avoid duplicates
+    for variant in ["Save this", "Try this today", "Read the full guide"]:
+        variant_clean = variant.strip().rstrip(".!?")
+        text = re.sub(rf"\s*{re.escape(variant_clean)}[.!?]\s*$", "", text, flags=re.IGNORECASE).rstrip()
+
+    if not text.endswith((".", "?", "!")):
+        text += "."
+    text = text.rstrip() + f" {cta_clean}."
+
+    return _normalize_whitespace(text)
+
+
+def _build_pin_description(title: str, slug: str, tag: str, meta_description: str, html: str) -> str:
+    del title
+    tag_phrase = tag.replace("-", " ")
+    base_topic = _trim_at_word_boundary(_normalize_whitespace(meta_description).lower(), 54)
+    if not base_topic:
+        base_topic = _trim_at_word_boundary(f"your {tag_phrase} routine", 54)
+
+    # Avoid collisions with templates that already contain "this ..."
+    # Use specificity items that won't create "this this ..."
+    specificity = ["today", "this week", "a 5-minute reset", "a 3-step routine", "your next meal", "tomorrow morning"]
+    ctas = ["Save this", "Try this today", "Read the full guide"]
+
+    seed = slug or meta_description or tag
+
+    templates = [
+        "Feeling overwhelmed lately? This {specific} plan helps you simplify {topic} with practical steps you can stick to.",
+        "Struggling to stay consistent with {tag}? Try this {specific} approach to make progress without changing everything at once.",
+        "Having trouble making {topic} work in real life? Use this {specific} framework to keep things simple and doable.",
+        # FIX: removed "this {specific} breakdown" to prevent "this this week"
+        "If you cannot seem to keep up with {tag}, this breakdown focuses on realistic actions for busy days {specific}.",
+        "When routines feel hard to maintain, {topic} usually needs a simpler plan. Start with this {specific} path and build momentum.",
+        "Looking for a practical reset? This {specific} strategy helps you improve {tag} habits with clear, manageable steps.",
+    ]
+
+    idx = _stable_template_index(seed, len(templates))
+    specific = specificity[_stable_template_index(f"{seed}-specific", len(specificity))]
+    cta = ctas[_stable_template_index(f"{seed}-cta", len(ctas))]
+
+    template_text = templates[idx].format(topic=base_topic, tag=tag_phrase, specific=specific, cta=cta)
+
+    # IMPORTANT: do NOT append "based on {detail}" — it creates broken, spammy text.
+    # (If you want detail, better incorporate it in future as a clean second sentence.)
+    description = _cleanup_pin_description(template_text, cta)
+
+    # Enforce length 140–260 after cleanup
+    description = _trim_at_word_boundary(description, 260)
+
+    if len(description) < 140:
+        extra = "Built for real schedules with one small step at a time."
+        # Insert extra sentence BEFORE CTA
+        cta_sentence = f" {cta.strip().rstrip('.!?')}."
+        if description.endswith(cta_sentence):
+            base = description[: -len(cta_sentence)].rstrip()
+            if not base.endswith((".", "?", "!")):
+                base += "."
+            description = _trim_at_word_boundary(f"{base} {extra} {cta.strip().rstrip('.!?')}.", 260)
+        else:
+            description = _trim_at_word_boundary(f"{description} {extra}", 260)
+
+        # re-clean to ensure exactly one CTA at end
+        description = _cleanup_pin_description(description, cta)
+        description = _trim_at_word_boundary(description, 260)
+
+    return description
 
 
 def _normalize_recipe(raw: Any, tag: str) -> dict[str, Any] | None:
