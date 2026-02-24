@@ -819,8 +819,8 @@ def _write_sitemap(docs_dir: Path, base_url: str, posts: list[dict[str, str]], t
         )
     xml = "\n".join(
         [
-            "<?xml version='1.0' encoding='UTF-8'?>",
-            "<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>",
+            "<?xml version="1.0" encoding="UTF-8"?>",
+            "<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">",
             *rows,
             "</urlset>",
         ]
