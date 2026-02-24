@@ -203,6 +203,54 @@ def _build_pin_title(title: str, slug: str, meta_description: str, tag: str) -> 
     return _trim_at_word_boundary(candidate, 70)
 
 
+import re
+
+_DUP_WORD_RE = re.compile(r"\b(\w+)(\s+\1\b)+", re.IGNORECASE)
+_LEADING_LABEL_RE = re.compile(r"^\s*(question|tip|guide)\s*:\s*", re.IGNORECASE)
+
+def _cleanup_pin_description(text: str, cta: str) -> str:
+    # Normalize whitespace first
+    text = _normalize_whitespace(text)
+
+    # Remove leading labels like "Question:"
+    text = _LEADING_LABEL_RE.sub("", text).strip()
+
+    # Remove "based on ..." artifacts (drop everything after "based on")
+    # This prevents broken endings like "Save this based on tired of takeout?."
+    lower = text.lower()
+    pos = lower.find(" based on ")
+    if pos != -1:
+        text = text[:pos].rstrip()
+        if not text.endswith((".", "?", "!")):
+            text += "."
+
+    # Fix duplicated consecutive words: "this this" -> "this"
+    while True:
+        new = _DUP_WORD_RE.sub(r"\1", text)
+        if new == text:
+            break
+        text = new
+
+    # Normalize weird punctuation
+    text = text.replace("?.", "?").replace(".?", "?")
+    text = re.sub(r"\.\.+", ".", text)   # ".." -> "."
+    text = re.sub(r"\?\?+", "?", text)   # "??" -> "?"
+    text = re.sub(r"!!+", "!", text)     # "!!" -> "!"
+
+    # Ensure exactly ONE CTA sentence at end
+    cta_clean = cta.strip().rstrip(".!?")
+    # Remove any existing CTA variants at end to avoid duplicates
+    for variant in ["Save this", "Try this today", "Read the full guide"]:
+        variant_clean = variant.strip().rstrip(".!?")
+        text = re.sub(rf"\s*{re.escape(variant_clean)}[.!?]\s*$", "", text, flags=re.IGNORECASE).rstrip()
+
+    if not text.endswith((".", "?", "!")):
+        text += "."
+    text = text.rstrip() + f" {cta_clean}."
+
+    return _normalize_whitespace(text)
+
+
 def _build_pin_description(title: str, slug: str, tag: str, meta_description: str, html: str) -> str:
     del title
     tag_phrase = tag.replace("-", " ")
@@ -210,35 +258,52 @@ def _build_pin_description(title: str, slug: str, tag: str, meta_description: st
     if not base_topic:
         base_topic = _trim_at_word_boundary(f"your {tag_phrase} routine", 54)
 
-    specificity = ["today", "this week", "5-minute reset", "3-step routine", "next meal", "tomorrow morning"]
+    # Avoid collisions with templates that already contain "this ..."
+    # Use specificity items that won't create "this this ..."
+    specificity = ["today", "this week", "a 5-minute reset", "a 3-step routine", "your next meal", "tomorrow morning"]
     ctas = ["Save this", "Try this today", "Read the full guide"]
-    detail_source = _extract_first_sentence(html) or _normalize_whitespace(meta_description)
-    detail = _trim_at_word_boundary(detail_source.lower(), 80)
+
     seed = slug or meta_description or tag
 
     templates = [
-        "Feeling overwhelmed lately? This {specific} plan helps you simplify {topic} with practical steps you can stick to. {cta}.",
-        "Struggling to stay consistent with {tag}? Try this {specific} approach to make progress without changing everything at once. {cta}.",
-        "Having trouble making {topic} work in real life? Use this {specific} framework to keep things simple and doable. {cta}.",
-        "If you cannot seem to keep up with {tag}, this {specific} breakdown focuses on realistic actions for busy days. {cta}.",
-        "When routines feel hard to maintain, {topic} usually needs a simpler plan. Start with this {specific} path and build momentum. {cta}.",
-        "Looking for a practical reset? This {specific} strategy helps you improve {tag} habits with clear, manageable steps. {cta}.",
+        "Feeling overwhelmed lately? This {specific} plan helps you simplify {topic} with practical steps you can stick to.",
+        "Struggling to stay consistent with {tag}? Try this {specific} approach to make progress without changing everything at once.",
+        "Having trouble making {topic} work in real life? Use this {specific} framework to keep things simple and doable.",
+        # FIX: removed "this {specific} breakdown" to prevent "this this week"
+        "If you cannot seem to keep up with {tag}, this breakdown focuses on realistic actions for busy days {specific}.",
+        "When routines feel hard to maintain, {topic} usually needs a simpler plan. Start with this {specific} path and build momentum.",
+        "Looking for a practical reset? This {specific} strategy helps you improve {tag} habits with clear, manageable steps.",
     ]
+
     idx = _stable_template_index(seed, len(templates))
     specific = specificity[_stable_template_index(f"{seed}-specific", len(specificity))]
     cta = ctas[_stable_template_index(f"{seed}-cta", len(ctas))]
-    template_text = templates[idx].format(topic=base_topic, tag=tag_phrase, specific=specific, cta=cta)
-    if detail and len(template_text) < 190:
-        template_text = f"{template_text[:-1]} based on {detail}."
 
-    description = _trim_at_word_boundary(_normalize_whitespace(template_text), 260)
+    template_text = templates[idx].format(topic=base_topic, tag=tag_phrase, specific=specific, cta=cta)
+
+    # IMPORTANT: do NOT append "based on {detail}" — it creates broken, spammy text.
+    # (If you want detail, better incorporate it in future as a clean second sentence.)
+    description = _cleanup_pin_description(template_text, cta)
+
+    # Enforce length 140–260 after cleanup
+    description = _trim_at_word_boundary(description, 260)
+
     if len(description) < 140:
-        extra = " built for real schedules and one manageable step at a time"
-        if description.endswith(f" {cta}."):
-            description = description[: -(len(cta) + 2)]
-            description = _trim_at_word_boundary(f"{description}{extra}. {cta}.", 260)
+        extra = "Built for real schedules with one small step at a time."
+        # Insert extra sentence BEFORE CTA
+        cta_sentence = f" {cta.strip().rstrip('.!?')}."
+        if description.endswith(cta_sentence):
+            base = description[: -len(cta_sentence)].rstrip()
+            if not base.endswith((".", "?", "!")):
+                base += "."
+            description = _trim_at_word_boundary(f"{base} {extra} {cta.strip().rstrip('.!?')}.", 260)
         else:
-            description = _trim_at_word_boundary(f"{description}{extra}.", 260)
+            description = _trim_at_word_boundary(f"{description} {extra}", 260)
+
+        # re-clean to ensure exactly one CTA at end
+        description = _cleanup_pin_description(description, cta)
+        description = _trim_at_word_boundary(description, 260)
+
     return description
 
 
