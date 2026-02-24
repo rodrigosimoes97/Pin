@@ -1,5 +1,23 @@
 [
   {
+    "slug": "easy-recipes-busy-weeknights",
+    "title": "Busy Weeknights? Easy Recipes for Fast Meals",
+    "description": "Discover quick and healthy recipes perfect for busy weeknights. Learn how to prepare delicious meals in under 30 minutes to save time and eat well.",
+    "date": "2026-02-24",
+    "url": "easy-recipes-busy-weeknights.html",
+    "hero": "assets/2026-02-24_easy-recipes-busy-weeknights.jpg",
+    "tag": "recipes"
+  },
+  {
+    "slug": "daily-habits-longevity",
+    "title": "What Daily Habits Boost Longevity?",
+    "description": "Discover evidence-aligned daily routines that can help you live a longer, healthier life. Learn practical tips for better sleep, stress management, and more.",
+    "date": "2026-02-24",
+    "url": "daily-habits-longevity.html",
+    "hero": "assets/2026-02-24_daily-habits-longevity.jpg",
+    "tag": "longevity"
+  },
+  {
     "slug": "small-changes-big-health-wins",
     "title": "Small Changes, Big Health Wins: Habits That Actually Stick",
     "description": "Discover simple, sustainable habit changes that boost your health and well-being. Learn practical tips for lasting results.",
