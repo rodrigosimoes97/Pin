@@ -1,5 +1,5 @@
 {
-  "runs": 7,
+  "runs": 8,
   "offer_runs": 3,
   "recent_topics": [
     "gut-health",
@@ -9,7 +9,9 @@
     "mental-wellness-basics",
     "weight-loss-lifestyle",
     "sleep-improvement",
-    "gut-health"
+    "gut-health",
+    "stress-reset",
+    "stress-reset"
   ],
   "recent_slugs": [
     "fiber-vs-fermented-foods-gut-health",
@@ -19,19 +21,26 @@
     "what-is-emotional-resilience-and-how-to-build-it",
     "calorie-counting-vs-awareness-weight-loss",
     "wind-down-before-bed",
-    "can-fermented-foods-improve-digestion"
+    "can-fermented-foods-improve-digestion",
+    "daily-habits-lower-stress",
+    "daily-routines-stress-reduction"
   ],
   "last_run": "2026-02-24",
   "recent_tags": [
     "sleep",
-    "gut"
+    "gut",
+    "mental-wellness",
+    "stress"
   ],
   "tag_counts": {
     "sleep": 1,
-    "gut": 1
+    "gut": 1,
+    "mental-wellness": 1,
+    "stress": 1
   },
   "topic_rotation": {
     "sleep": 1,
-    "gut": 1
+    "gut": 1,
+    "stress": 2
   }
 }

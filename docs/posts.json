@@ -1,5 +1,23 @@
 [
   {
+    "slug": "daily-routines-stress-reduction",
+    "title": "Can Daily Routines Really Lower Stress Levels?",
+    "description": "Discover how simple daily routines can significantly reduce your stress load and improve your overall well-being. Learn practical tips for a calmer life.",
+    "date": "2026-02-24",
+    "url": "daily-routines-stress-reduction.html",
+    "hero": "assets/2026-02-24_daily-routines-stress-reduction.jpg",
+    "tag": "stress"
+  },
+  {
+    "slug": "daily-habits-lower-stress",
+    "title": "Can Daily Habits Lower Your Stress Levels?",
+    "description": "Discover practical daily routines and simple habits to effectively reduce your stress load and improve overall well-being. Learn actionable tips for a calmer life.",
+    "date": "2026-02-24",
+    "url": "daily-habits-lower-stress.html",
+    "hero": "assets/2026-02-24_daily-habits-lower-stress.jpg",
+    "tag": "mental-wellness"
+  },
+  {
     "slug": "can-fermented-foods-improve-digestion",
     "title": "Can Fermented Foods Improve Digestion? Plus Fiber & Meal Timing Tips",
     "description": "Explore how fiber, fermented foods, and meal timing can support your gut health. Get practical tips for better digestion and overall wellness.",
