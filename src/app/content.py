@@ -204,34 +204,41 @@ def _build_pin_title(title: str, slug: str, meta_description: str, tag: str) -> 
 
 
 def _build_pin_description(title: str, slug: str, tag: str, meta_description: str, html: str) -> str:
-    topic = _trim_at_word_boundary(_normalize_whitespace(title).rstrip(".?!").lower(), 60)
+    del title
+    tag_phrase = tag.replace("-", " ")
+    base_topic = _trim_at_word_boundary(_normalize_whitespace(meta_description).lower(), 54)
+    if not base_topic:
+        base_topic = _trim_at_word_boundary(f"your {tag_phrase} routine", 54)
+
     specificity = ["today", "this week", "5-minute reset", "3-step routine", "next meal", "tomorrow morning"]
     ctas = ["Save this", "Try this today", "Read the full guide"]
     detail_source = _extract_first_sentence(html) or _normalize_whitespace(meta_description)
     detail = _trim_at_word_boundary(detail_source.lower(), 80)
-    seed = slug or title
+    seed = slug or meta_description or tag
 
     templates = [
-        "Feeling stuck with {topic}? Start with a {specific} approach and use this practical breakdown to keep it realistic, not perfect. {cta}.",
-        "If you struggle with {tag}, this {specific} plan gives you clear steps you can use without overhauling your life. {cta}.",
-        "Want better momentum with {topic}? Use this {specific} framework to make progress you can actually keep. {cta}.",
-        "When your routine feels off, {topic} can feel harder than it should. This guide uses a {specific} strategy with clear examples. {cta}.",
-        "You do not need a complete reset for {tag}. This {specific} approach focuses on doable actions and what matters most right now. {cta}.",
-        "Question: what would make {topic} easier this week? This guide maps out a {specific} path with practical steps you can use right away. {cta}.",
+        "Feeling overwhelmed lately? This {specific} plan helps you simplify {topic} with practical steps you can stick to. {cta}.",
+        "Struggling to stay consistent with {tag}? Try this {specific} approach to make progress without changing everything at once. {cta}.",
+        "Having trouble making {topic} work in real life? Use this {specific} framework to keep things simple and doable. {cta}.",
+        "If you cannot seem to keep up with {tag}, this {specific} breakdown focuses on realistic actions for busy days. {cta}.",
+        "When routines feel hard to maintain, {topic} usually needs a simpler plan. Start with this {specific} path and build momentum. {cta}.",
+        "Looking for a practical reset? This {specific} strategy helps you improve {tag} habits with clear, manageable steps. {cta}.",
     ]
     idx = _stable_template_index(seed, len(templates))
     specific = specificity[_stable_template_index(f"{seed}-specific", len(specificity))]
     cta = ctas[_stable_template_index(f"{seed}-cta", len(ctas))]
-    template_text = templates[idx].format(topic=topic, tag=tag.replace("-", " "), specific=specific, cta=cta)
+    template_text = templates[idx].format(topic=base_topic, tag=tag_phrase, specific=specific, cta=cta)
     if detail and len(template_text) < 190:
         template_text = f"{template_text[:-1]} based on {detail}."
 
     description = _trim_at_word_boundary(_normalize_whitespace(template_text), 260)
     if len(description) < 140:
-        description = _trim_at_word_boundary(
-            f"{description} It is built for real schedules and focuses on one manageable step at a time.",
-            260,
-        )
+        extra = " built for real schedules and one manageable step at a time"
+        if description.endswith(f" {cta}."):
+            description = description[: -(len(cta) + 2)]
+            description = _trim_at_word_boundary(f"{description}{extra}. {cta}.", 260)
+        else:
+            description = _trim_at_word_boundary(f"{description}{extra}.", 260)
     return description
 
 
