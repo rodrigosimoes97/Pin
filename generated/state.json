@@ -1,6 +1,6 @@
 {
-  "runs": 8,
-  "offer_runs": 3,
+  "runs": 9,
+  "offer_runs": 4,
   "recent_topics": [
     "gut-health",
     "sleep-improvement",
@@ -11,7 +11,8 @@
     "sleep-improvement",
     "gut-health",
     "stress-reset",
-    "stress-reset"
+    "stress-reset",
+    "healthy-habits"
   ],
   "recent_slugs": [
     "fiber-vs-fermented-foods-gut-health",
@@ -23,24 +24,28 @@
     "wind-down-before-bed",
     "can-fermented-foods-improve-digestion",
     "daily-habits-lower-stress",
-    "daily-routines-stress-reduction"
+    "daily-routines-stress-reduction",
+    "small-changes-big-health-wins"
   ],
   "last_run": "2026-02-24",
   "recent_tags": [
     "sleep",
     "gut",
     "mental-wellness",
-    "stress"
+    "stress",
+    "healthy-habits"
   ],
   "tag_counts": {
     "sleep": 1,
     "gut": 1,
     "mental-wellness": 1,
-    "stress": 1
+    "stress": 1,
+    "healthy-habits": 1
   },
   "topic_rotation": {
     "sleep": 1,
     "gut": 1,
-    "stress": 2
+    "stress": 2,
+    "healthy-habits": 1
   }
 }
