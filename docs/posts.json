@@ -1,5 +1,23 @@
 [
   {
+    "slug": "get-fit-without-gym-equipment",
+    "title": "Can You Get Fit Without Gym Equipment?",
+    "description": "Discover how to achieve your fitness goals with effective home workouts that require no gym equipment. Learn practical tips and movement plans for a healthier you.",
+    "date": "2026-02-25",
+    "url": "get-fit-without-gym-equipment.html",
+    "hero": "assets/2026-02-25_get-fit-without-gym-equipment.jpg",
+    "tag": "home-workouts"
+  },
+  {
+    "slug": "foods-lower-inflammation",
+    "title": "What Foods Naturally Lower Body Inflammation?",
+    "description": "Discover everyday foods that can help reduce inflammation in your body. Simple dietary changes for a healthier you.",
+    "date": "2026-02-25",
+    "url": "foods-lower-inflammation.html",
+    "hero": "assets/2026-02-25_foods-lower-inflammation.jpg",
+    "tag": "anti-inflammatory"
+  },
+  {
     "slug": "easy-recipes-busy-weeknights",
     "title": "Busy Weeknights? Easy Recipes for Fast Meals",
     "description": "Discover quick and healthy recipes perfect for busy weeknights. Learn how to prepare delicious meals in under 30 minutes to save time and eat well.",
