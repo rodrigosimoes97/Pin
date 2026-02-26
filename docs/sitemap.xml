@@ -2,11 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://rodrigosimoes97.github.io/Pin/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-26</lastmod>
   </url>
   <url>
     <loc>https://rodrigosimoes97.github.io/Pin/about.html</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-26</lastmod>
+  </url>
+  <url>
+    <loc>https://rodrigosimoes97.github.io/Pin/calorie-awareness-sustainable-weight-loss.html</loc>
+    <lastmod>2026-02-26</lastmod>
   </url>
   <url>
     <loc>https://rodrigosimoes97.github.io/Pin/get-fit-without-gym-equipment.html</loc>
@@ -107,5 +111,9 @@
   <url>
     <loc>https://rodrigosimoes97.github.io/Pin/tag/stress.html</loc>
     <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://rodrigosimoes97.github.io/Pin/tag/weight.html</loc>
+    <lastmod>2026-02-26</lastmod>
   </url>
 </urlset>
