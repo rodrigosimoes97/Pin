@@ -396,7 +396,7 @@ def _write_index(docs_dir: Path, base_url: str, site_title: str, posts: list[dic
 
   gtag('config', 'G-QHJBWL5WXE');
 </script>
-<title>{escape(site_title)}</title>
+<title>Practical Habits to Feel Better Daily</title>
 <meta name='description' content='Practical US health content for sleep, gut health, workouts, and habits.'>
 <meta name='robots' content='index,follow'>
 <link rel='canonical' href='{public_base}/'>
