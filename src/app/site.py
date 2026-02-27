@@ -387,6 +387,15 @@ def _write_index(docs_dir: Path, base_url: str, site_title: str, posts: list[dic
 <head>
 <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QHJBWL5WXE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QHJBWL5WXE');
+</script>
 <title>{escape(site_title)}</title>
 <meta name='description' content='Practical US health content for sleep, gut health, workouts, and habits.'>
 <meta name='robots' content='index,follow'>
