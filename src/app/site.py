@@ -387,6 +387,15 @@ def _write_index(docs_dir: Path, base_url: str, site_title: str, posts: list[dic
 <head>
 <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Practical Habits to Feel Better Daily",
+  "alternateName": "Practical Habits",
+  "url": "https://rodrigosimoes97.github.io/Pin/"
+}
+</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QHJBWL5WXE"></script>
 <script>
