@@ -400,7 +400,7 @@ def _write_index(docs_dir: Path, base_url: str, site_title: str, posts: list[dic
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QHJBWL5WXE"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag(){{dataLayer.push(arguments);}}
   gtag('js', new Date());
 
   gtag('config', 'G-QHJBWL5WXE');
