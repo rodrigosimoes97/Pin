@@ -1,6 +1,6 @@
 {
-  "runs": 15,
-  "offer_runs": 4,
+  "runs": 16,
+  "offer_runs": 6,
   "recent_topics": [
     "gut-health",
     "sleep-improvement",
@@ -21,7 +21,9 @@
     "sleep-improvement",
     "gut-health",
     "stress-reset",
-    "healthy-habits"
+    "healthy-habits",
+    "longevity-daily-routines",
+    "healthy-recipes"
   ],
   "recent_slugs": [
     "fiber-vs-fermented-foods-gut-health",
@@ -43,7 +45,9 @@
     "prepare-for-sleep-bedtime-routine",
     "when-to-eat-gut-health",
     "daily-habits-fight-stress",
-    "small-habits-improve-health-0227-2"
+    "small-habits-improve-health-0227-2",
+    "ideal-daily-rhythm-longevity",
+    "quick-weekday-dinners"
   ],
   "last_run": "2026-03-02",
   "recent_tags": [
@@ -60,7 +64,9 @@
     "sleep",
     "gut",
     "stress",
-    "healthy-habits"
+    "healthy-habits",
+    "longevity",
+    "recipes"
   ],
   "tag_counts": {
     "sleep": 2,
@@ -68,8 +74,8 @@
     "mental-wellness": 1,
     "stress": 2,
     "healthy-habits": 2,
-    "longevity": 1,
-    "recipes": 1,
+    "longevity": 2,
+    "recipes": 2,
     "anti-inflammatory": 1,
     "home-workouts": 1,
     "weight": 1
@@ -79,8 +85,8 @@
     "gut": 2,
     "stress": 3,
     "healthy-habits": 2,
-    "longevity": 1,
-    "recipes": 1,
+    "longevity": 2,
+    "recipes": 2,
     "anti-inflammatory": 1,
     "home-workouts": 1,
     "weight": 1

@@ -1,5 +1,23 @@
 [
   {
+    "slug": "quick-weekday-dinners",
+    "title": "Need Dinner Fast? Try These Quick Recipes",
+    "description": "Busy weeknights? Discover delicious and fast dinner recipes that take 30 minutes or less, perfect for busy individuals and families.",
+    "date": "2026-03-02",
+    "url": "quick-weekday-dinners.html",
+    "hero": "assets/2026-03-02_quick-weekday-dinners.jpg",
+    "tag": "recipes"
+  },
+  {
+    "slug": "ideal-daily-rhythm-longevity",
+    "title": "What Is the Ideal Daily Rhythm for Longevity?",
+    "description": "Discover the evidence-aligned daily rhythm to boost your longevity. Learn practical tips for better sleep, nutrition, and stress management to live a longer, healthier life.",
+    "date": "2026-03-02",
+    "url": "ideal-daily-rhythm-longevity.html",
+    "hero": "assets/2026-03-02_ideal-daily-rhythm-longevity.jpg",
+    "tag": "longevity"
+  },
+  {
     "slug": "longevity-daily-routine-evidence-aligned-0302-1",
     "title": "What's a Longevity Daily Routine? Align Your Day for a Healthier, Longer Life",
     "description": "Discover how an evidence-aligned daily routine can boost your longevity. Learn practical tips for sleep, nutrition, movement, and stress management to live a healthier, longer life.",
