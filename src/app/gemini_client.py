@@ -82,16 +82,57 @@ def _extract_text(payload: dict[str, Any]) -> str:
         return ""
 
 
+def _strip_code_fences(s: str) -> str:
+    s = s.strip()
+    if s.startswith("```"):
+        # remove a primeira linha ``` ou ```json
+        s = s.split("\n", 1)[1] if "\n" in s else ""
+        # remove o último ```
+        if "```" in s:
+            s = s.rsplit("```", 1)[0]
+    return s.strip()
+
+
+def _extract_first_json_object(s: str) -> str:
+    start = s.find("{")
+    if start == -1:
+        raise json.JSONDecodeError("No JSON object found", s, 0)
+
+    depth = 0
+    in_str = False
+    esc = False
+
+    for i in range(start, len(s)):
+        ch = s[i]
+        if in_str:
+            if esc:
+                esc = False
+            elif ch == "\\":
+                esc = True
+            elif ch == '"':
+                in_str = False
+        else:
+            if ch == '"':
+                in_str = True
+            elif ch == "{":
+                depth += 1
+            elif ch == "}":
+                depth -= 1
+                if depth == 0:
+                    return s[start : i + 1]
+
+    raise json.JSONDecodeError("Unclosed JSON object", s, start)
+
+
 def parse_json_from_text(text: str) -> dict[str, Any]:
-    raw = text.strip()
-    if raw.startswith("```"):
-        raw = raw.strip("`")
-        raw = raw.replace("json\n", "", 1).strip()
+    raw = _strip_code_fences(text)
+
+    # 1) tenta carregar direto (quando vem JSON puro)
     try:
         return json.loads(raw)
     except json.JSONDecodeError:
-        start = raw.find("{")
-        end = raw.rfind("}")
-        if start == -1 or end == -1 or end <= start:
-            raise
-        return json.loads(raw[start : end + 1])
+        pass
+
+    # 2) tenta extrair o primeiro objeto JSON bem formado
+    candidate = _extract_first_json_object(raw)
+    return json.loads(candidate)
