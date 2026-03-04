@@ -1,6 +1,6 @@
 {
-  "runs": 18,
-  "offer_runs": 7,
+  "runs": 19,
+  "offer_runs": 8,
   "recent_topics": [
     "gut-health",
     "sleep-improvement",
@@ -27,7 +27,9 @@
     "anti-inflammatory-foods",
     "home-workouts",
     "mental-wellness-basics",
-    "weight-loss-lifestyle"
+    "weight-loss-lifestyle",
+    "weight-loss-lifestyle",
+    "sleep-improvement"
   ],
   "recent_slugs": [
     "fiber-vs-fermented-foods-gut-health",
@@ -55,9 +57,11 @@
     "foods-lower-inflammation-naturally",
     "build-muscle-no-equipment",
     "feeling-stressed-build-emotional-strength",
-    "calorie-aware-diet-tips"
+    "calorie-aware-diet-tips",
+    "calorie-aware-choices-weight-loss",
+    "best-way-to-prepare-for-sleep-0304-2"
   ],
-  "last_run": "2026-03-03",
+  "last_run": "2026-03-04",
   "recent_tags": [
     "sleep",
     "gut",
@@ -78,10 +82,12 @@
     "anti-inflammatory",
     "home-workouts",
     "mental-wellness",
-    "healthy-habits"
+    "healthy-habits",
+    "weight",
+    "sleep"
   ],
   "tag_counts": {
-    "sleep": 2,
+    "sleep": 3,
     "gut": 2,
     "mental-wellness": 2,
     "stress": 2,
@@ -90,10 +96,10 @@
     "recipes": 2,
     "anti-inflammatory": 2,
     "home-workouts": 2,
-    "weight": 1
+    "weight": 2
   },
   "topic_rotation": {
-    "sleep": 2,
+    "sleep": 3,
     "gut": 2,
     "stress": 3,
     "healthy-habits": 2,
@@ -101,7 +107,7 @@
     "recipes": 2,
     "anti-inflammatory": 2,
     "home-workouts": 2,
-    "weight": 2,
+    "weight": 3,
     "mental-wellness": 1
   }
 }
