@@ -1,6 +1,6 @@
 {
-  "runs": 19,
-  "offer_runs": 8,
+  "runs": 20,
+  "offer_runs": 9,
   "recent_topics": [
     "gut-health",
     "sleep-improvement",
@@ -29,7 +29,9 @@
     "mental-wellness-basics",
     "weight-loss-lifestyle",
     "weight-loss-lifestyle",
-    "sleep-improvement"
+    "sleep-improvement",
+    "gut-health",
+    "stress-reset"
   ],
   "recent_slugs": [
     "fiber-vs-fermented-foods-gut-health",
@@ -59,9 +61,11 @@
     "feeling-stressed-build-emotional-strength",
     "calorie-aware-diet-tips",
     "calorie-aware-choices-weight-loss",
-    "best-way-to-prepare-for-sleep-0304-2"
+    "best-way-to-prepare-for-sleep-0304-2",
+    "meal-timing-gut-health-fiber",
+    "daily-routines-ease-stress"
   ],
-  "last_run": "2026-03-04",
+  "last_run": "2026-03-05",
   "recent_tags": [
     "sleep",
     "gut",
@@ -84,12 +88,14 @@
     "mental-wellness",
     "healthy-habits",
     "weight",
-    "sleep"
+    "sleep",
+    "gut",
+    "mental-wellness"
   ],
   "tag_counts": {
     "sleep": 3,
-    "gut": 2,
-    "mental-wellness": 2,
+    "gut": 3,
+    "mental-wellness": 3,
     "stress": 2,
     "healthy-habits": 3,
     "longevity": 2,
@@ -100,8 +106,8 @@
   },
   "topic_rotation": {
     "sleep": 3,
-    "gut": 2,
-    "stress": 3,
+    "gut": 3,
+    "stress": 4,
     "healthy-habits": 2,
     "longevity": 2,
     "recipes": 2,
