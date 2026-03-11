@@ -1,9 +1,7 @@
 {
-  "runs": 23,
-  "offer_runs": 10,
+  "runs": 24,
+  "offer_runs": 11,
   "recent_topics": [
-    "weight-loss-lifestyle",
-    "sleep-improvement",
     "gut-health",
     "stress-reset",
     "stress-reset",
@@ -31,7 +29,9 @@
     "stress-reset",
     "longevity-daily-routines",
     "healthy-recipes",
-    "anti-inflammatory-foods"
+    "anti-inflammatory-foods",
+    "home-workouts",
+    "weight-loss-lifestyle"
   ],
   "recent_slugs": [
     "fiber-vs-fermented-foods-gut-health",
@@ -68,11 +68,12 @@
     "daily-routines-lower-stress",
     "daily-routine-longevity-expert-insights",
     "quick-weekday-meals-no-time",
-    "foods-lower-inflammation-naturally-0310-2"
+    "foods-lower-inflammation-naturally-0310-2",
+    "build-muscle-bodyweight-workouts",
+    "calorie-awareness-sustainable-weight-loss-0311-2"
   ],
-  "last_run": "2026-03-10",
+  "last_run": "2026-03-11",
   "recent_tags": [
-    "sleep",
     "gut",
     "mental-wellness",
     "stress",
@@ -100,7 +101,9 @@
     "stress",
     "longevity",
     "recipes",
-    "anti-inflammatory"
+    "anti-inflammatory",
+    "home-workouts",
+    "weight"
   ],
   "tag_counts": {
     "sleep": 3,
@@ -111,8 +114,8 @@
     "longevity": 3,
     "recipes": 3,
     "anti-inflammatory": 3,
-    "home-workouts": 2,
-    "weight": 2
+    "home-workouts": 3,
+    "weight": 3
   },
   "topic_rotation": {
     "sleep": 3,
@@ -122,8 +125,8 @@
     "longevity": 3,
     "recipes": 3,
     "anti-inflammatory": 3,
-    "home-workouts": 2,
-    "weight": 3,
+    "home-workouts": 3,
+    "weight": 4,
     "mental-wellness": 1
   }
 }
