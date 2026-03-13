@@ -1,9 +1,7 @@
 {
-  "runs": 25,
+  "runs": 26,
   "offer_runs": 12,
   "recent_topics": [
-    "stress-reset",
-    "healthy-habits",
     "longevity-daily-routines",
     "healthy-recipes",
     "anti-inflammatory-foods",
@@ -31,7 +29,9 @@
     "home-workouts",
     "weight-loss-lifestyle",
     "sleep-improvement",
-    "gut-health"
+    "gut-health",
+    "gut-health",
+    "stress-reset"
   ],
   "recent_slugs": [
     "fiber-vs-fermented-foods-gut-health",
@@ -72,12 +72,12 @@
     "build-muscle-bodyweight-workouts",
     "calorie-awareness-sustainable-weight-loss-0311-2",
     "best-way-to-wind-down-before-bed",
-    "when-to-eat-gut-health-0312-2"
+    "when-to-eat-gut-health-0312-2",
+    "can-fermented-foods-improve-your-gut",
+    "daily-routines-lower-stress-0313-2"
   ],
-  "last_run": "2026-03-12",
+  "last_run": "2026-03-13",
   "recent_tags": [
-    "stress",
-    "healthy-habits",
     "longevity",
     "recipes",
     "anti-inflammatory",
@@ -105,13 +105,15 @@
     "home-workouts",
     "weight",
     "sleep",
-    "health"
+    "health",
+    "gut",
+    "stress"
   ],
   "tag_counts": {
     "sleep": 4,
-    "gut": 3,
+    "gut": 4,
     "mental-wellness": 4,
-    "stress": 3,
+    "stress": 4,
     "healthy-habits": 3,
     "longevity": 3,
     "recipes": 3,
@@ -122,8 +124,8 @@
   },
   "topic_rotation": {
     "sleep": 4,
-    "gut": 4,
-    "stress": 6,
+    "gut": 5,
+    "stress": 7,
     "healthy-habits": 2,
     "longevity": 3,
     "recipes": 3,
