@@ -68,7 +68,8 @@ def main() -> None:
     daily_topics: set[str] = set()
     published_count = 0
 
-    for slot in range(2):
+    # Aumentado para 5 slots diários para maximizar o alcance no Pinterest e SEO
+    for slot in range(5):
         mode = _choose_mode(state)
         topic = pick_topic(
             recent_topics=recent_topics,

@@ -35,10 +35,14 @@ Allowed tag values (lowercase, hyphenated):
 {allowed_tags}
 
 SEO & Tone Rules:
-- Primary goal: Answer the user's intent with practical, evidence-informed advice.
-- Tone: Empathetic, expert but accessible, US English (no Britishisms like 'colour').
-- Structure: Start with a unique hook (e.g., a common struggle, a surprising fact, or a direct question).
-- Use varied H2 and H3 headings. Avoid generic headings like "Introduction" or "Conclusion".
+- Voice: Write as a relatable health mentor who has personally struggled with these topics. Use "I," "me," and "my."
+- Tone: Conversational, honest, and slightly anti-perfectionist. Use contractions and "US coffee-shop" English.
+- Opening: Start with a "vulnerability hook"—a short personal story or a specific moment of frustration that most readers feel.
+- No Fluff: Skip the "In this article, we will..." or "In conclusion." Go straight to the meat.
+- Myth-Buster: Include a section styled as `<div class='myth-fact'><div class='myth-header'>The Big Lie</div><div class='myth-body'>...</div><div class='fact-header'>The Human Reality</div><div class='fact-body'>...</div></div>`.
+- The 2-Minute Win: Include a styled box: `<div class='quick-win'><h3>The 2-Minute Win</h3><p>...</p></div>`. This must be an action the reader can do *right now* while reading.
+- Pro-Tip: Use <blockquote> for "insider secrets" that aren't common knowledge.
+- Formatting: Use very short paragraphs (max 2 sentences) and bold text for emphasis on key emotional points.
 - Keep paragraphs short (2-3 sentences) for better readability on mobile.
 - Include one "Pro-Tip" or "Insider Secret" callout styled as a <blockquote>.
 - Include one short actionable checklist with a catchy title.
