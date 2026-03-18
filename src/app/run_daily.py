@@ -89,7 +89,7 @@ def main() -> None:
             if post["slug"] in set(recent_slugs[-40:]) or post["slug"] in daily_slugs:
                 post["slug"] = f"{post['slug']}-{today.strftime('%m%d')}-{slot + 1}"
 
-            hero_rel = f"assets/{today.isoformat()}_{post['slug']}.jpg"
+            hero_rel = f"assets/{today.isoformat()}_{post['slug']}.webp"
             fetch_hero_image(settings.pexels_api_key, post["image_query"], settings.repo_root / "docs" / hero_rel)
 
             pin_rel = f"generated/pinterest/{today.isoformat()}_{post['slug']}.png"

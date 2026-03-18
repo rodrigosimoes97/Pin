@@ -387,13 +387,31 @@ def _write_index(docs_dir: Path, base_url: str, site_title: str, posts: list[dic
 <head>
 <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://images.pexels.com">
+<script type="application/ld+json">
+{{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "{escape(site_title)}",
+  "url": "{public_base}",
+  "logo": "{public_base}/assets/logo.png",
+  "sameAs": [
+    "https://www.pinterest.com/your-profile"
+  ]
+}}
+</script>
 <script type="application/ld+json">
 {{
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "Practical Habits to Feel Better Daily",
-  "alternateName": "Practical Habits",
-  "url": "https://rodrigosimoes97.github.io/Pin/"
+  "name": "Practical Habits",
+  "url": "{public_base}/",
+  "potentialAction": {{
+    "@type": "SearchAction",
+    "target": "{public_base}/index.html?q={{search_term_string}}",
+    "query-input": "required name=search_term_string"
+  }}
 }}
 </script>
 <!-- Google tag (gtag.js) -->
@@ -866,6 +884,7 @@ def _base_css() -> str:
         "font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;"
         "line-height:1.75;}"
         ".container{max-width:1100px;margin:0 auto;padding:22px 16px 68px;}"
+        "article{max-width:720px;margin:0 auto;}" # Regra de ouro para leitura
         ".site-header{position:sticky;top:0;z-index:20;background:rgba(7,11,18,.92);backdrop-filter:blur(8px);border-bottom:1px solid #1b2533;}"
         ".header-inner{padding-top:10px;padding-bottom:10px;display:flex;justify-content:space-between;gap:18px;align-items:center;}"
         ".site-title{font-size:18px;font-weight:700;color:#f8fbff;}"
