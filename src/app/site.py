@@ -835,21 +835,20 @@ def _write_sitemap(docs_dir: Path, base_url: str, posts: list[dict[str, str]], t
                 "  </url>",
             ]
         )
-    xml = "\n".join(
-       [
-            '<?xml version="1.0" encoding="UTF-8"?>',
-            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-            *rows,
-            '</urlset>',
-        ]
-    )
+    xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
+    xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+    xml += "\n".join(rows)
+    xml += "\n</urlset>"
+    
     (docs_dir / "sitemap.xml").write_text(xml, encoding="utf-8")
 
 
 def _write_robots(docs_dir: Path, base_url: str) -> None:
     public_base = _effective_base_url(base_url)
+    # Garante que a URL do sitemap no robots.txt seja absoluta e correta
+    sitemap_url = f"{public_base}/sitemap.xml"
     (docs_dir / "robots.txt").write_text(
-        f"User-agent: *\nAllow: /\nSitemap: {public_base}/sitemap.xml\n",
+        f"User-agent: *\nAllow: /\nSitemap: {sitemap_url}\n",
         encoding="utf-8",
     )
 

@@ -61,6 +61,7 @@ def main() -> None:
     recent_topics = list(state.get("recent_topics", []))
     recent_tags = list(state.get("recent_tags", []))
     recent_slugs = list(state.get("recent_slugs", []))
+    recent_titles = list(state.get("recent_titles", []))
     tag_counts = dict(state.get("tag_counts", {}))
     topic_rotation = dict(state.get("topic_rotation", {}))
     daily_slugs: set[str] = set()
@@ -79,7 +80,7 @@ def main() -> None:
         offer = _pick_offer(settings.repo_root, topic.tag) if mode == "offer" else None
 
         try:
-            titles = generate_titles(client, topic)
+            titles = generate_titles(client, topic, excluded_titles=recent_titles)
             chosen_title = pick_best_title(titles)
             post = generate_article(client, topic, chosen_title, mode, offer)
             post["tag"] = normalize_tag(post.get("tag", "")) or normalize_tag(topic.tag) or "health"
@@ -136,6 +137,7 @@ def main() -> None:
             recent_topics.append(topic.slug)
             recent_tags.append(post["tag"])
             recent_slugs.append(post["slug"])
+            recent_titles.append(chosen_title)
             tag_counts[post["tag"]] = int(tag_counts.get(post["tag"], 0)) + 1
             topic_rotation[topic.tag] = int(topic_rotation.get(topic.tag, 0)) + 1
 
@@ -148,6 +150,7 @@ def main() -> None:
     state["recent_topics"] = recent_topics[-30:]
     state["recent_tags"] = recent_tags[-30:]
     state["recent_slugs"] = recent_slugs[-80:]
+    state["recent_titles"] = recent_titles[-40:]
     state["tag_counts"] = tag_counts
     state["topic_rotation"] = topic_rotation
     state["last_run"] = today.isoformat()

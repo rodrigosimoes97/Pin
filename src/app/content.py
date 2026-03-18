@@ -21,7 +21,7 @@ ALLOWED_TAGS = {
     "health",
 }
 
-CONTENT_PROMPT = """Write a US-focused health article.
+CONTENT_PROMPT = """Write a high-quality, US-focused health article.
 Return strict JSON object only (no markdown) with keys exactly:
 title,slug,meta_description,html,image_query,pin_title,pin_description,alt_text,tag,faq
 Input:
@@ -33,14 +33,15 @@ Input:
 - offer_link: {offer_link}
 Allowed tag values (lowercase, hyphenated):
 {allowed_tags}
-Rules:
-- informational-first; practical tips readers can apply today.
-- natural, human tone; clear US English; avoid medical promises and hype.
-- prioritize practical advice over theory; avoid generic filler phrases.
-- include at least one concrete real-life example.
-- include one short actionable checklist.
-- include one "common mistakes" section when relevant.
-- structure: strong hook in introduction, scannable H2/H3 sections, short paragraphs, practical takeaways, FAQ, closing encouragement.
+
+SEO & Tone Rules:
+- Primary goal: Answer the user's intent with practical, evidence-informed advice.
+- Tone: Empathetic, expert but accessible, US English (no Britishisms like 'colour').
+- Structure: Start with a unique hook (e.g., a common struggle, a surprising fact, or a direct question).
+- Use varied H2 and H3 headings. Avoid generic headings like "Introduction" or "Conclusion".
+- Keep paragraphs short (2-3 sentences) for better readability on mobile.
+- Include one "Pro-Tip" or "Insider Secret" callout styled as a <blockquote>.
+- Include one short actionable checklist with a catchy title.
 - include exactly 5 internal link placeholders in body: href="#recent-1", href="#recent-2", href="#recent-3", href="#recent-4", href="#recent-5".
 - include sentence: Educational only — not medical advice.
 - if mode=offer include soft recommendation and exact sentence:
@@ -195,9 +196,15 @@ def _build_pin_title(title: str, slug: str, meta_description: str, tag: str) -> 
         "What to Do This Week: {keyword}",
         "Small Changes, Real Results: {keyword}",
         "Your Practical Plan for {keyword}",
+        "The Busy Person's Guide to {keyword}",
+        "How to Actually Master {keyword}",
+        "Stop Struggling With {keyword}",
+        "Better {tag} Starts Here: {keyword}",
+        "Ready for a Change? {keyword}",
+        "Your 5-Minute Reset for {keyword}",
     ]
     idx = _stable_template_index(slug or normalized_title, len(templates))
-    candidate = templates[idx].format(keyword=keyword.lower())
+    candidate = templates[idx].format(keyword=keyword.lower(), tag=tag.replace("-", " "))
     if len(candidate) < 40:
         candidate = _normalize_whitespace(f"{candidate}: {benefit_hint}")
     return _trim_at_word_boundary(candidate, 70)
@@ -260,8 +267,8 @@ def _build_pin_description(title: str, slug: str, tag: str, meta_description: st
 
     # Avoid collisions with templates that already contain "this ..."
     # Use specificity items that won't create "this this ..."
-    specificity = ["today", "this week", "a 5-minute reset", "a 3-step routine", "your next meal", "tomorrow morning"]
-    ctas = ["Save this", "Try this today", "Read the full guide"]
+    specificity = ["today", "this week", "a 5-minute reset", "a 3-step routine", "your next meal", "tomorrow morning", "this weekend", "starting now"]
+    ctas = ["Save this", "Try this today", "Read the full guide", "Check the checklist", "Get the plan"]
 
     seed = slug or meta_description or tag
 
@@ -273,6 +280,9 @@ def _build_pin_description(title: str, slug: str, tag: str, meta_description: st
         "If you cannot seem to keep up with {tag}, this breakdown focuses on realistic actions for busy days {specific}.",
         "When routines feel hard to maintain, {topic} usually needs a simpler plan. Start with this {specific} path and build momentum.",
         "Looking for a practical reset? This {specific} strategy helps you improve {tag} habits with clear, manageable steps.",
+        "Stop overcomplicating {tag}. This {specific} guide shows you exactly how to focus on what matters most for {topic}.",
+        "Want better results with less stress? This {specific} routine for {tag} is designed for real life, not a lab.",
+        "Tired of generic advice about {tag}? This {specific} breakdown of {topic} gives you tools you can use immediately.",
     ]
 
     idx = _stable_template_index(seed, len(templates))
