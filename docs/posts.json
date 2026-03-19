@@ -1,5 +1,50 @@
 [
   {
+    "slug": "understanding-blood-sugar-energy-balance",
+    "title": "How to Fuel Your Body: Understanding Blood Sugar and Energy Balance",
+    "description": "Unlock your energy! Learn how blood sugar impacts your daily life and discover simple, practical ways to manage it for sustained energy and better health.",
+    "date": "2026-03-19",
+    "url": "understanding-blood-sugar-energy-balance.html",
+    "hero": "assets/2026-03-19_understanding-blood-sugar-energy-balance.webp",
+    "tag": "healthy-habits"
+  },
+  {
+    "slug": "effortless-calorie-awareness-lasting-weight-loss",
+    "title": "Effortless Calorie Awareness for Lasting Weight Loss",
+    "description": "Discover sustainable calorie awareness for weight loss without strict restriction. Learn practical tips to manage your intake and achieve lasting results.",
+    "date": "2026-03-19",
+    "url": "effortless-calorie-awareness-lasting-weight-loss.html",
+    "hero": "assets/2026-03-19_effortless-calorie-awareness-lasting-weight-loss.webp",
+    "tag": "healthy-habits"
+  },
+  {
+    "slug": "blood-sugar-energy-levels",
+    "title": "Is Your Blood Sugar Affecting Your Energy Levels?",
+    "description": "Feeling tired all the time? Discover how blood sugar fluctuations impact your energy and learn practical ways to balance it for sustained vitality. Your personal guide to understanding metabolic health.",
+    "date": "2026-03-19",
+    "url": "blood-sugar-energy-levels.html",
+    "hero": "assets/2026-03-19_blood-sugar-energy-levels.webp",
+    "tag": "healthy-habits"
+  },
+  {
+    "slug": "mindful-eating-calorie-awareness-guide",
+    "title": "Your Guide to Mindful Eating and Calorie Awareness",
+    "description": "Learn sustainable calorie awareness and mindful eating techniques for lasting weight loss without restriction. A personal guide from a health mentor.",
+    "date": "2026-03-19",
+    "url": "mindful-eating-calorie-awareness-guide.html",
+    "hero": "assets/2026-03-19_mindful-eating-calorie-awareness-guide.webp",
+    "tag": "healthy-habits"
+  },
+  {
+    "slug": "managing-blood-sugar-energy",
+    "title": "How to Boost Energy by Managing Blood Sugar",
+    "description": "Feeling tired all the time? Learn how managing your blood sugar levels can unlock sustained energy and transform your daily life. Get practical tips and insights.",
+    "date": "2026-03-19",
+    "url": "managing-blood-sugar-energy.html",
+    "hero": "assets/2026-03-19_managing-blood-sugar-energy.webp",
+    "tag": "healthy-habits"
+  },
+  {
     "slug": "calorie-awareness-without-restriction",
     "title": "How to Be Calorie Aware Without Feeling Restricted",
     "description": "Discover practical strategies for sustainable calorie awareness that supports your weight loss goals without resorting to restrictive dieting. Learn to tune into your body and make informed choices.",

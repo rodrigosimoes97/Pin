@@ -1,0 +1,23 @@
+
+body{margin:0;background:#05080f;color:#eaf1fb;font-family:system-ui,-apple-system,sans-serif;line-height:1.8;}
+.container{max-width:1100px;margin:0 auto;padding:20px;}
+article{max-width:720px;margin:0 auto;}
+.site-header{position:sticky;top:0;z-index:100;background:rgba(5,8,15,0.8);backdrop-filter:blur(10px);border-bottom:1px solid #1b2533;}
+.header-inner{display:flex;justify-content:space-between;padding:15px 0;}
+.breadcrumb{font-size:14px;color:#9fb0c3;margin-bottom:20px;}
+.breadcrumb a{color:#7dd3fc;}
+h1{font-size:40px;line-height:1.2;}
+img{max-width:100%;height:auto;border-radius:12px;margin:20px 0;}
+.quick-win{background:linear-gradient(135deg,#064e3b,#065f46);padding:20px;border-radius:12px;margin:30px 0;}
+.myth-fact{border:1px solid #374151;border-radius:12px;overflow:hidden;margin:30px 0;}
+.myth-header{background:#991b1b;padding:10px;font-weight:bold;}
+.fact-header{background:#065f46;padding:10px;font-weight:bold;}
+.myth-body,.fact-body{padding:15px;}
+blockquote{border-left:4px solid #3b82f6;padding-left:20px;font-style:italic;color:#bfdbfe;}
+.post-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
+.post-card{background:#0b1320;border:1px solid #223247;border-radius:12px;padding:15px;}
+.tag-pill{background:rgba(125,211,252,0.1);padding:2px 8px;border-radius:99px;font-size:12px;}
+@media (max-width:760px){
+  h1{font-size:30px;}
+  .site-header{position:sticky;} /* Fix 5 */
+}

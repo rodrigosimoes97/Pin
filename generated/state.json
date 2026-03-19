@@ -1,12 +1,7 @@
 {
-  "runs": 30,
+  "runs": 31,
   "offer_runs": 14,
   "recent_topics": [
-    "healthy-habits",
-    "longevity-daily-routines",
-    "healthy-recipes",
-    "anti-inflammatory-foods",
-    "home-workouts",
     "mental-wellness-basics",
     "weight-loss-lifestyle",
     "weight-loss-lifestyle",
@@ -31,7 +26,12 @@
     "anti-inflammatory-foods",
     "home-workouts",
     "metabolic-health",
-    "weight-loss-lifestyle"
+    "weight-loss-lifestyle",
+    "metabolic-health",
+    "weight-loss-lifestyle",
+    "metabolic-health",
+    "weight-loss-lifestyle",
+    "metabolic-health"
   ],
   "recent_slugs": [
     "fiber-vs-fermented-foods-gut-health",
@@ -82,15 +82,15 @@
     "foods-lower-inflammation-naturally-0318-1",
     "build-muscle-no-equipment-workouts",
     "blood-sugar-energy-balance",
-    "calorie-awareness-without-restriction"
+    "calorie-awareness-without-restriction",
+    "managing-blood-sugar-energy",
+    "mindful-eating-calorie-awareness-guide",
+    "blood-sugar-energy-levels",
+    "effortless-calorie-awareness-lasting-weight-loss",
+    "understanding-blood-sugar-energy-balance"
   ],
-  "last_run": "2026-03-18",
+  "last_run": "2026-03-19",
   "recent_tags": [
-    "healthy-habits",
-    "longevity",
-    "recipes",
-    "anti-inflammatory",
-    "home-workouts",
     "mental-wellness",
     "healthy-habits",
     "weight",
@@ -114,6 +114,11 @@
     "health",
     "anti-inflammatory",
     "home-workouts",
+    "healthy-habits",
+    "healthy-habits",
+    "healthy-habits",
+    "healthy-habits",
+    "healthy-habits",
     "healthy-habits",
     "healthy-habits"
   ],
@@ -122,7 +127,7 @@
     "gut": 4,
     "mental-wellness": 4,
     "stress": 4,
-    "healthy-habits": 6,
+    "healthy-habits": 11,
     "longevity": 4,
     "recipes": 4,
     "anti-inflammatory": 4,
@@ -139,11 +144,16 @@
     "recipes": 4,
     "anti-inflammatory": 5,
     "home-workouts": 4,
-    "weight": 6,
+    "weight": 11,
     "mental-wellness": 1
   },
   "recent_titles": [
     "Your Blood Sugar & Energy: What You Need to Know",
-    "How to Be Calorie Aware Without Feeling Restricted"
+    "How to Be Calorie Aware Without Feeling Restricted",
+    "How to Boost Energy by Managing Blood Sugar",
+    "Your Guide to Mindful Eating and Calorie Awareness",
+    "Is Your Blood Sugar Affecting Your Energy Levels?",
+    "Effortless Calorie Awareness for Lasting Weight Loss",
+    "How to Fuel Your Body: Blood Sugar Basics"
   ]
 }
