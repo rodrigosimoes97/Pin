@@ -124,6 +124,8 @@ def _extract_first_json_object(s: str) -> str:
     raise json.JSONDecodeError("Unclosed JSON object", s, start)
 
 
+import re
+
 def parse_json_from_text(text: str) -> dict[str, Any]:
     raw = _strip_code_fences(text)
 
@@ -135,4 +137,12 @@ def parse_json_from_text(text: str) -> dict[str, Any]:
 
     # 2) tenta extrair o primeiro objeto JSON bem formado
     candidate = _extract_first_json_object(raw)
-    return json.loads(candidate)
+    
+    # 3) Limpeza extra para caracteres de controle que quebram o JSON (Fix para Invalid control character)
+    # Remove quebras de linha literais, tabs e outros caracteres de controle (0-31) exceto o que for escapado
+    try:
+        return json.loads(candidate)
+    except json.JSONDecodeError:
+        # Tenta sanitizar se falhar: substitui newlines reais dentro de strings por \n escapado
+        sanitized = re.sub(r'[\x00-\x1F]+', ' ', candidate)
+        return json.loads(sanitized)

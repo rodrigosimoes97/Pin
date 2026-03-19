@@ -24,6 +24,11 @@ ALLOWED_TAGS = {
 CONTENT_PROMPT = """Write a high-quality, US-focused health article.
 Return strict JSON object only (no markdown) with keys exactly:
 title,slug,meta_description,html,image_query,pin_title,pin_description,alt_text,tag,faq
+
+CRITICAL JSON RULES:
+- NO literal newlines inside JSON values. Use \n for line breaks.
+- Escape all double quotes inside strings with \".
+- Ensure valid JSON format.
 Input:
 - topic_name: {topic_name}
 - angle: {angle}
