@@ -1,9 +1,7 @@
 {
-  "runs": 31,
+  "runs": 32,
   "offer_runs": 14,
   "recent_topics": [
-    "mental-wellness-basics",
-    "weight-loss-lifestyle",
     "weight-loss-lifestyle",
     "sleep-improvement",
     "gut-health",
@@ -31,7 +29,9 @@
     "weight-loss-lifestyle",
     "metabolic-health",
     "weight-loss-lifestyle",
-    "metabolic-health"
+    "metabolic-health",
+    "weight-loss-lifestyle",
+    "insomnia-tips"
   ],
   "recent_slugs": [
     "fiber-vs-fermented-foods-gut-health",
@@ -87,12 +87,12 @@
     "mindful-eating-calorie-awareness-guide",
     "blood-sugar-energy-levels",
     "effortless-calorie-awareness-lasting-weight-loss",
-    "understanding-blood-sugar-energy-balance"
+    "understanding-blood-sugar-energy-balance",
+    "practical-ways-understand-calories-sustainably",
+    "struggling-to-sleep-reset"
   ],
   "last_run": "2026-03-19",
   "recent_tags": [
-    "mental-wellness",
-    "healthy-habits",
     "weight",
     "sleep",
     "gut",
@@ -120,10 +120,12 @@
     "healthy-habits",
     "healthy-habits",
     "healthy-habits",
-    "healthy-habits"
+    "healthy-habits",
+    "weight",
+    "sleep"
   ],
   "tag_counts": {
-    "sleep": 4,
+    "sleep": 5,
     "gut": 4,
     "mental-wellness": 4,
     "stress": 4,
@@ -132,11 +134,11 @@
     "recipes": 4,
     "anti-inflammatory": 4,
     "home-workouts": 4,
-    "weight": 3,
+    "weight": 4,
     "health": 2
   },
   "topic_rotation": {
-    "sleep": 4,
+    "sleep": 5,
     "gut": 5,
     "stress": 7,
     "healthy-habits": 3,
@@ -144,7 +146,7 @@
     "recipes": 4,
     "anti-inflammatory": 5,
     "home-workouts": 4,
-    "weight": 11,
+    "weight": 12,
     "mental-wellness": 1
   },
   "recent_titles": [
@@ -154,6 +156,8 @@
     "Your Guide to Mindful Eating and Calorie Awareness",
     "Is Your Blood Sugar Affecting Your Energy Levels?",
     "Effortless Calorie Awareness for Lasting Weight Loss",
-    "How to Fuel Your Body: Blood Sugar Basics"
+    "How to Fuel Your Body: Blood Sugar Basics",
+    "Practical Ways to Understand Calories Sustainably",
+    "Struggling to Sleep? Try This Reset"
   ]
 }
