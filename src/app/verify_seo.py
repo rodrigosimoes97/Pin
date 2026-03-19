@@ -76,7 +76,7 @@ def run_checks() -> None:
 
         tag_html = (docs / "tag" / "sleep.html").read_text(encoding="utf-8")
         _assert("Explore practical sleep guides" in tag_html, "tag intro missing")
-        links = re.findall(r"href='../[^']+\.html'", tag_html)
+        links = re.findall(r'href=[\'"]\.\./[^\'\"]+\.html[\'\"]', tag_html)
         _assert(len(links) >= 8, "tag page should contain at least 8 post links when available")
 
     print("SEO verification passed")
