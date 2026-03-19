@@ -46,7 +46,12 @@ SEO & Tone Rules:
 - Keep paragraphs short (2-3 sentences) for better readability on mobile.
 - Include one "Pro-Tip" or "Insider Secret" callout styled as a <blockquote>.
 - Include one short actionable checklist with a catchy title.
-- include exactly 5 internal link placeholders in body: href="#recent-1", href="#recent-2", href="#recent-3", href="#recent-4", href="#recent-5".
+- include exactly 5 internal link placeholders in body:
+  1. href="#recent-1" (anchor text: related healthy tip)
+  2. href="#recent-2" (anchor text: another practical guide)
+  3. href="#recent-3" (anchor text: similar wellness insight)
+  4. href="#recent-4" (anchor text: stay consistent with this)
+  5. href="#recent-5" (anchor text: "explore more [tag] guides")
 - include sentence: Educational only — not medical advice.
 - if mode=offer include soft recommendation and exact sentence:
   Disclosure: This page may contain affiliate links.
