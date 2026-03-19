@@ -5,14 +5,6 @@ import json
 from datetime import date
 from pathlib import Path
 
-
-from __future__ import annotations
-
-import csv
-import json
-from datetime import date
-from pathlib import Path
-
 # O Pinterest precisa da URL pública da imagem para o Bulk Upload
 PUBLIC_BASE_URL = "https://rodrigosimoes97.github.io/Pin"
 
@@ -29,8 +21,6 @@ def write_draft_pack(
     
     # Formato oficial do Pinterest para Bulk Upload (CSV)
     # Media URL precisa ser pública para o Pinterest baixar a imagem
-    from pathlib import Path
-
     normalized_path = Path(image_path).as_posix()
     media_url = f"{PUBLIC_BASE_URL}/{normalized_path.lstrip('/')}"
     
