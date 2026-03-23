@@ -1,5 +1,23 @@
 [
   {
+    "slug": "busy-pros-speedy-healthy-eating",
+    "title": "Busy Pro's Guide to Speedy, Healthy Eating",
+    "description": "Discover quick, nutrient-dense meal ideas for busy US professionals. Learn to fuel your demanding lifestyle without sacrificing health or time.",
+    "date": "2026-03-23",
+    "url": "busy-pros-speedy-healthy-eating.html",
+    "hero": "assets/2026-03-23_busy-pros-speedy-healthy-eating.webp",
+    "tag": "recipes"
+  },
+  {
+    "slug": "simple-daily-routines-healthier-longer-life",
+    "title": "Simple Daily Routines for a Healthier, Longer Life",
+    "description": "Discover science-backed daily habits and routines to boost your health and longevity. Learn practical tips for a longer, more vibrant life.",
+    "date": "2026-03-23",
+    "url": "simple-daily-routines-healthier-longer-life.html",
+    "hero": "assets/2026-03-23_simple-daily-routines-healthier-longer-life.webp",
+    "tag": "longevity"
+  },
+  {
     "slug": "maintain-strength-independence-daily",
     "title": "How to Maintain Strength and Independence Daily",
     "description": "Discover practical, everyday strategies to keep your strength and independence as you age. Learn simple habits for a more active and confident life.",
