@@ -8,7 +8,7 @@ from datetime import date
 from html import escape
 from pathlib import Path
 
-PUBLIC_BASE_URL = "https://rodrigosimoes97.github.io/Pin"
+PUBLIC_BASE_URL = "https://health-ptg.pages.dev/"
 
 def publish_post(
     docs_dir: Path,
