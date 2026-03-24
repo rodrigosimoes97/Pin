@@ -1,12 +1,7 @@
 {
-  "runs": 35,
+  "runs": 36,
   "offer_runs": 16,
   "recent_topics": [
-    "weight-loss-lifestyle",
-    "sleep-improvement",
-    "gut-health",
-    "gut-health",
-    "stress-reset",
     "healthy-habits",
     "longevity-daily-routines",
     "healthy-recipes",
@@ -31,7 +26,12 @@
     "joint-health",
     "anti-inflammatory-foods",
     "joint-health",
-    "walking-for-fitness"
+    "walking-for-fitness",
+    "yoga-for-flexibility",
+    "home-workouts",
+    "metabolic-health",
+    "weight-loss-lifestyle",
+    "metabolic-health"
   ],
   "recent_slugs": [
     "fiber-vs-fermented-foods-gut-health",
@@ -99,15 +99,15 @@
     "pain-free-joints-nutrition-exercise",
     "eat-for-energy-anti-inflammatory-foods",
     "unlock-mobility-diet-exercise-joint-health",
-    "walking-for-weight-loss-beginner-guide"
+    "walking-for-weight-loss-beginner-guide",
+    "desk-mobility-stretches",
+    "no-equipment-strength-small-spaces",
+    "boost-energy-balance-blood-sugar",
+    "understand-calories-daily-health",
+    "realistic-blood-sugar-tips-energy"
   ],
   "last_run": "2026-03-24",
   "recent_tags": [
-    "weight",
-    "sleep",
-    "health",
-    "gut",
-    "stress",
     "healthy-habits",
     "longevity",
     "recipes",
@@ -132,6 +132,11 @@
     "health",
     "health",
     "anti-inflammatory",
+    "healthy-habits",
+    "healthy-habits",
+    "home-workouts",
+    "healthy-habits",
+    "healthy-habits",
     "healthy-habits"
   ],
   "tag_counts": {
@@ -139,11 +144,11 @@
     "gut": 5,
     "mental-wellness": 5,
     "stress": 5,
-    "healthy-habits": 13,
+    "healthy-habits": 17,
     "longevity": 5,
     "recipes": 5,
     "anti-inflammatory": 5,
-    "home-workouts": 4,
+    "home-workouts": 5,
     "weight": 4,
     "health": 4
   },
@@ -155,8 +160,8 @@
     "longevity": 6,
     "recipes": 5,
     "anti-inflammatory": 8,
-    "home-workouts": 5,
-    "weight": 12,
+    "home-workouts": 7,
+    "weight": 15,
     "mental-wellness": 1
   },
   "recent_titles": [
@@ -178,6 +183,11 @@
     "Pain-Free Joints: Nutrition and Exercise Tips",
     "Eat for Energy: Top Anti-Inflammatory Foods",
     "Unlock Mobility: Diet & Exercise Tips",
-    "Beginner's Guide to Walking for Weight Loss"
+    "Beginner's Guide to Walking for Weight Loss",
+    "Stuck at Your Desk? Try These Mobility Stretches",
+    "No-Equipment Strength for Small Spaces: Get Stronger",
+    "How to Actually Boost Energy by Balancing Sugar",
+    "How to Understand Calories for Daily Health",
+    "Realistic Blood Sugar Tips for More Energy"
   ]
 }
