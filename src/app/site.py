@@ -574,7 +574,7 @@ def _render_post_card(post: dict[str, str], docs_dir: Path, link_prefix: str) ->
         f"<div class='card-body'>"
         f"<p class='card-meta'>{date_str}</p>"
         f"<h3>{title}</h3>"
-        f"{'<p class=\"card-excerpt\">' + excerpt + '</p>' if excerpt else ''}"
+        f"{'<p class=\'card-excerpt\'>' + excerpt + '</p>' if excerpt else ''}"
         f"<span class='read-more'>Read article →</span>"
         f"</div>"
         f"</a>"
