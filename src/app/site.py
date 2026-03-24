@@ -599,7 +599,7 @@ def _render_post_card_wide(post: dict[str, str], link_prefix: str) -> str:
     else:
         thumb = f"<div style='width:100%;height:100%;{grad}'></div>"
 
-    excerpt_html = f"{'<p class=\"wide-excerpt\">' + excerpt + '</p>' if excerpt else ''}"
+    excerpt_html = f"{<p class='wide-excerpt'>{excerpt}</p>" if excerpt else ''}"
 
     return (
         f"<article class='post-card-wide'>"
