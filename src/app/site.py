@@ -270,7 +270,7 @@ def _build_key_takeaways(article_html: str, quick_answer: str) -> list[str]:
 
 def _tag_intro(tag: str) -> str:
     intros: dict[str, str] = {
-        "sleep": "Everything you need to sleep deeper, wake less, and feel restored every morning.",
+        "sleep": "Explore practical sleep guides, checklists, and step-by-step posts to sleep deeper, wake less, and feel restored every morning.",
         "gut": "Practical gut health guides — microbiome, fermented foods, bloating relief, and more.",
         "stress": "Proven techniques to calm your nervous system and prevent burnout before it starts.",
         "healthy-habits": "Micro-habits, morning routines, and daily rituals that actually stick long-term.",
@@ -282,8 +282,10 @@ def _tag_intro(tag: str) -> str:
         "mental-wellness": "Practical tools for emotional resilience, focus, and everyday mental clarity.",
         "home-workouts": "No-equipment strength and movement routines you can do in any small space.",
     }
-    return intros.get(str(tag).lower(), f"Explore practical {tag.replace('-', ' ')} guides, checklists, and step-by-step posts for daily use.")
-
+    return intros.get(
+        str(tag).lower(),
+        f"Explore practical {tag.replace('-', ' ')} guides, checklists, and step-by-step posts for daily use."
+    )
 
 # ─────────────────────────────────────────────────────────────────────────────
 # RENDER: POST PAGE
