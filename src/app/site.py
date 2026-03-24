@@ -566,6 +566,7 @@ def _render_post_card(post: dict[str, str], docs_dir: Path, link_prefix: str) ->
         media = f"<div class='card-placeholder' style='{grad}'></div>"
 
     excerpt = escape((post.get("description") or "")[:120].rstrip())
+    excerpt_html = f"<p class='card-excerpt'>{excerpt}</p>" if excerpt else ""
 
     return (
         f"<article class='post-card'>"
@@ -574,7 +575,7 @@ def _render_post_card(post: dict[str, str], docs_dir: Path, link_prefix: str) ->
         f"<div class='card-body'>"
         f"<p class='card-meta'>{date_str}</p>"
         f"<h3>{title}</h3>"
-        f"{'<p class=\'card-excerpt\'>' + excerpt + '</p>' if excerpt else ''}"
+        f"{excerpt_html}"
         f"<span class='read-more'>Read article →</span>"
         f"</div>"
         f"</a>"
