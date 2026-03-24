@@ -1,5 +1,41 @@
 [
   {
+    "slug": "walking-for-weight-loss-beginner-guide",
+    "title": "Beginner's Guide to Walking for Weight Loss",
+    "description": "Discover how simple walking can be your secret weapon for weight management. This guide offers low-impact routines and practical tips to help you start your journey today.",
+    "date": "2026-03-24",
+    "url": "walking-for-weight-loss-beginner-guide.html",
+    "hero": "assets/2026-03-24_walking-for-weight-loss-beginner-guide.webp",
+    "tag": "healthy-habits"
+  },
+  {
+    "slug": "unlock-mobility-diet-exercise-joint-health",
+    "title": "Unlock Your Mobility: Simple Diet & Movement Tips for Joint Comfort",
+    "description": "Feeling stiff? Discover practical diet and exercise tips to improve joint health, boost mobility, and find everyday comfort. Learn how simple changes can make a big difference.",
+    "date": "2026-03-24",
+    "url": "unlock-mobility-diet-exercise-joint-health.html",
+    "hero": "assets/2026-03-24_unlock-mobility-diet-exercise-joint-health.webp",
+    "tag": "anti-inflammatory"
+  },
+  {
+    "slug": "eat-for-energy-anti-inflammatory-foods",
+    "title": "Eat for Energy: Top Anti-Inflammatory Foods to Heal Your Body",
+    "description": "Feeling drained? Discover top anti-inflammatory foods packed with antioxidants and healthy fats to boost your energy and heal your body from the inside out. Learn how food can be your medicine.",
+    "date": "2026-03-24",
+    "url": "eat-for-energy-anti-inflammatory-foods.html",
+    "hero": "assets/2026-03-24_eat-for-energy-anti-inflammatory-foods.webp",
+    "tag": "health"
+  },
+  {
+    "slug": "pain-free-joints-nutrition-exercise",
+    "title": "Pain-Free Joints: Nutrition and Exercise Tips for a More Mobile You",
+    "description": "Discover practical nutrition and movement strategies to improve joint comfort and mobility. Learn how simple changes can make a big difference in your daily life.",
+    "date": "2026-03-24",
+    "url": "pain-free-joints-nutrition-exercise.html",
+    "hero": "assets/2026-03-24_pain-free-joints-nutrition-exercise.webp",
+    "tag": "health"
+  },
+  {
     "slug": "busy-pros-speedy-healthy-eating",
     "title": "Busy Pro's Guide to Speedy, Healthy Eating",
     "description": "Discover quick, nutrient-dense meal ideas for busy US professionals. Learn to fuel your demanding lifestyle without sacrificing health or time.",
