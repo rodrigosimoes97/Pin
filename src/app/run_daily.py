@@ -156,7 +156,7 @@ def main() -> None:
     state["topic_rotation"] = topic_rotation
     state["last_run"] = today.isoformat()
     save_state(state_path, state)
-    LOG.info("Run complete. Published %s/2 posts.", published_count)
+    LOG.info("Run complete. Published %s/5 posts.", published_count)
 
 
 if __name__ == "__main__":
