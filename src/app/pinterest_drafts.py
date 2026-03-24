@@ -6,7 +6,7 @@ from datetime import date
 from pathlib import Path
 
 # O Pinterest precisa da URL pública da imagem para o Bulk Upload
-PUBLIC_BASE_URL = "https://rodrigosimoes97.github.io/Pin"
+PUBLIC_BASE_URL = "https://health-ptg.pages.dev/"
 
 def write_draft_pack(
     out_dir: Path,

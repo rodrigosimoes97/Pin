@@ -17,7 +17,7 @@ def _assert(condition: bool, message: str) -> None:
 def run_checks() -> None:
     with tempfile.TemporaryDirectory() as td:
         docs = Path(td)
-        base_url = "https://rodrigosimoes97.github.io/Pin"
+        base_url = "https://health-ptg.pages.dev/"
 
         for i in range(10):
             post = {
