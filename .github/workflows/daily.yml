@@ -56,7 +56,7 @@ jobs:
       - name: Ping search engines (best effort)
         if: always()
         run: |
-          SITEMAP_URL="https://rodrigosimoes97.github.io/Pin/sitemap.xml"
+          SITEMAP_URL="https://health-ptg.pages.dev/sitemap.xml"
           curl -fsS "https://www.google.com/ping?sitemap=${SITEMAP_URL}" || true
           if [ -n "${INDEXNOW_KEY:-}" ]; then
             curl -fsS "https://api.indexnow.org/IndexNow?urlset=${SITEMAP_URL}&key=${INDEXNOW_KEY}" || true
