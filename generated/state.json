@@ -1,10 +1,7 @@
 {
-  "runs": 36,
-  "offer_runs": 16,
+  "runs": 37,
+  "offer_runs": 17,
   "recent_topics": [
-    "healthy-habits",
-    "longevity-daily-routines",
-    "healthy-recipes",
     "anti-inflammatory-foods",
     "anti-inflammatory-foods",
     "home-workouts",
@@ -31,7 +28,10 @@
     "home-workouts",
     "metabolic-health",
     "weight-loss-lifestyle",
-    "metabolic-health"
+    "metabolic-health",
+    "weight-loss-lifestyle",
+    "metabolic-health",
+    "weight-loss-lifestyle"
   ],
   "recent_slugs": [
     "fiber-vs-fermented-foods-gut-health",
@@ -104,13 +104,13 @@
     "no-equipment-strength-small-spaces",
     "boost-energy-balance-blood-sugar",
     "understand-calories-daily-health",
-    "realistic-blood-sugar-tips-energy"
+    "realistic-blood-sugar-tips-energy",
+    "track-calories-without-deprivation",
+    "unlock-your-energy-master-blood-sugar",
+    "calorie-aware-without-diet-mentality"
   ],
-  "last_run": "2026-03-24",
+  "last_run": "2026-03-25",
   "recent_tags": [
-    "healthy-habits",
-    "longevity",
-    "recipes",
     "health",
     "anti-inflammatory",
     "home-workouts",
@@ -137,6 +137,9 @@
     "home-workouts",
     "healthy-habits",
     "healthy-habits",
+    "healthy-habits",
+    "healthy-habits",
+    "health",
     "healthy-habits"
   ],
   "tag_counts": {
@@ -144,13 +147,13 @@
     "gut": 5,
     "mental-wellness": 5,
     "stress": 5,
-    "healthy-habits": 17,
+    "healthy-habits": 19,
     "longevity": 5,
     "recipes": 5,
     "anti-inflammatory": 5,
     "home-workouts": 5,
     "weight": 4,
-    "health": 4
+    "health": 5
   },
   "topic_rotation": {
     "sleep": 5,
@@ -161,7 +164,7 @@
     "recipes": 5,
     "anti-inflammatory": 8,
     "home-workouts": 7,
-    "weight": 15,
+    "weight": 18,
     "mental-wellness": 1
   },
   "recent_titles": [
@@ -188,6 +191,9 @@
     "No-Equipment Strength for Small Spaces: Get Stronger",
     "How to Actually Boost Energy by Balancing Sugar",
     "How to Understand Calories for Daily Health",
-    "Realistic Blood Sugar Tips for More Energy"
+    "Realistic Blood Sugar Tips for More Energy",
+    "How to Track Calories Without Feeling Deprived",
+    "Unlock Your Energy: Master Blood Sugar Levels",
+    "How to Be Calorie Aware Without the Diet Mentality"
   ]
 }
