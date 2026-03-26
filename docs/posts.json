@@ -1,5 +1,50 @@
 [
   {
+    "slug": "stabilize-blood-sugar-energy",
+    "title": "How to Stabilize Blood Sugar for All-Day Energy",
+    "description": "Tired of energy crashes? Learn how to balance your blood sugar for sustained energy throughout the day with practical tips and personal insights.",
+    "date": "2026-03-26",
+    "url": "stabilize-blood-sugar-energy.html",
+    "hero": "assets/2026-03-26_stabilize-blood-sugar-energy.webp",
+    "tag": "healthy-habits"
+  },
+  {
+    "slug": "how-to-eat-mindfully-for-lasting-weight-management",
+    "title": "How to Eat Mindfully for Lasting Weight Management",
+    "description": "Discover sustainable calorie awareness without restriction. Learn mindful eating techniques for long-term weight management from a personal perspective.",
+    "date": "2026-03-26",
+    "url": "how-to-eat-mindfully-for-lasting-weight-management.html",
+    "hero": "assets/2026-03-26_how-to-eat-mindfully-for-lasting-weight-management.webp",
+    "tag": "healthy-habits"
+  },
+  {
+    "slug": "blood-sugar-energy-levels-0326-3",
+    "title": "Is Blood Sugar Sabotaging Your Energy Levels?",
+    "description": "Discover how blood sugar impacts your energy and learn practical tips to balance it for sustained vitality. I share my own struggles and solutions.",
+    "date": "2026-03-26",
+    "url": "blood-sugar-energy-levels-0326-3.html",
+    "hero": "assets/2026-03-26_blood-sugar-energy-levels-0326-3.webp",
+    "tag": "healthy-habits"
+  },
+  {
+    "slug": "how-to-track-calories-without-feeling-restricted",
+    "title": "How to Track Calories Without Feeling Restricted",
+    "description": "Learn sustainable calorie awareness techniques that help you lose weight without feeling deprived. Discover practical tips and mindset shifts for a healthier lifestyle.",
+    "date": "2026-03-26",
+    "url": "how-to-track-calories-without-feeling-restricted.html",
+    "hero": "assets/2026-03-26_how-to-track-calories-without-feeling-restricted.webp",
+    "tag": "healthy-habits"
+  },
+  {
+    "slug": "boost-energy-blood-sugar",
+    "title": "How to Boost Energy by Understanding Blood Sugar",
+    "description": "Feeling drained? Learn how balancing your blood sugar can transform your energy levels. My personal journey and practical tips for a more vibrant you.",
+    "date": "2026-03-26",
+    "url": "boost-energy-blood-sugar.html",
+    "hero": "assets/2026-03-26_boost-energy-blood-sugar.webp",
+    "tag": "health"
+  },
+  {
     "slug": "calorie-aware-without-diet-mentality",
     "title": "How to Be Calorie Aware Without the Diet Mentality",
     "description": "Learn to be calorie aware for weight loss without falling into restrictive diet traps. Discover sustainable habits for a healthier you.",
