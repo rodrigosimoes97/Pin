@@ -1,5 +1,50 @@
 [
   {
+    "slug": "how-to-start-meditating-today-simple-guide",
+    "title": "How to Start Meditating Today: A Simple Guide",
+    "description": "Feeling overwhelmed? Learn simple meditation and breathing techniques for beginners to reduce stress and find calm. Start your mindfulness journey today!",
+    "date": "2026-03-27",
+    "url": "how-to-start-meditating-today-simple-guide.html",
+    "hero": "assets/2026-03-27_how-to-start-meditating-today-simple-guide.webp",
+    "tag": "mental-wellness"
+  },
+  {
+    "slug": "mental-fatigue-burnout-fixes",
+    "title": "Mental Fatigue? Try These Quick Burnout Fixes",
+    "description": "Feeling drained and overwhelmed? Discover simple, practical ways to manage workplace stress and mental fatigue to prevent burnout. Get your energy back!",
+    "date": "2026-03-27",
+    "url": "mental-fatigue-burnout-fixes.html",
+    "hero": "assets/2026-03-27_mental-fatigue-burnout-fixes.webp",
+    "tag": "mental-wellness"
+  },
+  {
+    "slug": "bloating-relief-natural-fixes",
+    "title": "Struggling with Bloating? Try These Natural Fixes",
+    "description": "Tired of that uncomfortable bloat? Discover natural ways to identify triggers and improve digestion for lasting relief. Learn simple tips and lifestyle changes.",
+    "date": "2026-03-27",
+    "url": "bloating-relief-natural-fixes.html",
+    "hero": "assets/2026-03-27_bloating-relief-natural-fixes.webp",
+    "tag": "gut"
+  },
+  {
+    "slug": "bedroom-sleep-haven",
+    "title": "How to Make Your Bedroom a Sleep Haven",
+    "description": "Discover how to transform your bedroom into the ultimate sleep sanctuary. Learn simple, actionable tips to optimize your environment for deeper, more restorative rest.",
+    "date": "2026-03-27",
+    "url": "bedroom-sleep-haven.html",
+    "hero": "assets/2026-03-27_bedroom-sleep-haven.webp",
+    "tag": "sleep"
+  },
+  {
+    "slug": "calorie-awareness-sustainable-weight-loss",
+    "title": "How to Master Calorie Awareness for Sustainable Weight Loss",
+    "description": "Learn how to build sustainable calorie awareness for lasting weight loss without feeling restricted. My personal journey to understanding food and my body.",
+    "date": "2026-03-27",
+    "url": "calorie-awareness-sustainable-weight-loss.html",
+    "hero": "assets/2026-03-27_calorie-awareness-sustainable-weight-loss.webp",
+    "tag": "weight"
+  },
+  {
     "slug": "stabilize-blood-sugar-energy",
     "title": "How to Stabilize Blood Sugar for All-Day Energy",
     "description": "Tired of energy crashes? Learn how to balance your blood sugar for sustained energy throughout the day with practical tips and personal insights.",
@@ -574,15 +619,6 @@
     "url": "prepare-for-sleep-bedtime-routine.html",
     "hero": "assets/2026-02-26_prepare-for-sleep-bedtime-routine.jpg",
     "tag": "sleep"
-  },
-  {
-    "slug": "calorie-awareness-sustainable-weight-loss",
-    "title": "Can Calorie Awareness Lead to Sustainable Weight Loss?",
-    "description": "Discover how making calorie-aware choices can support your weight loss journey in a sustainable, healthy way. Get practical tips and strategies.",
-    "date": "2026-02-26",
-    "url": "calorie-awareness-sustainable-weight-loss.html",
-    "hero": "assets/2026-02-26_calorie-awareness-sustainable-weight-loss.jpg",
-    "tag": "weight"
   },
   {
     "slug": "get-fit-without-gym-equipment",
