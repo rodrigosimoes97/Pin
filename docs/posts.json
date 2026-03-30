@@ -1,5 +1,41 @@
 [
   {
+    "slug": "healthy-eating-budget-families",
+    "title": "How to Eat Healthy on a Budget for Families",
+    "description": "Discover practical tips and budget-friendly meal prep strategies for US families to eat healthy without breaking the bank. Learn how to save money and nourish your loved ones.",
+    "date": "2026-03-30",
+    "url": "healthy-eating-budget-families.html",
+    "hero": "assets/2026-03-30_healthy-eating-budget-families.webp",
+    "tag": "recipes"
+  },
+  {
+    "slug": "high-protein-breakfasts-active-lifestyle",
+    "title": "Feel Fuller, Move More: High-Protein Breakfasts for Your Active Life",
+    "description": "Discover delicious and satiating high-protein breakfast ideas designed for active lifestyles. Learn how to fuel your day and stay energized.",
+    "date": "2026-03-30",
+    "url": "high-protein-breakfasts-active-lifestyle.html",
+    "hero": "assets/2026-03-30_high-protein-breakfasts-active-lifestyle.webp",
+    "tag": "healthy-habits"
+  },
+  {
+    "slug": "maintain-strength-independence-age",
+    "title": "How to Maintain Strength and Independence as You Age",
+    "description": "Learn practical strategies to keep your strength and independence as you age. This guide offers expert advice and personal insights for a vibrant, active future.",
+    "date": "2026-03-30",
+    "url": "maintain-strength-independence-age.html",
+    "hero": "assets/2026-03-30_maintain-strength-independence-age.webp",
+    "tag": "longevity"
+  },
+  {
+    "slug": "stress-support-nervous-system-hacks",
+    "title": "Feeling Stressed? Try These Nervous System Hacks",
+    "description": "Discover practical, science-backed techniques to calm your nervous system and manage stress. Learn how to hack your stress response for a more peaceful life.",
+    "date": "2026-03-30",
+    "url": "stress-support-nervous-system-hacks.html",
+    "hero": "assets/2026-03-30_stress-support-nervous-system-hacks.webp",
+    "tag": "stress"
+  },
+  {
     "slug": "how-to-start-meditating-today-simple-guide",
     "title": "How to Start Meditating Today: A Simple Guide",
     "description": "Feeling overwhelmed? Learn simple meditation and breathing techniques for beginners to reduce stress and find calm. Start your mindfulness journey today!",
