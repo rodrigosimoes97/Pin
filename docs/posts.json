@@ -1,5 +1,41 @@
 [
   {
+    "slug": "boost-mobility-nutrition-movement-joint-comfort",
+    "title": "Boost Mobility: Nutrition & Movement Tips for Joint Comfort",
+    "description": "Discover practical nutrition and movement tips to improve joint mobility and reduce discomfort. A relatable guide to feeling better in your body.",
+    "date": "2026-04-01",
+    "url": "boost-mobility-nutrition-movement-joint-comfort.html",
+    "hero": "assets/2026-04-01_boost-mobility-nutrition-movement-joint-comfort.webp",
+    "tag": "health"
+  },
+  {
+    "slug": "busy-pros-quick-healthy-eating",
+    "title": "Busy Pro's Guide to Quick, Healthy Eating",
+    "description": "Discover nutrient-dense recipes and strategies for busy US professionals to eat healthy without sacrificing time. Your guide to quick, delicious meals.",
+    "date": "2026-04-01",
+    "url": "busy-pros-quick-healthy-eating.html",
+    "hero": "assets/2026-04-01_busy-pros-quick-healthy-eating.webp",
+    "tag": "recipes"
+  },
+  {
+    "slug": "habits-for-longevity-science-backed",
+    "title": "Habits for Longevity: A Science-Backed Approach",
+    "description": "Discover science-backed daily habits to boost your longevity and live a healthier, longer life. Learn practical tips from a relatable health mentor.",
+    "date": "2026-04-01",
+    "url": "habits-for-longevity-science-backed.html",
+    "hero": "assets/2026-04-01_habits-for-longevity-science-backed.webp",
+    "tag": "longevity"
+  },
+  {
+    "slug": "burnout-prevention-stress-management",
+    "title": "Tired of Burnout? Simple Daily Stress Management",
+    "description": "Feeling drained by workplace stress? Discover simple, daily strategies to manage mental fatigue and prevent burnout. Learn practical tips for a healthier you.",
+    "date": "2026-04-01",
+    "url": "burnout-prevention-stress-management.html",
+    "hero": "assets/2026-04-01_burnout-prevention-stress-management.webp",
+    "tag": "stress"
+  },
+  {
     "slug": "fermented-foods-gut-reset",
     "title": "Fermented Foods: Your Practical Gut Reset",
     "description": "Discover how to easily incorporate traditional fermented foods into your US diet for a healthier gut and overall well-being. My personal journey and practical tips.",

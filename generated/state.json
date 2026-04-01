@@ -1,11 +1,7 @@
 {
-  "runs": 41,
-  "offer_runs": 18,
+  "runs": 42,
+  "offer_runs": 20,
   "recent_topics": [
-    "anti-inflammatory-foods",
-    "joint-health",
-    "walking-for-fitness",
-    "yoga-for-flexibility",
     "home-workouts",
     "metabolic-health",
     "weight-loss-lifestyle",
@@ -31,13 +27,13 @@
     "walking-for-fitness",
     "home-workouts",
     "circadian-rhythm",
-    "probiotic-foods"
+    "probiotic-foods",
+    "burnout-prevention",
+    "longevity-daily-routines",
+    "healthy-recipes",
+    "joint-health"
   ],
   "recent_slugs": [
-    "foods-lower-inflammation",
-    "get-fit-without-gym-equipment",
-    "calorie-awareness-sustainable-weight-loss",
-    "prepare-for-sleep-bedtime-routine",
     "when-to-eat-gut-health",
     "daily-habits-fight-stress",
     "small-habits-improve-health-0227-2",
@@ -113,14 +109,14 @@
     "walk-weight-loss-routines",
     "quick-home-strength-workouts-any-space",
     "use-light-for-perfect-sleep",
-    "fermented-foods-gut-reset"
+    "fermented-foods-gut-reset",
+    "burnout-prevention-stress-management",
+    "habits-for-longevity-science-backed",
+    "busy-pros-quick-healthy-eating",
+    "boost-mobility-nutrition-movement-joint-comfort"
   ],
-  "last_run": "2026-03-31",
+  "last_run": "2026-04-01",
   "recent_tags": [
-    "health",
-    "anti-inflammatory",
-    "healthy-habits",
-    "healthy-habits",
     "home-workouts",
     "healthy-habits",
     "healthy-habits",
@@ -146,38 +142,38 @@
     "weight",
     "home-workouts",
     "sleep",
-    "gut"
+    "gut",
+    "stress",
+    "longevity",
+    "recipes",
+    "health"
   ],
   "tag_counts": {
     "sleep": 7,
     "gut": 7,
     "mental-wellness": 7,
-    "stress": 6,
+    "stress": 7,
     "healthy-habits": 24,
-    "longevity": 6,
-    "recipes": 6,
+    "longevity": 7,
+    "recipes": 7,
     "anti-inflammatory": 6,
     "home-workouts": 6,
     "weight": 6,
-    "health": 6
+    "health": 7
   },
   "topic_rotation": {
     "sleep": 7,
     "gut": 8,
-    "stress": 12,
+    "stress": 13,
     "healthy-habits": 3,
-    "longevity": 7,
-    "recipes": 7,
-    "anti-inflammatory": 9,
+    "longevity": 8,
+    "recipes": 8,
+    "anti-inflammatory": 10,
     "home-workouts": 9,
     "weight": 24,
     "mental-wellness": 1
   },
   "recent_titles": [
-    "How to Fuel Your Body: Blood Sugar Basics",
-    "Practical Ways to Understand Calories Sustainably",
-    "Struggling to Sleep? Try This Reset",
-    "Practical Tips for Eating Fermented Foods Today",
     "How to Meditate Simply: Your Beginner's Breathing Guide",
     "Feeling Drained? Prevent Burnout with These Tips",
     "How to Maintain Strength and Independence Daily",
@@ -213,6 +209,10 @@
     "Walk Your Way to Weight Loss: Simple Routines",
     "Quick Home Strength Workouts for Any Space",
     "How to Use Light for Perfect Sleep",
-    "Fermented Foods: Your Practical Gut Reset"
+    "Fermented Foods: Your Practical Gut Reset",
+    "Tired of Burnout? Simple Daily Stress Management",
+    "Habits for Longevity: A Science-Backed Approach",
+    "Busy Pro's Guide to Quick, Healthy Eating",
+    "Boost Mobility: Nutrition & Movement Tips"
   ]
 }
