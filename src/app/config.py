@@ -16,6 +16,7 @@ class Settings:
     pinterest_access_token: str
     pinterest_board_id: str
     pinterest_enable_publish: bool
+    google_indexing_json_path: str
     posts_per_week: int
     repo_root: Path
 
@@ -50,6 +51,7 @@ def load_settings() -> Settings:
         pinterest_access_token=os.getenv("PINTEREST_ACCESS_TOKEN", "").strip(),
         pinterest_board_id=os.getenv("PINTEREST_BOARD_ID", "").strip(),
         pinterest_enable_publish=_bool_flag("PINTEREST_ENABLE_PUBLISH"),
+        google_indexing_json_path=os.getenv("GOOGLE_INDEXING_JSON_PATH", "").strip(),
         posts_per_week=int(os.getenv("POSTS_PER_WEEK", "5").strip()),
         repo_root=Path(__file__).resolve().parents[2],
     )

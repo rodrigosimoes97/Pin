@@ -6,6 +6,17 @@ build-backend = "setuptools.build_meta"
 name = "pin-daily-health-system"
 version = "0.1.0"
 requires-python = ">=3.11"
+dependencies = [
+    "requests>=2.32.0",
+    "Pillow>=10.4.0",
+    "sentence-transformers",
+    "beautifulsoup4",
+    "scikit-learn",
+    "numpy",
+    "pytrends",
+    "google-auth",
+    "google-api-python-client",
+]
 
 [tool.setuptools]
 package-dir = {"" = "src"}

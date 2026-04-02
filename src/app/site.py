@@ -441,23 +441,29 @@ def _render_post_html(
     fonts = "<link rel='preconnect' href='https://fonts.googleapis.com'><link rel='preconnect' href='https://fonts.gstatic.com' crossorigin><link href='https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap' rel='stylesheet'>"
 
     return f"""<!doctype html>
-<html lang='en' dir='ltr'>
+<html lang='en-US' dir='ltr'>
 <head>
 <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <title>{escape(str(post['title']))} | {escape(site_title)}</title>
 <meta name='description' content='{escape(description)}'>
+<meta name='keywords' content='{escape(str(tag)).replace("-", ", ")}, health tips, wellness guide, {escape(str(post["title"]))}'>
 <meta name='author' content='RodrigoS'>
-<meta name='robots' content='index,follow'>
+<meta name='robots' content='index,follow,max-image-preview:large'>
 <link rel='canonical' href='{canonical}'>
 {preload_hero}
 {fonts}
 <link rel='stylesheet' href='assets/style.css'>
+<meta property='og:locale' content='en_US'>
 <meta property='og:type' content='article'>
+<meta property='og:site_name' content='{escape(site_title)}'>
 <meta property='og:title' content='{escape(str(post["title"]))}'>
 <meta property='og:description' content='{escape(description)}'>
 <meta property='og:url' content='{canonical}'>
 <meta property='og:image' content='{og_image}'>
+<meta property='article:published_time' content='{published_date}'>
+<meta property='article:modified_time' content='{modified_date}'>
+<meta property='article:section' content='{escape(str(tag))}'>
 <meta name='twitter:card' content='summary_large_image'>
 <meta name='twitter:title' content='{escape(str(post["title"]))}'>
 <meta name='twitter:description' content='{escape(description)}'>
@@ -1068,20 +1074,25 @@ def _write_sitemap(
     posts: list[dict[str, str]],
     tag_pages: list[str],
 ) -> None:
-    public_base = _effective_base_url(base_url)
+    del tag_pages
+    public_base = "https://health-ptg.pages.dev"
     today = date.today().isoformat()
+    # Include ONLY valid HTML pages and exclude tags/duplicates
     rows = [
-        f"<url><loc>{public_base}/</loc><lastmod>{today}</lastmod><priority>1.0</priority></url>",
+        f"<url><loc>{public_base}/index.html</loc><lastmod>{today}</lastmod><priority>1.0</priority></url>",
         f"<url><loc>{public_base}/about.html</loc><lastmod>{today}</lastmod></url>",
     ]
-    for post in posts[:200]:
-        lastmod = _iso_date_or_fallback(post.get("date"), today)
-        rows.append(
-            f"<url><loc>{public_base}/{escape(post['url'])}</loc>"
-            f"<lastmod>{lastmod}</lastmod></url>"
-        )
-    for tag_page in sorted(set(tag_pages)):
-        rows.append(f"<url><loc>{public_base}/{escape(tag_page)}</loc><lastmod>{today}</lastmod></url>")
+    seen_slugs = set()
+    for post in posts[:250]:
+        slug = post.get('slug')
+        if slug and slug not in seen_slugs:
+            lastmod = _iso_date_or_fallback(post.get("date"), today)
+            rows.append(
+                f"<url><loc>{public_base}/{escape(post['url'])}</loc>"
+                f"<lastmod>{lastmod}</lastmod></url>"
+            )
+            seen_slugs.add(slug)
+
     xml = (
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'

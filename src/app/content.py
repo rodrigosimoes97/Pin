@@ -25,10 +25,24 @@ CONTENT_PROMPT = """Write a high-quality, US-focused health article.
 Return strict JSON object only (no markdown) with keys exactly:
 title,slug,meta_description,html,image_query,pin_title,pin_description,alt_text,tag,faq
 
+CONTENT UNIQUENESS RULES:
+- Use a unique angle for this topic.
+- Include specific, unique examples that aren't common knowledge.
+- Avoid repeated structures and generic AI filler phrases (e.g., "In today's fast-paced world", "It's important to note").
+- Minimum 500 words of body content (excluding title, metadata, and FAQ).
+
+SEO RULES:
+- Include the main keyword ({topic_name}) in:
+  1. The title
+  2. The first paragraph
+  3. Naturally throughout the body content
+  4. The meta description
+
 CRITICAL JSON RULES:
 - NO literal newlines inside JSON values. Use \n for line breaks.
 - Escape all double quotes inside strings with \".
 - Ensure valid JSON format.
+
 Input:
 - topic_name: {topic_name}
 - angle: {angle}
@@ -44,13 +58,11 @@ SEO & Tone Rules:
 - Tone: Conversational, honest, and slightly anti-perfectionist. Use contractions and "US coffee-shop" English.
 - Opening: Start with a "vulnerability hook"—a short personal story or a specific moment of frustration that most readers feel.
 - No Fluff: Skip the "In this article, we will..." or "In conclusion." Go straight to the meat.
+- High Readability: Use short sentences and simple language.
 - Myth-Buster: Include a section styled as `<div class='myth-fact'><div class='myth-header'>The Big Lie</div><div class='myth-body'>...</div><div class='fact-header'>The Human Reality</div><div class='fact-body'>...</div></div>`.
 - The 2-Minute Win: Include a styled box: `<div class='quick-win'><h3>The 2-Minute Win</h3><p>...</p></div>`. This must be an action the reader can do *right now* while reading.
 - Pro-Tip: Use <blockquote> for "insider secrets" that aren't common knowledge.
 - Formatting: Use very short paragraphs (max 2 sentences) and bold text for emphasis on key emotional points.
-- Keep paragraphs short (2-3 sentences) for better readability on mobile.
-- Include one "Pro-Tip" or "Insider Secret" callout styled as a <blockquote>.
-- Include one short actionable checklist with a catchy title.
 - include exactly 5 internal link placeholders in body:
   1. href="#recent-1" (anchor text: related healthy tip)
   2. href="#recent-2" (anchor text: another practical guide)
@@ -74,12 +86,6 @@ SEO & Tone Rules:
     "tips": ["..."],
     "storage": "..."
   }}
-- Recipe safety rules when tag=recipes:
-  - Use realistic US kitchen ingredient units (cups, tbsp, oz) and practical preparation steps.
-  - Keep ingredients realistic, avoid risky techniques, and avoid medical promises.
-  - html must include anchors and sections: <h2 id="recipe">Recipe</h2>, <h3 id="ingredients">Ingredients</h3> with <ul>, and <h3 id="instructions">Instructions</h3> with <ol>.
-  - Include a tips section and storage guidance in html (<h3 id="tips">Tips</h3>, <h3 id="storage">Storage</h3>) unless genuinely not applicable.
-- If tag is not recipes, omit recipe or set recipe to null.
 """
 
 
