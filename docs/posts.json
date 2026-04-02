@@ -1,5 +1,41 @@
 [
   {
+    "slug": "stabilize-blood-sugar-energy-0402-4",
+    "title": "How to Stabilize Blood Sugar for Energy: My Journey to Feeling Better",
+    "description": "Learn how to stabilize blood sugar for sustained energy. Discover practical tips, bust myths, and find out how simple dietary changes can make a big difference in your daily life.",
+    "date": "2026-04-02",
+    "url": "stabilize-blood-sugar-energy-0402-4.html",
+    "hero": "assets/2026-04-02_stabilize-blood-sugar-energy-0402-4.webp",
+    "tag": "healthy-habits"
+  },
+  {
+    "slug": "home-strength-no-equipment-maximum-impact",
+    "title": "Home Strength: No Equipment, Maximum Impact",
+    "description": "Discover how to build strength at home with no equipment. This guide offers effective, space-saving workouts for real results, even in small living areas.",
+    "date": "2026-04-02",
+    "url": "home-strength-no-equipment-maximum-impact.html",
+    "hero": "assets/2026-04-02_home-strength-no-equipment-maximum-impact.webp",
+    "tag": "home-workouts"
+  },
+  {
+    "slug": "sedentary-stretches-mobility",
+    "title": "Sedentary Life? Simple Stretches for Better Mobility",
+    "description": "Feeling stiff from sitting all day? Discover simple, daily stretches for sedentary workers to boost mobility and combat the negative effects of prolonged sitting. Get moving again!",
+    "date": "2026-04-02",
+    "url": "sedentary-stretches-mobility.html",
+    "hero": "assets/2026-04-02_sedentary-stretches-mobility.webp",
+    "tag": "healthy-habits"
+  },
+  {
+    "slug": "heal-from-within-antioxidant-foods",
+    "title": "Heal From Within: The Power of Antioxidant-Rich Foods",
+    "description": "Discover how antioxidant-rich and healthy fat foods can help you heal your body from the inside out. Learn practical tips and easy recipes.",
+    "date": "2026-04-02",
+    "url": "heal-from-within-antioxidant-foods.html",
+    "hero": "assets/2026-04-02_heal-from-within-antioxidant-foods.webp",
+    "tag": "anti-inflammatory"
+  },
+  {
     "slug": "boost-mobility-nutrition-movement-joint-comfort",
     "title": "Boost Mobility: Nutrition & Movement Tips for Joint Comfort",
     "description": "Discover practical nutrition and movement tips to improve joint mobility and reduce discomfort. A relatable guide to feeling better in your body.",
