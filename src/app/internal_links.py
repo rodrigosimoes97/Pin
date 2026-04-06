@@ -3,9 +3,9 @@ import re
 from typing import Any
 
 def get_related_internal_links(post_content: str, all_posts: list[dict[str, Any]], current_slug: str, limit: int = 3) -> list[dict[str, Any]]:
-    \"\"\"
+    """
     Finds existing posts to link from the new post based on keyword overlap and tags.
-    \"\"\"
+    """
     if not all_posts:
         return []
 

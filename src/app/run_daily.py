@@ -46,7 +46,7 @@ def _log_to_file(repo_root: Path, filename: str, message: str) -> None:
         f.write(f"{datetime.now(timezone.utc).isoformat()} - {message}\n")
 
 def _validate_quality(post: dict[str, Any], topic_name: str) -> bool:
-    \"\"\"Checks word count and keyword presence.\"\"\"
+    """Checks word count and keyword presence."""
     text = re.sub(r'<[^>]+>', ' ', post.get("html", ""))
     word_count = len(text.split())
     
@@ -62,7 +62,7 @@ def _validate_quality(post: dict[str, Any], topic_name: str) -> bool:
     return True
 
 def _create_topic_from_trend(client: GeminiClient, trend: str) -> Topic:
-    prompt = f\"\"\"Analyze this trending health topic: '{trend}'
+    prompt = f"""Analyze this trending health topic: '{trend}'
 Categorize it into one of these tags: {', '.join(PRIORITY_TAGS)}
 Return a JSON object with:
 - slug: a URL-friendly version of the topic
@@ -70,7 +70,7 @@ Return a JSON object with:
 - angle: a unique angle for a health article (US-focused, conversational)
 - tag: the chosen tag from the list
 Strict JSON only.
-\"\"\"
+"""
     try:
         data = client.generate_json(prompt)
         return Topic(

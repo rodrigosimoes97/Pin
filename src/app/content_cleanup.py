@@ -12,7 +12,7 @@ class ContentCleanup:
         self.generated_dir = repo_root / "generated"
 
     def sync_posts_json(self, valid_slugs: set[str]):
-        \"\"\"Removes entries from posts.json that don't have a corresponding HTML file.\"\"\"
+        """Removes entries from posts.json that don't have a corresponding HTML file."""
         posts_path = self.docs_dir / "posts.json"
         if not posts_path.exists():
             return
@@ -26,7 +26,7 @@ class ContentCleanup:
             LOG.info(f"Sync posts.json: Removed {initial_count - len(filtered_posts)} orphaned entries.")
 
     def clean_orphaned_assets(self, valid_slugs: set[str]):
-        \"\"\"Removes images in assets/ that are no longer referenced by any post.\"\"\"
+        """Removes images in assets/ that are no longer referenced by any post."""
         assets_dir = self.docs_dir / "assets"
         if not assets_dir.exists():
             return
@@ -57,7 +57,7 @@ class ContentCleanup:
             LOG.info(f"Cleaned {removed_count} orphaned assets.")
 
     def remove_duplicates_by_slug(self, dry_run: bool = True):
-        \"\"\"Removes duplicate HTML files based on slug patterns (e.g. slug-0311-2.html).\"\"\"
+        """Removes duplicate HTML files based on slug patterns (e.g. slug-0311-2.html)."""
         html_files = list(self.docs_dir.glob("*.html"))
         ignored = {"index.html", "about.html", "404.html", "google6133bcf6ce3a132f.html"}
         

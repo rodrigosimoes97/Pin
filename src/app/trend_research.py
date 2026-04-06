@@ -23,7 +23,7 @@ REDDIT_URLS = [
 ]
 
 def get_trending_topics() -> list[str]:
-    \"\"\"Fetches trending health topics from Google Trends, RSS, and Reddit.\"\"\"
+    """Fetches trending health topics from Google Trends, RSS, and Reddit."""
     topics = []
 
     # 1. Fetch from Google Trends
@@ -79,7 +79,7 @@ def get_trending_topics() -> list[str]:
     return unique_topics[:10]
 
 def _is_relevant(text: str) -> bool:
-    \"\"\"Filters for health, fitness, and wellness only.\"\"\"
+    """Filters for health, fitness, and wellness only."""
     keywords = [
         "health", "fitness", "wellness", "sleep", "diet", "nutrition", "exercise",
         "mental", "stress", "gut", "heart", "muscle", "brain", "body", "weight",
