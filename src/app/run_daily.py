@@ -38,6 +38,11 @@ def _setup_logging(repo_root: Path) -> None:
             logging.StreamHandler()
         ]
     )
+    # Silence noisy logs
+    logging.getLogger("sentence_transformers").setLevel(logging.WARNING)
+    logging.getLogger("httpx").setLevel(logging.WARNING)
+    logging.getLogger("urllib3").setLevel(logging.WARNING)
+    logging.getLogger("huggingface_hub").setLevel(logging.WARNING)
 
 def _log_to_file(repo_root: Path, filename: str, message: str) -> None:
     log_dir = repo_root / "generated" / "logs"
