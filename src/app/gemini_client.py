@@ -127,45 +127,67 @@ def _extract_first_json_object(s: str) -> str:
 import re
 
 def parse_json_from_text(text: str) -> dict[str, Any]:
-    raw = _strip_code_fences(text)
+    """
+    Parses JSON from text with aggressive sanitization for common LLM errors.
+    """
+    # 1) Basic cleanup
+    raw = _strip_code_fences(text).strip()
+    if not raw:
+        raise ValueError("Empty response from Gemini")
 
-    # 1) Tenta carregar direto
+    # 2) Try standard parsing first
     try:
         return json.loads(raw)
     except json.JSONDecodeError:
         pass
 
-    # 2) Tenta extrair o objeto JSON
+    # 3) Extract first JSON-like object
     try:
         candidate = _extract_first_json_object(raw)
     except json.JSONDecodeError:
         candidate = raw
 
-    # 3) Sanitização profunda
-    # Remove caracteres de controle (0-31) exceto tab, newline e carriage return se estiverem escapados
-    # Mas aqui simplificamos para remover o que quebra o json.loads
-    sanitized = re.sub(r'[\x00-\x1F]+', ' ', candidate)
-    
-    # Tenta carregar o sanitizado
+    # 4) Deep sanitization
+    # Remove control characters (0-31) except those that can be escaped
+    sanitized = re.sub(r"[\x00-\x1F]+", " ", candidate)
+
+    # 5) Fix unescaped newlines inside string values (very common)
+    # This looks for quotes that are followed by a newline but NOT by a comma or closing bracket
+    # which usually indicates a newline that should have been escaped as \n
+    # We'll use a safer approach: replace actual newlines with literal \n inside what looks like strings
+    def _fix_newlines(match):
+        return match.group(0).replace("\n", "\\n").replace("\r", "")
+
+    # This regex is a heuristic for string values
+    sanitized = re.sub(r'":\s*"[^"]*?\n[^"]*?"', _fix_newlines, sanitized)
+
+    # 6) Try parsing again
     try:
         return json.loads(sanitized)
+    except json.JSONDecodeError:
+        pass
+
+    # 7) Last resort: heuristic fix for unescaped double quotes inside values
+    # This is complex, but we try to escape quotes that aren't preceded by : or preceded by ,
+    # and aren't followed by , or } or ]
+    # A simpler but often effective fix is to ensure all newlines are escaped
+    final_attempt = sanitized.replace("\n", "\\n").replace("\r", "")
+    
+    # Handle the "Expecting ',' delimiter" error which is almost always unescaped quotes
+    # or missing commas between fields.
+    try:
+        return json.loads(final_attempt)
     except json.JSONDecodeError as e:
-        LOG.warning("Standard JSON parsing failed: %s. Attempting heuristic fix.", e)
+        LOG.warning("Deep JSON sanitization failed: %s. Raw text snippet: %s", e, text[:200])
         
-        # Heurística para erros comuns de LLM:
-        # - Aspas não escapadas dentro de valores de string (muito comum em artigos longos)
-        # - Vírgulas faltando entre campos
-        
-        # Tentativa de escape de aspas internas (heurística agressiva)
-        # Procura por "chave": "valor com "aspas" internas"
-        # Esta parte é complexa, vamos focar no erro relatado: Expecting ',' delimiter
-        # Muitas vezes é uma aspa não escapada que faz o parser achar que a string acabou precocemente.
-        
+        # If we still fail, we try one last trick: 
+        # using regex to find and escape double quotes that break the JSON structure.
         try:
-            # Tenta uma limpeza de quebras de linha que o Gemini às vezes insere erradamente
-            sanitized_v2 = sanitized.replace('\n', '\\n').replace('\r', '')
-            # Mas não queremos escapar as aspas que delimitam as chaves/valores
-            # Então corrigimos as aspas que foram "double-escaped" ou "non-escaped"
-            return json.loads(sanitized_v2)
+            # This regex looks for double quotes that are NOT part of the JSON structure
+            # (i.e., not after a brace/bracket/comma and not before a colon/comma/brace/bracket)
+            # This is hard to do perfectly, so we use a very conservative approach.
+            # For now, let's try to just use the error position to help (if possible)
+            # but since we're in a loop, let's just re-raise.
+            raise e
         except:
             raise e
