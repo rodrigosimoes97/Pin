@@ -1111,3 +1111,112 @@ json.decoder.JSONDecodeError: Expecting ',' delimiter: line 1 column 4400 (char 
 2026-04-07 15:39:54,021 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
 2026-04-07 15:39:54,188 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
 2026-04-07 15:40:03,167 INFO __main__ - Run complete. Published 0/5 posts.
+2026-04-07 17:26:51,316 WARNING huggingface_hub.utils._http - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-04-07 17:26:52,524 INFO __main__ - Fetching trending topics for USA...
+2026-04-07 17:26:52,720 WARNING src.app.trend_research - Failed to fetch Google Trends: The request failed: Google returned a response with code 404
+2026-04-07 17:26:53,357 INFO __main__ - Using trending topic: Experimental therapy gantenerumab fails to slow or improve Alzheimer's memory loss in clinical trials
+2026-04-07 17:26:54,573 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-07 17:27:04,481 WARNING src.app.gemini_client - Standard JSON parsing failed: Expecting ',' delimiter: line 1 column 5546 (char 5545). Attempting heuristic fix.
+2026-04-07 17:27:04,481 ERROR __main__ - Failed slot 1
+Traceback (most recent call last):
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 169, in parse_json_from_text
+    return json.loads(sanitized_v2)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Expecting ',' delimiter: line 1 column 5546 (char 5545)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/work/Pin/Pin/src/app/run_daily.py", line 181, in main
+    candidate = generate_article(client, topic, chosen_title, mode, offer)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/content.py", line 107, in generate_article
+    payload = client.generate_json(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 23, in generate_json
+    return parse_json_from_text(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 171, in parse_json_from_text
+    raise e
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 151, in parse_json_from_text
+    return json.loads(sanitized)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Expecting ',' delimiter: line 1 column 5546 (char 5545)
+2026-04-07 17:27:04,504 INFO __main__ - Using trending topic: Desperate for heart surgery for their baby, a family feels the effects of pediatric hospital shortages
+2026-04-07 17:27:06,560 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-07 17:27:06,693 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-07 17:27:15,977 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-07 17:27:17,731 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-07 17:27:17,874 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-07 17:27:24,717 WARNING src.app.gemini_client - Standard JSON parsing failed: Expecting ',' delimiter: line 1 column 1431 (char 1430). Attempting heuristic fix.
+2026-04-07 17:27:24,717 ERROR __main__ - Failed slot 3
+Traceback (most recent call last):
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 169, in parse_json_from_text
+    return json.loads(sanitized_v2)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Expecting ',' delimiter: line 1 column 1431 (char 1430)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/work/Pin/Pin/src/app/run_daily.py", line 181, in main
+    candidate = generate_article(client, topic, chosen_title, mode, offer)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/content.py", line 107, in generate_article
+    payload = client.generate_json(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 23, in generate_json
+    return parse_json_from_text(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 171, in parse_json_from_text
+    raise e
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 151, in parse_json_from_text
+    return json.loads(sanitized)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Expecting ',' delimiter: line 1 column 1431 (char 1430)
+2026-04-07 17:27:24,857 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-07 17:27:26,009 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-07 17:27:26,143 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-07 17:27:34,960 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-07 17:27:35,090 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-07 17:27:36,402 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-07 17:27:36,544 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-07 17:27:43,092 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-07 17:27:43,217 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-07 17:27:51,860 INFO __main__ - Run complete. Published 0/5 posts.
