@@ -1220,3 +1220,275 @@ json.decoder.JSONDecodeError: Expecting ',' delimiter: line 1 column 1431 (char 
 2026-04-07 17:27:43,092 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
 2026-04-07 17:27:43,217 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
 2026-04-07 17:27:51,860 INFO __main__ - Run complete. Published 0/5 posts.
+2026-04-07 17:43:26,427 INFO __main__ - Fetching trending topics for USA...
+2026-04-07 17:43:26,733 WARNING src.app.trend_research - Failed to fetch Google Trends: The request failed: Google returned a response with code 404
+2026-04-07 17:43:28,117 INFO __main__ - Using trending topic: Experimental therapy gantenerumab fails to slow or improve Alzheimer's memory loss in clinical trials
+2026-04-07 17:43:28,254 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-07 17:43:28,394 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-07 17:43:29,327 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-07 17:43:29,421 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-07 17:43:29,521 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#3 transient_status=429
+2026-04-07 17:43:29,660 WARNING src.app.gemini_client - Gemini non-retriable failure: key#4 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "Your API key was reported as leaked. Please use another API key.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-04-07 17:43:30,991 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-07 17:43:31,122 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-07 17:43:31,217 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#3 transient_status=429
+2026-04-07 17:43:31,359 WARNING src.app.gemini_client - Gemini non-retriable failure: key#4 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "Your API key was reported as leaked. Please use another API key.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-04-07 17:43:33,759 ERROR __main__ - Failed slot 1
+Traceback (most recent call last):
+  File "/home/runner/work/Pin/Pin/src/app/run_daily.py", line 177, in main
+    titles = generate_titles(client, topic, excluded_titles=recent_titles)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/titles.py", line 32, in generate_titles
+    payload = client.generate_json(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 22, in generate_json
+    text = self.generate_text(prompt, max_output_tokens=max_output_tokens)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 70, in generate_text
+    raise RuntimeError(f"Gemini failed after key failover: {'; '.join(errors)}")
+RuntimeError: Gemini failed after key failover: key#1 transient_status=429; key#2 transient_status=429; key#3 transient_status=429; key#4 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "Your API key was reported as leaked. Please use another API key.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+; key#1 transient_status=429; key#2 transient_status=429; key#3 transient_status=429; key#4 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "Your API key was reported as leaked. Please use another API key.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-04-07 17:43:33,761 INFO __main__ - Using trending topic: Desperate for heart surgery for their baby, a family feels the effects of pediatric hospital shortages
+2026-04-07 17:43:33,855 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-07 17:43:33,968 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-07 17:43:35,106 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-07 17:43:35,264 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-07 17:43:35,357 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#3 transient_status=429
+2026-04-07 17:43:35,487 WARNING src.app.gemini_client - Gemini non-retriable failure: key#4 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "Your API key was reported as leaked. Please use another API key.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-04-07 17:43:36,785 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-07 17:43:36,873 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-07 17:43:36,961 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#3 transient_status=429
+2026-04-07 17:43:37,086 WARNING src.app.gemini_client - Gemini non-retriable failure: key#4 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "Your API key was reported as leaked. Please use another API key.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-04-07 17:43:39,486 ERROR __main__ - Failed slot 2
+Traceback (most recent call last):
+  File "/home/runner/work/Pin/Pin/src/app/run_daily.py", line 177, in main
+    titles = generate_titles(client, topic, excluded_titles=recent_titles)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/titles.py", line 32, in generate_titles
+    payload = client.generate_json(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 22, in generate_json
+    text = self.generate_text(prompt, max_output_tokens=max_output_tokens)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 70, in generate_text
+    raise RuntimeError(f"Gemini failed after key failover: {'; '.join(errors)}")
+RuntimeError: Gemini failed after key failover: key#1 transient_status=429; key#2 transient_status=429; key#3 transient_status=429; key#4 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "Your API key was reported as leaked. Please use another API key.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+; key#1 transient_status=429; key#2 transient_status=429; key#3 transient_status=429; key#4 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "Your API key was reported as leaked. Please use another API key.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-04-07 17:43:39,584 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-07 17:43:39,689 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-07 17:43:39,789 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#3 transient_status=429
+2026-04-07 17:43:39,939 WARNING src.app.gemini_client - Gemini non-retriable failure: key#4 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "Your API key was reported as leaked. Please use another API key.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-04-07 17:43:41,228 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-07 17:43:41,330 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-07 17:43:41,429 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#3 transient_status=429
+2026-04-07 17:43:41,551 WARNING src.app.gemini_client - Gemini non-retriable failure: key#4 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "Your API key was reported as leaked. Please use another API key.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-04-07 17:43:43,951 ERROR __main__ - Failed slot 3
+Traceback (most recent call last):
+  File "/home/runner/work/Pin/Pin/src/app/run_daily.py", line 177, in main
+    titles = generate_titles(client, topic, excluded_titles=recent_titles)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/titles.py", line 32, in generate_titles
+    payload = client.generate_json(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 22, in generate_json
+    text = self.generate_text(prompt, max_output_tokens=max_output_tokens)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 70, in generate_text
+    raise RuntimeError(f"Gemini failed after key failover: {'; '.join(errors)}")
+RuntimeError: Gemini failed after key failover: key#1 transient_status=429; key#2 transient_status=429; key#3 transient_status=429; key#4 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "Your API key was reported as leaked. Please use another API key.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+; key#1 transient_status=429; key#2 transient_status=429; key#3 transient_status=429; key#4 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "Your API key was reported as leaked. Please use another API key.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-04-07 17:43:44,046 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-07 17:43:44,153 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-07 17:43:44,252 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#3 transient_status=429
+2026-04-07 17:43:44,373 WARNING src.app.gemini_client - Gemini non-retriable failure: key#4 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "Your API key was reported as leaked. Please use another API key.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-04-07 17:43:45,701 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-07 17:43:45,830 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-07 17:43:45,916 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#3 transient_status=429
+2026-04-07 17:43:46,035 WARNING src.app.gemini_client - Gemini non-retriable failure: key#4 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "Your API key was reported as leaked. Please use another API key.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-04-07 17:43:48,436 ERROR __main__ - Failed slot 4
+Traceback (most recent call last):
+  File "/home/runner/work/Pin/Pin/src/app/run_daily.py", line 177, in main
+    titles = generate_titles(client, topic, excluded_titles=recent_titles)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/titles.py", line 32, in generate_titles
+    payload = client.generate_json(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 22, in generate_json
+    text = self.generate_text(prompt, max_output_tokens=max_output_tokens)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 70, in generate_text
+    raise RuntimeError(f"Gemini failed after key failover: {'; '.join(errors)}")
+RuntimeError: Gemini failed after key failover: key#1 transient_status=429; key#2 transient_status=429; key#3 transient_status=429; key#4 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "Your API key was reported as leaked. Please use another API key.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+; key#1 transient_status=429; key#2 transient_status=429; key#3 transient_status=429; key#4 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "Your API key was reported as leaked. Please use another API key.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-04-07 17:43:48,529 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-07 17:43:48,623 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-07 17:43:48,718 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#3 transient_status=429
+2026-04-07 17:43:48,829 WARNING src.app.gemini_client - Gemini non-retriable failure: key#4 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "Your API key was reported as leaked. Please use another API key.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-04-07 17:43:50,114 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-07 17:43:50,202 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-07 17:43:51,312 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-07 17:43:51,405 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-07 17:43:51,500 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#3 transient_status=429
+2026-04-07 17:43:51,634 WARNING src.app.gemini_client - Gemini non-retriable failure: key#4 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "Your API key was reported as leaked. Please use another API key.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-04-07 17:43:52,933 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-07 17:43:53,019 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-07 17:43:53,129 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#3 transient_status=429
+2026-04-07 17:43:53,242 WARNING src.app.gemini_client - Gemini non-retriable failure: key#4 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "Your API key was reported as leaked. Please use another API key.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-04-07 17:43:55,642 ERROR __main__ - Failed slot 5
+Traceback (most recent call last):
+  File "/home/runner/work/Pin/Pin/src/app/run_daily.py", line 182, in main
+    candidate = generate_article(client, topic, chosen_title, mode, offer)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/content.py", line 107, in generate_article
+    payload = client.generate_json(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 22, in generate_json
+    text = self.generate_text(prompt, max_output_tokens=max_output_tokens)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 70, in generate_text
+    raise RuntimeError(f"Gemini failed after key failover: {'; '.join(errors)}")
+RuntimeError: Gemini failed after key failover: key#1 transient_status=429; key#2 transient_status=429; key#3 transient_status=429; key#4 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "Your API key was reported as leaked. Please use another API key.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+; key#1 transient_status=429; key#2 transient_status=429; key#3 transient_status=429; key#4 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "Your API key was reported as leaked. Please use another API key.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-04-07 17:43:55,645 INFO __main__ - Run complete. Published 0/5 posts.
