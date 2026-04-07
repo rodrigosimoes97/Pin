@@ -44,6 +44,8 @@ jobs:
           PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
           PINTEREST_ENABLE_PUBLISH: ${{ secrets.PINTEREST_ENABLE_PUBLISH }}
           POSTS_PER_WEEK: "5"
+          HF_HUB_DISABLE_PROGRESS_BARS: "1"
+          TRANSFORMERS_VERBOSITY: "error"
         run: python -m src.app.run_daily
 
       - name: Validate internal links
