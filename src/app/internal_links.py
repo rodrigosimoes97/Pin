@@ -36,4 +36,13 @@ def get_related_internal_links(post_content: str, all_posts: list[dict[str, Any]
     # Sort by score descending
     scored_posts.sort(key=lambda x: x[0], reverse=True)
     
-    return [p[1] for score, p in scored_posts[:limit]]
+    # Extract only the post dictionary from the (score, post) tuple
+    results = []
+    for item in scored_posts[:limit]:
+        if isinstance(item, tuple) and len(item) > 1:
+            results.append(item[1])
+        else:
+            # Fallback if the structure is unexpected
+            LOG.warning("Unexpected item structure in scored_posts: %s", type(item))
+            
+    return results
