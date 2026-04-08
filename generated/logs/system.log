@@ -1724,3 +1724,80 @@ json.decoder.JSONDecodeError: Expecting ',' delimiter: line 1 column 2134 (char 
 2026-04-08 13:45:49,361 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=503
 2026-04-08 13:45:50,474 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
 2026-04-08 13:45:57,681 INFO __main__ - Run complete. Published 0/5 posts.
+2026-04-08 14:20:31,691 INFO __main__ - Fetching trending topics for USA...
+2026-04-08 14:20:32,065 WARNING src.app.trend_research - Failed to fetch Google Trends (404/Error): The request failed: Google returned a response with code 404. Moving to fallbacks.
+2026-04-08 14:20:35,247 INFO src.app.trend_research - Gathered 11 unique trending topics.
+2026-04-08 14:20:35,249 INFO __main__ - Using trending topic: Experimental therapy gantenerumab fails to slow or improve Alzheimers memory loss in clinical trials
+2026-04-08 14:20:35,429 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 14:20:37,978 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 14:20:38,109 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 14:20:52,045 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 14:20:52,186 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 14:21:03,865 INFO __main__ - Using trending topic: Desperate for heart surgery for their baby, a family feels the effects of pediatric hospital shortages
+2026-04-08 14:21:04,021 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 14:21:04,174 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 14:21:07,670 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 14:21:07,813 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 14:21:16,851 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 14:21:16,991 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 14:21:28,646 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 14:21:37,697 INFO __main__ - Using trending topic: Your vitamin D levels in midlife could shape your brain decades later
+2026-04-08 14:21:37,839 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 14:21:37,991 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 14:21:40,158 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 14:21:40,295 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 14:21:42,463 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 14:21:42,609 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 14:21:53,726 INFO src.app.duplicate_checker - Indexed post: midlife-vitamin-d-brain-health (Total: 4)
+2026-04-08 14:21:53,728 ERROR __main__ - Failed slot 3
+Traceback (most recent call last):
+  File "/home/runner/work/Pin/Pin/src/app/run_daily.py", line 202, in main
+    related_for_links = get_related_internal_links(post["html"], existing_posts, post["slug"])
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/internal_links.py", line 39, in get_related_internal_links
+    return [p[1] for score, p in scored_posts[:limit]]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/internal_links.py", line 39, in <listcomp>
+    return [p[1] for score, p in scored_posts[:limit]]
+            ~^^^
+KeyError: 1
+2026-04-08 14:21:53,728 INFO __main__ - Using trending topic: This diet could slash cholera infections by up to 100x
+2026-04-08 14:21:53,980 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 14:21:54,125 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 14:21:56,234 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 14:21:56,381 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 14:21:59,362 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 14:21:59,510 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 14:22:13,110 INFO src.app.duplicate_checker - Indexed post: slash-cholera-risk-diet-secret (Total: 5)
+2026-04-08 14:22:13,111 ERROR __main__ - Failed slot 4
+Traceback (most recent call last):
+  File "/home/runner/work/Pin/Pin/src/app/run_daily.py", line 202, in main
+    related_for_links = get_related_internal_links(post["html"], existing_posts, post["slug"])
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/internal_links.py", line 39, in get_related_internal_links
+    return [p[1] for score, p in scored_posts[:limit]]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/internal_links.py", line 39, in <listcomp>
+    return [p[1] for score, p in scored_posts[:limit]]
+            ~^^^
+KeyError: 1
+2026-04-08 14:22:13,112 INFO __main__ - Using trending topic: Scientists discover hidden brain switch that tells you to stop eating
+2026-04-08 14:22:13,240 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 14:22:16,448 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 14:22:16,583 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 14:22:18,283 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 14:22:18,402 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 14:22:29,346 INFO src.app.duplicate_checker - Indexed post: brain-stop-eating-switch-discovery (Total: 6)
+2026-04-08 14:22:29,347 ERROR __main__ - Failed slot 5
+Traceback (most recent call last):
+  File "/home/runner/work/Pin/Pin/src/app/run_daily.py", line 202, in main
+    related_for_links = get_related_internal_links(post["html"], existing_posts, post["slug"])
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/internal_links.py", line 39, in get_related_internal_links
+    return [p[1] for score, p in scored_posts[:limit]]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/internal_links.py", line 39, in <listcomp>
+    return [p[1] for score, p in scored_posts[:limit]]
+            ~^^^
+KeyError: 1
+2026-04-08 14:22:29,348 INFO __main__ - Run complete. Published 0/5 posts.
