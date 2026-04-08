@@ -152,10 +152,17 @@ def parse_json_from_text(text: str) -> dict[str, Any]:
     sanitized = re.sub(r"[\x00-\x1F]+", " ", candidate)
 
     # 5) Fix unescaped newlines inside string values (very common)
+    # This now handles multiple newlines and preserves structural quotes
     def _fix_newlines(match):
-        return match.group(0).replace("\n", "\\n").replace("\r", "")
+        key_part = match.group(1)
+        value_part = match.group(2)
+        # Only escape actual newline characters, not already escaped \n
+        fixed_value = value_part.replace("\r\n", "\\n").replace("\n", "\\n").replace("\r", "\\n")
+        return f'{key_part}"{fixed_value}"'
 
-    sanitized = re.sub(r'":\s*"[^"]*?\n[^"]*?"', _fix_newlines, sanitized)
+    # Match "key": "value" where value contains newlines. 
+    # Stops at the first quote followed by , or } or ] or end of string
+    sanitized = re.sub(r'("(?:\w+)":\s*)"(.*?)"(?=\s*[,}\]])', _fix_newlines, sanitized, flags=re.DOTALL)
 
     # 6) Try parsing again
     try:
@@ -164,7 +171,6 @@ def parse_json_from_text(text: str) -> dict[str, Any]:
         pass
 
     # 7) Heuristic fix for unescaped double quotes inside values
-    # This is a common issue when Gemini generates HTML inside a JSON string
     def _repair_quotes(s: str) -> str:
         result = []
         i = 0
@@ -174,33 +180,41 @@ def parse_json_from_text(text: str) -> dict[str, Any]:
             if char == '"':
                 # Check if this quote is structural
                 is_structural = False
-                prev_part = s[max(0, i-10):i]
-                next_part = s[i+1:i+10]
+                prev_part = s[max(0, i-20):i] # Increased context
+                next_part = s[i+1:i+20]
                 
-                # Structural cues:
+                # Structural cues (more robust):
                 # Key start: { " or , "
-                if re.search(r'[ {\[,]\s*$', prev_part): is_structural = True
+                if re.search(r'[{\[,]\s*$', prev_part): is_structural = True
                 # Key end / Value start: " :
                 elif re.match(r'^\s*:', next_part): is_structural = True
                 # Value start: : "
                 elif re.search(r':\s*$', prev_part): is_structural = True
                 # Value end: " , or " } or " ]
-                elif re.match(r'^\s*[,}\]]', next_part): is_structural = True
+                # Handle both real newlines and already replaced \\n
+                elif re.match(r'^(\s|\\n|\\r)*[,}\]]', next_part): is_structural = True
                 
                 if in_string and not is_structural:
+                    # If we are already in a string and this quote doesn't look structural, escape it
                     result.append('\\"')
                 else:
                     result.append('"')
-                    in_string = not in_string
+                    # Toggle in_string only on structural quotes
+                    if is_structural:
+                        in_string = not in_string
             else:
                 result.append(char)
+                # If we see an escaped quote, skip it
                 if char == '\\' and i + 1 < len(s) and s[i+1] == '"':
                     result.append('"')
                     i += 1
             i += 1
         return "".join(result)
 
-    final_attempt = _repair_quotes(sanitized.replace("\n", "\\n").replace("\r", ""))
+    # Step 7.1: Pre-process literal newlines to avoid confusing the repair logic
+    # but keep them as recognizable tokens
+    processing = sanitized.replace("\r\n", "\\n").replace("\n", "\\n").replace("\r", "\\n")
+    final_attempt = _repair_quotes(processing)
     
     try:
         return json.loads(final_attempt)
