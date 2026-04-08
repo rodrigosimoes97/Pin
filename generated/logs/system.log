@@ -1801,3 +1801,148 @@ Traceback (most recent call last):
             ~^^^
 KeyError: 1
 2026-04-08 14:22:29,348 INFO __main__ - Run complete. Published 0/5 posts.
+2026-04-08 15:00:34,261 INFO __main__ - Fetching trending topics for USA...
+2026-04-08 15:00:34,434 WARNING src.app.trend_research - Failed to fetch Google Trends (404/Error): The request failed: Google returned a response with code 404. Moving to fallbacks.
+2026-04-08 15:00:37,526 INFO src.app.trend_research - Gathered 11 unique trending topics.
+2026-04-08 15:00:37,529 INFO __main__ - Using trending topic: Experimental therapy gantenerumab fails to slow or improve Alzheimers memory loss in clinical trials
+2026-04-08 15:00:48,980 INFO __main__ - Using trending topic: Desperate for heart surgery for their baby, a family feels the effects of pediatric hospital shortages
+2026-04-08 15:00:49,126 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 15:00:51,760 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 15:01:00,440 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 15:01:09,460 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 15:01:19,736 INFO __main__ - Using trending topic: Your vitamin D levels in midlife could shape your brain decades later
+2026-04-08 15:01:19,874 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 15:01:20,007 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 15:01:21,399 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 15:01:21,544 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 15:01:22,906 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 15:01:23,051 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 15:01:32,925 INFO __main__ - Using trending topic: This diet could slash cholera infections by up to 100x
+2026-04-08 15:01:33,064 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 15:01:33,202 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 15:01:33,350 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#3 transient_status=429
+2026-04-08 15:01:33,554 WARNING src.app.gemini_client - Gemini non-retriable failure: key#4 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "Your API key was reported as leaked. Please use another API key.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-04-08 15:01:34,893 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 15:01:35,043 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 15:01:35,177 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#3 transient_status=429
+2026-04-08 15:01:35,372 WARNING src.app.gemini_client - Gemini non-retriable failure: key#4 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "Your API key was reported as leaked. Please use another API key.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-04-08 15:01:37,772 WARNING __main__ - Failed to create topic from trend 'This diet could slash cholera infections by up to 100x': Gemini failed after key failover: key#1 transient_status=429; key#2 transient_status=429; key#3 transient_status=429; key#4 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "Your API key was reported as leaked. Please use another API key.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+; key#1 transient_status=429; key#2 transient_status=429; key#3 transient_status=429; key#4 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "Your API key was reported as leaked. Please use another API key.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-04-08 15:01:37,902 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 15:01:38,043 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 15:01:38,196 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#3 transient_status=429
+2026-04-08 15:01:38,385 WARNING src.app.gemini_client - Gemini non-retriable failure: key#4 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "Your API key was reported as leaked. Please use another API key.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-04-08 15:01:39,723 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 15:01:39,862 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 15:01:40,992 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 15:01:41,139 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 15:01:41,279 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#3 transient_status=429
+2026-04-08 15:01:41,458 WARNING src.app.gemini_client - Gemini non-retriable failure: key#4 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "Your API key was reported as leaked. Please use another API key.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-04-08 15:01:42,793 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 15:01:42,920 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 15:01:52,594 INFO __main__ - Using trending topic: Scientists discover hidden brain switch that tells you to stop eating
+2026-04-08 15:01:52,722 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 15:01:52,851 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 15:01:52,984 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#3 transient_status=429
+2026-04-08 15:01:53,157 WARNING src.app.gemini_client - Gemini non-retriable failure: key#4 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "Your API key was reported as leaked. Please use another API key.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-04-08 15:01:54,485 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 15:01:54,629 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 15:01:54,763 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#3 transient_status=429
+2026-04-08 15:01:54,943 WARNING src.app.gemini_client - Gemini non-retriable failure: key#4 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "Your API key was reported as leaked. Please use another API key.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-04-08 15:01:57,344 WARNING __main__ - Failed to create topic from trend 'Scientists discover hidden brain switch that tells you to stop eating': Gemini failed after key failover: key#1 transient_status=429; key#2 transient_status=429; key#3 transient_status=429; key#4 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "Your API key was reported as leaked. Please use another API key.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+; key#1 transient_status=429; key#2 transient_status=429; key#3 transient_status=429; key#4 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "Your API key was reported as leaked. Please use another API key.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-04-08 15:01:57,482 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 15:01:57,623 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 15:01:57,760 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#3 transient_status=429
+2026-04-08 15:01:57,943 WARNING src.app.gemini_client - Gemini non-retriable failure: key#4 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "Your API key was reported as leaked. Please use another API key.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-04-08 15:01:59,271 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 15:01:59,400 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 15:02:00,972 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 15:02:01,119 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 15:02:01,252 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#3 transient_status=429
+2026-04-08 15:02:01,441 WARNING src.app.gemini_client - Gemini non-retriable failure: key#4 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "Your API key was reported as leaked. Please use another API key.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-04-08 15:02:02,785 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 15:02:02,917 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 15:02:10,853 INFO __main__ - Run complete. Published 0/5 posts.
