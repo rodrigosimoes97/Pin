@@ -152,13 +152,9 @@ def parse_json_from_text(text: str) -> dict[str, Any]:
     sanitized = re.sub(r"[\x00-\x1F]+", " ", candidate)
 
     # 5) Fix unescaped newlines inside string values (very common)
-    # This looks for quotes that are followed by a newline but NOT by a comma or closing bracket
-    # which usually indicates a newline that should have been escaped as \n
-    # We'll use a safer approach: replace actual newlines with literal \n inside what looks like strings
     def _fix_newlines(match):
         return match.group(0).replace("\n", "\\n").replace("\r", "")
 
-    # This regex is a heuristic for string values
     sanitized = re.sub(r'":\s*"[^"]*?\n[^"]*?"', _fix_newlines, sanitized)
 
     # 6) Try parsing again
@@ -167,27 +163,57 @@ def parse_json_from_text(text: str) -> dict[str, Any]:
     except json.JSONDecodeError:
         pass
 
-    # 7) Last resort: heuristic fix for unescaped double quotes inside values
-    # This is complex, but we try to escape quotes that aren't preceded by : or preceded by ,
-    # and aren't followed by , or } or ]
-    # A simpler but often effective fix is to ensure all newlines are escaped
-    final_attempt = sanitized.replace("\n", "\\n").replace("\r", "")
+    # 7) Heuristic fix for unescaped double quotes inside values
+    # This is a common issue when Gemini generates HTML inside a JSON string
+    def _repair_quotes(s: str) -> str:
+        result = []
+        i = 0
+        in_string = False
+        while i < len(s):
+            char = s[i]
+            if char == '"':
+                # Check if this quote is structural
+                is_structural = False
+                prev_part = s[max(0, i-10):i]
+                next_part = s[i+1:i+10]
+                
+                # Structural cues:
+                # Key start: { " or , "
+                if re.search(r'[ {\[,]\s*$', prev_part): is_structural = True
+                # Key end / Value start: " :
+                elif re.match(r'^\s*:', next_part): is_structural = True
+                # Value start: : "
+                elif re.search(r':\s*$', prev_part): is_structural = True
+                # Value end: " , or " } or " ]
+                elif re.match(r'^\s*[,}\]]', next_part): is_structural = True
+                
+                if in_string and not is_structural:
+                    result.append('\\"')
+                else:
+                    result.append('"')
+                    in_string = not in_string
+            else:
+                result.append(char)
+                if char == '\\' and i + 1 < len(s) and s[i+1] == '"':
+                    result.append('"')
+                    i += 1
+            i += 1
+        return "".join(result)
+
+    final_attempt = _repair_quotes(sanitized.replace("\n", "\\n").replace("\r", ""))
     
-    # Handle the "Expecting ',' delimiter" error which is almost always unescaped quotes
-    # or missing commas between fields.
     try:
         return json.loads(final_attempt)
     except json.JSONDecodeError as e:
-        LOG.warning("Deep JSON sanitization failed: %s. Raw text snippet: %s", e, text[:200])
-        
-        # If we still fail, we try one last trick: 
-        # using regex to find and escape double quotes that break the JSON structure.
+        # Save failed response for debugging
         try:
-            # This regex looks for double quotes that are NOT part of the JSON structure
-            # (i.e., not after a brace/bracket/comma and not before a colon/comma/brace/bracket)
-            # This is hard to do perfectly, so we use a very conservative approach.
-            # For now, let's try to just use the error position to help (if possible)
-            # but since we're in a loop, let's just re-raise.
-            raise e
-        except:
-            raise e
+            from pathlib import Path
+            debug_path = Path("generated/logs/failed_json.txt")
+            debug_path.parent.mkdir(parents=True, exist_ok=True)
+            debug_path.write_text(text, encoding="utf-8")
+            LOG.error("Critical JSON parse failure. Raw response saved to %s", debug_path)
+        except Exception:
+            pass
+            
+        LOG.warning("Deep JSON sanitization failed: %s. Raw text snippet: %s", e, text[:200])
+        raise e
