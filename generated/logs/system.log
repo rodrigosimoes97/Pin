@@ -1562,3 +1562,150 @@ Traceback (most recent call last):
                ^^^^^^^^^^^^^^^^^^^^^^
 json.decoder.JSONDecodeError: Expecting ',' delimiter: line 1 column 1082 (char 1081)
 2026-04-08 11:18:28,786 INFO __main__ - Run complete. Published 0/5 posts.
+2026-04-08 12:25:46,848 INFO __main__ - Fetching trending topics for USA...
+2026-04-08 12:25:47,199 WARNING src.app.trend_research - Failed to fetch Google Trends: The request failed: Google returned a response with code 404
+2026-04-08 12:25:48,566 INFO __main__ - Using trending topic: Experimental therapy gantenerumab fails to slow or improve Alzheimer's memory loss in clinical trials
+2026-04-08 12:25:59,707 ERROR src.app.gemini_client - Critical JSON parse failure. Raw response saved to generated/logs/failed_json.txt
+2026-04-08 12:25:59,707 WARNING src.app.gemini_client - Deep JSON sanitization failed: Expecting ',' delimiter: line 1 column 4724 (char 4723). Raw text snippet: {
+  "title": "Alzheimer's Breakthrough Missed: Gantenerumab Trial Results Disappoint",
+  "slug": "gantenerumab-alzheimers-trial-results",
+  "meta_description": "The gantenerumab trial results for Alzh
+2026-04-08 12:25:59,707 ERROR __main__ - Failed slot 1
+Traceback (most recent call last):
+  File "/home/runner/work/Pin/Pin/src/app/run_daily.py", line 182, in main
+    candidate = generate_article(client, topic, chosen_title, mode, offer)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/content.py", line 107, in generate_article
+    payload = client.generate_json(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 23, in generate_json
+    return parse_json_from_text(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 219, in parse_json_from_text
+    raise e
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 206, in parse_json_from_text
+    return json.loads(final_attempt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Expecting ',' delimiter: line 1 column 4724 (char 4723)
+2026-04-08 12:25:59,738 INFO __main__ - Using trending topic: Desperate for heart surgery for their baby, a family feels the effects of pediatric hospital shortages
+2026-04-08 12:26:21,935 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 12:26:22,397 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=503
+2026-04-08 12:26:23,721 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#3 transient_status=503
+2026-04-08 12:26:23,894 WARNING src.app.gemini_client - Gemini non-retriable failure: key#4 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "Your API key was reported as leaked. Please use another API key.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-04-08 12:26:33,821 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 12:26:35,071 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 12:26:44,402 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 12:26:51,939 ERROR src.app.gemini_client - Critical JSON parse failure. Raw response saved to generated/logs/failed_json.txt
+2026-04-08 12:26:51,939 WARNING src.app.gemini_client - Deep JSON sanitization failed: Expecting ',' delimiter: line 1 column 3228 (char 3227). Raw text snippet: {
+  "title": "Embracing a Weight Loss Lifestyle: Mindful Eating Without the Restriction",
+  "slug": "weight-loss-lifestyle-mindful-eating",
+  "meta_description": "Discover how to build a sustainable W
+2026-04-08 12:26:51,939 ERROR __main__ - Failed slot 3
+Traceback (most recent call last):
+  File "/home/runner/work/Pin/Pin/src/app/run_daily.py", line 182, in main
+    candidate = generate_article(client, topic, chosen_title, mode, offer)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/content.py", line 107, in generate_article
+    payload = client.generate_json(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 23, in generate_json
+    return parse_json_from_text(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 219, in parse_json_from_text
+    raise e
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 206, in parse_json_from_text
+    return json.loads(final_attempt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Expecting ',' delimiter: line 1 column 3228 (char 3227)
+2026-04-08 12:26:52,074 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 12:26:53,506 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 12:27:02,816 ERROR src.app.gemini_client - Critical JSON parse failure. Raw response saved to generated/logs/failed_json.txt
+2026-04-08 12:27:02,816 WARNING src.app.gemini_client - Deep JSON sanitization failed: Expecting ',' delimiter: line 1 column 4703 (char 4702). Raw text snippet: {
+  "title": "Sustainable Eating: Building a Weight Loss Lifestyle Without the Diet Drama",
+  "slug": "sustainable-eating-weight-loss-lifestyle",
+  "meta_description": "Discover how to build a sustain
+2026-04-08 12:27:02,816 ERROR __main__ - Failed slot 4
+Traceback (most recent call last):
+  File "/home/runner/work/Pin/Pin/src/app/run_daily.py", line 182, in main
+    candidate = generate_article(client, topic, chosen_title, mode, offer)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/content.py", line 107, in generate_article
+    payload = client.generate_json(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 23, in generate_json
+    return parse_json_from_text(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 219, in parse_json_from_text
+    raise e
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 206, in parse_json_from_text
+    return json.loads(final_attempt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Expecting ',' delimiter: line 1 column 4703 (char 4702)
+2026-04-08 12:27:02,952 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 12:27:04,619 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 12:27:15,817 ERROR src.app.gemini_client - Critical JSON parse failure. Raw response saved to generated/logs/failed_json.txt
+2026-04-08 12:27:15,817 WARNING src.app.gemini_client - Deep JSON sanitization failed: Expecting ',' delimiter: line 1 column 2134 (char 2133). Raw text snippet: {
+  "title": "Mastering a Weight Loss Lifestyle: Calorie Awareness Without the Restriction",
+  "slug": "weight-loss-lifestyle-calorie-awareness-no-restriction",
+  "meta_description": "Discover how to 
+2026-04-08 12:27:15,817 ERROR __main__ - Failed slot 5
+Traceback (most recent call last):
+  File "/home/runner/work/Pin/Pin/src/app/run_daily.py", line 182, in main
+    candidate = generate_article(client, topic, chosen_title, mode, offer)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/content.py", line 107, in generate_article
+    payload = client.generate_json(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 23, in generate_json
+    return parse_json_from_text(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 219, in parse_json_from_text
+    raise e
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 206, in parse_json_from_text
+    return json.loads(final_attempt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Expecting ',' delimiter: line 1 column 2134 (char 2133)
+2026-04-08 12:27:15,818 INFO __main__ - Run complete. Published 0/5 posts.
