@@ -1946,3 +1946,76 @@ KeyError: 1
 2026-04-08 15:02:02,785 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
 2026-04-08 15:02:02,917 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
 2026-04-08 15:02:10,853 INFO __main__ - Run complete. Published 0/5 posts.
+2026-04-08 15:16:17,032 INFO __main__ - Fetching trending topics for USA...
+2026-04-08 15:16:17,415 WARNING src.app.trend_research - Failed to fetch Google Trends (404/Error): The request failed: Google returned a response with code 404. Moving to fallbacks.
+2026-04-08 15:16:20,719 INFO src.app.trend_research - Gathered 11 unique trending topics.
+2026-04-08 15:16:20,721 INFO __main__ - Using trending topic: Experimental therapy gantenerumab fails to slow or improve Alzheimers memory loss in clinical trials
+2026-04-08 15:16:20,915 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 15:16:21,105 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 15:16:23,501 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 15:16:23,645 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 15:16:34,518 INFO __main__ - Using trending topic: Desperate for heart surgery for their baby, a family feels the effects of pediatric hospital shortages
+2026-04-08 15:16:34,665 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 15:16:34,851 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 15:16:37,803 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 15:16:40,055 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 15:16:40,219 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 15:16:49,342 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 15:16:49,485 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 15:16:59,872 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 15:17:00,009 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 15:17:06,311 INFO __main__ - Using trending topic: Your vitamin D levels in midlife could shape your brain decades later
+2026-04-08 15:17:06,459 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 15:17:06,601 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 15:17:10,416 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 15:17:10,564 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 15:17:12,765 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 15:17:12,904 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 15:17:23,343 INFO __main__ - Using trending topic: This diet could slash cholera infections by up to 100x
+2026-04-08 15:17:23,508 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 15:17:23,656 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 15:17:26,147 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 15:17:26,293 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 15:17:28,079 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 15:17:28,220 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 15:17:40,842 ERROR src.app.gemini_client - Critical JSON parse failure. Raw response saved to generated/logs/failed_json.txt
+2026-04-08 15:17:40,842 WARNING src.app.gemini_client - Deep JSON sanitization failed: Expecting ',' delimiter: line 1 column 2625 (char 2624). Raw text snippet: {
+  "title": "Slash Cholera Risk: The Diet That Could Save Lives",
+  "slug": "slash-cholera-risk-diet-save-lives",
+  "meta_description": "Discover how specific dietary changes can significantly slash 
+2026-04-08 15:17:40,842 ERROR __main__ - Failed slot 4
+Traceback (most recent call last):
+  File "/home/runner/work/Pin/Pin/src/app/run_daily.py", line 182, in main
+    candidate = generate_article(client, topic, chosen_title, mode, offer)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/content.py", line 107, in generate_article
+    payload = client.generate_json(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 23, in generate_json
+    return parse_json_from_text(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 233, in parse_json_from_text
+    raise e
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 220, in parse_json_from_text
+    return json.loads(final_attempt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Expecting ',' delimiter: line 1 column 2625 (char 2624)
+2026-04-08 15:17:40,855 INFO __main__ - Using trending topic: Scientists discover hidden brain switch that tells you to stop eating
+2026-04-08 15:17:40,981 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 15:17:41,136 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 15:17:43,176 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 15:17:43,323 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 15:17:45,566 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 15:17:45,701 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 15:18:06,028 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 15:18:06,178 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=429
+2026-04-08 15:18:14,616 INFO __main__ - Run complete. Published 0/5 posts.
