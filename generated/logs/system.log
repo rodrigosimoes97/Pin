@@ -1709,3 +1709,18 @@ Traceback (most recent call last):
                ^^^^^^^^^^^^^^^^^^^^^^
 json.decoder.JSONDecodeError: Expecting ',' delimiter: line 1 column 2134 (char 2133)
 2026-04-08 12:27:15,818 INFO __main__ - Run complete. Published 0/5 posts.
+2026-04-08 13:44:49,549 INFO __main__ - Fetching trending topics for USA...
+2026-04-08 13:44:49,752 WARNING src.app.trend_research - Failed to fetch Google Trends: The request failed: Google returned a response with code 404
+2026-04-08 13:44:50,612 INFO __main__ - Using trending topic: Experimental therapy gantenerumab fails to slow or improve Alzheimer's memory loss in clinical trials
+2026-04-08 13:44:52,991 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 13:45:02,265 INFO __main__ - Using trending topic: Desperate for heart surgery for their baby, a family feels the effects of pediatric hospital shortages
+2026-04-08 13:45:03,716 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 13:45:05,164 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 13:45:20,165 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 13:45:29,152 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 13:45:30,677 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 13:45:40,544 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 13:45:48,947 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 13:45:49,361 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#2 transient_status=503
+2026-04-08 13:45:50,474 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-08 13:45:57,681 INFO __main__ - Run complete. Published 0/5 posts.
