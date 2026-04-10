@@ -46,6 +46,7 @@ jobs:
           POSTS_PER_WEEK: "5"
           HF_HUB_DISABLE_PROGRESS_BARS: "1"
           TRANSFORMERS_VERBOSITY: "error"
+          GOOGLE_INDEXING_JSON: ${{ secrets.GOOGLE_INDEXING_JSON }}
         run: python -m src.app.run_daily
 
       - name: Validate internal links

@@ -14,19 +14,31 @@ from google.auth.transport.requests import Request as GoogleRequest
 LOG = logging.getLogger(__name__)
 
 class GoogleIndexer:
-    def __init__(self, service_account_json_path: str):
-        self.json_path = service_account_json_path
+    def __init__(self, service_account_info: str):
         self.scopes = ["https://www.googleapis.com/auth/indexing"]
         self.credentials = None
-        if self.json_path and Path(self.json_path).exists():
-            try:
-                self.credentials = service_account.Credentials.from_service_account_file(
-                    self.json_path, scopes=self.scopes
+        
+        if not service_account_info:
+            LOG.warning("Google service account info (JSON content or path) not provided. Indexing disabled.")
+            return
+
+        # Try to parse as raw JSON content first
+        try:
+            if service_account_info.strip().startswith("{"):
+                info = json.loads(service_account_info)
+                self.credentials = service_account.Credentials.from_service_account_info(
+                    info, scopes=self.scopes
                 )
-            except Exception as e:
-                LOG.error("Failed to load Google service account: %s", e)
-        else:
-            LOG.warning("Google service account JSON not found at %s. Indexing disabled.", self.json_path)
+                LOG.info("Loaded Google service account from raw JSON content.")
+            elif Path(service_account_info).exists():
+                self.credentials = service_account.Credentials.from_service_account_file(
+                    service_account_info, scopes=self.scopes
+                )
+                LOG.info("Loaded Google service account from file: %s", service_account_info)
+            else:
+                LOG.warning("Google service account info is neither a valid JSON string nor a file path: %s", service_account_info[:30] + "...")
+        except Exception as e:
+            LOG.error("Failed to load Google service account: %s", e)
 
     def _get_access_token(self) -> str | None:
         if not self.credentials:
