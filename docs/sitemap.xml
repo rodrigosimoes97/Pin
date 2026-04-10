@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://health-ptg.pages.dev/</loc><lastmod>2026-04-02</lastmod><priority>1.0</priority></url>
-<url><loc>https://health-ptg.pages.dev/about.html</loc><lastmod>2026-04-02</lastmod></url>
+<url><loc>https://health-ptg.pages.dev/index.html</loc><lastmod>2026-04-10</lastmod><priority>1.0</priority></url>
+<url><loc>https://health-ptg.pages.dev/about.html</loc><lastmod>2026-04-10</lastmod></url>
+<url><loc>https://health-ptg.pages.dev/intermittent-fasting-weight-loss-beginner-guide.html</loc><lastmod>2026-04-10</lastmod></url>
+<url><loc>https://health-ptg.pages.dev/biohacking-beginners-health-energy.html</loc><lastmod>2026-04-10</lastmod></url>
+<url><loc>https://health-ptg.pages.dev/mindful-eating-boost-digestion-gut-health.html</loc><lastmod>2026-04-10</lastmod></url>
 <url><loc>https://health-ptg.pages.dev/stabilize-blood-sugar-energy-0402-4.html</loc><lastmod>2026-04-02</lastmod></url>
 <url><loc>https://health-ptg.pages.dev/home-strength-no-equipment-maximum-impact.html</loc><lastmod>2026-04-02</lastmod></url>
 <url><loc>https://health-ptg.pages.dev/sedentary-stretches-mobility.html</loc><lastmod>2026-04-02</lastmod></url>
@@ -104,15 +107,4 @@
 <url><loc>https://health-ptg.pages.dev/best-way-to-prepare-for-sleep.html</loc><lastmod>2026-02-22</lastmod></url>
 <url><loc>https://health-ptg.pages.dev/fiber-vs-fermented-foods-gut-health.html</loc><lastmod>2026-02-20</lastmod></url>
 <url><loc>https://health-ptg.pages.dev/stress-free-weeknight-meals-healthy-recipes.html</loc><lastmod>2026-02-20</lastmod></url>
-<url><loc>https://health-ptg.pages.dev/tag/anti-inflammatory.html</loc><lastmod>2026-04-02</lastmod></url>
-<url><loc>https://health-ptg.pages.dev/tag/gut.html</loc><lastmod>2026-04-02</lastmod></url>
-<url><loc>https://health-ptg.pages.dev/tag/health.html</loc><lastmod>2026-04-02</lastmod></url>
-<url><loc>https://health-ptg.pages.dev/tag/healthy-habits.html</loc><lastmod>2026-04-02</lastmod></url>
-<url><loc>https://health-ptg.pages.dev/tag/home-workouts.html</loc><lastmod>2026-04-02</lastmod></url>
-<url><loc>https://health-ptg.pages.dev/tag/longevity.html</loc><lastmod>2026-04-02</lastmod></url>
-<url><loc>https://health-ptg.pages.dev/tag/mental-wellness.html</loc><lastmod>2026-04-02</lastmod></url>
-<url><loc>https://health-ptg.pages.dev/tag/recipes.html</loc><lastmod>2026-04-02</lastmod></url>
-<url><loc>https://health-ptg.pages.dev/tag/sleep.html</loc><lastmod>2026-04-02</lastmod></url>
-<url><loc>https://health-ptg.pages.dev/tag/stress.html</loc><lastmod>2026-04-02</lastmod></url>
-<url><loc>https://health-ptg.pages.dev/tag/weight.html</loc><lastmod>2026-04-02</lastmod></url>
 </urlset>

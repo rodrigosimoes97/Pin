@@ -1,5 +1,5 @@
 {
-  "runs": 60,
+  "runs": 61,
   "offer_runs": 21,
   "recent_topics": [
     "weight-loss-lifestyle",
@@ -31,7 +31,10 @@
     "anti-inflammatory-foods",
     "yoga-for-flexibility",
     "home-workouts",
-    "metabolic-health"
+    "metabolic-health",
+    "mindful-eating-for-better-digestion",
+    "biohacking-for-beginners",
+    "intermittent-fasting-weight-loss-benefits"
   ],
   "recent_slugs": [
     "quick-weekday-dinners",
@@ -113,7 +116,10 @@
     "heal-from-within-antioxidant-foods",
     "sedentary-stretches-mobility",
     "home-strength-no-equipment-maximum-impact",
-    "stabilize-blood-sugar-energy-0402-4"
+    "stabilize-blood-sugar-energy-0402-4",
+    "mindful-eating-boost-digestion-gut-health",
+    "biohacking-beginners-health-energy",
+    "intermittent-fasting-weight-loss-beginner-guide"
   ],
   "last_run": "2026-04-10",
   "recent_tags": [
@@ -146,11 +152,14 @@
     "anti-inflammatory",
     "healthy-habits",
     "home-workouts",
-    "healthy-habits"
+    "healthy-habits",
+    "gut",
+    "health",
+    "weight"
   ],
   "tag_counts": {
     "sleep": 7,
-    "gut": 7,
+    "gut": 8,
     "mental-wellness": 7,
     "stress": 7,
     "healthy-habits": 26,
@@ -158,15 +167,15 @@
     "recipes": 7,
     "anti-inflammatory": 7,
     "home-workouts": 7,
-    "weight": 6,
-    "health": 7
+    "weight": 7,
+    "health": 8
   },
   "topic_rotation": {
     "sleep": 7,
-    "gut": 8,
+    "gut": 9,
     "stress": 13,
-    "healthy-habits": 3,
-    "longevity": 8,
+    "healthy-habits": 4,
+    "longevity": 9,
     "recipes": 8,
     "anti-inflammatory": 11,
     "home-workouts": 11,
@@ -213,6 +222,9 @@
     "Heal From Within: Power of Antioxidant Foods",
     "Sedentary Life? Simple Stretches for Better Mobility",
     "Home Strength: No Equipment, Maximum Impact",
-    "How to Stabilize Blood Sugar for Energy"
+    "How to Stabilize Blood Sugar for Energy",
+    "How Mindful Eating Improves Digestion & Gut",
+    "Simple Biohacking: Boost Energy Naturally Daily",
+    "Beginner's IF: Practical Weight Loss Tips"
   ]
 }
