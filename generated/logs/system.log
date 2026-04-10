@@ -2033,3 +2033,13 @@ json.decoder.JSONDecodeError: Expecting ',' delimiter: line 1 column 2625 (char 
 2026-04-09 11:23:59,329 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
 2026-04-09 11:24:00,650 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
 2026-04-09 11:24:17,172 INFO __main__ - Run complete. Published 0/5 posts.
+2026-04-10 11:15:00,351 INFO __main__ - Fetching trending topics for USA...
+2026-04-10 11:15:00,524 WARNING src.app.trend_research - Failed to fetch Google Trends (404/Error): The request failed: Google returned a response with code 404. Moving to fallbacks.
+2026-04-10 11:15:03,028 INFO src.app.trend_research - Gathered 9 unique trending topics.
+2026-04-10 11:15:03,031 INFO __main__ - Using trending topic: Experimental therapy gantenerumab fails to slow or improve Alzheimers memory loss in clinical trials
+2026-04-10 11:15:14,864 INFO __main__ - Using trending topic: Desperate for heart surgery for their baby, a family feels the effects of pediatric hospital shortages
+2026-04-10 11:15:49,671 INFO __main__ - Using trending topic: Your vitamin D levels in midlife could shape your brain decades later
+2026-04-10 11:15:53,661 WARNING src.app.gemini_client - Gemini transient failure; trying next key: key#1 transient_status=429
+2026-04-10 11:16:03,489 INFO __main__ - Using trending topic: This diet could slash cholera infections by up to 100x
+2026-04-10 11:16:20,054 INFO __main__ - Using trending topic: Scientists discover hidden brain switch that tells you to stop eating
+2026-04-10 11:16:33,084 INFO __main__ - Run complete. Published 0/5 posts.
