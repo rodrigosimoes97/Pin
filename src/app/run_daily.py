@@ -238,8 +238,12 @@ def main() -> None:
             topic_rotation[topic.tag] = int(topic_rotation.get(topic.tag, 0)) + 1
 
             LOG.info("Published %s (%s)", record["url"], mode)
+            
+            # Additional delay between slots to be extra safe with Gemini rate limits
+            time.sleep(5)
         except Exception:
             LOG.exception("Failed slot %s", slot + 1)
+            time.sleep(2)
 
     state.update({
         "runs": int(state.get("runs", 0)) + 1,

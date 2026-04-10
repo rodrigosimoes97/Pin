@@ -23,6 +23,9 @@ class GeminiClient:
         return parse_json_from_text(text)
 
     def generate_text(self, prompt: str, max_output_tokens: int = 1800) -> str:
+        # Mandatory delay to avoid 429 Rate Limit
+        time.sleep(2.5)
+
         payload = {
             "contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {
@@ -32,7 +35,7 @@ class GeminiClient:
             },
         }
         errors: list[str] = []
-        for attempt in range(2):
+        for attempt in range(3):  # Increased from 2 to 3
             for key_idx, api_key in enumerate(self.api_keys, start=1):
                 try:
                     endpoint = f"{API_BASE}/{self.model}:generateContent"
@@ -48,11 +51,19 @@ class GeminiClient:
                     LOG.warning("Gemini request failed: %s", msg)
                     continue
 
-                if response.status_code in {429, 500, 502, 503, 504}:
+                if response.status_code == 429:
+                    msg = f"key#{key_idx} transient_status=429"
+                    errors.append(msg)
+                    LOG.warning("Gemini rate limit hit (429); waiting longer before trying next key: %s", msg)
+                    time.sleep(5 * (attempt + 1)) # Extra wait for 429
+                    continue
+
+                if response.status_code in {500, 502, 503, 504}:
                     msg = f"key#{key_idx} transient_status={response.status_code}"
                     errors.append(msg)
                     LOG.warning("Gemini transient failure; trying next key: %s", msg)
                     continue
+
                 if response.status_code >= 400:
                     msg = f"key#{key_idx} http_error={response.status_code} body={response.text[:160]}"
                     errors.append(msg)
@@ -66,7 +77,7 @@ class GeminiClient:
                 msg = f"key#{key_idx} empty_response"
                 errors.append(msg)
 
-            time.sleep(1.2 * (attempt + 1))
+            time.sleep(2.0 * (attempt + 1))
         raise RuntimeError(f"Gemini failed after key failover: {'; '.join(errors)}")
 
 
@@ -191,8 +202,16 @@ def parse_json_from_text(text: str) -> dict[str, Any]:
                 # Value start: : "
                 elif re.search(r':\s*$', prev_part): is_structural = True
                 # Value end: " , or " } or " ]
-                # Handle both real newlines and already replaced \\n
-                elif re.match(r'^(\s|\\n|\\r)*[,}\]]', next_part): is_structural = True
+                # IMPORTANT: A quote followed by a comma is only structural if 
+                # it's NOT in the middle of a sentence (heuristic)
+                elif re.match(r'^(\s|\\n|\\r)*[,}\]]', next_part):
+                    # Check if it looks like a real end-of-string
+                    # Structural if followed by } or ] OR if preceded by something that looks like the end of a field value
+                    if re.match(r'^(\s|\\n|\\r)*[}\]]', next_part):
+                        is_structural = True
+                    # If followed by comma, check if it's "key": "val", pattern
+                    elif re.search(r'[:]\s*"[^"]*$', prev_part):
+                        is_structural = True
                 
                 if in_string and not is_structural:
                     # If we are already in a string and this quote doesn't look structural, escape it
