@@ -23,8 +23,9 @@ class GeminiClient:
         return parse_json_from_text(text)
 
     def generate_text(self, prompt: str, max_output_tokens: int = 1800) -> str:
-        # Mandatory delay to avoid 429 Rate Limit
-        time.sleep(2.5)
+        # Mandatory delay to avoid 429 Rate Limit (15 RPM = 4s/request)
+        # Using 5s to be safe across multiple processes or slight overhead
+        time.sleep(5.0)
 
         payload = {
             "contents": [{"parts": [{"text": prompt}]}],
@@ -35,7 +36,7 @@ class GeminiClient:
             },
         }
         errors: list[str] = []
-        for attempt in range(3):  # Increased from 2 to 3
+        for attempt in range(4):  # Increased from 3 to 4
             for key_idx, api_key in enumerate(self.api_keys, start=1):
                 try:
                     endpoint = f"{API_BASE}/{self.model}:generateContent"
@@ -49,19 +50,22 @@ class GeminiClient:
                     msg = f"key#{key_idx} network_error={type(exc).__name__}"
                     errors.append(msg)
                     LOG.warning("Gemini request failed: %s", msg)
+                    time.sleep(2)
                     continue
 
                 if response.status_code == 429:
                     msg = f"key#{key_idx} transient_status=429"
                     errors.append(msg)
-                    LOG.warning("Gemini rate limit hit (429); waiting longer before trying next key: %s", msg)
-                    time.sleep(5 * (attempt + 1)) # Extra wait for 429
+                    wait_time = 10 * (attempt + 1)
+                    LOG.warning("Gemini rate limit hit (429); waiting %ds before trying next key: %s", wait_time, msg)
+                    time.sleep(wait_time) 
                     continue
 
                 if response.status_code in {500, 502, 503, 504}:
                     msg = f"key#{key_idx} transient_status={response.status_code}"
                     errors.append(msg)
-                    LOG.warning("Gemini transient failure; trying next key: %s", msg)
+                    LOG.warning("Gemini server error; trying next key: %s", msg)
+                    time.sleep(2)
                     continue
 
                 if response.status_code >= 400:
@@ -77,8 +81,8 @@ class GeminiClient:
                 msg = f"key#{key_idx} empty_response"
                 errors.append(msg)
 
-            time.sleep(2.0 * (attempt + 1))
-        raise RuntimeError(f"Gemini failed after key failover: {'; '.join(errors)}")
+            time.sleep(5.0 * (attempt + 1))
+        raise RuntimeError(f"Gemini failed after exhaustive retries: {'; '.join(errors)}")
 
 
 def _extract_text(payload: dict[str, Any]) -> str:

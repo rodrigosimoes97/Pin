@@ -4,6 +4,7 @@ import json
 import logging
 import random
 import re
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -92,6 +93,35 @@ Strict JSON only.
             name=trend,
             angle="latest insights and practical tips for daily health",
             tag="health",
+        )
+
+def _generate_autonomous_topic(client: GeminiClient) -> Topic:
+    """Last resort: Ask Gemini to come up with a trending or evergreen health topic."""
+    LOG.info("Seeking autonomous health topic from Gemini...")
+    prompt = f"""Suggest a high-interest, trending or evergreen health/wellness topic for a US audience.
+Categorize it into one of these tags: {', '.join(PRIORITY_TAGS)}
+Return a JSON object with:
+- slug: a URL-friendly version of the topic
+- name: a catchy, SEO-friendly name (keyword-rich)
+- angle: a unique, practical angle (informational, conversational)
+- tag: the chosen tag from the list
+Strict JSON only.
+"""
+    try:
+        data = client.generate_json(prompt)
+        return Topic(
+            slug=str(data.get("slug", "")),
+            name=str(data.get("name", "")),
+            angle=str(data.get("angle", "")),
+            tag=str(data.get("tag", "health")),
+        )
+    except Exception as e:
+        LOG.error("Failed to generate autonomous topic: %s", e)
+        return Topic(
+            slug=f"health-tips-{random.randint(1000, 9999)}",
+            name="Essential Daily Health Habits",
+            angle="practical, science-backed habits for better energy and long-term wellness",
+            tag="healthy-habits",
         )
 
 def _choose_mode(state: dict) -> str:
@@ -196,7 +226,29 @@ def main() -> None:
                 checker.add_to_index(post["title"], post["slug"], post["meta_description"], post["html"])
                 break
 
-            if not post: continue
+            # LAST RESORT: If no post was generated after 3 attempts, try one last time with a brand new autonomous topic
+            if not post:
+                LOG.warning("Slot %s: No post generated after 3 attempts. Initiating rescue attempt...", slot + 1)
+                rescue_topic = _generate_autonomous_topic(client)
+                rescue_titles = generate_titles(client, rescue_topic, excluded_titles=recent_titles)
+                rescue_chosen_title = pick_best_title(rescue_titles)
+                
+                candidate = generate_article(client, rescue_topic, rescue_chosen_title, mode, offer)
+                candidate["tag"] = normalize_tag(candidate.get("tag", "")) or normalize_tag(rescue_topic.tag) or "health"
+                
+                if _validate_quality(candidate, rescue_topic.name):
+                    # Only check similarity for the rescue post to avoid infinite loops, but we use a loose check
+                    status, _ = checker.check_similarity(candidate["title"], candidate["meta_description"], candidate["html"])
+                    if status != "BLOCK":
+                        post = candidate
+                        topic = rescue_topic # Update topic for state tracking
+                        chosen_title = rescue_chosen_title
+                        checker.add_to_index(post["title"], post["slug"], post["meta_description"], post["html"])
+                        LOG.info("Slot %s: Rescue attempt successful with topic: %s", slot + 1, topic.name)
+
+            if not post:
+                LOG.error("Slot %s: All attempts failed, including rescue.", slot + 1)
+                continue
 
             # Internal linking
             related_for_links = get_related_internal_links(post["html"], existing_posts, post["slug"])
