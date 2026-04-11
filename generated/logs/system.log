@@ -2157,3 +2157,4 @@ json.decoder.JSONDecodeError: Expecting ',' delimiter: line 1 column 89 (char 88
 2026-04-10 15:48:07,073 INFO __main__ - Slot 5: Rescue attempt successful with topic: Intermittent Fasting for Weight Loss: Benefits & How-To Guide
 2026-04-10 15:48:08,645 INFO __main__ - Published intermittent-fasting-weight-loss-beginner-guide.html (info)
 2026-04-10 15:48:13,646 INFO __main__ - Run complete. Published 3/5 posts.
+2026-04-11 10:57:39,478 INFO __main__ - Skipping generation today to maintain 5 posts/week.
