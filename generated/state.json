@@ -1,5 +1,5 @@
 {
-  "runs": 61,
+  "runs": 62,
   "offer_runs": 21,
   "recent_topics": [
     "weight-loss-lifestyle",
@@ -34,7 +34,11 @@
     "metabolic-health",
     "mindful-eating-for-better-digestion",
     "biohacking-for-beginners",
-    "intermittent-fasting-weight-loss-benefits"
+    "intermittent-fasting-weight-loss-benefits",
+    "stress-management-mindfulness-techniques",
+    "two-simple-eating-habits-lower-weight",
+    "vitamin-b1-health-benefits",
+    "early-weight-gain-lifelong-health-risks"
   ],
   "recent_slugs": [
     "quick-weekday-dinners",
@@ -119,9 +123,13 @@
     "stabilize-blood-sugar-energy-0402-4",
     "mindful-eating-boost-digestion-gut-health",
     "biohacking-beginners-health-energy",
-    "intermittent-fasting-weight-loss-beginner-guide"
+    "intermittent-fasting-weight-loss-beginner-guide",
+    "mastering-stress-mindfulness-techniques-modern-life",
+    "unlock-healthier-weight-easy-habits",
+    "vitamin-b1-health-boost-theory",
+    "baby-fat-big-problems-early-weight-gain-future-health"
   ],
-  "last_run": "2026-04-10",
+  "last_run": "2026-04-13",
   "recent_tags": [
     "healthy-habits",
     "health",
@@ -155,26 +163,30 @@
     "healthy-habits",
     "gut",
     "health",
+    "weight",
+    "stress",
+    "weight",
+    "health",
     "weight"
   ],
   "tag_counts": {
     "sleep": 7,
     "gut": 8,
     "mental-wellness": 7,
-    "stress": 7,
+    "stress": 8,
     "healthy-habits": 26,
     "longevity": 7,
     "recipes": 7,
     "anti-inflammatory": 7,
     "home-workouts": 7,
-    "weight": 7,
-    "health": 8
+    "weight": 9,
+    "health": 9
   },
   "topic_rotation": {
     "sleep": 7,
     "gut": 9,
-    "stress": 13,
-    "healthy-habits": 4,
+    "stress": 14,
+    "healthy-habits": 7,
     "longevity": 9,
     "recipes": 8,
     "anti-inflammatory": 11,
@@ -225,6 +237,10 @@
     "How to Stabilize Blood Sugar for Energy",
     "How Mindful Eating Improves Digestion & Gut",
     "Simple Biohacking: Boost Energy Naturally Daily",
-    "Beginner's IF: Practical Weight Loss Tips"
+    "Beginner's IF: Practical Weight Loss Tips",
+    "Stress Less: Practical Mindfulness Tips",
+    "Want a Healthier Weight? Try These 2 Habits",
+    "Vitamin B1: The Future of Health Supplements?",
+    "Why Early Weight Gain Matters for Lifelong Health"
   ]
 }
