@@ -1,5 +1,5 @@
 {
-  "runs": 64,
+  "runs": 65,
   "offer_runs": 21,
   "recent_topics": [
     "weight-loss-lifestyle",
@@ -40,7 +40,8 @@
     "vitamin-b1-health-benefits",
     "early-weight-gain-lifelong-health-risks",
     "biohacking-sleep-optimization",
-    "obesity-hidden-health-risks-men-women"
+    "obesity-hidden-health-risks-men-women",
+    "morning-routines-for-energy-and-focus"
   ],
   "recent_slugs": [
     "quick-weekday-dinners",
@@ -131,9 +132,10 @@
     "vitamin-b1-health-boost-theory",
     "baby-fat-big-problems-early-weight-gain-future-health",
     "biohacking-your-sleep-optimize-rest-for-peak-performance",
-    "weighty-issues-obesity-differences"
+    "weighty-issues-obesity-differences",
+    "boost-your-morning-energy-focus-hacks"
   ],
-  "last_run": "2026-04-15",
+  "last_run": "2026-04-16",
   "recent_tags": [
     "healthy-habits",
     "health",
@@ -173,14 +175,15 @@
     "health",
     "weight",
     "sleep",
-    "weight"
+    "weight",
+    "healthy-habits"
   ],
   "tag_counts": {
     "sleep": 8,
     "gut": 8,
     "mental-wellness": 7,
     "stress": 8,
-    "healthy-habits": 26,
+    "healthy-habits": 27,
     "longevity": 7,
     "recipes": 7,
     "anti-inflammatory": 7,
@@ -192,7 +195,7 @@
     "sleep": 8,
     "gut": 9,
     "stress": 14,
-    "healthy-habits": 8,
+    "healthy-habits": 9,
     "longevity": 9,
     "recipes": 8,
     "anti-inflammatory": 11,
@@ -249,6 +252,7 @@
     "Vitamin B1: The Future of Health Supplements?",
     "Why Early Weight Gain Matters for Lifelong Health",
     "Sleep Better Tonight: Practical Biohacking Tips Revealed",
-    "Weighty Issues: How Obesity Affects Us Differently"
+    "Weighty Issues: How Obesity Affects Us Differently",
+    "Feel More Energized: Practical Morning Routine"
   ]
 }
