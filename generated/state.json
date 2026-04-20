@@ -1,5 +1,5 @@
 {
-  "runs": 66,
+  "runs": 67,
   "offer_runs": 21,
   "recent_topics": [
     "weight-loss-lifestyle",
@@ -43,7 +43,10 @@
     "obesity-hidden-health-risks-men-women",
     "morning-routines-for-energy-and-focus",
     "intermittent-fasting-benefits-for-women",
-    "sparkling-water-metabolism-weight-loss"
+    "sparkling-water-metabolism-weight-loss",
+    "biohacking-sleep-optimization",
+    "olive-oil-brain-boost",
+    "bread-weight-gain-no-extra-calories"
   ],
   "recent_slugs": [
     "quick-weekday-dinners",
@@ -137,9 +140,12 @@
     "weighty-issues-obesity-differences",
     "boost-your-morning-energy-focus-hacks",
     "intermittent-fasting-women-guide",
-    "sparkling-water-weight-loss-metabolism-myth"
+    "sparkling-water-weight-loss-metabolism-myth",
+    "biohacking-sleep-guide",
+    "unlock-brain-power-olive-oil-secret",
+    "beyond-calories-real-reason-bread-weight-gain"
   ],
-  "last_run": "2026-04-17",
+  "last_run": "2026-04-20",
   "recent_tags": [
     "healthy-habits",
     "health",
@@ -182,28 +188,31 @@
     "weight",
     "healthy-habits",
     "health",
+    "weight",
+    "sleep",
+    "mental-wellness",
     "weight"
   ],
   "tag_counts": {
-    "sleep": 8,
+    "sleep": 9,
     "gut": 8,
-    "mental-wellness": 7,
+    "mental-wellness": 8,
     "stress": 8,
     "healthy-habits": 27,
     "longevity": 7,
     "recipes": 7,
     "anti-inflammatory": 7,
     "home-workouts": 7,
-    "weight": 11,
+    "weight": 12,
     "health": 10
   },
   "topic_rotation": {
-    "sleep": 8,
-    "gut": 9,
+    "sleep": 9,
+    "gut": 10,
     "stress": 14,
     "healthy-habits": 10,
     "longevity": 10,
-    "recipes": 8,
+    "recipes": 9,
     "anti-inflammatory": 11,
     "home-workouts": 11,
     "weight": 25,
@@ -261,6 +270,9 @@
     "Weighty Issues: How Obesity Affects Us Differently",
     "Feel More Energized: Practical Morning Routine",
     "Is Intermittent Fasting Right for You, Women?",
-    "Sparkling Water: Weight Loss Friend or Fad?"
+    "Sparkling Water: Weight Loss Friend or Fad?",
+    "Optimize Your Sleep: Practical Biohacking Tips",
+    "Better Memory? Try This Olive Oil Solution",
+    "Is Bread Messing With Your Weight? Science Explains"
   ]
 }
