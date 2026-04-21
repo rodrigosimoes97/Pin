@@ -1,5 +1,5 @@
 {
-  "runs": 67,
+  "runs": 68,
   "offer_runs": 21,
   "recent_topics": [
     "weight-loss-lifestyle",
@@ -46,7 +46,11 @@
     "sparkling-water-metabolism-weight-loss",
     "biohacking-sleep-optimization",
     "olive-oil-brain-boost",
-    "bread-weight-gain-no-extra-calories"
+    "bread-weight-gain-no-extra-calories",
+    "how-to-improve-sleep-quality-naturally",
+    "personalized-nutrition-for-gut-health",
+    "biohacking-longevity-secrets",
+    "gut-health-probiotics-prebiotics-microbiome"
   ],
   "recent_slugs": [
     "quick-weekday-dinners",
@@ -143,9 +147,13 @@
     "sparkling-water-weight-loss-metabolism-myth",
     "biohacking-sleep-guide",
     "unlock-brain-power-olive-oil-secret",
-    "beyond-calories-real-reason-bread-weight-gain"
+    "beyond-calories-real-reason-bread-weight-gain",
+    "unlock-better-sleep-natural-tips-deeper-rest-energy",
+    "personalized-nutrition-gut-health-custom-blueprint",
+    "biohacking-longevity-secrets",
+    "unlock-your-gut-health-probiotics-prebiotics-microbiome"
   ],
-  "last_run": "2026-04-20",
+  "last_run": "2026-04-21",
   "recent_tags": [
     "healthy-habits",
     "health",
@@ -191,15 +199,19 @@
     "weight",
     "sleep",
     "mental-wellness",
-    "weight"
+    "weight",
+    "sleep",
+    "gut",
+    "longevity",
+    "gut"
   ],
   "tag_counts": {
-    "sleep": 9,
-    "gut": 8,
+    "sleep": 10,
+    "gut": 10,
     "mental-wellness": 8,
     "stress": 8,
     "healthy-habits": 27,
-    "longevity": 7,
+    "longevity": 8,
     "recipes": 7,
     "anti-inflammatory": 7,
     "home-workouts": 7,
@@ -207,11 +219,11 @@
     "health": 10
   },
   "topic_rotation": {
-    "sleep": 9,
-    "gut": 10,
+    "sleep": 10,
+    "gut": 12,
     "stress": 14,
     "healthy-habits": 10,
-    "longevity": 10,
+    "longevity": 11,
     "recipes": 9,
     "anti-inflammatory": 11,
     "home-workouts": 11,
@@ -273,6 +285,10 @@
     "Sparkling Water: Weight Loss Friend or Fad?",
     "Optimize Your Sleep: Practical Biohacking Tips",
     "Better Memory? Try This Olive Oil Solution",
-    "Is Bread Messing With Your Weight? Science Explains"
+    "Is Bread Messing With Your Weight? Science Explains",
+    "Struggling with Sleep? Try These Natural Tips",
+    "Discover Gut-Friendly Foods That Work for You",
+    "Future of Health: Biohacking Your Lifespan",
+    "Unlock Better Digestion with Gut Health Foods"
   ]
 }
