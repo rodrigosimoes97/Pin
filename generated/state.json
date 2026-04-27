@@ -1,10 +1,7 @@
 {
-  "runs": 71,
+  "runs": 72,
   "offer_runs": 21,
   "recent_topics": [
-    "weight-loss-lifestyle",
-    "metabolic-health",
-    "weight-loss-lifestyle",
     "metabolic-health",
     "weight-loss-lifestyle",
     "metabolic-health",
@@ -51,12 +48,12 @@
     "gut-health-probiotics-prebiotics-microbiome",
     "daily-hydration-benefits",
     "vitamin-d-cancer-prevention",
-    "daily-hydration-benefits-skin-energy"
+    "daily-hydration-benefits-skin-energy",
+    "stress-management-mindfulness-techniques",
+    "biohacking-for-better-sleep",
+    "daily-hydration-benefits"
   ],
   "recent_slugs": [
-    "build-muscle-no-equipment",
-    "feeling-stressed-build-emotional-strength",
-    "calorie-aware-diet-tips",
     "calorie-aware-choices-weight-loss",
     "best-way-to-prepare-for-sleep-0304-2",
     "meal-timing-gut-health-fiber",
@@ -153,14 +150,14 @@
     "unlock-your-gut-health-probiotics-prebiotics-microbiome",
     "unlock-your-health-surprising-benefits-daily-hydration",
     "vitamin-d-cancer-shield",
-    "daily-hydration-benefits"
+    "daily-hydration-benefits",
+    "master-your-stress-mindfulness-techniques",
+    "biohacking-sleep-advanced-strategies",
+    "daily-hydration-benefits-americans"
   ],
-  "last_run": "2026-04-24",
+  "last_run": "2026-04-27",
   "recent_tags": [
     "healthy-habits",
-    "health",
-    "healthy-habits",
-    "healthy-habits",
     "healthy-habits",
     "healthy-habits",
     "weight",
@@ -206,12 +203,15 @@
     "gut",
     "healthy-habits",
     "health",
+    "health",
+    "mental-wellness",
+    "sleep",
     "health"
   ],
   "tag_counts": {
-    "sleep": 10,
+    "sleep": 11,
     "gut": 10,
-    "mental-wellness": 8,
+    "mental-wellness": 9,
     "stress": 8,
     "healthy-habits": 28,
     "longevity": 8,
@@ -219,13 +219,13 @@
     "anti-inflammatory": 7,
     "home-workouts": 7,
     "weight": 12,
-    "health": 12
+    "health": 13
   },
   "topic_rotation": {
-    "sleep": 10,
+    "sleep": 11,
     "gut": 12,
-    "stress": 14,
-    "healthy-habits": 13,
+    "stress": 15,
+    "healthy-habits": 14,
     "longevity": 11,
     "recipes": 9,
     "anti-inflammatory": 11,
@@ -234,9 +234,6 @@
     "mental-wellness": 1
   },
   "recent_titles": [
-    "Eat for Energy: Top Anti-Inflammatory Foods",
-    "Unlock Mobility: Diet & Exercise Tips",
-    "Beginner's Guide to Walking for Weight Loss",
     "Stuck at Your Desk? Try These Mobility Stretches",
     "No-Equipment Strength for Small Spaces: Get Stronger",
     "How to Actually Boost Energy by Balancing Sugar",
@@ -293,6 +290,9 @@
     "Unlock Better Digestion with Gut Health Foods",
     "Struggling to Hydrate? Try These Tips",
     "Could Vitamin D Be Your Cancer Defense?",
-    "Want Glowing Skin? Drink More Water Daily!"
+    "Want Glowing Skin? Drink More Water Daily!",
+    "Feeling Overwhelmed? Try These Mindfulness Hacks",
+    "Science-Backed Sleep Strategies for Enhanced Well-being",
+    "Is Your Energy Low? Try More Water Today"
   ]
 }
