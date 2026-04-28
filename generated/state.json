@@ -1,8 +1,7 @@
 {
-  "runs": 72,
+  "runs": 73,
   "offer_runs": 21,
   "recent_topics": [
-    "metabolic-health",
     "weight-loss-lifestyle",
     "metabolic-health",
     "weight-loss-lifestyle",
@@ -51,10 +50,10 @@
     "daily-hydration-benefits-skin-energy",
     "stress-management-mindfulness-techniques",
     "biohacking-for-better-sleep",
-    "daily-hydration-benefits"
+    "daily-hydration-benefits",
+    "fish-oil-brain-health-risk"
   ],
   "recent_slugs": [
-    "calorie-aware-choices-weight-loss",
     "best-way-to-prepare-for-sleep-0304-2",
     "meal-timing-gut-health-fiber",
     "daily-routines-ease-stress",
@@ -153,13 +152,13 @@
     "daily-hydration-benefits",
     "master-your-stress-mindfulness-techniques",
     "biohacking-sleep-advanced-strategies",
-    "daily-hydration-benefits-americans"
+    "daily-hydration-benefits-americans",
+    "rethinking-fish-oil-supplements"
   ],
-  "last_run": "2026-04-27",
+  "last_run": "2026-04-28",
   "recent_tags": [
     "healthy-habits",
     "healthy-habits",
-    "healthy-habits",
     "weight",
     "sleep",
     "gut",
@@ -206,12 +205,13 @@
     "health",
     "mental-wellness",
     "sleep",
-    "health"
+    "health",
+    "mental-wellness"
   ],
   "tag_counts": {
     "sleep": 11,
     "gut": 10,
-    "mental-wellness": 9,
+    "mental-wellness": 10,
     "stress": 8,
     "healthy-habits": 28,
     "longevity": 8,
@@ -225,7 +225,7 @@
     "sleep": 11,
     "gut": 12,
     "stress": 15,
-    "healthy-habits": 14,
+    "healthy-habits": 15,
     "longevity": 11,
     "recipes": 9,
     "anti-inflammatory": 11,
@@ -234,7 +234,6 @@
     "mental-wellness": 1
   },
   "recent_titles": [
-    "Stuck at Your Desk? Try These Mobility Stretches",
     "No-Equipment Strength for Small Spaces: Get Stronger",
     "How to Actually Boost Energy by Balancing Sugar",
     "How to Understand Calories for Daily Health",
@@ -293,6 +292,7 @@
     "Want Glowing Skin? Drink More Water Daily!",
     "Feeling Overwhelmed? Try These Mindfulness Hacks",
     "Science-Backed Sleep Strategies for Enhanced Well-being",
-    "Is Your Energy Low? Try More Water Today"
+    "Is Your Energy Low? Try More Water Today",
+    "Rethinking Fish Oil: Is It Time to Ditch Your Supplement?"
   ]
 }
