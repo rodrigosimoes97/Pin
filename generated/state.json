@@ -1,10 +1,7 @@
 {
-  "runs": 73,
+  "runs": 74,
   "offer_runs": 21,
   "recent_topics": [
-    "weight-loss-lifestyle",
-    "metabolic-health",
-    "weight-loss-lifestyle",
     "sleep-improvement",
     "bloating-relief",
     "burnout-prevention",
@@ -51,12 +48,12 @@
     "stress-management-mindfulness-techniques",
     "biohacking-for-better-sleep",
     "daily-hydration-benefits",
-    "fish-oil-brain-health-risk"
+    "fish-oil-brain-health-risk",
+    "pediatric-hospital-shortages-affect-baby-heart-surgery",
+    "mit-study-children-cancer-chemical-water",
+    "daily-mindfulness-meditation-stress-relief"
   ],
   "recent_slugs": [
-    "best-way-to-prepare-for-sleep-0304-2",
-    "meal-timing-gut-health-fiber",
-    "daily-routines-ease-stress",
     "quick-stress-relief-routines",
     "daily-routines-lower-stress",
     "daily-routine-longevity-expert-insights",
@@ -153,13 +150,13 @@
     "master-your-stress-mindfulness-techniques",
     "biohacking-sleep-advanced-strategies",
     "daily-hydration-benefits-americans",
-    "rethinking-fish-oil-supplements"
+    "rethinking-fish-oil-supplements",
+    "pediatric-care-shortages-hospitals-cant-cope",
+    "is-your-childs-water-safe-mit-study-reveals-cancer-risk",
+    "mindfulness-meditation-daily-stress-relief"
   ],
-  "last_run": "2026-04-28",
+  "last_run": "2026-04-29",
   "recent_tags": [
-    "healthy-habits",
-    "healthy-habits",
-    "weight",
     "sleep",
     "gut",
     "mental-wellness",
@@ -206,26 +203,29 @@
     "mental-wellness",
     "sleep",
     "health",
-    "mental-wellness"
+    "mental-wellness",
+    "health",
+    "health",
+    "stress"
   ],
   "tag_counts": {
     "sleep": 11,
     "gut": 10,
     "mental-wellness": 10,
-    "stress": 8,
+    "stress": 9,
     "healthy-habits": 28,
     "longevity": 8,
     "recipes": 7,
     "anti-inflammatory": 7,
     "home-workouts": 7,
     "weight": 12,
-    "health": 13
+    "health": 15
   },
   "topic_rotation": {
     "sleep": 11,
     "gut": 12,
-    "stress": 15,
-    "healthy-habits": 15,
+    "stress": 17,
+    "healthy-habits": 16,
     "longevity": 11,
     "recipes": 9,
     "anti-inflammatory": 11,
@@ -234,9 +234,6 @@
     "mental-wellness": 1
   },
   "recent_titles": [
-    "No-Equipment Strength for Small Spaces: Get Stronger",
-    "How to Actually Boost Energy by Balancing Sugar",
-    "How to Understand Calories for Daily Health",
     "Realistic Blood Sugar Tips for More Energy",
     "How to Track Calories Without Feeling Deprived",
     "Unlock Your Energy: Master Blood Sugar Levels",
@@ -293,6 +290,9 @@
     "Feeling Overwhelmed? Try These Mindfulness Hacks",
     "Science-Backed Sleep Strategies for Enhanced Well-being",
     "Is Your Energy Low? Try More Water Today",
-    "Rethinking Fish Oil: Is It Time to Ditch Your Supplement?"
+    "Rethinking Fish Oil: Is It Time to Ditch Your Supplement?",
+    "Hospital Shortages Devastate Families: What Now?",
+    "Cancer Risk in Kids' Water? MIT Study Shocks Parents",
+    "Stressed? Try These 5-Minute Mindfulness Meditations"
   ]
 }
