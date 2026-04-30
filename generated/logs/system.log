@@ -3387,3 +3387,122 @@ Traceback (most recent call last):
                ^^^^^^^^^^^^^^^^^^^^^^
 json.decoder.JSONDecodeError: Expecting ',' delimiter: line 1 column 100 (char 99)
 2026-04-29 12:00:34,965 INFO __main__ - Run complete. Published 3/5 posts.
+2026-04-30 11:55:25,350 INFO __main__ - Fetching trending topics for USA...
+2026-04-30 11:55:25,591 WARNING src.app.trend_research - Failed to fetch Google Trends (404/Error): The request failed: Google returned a response with code 404. Moving to fallbacks.
+2026-04-30 11:55:27,847 INFO src.app.trend_research - Gathered 11 unique trending topics.
+2026-04-30 11:55:27,849 INFO __main__ - Using trending topic: Experimental therapy gantenerumab fails to slow or improve Alzheimers memory loss in clinical trials
+2026-04-30 11:55:55,490 ERROR src.app.gemini_client - Critical JSON parse failure. Raw response saved to generated/logs/failed_json.txt
+2026-04-30 11:55:55,490 WARNING src.app.gemini_client - Deep JSON sanitization failed: Expecting ',' delimiter: line 1 column 90 (char 89). Raw text snippet: {
+  "title": "Alzheimer's Breakthrough Misses the Mark: Gantenerumab Trial Results",
+  "slug": "gantenerumab-trial-results-alzheimers",
+  "meta_description": "The gantenerumab trial results are in, an
+2026-04-30 11:55:55,490 ERROR __main__ - Failed slot 1
+Traceback (most recent call last):
+  File "/home/runner/work/Pin/Pin/src/app/run_daily.py", line 212, in main
+    candidate = generate_article(client, topic, chosen_title, mode, offer)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/content.py", line 107, in generate_article
+    payload = client.generate_json(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 23, in generate_json
+    return parse_json_from_text(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 256, in parse_json_from_text
+    raise e
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 243, in parse_json_from_text
+    return json.loads(final_attempt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Expecting ',' delimiter: line 1 column 90 (char 89)
+2026-04-30 11:55:57,526 INFO __main__ - Using trending topic: Desperate for heart surgery for their baby, a family feels the effects of pediatric hospital shortages
+2026-04-30 11:56:52,525 WARNING __main__ - Slot 2: No post generated after 3 attempts. Initiating rescue attempt...
+2026-04-30 11:56:52,525 INFO __main__ - Seeking autonomous health topic from Gemini...
+2026-04-30 11:57:18,455 ERROR __main__ - Slot 2: All attempts failed, including rescue.
+2026-04-30 11:57:18,455 INFO __main__ - Using trending topic: MIT study finds children more vulnerable to cancer-causing chemical in water
+2026-04-30 11:58:17,411 WARNING __main__ - Slot 3: No post generated after 3 attempts. Initiating rescue attempt...
+2026-04-30 11:58:17,411 INFO __main__ - Seeking autonomous health topic from Gemini...
+2026-04-30 11:58:51,950 ERROR src.app.gemini_client - Critical JSON parse failure. Raw response saved to generated/logs/failed_json.txt
+2026-04-30 11:58:51,950 WARNING src.app.gemini_client - Deep JSON sanitization failed: Expecting ',' delimiter: line 1 column 90 (char 89). Raw text snippet: {
+  "title": "Unlock Peak Performance: The Ultimate Guide to Optimizing Your Sleep",
+  "slug": "unlock-peak-performance-sleep-guide",
+  "meta_description": "Struggling with energy? Unlock peak perform
+2026-04-30 11:58:51,950 ERROR __main__ - Failed slot 3
+Traceback (most recent call last):
+  File "/home/runner/work/Pin/Pin/src/app/run_daily.py", line 236, in main
+    candidate = generate_article(client, rescue_topic, rescue_chosen_title, mode, offer)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/content.py", line 107, in generate_article
+    payload = client.generate_json(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 23, in generate_json
+    return parse_json_from_text(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 256, in parse_json_from_text
+    raise e
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 243, in parse_json_from_text
+    return json.loads(final_attempt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Expecting ',' delimiter: line 1 column 90 (char 89)
+2026-04-30 11:58:53,951 INFO __main__ - Using trending topic: Vitamin D boosts breast cancer treatment success by 79%
+2026-04-30 11:58:59,032 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 10s before trying next key: key#1 transient_status=429
+2026-04-30 11:59:22,975 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 10s before trying next key: key#1 transient_status=429
+2026-04-30 11:59:48,907 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 10s before trying next key: key#1 transient_status=429
+2026-04-30 12:00:13,644 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 10s before trying next key: key#1 transient_status=429
+2026-04-30 12:00:32,649 WARNING __main__ - Slot 4: No post generated after 3 attempts. Initiating rescue attempt...
+2026-04-30 12:00:32,650 INFO __main__ - Seeking autonomous health topic from Gemini...
+2026-04-30 12:00:37,739 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 10s before trying next key: key#1 transient_status=429
+2026-04-30 12:00:55,041 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 10s before trying next key: key#1 transient_status=429
+2026-04-30 12:01:13,829 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 10s before trying next key: key#1 transient_status=429
+2026-04-30 12:01:33,694 ERROR __main__ - Slot 4: All attempts failed, including rescue.
+2026-04-30 12:01:33,694 INFO __main__ - Using trending topic: Fish oil may be hurting your brain, new study finds
+2026-04-30 12:01:44,745 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 10s before trying next key: key#1 transient_status=429
+2026-04-30 12:02:01,594 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 10s before trying next key: key#1 transient_status=429
+2026-04-30 12:02:21,699 ERROR src.app.gemini_client - Critical JSON parse failure. Raw response saved to generated/logs/failed_json.txt
+2026-04-30 12:02:21,699 WARNING src.app.gemini_client - Deep JSON sanitization failed: Expecting ',' delimiter: line 1 column 100 (char 99). Raw text snippet: {
+  "title": "Is Your Fish Oil Supplement Actually Harming Your Brain? Rethink Your Omega-3s",
+  "slug": "fish-oil-brain-harm-rethink-omega-3s",
+  "meta_description": "Discover why your fish oil suppl
+2026-04-30 12:02:21,699 ERROR __main__ - Failed slot 5
+Traceback (most recent call last):
+  File "/home/runner/work/Pin/Pin/src/app/run_daily.py", line 212, in main
+    candidate = generate_article(client, topic, chosen_title, mode, offer)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/content.py", line 107, in generate_article
+    payload = client.generate_json(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 23, in generate_json
+    return parse_json_from_text(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 256, in parse_json_from_text
+    raise e
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 243, in parse_json_from_text
+    return json.loads(final_attempt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Expecting ',' delimiter: line 1 column 100 (char 99)
+2026-04-30 12:02:23,700 INFO __main__ - Run complete. Published 0/5 posts.
