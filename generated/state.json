@@ -1,8 +1,7 @@
 {
-  "runs": 75,
+  "runs": 76,
   "offer_runs": 21,
   "recent_topics": [
-    "sleep-improvement",
     "bloating-relief",
     "burnout-prevention",
     "mindfulness-basics",
@@ -51,10 +50,10 @@
     "fish-oil-brain-health-risk",
     "pediatric-hospital-shortages-affect-baby-heart-surgery",
     "mit-study-children-cancer-chemical-water",
-    "daily-mindfulness-meditation-stress-relief"
+    "daily-mindfulness-meditation-stress-relief",
+    "optimizing-sleep-for-peak-performance"
   ],
   "recent_slugs": [
-    "quick-stress-relief-routines",
     "daily-routines-lower-stress",
     "daily-routine-longevity-expert-insights",
     "quick-weekday-meals-no-time",
@@ -153,11 +152,11 @@
     "rethinking-fish-oil-supplements",
     "pediatric-care-shortages-hospitals-cant-cope",
     "is-your-childs-water-safe-mit-study-reveals-cancer-risk",
-    "mindfulness-meditation-daily-stress-relief"
+    "mindfulness-meditation-daily-stress-relief",
+    "unlock-peak-performance-ultimate-guide-optimizing-sleep"
   ],
-  "last_run": "2026-04-30",
+  "last_run": "2026-05-01",
   "recent_tags": [
-    "sleep",
     "gut",
     "mental-wellness",
     "mental-wellness",
@@ -206,10 +205,11 @@
     "mental-wellness",
     "health",
     "health",
-    "stress"
+    "stress",
+    "sleep"
   ],
   "tag_counts": {
-    "sleep": 11,
+    "sleep": 12,
     "gut": 10,
     "mental-wellness": 10,
     "stress": 9,
@@ -222,7 +222,7 @@
     "health": 15
   },
   "topic_rotation": {
-    "sleep": 11,
+    "sleep": 12,
     "gut": 12,
     "stress": 17,
     "healthy-habits": 16,
@@ -234,7 +234,6 @@
     "mental-wellness": 1
   },
   "recent_titles": [
-    "Realistic Blood Sugar Tips for More Energy",
     "How to Track Calories Without Feeling Deprived",
     "Unlock Your Energy: Master Blood Sugar Levels",
     "How to Be Calorie Aware Without the Diet Mentality",
@@ -293,6 +292,7 @@
     "Rethinking Fish Oil: Is It Time to Ditch Your Supplement?",
     "Hospital Shortages Devastate Families: What Now?",
     "Cancer Risk in Kids' Water? MIT Study Shocks Parents",
-    "Stressed? Try These 5-Minute Mindfulness Meditations"
+    "Stressed? Try These 5-Minute Mindfulness Meditations",
+    "Want More Energy? Master Your Sleep with These Tips"
   ]
 }
