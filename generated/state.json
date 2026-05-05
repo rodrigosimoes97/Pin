@@ -1,8 +1,7 @@
 {
-  "runs": 77,
+  "runs": 78,
   "offer_runs": 21,
   "recent_topics": [
-    "mindfulness-basics",
     "stress-reset",
     "functional-aging",
     "high-protein-breakfast",
@@ -51,10 +50,10 @@
     "daily-mindfulness-meditation-stress-relief",
     "optimizing-sleep-for-peak-performance",
     "coffee-gut-brain-health",
-    "gut-health-stress-late-night-eating"
+    "gut-health-stress-late-night-eating",
+    "mindful-eating-for-gut-health"
   ],
   "recent_slugs": [
-    "quick-weekday-meals-no-time",
     "foods-lower-inflammation-naturally-0310-2",
     "build-muscle-bodyweight-workouts",
     "calorie-awareness-sustainable-weight-loss-0311-2",
@@ -153,11 +152,11 @@
     "mindfulness-meditation-daily-stress-relief",
     "unlock-peak-performance-ultimate-guide-optimizing-sleep",
     "coffees-real-impact-gut-brain",
-    "stress-late-night-eating-gut-health"
+    "stress-late-night-eating-gut-health",
+    "mindful-eating-gut-health-digestion"
   ],
-  "last_run": "2026-05-04",
+  "last_run": "2026-05-05",
   "recent_tags": [
-    "mental-wellness",
     "stress",
     "longevity",
     "healthy-habits",
@@ -206,14 +205,15 @@
     "stress",
     "sleep",
     "health",
-    "gut"
+    "gut",
+    "healthy-habits"
   ],
   "tag_counts": {
     "sleep": 12,
     "gut": 11,
     "mental-wellness": 10,
     "stress": 9,
-    "healthy-habits": 28,
+    "healthy-habits": 29,
     "longevity": 8,
     "recipes": 7,
     "anti-inflammatory": 7,
@@ -223,7 +223,7 @@
   },
   "topic_rotation": {
     "sleep": 12,
-    "gut": 14,
+    "gut": 15,
     "stress": 17,
     "healthy-habits": 16,
     "longevity": 11,
@@ -234,7 +234,6 @@
     "mental-wellness": 1
   },
   "recent_titles": [
-    "How to Be Calorie Aware Without the Diet Mentality",
     "How to Boost Energy by Understanding Blood Sugar",
     "How to Track Calories Without Feeling Restricted",
     "Is Blood Sugar Sabotaging Your Energy Levels?",
@@ -293,6 +292,7 @@
     "Stressed? Try These 5-Minute Mindfulness Meditations",
     "Want More Energy? Master Your Sleep with These Tips",
     "What Your Gut and Brain Really Think of Coffee",
-    "Stress Eating Late? Your Gut's Painful Reality"
+    "Stress Eating Late? Your Gut's Painful Reality",
+    "Discover Mindful Eating for Optimal Digestion"
   ]
 }
