@@ -3955,3 +3955,39 @@ Traceback (most recent call last):
                ^^^^^^^^^^^^^^^^^^^^^^
 json.decoder.JSONDecodeError: Expecting ',' delimiter: line 1 column 97 (char 96)
 2026-05-07 12:21:43,079 INFO __main__ - Run complete. Published 0/5 posts.
+2026-05-08 11:48:17,905 INFO __main__ - Fetching trending topics for USA...
+2026-05-08 11:48:18,295 WARNING src.app.trend_research - Failed to fetch Google Trends (404/Error): The request failed: Google returned a response with code 404. Moving to fallbacks.
+2026-05-08 11:48:21,448 INFO src.app.trend_research - Gathered 7 unique trending topics.
+2026-05-08 11:48:21,450 INFO __main__ - Using trending topic: Experimental therapy gantenerumab fails to slow or improve Alzheimers memory loss in clinical trials
+2026-05-08 11:48:59,787 WARNING __main__ - Slot 1: No post generated after 3 attempts. Initiating rescue attempt...
+2026-05-08 11:48:59,787 INFO __main__ - Seeking autonomous health topic from Gemini...
+2026-05-08 11:49:30,178 ERROR __main__ - Slot 1: All attempts failed, including rescue.
+2026-05-08 11:49:30,179 INFO __main__ - Using trending topic: Desperate for heart surgery for their baby, a family feels the effects of pediatric hospital shortages
+2026-05-08 11:50:00,970 WARNING __main__ - Slot 2: No post generated after 3 attempts. Initiating rescue attempt...
+2026-05-08 11:50:00,970 INFO __main__ - Seeking autonomous health topic from Gemini...
+2026-05-08 11:50:35,015 INFO src.app.duplicate_checker - Indexed post: unlock-your-metabolism-sleep-secrets-weight-loss (Total: 45)
+2026-05-08 11:50:35,015 INFO __main__ - Slot 2: Rescue attempt successful with topic: Unlock Your Metabolism: The Sleep Secrets for Sustainable Weight Loss
+2026-05-08 11:50:36,083 INFO __main__ - Published unlock-your-metabolism-sleep-secrets-weight-loss.html (offer)
+2026-05-08 11:50:41,084 INFO __main__ - Using trending topic: Scientists reveal creatine’s hidden power beyond muscle gains
+2026-05-08 11:51:28,765 WARNING __main__ - Slot 3: No post generated after 3 attempts. Initiating rescue attempt...
+2026-05-08 11:51:28,765 INFO __main__ - Seeking autonomous health topic from Gemini...
+2026-05-08 11:51:53,418 WARNING src.app.gemini_client - Gemini server error; trying next key: key#1 transient_status=503
+2026-05-08 11:52:06,672 ERROR __main__ - Slot 3: All attempts failed, including rescue.
+2026-05-08 11:52:06,672 INFO __main__ - Using trending topic: Scientists just discovered what coffee is really doing to your gut and brain
+2026-05-08 11:52:29,884 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 10s before trying next key: key#1 transient_status=429
+2026-05-08 11:53:00,325 WARNING __main__ - Slot 4: No post generated after 3 attempts. Initiating rescue attempt...
+2026-05-08 11:53:00,325 INFO __main__ - Seeking autonomous health topic from Gemini...
+2026-05-08 11:53:05,465 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 10s before trying next key: key#1 transient_status=429
+2026-05-08 11:54:15,785 ERROR __main__ - Slot 4: All attempts failed, including rescue.
+2026-05-08 11:54:15,785 INFO __main__ - Using trending topic: Your gut takes a “double hit” from stress and late-night eating
+2026-05-08 11:54:20,927 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 10s before trying next key: key#1 transient_status=429
+2026-05-08 11:54:42,392 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 10s before trying next key: key#1 transient_status=429
+2026-05-08 11:55:02,219 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 10s before trying next key: key#1 transient_status=429
+2026-05-08 11:55:21,640 WARNING __main__ - Slot 5: No post generated after 3 attempts. Initiating rescue attempt...
+2026-05-08 11:55:21,640 INFO __main__ - Seeking autonomous health topic from Gemini...
+2026-05-08 11:55:26,786 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 10s before trying next key: key#1 transient_status=429
+2026-05-08 11:55:51,059 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 10s before trying next key: key#1 transient_status=429
+2026-05-08 11:56:06,865 WARNING src.app.gemini_client - Gemini server error; trying next key: key#2 transient_status=503
+2026-05-08 11:56:17,622 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 10s before trying next key: key#1 transient_status=429
+2026-05-08 11:56:38,042 ERROR __main__ - Slot 5: All attempts failed, including rescue.
+2026-05-08 11:56:38,043 INFO __main__ - Run complete. Published 1/5 posts.

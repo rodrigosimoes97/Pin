@@ -1,8 +1,7 @@
 {
-  "runs": 80,
+  "runs": 81,
   "offer_runs": 21,
   "recent_topics": [
-    "walking-for-fitness",
     "home-workouts",
     "circadian-rhythm",
     "probiotic-foods",
@@ -51,10 +50,10 @@
     "biohacking-your-sleep-for-peak-performance",
     "creatine-beyond-muscle-gains",
     "daily-mindfulness-for-stress-relief",
-    "how-to-improve-sleep-hygiene-for-better-health"
+    "how-to-improve-sleep-hygiene-for-better-health",
+    "optimizing-sleep-for-metabolism-and-weight-loss"
   ],
   "recent_slugs": [
-    "can-fermented-foods-improve-your-gut",
     "daily-routines-lower-stress-0313-2",
     "small-changes-improve-health",
     "daily-habits-longevity-0316-2",
@@ -153,11 +152,11 @@
     "biohacking-sleep-peak-performance",
     "creatine-brain-energy-secrets",
     "daily-mindfulness-stress-relief",
-    "unlock-better-sleep-essential-sleep-hygiene-tips"
+    "unlock-better-sleep-essential-sleep-hygiene-tips",
+    "unlock-your-metabolism-sleep-secrets-weight-loss"
   ],
-  "last_run": "2026-05-07",
+  "last_run": "2026-05-08",
   "recent_tags": [
-    "weight",
     "home-workouts",
     "sleep",
     "gut",
@@ -206,10 +205,11 @@
     "sleep",
     "mental-wellness",
     "mental-wellness",
+    "sleep",
     "sleep"
   ],
   "tag_counts": {
-    "sleep": 15,
+    "sleep": 16,
     "gut": 11,
     "mental-wellness": 12,
     "stress": 9,
@@ -222,7 +222,7 @@
     "health": 16
   },
   "topic_rotation": {
-    "sleep": 15,
+    "sleep": 16,
     "gut": 15,
     "stress": 18,
     "healthy-habits": 17,
@@ -234,7 +234,6 @@
     "mental-wellness": 1
   },
   "recent_titles": [
-    "How to Master Calorie Awareness for Sustainable Weight Loss",
     "How to Make Your Bedroom a Sleep Haven",
     "Struggling with Bloating? Try These Natural Fixes",
     "Mental Fatigue? Try These Quick Burnout Fixes",
@@ -293,6 +292,7 @@
     "Optimize Sleep Quality: Practical Biohacking Strategies",
     "How Creatine Can Improve Your Daily Energy Levels",
     "Stressed? Try These Simple Daily Mindfulness Resets",
-    "Struggling with Sleep? Try These Daily Fixes"
+    "Struggling with Sleep? Try These Daily Fixes",
+    "Sleep Quality: Your Key to Metabolism and Weight Loss"
   ]
 }
