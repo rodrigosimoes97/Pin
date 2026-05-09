@@ -3991,3 +3991,4 @@ json.decoder.JSONDecodeError: Expecting ',' delimiter: line 1 column 97 (char 96
 2026-05-08 11:56:17,622 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 10s before trying next key: key#1 transient_status=429
 2026-05-08 11:56:38,042 ERROR __main__ - Slot 5: All attempts failed, including rescue.
 2026-05-08 11:56:38,043 INFO __main__ - Run complete. Published 1/5 posts.
+2026-05-09 11:14:09,856 INFO __main__ - Skipping generation today to maintain 5 posts/week.
