@@ -1,5 +1,32 @@
 [
   {
+    "slug": "biohacking-sleep-energy-focus",
+    "title": "Biohacking Your Sleep: Natural Ways to Boost Energy & Focus",
+    "description": "Struggling with energy and focus? Discover natural biohacking techniques for better sleep. Learn to reduce grogginess and boost daytime performance. Your guide to Biohacking Your Sleep: Natural Ways to Boost Energy & Focus.",
+    "date": "2026-05-12",
+    "url": "biohacking-sleep-energy-focus.html",
+    "hero": "assets/2026-05-12_biohacking-sleep-energy-focus.webp",
+    "tag": "sleep"
+  },
+  {
+    "slug": "ditch-processed-foods-slash-heart-disease-risk",
+    "title": "Ditch the Processed Stuff: Slash Your Heart Disease Risk",
+    "description": "Tired of feeling sluggish? Discover how ditching the processed stuff can slash your heart disease risk. Learn simple swaps and real-life strategies to boost your health, from a personal perspective.",
+    "date": "2026-05-12",
+    "url": "ditch-processed-foods-slash-heart-disease-risk.html",
+    "hero": "assets/2026-05-12_ditch-processed-foods-slash-heart-disease-risk.webp",
+    "tag": "health"
+  },
+  {
+    "slug": "mindful-eating-techniques-digestion-weight",
+    "title": "Mindful Eating Techniques for Better Digestion and Sustainable Weight Management",
+    "description": "Discover how mindful eating techniques can transform your digestion and support sustainable weight management. Learn practical tips for better gut health and a healthier relationship with food.",
+    "date": "2026-05-12",
+    "url": "mindful-eating-techniques-digestion-weight.html",
+    "hero": "assets/2026-05-12_mindful-eating-techniques-digestion-weight.webp",
+    "tag": "healthy-habits"
+  },
+  {
     "slug": "vitamin-c-anxiety-secret-weapon",
     "title": "Can Vitamin C Be Your Secret Weapon Against Anxiety?",
     "description": "Feeling anxious? Discover if Vitamin C can be your secret weapon against anxiety. Learn the science and practical tips for managing stress in the USA.",
