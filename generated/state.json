@@ -1,9 +1,7 @@
 {
-  "runs": 86,
+  "runs": 87,
   "offer_runs": 21,
   "recent_topics": [
-    "home-workouts",
-    "metabolic-health",
     "mindful-eating-for-better-digestion",
     "biohacking-for-beginners",
     "intermittent-fasting-weight-loss-benefits",
@@ -51,11 +49,11 @@
     "daily-habit-lowers-dementia-risk",
     "reverse-biological-age-diet-change",
     "fat-burning-bone-strengthening-discovery",
-    "daily-multivitamin-slow-aging"
+    "daily-multivitamin-slow-aging",
+    "watermelon-health-benefits-uncovered",
+    "seven-day-fasting-body-transformation"
   ],
   "recent_slugs": [
-    "managing-blood-sugar-energy",
-    "mindful-eating-calorie-awareness-guide",
     "blood-sugar-energy-levels",
     "effortless-calorie-awareness-lasting-weight-loss",
     "understanding-blood-sugar-energy-balance",
@@ -153,12 +151,12 @@
     "daily-habit-dementia-risk-35-percent",
     "can-diet-reverse-aging-science",
     "unlock-bodys-fat-burning-bone-boosting-switch",
-    "unlock-youthful-living-multivitamin-reverse-clock"
+    "unlock-youthful-living-multivitamin-reverse-clock",
+    "watermelon-health-boost-science",
+    "7-day-fasting-transformation"
   ],
-  "last_run": "2026-05-15",
+  "last_run": "2026-05-18",
   "recent_tags": [
-    "home-workouts",
-    "healthy-habits",
     "gut",
     "health",
     "weight",
@@ -206,6 +204,8 @@
     "healthy-habits",
     "longevity",
     "health",
+    "health",
+    "anti-inflammatory",
     "health"
   ],
   "tag_counts": {
@@ -216,16 +216,16 @@
     "healthy-habits": 31,
     "longevity": 9,
     "recipes": 7,
-    "anti-inflammatory": 7,
+    "anti-inflammatory": 8,
     "home-workouts": 7,
     "weight": 12,
-    "health": 19
+    "health": 20
   },
   "topic_rotation": {
     "sleep": 17,
     "gut": 16,
     "stress": 20,
-    "healthy-habits": 20,
+    "healthy-habits": 22,
     "longevity": 13,
     "recipes": 9,
     "anti-inflammatory": 11,
@@ -234,8 +234,6 @@
     "mental-wellness": 1
   },
   "recent_titles": [
-    "Walk Your Way to Weight Loss: Simple Routines",
-    "Quick Home Strength Workouts for Any Space",
     "How to Use Light for Perfect Sleep",
     "Fermented Foods: Your Practical Gut Reset",
     "Tired of Burnout? Simple Daily Stress Management",
@@ -293,6 +291,8 @@
     "Can This Habit Slash Dementia Risk by 35%?",
     "Can Diet Truly Reverse Aging? New Science Explains",
     "Your Body's Fat-Burning, Bone-Boosting Switch: How?",
-    "Unlock Youth: Is Your Multivitamin Enough?"
+    "Unlock Youth: Is Your Multivitamin Enough?",
+    "Watermelon's Health Secrets: What Scientists Found",
+    "What Happens During a 7-Day Fast?"
   ]
 }
