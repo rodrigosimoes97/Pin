@@ -1,5 +1,32 @@
 [
   {
+    "slug": "cellular-energy-nutrient",
+    "title": "Unlock Your Body's Power: The Nutrient That Supercharges Cellular Energy",
+    "description": "Feeling drained? Discover the nutrient that supercharges cellular energy, boosting your power from the inside out. Unlock lasting energy and transform your daily life. Learn more!",
+    "date": "2026-05-21",
+    "url": "cellular-energy-nutrient.html",
+    "hero": "assets/2026-05-21_cellular-energy-nutrient.webp",
+    "tag": "health"
+  },
+  {
+    "slug": "mits-gut-healing-breakthrough-amino-acid",
+    "title": "Tummy Troubles? MIT's Gut-Healing Breakthrough: The Amino Acid You Need to Know",
+    "description": "Discover MIT's gut-healing breakthrough! Learn about the crucial amino acid that can help your digestion and how to support your gut health. Find out what you need to know about this exciting development.",
+    "date": "2026-05-21",
+    "url": "mits-gut-healing-breakthrough-amino-acid.html",
+    "hero": "assets/2026-05-21_mits-gut-healing-breakthrough-amino-acid.webp",
+    "tag": "gut"
+  },
+  {
+    "slug": "microbiome-diet-gut-health",
+    "title": "Unlock Your Gut Health: The Microbiome Diet for a Happier You",
+    "description": "Unlock your gut health with the microbiome diet! Discover how specific foods can boost digestion, mood, and well-being. Practical tips for a happier you.",
+    "date": "2026-05-21",
+    "url": "microbiome-diet-gut-health.html",
+    "hero": "assets/2026-05-21_microbiome-diet-gut-health.webp",
+    "tag": "gut"
+  },
+  {
     "slug": "mindful-eating-gut-health-digestion-0520-5",
     "title": "Mindful Eating: Boost Gut Health & Digestion Naturally",
     "description": "Discover how Mindful Eating can boost gut health & digestion naturally. Learn practical tips to reduce bloating, improve nutrient absorption, and foster a healthier microbiome.",
