@@ -4846,3 +4846,4 @@ json.decoder.JSONDecodeError: Expecting ',' delimiter: line 1 column 100 (char 9
 2026-05-22 12:45:19,778 INFO src.app.duplicate_checker - Indexed post: junk-food-childhood-brain-rewired (Total: 65)
 2026-05-22 12:45:21,448 INFO __main__ - Published junk-food-childhood-brain-rewired.html (offer)
 2026-05-22 12:45:26,448 INFO __main__ - Run complete. Published 3/5 posts.
+2026-05-23 11:37:37,944 INFO __main__ - Skipping generation today to maintain 5 posts/week.
