@@ -1,9 +1,7 @@
 {
-  "runs": 91,
+  "runs": 92,
   "offer_runs": 21,
   "recent_topics": [
-    "morning-routines-for-energy-and-focus",
-    "intermittent-fasting-benefits-for-women",
     "sparkling-water-metabolism-weight-loss",
     "biohacking-sleep-optimization",
     "olive-oil-brain-boost",
@@ -51,11 +49,11 @@
     "nutrient-supercharge-cellular-energy",
     "morning-hydration-routine-benefits",
     "nutrient-supercharges-cellular-energy",
-    "childhood-junk-food-rewires-brain"
+    "childhood-junk-food-rewires-brain",
+    "why-bananas-in-smoothies-are-bad",
+    "beef-blood-sugar-diabetes-risk-study"
   ],
   "recent_slugs": [
-    "simple-daily-routines-healthier-longer-life",
-    "busy-pros-speedy-healthy-eating",
     "pain-free-joints-nutrition-exercise",
     "eat-for-energy-anti-inflammatory-foods",
     "unlock-mobility-diet-exercise-joint-health",
@@ -153,12 +151,12 @@
     "cellular-energy-nutrient",
     "morning-hydration-unlock-your-day-best-water-habits",
     "unlock-your-energy-nutrient-powers-cells",
-    "junk-food-childhood-brain-rewired"
+    "junk-food-childhood-brain-rewired",
+    "bananas-smoothies-health-truth",
+    "beef-blood-sugar-diabetes-study"
   ],
-  "last_run": "2026-05-22",
+  "last_run": "2026-05-25",
   "recent_tags": [
-    "healthy-habits",
-    "health",
     "weight",
     "sleep",
     "mental-wellness",
@@ -206,11 +204,13 @@
     "health",
     "healthy-habits",
     "health",
-    "mental-wellness"
+    "mental-wellness",
+    "gut",
+    "health"
   ],
   "tag_counts": {
     "sleep": 17,
-    "gut": 13,
+    "gut": 14,
     "mental-wellness": 15,
     "stress": 9,
     "healthy-habits": 32,
@@ -219,13 +219,13 @@
     "anti-inflammatory": 8,
     "home-workouts": 7,
     "weight": 12,
-    "health": 25
+    "health": 26
   },
   "topic_rotation": {
     "sleep": 17,
-    "gut": 19,
+    "gut": 20,
     "stress": 20,
-    "healthy-habits": 26,
+    "healthy-habits": 27,
     "longevity": 15,
     "recipes": 9,
     "anti-inflammatory": 11,
@@ -234,8 +234,6 @@
     "mental-wellness": 1
   },
   "recent_titles": [
-    "How to Stabilize Blood Sugar for Energy",
-    "How Mindful Eating Improves Digestion & Gut",
     "Simple Biohacking: Boost Energy Naturally Daily",
     "Beginner's IF: Practical Weight Loss Tips",
     "Stress Less: Practical Mindfulness Tips",
@@ -293,6 +291,8 @@
     "The Secret to Lasting Energy? It's in This Nutrient",
     "Morning Hydration: Practical Tips for Wellness",
     "Tired? This Nutrient is Fueling Your Cells",
-    "Is Your Child's Brain at Risk from Junk Food Habits?"
+    "Is Your Child's Brain at Risk from Junk Food Habits?",
+    "Ditch the Banana? Your Gut Will Thank You",
+    "New Research: Is Beef Safe for Diabetes Concerns?"
   ]
 }
