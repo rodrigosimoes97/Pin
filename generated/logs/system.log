@@ -5129,3 +5129,86 @@ Traceback (most recent call last):
                ^^^^^^^^^^^^^^^^^^^^^^
 json.decoder.JSONDecodeError: Expecting ',' delimiter: line 1 column 78 (char 77)
 2026-05-27 13:55:23,575 INFO __main__ - Run complete. Published 3/5 posts.
+2026-05-28 14:08:27,330 INFO __main__ - Fetching trending topics for USA...
+2026-05-28 14:08:27,568 WARNING src.app.trend_research - Failed to fetch Google Trends (404/Error): The request failed: Google returned a response with code 404. Moving to fallbacks.
+2026-05-28 14:08:30,681 INFO src.app.trend_research - Gathered 10 unique trending topics.
+2026-05-28 14:08:30,683 INFO __main__ - Using trending topic: Experimental therapy gantenerumab fails to slow or improve Alzheimers memory loss in clinical trials
+2026-05-28 14:08:58,701 WARNING __main__ - Slot 1: No post generated after 3 attempts. Initiating rescue attempt...
+2026-05-28 14:08:58,701 INFO __main__ - Seeking autonomous health topic from Gemini...
+2026-05-28 14:09:26,576 INFO src.app.duplicate_checker - Indexed post: unlock-your-best-gut-health-personalized-nutrition-strategies-for-americans (Total: 73)
+2026-05-28 14:09:26,576 INFO __main__ - Slot 1: Rescue attempt successful with topic: Unlock Your Best Gut Health: Personalized Nutrition Strategies for Americans
+2026-05-28 14:09:28,605 INFO __main__ - Published unlock-your-best-gut-health-personalized-nutrition-strategies-for-americans.html (offer)
+2026-05-28 14:09:33,606 INFO __main__ - Using trending topic: Desperate for heart surgery for their baby, a family feels the effects of pediatric hospital shortages
+2026-05-28 14:10:07,441 WARNING __main__ - Slot 2: No post generated after 3 attempts. Initiating rescue attempt...
+2026-05-28 14:10:07,441 INFO __main__ - Seeking autonomous health topic from Gemini...
+2026-05-28 14:10:39,416 ERROR __main__ - Slot 2: All attempts failed, including rescue.
+2026-05-28 14:10:39,416 INFO __main__ - Using trending topic: Scientists discover hidden gut-brain circuit that triggers protein cravings
+2026-05-28 14:11:08,530 ERROR src.app.gemini_client - Critical JSON parse failure. Raw response saved to generated/logs/failed_json.txt
+2026-05-28 14:11:08,530 WARNING src.app.gemini_client - Deep JSON sanitization failed: Expecting ',' delimiter: line 1 column 79 (char 78). Raw text snippet: {
+  "title": "Unlock Your Cravings: The Gut-Brain Connection to Protein",
+  "slug": "gut-brain-protein-cravings",
+  "meta_description": "Unlock your cravings! Discover the fascinating gut-brain connec
+2026-05-28 14:11:08,530 ERROR __main__ - Failed slot 3
+Traceback (most recent call last):
+  File "/home/runner/work/Pin/Pin/src/app/run_daily.py", line 212, in main
+    candidate = generate_article(client, topic, chosen_title, mode, offer)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/content.py", line 107, in generate_article
+    payload = client.generate_json(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 23, in generate_json
+    return parse_json_from_text(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 256, in parse_json_from_text
+    raise e
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 243, in parse_json_from_text
+    return json.loads(final_attempt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Expecting ',' delimiter: line 1 column 79 (char 78)
+2026-05-28 14:11:10,543 INFO __main__ - Using trending topic: Scientists say guava juice could make iron supplements work better
+2026-05-28 14:11:16,309 WARNING src.app.gemini_client - Gemini server error; trying next key: key#1 transient_status=503
+2026-05-28 14:11:42,653 ERROR src.app.gemini_client - Critical JSON parse failure. Raw response saved to generated/logs/failed_json.txt
+2026-05-28 14:11:42,653 WARNING src.app.gemini_client - Deep JSON sanitization failed: Expecting ',' delimiter: line 1 column 76 (char 75). Raw text snippet: {
+  "title": "Guava Juice: Your New Best Friend for Iron Supplements",
+  "slug": "guava-juice-iron-supplements",
+  "meta_description": "Feeling tired and relying on iron supplements? Discover how Guav
+2026-05-28 14:11:42,653 ERROR __main__ - Failed slot 4
+Traceback (most recent call last):
+  File "/home/runner/work/Pin/Pin/src/app/run_daily.py", line 212, in main
+    candidate = generate_article(client, topic, chosen_title, mode, offer)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/content.py", line 107, in generate_article
+    payload = client.generate_json(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 23, in generate_json
+    return parse_json_from_text(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 256, in parse_json_from_text
+    raise e
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 243, in parse_json_from_text
+    return json.loads(final_attempt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Expecting ',' delimiter: line 1 column 76 (char 75)
+2026-05-28 14:11:44,654 INFO __main__ - Using trending topic: Scientists create supercharged vitamin K that helps the brain heal itself
+2026-05-28 14:12:16,999 WARNING __main__ - Quality check failed: keyword 'Supercharged Vitamin K: Your Brain's New Best Friend for Self-Healing' not found in title or body
+2026-05-28 14:12:32,596 INFO src.app.duplicate_checker - Indexed post: supercharged-vitamin-k-brain-healing (Total: 74)
+2026-05-28 14:12:33,424 INFO __main__ - Published supercharged-vitamin-k-brain-healing.html (info)
+2026-05-28 14:12:38,425 INFO __main__ - Run complete. Published 2/5 posts.

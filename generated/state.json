@@ -1,9 +1,7 @@
 {
-  "runs": 94,
+  "runs": 95,
   "offer_runs": 21,
   "recent_topics": [
-    "personalized-nutrition-for-gut-health",
-    "biohacking-longevity-secrets",
     "gut-health-probiotics-prebiotics-microbiome",
     "daily-hydration-benefits",
     "vitamin-d-cancer-prevention",
@@ -51,11 +49,11 @@
     "cancer-causing-chemicals-in-food",
     "biohacking-for-beginners",
     "optimizing-sleep-for-energy-and-focus",
-    "guava-juice-iron-supplements"
+    "guava-juice-iron-supplements",
+    "personalized-nutrition-for-gut-health",
+    "supercharged-vitamin-k-brain-healing"
   ],
   "recent_slugs": [
-    "no-equipment-strength-small-spaces",
-    "boost-energy-balance-blood-sugar",
     "understand-calories-daily-health",
     "realistic-blood-sugar-tips-energy",
     "track-calories-without-deprivation",
@@ -153,12 +151,12 @@
     "hidden-cancer-culprits-groceries",
     "biohacking-for-beginners-simple-daily-tweaks",
     "unlock-your-best-sleep-energy-focus-secrets",
-    "boost-your-iron-guava-juice-secret"
+    "boost-your-iron-guava-juice-secret",
+    "unlock-your-best-gut-health-personalized-nutrition-strategies-for-americans",
+    "supercharged-vitamin-k-brain-healing"
   ],
-  "last_run": "2026-05-27",
+  "last_run": "2026-05-28",
   "recent_tags": [
-    "gut",
-    "longevity",
     "gut",
     "healthy-habits",
     "health",
@@ -206,12 +204,14 @@
     "health",
     "healthy-habits",
     "sleep",
-    "health"
+    "health",
+    "gut",
+    "mental-wellness"
   ],
   "tag_counts": {
     "sleep": 18,
-    "gut": 14,
-    "mental-wellness": 15,
+    "gut": 15,
+    "mental-wellness": 16,
     "stress": 9,
     "healthy-habits": 33,
     "longevity": 9,
@@ -223,9 +223,9 @@
   },
   "topic_rotation": {
     "sleep": 18,
-    "gut": 20,
+    "gut": 21,
     "stress": 20,
-    "healthy-habits": 31,
+    "healthy-habits": 32,
     "longevity": 15,
     "recipes": 9,
     "anti-inflammatory": 11,
@@ -234,8 +234,6 @@
     "mental-wellness": 1
   },
   "recent_titles": [
-    "Why Early Weight Gain Matters for Lifelong Health",
-    "Sleep Better Tonight: Practical Biohacking Tips Revealed",
     "Weighty Issues: How Obesity Affects Us Differently",
     "Feel More Energized: Practical Morning Routine",
     "Is Intermittent Fasting Right for You, Women?",
@@ -293,6 +291,8 @@
     "What's Lurking in Your Groceries? Cancer Facts",
     "Easy Biohacks to Boost Energy and Focus Today",
     "Struggling with Fatigue? Improve Sleep for More Focus",
-    "Feeling Tired? Guava Juice May Help Iron"
+    "Feeling Tired? Guava Juice May Help Iron",
+    "Boost Your Gut Health: Science-Backed Nutrition Tips",
+    "Feeling Drained? Supercharged Vitamin K Could Recharge Your Brain"
   ]
 }
