@@ -1,5 +1,23 @@
 [
   {
+    "slug": "beat-fatigue-b12-folate",
+    "title": "Beat Fatigue: The Crucial Role of B12 & Folate",
+    "description": "Feeling drained? Discover how B12 and folate are crucial for beating fatigue. Learn about symptoms, causes, and how to boost your energy levels. Your guide to beating fatigue starts here!",
+    "date": "2026-06-01",
+    "url": "beat-fatigue-b12-folate.html",
+    "hero": "assets/2026-06-01_beat-fatigue-b12-folate.webp",
+    "tag": "health"
+  },
+  {
+    "slug": "intermittent-fasting-brain-potential",
+    "title": "Intermittent Fasting: Unlock Your Brain's Potential for Better Focus",
+    "description": "Curious about Intermittent Fasting: Unlock Your Brain's Potential? Discover how IF can boost memory, focus, and brain health beyond weight loss. Learn practical tips for everyday life.",
+    "date": "2026-06-01",
+    "url": "intermittent-fasting-brain-potential.html",
+    "hero": "assets/2026-06-01_intermittent-fasting-brain-potential.webp",
+    "tag": "mental-wellness"
+  },
+  {
     "slug": "gut-brain-protein-cravings",
     "title": "Your Gut is Telling You What to Eat: New Brain-Gut Connection Revealed!",
     "description": "Discover the surprising new brain-gut connection that explains your protein cravings. Learn how your gut signals your brain and how to use this knowledge for healthier eating. Your gut is telling you what to eat: New brain-gut connection revealed!",
