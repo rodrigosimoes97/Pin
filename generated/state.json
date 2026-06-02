@@ -1,8 +1,7 @@
 {
-  "runs": 97,
+  "runs": 98,
   "offer_runs": 21,
   "recent_topics": [
-    "daily-hydration-benefits-skin-energy",
     "stress-management-mindfulness-techniques",
     "biohacking-for-better-sleep",
     "daily-hydration-benefits",
@@ -51,10 +50,10 @@
     "supercharged-vitamin-k-brain-healing",
     "gut-brain-circuit-protein-cravings",
     "intermittent-fasting-brain-changes",
-    "vitamin-b12-folate-chronic-fatigue"
+    "vitamin-b12-folate-chronic-fatigue",
+    "how-to-improve-sleep-quality-for-better-health"
   ],
   "recent_slugs": [
-    "unlock-your-energy-master-blood-sugar",
     "calorie-aware-without-diet-mentality",
     "boost-energy-blood-sugar",
     "how-to-track-calories-without-feeling-restricted",
@@ -153,11 +152,11 @@
     "supercharged-vitamin-k-brain-healing",
     "gut-brain-protein-cravings",
     "intermittent-fasting-brain-potential",
-    "beat-fatigue-b12-folate"
+    "beat-fatigue-b12-folate",
+    "unlock-better-sleep-quality-strategies"
   ],
-  "last_run": "2026-06-01",
+  "last_run": "2026-06-02",
   "recent_tags": [
-    "health",
     "mental-wellness",
     "sleep",
     "health",
@@ -206,10 +205,11 @@
     "mental-wellness",
     "gut",
     "mental-wellness",
-    "health"
+    "health",
+    "sleep"
   ],
   "tag_counts": {
-    "sleep": 18,
+    "sleep": 19,
     "gut": 16,
     "mental-wellness": 17,
     "stress": 9,
@@ -222,7 +222,7 @@
     "health": 30
   },
   "topic_rotation": {
-    "sleep": 18,
+    "sleep": 19,
     "gut": 22,
     "stress": 20,
     "healthy-habits": 34,
@@ -234,7 +234,6 @@
     "mental-wellness": 1
   },
   "recent_titles": [
-    "Sparkling Water: Weight Loss Friend or Fad?",
     "Optimize Your Sleep: Practical Biohacking Tips",
     "Better Memory? Try This Olive Oil Solution",
     "Is Bread Messing With Your Weight? Science Explains",
@@ -293,6 +292,7 @@
     "Feeling Drained? Supercharged Vitamin K Could Recharge Your Brain",
     "Why You Crave Protein: The Gut-Brain Answer",
     "Want Better Focus? Try Intermittent Fasting Now",
-    "Feeling Drained? Why B12 & Folate Matter"
+    "Feeling Drained? Why B12 & Folate Matter",
+    "Wake Up Refreshed: Simple Sleep Quality Tips"
   ]
 }
