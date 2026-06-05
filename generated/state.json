@@ -1,10 +1,7 @@
 {
-  "runs": 100,
+  "runs": 101,
   "offer_runs": 21,
   "recent_topics": [
-    "daily-hydration-benefits",
-    "fish-oil-brain-health-risk",
-    "pediatric-hospital-shortages-affect-baby-heart-surgery",
     "mit-study-children-cancer-chemical-water",
     "daily-mindfulness-meditation-stress-relief",
     "optimizing-sleep-for-peak-performance",
@@ -51,12 +48,12 @@
     "vitamin-b12-folate-chronic-fatigue",
     "how-to-improve-sleep-quality-for-better-health",
     "french-fries-diabetes-surprising-discovery",
-    "glp-1-drugs-lower-addiction-overdose-risks"
+    "glp-1-drugs-lower-addiction-overdose-risks",
+    "older-adults-salt-habit-study",
+    "daily-hydration-benefits",
+    "longevity-biohacking-supplements"
   ],
   "recent_slugs": [
-    "how-to-track-calories-without-feeling-restricted",
-    "blood-sugar-energy-levels-0326-3",
-    "how-to-eat-mindfully-for-lasting-weight-management",
     "stabilize-blood-sugar-energy",
     "calorie-awareness-sustainable-weight-loss",
     "bedroom-sleep-haven",
@@ -153,13 +150,13 @@
     "beat-fatigue-b12-folate",
     "unlock-better-sleep-quality-strategies",
     "french-fries-diabetes-science-surprises",
-    "glp-1-drugs-addiction-overdose-prevention"
+    "glp-1-drugs-addiction-overdose-prevention",
+    "older-adults-surprising-salt-habit-revealed-new-study",
+    "unlock-your-best-health-surprising-benefits-daily-hydration",
+    "top-biohacking-supplements-longevity-peak-performance"
   ],
-  "last_run": "2026-06-04",
+  "last_run": "2026-06-05",
   "recent_tags": [
-    "health",
-    "mental-wellness",
-    "health",
     "health",
     "stress",
     "sleep",
@@ -206,27 +203,30 @@
     "health",
     "sleep",
     "healthy-habits",
-    "health"
+    "health",
+    "healthy-habits",
+    "health",
+    "longevity"
   ],
   "tag_counts": {
     "sleep": 19,
     "gut": 16,
     "mental-wellness": 17,
     "stress": 9,
-    "healthy-habits": 34,
-    "longevity": 9,
+    "healthy-habits": 35,
+    "longevity": 10,
     "recipes": 7,
     "anti-inflammatory": 8,
     "home-workouts": 7,
     "weight": 12,
-    "health": 31
+    "health": 32
   },
   "topic_rotation": {
     "sleep": 19,
     "gut": 22,
     "stress": 20,
-    "healthy-habits": 36,
-    "longevity": 15,
+    "healthy-habits": 38,
+    "longevity": 16,
     "recipes": 9,
     "anti-inflammatory": 11,
     "home-workouts": 11,
@@ -234,9 +234,6 @@
     "mental-wellness": 1
   },
   "recent_titles": [
-    "Is Bread Messing With Your Weight? Science Explains",
-    "Struggling with Sleep? Try These Natural Tips",
-    "Discover Gut-Friendly Foods That Work for You",
     "Future of Health: Biohacking Your Lifespan",
     "Unlock Better Digestion with Gut Health Foods",
     "Struggling to Hydrate? Try These Tips",
@@ -293,6 +290,9 @@
     "Feeling Drained? Why B12 & Folate Matter",
     "Wake Up Refreshed: Simple Sleep Quality Tips",
     "Your Favorite Fries: A Diabetes Risk You Ignored?",
-    "GLP-1 Drugs: New Hope for Addiction Recovery?"
+    "GLP-1 Drugs: New Hope for Addiction Recovery?",
+    "Older Adults' Salt Intake: What a New Study Discovered",
+    "How Much Water for Better Health?",
+    "NMN & Resveratrol: Science-Backed Longevity Boosts"
   ]
 }
