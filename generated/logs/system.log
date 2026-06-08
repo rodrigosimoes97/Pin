@@ -5859,3 +5859,56 @@ json.decoder.JSONDecodeError: Expecting ',' delimiter: line 1 column 84 (char 83
 2026-06-05 13:35:55,194 INFO __main__ - Run complete. Published 3/5 posts.
 2026-06-06 11:47:29,419 INFO __main__ - Skipping generation today to maintain 5 posts/week.
 2026-06-07 12:03:52,623 INFO __main__ - Skipping generation today to maintain 5 posts/week.
+2026-06-08 14:32:37,817 INFO __main__ - Fetching trending topics for USA...
+2026-06-08 14:32:38,002 WARNING src.app.trend_research - Failed to fetch Google Trends (404/Error): The request failed: Google returned a response with code 404. Moving to fallbacks.
+2026-06-08 14:32:41,128 INFO src.app.trend_research - Gathered 10 unique trending topics.
+2026-06-08 14:32:41,130 INFO __main__ - Using trending topic: Experimental therapy gantenerumab fails to slow or improve Alzheimers memory loss in clinical trials
+2026-06-08 14:33:05,978 WARNING __main__ - Slot 1: No post generated after 3 attempts. Initiating rescue attempt...
+2026-06-08 14:33:05,979 INFO __main__ - Seeking autonomous health topic from Gemini...
+2026-06-08 14:33:33,290 ERROR __main__ - Slot 1: All attempts failed, including rescue.
+2026-06-08 14:33:33,290 INFO __main__ - Using trending topic: Desperate for heart surgery for their baby, a family feels the effects of pediatric hospital shortages
+2026-06-08 14:33:52,205 WARNING src.app.gemini_client - Gemini server error; trying next key: key#1 transient_status=503
+2026-06-08 14:34:34,288 WARNING __main__ - Slot 2: No post generated after 3 attempts. Initiating rescue attempt...
+2026-06-08 14:34:34,288 INFO __main__ - Seeking autonomous health topic from Gemini...
+2026-06-08 14:35:01,759 ERROR __main__ - Slot 2: All attempts failed, including rescue.
+2026-06-08 14:35:01,760 INFO __main__ - Using trending topic: Dementia risk linked to nitrate in drinking water, study finds
+2026-06-08 14:35:30,021 INFO src.app.duplicate_checker - Indexed post: tap-water-dementia-risk-nitrates (Total: 84)
+2026-06-08 14:35:31,635 INFO __main__ - Published tap-water-dementia-risk-nitrates.html (info)
+2026-06-08 14:35:36,636 INFO __main__ - Using trending topic: The supplements older adults actually need and the ones they dont
+2026-06-08 14:36:02,708 INFO src.app.duplicate_checker - Indexed post: older-adults-supplements-essentials-vs-skip (Total: 85)
+2026-06-08 14:36:03,635 INFO __main__ - Published older-adults-supplements-essentials-vs-skip.html (info)
+2026-06-08 14:36:08,635 INFO __main__ - Using trending topic: A study of 8,300 older adults revealed a surprising salt habit
+2026-06-08 14:36:13,767 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 10s before trying next key: key#1 transient_status=429
+2026-06-08 14:36:30,061 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 10s before trying next key: key#1 transient_status=429
+2026-06-08 14:36:58,710 ERROR src.app.gemini_client - Critical JSON parse failure. Raw response saved to generated/logs/failed_json.txt
+2026-06-08 14:36:58,710 WARNING src.app.gemini_client - Deep JSON sanitization failed: Expecting ',' delimiter: line 1 column 78 (char 77). Raw text snippet: {
+  "title": "The Surprising Salt Habit Linked to Longevity in Seniors",
+  "slug": "surprising-salt-habit-longevity-seniors",
+  "meta_description": "Discover the surprising salt habit linked to longev
+2026-06-08 14:36:58,710 ERROR __main__ - Failed slot 5
+Traceback (most recent call last):
+  File "/home/runner/work/Pin/Pin/src/app/run_daily.py", line 212, in main
+    candidate = generate_article(client, topic, chosen_title, mode, offer)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/content.py", line 107, in generate_article
+    payload = client.generate_json(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 23, in generate_json
+    return parse_json_from_text(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 256, in parse_json_from_text
+    raise e
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 243, in parse_json_from_text
+    return json.loads(final_attempt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Expecting ',' delimiter: line 1 column 78 (char 77)
+2026-06-08 14:37:00,772 INFO __main__ - Run complete. Published 2/5 posts.

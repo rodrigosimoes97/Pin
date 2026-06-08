@@ -1,9 +1,7 @@
 {
-  "runs": 101,
+  "runs": 102,
   "offer_runs": 21,
   "recent_topics": [
-    "mit-study-children-cancer-chemical-water",
-    "daily-mindfulness-meditation-stress-relief",
     "optimizing-sleep-for-peak-performance",
     "coffee-gut-brain-health",
     "gut-health-stress-late-night-eating",
@@ -51,11 +49,11 @@
     "glp-1-drugs-lower-addiction-overdose-risks",
     "older-adults-salt-habit-study",
     "daily-hydration-benefits",
-    "longevity-biohacking-supplements"
+    "longevity-biohacking-supplements",
+    "dementia-risk-nitrate-drinking-water",
+    "supplements-older-adults-need-dont"
   ],
   "recent_slugs": [
-    "stabilize-blood-sugar-energy",
-    "calorie-awareness-sustainable-weight-loss",
     "bedroom-sleep-haven",
     "bloating-relief-natural-fixes",
     "mental-fatigue-burnout-fixes",
@@ -153,12 +151,12 @@
     "glp-1-drugs-addiction-overdose-prevention",
     "older-adults-surprising-salt-habit-revealed-new-study",
     "unlock-your-best-health-surprising-benefits-daily-hydration",
-    "top-biohacking-supplements-longevity-peak-performance"
+    "top-biohacking-supplements-longevity-peak-performance",
+    "tap-water-dementia-risk-nitrates",
+    "older-adults-supplements-essentials-vs-skip"
   ],
-  "last_run": "2026-06-05",
+  "last_run": "2026-06-08",
   "recent_tags": [
-    "health",
-    "stress",
     "sleep",
     "health",
     "gut",
@@ -206,12 +204,14 @@
     "health",
     "healthy-habits",
     "health",
-    "longevity"
+    "longevity",
+    "mental-wellness",
+    "health"
   ],
   "tag_counts": {
     "sleep": 19,
     "gut": 16,
-    "mental-wellness": 17,
+    "mental-wellness": 18,
     "stress": 9,
     "healthy-habits": 35,
     "longevity": 10,
@@ -219,14 +219,14 @@
     "anti-inflammatory": 8,
     "home-workouts": 7,
     "weight": 12,
-    "health": 32
+    "health": 33
   },
   "topic_rotation": {
     "sleep": 19,
     "gut": 22,
     "stress": 20,
     "healthy-habits": 38,
-    "longevity": 16,
+    "longevity": 18,
     "recipes": 9,
     "anti-inflammatory": 11,
     "home-workouts": 11,
@@ -234,8 +234,6 @@
     "mental-wellness": 1
   },
   "recent_titles": [
-    "Future of Health: Biohacking Your Lifespan",
-    "Unlock Better Digestion with Gut Health Foods",
     "Struggling to Hydrate? Try These Tips",
     "Could Vitamin D Be Your Cancer Defense?",
     "Want Glowing Skin? Drink More Water Daily!",
@@ -293,6 +291,8 @@
     "GLP-1 Drugs: New Hope for Addiction Recovery?",
     "Older Adults' Salt Intake: What a New Study Discovered",
     "How Much Water for Better Health?",
-    "NMN & Resveratrol: Science-Backed Longevity Boosts"
+    "NMN & Resveratrol: Science-Backed Longevity Boosts",
+    "Dementia Risk: Is Your Tap Water to Blame?",
+    "Aging Well: What Supplements Seniors Truly Need"
   ]
 }
