@@ -8074,3 +8074,4 @@ RuntimeError: Gemini failed after exhaustive retries: key#1 transient_status=429
     "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric; key#4 transient_status=429; key#1 transient_status=429; key#2 transient_status=429; key#3 transient_status=429; key#4 transient_status=429; key#1 transient_status=429; key#2 transient_status=429; key#3 transient_status=429; key#4 transient_status=429
 2026-06-19 14:45:24,015 INFO __main__ - Run complete. Published 0/5 posts.
 2026-06-20 12:12:22,517 INFO __main__ - Skipping generation today to maintain 5 posts/week.
+2026-06-21 12:23:12,188 INFO __main__ - Skipping generation today to maintain 5 posts/week.
