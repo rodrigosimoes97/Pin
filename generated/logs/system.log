@@ -8075,3 +8075,522 @@ RuntimeError: Gemini failed after exhaustive retries: key#1 transient_status=429
 2026-06-19 14:45:24,015 INFO __main__ - Run complete. Published 0/5 posts.
 2026-06-20 12:12:22,517 INFO __main__ - Skipping generation today to maintain 5 posts/week.
 2026-06-21 12:23:12,188 INFO __main__ - Skipping generation today to maintain 5 posts/week.
+2026-06-22 15:34:20,536 INFO __main__ - Fetching trending topics for USA...
+2026-06-22 15:34:20,910 WARNING src.app.trend_research - Failed to fetch Google Trends (404/Error): The request failed: Google returned a response with code 404. Moving to fallbacks.
+2026-06-22 15:34:23,670 INFO src.app.trend_research - Gathered 9 unique trending topics.
+2026-06-22 15:34:23,672 INFO __main__ - Using trending topic: Experimental therapy gantenerumab fails to slow or improve Alzheimers memory loss in clinical trials
+2026-06-22 15:34:28,811 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:34:28,995 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:34:29,165 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:34:38,185 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:34:38,346 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:34:38,512 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:34:48,873 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:34:49,056 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:34:49,187 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:34:49,643 WARNING src.app.gemini_client - Gemini server error; trying next key: key#4 transient_status=503
+2026-06-22 15:34:56,817 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:34:57,009 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:34:57,192 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:34:57,458 WARNING src.app.gemini_client - Gemini server error; trying next key: key#4 transient_status=503
+2026-06-22 15:35:09,627 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:35:09,767 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:35:09,924 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:35:25,787 WARNING __main__ - Slot 1: No post generated after 3 attempts. Initiating rescue attempt...
+2026-06-22 15:35:25,787 INFO __main__ - Seeking autonomous health topic from Gemini...
+2026-06-22 15:35:30,954 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:35:31,120 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:35:31,255 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:35:40,493 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:35:40,663 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:35:40,792 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:35:40,970 WARNING src.app.gemini_client - Gemini server error; trying next key: key#4 transient_status=503
+2026-06-22 15:35:48,138 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:35:48,312 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:35:48,425 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:35:48,737 WARNING src.app.gemini_client - Gemini server error; trying next key: key#4 transient_status=503
+2026-06-22 15:36:00,860 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:36:01,048 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:36:01,235 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:36:07,551 WARNING src.app.gemini_client - Gemini server error; trying next key: key#4 transient_status=503
+2026-06-22 15:36:24,676 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:36:24,852 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:36:25,026 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:36:25,189 WARNING src.app.gemini_client - Gemini server error; trying next key: key#4 transient_status=503
+2026-06-22 15:36:47,190 ERROR __main__ - Failed slot 1
+Traceback (most recent call last):
+  File "/home/runner/work/Pin/Pin/src/app/run_daily.py", line 233, in main
+    rescue_titles = generate_titles(client, rescue_topic, excluded_titles=recent_titles)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/titles.py", line 32, in generate_titles
+    payload = client.generate_json(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 22, in generate_json
+    text = self.generate_text(prompt, max_output_tokens=max_output_tokens)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 85, in generate_text
+    raise RuntimeError(f"Gemini failed after exhaustive retries: {'; '.join(errors)}")
+RuntimeError: Gemini failed after exhaustive retries: key#1 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric; key#2 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric; key#3 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric; key#4 transient_status=503; key#1 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric; key#2 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric; key#3 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric; key#4 transient_status=503; key#1 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric; key#2 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric; key#3 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric; key#4 transient_status=503; key#1 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric; key#2 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric; key#3 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric; key#4 transient_status=503
+2026-06-22 15:36:49,192 INFO __main__ - Using trending topic: Desperate for heart surgery for their baby, a family feels the effects of pediatric hospital shortages
+2026-06-22 15:36:54,319 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:36:54,476 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:36:54,685 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:37:03,139 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:37:03,270 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:37:03,409 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:37:03,640 WARNING src.app.gemini_client - Gemini server error; trying next key: key#4 transient_status=503
+2026-06-22 15:37:10,813 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:37:10,937 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:37:11,129 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:37:11,416 WARNING src.app.gemini_client - Gemini server error; trying next key: key#4 transient_status=503
+2026-06-22 15:37:23,575 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:37:23,734 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 30s before trying next key: key#2 transient_status=429
+2026-06-22 15:37:53,912 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:37:54,183 WARNING src.app.gemini_client - Gemini server error; trying next key: key#4 transient_status=503
+2026-06-22 15:38:11,457 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:38:11,598 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:38:11,774 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:38:11,952 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 40s before trying next key: key#4 transient_status=429
+2026-06-22 15:39:11,952 ERROR __main__ - Failed slot 2
+Traceback (most recent call last):
+  File "/home/runner/work/Pin/Pin/src/app/run_daily.py", line 207, in main
+    titles = generate_titles(client, topic, excluded_titles=recent_titles)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/titles.py", line 32, in generate_titles
+    payload = client.generate_json(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 22, in generate_json
+    text = self.generate_text(prompt, max_output_tokens=max_output_tokens)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 85, in generate_text
+    raise RuntimeError(f"Gemini failed after exhaustive retries: {'; '.join(errors)}")
+RuntimeError: Gemini failed after exhaustive retries: key#1 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric; key#2 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric; key#3 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric; key#4 transient_status=503; key#1 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric; key#2 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric; key#3 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric; key#4 transient_status=503; key#1 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric; key#2 transient_status=429; key#3 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric; key#4 transient_status=503; key#1 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric; key#2 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric; key#3 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric; key#4 transient_status=429
+2026-06-22 15:39:13,954 INFO __main__ - Using trending topic: Think youre eating healthy? You may be missing this heart-protecting nutrient
+2026-06-22 15:39:19,079 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:39:19,219 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:39:19,421 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:39:19,651 WARNING src.app.gemini_client - Gemini server error; trying next key: key#4 transient_status=503
+2026-06-22 15:39:26,770 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:39:26,949 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:39:27,151 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:39:37,530 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:39:37,680 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 10s before trying next key: key#2 transient_status=429
+2026-06-22 15:39:47,910 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:39:57,285 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:39:57,450 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:39:57,579 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:39:57,821 WARNING src.app.gemini_client - Gemini server error; trying next key: key#4 transient_status=503
+2026-06-22 15:40:05,093 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:40:05,225 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:40:05,390 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:40:23,680 ERROR src.app.gemini_client - Critical JSON parse failure. Raw response saved to generated/logs/failed_json.txt
+2026-06-22 15:40:23,680 WARNING src.app.gemini_client - Deep JSON sanitization failed: Expecting ',' delimiter: line 1 column 81 (char 80). Raw text snippet: {
+  "title": "Is Your 'Healthy' Diet Lacking This Crucial Heart Nutrient?",
+  "slug": "crucial-heart-nutrient-diet",
+  "meta_description": "Think your healthy diet is perfect? You might be missing a c
+2026-06-22 15:40:23,681 ERROR __main__ - Failed slot 3
+Traceback (most recent call last):
+  File "/home/runner/work/Pin/Pin/src/app/run_daily.py", line 212, in main
+    candidate = generate_article(client, topic, chosen_title, mode, offer)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/content.py", line 107, in generate_article
+    payload = client.generate_json(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 23, in generate_json
+    return parse_json_from_text(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 256, in parse_json_from_text
+    raise e
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 243, in parse_json_from_text
+    return json.loads(final_attempt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Expecting ',' delimiter: line 1 column 81 (char 80)
+2026-06-22 15:40:25,695 INFO __main__ - Using trending topic: Researchers found 8 common food additives linked to high blood pressure and heart disease
+2026-06-22 15:40:30,845 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 10s before trying next key: key#1 transient_status=429
+2026-06-22 15:40:41,012 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:40:41,194 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:40:41,344 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 10s before trying next key: key#4 transient_status=429
+2026-06-22 15:40:56,540 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:40:56,680 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 20s before trying next key: key#2 transient_status=429
+2026-06-22 15:41:16,816 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 20s before trying next key: key#3 transient_status=429
+2026-06-22 15:41:36,945 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 20s before trying next key: key#4 transient_status=429
+2026-06-22 15:42:07,099 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 30s before trying next key: key#1 transient_status=429
+2026-06-22 15:42:37,263 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 30s before trying next key: key#2 transient_status=429
+2026-06-22 15:43:07,425 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:43:16,029 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 10s before trying next key: key#1 transient_status=429
+2026-06-22 15:43:26,210 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 10s before trying next key: key#2 transient_status=429
+2026-06-22 15:43:36,333 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 10s before trying next key: key#3 transient_status=429
+2026-06-22 15:43:46,496 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 10s before trying next key: key#4 transient_status=429
+2026-06-22 15:44:01,642 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 20s before trying next key: key#1 transient_status=429
+2026-06-22 15:44:21,781 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 20s before trying next key: key#2 transient_status=429
+2026-06-22 15:44:41,919 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 20s before trying next key: key#3 transient_status=429
+2026-06-22 15:45:02,070 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 20s before trying next key: key#4 transient_status=429
+2026-06-22 15:45:32,223 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 30s before trying next key: key#1 transient_status=429
+2026-06-22 15:46:02,402 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 30s before trying next key: key#2 transient_status=429
+2026-06-22 15:46:32,518 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:46:32,666 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 30s before trying next key: key#4 transient_status=429
+2026-06-22 15:47:17,799 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:47:17,924 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:47:18,056 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 40s before trying next key: key#3 transient_status=429
+2026-06-22 15:47:58,179 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 40s before trying next key: key#4 transient_status=429
+2026-06-22 15:48:58,180 ERROR __main__ - Failed slot 4
+Traceback (most recent call last):
+  File "/home/runner/work/Pin/Pin/src/app/run_daily.py", line 207, in main
+    titles = generate_titles(client, topic, excluded_titles=recent_titles)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/titles.py", line 32, in generate_titles
+    payload = client.generate_json(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 22, in generate_json
+    text = self.generate_text(prompt, max_output_tokens=max_output_tokens)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 85, in generate_text
+    raise RuntimeError(f"Gemini failed after exhaustive retries: {'; '.join(errors)}")
+RuntimeError: Gemini failed after exhaustive retries: key#1 transient_status=429; key#2 transient_status=429; key#3 transient_status=429; key#4 transient_status=429; key#1 transient_status=429; key#2 transient_status=429; key#3 transient_status=429; key#4 transient_status=429; key#1 transient_status=429; key#2 transient_status=429; key#3 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric; key#4 transient_status=429; key#1 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric; key#2 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric; key#3 transient_status=429; key#4 transient_status=429
+2026-06-22 15:49:00,181 INFO __main__ - Using trending topic: This popular brain supplement was linked to shorter lifespans in men
+2026-06-22 15:49:05,353 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 10s before trying next key: key#1 transient_status=429
+2026-06-22 15:49:15,583 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 10s before trying next key: key#2 transient_status=429
+2026-06-22 15:49:25,710 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 10s before trying next key: key#3 transient_status=429
+2026-06-22 15:49:35,872 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 10s before trying next key: key#4 transient_status=429
+2026-06-22 15:49:51,008 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:49:51,189 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 20s before trying next key: key#2 transient_status=429
+2026-06-22 15:50:11,305 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 20s before trying next key: key#3 transient_status=429
+2026-06-22 15:50:31,452 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 20s before trying next key: key#4 transient_status=429
+2026-06-22 15:51:01,613 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 30s before trying next key: key#1 transient_status=429
+2026-06-22 15:51:31,778 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 30s before trying next key: key#2 transient_status=429
+2026-06-22 15:52:01,971 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 30s before trying next key: key#3 transient_status=429
+2026-06-22 15:52:32,142 WARNING src.app.gemini_client - Gemini server error; trying next key: key#4 transient_status=503
+2026-06-22 15:52:49,272 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 40s before trying next key: key#1 transient_status=429
+2026-06-22 15:53:29,455 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 40s before trying next key: key#2 transient_status=429
+2026-06-22 15:54:09,678 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 40s before trying next key: key#3 transient_status=429
+2026-06-22 15:54:59,323 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 10s before trying next key: key#1 transient_status=429
+2026-06-22 15:55:09,501 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 10s before trying next key: key#2 transient_status=429
+2026-06-22 15:55:19,657 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 10s before trying next key: key#3 transient_status=429
+2026-06-22 15:55:40,158 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 10s before trying next key: key#1 transient_status=429
+2026-06-22 15:55:50,378 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 10s before trying next key: key#2 transient_status=429
+2026-06-22 15:56:00,556 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 10s before trying next key: key#3 transient_status=429
+2026-06-22 15:56:10,724 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 10s before trying next key: key#4 transient_status=429
+2026-06-22 15:56:25,886 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:56:26,051 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 20s before trying next key: key#2 transient_status=429
+2026-06-22 15:56:46,197 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 20s before trying next key: key#3 transient_status=429
+2026-06-22 15:57:06,342 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 20s before trying next key: key#4 transient_status=429
+2026-06-22 15:57:36,508 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric
+2026-06-22 15:57:36,665 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 30s before trying next key: key#2 transient_status=429
+2026-06-22 15:58:06,814 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 30s before trying next key: key#3 transient_status=429
+2026-06-22 15:58:36,963 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 30s before trying next key: key#4 transient_status=429
+2026-06-22 15:59:22,116 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 40s before trying next key: key#1 transient_status=429
+2026-06-22 16:00:02,265 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 40s before trying next key: key#2 transient_status=429
+2026-06-22 16:00:42,442 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 40s before trying next key: key#3 transient_status=429
+2026-06-22 16:01:22,611 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 40s before trying next key: key#4 transient_status=429
+2026-06-22 16:02:22,611 ERROR __main__ - Failed slot 5
+Traceback (most recent call last):
+  File "/home/runner/work/Pin/Pin/src/app/run_daily.py", line 212, in main
+    candidate = generate_article(client, topic, chosen_title, mode, offer)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/content.py", line 107, in generate_article
+    payload = client.generate_json(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 22, in generate_json
+    text = self.generate_text(prompt, max_output_tokens=max_output_tokens)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 85, in generate_text
+    raise RuntimeError(f"Gemini failed after exhaustive retries: {'; '.join(errors)}")
+RuntimeError: Gemini failed after exhaustive retries: key#1 transient_status=429; key#2 transient_status=429; key#3 transient_status=429; key#4 transient_status=429; key#1 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric; key#2 transient_status=429; key#3 transient_status=429; key#4 transient_status=429; key#1 http_error=403 body={
+  "error": {
+    "code": 403,
+    "message": "You are experiencing temporary service disruptions since you are accessing Gemini API with one or more unrestric; key#2 transient_status=429; key#3 transient_status=429; key#4 transient_status=429; key#1 transient_status=429; key#2 transient_status=429; key#3 transient_status=429; key#4 transient_status=429
+2026-06-22 16:02:24,614 INFO __main__ - Run complete. Published 0/5 posts.
