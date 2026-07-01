@@ -1,8 +1,7 @@
 {
-  "runs": 118,
+  "runs": 119,
   "offer_runs": 21,
   "recent_topics": [
-    "how-to-improve-sleep-hygiene-for-better-health",
     "optimizing-sleep-for-metabolism-and-weight-loss",
     "stress-management-mindfulness-techniques",
     "vitamin-c-supplements-anxiety-reduction",
@@ -51,10 +50,10 @@
     "brain-supplement-shorter-lifespan-men",
     "optimizing-morning-routines-for-energy-and-focus",
     "gut-health-for-beginners-microbiome-diet",
-    "calcium-vitamin-d-bone-health-review"
+    "calcium-vitamin-d-bone-health-review",
+    "vitamin-deficiency-mimics-aging"
   ],
   "recent_slugs": [
-    "anti-inflammatory-foods-repair-body",
     "walk-weight-loss-routines",
     "quick-home-strength-workouts-any-space",
     "use-light-for-perfect-sleep",
@@ -153,11 +152,11 @@
     "brain-supplement-lifespan-men",
     "morning-routines-energy-focus-boost-day",
     "gut-health-beginners-microbiome-diet",
-    "calcium-vitamin-d-bone-health-science-update"
+    "calcium-vitamin-d-bone-health-science-update",
+    "aging-vs-vitamin-deficiency-signs"
   ],
-  "last_run": "2026-06-30",
+  "last_run": "2026-07-01",
   "recent_tags": [
-    "sleep",
     "sleep",
     "mental-wellness",
     "mental-wellness",
@@ -206,6 +205,7 @@
     "longevity",
     "healthy-habits",
     "gut",
+    "health",
     "health"
   ],
   "tag_counts": {
@@ -219,14 +219,14 @@
     "anti-inflammatory": 8,
     "home-workouts": 7,
     "weight": 12,
-    "health": 34
+    "health": 35
   },
   "topic_rotation": {
     "sleep": 21,
     "gut": 23,
     "stress": 20,
     "healthy-habits": 41,
-    "longevity": 20,
+    "longevity": 21,
     "recipes": 9,
     "anti-inflammatory": 11,
     "home-workouts": 11,
@@ -234,7 +234,6 @@
     "mental-wellness": 1
   },
   "recent_titles": [
-    "Cancer Risk in Kids' Water? MIT Study Shocks Parents",
     "Stressed? Try These 5-Minute Mindfulness Meditations",
     "Want More Energy? Master Your Sleep with These Tips",
     "What Your Gut and Brain Really Think of Coffee",
@@ -293,6 +292,7 @@
     "Is Your Brain Supplement Shortening Your Life?",
     "Struggling with Energy? Try This Morning Reset",
     "Unlock Your Gut Microbiome: Simple Diet Tips",
-    "Your Bone Health: Is Your Calcium & D Routine Enough?"
+    "Your Bone Health: Is Your Calcium & D Routine Enough?",
+    "Sluggish Mind? How to Rule Out Deficiency"
   ]
 }
