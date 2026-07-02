@@ -1,8 +1,7 @@
 {
-  "runs": 119,
+  "runs": 120,
   "offer_runs": 21,
   "recent_topics": [
-    "optimizing-sleep-for-metabolism-and-weight-loss",
     "stress-management-mindfulness-techniques",
     "vitamin-c-supplements-anxiety-reduction",
     "mindful-eating-for-digestion-and-weight-management",
@@ -51,10 +50,10 @@
     "optimizing-morning-routines-for-energy-and-focus",
     "gut-health-for-beginners-microbiome-diet",
     "calcium-vitamin-d-bone-health-review",
-    "vitamin-deficiency-mimics-aging"
+    "vitamin-deficiency-mimics-aging",
+    "vitamin-c-brain-health-link"
   ],
   "recent_slugs": [
-    "walk-weight-loss-routines",
     "quick-home-strength-workouts-any-space",
     "use-light-for-perfect-sleep",
     "fermented-foods-gut-reset",
@@ -153,11 +152,11 @@
     "morning-routines-energy-focus-boost-day",
     "gut-health-beginners-microbiome-diet",
     "calcium-vitamin-d-bone-health-science-update",
-    "aging-vs-vitamin-deficiency-signs"
+    "aging-vs-vitamin-deficiency-signs",
+    "vitamin-c-brainpower"
   ],
-  "last_run": "2026-07-01",
+  "last_run": "2026-07-02",
   "recent_tags": [
-    "sleep",
     "mental-wellness",
     "mental-wellness",
     "healthy-habits",
@@ -206,6 +205,7 @@
     "healthy-habits",
     "gut",
     "health",
+    "health",
     "health"
   ],
   "tag_counts": {
@@ -219,13 +219,13 @@
     "anti-inflammatory": 8,
     "home-workouts": 7,
     "weight": 12,
-    "health": 35
+    "health": 36
   },
   "topic_rotation": {
     "sleep": 21,
     "gut": 23,
     "stress": 20,
-    "healthy-habits": 41,
+    "healthy-habits": 42,
     "longevity": 21,
     "recipes": 9,
     "anti-inflammatory": 11,
@@ -234,7 +234,6 @@
     "mental-wellness": 1
   },
   "recent_titles": [
-    "Stressed? Try These 5-Minute Mindfulness Meditations",
     "Want More Energy? Master Your Sleep with These Tips",
     "What Your Gut and Brain Really Think of Coffee",
     "Stress Eating Late? Your Gut's Painful Reality",
@@ -293,6 +292,7 @@
     "Struggling with Energy? Try This Morning Reset",
     "Unlock Your Gut Microbiome: Simple Diet Tips",
     "Your Bone Health: Is Your Calcium & D Routine Enough?",
-    "Sluggish Mind? How to Rule Out Deficiency"
+    "Sluggish Mind? How to Rule Out Deficiency",
+    "Vitamin C for a Smarter Brain? Find Out Now"
   ]
 }
