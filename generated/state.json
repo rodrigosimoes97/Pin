@@ -1,8 +1,7 @@
 {
-  "runs": 123,
+  "runs": 124,
   "offer_runs": 21,
   "recent_topics": [
-    "stress-management-mindfulness-techniques",
     "vitamin-c-supplements-anxiety-reduction",
     "mindful-eating-for-digestion-and-weight-management",
     "ultra-processed-foods-heart-disease-early-death",
@@ -51,10 +50,10 @@
     "gut-health-for-beginners-microbiome-diet",
     "calcium-vitamin-d-bone-health-review",
     "vitamin-deficiency-mimics-aging",
-    "vitamin-c-brain-health-link"
+    "vitamin-c-brain-health-link",
+    "how-to-improve-sleep-quality-naturally"
   ],
   "recent_slugs": [
-    "quick-home-strength-workouts-any-space",
     "use-light-for-perfect-sleep",
     "fermented-foods-gut-reset",
     "burnout-prevention-stress-management",
@@ -153,11 +152,11 @@
     "gut-health-beginners-microbiome-diet",
     "calcium-vitamin-d-bone-health-science-update",
     "aging-vs-vitamin-deficiency-signs",
-    "vitamin-c-brainpower"
+    "vitamin-c-brainpower",
+    "boost-sleep-quality-natural-remedies"
   ],
-  "last_run": "2026-07-07",
+  "last_run": "2026-07-08",
   "recent_tags": [
-    "mental-wellness",
     "mental-wellness",
     "healthy-habits",
     "health",
@@ -206,10 +205,11 @@
     "gut",
     "health",
     "health",
-    "health"
+    "health",
+    "sleep"
   ],
   "tag_counts": {
-    "sleep": 21,
+    "sleep": 22,
     "gut": 17,
     "mental-wellness": 19,
     "stress": 9,
@@ -222,7 +222,7 @@
     "health": 36
   },
   "topic_rotation": {
-    "sleep": 21,
+    "sleep": 22,
     "gut": 23,
     "stress": 20,
     "healthy-habits": 42,
@@ -234,7 +234,6 @@
     "mental-wellness": 1
   },
   "recent_titles": [
-    "Want More Energy? Master Your Sleep with These Tips",
     "What Your Gut and Brain Really Think of Coffee",
     "Stress Eating Late? Your Gut's Painful Reality",
     "Discover Mindful Eating for Optimal Digestion",
@@ -293,6 +292,7 @@
     "Unlock Your Gut Microbiome: Simple Diet Tips",
     "Your Bone Health: Is Your Calcium & D Routine Enough?",
     "Sluggish Mind? How to Rule Out Deficiency",
-    "Vitamin C for a Smarter Brain? Find Out Now"
+    "Vitamin C for a Smarter Brain? Find Out Now",
+    "Struggling with Sleep? Try These Natural Fixes"
   ]
 }
