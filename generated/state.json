@@ -1,8 +1,7 @@
 {
-  "runs": 124,
+  "runs": 125,
   "offer_runs": 21,
   "recent_topics": [
-    "vitamin-c-supplements-anxiety-reduction",
     "mindful-eating-for-digestion-and-weight-management",
     "ultra-processed-foods-heart-disease-early-death",
     "biohacking-for-better-sleep-and-energy",
@@ -51,10 +50,10 @@
     "calcium-vitamin-d-bone-health-review",
     "vitamin-deficiency-mimics-aging",
     "vitamin-c-brain-health-link",
-    "how-to-improve-sleep-quality-naturally"
+    "how-to-improve-sleep-quality-naturally",
+    "vitamin-a-vision-discovery"
   ],
   "recent_slugs": [
-    "use-light-for-perfect-sleep",
     "fermented-foods-gut-reset",
     "burnout-prevention-stress-management",
     "habits-for-longevity-science-backed",
@@ -153,11 +152,11 @@
     "calcium-vitamin-d-bone-health-science-update",
     "aging-vs-vitamin-deficiency-signs",
     "vitamin-c-brainpower",
-    "boost-sleep-quality-natural-remedies"
+    "boost-sleep-quality-natural-remedies",
+    "new-vitamin-a-discovery-rewrites-vision-science"
   ],
-  "last_run": "2026-07-08",
+  "last_run": "2026-07-10",
   "recent_tags": [
-    "mental-wellness",
     "healthy-habits",
     "health",
     "sleep",
@@ -206,7 +205,8 @@
     "health",
     "health",
     "health",
-    "sleep"
+    "sleep",
+    "health"
   ],
   "tag_counts": {
     "sleep": 22,
@@ -219,13 +219,13 @@
     "anti-inflammatory": 8,
     "home-workouts": 7,
     "weight": 12,
-    "health": 36
+    "health": 37
   },
   "topic_rotation": {
     "sleep": 22,
     "gut": 23,
     "stress": 20,
-    "healthy-habits": 42,
+    "healthy-habits": 43,
     "longevity": 21,
     "recipes": 9,
     "anti-inflammatory": 11,
@@ -234,7 +234,6 @@
     "mental-wellness": 1
   },
   "recent_titles": [
-    "What Your Gut and Brain Really Think of Coffee",
     "Stress Eating Late? Your Gut's Painful Reality",
     "Discover Mindful Eating for Optimal Digestion",
     "Want Better Sleep? Try Blue Light Blocking Glasses",
@@ -293,6 +292,7 @@
     "Your Bone Health: Is Your Calcium & D Routine Enough?",
     "Sluggish Mind? How to Rule Out Deficiency",
     "Vitamin C for a Smarter Brain? Find Out Now",
-    "Struggling with Sleep? Try These Natural Fixes"
+    "Struggling with Sleep? Try These Natural Fixes",
+    "New Vitamin A Discovery: How It Rewrites Vision Science"
   ]
 }
