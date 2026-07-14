@@ -1,9 +1,7 @@
 {
-  "runs": 126,
+  "runs": 127,
   "offer_runs": 21,
   "recent_topics": [
-    "mindful-eating-for-digestion-and-weight-management",
-    "ultra-processed-foods-heart-disease-early-death",
     "biohacking-for-better-sleep-and-energy",
     "daily-habit-lowers-dementia-risk",
     "reverse-biological-age-diet-change",
@@ -51,11 +49,11 @@
     "vitamin-deficiency-mimics-aging",
     "vitamin-c-brain-health-link",
     "how-to-improve-sleep-quality-naturally",
-    "vitamin-a-vision-discovery"
+    "vitamin-a-vision-discovery",
+    "stress-management-techniques-for-busy-professionals",
+    "young-non-smokers-lung-cancer"
   ],
   "recent_slugs": [
-    "fermented-foods-gut-reset",
-    "burnout-prevention-stress-management",
     "habits-for-longevity-science-backed",
     "busy-pros-quick-healthy-eating",
     "boost-mobility-nutrition-movement-joint-comfort",
@@ -153,12 +151,12 @@
     "aging-vs-vitamin-deficiency-signs",
     "vitamin-c-brainpower",
     "boost-sleep-quality-natural-remedies",
-    "new-vitamin-a-discovery-rewrites-vision-science"
+    "new-vitamin-a-discovery-rewrites-vision-science",
+    "stress-management-techniques-busy-professionals",
+    "lung-cancer-young-non-smokers-causes"
   ],
-  "last_run": "2026-07-13",
+  "last_run": "2026-07-14",
   "recent_tags": [
-    "healthy-habits",
-    "health",
     "sleep",
     "healthy-habits",
     "longevity",
@@ -206,26 +204,28 @@
     "health",
     "health",
     "sleep",
+    "health",
+    "stress",
     "health"
   ],
   "tag_counts": {
     "sleep": 22,
     "gut": 17,
     "mental-wellness": 19,
-    "stress": 9,
+    "stress": 10,
     "healthy-habits": 37,
     "longevity": 11,
     "recipes": 7,
     "anti-inflammatory": 8,
     "home-workouts": 7,
     "weight": 12,
-    "health": 37
+    "health": 38
   },
   "topic_rotation": {
     "sleep": 22,
     "gut": 23,
-    "stress": 20,
-    "healthy-habits": 43,
+    "stress": 21,
+    "healthy-habits": 44,
     "longevity": 21,
     "recipes": 9,
     "anti-inflammatory": 11,
@@ -234,8 +234,6 @@
     "mental-wellness": 1
   },
   "recent_titles": [
-    "Stress Eating Late? Your Gut's Painful Reality",
-    "Discover Mindful Eating for Optimal Digestion",
     "Want Better Sleep? Try Blue Light Blocking Glasses",
     "Optimize Sleep Quality: Practical Biohacking Strategies",
     "How Creatine Can Improve Your Daily Energy Levels",
@@ -293,6 +291,8 @@
     "Sluggish Mind? How to Rule Out Deficiency",
     "Vitamin C for a Smarter Brain? Find Out Now",
     "Struggling with Sleep? Try These Natural Fixes",
-    "New Vitamin A Discovery: How It Rewrites Vision Science"
+    "New Vitamin A Discovery: How It Rewrites Vision Science",
+    "Stressed at Work? Simple Daily Coping Strategies",
+    "Lung Cancer in Healthy Young People: Causes?"
   ]
 }
