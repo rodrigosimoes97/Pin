@@ -1,8 +1,7 @@
 {
-  "runs": 127,
+  "runs": 128,
   "offer_runs": 21,
   "recent_topics": [
-    "biohacking-for-better-sleep-and-energy",
     "daily-habit-lowers-dementia-risk",
     "reverse-biological-age-diet-change",
     "fat-burning-bone-strengthening-discovery",
@@ -51,10 +50,10 @@
     "how-to-improve-sleep-quality-naturally",
     "vitamin-a-vision-discovery",
     "stress-management-techniques-for-busy-professionals",
-    "young-non-smokers-lung-cancer"
+    "young-non-smokers-lung-cancer",
+    "optimizing-gut-health-for-weight-loss"
   ],
   "recent_slugs": [
-    "habits-for-longevity-science-backed",
     "busy-pros-quick-healthy-eating",
     "boost-mobility-nutrition-movement-joint-comfort",
     "heal-from-within-antioxidant-foods",
@@ -153,11 +152,11 @@
     "boost-sleep-quality-natural-remedies",
     "new-vitamin-a-discovery-rewrites-vision-science",
     "stress-management-techniques-busy-professionals",
-    "lung-cancer-young-non-smokers-causes"
+    "lung-cancer-young-non-smokers-causes",
+    "gut-health-weight-loss-microbiome-connection"
   ],
-  "last_run": "2026-07-14",
+  "last_run": "2026-07-15",
   "recent_tags": [
-    "sleep",
     "healthy-habits",
     "longevity",
     "health",
@@ -206,11 +205,12 @@
     "sleep",
     "health",
     "stress",
-    "health"
+    "health",
+    "gut"
   ],
   "tag_counts": {
     "sleep": 22,
-    "gut": 17,
+    "gut": 18,
     "mental-wellness": 19,
     "stress": 10,
     "healthy-habits": 37,
@@ -223,7 +223,7 @@
   },
   "topic_rotation": {
     "sleep": 22,
-    "gut": 23,
+    "gut": 24,
     "stress": 21,
     "healthy-habits": 44,
     "longevity": 21,
@@ -234,7 +234,6 @@
     "mental-wellness": 1
   },
   "recent_titles": [
-    "Want Better Sleep? Try Blue Light Blocking Glasses",
     "Optimize Sleep Quality: Practical Biohacking Strategies",
     "How Creatine Can Improve Your Daily Energy Levels",
     "Stressed? Try These Simple Daily Mindfulness Resets",
@@ -293,6 +292,7 @@
     "Struggling with Sleep? Try These Natural Fixes",
     "New Vitamin A Discovery: How It Rewrites Vision Science",
     "Stressed at Work? Simple Daily Coping Strategies",
-    "Lung Cancer in Healthy Young People: Causes?"
+    "Lung Cancer in Healthy Young People: Causes?",
+    "Can Gut Bacteria Aid Your Weight Loss Journey?"
   ]
 }
