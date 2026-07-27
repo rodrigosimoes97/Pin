@@ -1,5 +1,14 @@
 [
   {
+    "slug": "intermittent-fasting-women-health-weight-loss",
+    "title": "Intermittent Fasting for Women: Unlock Health & Weight Loss",
+    "description": "Discover how Intermittent Fasting for Women can unlock health and sustainable weight loss. Learn to navigate IF based on your cycle for hormonal balance and a boosted metabolism.",
+    "date": "2026-07-27",
+    "url": "intermittent-fasting-women-health-weight-loss.html",
+    "hero": "assets/2026-07-27_intermittent-fasting-women-health-weight-loss.webp",
+    "tag": "weight"
+  },
+  {
     "slug": "coffee-vs-energy-drinks-heart-health",
     "title": "Coffee vs. Energy Drinks: Your Heart's Best Friend or Worst Enemy?",
     "description": "Unpacking the science: Is coffee or energy drinks better for your heart? Discover the truth about Coffee vs. Energy Drinks: Your Heart's Best Friend or Worst Enemy? and make informed choices.",
@@ -1789,14 +1798,5 @@
     "url": "best-way-to-prepare-for-sleep.html",
     "hero": "assets/2026-02-23_best-way-to-prepare-for-sleep.jpg",
     "tag": "sleep"
-  },
-  {
-    "slug": "fiber-vs-fermented-foods-gut-health",
-    "title": "Fiber vs. Fermented Foods: Which Boosts Gut Health?",
-    "description": "Explore the roles of fiber and fermented foods in gut health. Learn practical tips to incorporate both for a happier, healthier gut.",
-    "date": "2026-02-20",
-    "url": "fiber-vs-fermented-foods-gut-health.html",
-    "hero": "assets/2026-02-20_fiber-vs-fermented-foods-gut-health.jpg",
-    "tag": "gut"
   }
 ]
