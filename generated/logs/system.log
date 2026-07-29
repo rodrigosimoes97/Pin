@@ -42709,3 +42709,1545 @@ RuntimeError: Gemini failed after exhaustive retries: key#1 http_error=400 body=
       {
    ; key#4 transient_status=429
 2026-07-28 12:26:17,557 INFO __main__ - Run complete. Published 0/5 posts.
+2026-07-29 12:23:37,037 INFO __main__ - Fetching trending topics for USA...
+2026-07-29 12:23:37,260 WARNING src.app.trend_research - Failed to fetch Google Trends (404/Error): The request failed: Google returned a response with code 404. Moving to fallbacks.
+2026-07-29 12:23:41,140 INFO src.app.trend_research - Gathered 10 unique trending topics.
+2026-07-29 12:23:41,142 INFO __main__ - Using trending topic: Experimental therapy gantenerumab fails to slow or improve Alzheimers memory loss in clinical trials
+2026-07-29 12:23:46,277 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:23:46,394 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:23:46,503 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:23:54,054 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:23:54,165 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:23:54,278 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:23:55,742 WARNING src.app.gemini_client - Gemini server error; trying next key: key#4 transient_status=503
+2026-07-29 12:24:02,860 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:24:02,979 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:24:03,096 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:24:10,669 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:24:10,791 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:24:10,906 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:24:21,784 WARNING __main__ - Slot 1: No post generated after 3 attempts. Initiating rescue attempt...
+2026-07-29 12:24:21,784 INFO __main__ - Seeking autonomous health topic from Gemini...
+2026-07-29 12:24:26,892 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:24:27,004 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:24:27,113 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:24:35,811 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:24:35,938 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:24:36,057 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:24:36,580 WARNING src.app.gemini_client - Gemini server error; trying next key: key#4 transient_status=503
+2026-07-29 12:24:43,701 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:24:43,818 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:24:43,933 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:24:50,820 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:24:50,942 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:24:51,061 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:24:51,587 WARNING src.app.gemini_client - Gemini server error; trying next key: key#4 transient_status=503
+2026-07-29 12:24:58,698 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:24:58,838 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:24:58,962 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:25:10,413 ERROR __main__ - Slot 1: All attempts failed, including rescue.
+2026-07-29 12:25:10,413 INFO __main__ - Using trending topic: Desperate for heart surgery for their baby, a family feels the effects of pediatric hospital shortages
+2026-07-29 12:25:15,523 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:25:15,635 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:25:15,746 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:25:22,316 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:25:22,430 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:25:22,553 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:25:29,113 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:25:29,231 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:25:29,352 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:25:48,429 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:25:48,541 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:25:48,646 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:25:59,611 WARNING __main__ - Slot 2: No post generated after 3 attempts. Initiating rescue attempt...
+2026-07-29 12:25:59,611 INFO __main__ - Seeking autonomous health topic from Gemini...
+2026-07-29 12:26:04,723 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:26:04,829 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:26:04,956 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:26:05,635 WARNING src.app.gemini_client - Gemini server error; trying next key: key#4 transient_status=503
+2026-07-29 12:26:12,752 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:26:12,871 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:26:12,986 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:26:13,336 WARNING src.app.gemini_client - Gemini server error; trying next key: key#4 transient_status=503
+2026-07-29 12:26:25,451 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:26:25,569 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:26:25,687 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:26:31,933 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:26:32,046 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:26:32,170 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:26:32,669 WARNING src.app.gemini_client - Gemini server error; trying next key: key#4 transient_status=503
+2026-07-29 12:26:39,777 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:26:39,890 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:26:40,001 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:26:43,070 WARNING src.app.gemini_client - Gemini server error; trying next key: key#4 transient_status=503
+2026-07-29 12:26:55,187 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:26:55,304 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:26:55,404 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:27:01,946 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:27:02,076 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:27:02,195 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:27:08,468 WARNING src.app.gemini_client - Gemini server error; trying next key: key#4 transient_status=503
+2026-07-29 12:27:15,586 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:27:15,702 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:27:15,825 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:27:15,955 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 20s before trying next key: key#4 transient_status=429
+2026-07-29 12:27:46,071 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:27:46,192 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:27:46,315 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:27:57,894 INFO src.app.duplicate_checker - Indexed post: unlock-best-sleep-energy-focus-hacks-americans (Total: 107)
+2026-07-29 12:27:57,894 INFO __main__ - Slot 2: Rescue attempt successful with topic: Unlock Your Best Sleep: Energy & Focus Hacks for Americans
+2026-07-29 12:27:59,171 INFO __main__ - Published unlock-best-sleep-energy-focus-hacks-americans.html (offer)
+2026-07-29 12:28:04,172 INFO __main__ - Using trending topic: Scientists reveal what sparkling water really does to your teeth
+2026-07-29 12:28:09,286 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:28:09,412 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:28:09,534 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:28:09,675 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 10s before trying next key: key#4 transient_status=429
+2026-07-29 12:28:24,792 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:28:24,900 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:28:25,041 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:28:25,196 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 20s before trying next key: key#4 transient_status=429
+2026-07-29 12:28:55,310 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:28:55,422 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:28:55,540 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:28:55,679 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 30s before trying next key: key#4 transient_status=429
+2026-07-29 12:29:40,792 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:29:40,912 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:29:41,028 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:29:41,193 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 40s before trying next key: key#4 transient_status=429
+2026-07-29 12:30:41,194 WARNING __main__ - Failed to create topic from trend 'Scientists reveal what sparkling water really does to your teeth': Gemini failed after exhaustive retries: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#4 transient_status=429; key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#4 transient_status=429; key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#4 transient_status=429; key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#4 transient_status=429
+2026-07-29 12:30:46,310 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:30:46,429 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:30:46,549 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:30:46,727 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 10s before trying next key: key#4 transient_status=429
+2026-07-29 12:31:01,849 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:31:01,971 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:31:02,086 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:31:02,228 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 20s before trying next key: key#4 transient_status=429
+2026-07-29 12:31:32,351 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:31:32,468 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:31:32,591 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:31:32,725 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 30s before trying next key: key#4 transient_status=429
+2026-07-29 12:32:17,857 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:32:17,975 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:32:18,091 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:32:18,231 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 40s before trying next key: key#4 transient_status=429
+2026-07-29 12:33:18,231 ERROR __main__ - Failed slot 3
+Traceback (most recent call last):
+  File "/home/runner/work/Pin/Pin/src/app/run_daily.py", line 207, in main
+    titles = generate_titles(client, topic, excluded_titles=recent_titles)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/titles.py", line 32, in generate_titles
+    payload = client.generate_json(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 22, in generate_json
+    text = self.generate_text(prompt, max_output_tokens=max_output_tokens)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 85, in generate_text
+    raise RuntimeError(f"Gemini failed after exhaustive retries: {'; '.join(errors)}")
+RuntimeError: Gemini failed after exhaustive retries: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#4 transient_status=429; key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#4 transient_status=429; key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#4 transient_status=429; key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#4 transient_status=429
+2026-07-29 12:33:20,234 INFO __main__ - Using trending topic: Eating within 8 hours may help keep the aging brain sharp
+2026-07-29 12:33:25,365 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:33:25,483 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:33:25,597 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:33:25,769 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 10s before trying next key: key#4 transient_status=429
+2026-07-29 12:33:40,883 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:33:41,000 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:33:41,103 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:33:41,235 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 20s before trying next key: key#4 transient_status=429
+2026-07-29 12:34:11,358 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:34:11,468 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:34:11,580 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:34:11,745 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 30s before trying next key: key#4 transient_status=429
+2026-07-29 12:34:56,858 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:34:56,975 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:34:57,080 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:34:57,217 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 40s before trying next key: key#4 transient_status=429
+2026-07-29 12:35:57,218 WARNING __main__ - Failed to create topic from trend 'Eating within 8 hours may help keep the aging brain sharp': Gemini failed after exhaustive retries: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#4 transient_status=429; key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#4 transient_status=429; key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#4 transient_status=429; key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#4 transient_status=429
+2026-07-29 12:36:02,346 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:36:02,472 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:36:02,599 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:36:02,787 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 10s before trying next key: key#4 transient_status=429
+2026-07-29 12:36:17,895 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:36:18,006 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:36:18,123 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:36:18,293 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 20s before trying next key: key#4 transient_status=429
+2026-07-29 12:36:48,402 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:36:48,518 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:36:48,633 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:36:48,780 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 30s before trying next key: key#4 transient_status=429
+2026-07-29 12:37:33,897 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:37:34,010 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:37:34,144 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:37:34,297 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 40s before trying next key: key#4 transient_status=429
+2026-07-29 12:38:34,298 ERROR __main__ - Failed slot 4
+Traceback (most recent call last):
+  File "/home/runner/work/Pin/Pin/src/app/run_daily.py", line 207, in main
+    titles = generate_titles(client, topic, excluded_titles=recent_titles)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/titles.py", line 32, in generate_titles
+    payload = client.generate_json(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 22, in generate_json
+    text = self.generate_text(prompt, max_output_tokens=max_output_tokens)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 85, in generate_text
+    raise RuntimeError(f"Gemini failed after exhaustive retries: {'; '.join(errors)}")
+RuntimeError: Gemini failed after exhaustive retries: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#4 transient_status=429; key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#4 transient_status=429; key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#4 transient_status=429; key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#4 transient_status=429
+2026-07-29 12:38:36,300 INFO __main__ - Using trending topic: Oral GLP-1 drugs may quiet the brain’s food craving circuit
+2026-07-29 12:38:41,436 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:38:41,553 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:38:41,668 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:38:49,132 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:38:49,248 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:38:49,363 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:38:49,533 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 10s before trying next key: key#4 transient_status=429
+2026-07-29 12:39:04,664 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:39:04,781 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:39:04,891 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:39:05,069 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 20s before trying next key: key#4 transient_status=429
+2026-07-29 12:39:35,183 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:39:35,299 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:39:35,413 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:39:35,552 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 30s before trying next key: key#4 transient_status=429
+2026-07-29 12:40:20,674 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:40:20,791 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:40:20,903 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-07-29 12:40:21,064 WARNING src.app.gemini_client - Gemini rate limit hit (429); waiting 40s before trying next key: key#4 transient_status=429
+2026-07-29 12:41:21,065 ERROR __main__ - Failed slot 5
+Traceback (most recent call last):
+  File "/home/runner/work/Pin/Pin/src/app/run_daily.py", line 207, in main
+    titles = generate_titles(client, topic, excluded_titles=recent_titles)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/titles.py", line 32, in generate_titles
+    payload = client.generate_json(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 22, in generate_json
+    text = self.generate_text(prompt, max_output_tokens=max_output_tokens)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 85, in generate_text
+    raise RuntimeError(f"Gemini failed after exhaustive retries: {'; '.join(errors)}")
+RuntimeError: Gemini failed after exhaustive retries: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#4 transient_status=429; key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#4 transient_status=429; key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#4 transient_status=429; key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   ; key#4 transient_status=429
+2026-07-29 12:41:23,068 INFO __main__ - Run complete. Published 1/5 posts.
