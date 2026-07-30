@@ -1,10 +1,7 @@
 {
-  "runs": 138,
+  "runs": 139,
   "offer_runs": 21,
   "recent_topics": [
-    "vitamin-d-pain-link-discovered",
-    "mindful-eating-for-gut-health",
-    "gut-health-microbiome-diet",
     "mit-scientists-amino-acid-gut-healing",
     "nutrient-supercharge-cellular-energy",
     "morning-hydration-routine-benefits",
@@ -51,12 +48,12 @@
     "coffee-stress-aging-cellular-switch",
     "coffee-heart-health-vs-energy-drinks-risk",
     "intermittent-fasting-benefits-for-women",
-    "optimizing-sleep-for-energy-and-focus"
+    "optimizing-sleep-for-energy-and-focus",
+    "microwave-frying-healthier-french-fries",
+    "ultra-processed-toddler-foods-alarming",
+    "sparkling-water-teeth-health"
   ],
   "recent_slugs": [
-    "biohacking-beginners-health-energy",
-    "intermittent-fasting-weight-loss-beginner-guide",
-    "mastering-stress-mindfulness-techniques-modern-life",
     "unlock-healthier-weight-easy-habits",
     "vitamin-b1-health-boost-theory",
     "baby-fat-big-problems-early-weight-gain-future-health",
@@ -153,13 +150,13 @@
     "coffee-cellular-power-youth-stress-resilience",
     "coffee-vs-energy-drinks-heart-health",
     "intermittent-fasting-women-health-weight-loss",
-    "unlock-best-sleep-energy-focus-hacks-americans"
+    "unlock-best-sleep-energy-focus-hacks-americans",
+    "healthier-french-fries-microwave-method",
+    "toddler-ultra-processed-foods-shocking-truth",
+    "sparkling-water-smile-dentist-advice"
   ],
-  "last_run": "2026-07-29",
+  "last_run": "2026-07-30",
   "recent_tags": [
-    "health",
-    "health",
-    "gut",
     "gut",
     "health",
     "healthy-habits",
@@ -206,37 +203,37 @@
     "health",
     "health",
     "weight",
-    "sleep"
+    "sleep",
+    "recipes",
+    "health",
+    "healthy-habits"
   ],
   "tag_counts": {
     "sleep": 25,
     "gut": 18,
     "mental-wellness": 19,
     "stress": 10,
-    "healthy-habits": 37,
+    "healthy-habits": 38,
     "longevity": 12,
-    "recipes": 7,
+    "recipes": 8,
     "anti-inflammatory": 8,
     "home-workouts": 7,
     "weight": 13,
-    "health": 40
+    "health": 41
   },
   "topic_rotation": {
     "sleep": 25,
     "gut": 24,
     "stress": 21,
-    "healthy-habits": 45,
+    "healthy-habits": 47,
     "longevity": 24,
-    "recipes": 9,
+    "recipes": 10,
     "anti-inflammatory": 11,
     "home-workouts": 11,
     "weight": 25,
     "mental-wellness": 1
   },
   "recent_titles": [
-    "Simple Mindful Eating for Digestion & Weight",
-    "Ultra-Processed Foods: Your Heart's Worst Enemy?",
-    "Your Daily Guide to Energizing Sleep Hacks",
     "Can This Habit Slash Dementia Risk by 35%?",
     "Can Diet Truly Reverse Aging? New Science Explains",
     "Your Body's Fat-Burning, Bone-Boosting Switch: How?",
@@ -293,6 +290,9 @@
     "Fight Aging & Stress: The Coffee Cellular Link",
     "Energy Drinks vs. Coffee: What's Best for Your Heart?",
     "Your Guide to IF: Women's Health & Metabolism",
-    "Struggling with Sleep? Try These Energy Hacks"
+    "Struggling with Sleep? Try These Energy Hacks",
+    "New Microwave Fry Method: Healthier Indulgence?",
+    "Toddler Foods: 80% Ultra-Processed? What to Do",
+    "Your Smile & Sparkling Water: What's the Deal?"
   ]
 }

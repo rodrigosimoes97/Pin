@@ -1,5 +1,32 @@
 [
   {
+    "slug": "sparkling-water-smile-dentist-advice",
+    "title": "Sparkling Water & Your Smile: What Dentists Want You to Know",
+    "description": "Thinking sparkling water is a healthy choice for your teeth? Learn what dentists *really* think about sparkling water & your smile and discover how to keep your enamel strong. Get the facts!",
+    "date": "2026-07-30",
+    "url": "sparkling-water-smile-dentist-advice.html",
+    "hero": "assets/2026-07-30_sparkling-water-smile-dentist-advice.webp",
+    "tag": "healthy-habits"
+  },
+  {
+    "slug": "toddler-ultra-processed-foods-shocking-truth",
+    "title": "Is Your Toddler Eating Ultra-Processed Foods? The Shocking Truth About Toddler Meals",
+    "description": "Discover the shocking truth: 80% of toddler foods are ultra-processed. Learn what this means for your child's health and get simple swaps for a healthier start. Find practical tips and easy recipes.",
+    "date": "2026-07-30",
+    "url": "toddler-ultra-processed-foods-shocking-truth.html",
+    "hero": "assets/2026-07-30_toddler-ultra-processed-foods-shocking-truth.webp",
+    "tag": "health"
+  },
+  {
+    "slug": "healthier-french-fries-microwave-method",
+    "title": "Healthier French Fries? New Microwave Method Could Be a Game Changer!",
+    "description": "Tired of greasy fries? Discover a new microwave method that could make Healthier French Fries? New Microwave Method Could Be a Game Changer! a reality. Learn how to enjoy your favorite potato treat with less guilt and fat.",
+    "date": "2026-07-30",
+    "url": "healthier-french-fries-microwave-method.html",
+    "hero": "assets/2026-07-30_healthier-french-fries-microwave-method.webp",
+    "tag": "recipes"
+  },
+  {
     "slug": "unlock-best-sleep-energy-focus-hacks-americans",
     "title": "Unlock Your Best Sleep: Energy & Focus Hacks for Americans",
     "description": "Struggling to unlock your best sleep? Discover science-backed energy & focus hacks for Americans. Boost daytime energy and cognitive function with practical tips to overcome sleep disruptors.",
@@ -1771,32 +1798,5 @@
     "url": "calorie-counting-vs-awareness-weight-loss.html",
     "hero": "assets/2026-02-23_calorie-counting-vs-awareness-weight-loss.jpg",
     "tag": "healthy-habits"
-  },
-  {
-    "slug": "what-is-emotional-resilience-and-how-to-build-it",
-    "title": "What is Emotional Resilience and How to Build It?",
-    "description": "Discover what emotional resilience is and learn practical strategies to build it for better stress management and overall mental wellness.",
-    "date": "2026-02-23",
-    "url": "what-is-emotional-resilience-and-how-to-build-it.html",
-    "hero": "assets/2026-02-23_what-is-emotional-resilience-and-how-to-build-it.jpg",
-    "tag": "mental-wellness"
-  },
-  {
-    "slug": "small-habits-improve-health",
-    "title": "What Small Habits Improve Your Health?",
-    "description": "Discover simple, sustainable habit changes to boost your well-being. Small steps for big health improvements.",
-    "date": "2026-02-23",
-    "url": "small-habits-improve-health.html",
-    "hero": "assets/2026-02-23_small-habits-improve-health.jpg",
-    "tag": "healthy-habits"
-  },
-  {
-    "slug": "longevity-daily-routine-evidence-aligned",
-    "title": "What's a Longevity Daily Routine? Aligning Your Day for a Healthier, Longer Life",
-    "description": "Discover how to build a longevity daily routine aligned with scientific evidence. Learn practical tips for better sleep, nutrition, movement, and stress management to support a longer, healthier life.",
-    "date": "2026-02-23",
-    "url": "longevity-daily-routine-evidence-aligned.html",
-    "hero": "assets/2026-02-23_longevity-daily-routine-evidence-aligned.jpg",
-    "tag": "longevity"
   }
 ]
