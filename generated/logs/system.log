@@ -45990,3 +45990,4 @@ RuntimeError: Gemini failed after exhaustive retries: key#1 http_error=400 body=
    ; key#4 transient_status=429
 2026-07-31 12:32:15,155 INFO __main__ - Run complete. Published 0/5 posts.
 2026-08-01 11:37:08,101 INFO __main__ - Skipping generation today to maintain 5 posts/week.
+2026-08-02 11:36:59,865 INFO __main__ - Skipping generation today to maintain 5 posts/week.
