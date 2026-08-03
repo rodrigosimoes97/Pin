@@ -1,5 +1,23 @@
 [
   {
+    "slug": "unlock-longevity-eating-less-protein",
+    "title": "Unlock Longevity: The Surprising Power of Eating Less Protein",
+    "description": "Unlock longevity! Discover the surprising power of eating less protein for a healthier, longer life. Learn how this dietary shift can boost your well-being. Educational only \u2014 not medical advice.",
+    "date": "2026-08-03",
+    "url": "unlock-longevity-eating-less-protein.html",
+    "hero": "assets/2026-08-03_unlock-longevity-eating-less-protein.webp",
+    "tag": "longevity"
+  },
+  {
+    "slug": "burn-belly-fat-fast-weekly-workout",
+    "title": "Burn Belly Fat Fast: The Once-a-Week Workout Secret Revealed!",
+    "description": "Tired of endless workouts? Discover the secret to burn belly fat fast with a revolutionary once-a-week workout routine. Learn how to achieve a flatter stomach without the gym grind.",
+    "date": "2026-08-03",
+    "url": "burn-belly-fat-fast-weekly-workout.html",
+    "hero": "assets/2026-08-03_burn-belly-fat-fast-weekly-workout.webp",
+    "tag": "weight"
+  },
+  {
     "slug": "sparkling-water-smile-dentist-advice",
     "title": "Sparkling Water & Your Smile: What Dentists Want You to Know",
     "description": "Thinking sparkling water is a healthy choice for your teeth? Learn what dentists *really* think about sparkling water & your smile and discover how to keep your enamel strong. Get the facts!",
@@ -1780,23 +1798,5 @@
     "url": "can-fermented-foods-improve-digestion.html",
     "hero": "assets/2026-02-24_can-fermented-foods-improve-digestion.jpg",
     "tag": "gut"
-  },
-  {
-    "slug": "wind-down-before-bed",
-    "title": "What's the Best Way to Wind Down Before Bed?",
-    "description": "Discover effective bedtime routines and wind-down habits to improve your sleep quality. Learn practical tips for a more restful night.",
-    "date": "2026-02-24",
-    "url": "wind-down-before-bed.html",
-    "hero": "assets/2026-02-24_wind-down-before-bed.jpg",
-    "tag": "sleep"
-  },
-  {
-    "slug": "calorie-counting-vs-awareness-weight-loss",
-    "title": "Calorie Counting vs. Awareness: Which Works Better for Sustainable Weight Loss?",
-    "description": "Explore the differences between strict calorie counting and mindful calorie awareness for lasting weight loss. Discover practical tips for sustainable choices.",
-    "date": "2026-02-23",
-    "url": "calorie-counting-vs-awareness-weight-loss.html",
-    "hero": "assets/2026-02-23_calorie-counting-vs-awareness-weight-loss.jpg",
-    "tag": "healthy-habits"
   }
 ]
