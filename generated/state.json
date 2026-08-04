@@ -1,8 +1,7 @@
 {
-  "runs": 141,
+  "runs": 142,
   "offer_runs": 21,
   "recent_topics": [
-    "morning-hydration-routine-benefits",
     "nutrient-supercharges-cellular-energy",
     "childhood-junk-food-rewires-brain",
     "why-bananas-in-smoothies-are-bad",
@@ -51,10 +50,10 @@
     "ultra-processed-toddler-foods-alarming",
     "sparkling-water-teeth-health",
     "once-a-week-workout-belly-fat-study",
-    "eating-less-protein-slows-aging"
+    "eating-less-protein-slows-aging",
+    "intermittent-fasting-benefits-weight-loss-energy"
   ],
   "recent_slugs": [
-    "baby-fat-big-problems-early-weight-gain-future-health",
     "biohacking-your-sleep-optimize-rest-for-peak-performance",
     "weighty-issues-obesity-differences",
     "boost-your-morning-energy-focus-hacks",
@@ -153,11 +152,11 @@
     "toddler-ultra-processed-foods-shocking-truth",
     "sparkling-water-smile-dentist-advice",
     "burn-belly-fat-fast-weekly-workout",
-    "unlock-longevity-eating-less-protein"
+    "unlock-longevity-eating-less-protein",
+    "intermittent-fasting-guide"
   ],
-  "last_run": "2026-08-03",
+  "last_run": "2026-08-04",
   "recent_tags": [
-    "healthy-habits",
     "health",
     "mental-wellness",
     "gut",
@@ -206,14 +205,15 @@
     "health",
     "healthy-habits",
     "weight",
-    "longevity"
+    "longevity",
+    "healthy-habits"
   ],
   "tag_counts": {
     "sleep": 25,
     "gut": 18,
     "mental-wellness": 19,
     "stress": 10,
-    "healthy-habits": 38,
+    "healthy-habits": 39,
     "longevity": 13,
     "recipes": 8,
     "anti-inflammatory": 8,
@@ -225,7 +225,7 @@
     "sleep": 25,
     "gut": 24,
     "stress": 21,
-    "healthy-habits": 48,
+    "healthy-habits": 49,
     "longevity": 25,
     "recipes": 10,
     "anti-inflammatory": 11,
@@ -234,7 +234,6 @@
     "mental-wellness": 1
   },
   "recent_titles": [
-    "Your Body's Fat-Burning, Bone-Boosting Switch: How?",
     "Unlock Youth: Is Your Multivitamin Enough?",
     "Watermelon's Health Secrets: What Scientists Found",
     "What Happens During a 7-Day Fast?",
@@ -293,6 +292,7 @@
     "Toddler Foods: 80% Ultra-Processed? What to Do",
     "Your Smile & Sparkling Water: What's the Deal?",
     "Want a Flat Stomach? Try This Weekly Routine",
-    "Cut Protein for a Longer Life? Start Now"
+    "Cut Protein for a Longer Life? Start Now",
+    "Is Intermittent Fasting Right for Your Weight Loss?"
   ]
 }

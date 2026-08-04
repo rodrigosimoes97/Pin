@@ -1,5 +1,14 @@
 [
   {
+    "slug": "intermittent-fasting-guide",
+    "title": "Intermittent Fasting for Weight Loss & Energy: Your Complete Guide",
+    "description": "Unlock the secrets of Intermittent Fasting for Weight Loss & Energy. This guide demystifies IF methods like 16/8 and 5:2, offering practical tips for beginners to boost energy and manage weight.",
+    "date": "2026-08-04",
+    "url": "intermittent-fasting-guide.html",
+    "hero": "assets/2026-08-04_intermittent-fasting-guide.webp",
+    "tag": "healthy-habits"
+  },
+  {
     "slug": "unlock-longevity-eating-less-protein",
     "title": "Unlock Longevity: The Surprising Power of Eating Less Protein",
     "description": "Unlock longevity! Discover the surprising power of eating less protein for a healthier, longer life. Learn how this dietary shift can boost your well-being. Educational only \u2014 not medical advice.",
@@ -1789,14 +1798,5 @@
     "url": "daily-habits-lower-stress.html",
     "hero": "assets/2026-02-24_daily-habits-lower-stress.jpg",
     "tag": "mental-wellness"
-  },
-  {
-    "slug": "can-fermented-foods-improve-digestion",
-    "title": "Can Fermented Foods Improve Digestion? Plus Fiber & Meal Timing Tips",
-    "description": "Explore how fiber, fermented foods, and meal timing can support your gut health. Get practical tips for better digestion and overall wellness.",
-    "date": "2026-02-24",
-    "url": "can-fermented-foods-improve-digestion.html",
-    "hero": "assets/2026-02-24_can-fermented-foods-improve-digestion.jpg",
-    "tag": "gut"
   }
 ]
