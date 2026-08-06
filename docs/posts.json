@@ -1,5 +1,14 @@
 [
   {
+    "slug": "why-brain-fights-back-weight-loss",
+    "title": "Struggling to Keep Weight Off? Why Your Brain Fights Back When You Lose Weight",
+    "description": "Ever wonder why your brain fights back when you lose weight? Discover the science behind weight regain and practical strategies to outsmart your biology. Learn why your brain fights back when you lose weight.",
+    "date": "2026-08-06",
+    "url": "why-brain-fights-back-weight-loss.html",
+    "hero": "assets/2026-08-06_why-brain-fights-back-weight-loss.webp",
+    "tag": "weight"
+  },
+  {
     "slug": "intermittent-fasting-guide",
     "title": "Intermittent Fasting for Weight Loss & Energy: Your Complete Guide",
     "description": "Unlock the secrets of Intermittent Fasting for Weight Loss & Energy. This guide demystifies IF methods like 16/8 and 5:2, offering practical tips for beginners to boost energy and manage weight.",
@@ -1789,14 +1798,5 @@
     "url": "daily-routines-stress-reduction.html",
     "hero": "assets/2026-02-24_daily-routines-stress-reduction.jpg",
     "tag": "stress"
-  },
-  {
-    "slug": "daily-habits-lower-stress",
-    "title": "Can Daily Habits Lower Your Stress Levels?",
-    "description": "Discover practical daily routines and simple habits to effectively reduce your stress load and improve overall well-being. Learn actionable tips for a calmer life.",
-    "date": "2026-02-24",
-    "url": "daily-habits-lower-stress.html",
-    "hero": "assets/2026-02-24_daily-habits-lower-stress.jpg",
-    "tag": "mental-wellness"
   }
 ]

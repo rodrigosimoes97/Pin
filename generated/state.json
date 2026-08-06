@@ -1,8 +1,7 @@
 {
-  "runs": 143,
+  "runs": 144,
   "offer_runs": 21,
   "recent_topics": [
-    "nutrient-supercharges-cellular-energy",
     "childhood-junk-food-rewires-brain",
     "why-bananas-in-smoothies-are-bad",
     "beef-blood-sugar-diabetes-risk-study",
@@ -51,10 +50,10 @@
     "sparkling-water-teeth-health",
     "once-a-week-workout-belly-fat-study",
     "eating-less-protein-slows-aging",
-    "intermittent-fasting-benefits-weight-loss-energy"
+    "intermittent-fasting-benefits-weight-loss-energy",
+    "brain-wired-regain-lost-weight"
   ],
   "recent_slugs": [
-    "biohacking-your-sleep-optimize-rest-for-peak-performance",
     "weighty-issues-obesity-differences",
     "boost-your-morning-energy-focus-hacks",
     "intermittent-fasting-women-guide",
@@ -153,11 +152,11 @@
     "sparkling-water-smile-dentist-advice",
     "burn-belly-fat-fast-weekly-workout",
     "unlock-longevity-eating-less-protein",
-    "intermittent-fasting-guide"
+    "intermittent-fasting-guide",
+    "why-brain-fights-back-weight-loss"
   ],
-  "last_run": "2026-08-05",
+  "last_run": "2026-08-06",
   "recent_tags": [
-    "health",
     "mental-wellness",
     "gut",
     "health",
@@ -206,7 +205,8 @@
     "healthy-habits",
     "weight",
     "longevity",
-    "healthy-habits"
+    "healthy-habits",
+    "weight"
   ],
   "tag_counts": {
     "sleep": 25,
@@ -218,14 +218,14 @@
     "recipes": 8,
     "anti-inflammatory": 8,
     "home-workouts": 7,
-    "weight": 14,
+    "weight": 15,
     "health": 41
   },
   "topic_rotation": {
     "sleep": 25,
     "gut": 24,
     "stress": 21,
-    "healthy-habits": 49,
+    "healthy-habits": 50,
     "longevity": 25,
     "recipes": 10,
     "anti-inflammatory": 11,
@@ -234,7 +234,6 @@
     "mental-wellness": 1
   },
   "recent_titles": [
-    "Unlock Youth: Is Your Multivitamin Enough?",
     "Watermelon's Health Secrets: What Scientists Found",
     "What Happens During a 7-Day Fast?",
     "Eat Smarter: Lower Diabetes Risk 31%",
@@ -293,6 +292,7 @@
     "Your Smile & Sparkling Water: What's the Deal?",
     "Want a Flat Stomach? Try This Weekly Routine",
     "Cut Protein for a Longer Life? Start Now",
-    "Is Intermittent Fasting Right for Your Weight Loss?"
+    "Is Intermittent Fasting Right for Your Weight Loss?",
+    "Struggling to Keep Weight Off? Your Brain's Role"
   ]
 }
