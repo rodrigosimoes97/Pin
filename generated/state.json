@@ -1,8 +1,7 @@
 {
-  "runs": 144,
+  "runs": 145,
   "offer_runs": 21,
   "recent_topics": [
-    "childhood-junk-food-rewires-brain",
     "why-bananas-in-smoothies-are-bad",
     "beef-blood-sugar-diabetes-risk-study",
     "daily-hydration-benefits",
@@ -51,10 +50,10 @@
     "once-a-week-workout-belly-fat-study",
     "eating-less-protein-slows-aging",
     "intermittent-fasting-benefits-weight-loss-energy",
-    "brain-wired-regain-lost-weight"
+    "brain-wired-regain-lost-weight",
+    "immune-boosting-supplement-cancer-virus-fighter"
   ],
   "recent_slugs": [
-    "weighty-issues-obesity-differences",
     "boost-your-morning-energy-focus-hacks",
     "intermittent-fasting-women-guide",
     "sparkling-water-weight-loss-metabolism-myth",
@@ -153,11 +152,11 @@
     "burn-belly-fat-fast-weekly-workout",
     "unlock-longevity-eating-less-protein",
     "intermittent-fasting-guide",
-    "why-brain-fights-back-weight-loss"
+    "why-brain-fights-back-weight-loss",
+    "extra-virgin-olive-oil-immune-booster"
   ],
-  "last_run": "2026-08-06",
+  "last_run": "2026-08-07",
   "recent_tags": [
-    "mental-wellness",
     "gut",
     "health",
     "health",
@@ -206,7 +205,8 @@
     "weight",
     "longevity",
     "healthy-habits",
-    "weight"
+    "weight",
+    "anti-inflammatory"
   ],
   "tag_counts": {
     "sleep": 25,
@@ -216,7 +216,7 @@
     "healthy-habits": 39,
     "longevity": 13,
     "recipes": 8,
-    "anti-inflammatory": 8,
+    "anti-inflammatory": 9,
     "home-workouts": 7,
     "weight": 15,
     "health": 41
@@ -225,7 +225,7 @@
     "sleep": 25,
     "gut": 24,
     "stress": 21,
-    "healthy-habits": 50,
+    "healthy-habits": 51,
     "longevity": 25,
     "recipes": 10,
     "anti-inflammatory": 11,
@@ -234,7 +234,6 @@
     "mental-wellness": 1
   },
   "recent_titles": [
-    "Watermelon's Health Secrets: What Scientists Found",
     "What Happens During a 7-Day Fast?",
     "Eat Smarter: Lower Diabetes Risk 31%",
     "Vitamin D Deficiency Linked to Chronic Pain?",
@@ -293,6 +292,7 @@
     "Want a Flat Stomach? Try This Weekly Routine",
     "Cut Protein for a Longer Life? Start Now",
     "Is Intermittent Fasting Right for Your Weight Loss?",
-    "Struggling to Keep Weight Off? Your Brain's Role"
+    "Struggling to Keep Weight Off? Your Brain's Role",
+    "Can This Supplement Fight Cancer and Viruses? Experts Say Yes"
   ]
 }

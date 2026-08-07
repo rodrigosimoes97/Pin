@@ -1,5 +1,14 @@
 [
   {
+    "slug": "extra-virgin-olive-oil-immune-booster",
+    "title": "Can Extra Virgin Olive Oil Fight Cancer and Viruses? Experts Say Yes",
+    "description": "Discover how Extra Virgin Olive Oil, the immune-boosting supplement that fights cancer & viruses, can significantly enhance your health. Learn the science and practical tips.",
+    "date": "2026-08-07",
+    "url": "extra-virgin-olive-oil-immune-booster.html",
+    "hero": "assets/2026-08-07_extra-virgin-olive-oil-immune-booster.webp",
+    "tag": "anti-inflammatory"
+  },
+  {
     "slug": "why-brain-fights-back-weight-loss",
     "title": "Struggling to Keep Weight Off? Why Your Brain Fights Back When You Lose Weight",
     "description": "Ever wonder why your brain fights back when you lose weight? Discover the science behind weight regain and practical strategies to outsmart your biology. Learn why your brain fights back when you lose weight.",
@@ -1789,14 +1798,5 @@
     "url": "small-changes-big-health-wins.html",
     "hero": "assets/2026-02-24_small-changes-big-health-wins.jpg",
     "tag": "healthy-habits"
-  },
-  {
-    "slug": "daily-routines-stress-reduction",
-    "title": "Can Daily Routines Really Lower Stress Levels?",
-    "description": "Discover how simple daily routines can significantly reduce your stress load and improve your overall well-being. Learn practical tips for a calmer life.",
-    "date": "2026-02-24",
-    "url": "daily-routines-stress-reduction.html",
-    "hero": "assets/2026-02-24_daily-routines-stress-reduction.jpg",
-    "tag": "stress"
   }
 ]
