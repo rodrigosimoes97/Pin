@@ -1,9 +1,7 @@
 {
-  "runs": 145,
+  "runs": 146,
   "offer_runs": 21,
   "recent_topics": [
-    "why-bananas-in-smoothies-are-bad",
-    "beef-blood-sugar-diabetes-risk-study",
     "daily-hydration-benefits",
     "cancer-causing-chemicals-in-food",
     "biohacking-for-beginners",
@@ -51,11 +49,11 @@
     "eating-less-protein-slows-aging",
     "intermittent-fasting-benefits-weight-loss-energy",
     "brain-wired-regain-lost-weight",
-    "immune-boosting-supplement-cancer-virus-fighter"
+    "immune-boosting-supplement-cancer-virus-fighter",
+    "alcohol-health-study-divide",
+    "sugar-cravings-health-myth"
   ],
   "recent_slugs": [
-    "boost-your-morning-energy-focus-hacks",
-    "intermittent-fasting-women-guide",
     "sparkling-water-weight-loss-metabolism-myth",
     "biohacking-sleep-guide",
     "unlock-brain-power-olive-oil-secret",
@@ -153,12 +151,12 @@
     "unlock-longevity-eating-less-protein",
     "intermittent-fasting-guide",
     "why-brain-fights-back-weight-loss",
-    "extra-virgin-olive-oil-immune-booster"
+    "extra-virgin-olive-oil-immune-booster",
+    "booze-breakdown-healthiest-drink",
+    "sweet-tooth-survival-why-cutting-sugar-wont-beat-cravings"
   ],
-  "last_run": "2026-08-07",
+  "last_run": "2026-08-10",
   "recent_tags": [
-    "gut",
-    "health",
     "health",
     "health",
     "healthy-habits",
@@ -206,26 +204,28 @@
     "longevity",
     "healthy-habits",
     "weight",
-    "anti-inflammatory"
+    "anti-inflammatory",
+    "health",
+    "healthy-habits"
   ],
   "tag_counts": {
     "sleep": 25,
     "gut": 18,
     "mental-wellness": 19,
     "stress": 10,
-    "healthy-habits": 39,
+    "healthy-habits": 40,
     "longevity": 13,
     "recipes": 8,
     "anti-inflammatory": 9,
     "home-workouts": 7,
     "weight": 15,
-    "health": 41
+    "health": 42
   },
   "topic_rotation": {
     "sleep": 25,
     "gut": 24,
     "stress": 21,
-    "healthy-habits": 51,
+    "healthy-habits": 53,
     "longevity": 25,
     "recipes": 10,
     "anti-inflammatory": 11,
@@ -234,8 +234,6 @@
     "mental-wellness": 1
   },
   "recent_titles": [
-    "What Happens During a 7-Day Fast?",
-    "Eat Smarter: Lower Diabetes Risk 31%",
     "Vitamin D Deficiency Linked to Chronic Pain?",
     "How Mindful Eating Transforms Your Gut",
     "Happy Gut, Happy You: Diet Tips Inside",
@@ -293,6 +291,8 @@
     "Cut Protein for a Longer Life? Start Now",
     "Is Intermittent Fasting Right for Your Weight Loss?",
     "Struggling to Keep Weight Off? Your Brain's Role",
-    "Can This Supplement Fight Cancer and Viruses? Experts Say Yes"
+    "Can This Supplement Fight Cancer and Viruses? Experts Say Yes",
+    "Is There a 'Healthier' Drink? Let's Find Out",
+    "Craving Sugar? Why 'All or Nothing' Fails You"
   ]
 }

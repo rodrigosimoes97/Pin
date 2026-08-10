@@ -1,5 +1,23 @@
 [
   {
+    "slug": "sweet-tooth-survival-why-cutting-sugar-wont-beat-cravings",
+    "title": "Sweet Tooth Survival: Why Cutting Sugar Won't Beat Cravings",
+    "description": "Tired of sugar cravings winning? Discover why cutting out all sweets might backfire and learn the real secrets to Sweet Tooth Survival: Why Cutting Sugar Won't Beat Cravings. Get practical tips here!",
+    "date": "2026-08-10",
+    "url": "sweet-tooth-survival-why-cutting-sugar-wont-beat-cravings.html",
+    "hero": "assets/2026-08-10_sweet-tooth-survival-why-cutting-sugar-wont-beat-cravings.webp",
+    "tag": "healthy-habits"
+  },
+  {
+    "slug": "booze-breakdown-healthiest-drink",
+    "title": "Booze Breakdown: Which Drink is Healthiest (or Least Unhealthy)?",
+    "description": "Curious about the Booze Breakdown: Which Drink is Healthiest (or Least Unhealthy)? I've dug into the latest research to help you make smarter choices for your nightly drink. Let's explore.",
+    "date": "2026-08-10",
+    "url": "booze-breakdown-healthiest-drink.html",
+    "hero": "assets/2026-08-10_booze-breakdown-healthiest-drink.webp",
+    "tag": "health"
+  },
+  {
     "slug": "extra-virgin-olive-oil-immune-booster",
     "title": "Can Extra Virgin Olive Oil Fight Cancer and Viruses? Experts Say Yes",
     "description": "Discover how Extra Virgin Olive Oil, the immune-boosting supplement that fights cancer & viruses, can significantly enhance your health. Learn the science and practical tips.",
@@ -1780,23 +1798,5 @@
     "url": "easy-recipes-busy-weeknights.html",
     "hero": "assets/2026-02-24_easy-recipes-busy-weeknights.jpg",
     "tag": "recipes"
-  },
-  {
-    "slug": "daily-habits-longevity",
-    "title": "What Daily Habits Boost Longevity?",
-    "description": "Discover evidence-aligned daily routines that can help you live a longer, healthier life. Learn practical tips for better sleep, stress management, and more.",
-    "date": "2026-02-24",
-    "url": "daily-habits-longevity.html",
-    "hero": "assets/2026-02-24_daily-habits-longevity.jpg",
-    "tag": "longevity"
-  },
-  {
-    "slug": "small-changes-big-health-wins",
-    "title": "Small Changes, Big Health Wins: Habits That Actually Stick",
-    "description": "Discover simple, sustainable habit changes that boost your health and well-being. Learn practical tips for lasting results.",
-    "date": "2026-02-24",
-    "url": "small-changes-big-health-wins.html",
-    "hero": "assets/2026-02-24_small-changes-big-health-wins.jpg",
-    "tag": "healthy-habits"
   }
 ]
