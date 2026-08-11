@@ -52735,3 +52735,597 @@ json.decoder.JSONDecodeError: Expecting ',' delimiter: line 1 column 88 (char 87
 2026-08-10 11:32:18,709 INFO src.app.duplicate_checker - Indexed post: sweet-tooth-survival-why-cutting-sugar-wont-beat-cravings (Total: 117)
 2026-08-10 11:32:20,005 INFO __main__ - Published sweet-tooth-survival-why-cutting-sugar-wont-beat-cravings.html (info)
 2026-08-10 11:32:25,006 INFO __main__ - Run complete. Published 2/5 posts.
+2026-08-11 11:08:08,718 INFO __main__ - Fetching trending topics for USA...
+2026-08-11 11:08:09,007 WARNING src.app.trend_research - Failed to fetch Google Trends (404/Error): The request failed: Google returned a response with code 404. Moving to fallbacks.
+2026-08-11 11:08:12,597 INFO src.app.trend_research - Gathered 14 unique trending topics.
+2026-08-11 11:08:12,598 INFO __main__ - Using trending topic: Experimental therapy gantenerumab fails to slow or improve Alzheimers memory loss in clinical trials
+2026-08-11 11:08:17,702 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:08:17,790 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:08:17,876 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:08:24,159 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:08:24,242 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:08:24,320 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:08:30,468 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:08:30,542 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:08:30,631 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:08:38,675 WARNING __main__ - Slot 1: No post generated after 3 attempts. Initiating rescue attempt...
+2026-08-11 11:08:38,676 INFO __main__ - Seeking autonomous health topic from Gemini...
+2026-08-11 11:08:43,747 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:08:43,828 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:08:43,911 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:08:49,906 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:08:49,984 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:08:50,054 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:08:56,189 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:08:56,262 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:08:56,341 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:09:04,011 ERROR src.app.gemini_client - Critical JSON parse failure. Raw response saved to generated/logs/failed_json.txt
+2026-08-11 11:09:04,011 WARNING src.app.gemini_client - Deep JSON sanitization failed: Expecting ',' delimiter: line 1 column 101 (char 100). Raw text snippet: {
+  "title": "Biohacking Your Sleep: Advanced Strategies for Deeper Rest and Peak Performance",
+  "slug": "biohacking-sleep-advanced-strategies",
+  "meta_description": "Unlock deeper rest and peak per
+2026-08-11 11:09:04,011 ERROR __main__ - Failed slot 1
+Traceback (most recent call last):
+  File "/home/runner/work/Pin/Pin/src/app/run_daily.py", line 236, in main
+    candidate = generate_article(client, rescue_topic, rescue_chosen_title, mode, offer)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/content.py", line 107, in generate_article
+    payload = client.generate_json(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 23, in generate_json
+    return parse_json_from_text(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 256, in parse_json_from_text
+    raise e
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 243, in parse_json_from_text
+    return json.loads(final_attempt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Expecting ',' delimiter: line 1 column 101 (char 100)
+2026-08-11 11:09:06,027 INFO __main__ - Using trending topic: Desperate for heart surgery for their baby, a family feels the effects of pediatric hospital shortages
+2026-08-11 11:09:11,102 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:09:11,177 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:09:11,255 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:09:17,184 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:09:17,252 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:09:17,315 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:09:23,406 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:09:23,475 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:09:23,537 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:09:32,240 ERROR src.app.gemini_client - Critical JSON parse failure. Raw response saved to generated/logs/failed_json.txt
+2026-08-11 11:09:32,240 WARNING src.app.gemini_client - Deep JSON sanitization failed: Expecting ',' delimiter: line 1 column 100 (char 99). Raw text snippet: {
+  "title": "The Heartbreaking Reality: Pediatric Hospital Shortages and Critical Surgeries",
+  "slug": "pediatric-hospital-shortages-critical-surgeries",
+  "meta_description": "Discover the heartbre
+2026-08-11 11:09:32,240 ERROR __main__ - Failed slot 2
+Traceback (most recent call last):
+  File "/home/runner/work/Pin/Pin/src/app/run_daily.py", line 212, in main
+    candidate = generate_article(client, topic, chosen_title, mode, offer)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/content.py", line 107, in generate_article
+    payload = client.generate_json(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 23, in generate_json
+    return parse_json_from_text(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 256, in parse_json_from_text
+    raise e
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 243, in parse_json_from_text
+    return json.loads(final_attempt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Expecting ',' delimiter: line 1 column 100 (char 99)
+2026-08-11 11:09:34,241 INFO __main__ - Using trending topic: Wine, beer, or spirits? Massive study finds a surprising health divide
+2026-08-11 11:09:39,320 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:09:39,394 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:09:39,466 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:09:45,541 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:09:45,605 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:09:45,681 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:09:52,080 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:09:52,147 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:09:52,212 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:09:58,311 WARNING src.app.gemini_client - Gemini server error; trying next key: key#4 transient_status=503
+2026-08-11 11:10:05,390 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:10:05,463 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:10:05,538 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:10:15,188 ERROR src.app.gemini_client - Critical JSON parse failure. Raw response saved to generated/logs/failed_json.txt
+2026-08-11 11:10:15,188 WARNING src.app.gemini_client - Deep JSON sanitization failed: Expecting ',' delimiter: line 1 column 84 (char 83). Raw text snippet: {
+  "title": "Wine, Beer, or Spirits? Surprising Health Differences Revealed",
+  "slug": "wine-beer-spirits-health-differences",
+  "meta_description": "Wondering about Wine, Beer, or Spirits? Surprisi
+2026-08-11 11:10:15,188 ERROR __main__ - Failed slot 3
+Traceback (most recent call last):
+  File "/home/runner/work/Pin/Pin/src/app/run_daily.py", line 212, in main
+    candidate = generate_article(client, topic, chosen_title, mode, offer)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/content.py", line 107, in generate_article
+    payload = client.generate_json(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 23, in generate_json
+    return parse_json_from_text(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 256, in parse_json_from_text
+    raise e
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 243, in parse_json_from_text
+    return json.loads(final_attempt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Expecting ',' delimiter: line 1 column 84 (char 83)
+2026-08-11 11:10:17,189 INFO __main__ - Using trending topic: A daily glass of fruit juice was linked to lower depression scores
+2026-08-11 11:10:23,341 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:10:23,416 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:10:23,493 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:10:29,427 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:10:29,495 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:10:29,555 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:10:35,619 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:10:35,681 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:10:35,756 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:10:42,696 INFO src.app.duplicate_checker - Indexed post: daily-fruit-juice-mood-boost (Total: 118)
+2026-08-11 11:10:44,040 INFO __main__ - Published daily-fruit-juice-mood-boost.html (offer)
+2026-08-11 11:10:49,041 INFO __main__ - Using trending topic: For decades, we were told to choose low-fat dairy. New research says otherwise
+2026-08-11 11:10:54,123 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:10:54,203 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:10:54,273 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:11:00,673 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:11:01,996 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:11:02,078 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:11:08,348 WARNING src.app.gemini_client - Gemini non-retriable failure: key#1 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:11:08,429 WARNING src.app.gemini_client - Gemini non-retriable failure: key#2 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:11:08,493 WARNING src.app.gemini_client - Gemini non-retriable failure: key#3 http_error=400 body={
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+   
+2026-08-11 11:11:17,064 ERROR src.app.gemini_client - Critical JSON parse failure. Raw response saved to generated/logs/failed_json.txt
+2026-08-11 11:11:17,064 WARNING src.app.gemini_client - Deep JSON sanitization failed: Expecting ',' delimiter: line 1 column 91 (char 90). Raw text snippet: {
+  "title": "Low-Fat Dairy No More? What New Research Says About Your Milk Choices",
+  "slug": "low-fat-dairy-no-more-research-milk-choices",
+  "meta_description": "For years, low-fat dairy was the g
+2026-08-11 11:11:17,064 ERROR __main__ - Failed slot 5
+Traceback (most recent call last):
+  File "/home/runner/work/Pin/Pin/src/app/run_daily.py", line 212, in main
+    candidate = generate_article(client, topic, chosen_title, mode, offer)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/content.py", line 107, in generate_article
+    payload = client.generate_json(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 23, in generate_json
+    return parse_json_from_text(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 256, in parse_json_from_text
+    raise e
+  File "/home/runner/work/Pin/Pin/src/app/gemini_client.py", line 243, in parse_json_from_text
+    return json.loads(final_attempt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Expecting ',' delimiter: line 1 column 91 (char 90)
+2026-08-11 11:11:19,065 INFO __main__ - Run complete. Published 1/5 posts.

@@ -1,8 +1,7 @@
 {
-  "runs": 146,
+  "runs": 147,
   "offer_runs": 21,
   "recent_topics": [
-    "daily-hydration-benefits",
     "cancer-causing-chemicals-in-food",
     "biohacking-for-beginners",
     "optimizing-sleep-for-energy-and-focus",
@@ -51,10 +50,10 @@
     "brain-wired-regain-lost-weight",
     "immune-boosting-supplement-cancer-virus-fighter",
     "alcohol-health-study-divide",
-    "sugar-cravings-health-myth"
+    "sugar-cravings-health-myth",
+    "fruit-juice-depression-link"
   ],
   "recent_slugs": [
-    "sparkling-water-weight-loss-metabolism-myth",
     "biohacking-sleep-guide",
     "unlock-brain-power-olive-oil-secret",
     "beyond-calories-real-reason-bread-weight-gain",
@@ -153,11 +152,11 @@
     "why-brain-fights-back-weight-loss",
     "extra-virgin-olive-oil-immune-booster",
     "booze-breakdown-healthiest-drink",
-    "sweet-tooth-survival-why-cutting-sugar-wont-beat-cravings"
+    "sweet-tooth-survival-why-cutting-sugar-wont-beat-cravings",
+    "daily-fruit-juice-mood-boost"
   ],
-  "last_run": "2026-08-10",
+  "last_run": "2026-08-11",
   "recent_tags": [
-    "health",
     "health",
     "healthy-habits",
     "sleep",
@@ -206,12 +205,13 @@
     "weight",
     "anti-inflammatory",
     "health",
-    "healthy-habits"
+    "healthy-habits",
+    "mental-wellness"
   ],
   "tag_counts": {
     "sleep": 25,
     "gut": 18,
-    "mental-wellness": 19,
+    "mental-wellness": 20,
     "stress": 10,
     "healthy-habits": 40,
     "longevity": 13,
@@ -225,7 +225,7 @@
     "sleep": 25,
     "gut": 24,
     "stress": 21,
-    "healthy-habits": 53,
+    "healthy-habits": 54,
     "longevity": 25,
     "recipes": 10,
     "anti-inflammatory": 11,
@@ -234,7 +234,6 @@
     "mental-wellness": 1
   },
   "recent_titles": [
-    "Vitamin D Deficiency Linked to Chronic Pain?",
     "How Mindful Eating Transforms Your Gut",
     "Happy Gut, Happy You: Diet Tips Inside",
     "Tummy Troubles? MIT's Amino Acid Breakthrough",
@@ -293,6 +292,7 @@
     "Struggling to Keep Weight Off? Your Brain's Role",
     "Can This Supplement Fight Cancer and Viruses? Experts Say Yes",
     "Is There a 'Healthier' Drink? Let's Find Out",
-    "Craving Sugar? Why 'All or Nothing' Fails You"
+    "Craving Sugar? Why 'All or Nothing' Fails You",
+    "Fruit Juice for Mood: Sip Your Way to Happy?"
   ]
 }

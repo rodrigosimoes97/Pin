@@ -1,5 +1,14 @@
 [
   {
+    "slug": "daily-fruit-juice-mood-boost",
+    "title": "Daily Fruit Juice: A Sweet Sip Against the Blues?",
+    "description": "Feeling down? Explore the science behind Daily Fruit Juice: A Sweet Sip Against the Blues? Discover how certain juices might impact your mood and well-being, plus practical tips.",
+    "date": "2026-08-11",
+    "url": "daily-fruit-juice-mood-boost.html",
+    "hero": "assets/2026-08-11_daily-fruit-juice-mood-boost.webp",
+    "tag": "mental-wellness"
+  },
+  {
     "slug": "sweet-tooth-survival-why-cutting-sugar-wont-beat-cravings",
     "title": "Sweet Tooth Survival: Why Cutting Sugar Won't Beat Cravings",
     "description": "Tired of sugar cravings winning? Discover why cutting out all sweets might backfire and learn the real secrets to Sweet Tooth Survival: Why Cutting Sugar Won't Beat Cravings. Get practical tips here!",
@@ -1789,14 +1798,5 @@
     "url": "foods-lower-inflammation.html",
     "hero": "assets/2026-02-25_foods-lower-inflammation.jpg",
     "tag": "anti-inflammatory"
-  },
-  {
-    "slug": "easy-recipes-busy-weeknights",
-    "title": "Busy Weeknights? Easy Recipes for Fast Meals",
-    "description": "Discover quick and healthy recipes perfect for busy weeknights. Learn how to prepare delicious meals in under 30 minutes to save time and eat well.",
-    "date": "2026-02-24",
-    "url": "easy-recipes-busy-weeknights.html",
-    "hero": "assets/2026-02-24_easy-recipes-busy-weeknights.jpg",
-    "tag": "recipes"
   }
 ]
