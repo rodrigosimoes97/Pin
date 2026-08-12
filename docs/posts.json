@@ -1,5 +1,14 @@
 [
   {
+    "slug": "daily-gratitude-practice-mood-stress-natural",
+    "title": "Daily Gratitude Practice: Boost Mood & Reduce Stress Naturally",
+    "description": "Discover how a simple Daily Gratitude Practice can boost your mood and reduce stress naturally. Learn science-backed, practical techniques to integrate gratitude into your US routine for better mental wellness.",
+    "date": "2026-08-12",
+    "url": "daily-gratitude-practice-mood-stress-natural.html",
+    "hero": "assets/2026-08-12_daily-gratitude-practice-mood-stress-natural.webp",
+    "tag": "mental-wellness"
+  },
+  {
     "slug": "daily-fruit-juice-mood-boost",
     "title": "Daily Fruit Juice: A Sweet Sip Against the Blues?",
     "description": "Feeling down? Explore the science behind Daily Fruit Juice: A Sweet Sip Against the Blues? Discover how certain juices might impact your mood and well-being, plus practical tips.",
@@ -1789,14 +1798,5 @@
     "url": "get-fit-without-gym-equipment.html",
     "hero": "assets/2026-02-25_get-fit-without-gym-equipment.jpg",
     "tag": "home-workouts"
-  },
-  {
-    "slug": "foods-lower-inflammation",
-    "title": "What Foods Naturally Lower Body Inflammation?",
-    "description": "Discover everyday foods that can help reduce inflammation in your body. Simple dietary changes for a healthier you.",
-    "date": "2026-02-25",
-    "url": "foods-lower-inflammation.html",
-    "hero": "assets/2026-02-25_foods-lower-inflammation.jpg",
-    "tag": "anti-inflammatory"
   }
 ]

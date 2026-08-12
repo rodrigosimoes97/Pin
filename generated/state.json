@@ -1,8 +1,7 @@
 {
-  "runs": 147,
+  "runs": 148,
   "offer_runs": 21,
   "recent_topics": [
-    "cancer-causing-chemicals-in-food",
     "biohacking-for-beginners",
     "optimizing-sleep-for-energy-and-focus",
     "guava-juice-iron-supplements",
@@ -51,10 +50,10 @@
     "immune-boosting-supplement-cancer-virus-fighter",
     "alcohol-health-study-divide",
     "sugar-cravings-health-myth",
-    "fruit-juice-depression-link"
+    "fruit-juice-depression-link",
+    "daily-gratitude-practice-stress-relief"
   ],
   "recent_slugs": [
-    "biohacking-sleep-guide",
     "unlock-brain-power-olive-oil-secret",
     "beyond-calories-real-reason-bread-weight-gain",
     "unlock-better-sleep-natural-tips-deeper-rest-energy",
@@ -153,11 +152,11 @@
     "extra-virgin-olive-oil-immune-booster",
     "booze-breakdown-healthiest-drink",
     "sweet-tooth-survival-why-cutting-sugar-wont-beat-cravings",
-    "daily-fruit-juice-mood-boost"
+    "daily-fruit-juice-mood-boost",
+    "daily-gratitude-practice-mood-stress-natural"
   ],
-  "last_run": "2026-08-11",
+  "last_run": "2026-08-12",
   "recent_tags": [
-    "health",
     "healthy-habits",
     "sleep",
     "health",
@@ -206,12 +205,13 @@
     "anti-inflammatory",
     "health",
     "healthy-habits",
+    "mental-wellness",
     "mental-wellness"
   ],
   "tag_counts": {
     "sleep": 25,
     "gut": 18,
-    "mental-wellness": 20,
+    "mental-wellness": 21,
     "stress": 10,
     "healthy-habits": 40,
     "longevity": 13,
@@ -224,7 +224,7 @@
   "topic_rotation": {
     "sleep": 25,
     "gut": 24,
-    "stress": 21,
+    "stress": 22,
     "healthy-habits": 54,
     "longevity": 25,
     "recipes": 10,
@@ -234,7 +234,6 @@
     "mental-wellness": 1
   },
   "recent_titles": [
-    "How Mindful Eating Transforms Your Gut",
     "Happy Gut, Happy You: Diet Tips Inside",
     "Tummy Troubles? MIT's Amino Acid Breakthrough",
     "The Secret to Lasting Energy? It's in This Nutrient",
@@ -293,6 +292,7 @@
     "Can This Supplement Fight Cancer and Viruses? Experts Say Yes",
     "Is There a 'Healthier' Drink? Let's Find Out",
     "Craving Sugar? Why 'All or Nothing' Fails You",
-    "Fruit Juice for Mood: Sip Your Way to Happy?"
+    "Fruit Juice for Mood: Sip Your Way to Happy?",
+    "How to Boost Your Mood with Simple Daily Gratitude"
   ]
 }
