@@ -1,8 +1,7 @@
 {
-  "runs": 149,
+  "runs": 150,
   "offer_runs": 21,
   "recent_topics": [
-    "biohacking-for-beginners",
     "optimizing-sleep-for-energy-and-focus",
     "guava-juice-iron-supplements",
     "personalized-nutrition-for-gut-health",
@@ -51,10 +50,10 @@
     "alcohol-health-study-divide",
     "sugar-cravings-health-myth",
     "fruit-juice-depression-link",
-    "daily-gratitude-practice-stress-relief"
+    "daily-gratitude-practice-stress-relief",
+    "ozempic-brain-craving-center"
   ],
   "recent_slugs": [
-    "unlock-brain-power-olive-oil-secret",
     "beyond-calories-real-reason-bread-weight-gain",
     "unlock-better-sleep-natural-tips-deeper-rest-energy",
     "personalized-nutrition-gut-health-custom-blueprint",
@@ -153,11 +152,11 @@
     "booze-breakdown-healthiest-drink",
     "sweet-tooth-survival-why-cutting-sugar-wont-beat-cravings",
     "daily-fruit-juice-mood-boost",
-    "daily-gratitude-practice-mood-stress-natural"
+    "daily-gratitude-practice-mood-stress-natural",
+    "ozempic-brain-craving-center"
   ],
-  "last_run": "2026-08-13",
+  "last_run": "2026-08-14",
   "recent_tags": [
-    "healthy-habits",
     "sleep",
     "health",
     "gut",
@@ -206,7 +205,8 @@
     "health",
     "healthy-habits",
     "mental-wellness",
-    "mental-wellness"
+    "mental-wellness",
+    "weight"
   ],
   "tag_counts": {
     "sleep": 25,
@@ -218,14 +218,14 @@
     "recipes": 8,
     "anti-inflammatory": 9,
     "home-workouts": 7,
-    "weight": 15,
+    "weight": 16,
     "health": 42
   },
   "topic_rotation": {
     "sleep": 25,
     "gut": 24,
     "stress": 22,
-    "healthy-habits": 54,
+    "healthy-habits": 55,
     "longevity": 25,
     "recipes": 10,
     "anti-inflammatory": 11,
@@ -234,7 +234,6 @@
     "mental-wellness": 1
   },
   "recent_titles": [
-    "Happy Gut, Happy You: Diet Tips Inside",
     "Tummy Troubles? MIT's Amino Acid Breakthrough",
     "The Secret to Lasting Energy? It's in This Nutrient",
     "Morning Hydration: Practical Tips for Wellness",
@@ -293,6 +292,7 @@
     "Is There a 'Healthier' Drink? Let's Find Out",
     "Craving Sugar? Why 'All or Nothing' Fails You",
     "Fruit Juice for Mood: Sip Your Way to Happy?",
-    "How to Boost Your Mood with Simple Daily Gratitude"
+    "How to Boost Your Mood with Simple Daily Gratitude",
+    "How Ozempic Reveals Your Hidden 'Gotta Have It' Button"
   ]
 }
