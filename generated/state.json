@@ -1,8 +1,7 @@
 {
-  "runs": 150,
+  "runs": 151,
   "offer_runs": 21,
   "recent_topics": [
-    "optimizing-sleep-for-energy-and-focus",
     "guava-juice-iron-supplements",
     "personalized-nutrition-for-gut-health",
     "supercharged-vitamin-k-brain-healing",
@@ -51,10 +50,10 @@
     "sugar-cravings-health-myth",
     "fruit-juice-depression-link",
     "daily-gratitude-practice-stress-relief",
-    "ozempic-brain-craving-center"
+    "ozempic-brain-craving-center",
+    "vitamin-deficiency-belly-fat-danger"
   ],
   "recent_slugs": [
-    "beyond-calories-real-reason-bread-weight-gain",
     "unlock-better-sleep-natural-tips-deeper-rest-energy",
     "personalized-nutrition-gut-health-custom-blueprint",
     "biohacking-longevity-secrets",
@@ -153,11 +152,11 @@
     "sweet-tooth-survival-why-cutting-sugar-wont-beat-cravings",
     "daily-fruit-juice-mood-boost",
     "daily-gratitude-practice-mood-stress-natural",
-    "ozempic-brain-craving-center"
+    "ozempic-brain-craving-center",
+    "belly-fat-vitamin-deficiency"
   ],
-  "last_run": "2026-08-14",
+  "last_run": "2026-08-17",
   "recent_tags": [
-    "sleep",
     "health",
     "gut",
     "mental-wellness",
@@ -206,6 +205,7 @@
     "healthy-habits",
     "mental-wellness",
     "mental-wellness",
+    "weight",
     "weight"
   ],
   "tag_counts": {
@@ -218,14 +218,14 @@
     "recipes": 8,
     "anti-inflammatory": 9,
     "home-workouts": 7,
-    "weight": 16,
+    "weight": 17,
     "health": 42
   },
   "topic_rotation": {
     "sleep": 25,
     "gut": 24,
     "stress": 22,
-    "healthy-habits": 55,
+    "healthy-habits": 56,
     "longevity": 25,
     "recipes": 10,
     "anti-inflammatory": 11,
@@ -234,7 +234,6 @@
     "mental-wellness": 1
   },
   "recent_titles": [
-    "Tummy Troubles? MIT's Amino Acid Breakthrough",
     "The Secret to Lasting Energy? It's in This Nutrient",
     "Morning Hydration: Practical Tips for Wellness",
     "Tired? This Nutrient is Fueling Your Cells",
@@ -293,6 +292,7 @@
     "Craving Sugar? Why 'All or Nothing' Fails You",
     "Fruit Juice for Mood: Sip Your Way to Happy?",
     "How to Boost Your Mood with Simple Daily Gratitude",
-    "How Ozempic Reveals Your Hidden 'Gotta Have It' Button"
+    "How Ozempic Reveals Your Hidden 'Gotta Have It' Button",
+    "Is Your Belly Fat Hiding a Vitamin Deficiency?"
   ]
 }

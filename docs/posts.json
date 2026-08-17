@@ -1,5 +1,14 @@
 [
   {
+    "slug": "belly-fat-vitamin-deficiency",
+    "title": "The Hidden Danger: How Belly Fat Amplifies Common Vitamin Deficiencies",
+    "description": "Discover how belly fat can worsen common vitamin deficiencies, turning simple issues into major health risks. Learn what you can do to combat this hidden danger.",
+    "date": "2026-08-17",
+    "url": "belly-fat-vitamin-deficiency.html",
+    "hero": "assets/2026-08-17_belly-fat-vitamin-deficiency.webp",
+    "tag": "weight"
+  },
+  {
     "slug": "ozempic-brain-craving-center",
     "title": "Ozempic's Brain Breakthrough: Unlocking Your Hidden Craving Center",
     "description": "Discover Ozempic's brain breakthrough: how this diabetes drug is unlocking your hidden craving center and what it means for understanding your eating habits. Learn about Ozempic's effect on cravings.",
@@ -1789,14 +1798,5 @@
     "url": "when-to-eat-gut-health.html",
     "hero": "assets/2026-02-26_when-to-eat-gut-health.jpg",
     "tag": "gut"
-  },
-  {
-    "slug": "prepare-for-sleep-bedtime-routine",
-    "title": "What's the Best Way to Prepare for Sleep?",
-    "description": "Discover effective bedtime routines and wind-down habits to improve your sleep quality. Learn practical tips for a more restful night.",
-    "date": "2026-02-26",
-    "url": "prepare-for-sleep-bedtime-routine.html",
-    "hero": "assets/2026-02-26_prepare-for-sleep-bedtime-routine.jpg",
-    "tag": "sleep"
   }
 ]
