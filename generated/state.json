@@ -1,8 +1,7 @@
 {
-  "runs": 151,
+  "runs": 152,
   "offer_runs": 21,
   "recent_topics": [
-    "guava-juice-iron-supplements",
     "personalized-nutrition-for-gut-health",
     "supercharged-vitamin-k-brain-healing",
     "gut-brain-circuit-protein-cravings",
@@ -51,10 +50,10 @@
     "fruit-juice-depression-link",
     "daily-gratitude-practice-stress-relief",
     "ozempic-brain-craving-center",
-    "vitamin-deficiency-belly-fat-danger"
+    "vitamin-deficiency-belly-fat-danger",
+    "cheese-bacteria-gut-health"
   ],
   "recent_slugs": [
-    "unlock-better-sleep-natural-tips-deeper-rest-energy",
     "personalized-nutrition-gut-health-custom-blueprint",
     "biohacking-longevity-secrets",
     "unlock-your-gut-health-probiotics-prebiotics-microbiome",
@@ -153,11 +152,11 @@
     "daily-fruit-juice-mood-boost",
     "daily-gratitude-practice-mood-stress-natural",
     "ozempic-brain-craving-center",
-    "belly-fat-vitamin-deficiency"
+    "belly-fat-vitamin-deficiency",
+    "cheese-bacteria-gut-health"
   ],
-  "last_run": "2026-08-17",
+  "last_run": "2026-08-18",
   "recent_tags": [
-    "health",
     "gut",
     "mental-wellness",
     "gut",
@@ -206,11 +205,12 @@
     "mental-wellness",
     "mental-wellness",
     "weight",
-    "weight"
+    "weight",
+    "gut"
   ],
   "tag_counts": {
     "sleep": 25,
-    "gut": 18,
+    "gut": 19,
     "mental-wellness": 21,
     "stress": 10,
     "healthy-habits": 40,
@@ -223,7 +223,7 @@
   },
   "topic_rotation": {
     "sleep": 25,
-    "gut": 24,
+    "gut": 25,
     "stress": 22,
     "healthy-habits": 56,
     "longevity": 25,
@@ -234,7 +234,6 @@
     "mental-wellness": 1
   },
   "recent_titles": [
-    "The Secret to Lasting Energy? It's in This Nutrient",
     "Morning Hydration: Practical Tips for Wellness",
     "Tired? This Nutrient is Fueling Your Cells",
     "Is Your Child's Brain at Risk from Junk Food Habits?",
@@ -293,6 +292,7 @@
     "Fruit Juice for Mood: Sip Your Way to Happy?",
     "How to Boost Your Mood with Simple Daily Gratitude",
     "How Ozempic Reveals Your Hidden 'Gotta Have It' Button",
-    "Is Your Belly Fat Hiding a Vitamin Deficiency?"
+    "Is Your Belly Fat Hiding a Vitamin Deficiency?",
+    "Cheese Bacteria: Your Gut's New Best Friend?"
   ]
 }

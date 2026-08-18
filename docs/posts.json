@@ -1,5 +1,14 @@
 [
   {
+    "slug": "cheese-bacteria-gut-health",
+    "title": "Beyond Delicious: How Cheese Bacteria Boost Your Gut",
+    "description": "Discover how the bacteria in cheese, like Lactobacillus and Bifidobacterium, can significantly boost your gut health. Learn about the science behind this delicious discovery and how cheese bacteria can be a secret weapon for your microbiome. Find out more!",
+    "date": "2026-08-18",
+    "url": "cheese-bacteria-gut-health.html",
+    "hero": "assets/2026-08-18_cheese-bacteria-gut-health.webp",
+    "tag": "gut"
+  },
+  {
     "slug": "belly-fat-vitamin-deficiency",
     "title": "The Hidden Danger: How Belly Fat Amplifies Common Vitamin Deficiencies",
     "description": "Discover how belly fat can worsen common vitamin deficiencies, turning simple issues into major health risks. Learn what you can do to combat this hidden danger.",
@@ -1789,14 +1798,5 @@
     "url": "daily-habits-fight-stress.html",
     "hero": "assets/2026-02-27_daily-habits-fight-stress.jpg",
     "tag": "stress"
-  },
-  {
-    "slug": "when-to-eat-gut-health",
-    "title": "When Should You Eat for Optimal Gut Health?",
-    "description": "Discover how meal timing, fiber, and fermented foods can impact your gut health and learn practical tips for a happier digestive system.",
-    "date": "2026-02-26",
-    "url": "when-to-eat-gut-health.html",
-    "hero": "assets/2026-02-26_when-to-eat-gut-health.jpg",
-    "tag": "gut"
   }
 ]
