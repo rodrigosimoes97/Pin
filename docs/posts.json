@@ -1,5 +1,23 @@
 [
   {
+    "slug": "slim-down-vegan-low-fat-weight-loss",
+    "title": "Slim Down the Vegan Way: Lose Weight Without Counting Calories!",
+    "description": "Discover how to Slim Down the Vegan Way: Lose Weight Without Counting Calories! Learn practical tips for a fulfilling low-fat vegan diet that helps you shed pounds naturally. Your journey to a healthier you starts now.",
+    "date": "2026-08-19",
+    "url": "slim-down-vegan-low-fat-weight-loss.html",
+    "hero": "assets/2026-08-19_slim-down-vegan-low-fat-weight-loss.webp",
+    "tag": "weight"
+  },
+  {
+    "slug": "top-longevity-foods-brain-health",
+    "title": "Top Longevity Foods for Optimal Brain Health & Cognitive Function: My Secret Weapons",
+    "description": "Discover the top longevity foods for optimal brain health and cognitive function. As someone who's struggled with focus, I share my favorite brain-boosting recipes and tips.",
+    "date": "2026-08-19",
+    "url": "top-longevity-foods-brain-health.html",
+    "hero": "assets/2026-08-19_top-longevity-foods-brain-health.webp",
+    "tag": "longevity"
+  },
+  {
     "slug": "cheese-bacteria-gut-health",
     "title": "Beyond Delicious: How Cheese Bacteria Boost Your Gut",
     "description": "Discover how the bacteria in cheese, like Lactobacillus and Bifidobacterium, can significantly boost your gut health. Learn about the science behind this delicious discovery and how cheese bacteria can be a secret weapon for your microbiome. Find out more!",
@@ -1780,23 +1798,5 @@
     "url": "longevity-daily-routine-evidence-aligned-0302-1.html",
     "hero": "assets/2026-03-02_longevity-daily-routine-evidence-aligned-0302-1.jpg",
     "tag": "longevity"
-  },
-  {
-    "slug": "small-habits-improve-health-0227-2",
-    "title": "What Small Habits Improve Health Most?",
-    "description": "Discover powerful, small habit changes that lead to significant health improvements. Learn practical tips to make healthy habits stick in your daily life.",
-    "date": "2026-02-27",
-    "url": "small-habits-improve-health-0227-2.html",
-    "hero": "assets/2026-02-27_small-habits-improve-health-0227-2.jpg",
-    "tag": "healthy-habits"
-  },
-  {
-    "slug": "daily-habits-fight-stress",
-    "title": "What Daily Habits Help Fight Stress Effectively?",
-    "description": "Discover practical daily routines and habits to effectively manage and lower your stress load. Simple, actionable tips for a calmer life.",
-    "date": "2026-02-27",
-    "url": "daily-habits-fight-stress.html",
-    "hero": "assets/2026-02-27_daily-habits-fight-stress.jpg",
-    "tag": "stress"
   }
 ]
