@@ -1,8 +1,7 @@
 {
-  "runs": 154,
+  "runs": 155,
   "offer_runs": 21,
   "recent_topics": [
-    "intermittent-fasting-brain-changes",
     "vitamin-b12-folate-chronic-fatigue",
     "how-to-improve-sleep-quality-for-better-health",
     "french-fries-diabetes-surprising-discovery",
@@ -51,10 +50,10 @@
     "cheese-bacteria-gut-health",
     "longevity-foods-for-brain-health",
     "low-fat-vegan-diet-weight-loss-no-calorie-restriction",
-    "daily-mindfulness-for-stress-relief"
+    "daily-mindfulness-for-stress-relief",
+    "coffee-drinkers-body-composition-hormones"
   ],
   "recent_slugs": [
-    "unlock-your-health-surprising-benefits-daily-hydration",
     "vitamin-d-cancer-shield",
     "daily-hydration-benefits",
     "master-your-stress-mindfulness-techniques",
@@ -153,11 +152,11 @@
     "cheese-bacteria-gut-health",
     "top-longevity-foods-brain-health",
     "slim-down-vegan-low-fat-weight-loss",
-    "daily-mindfulness-stress-relief-techniques"
+    "daily-mindfulness-stress-relief-techniques",
+    "coffees-body-boosting-secrets"
   ],
-  "last_run": "2026-08-20",
+  "last_run": "2026-08-21",
   "recent_tags": [
-    "mental-wellness",
     "health",
     "sleep",
     "healthy-habits",
@@ -206,7 +205,8 @@
     "gut",
     "longevity",
     "weight",
-    "mental-wellness"
+    "mental-wellness",
+    "health"
   ],
   "tag_counts": {
     "sleep": 25,
@@ -219,13 +219,13 @@
     "anti-inflammatory": 9,
     "home-workouts": 7,
     "weight": 18,
-    "health": 42
+    "health": 43
   },
   "topic_rotation": {
     "sleep": 25,
     "gut": 25,
     "stress": 23,
-    "healthy-habits": 56,
+    "healthy-habits": 57,
     "longevity": 26,
     "recipes": 11,
     "anti-inflammatory": 11,
@@ -234,7 +234,6 @@
     "mental-wellness": 1
   },
   "recent_titles": [
-    "Ditch the Banana? Your Gut Will Thank You",
     "New Research: Is Beef Safe for Diabetes Concerns?",
     "Stay Hydrated: Simple Tips for More Energy",
     "What's Lurking in Your Groceries? Cancer Facts",
@@ -293,6 +292,7 @@
     "Cheese Bacteria: Your Gut's New Best Friend?",
     "Unlock Peak Brain Function with These Foods",
     "How to Lose Weight with a Low-Fat Vegan Diet",
-    "Stressed? Try These Simple Daily Mindfulness Hacks"
+    "Stressed? Try These Simple Daily Mindfulness Hacks",
+    "Coffee for a Leaner Body: Fat Loss and Muscle Gain Tips"
   ]
 }

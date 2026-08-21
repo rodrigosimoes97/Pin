@@ -1,5 +1,14 @@
 [
   {
+    "slug": "coffees-body-boosting-secrets",
+    "title": "Coffee's Body-Boosting Secrets: Less Fat, More Muscle, and Hormonal Harmony",
+    "description": "Discover Coffee's Body-Boosting Secrets: Less Fat, More Muscle, and Hormonal Harmony. Learn how your daily brew can support your fitness goals and overall well-being.",
+    "date": "2026-08-21",
+    "url": "coffees-body-boosting-secrets.html",
+    "hero": "assets/2026-08-21_coffees-body-boosting-secrets.webp",
+    "tag": "health"
+  },
+  {
     "slug": "daily-mindfulness-stress-relief-techniques",
     "title": "Daily Mindfulness for Stress Relief: Simple Techniques for a Calmer You",
     "description": "Feeling overwhelmed? Discover easy Daily Mindfulness for Stress Relief: Simple Techniques for a Calmer You. Learn science-backed hacks to reduce stress and boost well-being, even on your busiest days.",
@@ -1789,14 +1798,5 @@
     "url": "quick-weekday-dinners.html",
     "hero": "assets/2026-03-02_quick-weekday-dinners.jpg",
     "tag": "recipes"
-  },
-  {
-    "slug": "ideal-daily-rhythm-longevity",
-    "title": "What Is the Ideal Daily Rhythm for Longevity?",
-    "description": "Discover the evidence-aligned daily rhythm to boost your longevity. Learn practical tips for better sleep, nutrition, and stress management to live a longer, healthier life.",
-    "date": "2026-03-02",
-    "url": "ideal-daily-rhythm-longevity.html",
-    "hero": "assets/2026-03-02_ideal-daily-rhythm-longevity.jpg",
-    "tag": "longevity"
   }
 ]
