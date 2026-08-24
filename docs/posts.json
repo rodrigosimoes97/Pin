@@ -1,5 +1,32 @@
 [
   {
+    "slug": "quitting-alcohol-brain-relapse",
+    "title": "Quitting Alcohol? Your Brain Might Be Set Up for Relapse",
+    "description": "Thinking about quitting alcohol? Understand why your brain might fight back and set you up for relapse. Learn strategies to navigate early sobriety successfully. Educational only \u2014 not medical advice.",
+    "date": "2026-08-24",
+    "url": "quitting-alcohol-brain-relapse.html",
+    "hero": "assets/2026-08-24_quitting-alcohol-brain-relapse.webp",
+    "tag": "mental-wellness"
+  },
+  {
+    "slug": "new-compound-fat-loss-muscle-gain",
+    "title": "New Compound Melts Fat, Saves Muscle: A Game-Changer?",
+    "description": "Could a new compound melt fat while saving muscle? Discover the science behind this potential game-changer for weight loss and body composition. Learn what it means for your fitness goals.",
+    "date": "2026-08-24",
+    "url": "new-compound-fat-loss-muscle-gain.html",
+    "hero": "assets/2026-08-24_new-compound-fat-loss-muscle-gain.webp",
+    "tag": "weight"
+  },
+  {
+    "slug": "biohacking-sleep-deeper-rest",
+    "title": "Biohacking Your Sleep: Science-Backed Strategies for Deeper Rest",
+    "description": "Discover practical biohacking strategies for deeper rest. Learn about light therapy, temperature control, and supplements to improve your sleep quality. Includes Magnesium Glycinate offer.",
+    "date": "2026-08-24",
+    "url": "biohacking-sleep-deeper-rest.html",
+    "hero": "assets/2026-08-24_biohacking-sleep-deeper-rest.webp",
+    "tag": "sleep"
+  },
+  {
     "slug": "coffees-body-boosting-secrets",
     "title": "Coffee's Body-Boosting Secrets: Less Fat, More Muscle, and Hormonal Harmony",
     "description": "Discover Coffee's Body-Boosting Secrets: Less Fat, More Muscle, and Hormonal Harmony. Learn how your daily brew can support your fitness goals and overall well-being.",
@@ -1771,32 +1798,5 @@
     "url": "feeling-stressed-build-emotional-strength.html",
     "hero": "assets/2026-03-03_feeling-stressed-build-emotional-strength.jpg",
     "tag": "mental-wellness"
-  },
-  {
-    "slug": "build-muscle-no-equipment",
-    "title": "Can You Build Muscle With No Equipment? Yes, Here's How!",
-    "description": "Discover how to build muscle at home without any gym equipment. Learn effective bodyweight exercises and workout plans for a stronger you.",
-    "date": "2026-03-02",
-    "url": "build-muscle-no-equipment.html",
-    "hero": "assets/2026-03-02_build-muscle-no-equipment.jpg",
-    "tag": "home-workouts"
-  },
-  {
-    "slug": "foods-lower-inflammation-naturally",
-    "title": "What Foods Lower Inflammation Naturally?",
-    "description": "Discover everyday foods that can help reduce inflammation in your body. Learn how simple dietary changes can support your health.",
-    "date": "2026-03-02",
-    "url": "foods-lower-inflammation-naturally.html",
-    "hero": "assets/2026-03-02_foods-lower-inflammation-naturally.jpg",
-    "tag": "anti-inflammatory"
-  },
-  {
-    "slug": "quick-weekday-dinners",
-    "title": "Need Dinner Fast? Try These Quick Recipes",
-    "description": "Busy weeknights? Discover delicious and fast dinner recipes that take 30 minutes or less, perfect for busy individuals and families.",
-    "date": "2026-03-02",
-    "url": "quick-weekday-dinners.html",
-    "hero": "assets/2026-03-02_quick-weekday-dinners.jpg",
-    "tag": "recipes"
   }
 ]
