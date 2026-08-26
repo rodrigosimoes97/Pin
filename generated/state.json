@@ -1,8 +1,7 @@
 {
-  "runs": 157,
+  "runs": 158,
   "offer_runs": 21,
   "recent_topics": [
-    "glp-1-drugs-lower-addiction-overdose-risks",
     "older-adults-salt-habit-study",
     "daily-hydration-benefits",
     "longevity-biohacking-supplements",
@@ -51,10 +50,10 @@
     "coffee-drinkers-body-composition-hormones",
     "biohacking-for-better-sleep",
     "experimental-compound-burns-fat-no-muscle-loss",
-    "quitting-alcohol-brain-relapse-risk"
+    "quitting-alcohol-brain-relapse-risk",
+    "genes-low-carb-cholesterol"
   ],
   "recent_slugs": [
-    "biohacking-sleep-advanced-strategies",
     "daily-hydration-benefits-americans",
     "rethinking-fish-oil-supplements",
     "pediatric-care-shortages-hospitals-cant-cope",
@@ -153,11 +152,11 @@
     "coffees-body-boosting-secrets",
     "biohacking-sleep-deeper-rest",
     "new-compound-fat-loss-muscle-gain",
-    "quitting-alcohol-brain-relapse"
+    "quitting-alcohol-brain-relapse",
+    "low-carb-diet-genes-cholesterol-us"
   ],
-  "last_run": "2026-08-25",
+  "last_run": "2026-08-26",
   "recent_tags": [
-    "health",
     "healthy-habits",
     "health",
     "longevity",
@@ -206,7 +205,8 @@
     "health",
     "sleep",
     "weight",
-    "mental-wellness"
+    "mental-wellness",
+    "health"
   ],
   "tag_counts": {
     "sleep": 26,
@@ -219,13 +219,13 @@
     "anti-inflammatory": 9,
     "home-workouts": 7,
     "weight": 19,
-    "health": 43
+    "health": 44
   },
   "topic_rotation": {
     "sleep": 26,
     "gut": 25,
     "stress": 23,
-    "healthy-habits": 59,
+    "healthy-habits": 60,
     "longevity": 26,
     "recipes": 11,
     "anti-inflammatory": 11,
@@ -234,7 +234,6 @@
     "mental-wellness": 1
   },
   "recent_titles": [
-    "Easy Biohacks to Boost Energy and Focus Today",
     "Struggling with Fatigue? Improve Sleep for More Focus",
     "Feeling Tired? Guava Juice May Help Iron",
     "Boost Your Gut Health: Science-Backed Nutrition Tips",
@@ -293,6 +292,7 @@
     "Coffee for a Leaner Body: Fat Loss and Muscle Gain Tips",
     "Optimize Sleep Quality: Practical Biohacking Tips",
     "Fat Loss Without Muscle Loss? New Compound Shows Promise",
-    "Quitting Alcohol? Your Brain's Fight Against Relapse"
+    "Quitting Alcohol? Your Brain's Fight Against Relapse",
+    "Genes vs. Low-Carb: What About Your Cholesterol?"
   ]
 }
