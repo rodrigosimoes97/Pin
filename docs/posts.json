@@ -1,5 +1,32 @@
 [
   {
+    "slug": "calorie-restriction-diet-free-path",
+    "title": "Unlock Youth: The Calorie Restriction Secret Revealed! A Diet-Free Path",
+    "description": "Unlock Youth: The Calorie Restriction Secret Revealed! Discover a potential diet-free way to get calorie restriction benefits. I've explored this breakthrough, and it could change how we think about aging and health.",
+    "date": "2026-08-27",
+    "url": "calorie-restriction-diet-free-path.html",
+    "hero": "assets/2026-08-27_calorie-restriction-diet-free-path.webp",
+    "tag": "longevity"
+  },
+  {
+    "slug": "vitamin-c-colds-science-says",
+    "title": "Vitamin C & Colds: What the Science Really Says",
+    "description": "Curious if Vitamin C actually helps with colds? We break down what the science really says about Vitamin C & colds, and what small benefits you might see. Get the facts!",
+    "date": "2026-08-27",
+    "url": "vitamin-c-colds-science-says.html",
+    "hero": "assets/2026-08-27_vitamin-c-colds-science-says.webp",
+    "tag": "health"
+  },
+  {
+    "slug": "mindful-eating-gut-health",
+    "title": "Mindful Eating Techniques for Optimal Gut Health and Digestion",
+    "description": "Discover effective Mindful Eating Techniques for Optimal Gut Health and Digestion. Learn to slow down, savor food, and listen to your body for better digestion and a happier gut.",
+    "date": "2026-08-27",
+    "url": "mindful-eating-gut-health.html",
+    "hero": "assets/2026-08-27_mindful-eating-gut-health.webp",
+    "tag": "health"
+  },
+  {
     "slug": "low-carb-diet-genes-cholesterol-us",
     "title": "Low-Carb Diet & Your Genes: What You Need to Know About Cholesterol",
     "description": "Considering a low-carb diet in the US? Understand how your genes impact cholesterol levels and what you need to know before you start. Get personalized insights.",
@@ -1771,32 +1798,5 @@
     "url": "meal-timing-gut-health-fiber.html",
     "hero": "assets/2026-03-05_meal-timing-gut-health-fiber.jpg",
     "tag": "gut"
-  },
-  {
-    "slug": "best-way-to-prepare-for-sleep-0304-2",
-    "title": "What's the Best Way to Prepare for Sleep?",
-    "description": "Discover simple and effective bedtime routines and wind-down habits to improve your sleep quality. Learn practical tips for a more restful night.",
-    "date": "2026-03-04",
-    "url": "best-way-to-prepare-for-sleep-0304-2.html",
-    "hero": "assets/2026-03-04_best-way-to-prepare-for-sleep-0304-2.jpg",
-    "tag": "sleep"
-  },
-  {
-    "slug": "calorie-aware-choices-weight-loss",
-    "title": "Mastering Calorie Awareness for Lasting Weight Management",
-    "description": "Discover practical strategies for making calorie-aware food choices that support sustainable weight loss and long-term health. Learn to balance your favorite foods with mindful eating.",
-    "date": "2026-03-04",
-    "url": "calorie-aware-choices-weight-loss.html",
-    "hero": "assets/2026-03-04_calorie-aware-choices-weight-loss.jpg",
-    "tag": "weight"
-  },
-  {
-    "slug": "calorie-aware-diet-tips",
-    "title": "Is Your Diet Calorie-Aware? Tips for Sustainable Weight Loss",
-    "description": "Learn how to make calorie-aware choices for sustainable weight loss. Get practical tips, a checklist, and common mistakes to avoid for a healthier lifestyle.",
-    "date": "2026-03-03",
-    "url": "calorie-aware-diet-tips.html",
-    "hero": "assets/2026-03-03_calorie-aware-diet-tips.jpg",
-    "tag": "healthy-habits"
   }
 ]
