@@ -1,5 +1,14 @@
 [
   {
+    "slug": "boost-your-gut-microbiome-health-digestion",
+    "title": "Boost Your Gut Microbiome: The Key to Better Health & Digestion",
+    "description": "Discover how boosting your gut microbiome is the key to better health & digestion. Learn practical tips to increase gut bacteria diversity for improved immunity, mood, and well-being.",
+    "date": "2026-08-28",
+    "url": "boost-your-gut-microbiome-health-digestion.html",
+    "hero": "assets/2026-08-28_boost-your-gut-microbiome-health-digestion.webp",
+    "tag": "gut"
+  },
+  {
     "slug": "calorie-restriction-diet-free-path",
     "title": "Unlock Youth: The Calorie Restriction Secret Revealed! A Diet-Free Path",
     "description": "Unlock Youth: The Calorie Restriction Secret Revealed! Discover a potential diet-free way to get calorie restriction benefits. I've explored this breakthrough, and it could change how we think about aging and health.",
@@ -1789,14 +1798,5 @@
     "url": "daily-routines-ease-stress.html",
     "hero": "assets/2026-03-05_daily-routines-ease-stress.jpg",
     "tag": "mental-wellness"
-  },
-  {
-    "slug": "meal-timing-gut-health-fiber",
-    "title": "Can Meal Timing Improve Gut Health? The Fiber and Fermented Foods Connection",
-    "description": "Discover how aligning your meals with your body's natural rhythms, combined with fiber and fermented foods, can significantly boost your gut health.",
-    "date": "2026-03-05",
-    "url": "meal-timing-gut-health-fiber.html",
-    "hero": "assets/2026-03-05_meal-timing-gut-health-fiber.jpg",
-    "tag": "gut"
   }
 ]
