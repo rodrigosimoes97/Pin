@@ -1,8 +1,7 @@
 {
-  "runs": 162,
+  "runs": 163,
   "offer_runs": 21,
   "recent_topics": [
-    "tea-health-longevity-drinking-habits",
     "ultra-processed-foods-focus-brain-health",
     "optimizing-sleep-for-energy-and-focus",
     "brain-supplement-shorter-lifespan-men",
@@ -51,10 +50,10 @@
     "calorie-restriction-shortcut-anti-aging",
     "gut-health-microbiome-diversity",
     "long-term-melatonin-heart-failure-risk",
-    "sustainable-spirulina-vitamin-b12-solution"
+    "sustainable-spirulina-vitamin-b12-solution",
+    "obesity-immune-cell-memory"
   ],
   "recent_slugs": [
-    "coffees-real-impact-gut-brain",
     "stress-late-night-eating-gut-health",
     "mindful-eating-gut-health-digestion",
     "blue-light-blocking-glasses-sleep-eye-strain",
@@ -153,11 +152,11 @@
     "calorie-restriction-diet-free-path",
     "boost-your-gut-microbiome-health-digestion",
     "melatonin-heart-health-study",
-    "spirulina-plant-based-b12-solution"
+    "spirulina-plant-based-b12-solution",
+    "obesity-immune-memory-impact"
   ],
-  "last_run": "2026-09-01",
+  "last_run": "2026-09-02",
   "recent_tags": [
-    "healthy-habits",
     "mental-wellness",
     "sleep",
     "longevity",
@@ -206,6 +205,7 @@
     "longevity",
     "gut",
     "sleep",
+    "health",
     "health"
   ],
   "tag_counts": {
@@ -219,13 +219,13 @@
     "anti-inflammatory": 9,
     "home-workouts": 7,
     "weight": 19,
-    "health": 47
+    "health": 48
   },
   "topic_rotation": {
     "sleep": 27,
     "gut": 27,
     "stress": 23,
-    "healthy-habits": 62,
+    "healthy-habits": 63,
     "longevity": 27,
     "recipes": 11,
     "anti-inflammatory": 11,
@@ -234,7 +234,6 @@
     "mental-wellness": 1
   },
   "recent_titles": [
-    "Feeling Drained? Why B12 & Folate Matter",
     "Wake Up Refreshed: Simple Sleep Quality Tips",
     "Your Favorite Fries: A Diabetes Risk You Ignored?",
     "GLP-1 Drugs: New Hope for Addiction Recovery?",
@@ -293,6 +292,7 @@
     "Calorie Restriction Benefits? A Diet-Free Path",
     "How to Diversify Gut Bacteria for Peak Well-being",
     "Can Melatonin Hurt Your Heart? Study Reveals Risk",
-    "Spirulina: Your Plant-Based B12 Solution?"
+    "Spirulina: Your Plant-Based B12 Solution?",
+    "Immune Memory Loss? How Obesity Changes Your Defenses"
   ]
 }

@@ -1,5 +1,14 @@
 [
   {
+    "slug": "obesity-immune-memory-impact",
+    "title": "Obesity's Lingering Impact: How Fat Changes Your Immune System's Memory",
+    "description": "Discover how obesity's lingering impact affects your immune system's memory. Learn how fat can alter immune cells for years, even after weight loss. Explore strategies for better health.",
+    "date": "2026-09-02",
+    "url": "obesity-immune-memory-impact.html",
+    "hero": "assets/2026-09-02_obesity-immune-memory-impact.webp",
+    "tag": "health"
+  },
+  {
     "slug": "spirulina-plant-based-b12-solution",
     "title": "Spirulina: The Sustainable Superfood Tackling Vitamin B12 Deficiency",
     "description": "Discover how Spirulina, the sustainable superfood, is tackling Vitamin B12 deficiency for plant-based eaters. Learn about its benefits and how it can fit into your healthy lifestyle.",
@@ -1789,14 +1798,5 @@
     "url": "daily-routine-longevity-expert-insights.html",
     "hero": "assets/2026-03-09_daily-routine-longevity-expert-insights.jpg",
     "tag": "longevity"
-  },
-  {
-    "slug": "daily-routines-lower-stress",
-    "title": "Can Daily Routines Really Lower Stress Levels?",
-    "description": "Discover practical daily routines and simple habits to effectively lower your stress load and improve your overall well-being. Learn how small changes can make a big difference.",
-    "date": "2026-03-06",
-    "url": "daily-routines-lower-stress.html",
-    "hero": "assets/2026-03-06_daily-routines-lower-stress.jpg",
-    "tag": "stress"
   }
 ]
