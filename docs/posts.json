@@ -1,5 +1,14 @@
 [
   {
+    "slug": "coffees-bone-busting-secret-study-link",
+    "title": "Coffee's Bone-Busting Secret? New Study Reveals Link",
+    "description": "Worried about your morning coffee? A new study reveals Coffee's Bone-Busting Secret? Learn about the link between caffeine and bone density and discover practical tips to keep your bones strong.",
+    "date": "2026-09-03",
+    "url": "coffees-bone-busting-secret-study-link.html",
+    "hero": "assets/2026-09-03_coffees-bone-busting-secret-study-link.webp",
+    "tag": "health"
+  },
+  {
     "slug": "obesity-immune-memory-impact",
     "title": "Obesity's Lingering Impact: How Fat Changes Your Immune System's Memory",
     "description": "Discover how obesity's lingering impact affects your immune system's memory. Learn how fat can alter immune cells for years, even after weight loss. Explore strategies for better health.",
@@ -1789,14 +1798,5 @@
     "url": "quick-weekday-meals-no-time.html",
     "hero": "assets/2026-03-09_quick-weekday-meals-no-time.jpg",
     "tag": "recipes"
-  },
-  {
-    "slug": "daily-routine-longevity-expert-insights",
-    "title": "What Daily Routine Extends Life? Expert Insights",
-    "description": "Discover evidence-aligned daily routines that promote longevity. Learn practical tips from experts to build healthier habits for a longer, vibrant life.",
-    "date": "2026-03-09",
-    "url": "daily-routine-longevity-expert-insights.html",
-    "hero": "assets/2026-03-09_daily-routine-longevity-expert-insights.jpg",
-    "tag": "longevity"
   }
 ]

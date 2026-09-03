@@ -1,8 +1,7 @@
 {
-  "runs": 163,
+  "runs": 164,
   "offer_runs": 21,
   "recent_topics": [
-    "ultra-processed-foods-focus-brain-health",
     "optimizing-sleep-for-energy-and-focus",
     "brain-supplement-shorter-lifespan-men",
     "optimizing-morning-routines-for-energy-and-focus",
@@ -51,10 +50,10 @@
     "gut-health-microbiome-diversity",
     "long-term-melatonin-heart-failure-risk",
     "sustainable-spirulina-vitamin-b12-solution",
-    "obesity-immune-cell-memory"
+    "obesity-immune-cell-memory",
+    "coffee-bone-health-study"
   ],
   "recent_slugs": [
-    "stress-late-night-eating-gut-health",
     "mindful-eating-gut-health-digestion",
     "blue-light-blocking-glasses-sleep-eye-strain",
     "biohacking-sleep-peak-performance",
@@ -153,11 +152,11 @@
     "boost-your-gut-microbiome-health-digestion",
     "melatonin-heart-health-study",
     "spirulina-plant-based-b12-solution",
-    "obesity-immune-memory-impact"
+    "obesity-immune-memory-impact",
+    "coffees-bone-busting-secret-study-link"
   ],
-  "last_run": "2026-09-02",
+  "last_run": "2026-09-03",
   "recent_tags": [
-    "mental-wellness",
     "sleep",
     "longevity",
     "healthy-habits",
@@ -206,6 +205,7 @@
     "gut",
     "sleep",
     "health",
+    "health",
     "health"
   ],
   "tag_counts": {
@@ -219,13 +219,13 @@
     "anti-inflammatory": 9,
     "home-workouts": 7,
     "weight": 19,
-    "health": 48
+    "health": 49
   },
   "topic_rotation": {
     "sleep": 27,
     "gut": 27,
     "stress": 23,
-    "healthy-habits": 63,
+    "healthy-habits": 64,
     "longevity": 27,
     "recipes": 11,
     "anti-inflammatory": 11,
@@ -234,7 +234,6 @@
     "mental-wellness": 1
   },
   "recent_titles": [
-    "Wake Up Refreshed: Simple Sleep Quality Tips",
     "Your Favorite Fries: A Diabetes Risk You Ignored?",
     "GLP-1 Drugs: New Hope for Addiction Recovery?",
     "Older Adults' Salt Intake: What a New Study Discovered",
@@ -293,6 +292,7 @@
     "How to Diversify Gut Bacteria for Peak Well-being",
     "Can Melatonin Hurt Your Heart? Study Reveals Risk",
     "Spirulina: Your Plant-Based B12 Solution?",
-    "Immune Memory Loss? How Obesity Changes Your Defenses"
+    "Immune Memory Loss? How Obesity Changes Your Defenses",
+    "Morning Brew's Bone-Busting Secret? Study Says Yes"
   ]
 }
