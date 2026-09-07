@@ -1,9 +1,7 @@
 {
-  "runs": 165,
+  "runs": 166,
   "offer_runs": 21,
   "recent_topics": [
-    "optimizing-sleep-for-energy-and-focus",
-    "brain-supplement-shorter-lifespan-men",
     "optimizing-morning-routines-for-energy-and-focus",
     "gut-health-for-beginners-microbiome-diet",
     "calcium-vitamin-d-bone-health-review",
@@ -51,11 +49,11 @@
     "long-term-melatonin-heart-failure-risk",
     "sustainable-spirulina-vitamin-b12-solution",
     "obesity-immune-cell-memory",
-    "coffee-bone-health-study"
+    "coffee-bone-health-study",
+    "biohacking-for-better-sleep",
+    "sugar-substitute-hidden-problem"
   ],
   "recent_slugs": [
-    "mindful-eating-gut-health-digestion",
-    "blue-light-blocking-glasses-sleep-eye-strain",
     "biohacking-sleep-peak-performance",
     "creatine-brain-energy-secrets",
     "daily-mindfulness-stress-relief",
@@ -153,12 +151,12 @@
     "melatonin-heart-health-study",
     "spirulina-plant-based-b12-solution",
     "obesity-immune-memory-impact",
-    "coffees-bone-busting-secret-study-link"
+    "coffees-bone-busting-secret-study-link",
+    "biohacking-sleep-deeper-rest-optimal-health",
+    "popular-sugar-substitutes-secret-health-hazard"
   ],
-  "last_run": "2026-09-04",
+  "last_run": "2026-09-07",
   "recent_tags": [
-    "sleep",
-    "longevity",
     "healthy-habits",
     "gut",
     "health",
@@ -206,11 +204,13 @@
     "sleep",
     "health",
     "health",
-    "health"
+    "health",
+    "sleep",
+    "gut"
   ],
   "tag_counts": {
-    "sleep": 27,
-    "gut": 20,
+    "sleep": 28,
+    "gut": 21,
     "mental-wellness": 23,
     "stress": 10,
     "healthy-habits": 40,
@@ -222,8 +222,8 @@
     "health": 49
   },
   "topic_rotation": {
-    "sleep": 27,
-    "gut": 27,
+    "sleep": 28,
+    "gut": 28,
     "stress": 23,
     "healthy-habits": 64,
     "longevity": 27,
@@ -234,8 +234,6 @@
     "mental-wellness": 1
   },
   "recent_titles": [
-    "Your Favorite Fries: A Diabetes Risk You Ignored?",
-    "GLP-1 Drugs: New Hope for Addiction Recovery?",
     "Older Adults' Salt Intake: What a New Study Discovered",
     "How Much Water for Better Health?",
     "NMN & Resveratrol: Science-Backed Longevity Boosts",
@@ -293,6 +291,8 @@
     "Can Melatonin Hurt Your Heart? Study Reveals Risk",
     "Spirulina: Your Plant-Based B12 Solution?",
     "Immune Memory Loss? How Obesity Changes Your Defenses",
-    "Morning Brew's Bone-Busting Secret? Study Says Yes"
+    "Morning Brew's Bone-Busting Secret? Study Says Yes",
+    "The Biohacker's Guide to Superior Sleep Quality",
+    "Sweetener Swap? New Gut Health Concerns Emerge"
   ]
 }
