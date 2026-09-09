@@ -279,6 +279,18 @@ def main() -> None:
 
             _log_to_file(settings.repo_root, "published_posts.log", f"Published: {record['url']} ({mode})")
 
+            # Gera CSV/JSON para Bulk Upload do Pinterest
+            post_link = f"https://health-ptg.pages.dev/{record['url']}"
+            write_draft_pack(
+                out_dir=settings.repo_root / "generated" / "pinterest",
+                run_date=today,
+                pin_title=post["pin_title"],
+                pin_description=post["pin_description"],
+                link=post_link,
+                image_path=pin_rel,
+                alt_text=post.get("alt_text", post["pin_title"]),
+            )
+
             daily_slugs.add(post["slug"])
             daily_topics.add(topic.slug)
             published_count += 1

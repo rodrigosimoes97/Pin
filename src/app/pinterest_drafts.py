@@ -22,7 +22,7 @@ def write_draft_pack(
     # Formato oficial do Pinterest para Bulk Upload (CSV)
     # Media URL precisa ser pública para o Pinterest baixar a imagem
     normalized_path = Path(image_path).as_posix()
-    media_url = f"{PUBLIC_BASE_URL}/{normalized_path.lstrip('/')}"
+    media_url = f"{PUBLIC_BASE_URL.rstrip('/')}/{normalized_path.lstrip('/')}"
     
     item = {
         "Board": "Health Tips & Daily Habits", # Você pode mudar o nome da pasta (Board) aqui
