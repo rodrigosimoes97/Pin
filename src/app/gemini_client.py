@@ -18,14 +18,14 @@ class GeminiClient:
     model: str
     timeout_seconds: int = 45
 
-    def generate_json(self, prompt: str, max_output_tokens: int = 1800) -> dict[str, Any]:
+    def generate_json(self, prompt: str, max_output_tokens: int = 3000) -> dict[str, Any]:
         text = self.generate_text(prompt, max_output_tokens=max_output_tokens)
         return parse_json_from_text(text)
 
-    def generate_text(self, prompt: str, max_output_tokens: int = 1800) -> str:
+    def generate_text(self, prompt: str, max_output_tokens: int = 3000) -> str:
         # Mandatory delay to avoid 429 Rate Limit (15 RPM = 4s/request)
         # Using 5s to be safe across multiple processes or slight overhead
-        time.sleep(5.0)
+        # time.sleep(5.0)
 
         payload = {
             "contents": [{"parts": [{"text": prompt}]}],
@@ -67,7 +67,7 @@ class GeminiClient:
                 if response.status_code == 429:
                     msg = f"key#{key_idx} transient_status=429"
                     errors.append(msg)
-                    wait_time = 10 * (attempt + 1)
+                    wait_time = 20 * (attempt + 1)
                     LOG.warning("Gemini rate limit hit (429); waiting %ds before trying next key: %s", wait_time, msg)
                     time.sleep(wait_time) 
                     continue
