@@ -74348,3 +74348,432 @@ Traceback (most recent call last):
     raise RuntimeError(f"Gemini failed after exhaustive retries: {'; '.join(errors)}")
 RuntimeError: Gemini failed after exhaustive retries: key#1 transient_status=429; key#2 transient_status=429; key#3 transient_status=429; key#4 transient_status=503; key#1 transient_status=429; key#2 transient_status=429; key#3 transient_status=429; key#4 transient_status=429; key#1 transient_status=429; key#2 transient_status=429; key#3 transient_status=429; key#4 transient_status=429; key#1 transient_status=429; key#2 transient_status=429; key#3 transient_status=429; key#4 transient_status=429
 2026-09-09 19:29:23,872 INFO __main__ - Run complete. Published 0/5 posts.
+2026-09-10 18:58:17,154 INFO __main__ - Buscando trending topics para USA...
+2026-09-10 18:58:17,276 WARNING src.app.trend_research - Failed to fetch Google Trends (404/Error): The request failed: Google returned a response with code 404. Moving to fallbacks.
+2026-09-10 18:58:20,478 INFO src.app.trend_research - Gathered 13 unique trending topics.
+2026-09-10 18:58:20,481 INFO __main__ - ═══ Slot 1/5 ═══
+2026-09-10 18:58:20,481 INFO __main__ - [Slot 1] Usando trending topic local: Experimental therapy gantenerumab fails to slow or improve Alzheimers memory loss in clinical trials
+2026-09-10 18:58:20,481 INFO __main__ - [Slot 1] title_hint=A Realistic Experimental Therapy Gantenerumab Fails To Slow Or Improve...
+2026-09-10 18:58:20,481 INFO src.app.gemini_client - [Gemini] modelo=gemini-2.5-flash key#1 rodada=1 enviando...
+2026-09-10 18:58:20,634 ERROR src.app.gemini_client - [Gemini] key#1 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.6-flash for the latest features a
+2026-09-10 18:58:20,635 INFO src.app.gemini_client - [Gemini] modelo=gemini-2.5-flash key#2 rodada=1 enviando...
+2026-09-10 18:58:20,749 ERROR src.app.gemini_client - [Gemini] key#2 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.6-flash for the latest features a
+2026-09-10 18:58:20,749 INFO src.app.gemini_client - [Gemini] modelo=gemini-2.5-flash key#3 rodada=1 enviando...
+2026-09-10 18:58:20,878 ERROR src.app.gemini_client - [Gemini] key#3 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.6-flash for the latest features a
+2026-09-10 18:58:20,878 INFO src.app.gemini_client - [Gemini] modelo=gemini-2.5-flash key#4 rodada=1 enviando...
+2026-09-10 18:58:20,996 ERROR src.app.gemini_client - [Gemini] key#4 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.6-flash for the latest features a
+2026-09-10 18:58:20,997 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-2.5-flash na rodada 1. Aguardando 5s antes de tentar no modelo gemini-1.5-flash.
+2026-09-10 18:58:25,997 INFO src.app.gemini_client - [Gemini] modelo=gemini-1.5-flash key#1 rodada=2 enviando...
+2026-09-10 18:58:26,097 ERROR src.app.gemini_client - [Gemini] key#1 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of av
+2026-09-10 18:58:26,097 INFO src.app.gemini_client - [Gemini] modelo=gemini-1.5-flash key#2 rodada=2 enviando...
+2026-09-10 18:58:26,208 ERROR src.app.gemini_client - [Gemini] key#2 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of av
+2026-09-10 18:58:26,208 INFO src.app.gemini_client - [Gemini] modelo=gemini-1.5-flash key#3 rodada=2 enviando...
+2026-09-10 18:58:26,359 ERROR src.app.gemini_client - [Gemini] key#3 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of av
+2026-09-10 18:58:26,359 INFO src.app.gemini_client - [Gemini] modelo=gemini-1.5-flash key#4 rodada=2 enviando...
+2026-09-10 18:58:26,473 ERROR src.app.gemini_client - [Gemini] key#4 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of av
+2026-09-10 18:58:26,473 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-1.5-flash na rodada 2. Aguardando 10s antes de tentar no modelo gemini-2.0-flash.
+2026-09-10 18:58:36,473 INFO src.app.gemini_client - [Gemini] modelo=gemini-2.0-flash key#1 rodada=3 enviando...
+2026-09-10 18:58:36,586 ERROR src.app.gemini_client - [Gemini] key#1 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen
+2026-09-10 18:58:36,587 INFO src.app.gemini_client - [Gemini] modelo=gemini-2.0-flash key#2 rodada=3 enviando...
+2026-09-10 18:58:36,690 ERROR src.app.gemini_client - [Gemini] key#2 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen
+2026-09-10 18:58:36,690 INFO src.app.gemini_client - [Gemini] modelo=gemini-2.0-flash key#3 rodada=3 enviando...
+2026-09-10 18:58:36,813 ERROR src.app.gemini_client - [Gemini] key#3 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen
+2026-09-10 18:58:36,814 INFO src.app.gemini_client - [Gemini] modelo=gemini-2.0-flash key#4 rodada=3 enviando...
+2026-09-10 18:58:36,907 ERROR src.app.gemini_client - [Gemini] key#4 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen
+2026-09-10 18:58:36,908 ERROR __main__ - [Slot 1] Gemini indisponível: Gemini falhou após 3 rodadas com 4 key(s). Últimos erros: key#3 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of av; key#4 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of av; key#1 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen; key#2 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen; key#3 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen; key#4 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen
+2026-09-10 18:58:36,908 ERROR __main__ - [Slot 1] Slot descartado.
+2026-09-10 18:58:36,909 INFO __main__ - ═══ Slot 2/5 ═══
+2026-09-10 18:58:36,909 INFO __main__ - [Slot 2] Usando trending topic local: Desperate for heart surgery for their baby, a family feels the effects of pediatric hospital shortages
+2026-09-10 18:58:36,909 INFO __main__ - [Slot 2] title_hint=Feel More Energized with This Sustainable Desperate For Heart Surgery For...
+2026-09-10 18:58:36,909 INFO src.app.gemini_client - [Gemini] modelo=gemini-2.5-flash key#1 rodada=1 enviando...
+2026-09-10 18:58:37,017 ERROR src.app.gemini_client - [Gemini] key#1 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.6-flash for the latest features a
+2026-09-10 18:58:37,017 INFO src.app.gemini_client - [Gemini] modelo=gemini-2.5-flash key#2 rodada=1 enviando...
+2026-09-10 18:58:37,121 ERROR src.app.gemini_client - [Gemini] key#2 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.6-flash for the latest features a
+2026-09-10 18:58:37,122 INFO src.app.gemini_client - [Gemini] modelo=gemini-2.5-flash key#3 rodada=1 enviando...
+2026-09-10 18:58:37,223 ERROR src.app.gemini_client - [Gemini] key#3 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.6-flash for the latest features a
+2026-09-10 18:58:37,223 INFO src.app.gemini_client - [Gemini] modelo=gemini-2.5-flash key#4 rodada=1 enviando...
+2026-09-10 18:58:37,328 ERROR src.app.gemini_client - [Gemini] key#4 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.6-flash for the latest features a
+2026-09-10 18:58:37,328 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-2.5-flash na rodada 1. Aguardando 5s antes de tentar no modelo gemini-1.5-flash.
+2026-09-10 18:58:42,328 INFO src.app.gemini_client - [Gemini] modelo=gemini-1.5-flash key#1 rodada=2 enviando...
+2026-09-10 18:58:42,457 ERROR src.app.gemini_client - [Gemini] key#1 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of av
+2026-09-10 18:58:42,457 INFO src.app.gemini_client - [Gemini] modelo=gemini-1.5-flash key#2 rodada=2 enviando...
+2026-09-10 18:58:42,568 ERROR src.app.gemini_client - [Gemini] key#2 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of av
+2026-09-10 18:58:42,568 INFO src.app.gemini_client - [Gemini] modelo=gemini-1.5-flash key#3 rodada=2 enviando...
+2026-09-10 18:58:42,678 ERROR src.app.gemini_client - [Gemini] key#3 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of av
+2026-09-10 18:58:42,678 INFO src.app.gemini_client - [Gemini] modelo=gemini-1.5-flash key#4 rodada=2 enviando...
+2026-09-10 18:58:42,776 ERROR src.app.gemini_client - [Gemini] key#4 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of av
+2026-09-10 18:58:42,776 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-1.5-flash na rodada 2. Aguardando 10s antes de tentar no modelo gemini-2.0-flash.
+2026-09-10 18:58:52,777 INFO src.app.gemini_client - [Gemini] modelo=gemini-2.0-flash key#1 rodada=3 enviando...
+2026-09-10 18:58:52,885 ERROR src.app.gemini_client - [Gemini] key#1 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen
+2026-09-10 18:58:52,885 INFO src.app.gemini_client - [Gemini] modelo=gemini-2.0-flash key#2 rodada=3 enviando...
+2026-09-10 18:58:52,986 ERROR src.app.gemini_client - [Gemini] key#2 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen
+2026-09-10 18:58:52,986 INFO src.app.gemini_client - [Gemini] modelo=gemini-2.0-flash key#3 rodada=3 enviando...
+2026-09-10 18:58:53,089 ERROR src.app.gemini_client - [Gemini] key#3 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen
+2026-09-10 18:58:53,090 INFO src.app.gemini_client - [Gemini] modelo=gemini-2.0-flash key#4 rodada=3 enviando...
+2026-09-10 18:58:53,194 ERROR src.app.gemini_client - [Gemini] key#4 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen
+2026-09-10 18:58:53,195 ERROR __main__ - [Slot 2] Gemini indisponível: Gemini falhou após 3 rodadas com 4 key(s). Últimos erros: key#3 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of av; key#4 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of av; key#1 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen; key#2 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen; key#3 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen; key#4 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen
+2026-09-10 18:58:53,195 ERROR __main__ - [Slot 2] Slot descartado.
+2026-09-10 18:58:53,196 INFO __main__ - ═══ Slot 3/5 ═══
+2026-09-10 18:58:53,196 INFO __main__ - [Slot 3] Usando trending topic local: Popular brain supplement linked to shorter lifespan in men
+2026-09-10 18:58:53,196 INFO __main__ - [Slot 3] title_hint=Feel More Energized with This Simple Popular Brain Supplement Linked To...
+2026-09-10 18:58:53,196 INFO src.app.gemini_client - [Gemini] modelo=gemini-2.5-flash key#1 rodada=1 enviando...
+2026-09-10 18:58:53,300 ERROR src.app.gemini_client - [Gemini] key#1 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.6-flash for the latest features a
+2026-09-10 18:58:53,300 INFO src.app.gemini_client - [Gemini] modelo=gemini-2.5-flash key#2 rodada=1 enviando...
+2026-09-10 18:58:53,404 ERROR src.app.gemini_client - [Gemini] key#2 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.6-flash for the latest features a
+2026-09-10 18:58:53,404 INFO src.app.gemini_client - [Gemini] modelo=gemini-2.5-flash key#3 rodada=1 enviando...
+2026-09-10 18:58:53,515 ERROR src.app.gemini_client - [Gemini] key#3 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.6-flash for the latest features a
+2026-09-10 18:58:53,515 INFO src.app.gemini_client - [Gemini] modelo=gemini-2.5-flash key#4 rodada=1 enviando...
+2026-09-10 18:58:53,617 ERROR src.app.gemini_client - [Gemini] key#4 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.6-flash for the latest features a
+2026-09-10 18:58:53,617 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-2.5-flash na rodada 1. Aguardando 5s antes de tentar no modelo gemini-1.5-flash.
+2026-09-10 18:58:58,617 INFO src.app.gemini_client - [Gemini] modelo=gemini-1.5-flash key#1 rodada=2 enviando...
+2026-09-10 18:58:58,714 ERROR src.app.gemini_client - [Gemini] key#1 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of av
+2026-09-10 18:58:58,715 INFO src.app.gemini_client - [Gemini] modelo=gemini-1.5-flash key#2 rodada=2 enviando...
+2026-09-10 18:58:58,806 ERROR src.app.gemini_client - [Gemini] key#2 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of av
+2026-09-10 18:58:58,806 INFO src.app.gemini_client - [Gemini] modelo=gemini-1.5-flash key#3 rodada=2 enviando...
+2026-09-10 18:58:58,907 ERROR src.app.gemini_client - [Gemini] key#3 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of av
+2026-09-10 18:58:58,908 INFO src.app.gemini_client - [Gemini] modelo=gemini-1.5-flash key#4 rodada=2 enviando...
+2026-09-10 18:58:59,003 ERROR src.app.gemini_client - [Gemini] key#4 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of av
+2026-09-10 18:58:59,003 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-1.5-flash na rodada 2. Aguardando 10s antes de tentar no modelo gemini-2.0-flash.
+2026-09-10 18:59:09,003 INFO src.app.gemini_client - [Gemini] modelo=gemini-2.0-flash key#1 rodada=3 enviando...
+2026-09-10 18:59:09,151 ERROR src.app.gemini_client - [Gemini] key#1 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen
+2026-09-10 18:59:09,151 INFO src.app.gemini_client - [Gemini] modelo=gemini-2.0-flash key#2 rodada=3 enviando...
+2026-09-10 18:59:09,259 ERROR src.app.gemini_client - [Gemini] key#2 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen
+2026-09-10 18:59:09,259 INFO src.app.gemini_client - [Gemini] modelo=gemini-2.0-flash key#3 rodada=3 enviando...
+2026-09-10 18:59:09,372 ERROR src.app.gemini_client - [Gemini] key#3 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen
+2026-09-10 18:59:09,372 INFO src.app.gemini_client - [Gemini] modelo=gemini-2.0-flash key#4 rodada=3 enviando...
+2026-09-10 18:59:09,479 ERROR src.app.gemini_client - [Gemini] key#4 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen
+2026-09-10 18:59:09,479 ERROR __main__ - [Slot 3] Gemini indisponível: Gemini falhou após 3 rodadas com 4 key(s). Últimos erros: key#3 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of av; key#4 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of av; key#1 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen; key#2 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen; key#3 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen; key#4 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen
+2026-09-10 18:59:09,480 ERROR __main__ - [Slot 3] Slot descartado.
+2026-09-10 18:59:09,480 INFO __main__ - ═══ Slot 4/5 ═══
+2026-09-10 18:59:09,480 INFO __main__ - [Slot 4] Usando trending topic local: Scientists discover a hidden problem with this popular sugar substitute
+2026-09-10 18:59:09,480 INFO __main__ - [Slot 4] title_hint=How I Finally Made Scientists Discover A Hidden Problem With This Popular...
+2026-09-10 18:59:09,480 INFO src.app.gemini_client - [Gemini] modelo=gemini-2.5-flash key#1 rodada=1 enviando...
+2026-09-10 18:59:09,764 ERROR src.app.gemini_client - [Gemini] key#1 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.6-flash for the latest features a
+2026-09-10 18:59:09,764 INFO src.app.gemini_client - [Gemini] modelo=gemini-2.5-flash key#2 rodada=1 enviando...
+2026-09-10 18:59:09,881 ERROR src.app.gemini_client - [Gemini] key#2 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.6-flash for the latest features a
+2026-09-10 18:59:09,882 INFO src.app.gemini_client - [Gemini] modelo=gemini-2.5-flash key#3 rodada=1 enviando...
+2026-09-10 18:59:09,995 ERROR src.app.gemini_client - [Gemini] key#3 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.6-flash for the latest features a
+2026-09-10 18:59:09,995 INFO src.app.gemini_client - [Gemini] modelo=gemini-2.5-flash key#4 rodada=1 enviando...
+2026-09-10 18:59:10,086 ERROR src.app.gemini_client - [Gemini] key#4 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.6-flash for the latest features a
+2026-09-10 18:59:10,086 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-2.5-flash na rodada 1. Aguardando 5s antes de tentar no modelo gemini-1.5-flash.
+2026-09-10 18:59:15,086 INFO src.app.gemini_client - [Gemini] modelo=gemini-1.5-flash key#1 rodada=2 enviando...
+2026-09-10 18:59:15,188 ERROR src.app.gemini_client - [Gemini] key#1 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of av
+2026-09-10 18:59:15,188 INFO src.app.gemini_client - [Gemini] modelo=gemini-1.5-flash key#2 rodada=2 enviando...
+2026-09-10 18:59:15,287 ERROR src.app.gemini_client - [Gemini] key#2 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of av
+2026-09-10 18:59:15,288 INFO src.app.gemini_client - [Gemini] modelo=gemini-1.5-flash key#3 rodada=2 enviando...
+2026-09-10 18:59:15,405 ERROR src.app.gemini_client - [Gemini] key#3 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of av
+2026-09-10 18:59:15,405 INFO src.app.gemini_client - [Gemini] modelo=gemini-1.5-flash key#4 rodada=2 enviando...
+2026-09-10 18:59:15,490 ERROR src.app.gemini_client - [Gemini] key#4 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of av
+2026-09-10 18:59:15,490 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-1.5-flash na rodada 2. Aguardando 10s antes de tentar no modelo gemini-2.0-flash.
+2026-09-10 18:59:25,490 INFO src.app.gemini_client - [Gemini] modelo=gemini-2.0-flash key#1 rodada=3 enviando...
+2026-09-10 18:59:25,581 ERROR src.app.gemini_client - [Gemini] key#1 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen
+2026-09-10 18:59:25,581 INFO src.app.gemini_client - [Gemini] modelo=gemini-2.0-flash key#2 rodada=3 enviando...
+2026-09-10 18:59:25,674 ERROR src.app.gemini_client - [Gemini] key#2 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen
+2026-09-10 18:59:25,674 INFO src.app.gemini_client - [Gemini] modelo=gemini-2.0-flash key#3 rodada=3 enviando...
+2026-09-10 18:59:25,768 ERROR src.app.gemini_client - [Gemini] key#3 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen
+2026-09-10 18:59:25,769 INFO src.app.gemini_client - [Gemini] modelo=gemini-2.0-flash key#4 rodada=3 enviando...
+2026-09-10 18:59:25,862 ERROR src.app.gemini_client - [Gemini] key#4 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen
+2026-09-10 18:59:25,863 ERROR __main__ - [Slot 4] Gemini indisponível: Gemini falhou após 3 rodadas com 4 key(s). Últimos erros: key#3 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of av; key#4 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of av; key#1 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen; key#2 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen; key#3 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen; key#4 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen
+2026-09-10 18:59:25,863 ERROR __main__ - [Slot 4] Slot descartado.
+2026-09-10 18:59:25,863 INFO __main__ - ═══ Slot 5/5 ═══
+2026-09-10 18:59:25,864 INFO __main__ - [Slot 5] Usando trending topic local: This lifestyle program improved cognition 55% more than basic health advice
+2026-09-10 18:59:25,864 INFO __main__ - [Slot 5] title_hint=How to build This Lifestyle Program Improved Cognition 55% More Than Basic...
+2026-09-10 18:59:25,864 INFO src.app.gemini_client - [Gemini] modelo=gemini-2.5-flash key#1 rodada=1 enviando...
+2026-09-10 18:59:25,939 ERROR src.app.gemini_client - [Gemini] key#1 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.6-flash for the latest features a
+2026-09-10 18:59:25,939 INFO src.app.gemini_client - [Gemini] modelo=gemini-2.5-flash key#2 rodada=1 enviando...
+2026-09-10 18:59:26,046 ERROR src.app.gemini_client - [Gemini] key#2 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.6-flash for the latest features a
+2026-09-10 18:59:26,046 INFO src.app.gemini_client - [Gemini] modelo=gemini-2.5-flash key#3 rodada=1 enviando...
+2026-09-10 18:59:26,163 ERROR src.app.gemini_client - [Gemini] key#3 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.6-flash for the latest features a
+2026-09-10 18:59:26,163 INFO src.app.gemini_client - [Gemini] modelo=gemini-2.5-flash key#4 rodada=1 enviando...
+2026-09-10 18:59:26,254 ERROR src.app.gemini_client - [Gemini] key#4 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.6-flash for the latest features a
+2026-09-10 18:59:26,255 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-2.5-flash na rodada 1. Aguardando 5s antes de tentar no modelo gemini-1.5-flash.
+2026-09-10 18:59:31,255 INFO src.app.gemini_client - [Gemini] modelo=gemini-1.5-flash key#1 rodada=2 enviando...
+2026-09-10 18:59:31,361 ERROR src.app.gemini_client - [Gemini] key#1 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of av
+2026-09-10 18:59:31,361 INFO src.app.gemini_client - [Gemini] modelo=gemini-1.5-flash key#2 rodada=2 enviando...
+2026-09-10 18:59:31,467 ERROR src.app.gemini_client - [Gemini] key#2 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of av
+2026-09-10 18:59:31,467 INFO src.app.gemini_client - [Gemini] modelo=gemini-1.5-flash key#3 rodada=2 enviando...
+2026-09-10 18:59:31,576 ERROR src.app.gemini_client - [Gemini] key#3 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of av
+2026-09-10 18:59:31,576 INFO src.app.gemini_client - [Gemini] modelo=gemini-1.5-flash key#4 rodada=2 enviando...
+2026-09-10 18:59:31,662 ERROR src.app.gemini_client - [Gemini] key#4 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of av
+2026-09-10 18:59:31,662 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-1.5-flash na rodada 2. Aguardando 10s antes de tentar no modelo gemini-2.0-flash.
+2026-09-10 18:59:41,662 INFO src.app.gemini_client - [Gemini] modelo=gemini-2.0-flash key#1 rodada=3 enviando...
+2026-09-10 18:59:41,761 ERROR src.app.gemini_client - [Gemini] key#1 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen
+2026-09-10 18:59:41,761 INFO src.app.gemini_client - [Gemini] modelo=gemini-2.0-flash key#2 rodada=3 enviando...
+2026-09-10 18:59:41,858 ERROR src.app.gemini_client - [Gemini] key#2 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen
+2026-09-10 18:59:41,858 INFO src.app.gemini_client - [Gemini] modelo=gemini-2.0-flash key#3 rodada=3 enviando...
+2026-09-10 18:59:41,972 ERROR src.app.gemini_client - [Gemini] key#3 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen
+2026-09-10 18:59:41,972 INFO src.app.gemini_client - [Gemini] modelo=gemini-2.0-flash key#4 rodada=3 enviando...
+2026-09-10 18:59:42,069 ERROR src.app.gemini_client - [Gemini] key#4 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen
+2026-09-10 18:59:42,070 ERROR __main__ - [Slot 5] Gemini indisponível: Gemini falhou após 3 rodadas com 4 key(s). Últimos erros: key#3 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of av; key#4 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of av; key#1 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen; key#2 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen; key#3 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen; key#4 status=404 PERMANENTE body={
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen
+2026-09-10 18:59:42,070 ERROR __main__ - [Slot 5] Slot descartado.
+2026-09-10 18:59:42,071 INFO __main__ - Run completo. Publicados 0/5 posts.
