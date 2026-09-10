@@ -65,9 +65,9 @@ class GeminiClient:
             },
         }
 
-        # Modelos para fallback caso o modelo principal esteja com 503 (capacidade esgotada)
+        # Modelos recomendados pela API: gemini-3.6-flash e gemini-3.8-flash
         candidate_models = [self.model]
-        for fb in ["gemini-2.5-flash", "gemini-1.5-flash", "gemini-2.0-flash"]:
+        for fb in ["gemini-3.6-flash", "gemini-3.8-flash"]:
             if fb not in candidate_models:
                 candidate_models.append(fb)
 
