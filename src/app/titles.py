@@ -31,7 +31,7 @@ def generate_titles(client: GeminiClient, topic: Topic, excluded_titles: list[st
 
     payload = client.generate_json(
         TITLE_PROMPT.format(topic_name=topic.name, angle=topic.angle) + excluded_text,
-        max_output_tokens=700
+        max_output_tokens=500
     )
     titles = payload.get("titles", [])
     clean = []

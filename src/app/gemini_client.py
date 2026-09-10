@@ -30,10 +30,12 @@ class GeminiClient:
         payload = {
             "contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {
-                "temperature": 0.6,
                 "maxOutputTokens": max_output_tokens,
                 "responseMimeType": "application/json",
-            },
+                "thinkingConfig": {
+                    "thinkingLevel": "low"
+                }
+            }
         }
         errors: list[str] = []
         for attempt in range(4):  # Increased from 3 to 4
