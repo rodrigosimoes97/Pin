@@ -31,29 +31,7 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Test Gemini connectivity
-        run: |
-          echo "Testing DNS..."
-          getent hosts generativelanguage.googleapis.com
-
-          echo "Testing HTTPS..."
-          curl -I --connect-timeout 10 --max-time 20 \
-            https://generativelanguage.googleapis.com
-
-      - name: Test Gemini API
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY_1 }}
-        run: |
-          # Testa conectividade apenas — 429/503 não interrompem o pipeline
-          MODEL_NAME="${{ vars.GEMINI_MODEL || 'gemini-2.5-flash' }}"
-          curl -s --connect-timeout 10 --max-time 30 \
-            -X POST \
-            "https://generativelanguage.googleapis.com/v1beta/models/${MODEL_NAME}:generateContent?key=${GEMINI_API_KEY}" \
-            -H "Content-Type: application/json" \
-            -d '{"contents":[{"parts":[{"text":"OK"}]}],"generationConfig":{"maxOutputTokens":5}}' \
-            -o /dev/null -w "Gemini connectivity check HTTP status: %{http_code}\n" || true
-
-
+      
       - name: Run pipeline
         env:
           GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }}
