@@ -21,71 +21,82 @@ ALLOWED_TAGS = {
     "health",
 }
 
-CONTENT_PROMPT = """Write a high-quality, US-focused health article.
-Return strict JSON object only (no markdown) with keys exactly:
-title,slug,meta_description,html,image_query,pin_title,pin_description,alt_text,tag,faq
+# ──────────────────────────────────────────────────────────────────────────────
+# Prompt único: gera título + artigo completo em 1 chamada Gemini
+# ──────────────────────────────────────────────────────────────────────────────
+CONTENT_PROMPT = """\
+Write a high-quality, US-focused health article.
+Return a strict JSON object only (no markdown, no code fences) with EXACTLY these keys:
+title, slug, meta_description, html, image_query, pin_title, pin_description, alt_text, tag, faq
+
+CRITICAL JSON RULES (read carefully before generating):
+- NO literal newlines inside any JSON string value — use \\n instead.
+- Escape all double-quote characters inside strings with \\".
+- The entire response must be a single valid JSON object.
+- Do NOT wrap in ```json or any markdown.
 
 CONTENT UNIQUENESS RULES:
-- Use a unique angle for this topic.
-- Include specific, unique examples that aren't common knowledge.
-- Avoid repeated structures and generic AI filler phrases (e.g., "In today's fast-paced world", "It's important to note").
-- Minimum 500 words of body content (excluding title, metadata, and FAQ).
+- Use the unique angle provided below.
+- Include specific, uncommon examples.
+- Avoid generic AI filler: "In today's fast-paced world", "It's important to note", "In this article".
+- Minimum 500 words in the html body (excluding title, metadata, and FAQ section).
 
 SEO RULES:
-- Include the main keyword ({topic_name}) in:
-  1. The title
-  2. The first paragraph
-  3. Naturally throughout the body content
-  4. The meta description
-
-CRITICAL JSON RULES:
-- NO literal newlines inside JSON values. Use \n for line breaks.
-- Escape all double quotes inside strings with \".
-- Ensure valid JSON format.
+- Include {topic_name} in: title, first paragraph, body (naturally), meta_description.
 
 Input:
 - topic_name: {topic_name}
 - angle: {angle}
-- title: {title}
+- title_hint: {title_hint}
 - mode: {mode}
 - offer_name: {offer_name}
 - offer_link: {offer_link}
-Allowed tag values (lowercase, hyphenated):
+
+Allowed tag values (pick one, lowercase-hyphenated):
 {allowed_tags}
 
-SEO & Tone Rules:
-- Voice: Write as a relatable health mentor who has personally struggled with these topics. Use "I," "me," and "my."
-- Tone: Conversational, honest, and slightly anti-perfectionist. Use contractions and "US coffee-shop" English.
-- Opening: Start with a "vulnerability hook"—a short personal story or a specific moment of frustration that most readers feel.
-- No Fluff: Skip the "In this article, we will..." or "In conclusion." Go straight to the meat.
-- High Readability: Use short sentences and simple language.
-- Myth-Buster: Include a section styled as `<div class='myth-fact'><div class='myth-header'>The Big Lie</div><div class='myth-body'>...</div><div class='fact-header'>The Human Reality</div><div class='fact-body'>...</div></div>`.
-- The 2-Minute Win: Include a styled box: `<div class='quick-win'><h3>The 2-Minute Win</h3><p>...</p></div>`. This must be an action the reader can do *right now* while reading.
-- Pro-Tip: Use <blockquote> for "insider secrets" that aren't common knowledge.
-- Formatting: Use very short paragraphs (max 2 sentences) and bold text for emphasis on key emotional points.
-- include exactly 5 internal link placeholders in body:
-  1. href="#recent-1" (anchor text: related healthy tip)
-  2. href="#recent-2" (anchor text: another practical guide)
-  3. href="#recent-3" (anchor text: similar wellness insight)
-  4. href="#recent-4" (anchor text: stay consistent with this)
-  5. href="#recent-5" (anchor text: "explore more [tag] guides")
-- include sentence: Educational only — not medical advice.
-- if mode=offer include soft recommendation and exact sentence:
-  Disclosure: This page may contain affiliate links.
-- if mode=info do not include affiliate links.
-- faq must be an array of objects using this shape: [{{"question":"...","answer":"..."}}]. Keep answers concise.
-- If tag is recipes, include an additional key "recipe" using this exact shape:
-  {{
-    "prep_time_minutes": 10,
-    "cook_time_minutes": 20,
-    "total_time_minutes": 30,
-    "servings": "4 servings",
-    "calories_per_serving": "220 calories",
-    "ingredients": ["..."],
-    "instructions": ["..."],
-    "tips": ["..."],
-    "storage": "..."
-  }}
+Voice & Tone:
+- Write as a relatable health mentor who personally struggled with this topic. Use "I," "me," "my."
+- Conversational, honest, slightly anti-perfectionist. Use contractions, US coffee-shop English.
+- Opening: Start with a vulnerability hook — a short personal story or moment of frustration.
+- No Fluff: Skip "In this article" or "In conclusion." Go straight to the content.
+- Short paragraphs (max 2 sentences). Bold key emotional points.
+
+Required HTML elements inside "html" field:
+1. Myth-buster: <div class='myth-fact'><div class='myth-header'>The Big Lie</div><div class='myth-body'>...</div><div class='fact-header'>The Human Reality</div><div class='fact-body'>...</div></div>
+2. 2-Minute Win: <div class='quick-win'><h3>The 2-Minute Win</h3><p>...</p></div>
+3. Pro-Tip: <blockquote>...</blockquote>
+4. Exactly 5 internal link placeholders:
+   href="#recent-1" (anchor: related healthy tip)
+   href="#recent-2" (anchor: another practical guide)
+   href="#recent-3" (anchor: similar wellness insight)
+   href="#recent-4" (anchor: stay consistent with this)
+   href="#recent-5" (anchor: explore more [tag] guides)
+5. Sentence: Educational only — not medical advice.
+6. If mode=offer: include soft recommendation + exact sentence "Disclosure: This page may contain affiliate links."
+7. If mode=info: do NOT include affiliate links.
+
+For "faq": array of objects [{{"question":"...","answer":"..."}}]. Max 5 items, concise answers.
+For "title": create one high-CTR SEO title (40–70 chars) based on title_hint.
+For "slug": URL-friendly version of the title (lowercase, hyphens, max 80 chars).
+For "meta_description": 140–160 chars, keyword-rich.
+For "image_query": 3–5 word Pexels search query (no special chars).
+For "pin_title": 40–70 chars, benefit-driven.
+For "pin_description": 140–260 chars, engaging.
+For "alt_text": descriptive image alt text, 10–20 words.
+
+If tag=recipes, include an additional key "recipe" with this exact shape:
+{{
+  "prep_time_minutes": 10,
+  "cook_time_minutes": 20,
+  "total_time_minutes": 30,
+  "servings": "4 servings",
+  "calories_per_serving": "220 calories",
+  "ingredients": ["..."],
+  "instructions": ["..."],
+  "tips": ["..."],
+  "storage": "..."
+}}
 """
 
 
@@ -100,21 +111,26 @@ def normalize_tag(raw: str) -> str:
 def generate_article(
     client: GeminiClient,
     topic: Topic,
-    title: str,
+    title_hint: str,
     mode: str,
     offer: dict[str, Any] | None,
 ) -> dict[str, Any]:
+    """
+    Gera artigo completo (incluindo título final) em uma única chamada Gemini.
+    `title_hint` é uma sugestão de título; o modelo pode refiná-la.
+    max_output_tokens aumentado para 4096 para evitar MAX_TOKENS em artigos com FAQ/recipe.
+    """
     payload = client.generate_json(
         CONTENT_PROMPT.format(
             topic_name=topic.name,
             angle=topic.angle,
-            title=title,
+            title_hint=title_hint,
             mode=mode,
             offer_name=(offer or {}).get("name", ""),
             offer_link=(offer or {}).get("link", ""),
             allowed_tags=", ".join(sorted(ALLOWED_TAGS)),
         ),
-        max_output_tokens=3200,
+        max_output_tokens=4096,
     )
 
     required = [
@@ -129,20 +145,29 @@ def generate_article(
     ]
     for key in required:
         if key not in payload or not isinstance(payload[key], str) or not payload[key].strip():
-            raise ValueError(f"Missing or invalid article field: {key}")
+            raise ValueError(f"Campo obrigatório ausente ou inválido: {key}")
 
     cleaned_slug = _clean_slug(payload["slug"])
     final_tag = normalize_tag(str(payload.get("tag", ""))) or normalize_tag(topic.tag) or "health"
     payload["slug"] = cleaned_slug
     payload["tag"] = final_tag
-    payload["pin_title"] = _build_pin_title(payload["title"], cleaned_slug, payload.get("meta_description", ""), final_tag)
-    payload["pin_description"] = _build_pin_description(
-        payload["title"],
-        cleaned_slug,
-        final_tag,
-        payload.get("meta_description", ""),
-        payload.get("html", ""),
-    )
+
+    # pin_title e pin_description: usa os gerados pelo modelo se válidos, senão gera localmente
+    pin_title = str(payload.get("pin_title", "")).strip()
+    if not (40 <= len(pin_title) <= 70):
+        pin_title = _build_pin_title(payload["title"], cleaned_slug, payload.get("meta_description", ""), final_tag)
+    payload["pin_title"] = pin_title
+
+    pin_desc = str(payload.get("pin_description", "")).strip()
+    if not (140 <= len(pin_desc) <= 260):
+        pin_desc = _build_pin_description(
+            payload["title"],
+            cleaned_slug,
+            final_tag,
+            payload.get("meta_description", ""),
+            payload.get("html", ""),
+        )
+    payload["pin_description"] = pin_desc
 
     if mode == "info":
         payload["html"] = payload["html"].replace("Disclosure: This page may contain affiliate links.", "")
@@ -152,6 +177,10 @@ def generate_article(
 
     return payload
 
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Helpers
+# ──────────────────────────────────────────────────────────────────────────────
 
 def _normalize_faq(raw: Any) -> list[dict[str, str]]:
     if not isinstance(raw, list):
@@ -230,20 +259,14 @@ def _build_pin_title(title: str, slug: str, meta_description: str, tag: str) -> 
     return _trim_at_word_boundary(candidate, 70)
 
 
-import re
-
 _DUP_WORD_RE = re.compile(r"\b(\w+)(\s+\1\b)+", re.IGNORECASE)
 _LEADING_LABEL_RE = re.compile(r"^\s*(question|tip|guide)\s*:\s*", re.IGNORECASE)
 
-def _cleanup_pin_description(text: str, cta: str) -> str:
-    # Normalize whitespace first
-    text = _normalize_whitespace(text)
 
-    # Remove leading labels like "Question:"
+def _cleanup_pin_description(text: str, cta: str) -> str:
+    text = _normalize_whitespace(text)
     text = _LEADING_LABEL_RE.sub("", text).strip()
 
-    # Remove "based on ..." artifacts (drop everything after "based on")
-    # This prevents broken endings like "Save this based on tired of takeout?."
     lower = text.lower()
     pos = lower.find(" based on ")
     if pos != -1:
@@ -251,22 +274,18 @@ def _cleanup_pin_description(text: str, cta: str) -> str:
         if not text.endswith((".", "?", "!")):
             text += "."
 
-    # Fix duplicated consecutive words: "this this" -> "this"
     while True:
         new = _DUP_WORD_RE.sub(r"\1", text)
         if new == text:
             break
         text = new
 
-    # Normalize weird punctuation
     text = text.replace("?.", "?").replace(".?", "?")
-    text = re.sub(r"\.\.+", ".", text)   # ".." -> "."
-    text = re.sub(r"\?\?+", "?", text)   # "??" -> "?"
-    text = re.sub(r"!!+", "!", text)     # "!!" -> "!"
+    text = re.sub(r"\.\.+", ".", text)
+    text = re.sub(r"\?\?+", "?", text)
+    text = re.sub(r"!!+", "!", text)
 
-    # Ensure exactly ONE CTA sentence at end
     cta_clean = cta.strip().rstrip(".!?")
-    # Remove any existing CTA variants at end to avoid duplicates
     for variant in ["Save this", "Try this today", "Read the full guide"]:
         variant_clean = variant.strip().rstrip(".!?")
         text = re.sub(rf"\s*{re.escape(variant_clean)}[.!?]\s*$", "", text, flags=re.IGNORECASE).rstrip()
@@ -285,8 +304,6 @@ def _build_pin_description(title: str, slug: str, tag: str, meta_description: st
     if not base_topic:
         base_topic = _trim_at_word_boundary(f"your {tag_phrase} routine", 54)
 
-    # Avoid collisions with templates that already contain "this ..."
-    # Use specificity items that won't create "this this ..."
     specificity = ["today", "this week", "a 5-minute reset", "a 3-step routine", "your next meal", "tomorrow morning", "this weekend", "starting now"]
     ctas = ["Save this", "Try this today", "Read the full guide", "Check the checklist", "Get the plan"]
 
@@ -296,7 +313,6 @@ def _build_pin_description(title: str, slug: str, tag: str, meta_description: st
         "Feeling overwhelmed lately? This {specific} plan helps you simplify {topic} with practical steps you can stick to.",
         "Struggling to stay consistent with {tag}? Try this {specific} approach to make progress without changing everything at once.",
         "Having trouble making {topic} work in real life? Use this {specific} framework to keep things simple and doable.",
-        # FIX: removed "this {specific} breakdown" to prevent "this this week"
         "If you cannot seem to keep up with {tag}, this breakdown focuses on realistic actions for busy days {specific}.",
         "When routines feel hard to maintain, {topic} usually needs a simpler plan. Start with this {specific} path and build momentum.",
         "Looking for a practical reset? This {specific} strategy helps you improve {tag} habits with clear, manageable steps.",
@@ -310,17 +326,11 @@ def _build_pin_description(title: str, slug: str, tag: str, meta_description: st
     cta = ctas[_stable_template_index(f"{seed}-cta", len(ctas))]
 
     template_text = templates[idx].format(topic=base_topic, tag=tag_phrase, specific=specific, cta=cta)
-
-    # IMPORTANT: do NOT append "based on {detail}" — it creates broken, spammy text.
-    # (If you want detail, better incorporate it in future as a clean second sentence.)
     description = _cleanup_pin_description(template_text, cta)
-
-    # Enforce length 140–260 after cleanup
     description = _trim_at_word_boundary(description, 260)
 
     if len(description) < 140:
         extra = "Built for real schedules with one small step at a time."
-        # Insert extra sentence BEFORE CTA
         cta_sentence = f" {cta.strip().rstrip('.!?')}."
         if description.endswith(cta_sentence):
             base = description[: -len(cta_sentence)].rstrip()
@@ -330,7 +340,6 @@ def _build_pin_description(title: str, slug: str, tag: str, meta_description: st
         else:
             description = _trim_at_word_boundary(f"{description} {extra}", 260)
 
-        # re-clean to ensure exactly one CTA at end
         description = _cleanup_pin_description(description, cta)
         description = _trim_at_word_boundary(description, 260)
 

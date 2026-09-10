@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import logging
+import re
 import time
 from dataclasses import dataclass
 from typing import Any
@@ -11,122 +12,194 @@ import requests
 LOG = logging.getLogger(__name__)
 API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 
+# Erros permanentes que NÃO devem ser retentados
+_PERMANENT_HTTP_ERRORS = {400, 401, 403, 404}
+
+# Máximo de rodadas de retry em erros transitórios
+_MAX_ROUNDS = 2
+
+# Backoff base (s) para 5xx
+_BACKOFF_5XX_BASE = 5
+
+# Cap de backoff (s) — evita travar o pipeline
+_BACKOFF_CAP = 60
+
 
 @dataclass(frozen=True)
 class GeminiClient:
     api_keys: list[str]
     model: str
-    timeout_seconds: int = 45
+    timeout_seconds: int = 60
 
     def generate_json(self, prompt: str, max_output_tokens: int = 3000) -> dict[str, Any]:
-        text = self.generate_text(prompt, max_output_tokens=max_output_tokens)
+        text, finish_reason = self._call(prompt, max_output_tokens=max_output_tokens)
+        if finish_reason == "MAX_TOKENS":
+            LOG.warning(
+                "[Gemini] finishReason=MAX_TOKENS — resposta truncada. "
+                "Aumente max_output_tokens ou simplifique o prompt."
+            )
+            raise ValueError("Gemini truncou a resposta (MAX_TOKENS). JSON incompleto.")
         return parse_json_from_text(text)
 
     def generate_text(self, prompt: str, max_output_tokens: int = 3000) -> str:
-        # Mandatory delay to avoid 429 Rate Limit (15 RPM = 4s/request)
-        # Using 5s to be safe across multiple processes or slight overhead
-        # time.sleep(5.0)
+        text, _ = self._call(prompt, max_output_tokens=max_output_tokens)
+        return text
 
+    def _call(self, prompt: str, max_output_tokens: int = 3000) -> tuple[str, str]:
+        """
+        Retorna (text, finishReason).
+
+        Estratégia por tipo de erro:
+        - 429: respeita Retry-After; passa para próxima key; backoff acumulado por key
+        - 502/503/504/500: backoff exponencial com cap; passa para próxima key
+        - 400/401/403/404: erro permanente — passa para próxima key sem espera
+        - Timeout/ConnectionError: passa para próxima key imediatamente
+        - Entre rodadas: pausa progressiva antes de tentar tudo novamente
+        """
         payload = {
             "contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {
                 "maxOutputTokens": max_output_tokens,
                 "responseMimeType": "application/json",
-                "thinkingConfig": {
-                    "thinkingLevel": "low"
-                }
-            }
+                "thinkingConfig": {"thinkingLevel": "low"},
+            },
         }
+
         errors: list[str] = []
-        for attempt in range(4):  # Increased from 3 to 4
+
+        for round_idx in range(_MAX_ROUNDS + 1):
             for key_idx, api_key in enumerate(self.api_keys, start=1):
+                endpoint = f"{API_BASE}/{self.model}:generateContent"
+                LOG.info(
+                    "[Gemini] modelo=%s key#%d rodada=%d enviando...",
+                    self.model,
+                    key_idx,
+                    round_idx + 1,
+                )
+
                 try:
-                    endpoint = f"{API_BASE}/{self.model}:generateContent"
                     response = requests.post(
                         endpoint,
                         params={"key": api_key},
                         json=payload,
                         timeout=self.timeout_seconds,
                     )
-                except requests.Timeout as exc:
-                    msg = f"key#{key_idx} timeout={type(exc).__name__}"
+                except requests.Timeout:
+                    msg = f"key#{key_idx} timeout"
                     errors.append(msg)
-                    LOG.warning("Gemini timeout: %s", msg)
+                    LOG.warning("[Gemini] %s", msg)
                     continue
-
                 except requests.ConnectionError as exc:
                     msg = f"key#{key_idx} connection_error={type(exc).__name__}"
                     errors.append(msg)
-                    LOG.warning("Gemini connection error: %s", msg)
+                    LOG.warning("[Gemini] %s", msg)
                     continue
-
                 except requests.RequestException as exc:
                     msg = f"key#{key_idx} request_error={type(exc).__name__}"
                     errors.append(msg)
-                    LOG.warning("Gemini request error: %s", msg)
+                    LOG.warning("[Gemini] %s", msg)
                     continue
 
-                if response.status_code == 429:
-                    body_preview = response.text[:1000]
+                status = response.status_code
 
-                    msg = (
-                        f"key#{key_idx} transient_status=429 "
-                        f"body={body_preview}"
-                    )
-
+                # 429 Rate Limit — respeita Retry-After
+                if status == 429:
+                    wait = min(_parse_retry_after(response) or (15 * (round_idx + 1)), _BACKOFF_CAP)
+                    msg = f"key#{key_idx} status=429 aguardando={wait:.0f}s rodada={round_idx + 1}"
                     errors.append(msg)
-
-                    LOG.warning(
-                        "Gemini rate limit: key#%d body=%s",
-                        key_idx,
-                        body_preview,
-                    )
-
-                    wait_time = 20 * (attempt + 1)
-                    LOG.warning(
-                        "Waiting %ds before retrying Gemini",
-                        wait_time,
-                    )
-                    time.sleep(wait_time)
+                    LOG.warning("[Gemini] %s", msg)
+                    time.sleep(wait)
                     continue
 
-
-                if response.status_code in {500, 502, 503, 504}:
-                    body_preview = response.text[:1000]
-
-                    msg = (
-                        f"key#{key_idx} transient_status={response.status_code} "
-                        f"body={body_preview}"
-                    )
-
+                # 5xx transitório — backoff exponencial
+                if status in {500, 502, 503, 504}:
+                    wait = min(_BACKOFF_5XX_BASE * (2 ** round_idx), _BACKOFF_CAP)
+                    msg = f"key#{key_idx} status={status} aguardando={wait:.0f}s rodada={round_idx + 1}"
                     errors.append(msg)
-
-                    LOG.warning(
-                        "Gemini server error: key#%d status=%d body=%s",
-                        key_idx,
-                        response.status_code,
-                        body_preview,
-                    )
-
-                    time.sleep(2)
+                    LOG.warning("[Gemini] %s", msg)
+                    time.sleep(wait)
                     continue
 
-
-                if response.status_code >= 400:
-                    msg = f"key#{key_idx} http_error={response.status_code} body={response.text[:160]}"
+                # Erros permanentes — sem espera, sem retry na mesma key
+                if status in _PERMANENT_HTTP_ERRORS:
+                    body_preview = response.text[:200]
+                    msg = f"key#{key_idx} status={status} PERMANENTE body={body_preview}"
                     errors.append(msg)
-                    LOG.warning("Gemini non-retriable failure: %s", msg)
+                    LOG.error("[Gemini] %s", msg)
                     continue
 
+                # Outros erros HTTP
+                if status >= 400:
+                    body_preview = response.text[:200]
+                    msg = f"key#{key_idx} status={status} body={body_preview}"
+                    errors.append(msg)
+                    LOG.warning("[Gemini] %s", msg)
+                    continue
+
+                # Sucesso
                 body = response.json()
                 text = _extract_text(body)
-                if text:
-                    return text
-                msg = f"key#{key_idx} empty_response"
-                errors.append(msg)
+                finish_reason = _extract_finish_reason(body)
 
-            time.sleep(5.0 * (attempt + 1))
-        raise RuntimeError(f"Gemini failed after exhaustive retries: {'; '.join(errors)}")
+                LOG.info(
+                    "[Gemini] key#%d rodada=%d OK finishReason=%s len_chars=%d",
+                    key_idx,
+                    round_idx + 1,
+                    finish_reason,
+                    len(text),
+                )
+
+                if text:
+                    return text, finish_reason
+
+                msg = f"key#{key_idx} empty_response finishReason={finish_reason}"
+                errors.append(msg)
+                LOG.warning("[Gemini] %s", msg)
+
+            # Pausa entre rodadas
+            if round_idx < _MAX_ROUNDS:
+                inter_wait = 12 * (round_idx + 1)
+                LOG.warning(
+                    "[Gemini] Todas as keys falharam na rodada %d. "
+                    "Aguardando %ds antes da próxima rodada.",
+                    round_idx + 1,
+                    inter_wait,
+                )
+                time.sleep(inter_wait)
+
+        raise RuntimeError(
+            f"Gemini falhou após {_MAX_ROUNDS + 1} rodadas "
+            f"com {len(self.api_keys)} key(s). "
+            f"Últimos erros: {'; '.join(errors[-6:])}"
+        )
+
+
+# ──────────────────────────────────────────────────────────────
+# Helpers internos
+# ──────────────────────────────────────────────────────────────
+
+def _parse_retry_after(response: requests.Response) -> float | None:
+    """Extrai tempo de espera do Retry-After header ou do corpo JSON."""
+    ra = response.headers.get("Retry-After", "")
+    if ra:
+        try:
+            return float(ra)
+        except ValueError:
+            pass
+
+    try:
+        body = response.json()
+        details = body.get("error", {}).get("details", [])
+        for detail in details:
+            delay_str = str(detail.get("retryDelay", ""))
+            if delay_str:
+                seconds = float(re.sub(r"[^\d.]", "", delay_str) or "0")
+                if seconds > 0:
+                    return seconds
+    except Exception:
+        pass
+
+    return None
 
 
 def _extract_text(payload: dict[str, Any]) -> str:
@@ -135,18 +208,25 @@ def _extract_text(payload: dict[str, Any]) -> str:
         if not candidates:
             return ""
         parts = candidates[0]["content"]["parts"]
-        text = "".join(part.get("text", "") for part in parts)
-        return text.strip()
+        return "".join(part.get("text", "") for part in parts).strip()
     except (KeyError, TypeError, IndexError):
         return ""
+
+
+def _extract_finish_reason(payload: dict[str, Any]) -> str:
+    try:
+        candidates = payload.get("candidates", [])
+        if not candidates:
+            return "UNKNOWN"
+        return str(candidates[0].get("finishReason", "UNKNOWN"))
+    except (KeyError, TypeError, IndexError):
+        return "UNKNOWN"
 
 
 def _strip_code_fences(s: str) -> str:
     s = s.strip()
     if s.startswith("```"):
-        # remove a primeira linha ``` ou ```json
         s = s.split("\n", 1)[1] if "\n" in s else ""
-        # remove o último ```
         if "```" in s:
             s = s.rsplit("```", 1)[0]
     return s.strip()
@@ -183,120 +263,63 @@ def _extract_first_json_object(s: str) -> str:
     raise json.JSONDecodeError("Unclosed JSON object", s, start)
 
 
-import re
-
 def parse_json_from_text(text: str) -> dict[str, Any]:
     """
-    Parses JSON from text with aggressive sanitization for common LLM errors.
+    Parse JSON do texto com sanitização para erros comuns de LLMs.
+    NÃO tenta reparar JSON truncado (MAX_TOKENS é tratado em generate_json).
     """
-    # 1) Basic cleanup
     raw = _strip_code_fences(text).strip()
     if not raw:
-        raise ValueError("Empty response from Gemini")
+        raise ValueError("Resposta vazia do Gemini")
 
-    # 2) Try standard parsing first
+    # Tentativa direta
     try:
         return json.loads(raw)
     except json.JSONDecodeError:
         pass
 
-    # 3) Extract first JSON-like object
+    # Extrai primeiro objeto JSON
     try:
         candidate = _extract_first_json_object(raw)
     except json.JSONDecodeError:
         candidate = raw
 
-    # 4) Deep sanitization
-    # Remove control characters (0-31) except those that can be escaped
-    sanitized = re.sub(r"[\x00-\x1F]+", " ", candidate)
+    # Remove chars de controle inválidos em JSON (mantém \t \n \r)
+    sanitized = re.sub(r"[\x00-\x08\x0b\x0c\x0e-\x1f]+", " ", candidate)
 
-    # 5) Fix unescaped newlines inside string values (very common)
-    # This now handles multiple newlines and preserves structural quotes
-    def _fix_newlines(match):
-        key_part = match.group(1)
-        value_part = match.group(2)
-        # Only escape actual newline characters, not already escaped \n
-        fixed_value = value_part.replace("\r\n", "\\n").replace("\n", "\\n").replace("\r", "\\n")
-        return f'{key_part}"{fixed_value}"'
-
-    # Match "key": "value" where value contains newlines. 
-    # Stops at the first quote followed by , or } or ] or end of string
-    sanitized = re.sub(r'("(?:\w+)":\s*)"(.*?)"(?=\s*[,}\]])', _fix_newlines, sanitized, flags=re.DOTALL)
-
-    # 6) Try parsing again
     try:
         return json.loads(sanitized)
     except json.JSONDecodeError:
         pass
 
-    # 7) Heuristic fix for unescaped double quotes inside values
-    def _repair_quotes(s: str) -> str:
-        result = []
-        i = 0
-        in_string = False
-        while i < len(s):
-            char = s[i]
-            if char == '"':
-                # Check if this quote is structural
-                is_structural = False
-                prev_part = s[max(0, i-20):i] # Increased context
-                next_part = s[i+1:i+20]
-                
-                # Structural cues (more robust):
-                # Key start: { " or , "
-                if re.search(r'[{\[,]\s*$', prev_part): is_structural = True
-                # Key end / Value start: " :
-                elif re.match(r'^\s*:', next_part): is_structural = True
-                # Value start: : "
-                elif re.search(r':\s*$', prev_part): is_structural = True
-                # Value end: " , or " } or " ]
-                # IMPORTANT: A quote followed by a comma is only structural if 
-                # it's NOT in the middle of a sentence (heuristic)
-                elif re.match(r'^(\s|\\n|\\r)*[,}\]]', next_part):
-                    # Check if it looks like a real end-of-string
-                    # Structural if followed by } or ] OR if preceded by something that looks like the end of a field value
-                    if re.match(r'^(\s|\\n|\\r)*[}\]]', next_part):
-                        is_structural = True
-                    # If followed by comma, check if it's "key": "val", pattern
-                    elif re.search(r'[:]\s*"[^"]*$', prev_part):
-                        is_structural = True
-                
-                if in_string and not is_structural:
-                    # If we are already in a string and this quote doesn't look structural, escape it
-                    result.append('\\"')
-                else:
-                    result.append('"')
-                    # Toggle in_string only on structural quotes
-                    if is_structural:
-                        in_string = not in_string
-            else:
-                result.append(char)
-                # If we see an escaped quote, skip it
-                if char == '\\' and i + 1 < len(s) and s[i+1] == '"':
-                    result.append('"')
-                    i += 1
-            i += 1
-        return "".join(result)
+    # Escapa newlines literais dentro de valores de string
+    def _fix_newlines(match: re.Match) -> str:
+        key_part = match.group(1)
+        value_part = match.group(2)
+        fixed = (
+            value_part.replace("\r\n", "\\n").replace("\n", "\\n").replace("\r", "\\n")
+        )
+        return f'{key_part}"{fixed}"'
 
-    # Step 7.1: Pre-process literal newlines to avoid confusing the repair logic
-    # but keep them as recognizable tokens
-    processing = sanitized.replace("\r\n", "\\n").replace("\n", "\\n").replace("\r", "\\n")
-    final_attempt = _repair_quotes(processing)
-    
+    sanitized = re.sub(
+        r'("(?:\w+)":\s*)"(.*?)"(?=\s*[,}\]])',
+        _fix_newlines,
+        sanitized,
+        flags=re.DOTALL,
+    )
+
     try:
-        return json.loads(final_attempt)
-    except json.JSONDecodeError as e:
-        # Save failed response for debugging
+        return json.loads(sanitized)
+    except json.JSONDecodeError as exc:
         try:
             from pathlib import Path
+
             debug_path = Path("generated/logs/failed_json.txt")
             debug_path.parent.mkdir(parents=True, exist_ok=True)
             debug_path.write_text(text, encoding="utf-8")
-            LOG.error("Critical JSON parse failure. Raw response saved to %s", debug_path)
+            LOG.error("[Gemini] Parse JSON falhou. Salvo em %s", debug_path)
         except Exception:
             pass
-            
-        LOG.warning("Deep JSON sanitization failed: %s. Raw text snippet: %s", e, text[:200])
-        raise e
 
-
+        LOG.warning("[Gemini] Parse JSON falhou: %s. Snippet: %.200s", exc, text)
+        raise exc

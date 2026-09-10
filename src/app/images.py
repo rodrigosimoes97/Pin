@@ -2,8 +2,10 @@ from __future__ import annotations
 
 import random
 from pathlib import Path
+
 import requests
 from PIL import Image, ImageDraw, ImageFont
+
 
 def _pexels_photo_url(api_key: str, query: str, orientation: str = "landscape") -> str:
     headers = {"Authorization": api_key}
@@ -21,17 +23,24 @@ def _pexels_photo_url(api_key: str, query: str, orientation: str = "landscape") 
         raise ValueError(f"No Pexels photos for query: {query}")
     return random.choice(photos)["src"]["large2x"]
 
-def fetch_hero_image(api_key: str, query: str, out_path: Path) -> None:
-    # Garante que a extensão seja .webp para melhor performance
-    webp_path = out_path.with_suffix(".webp")
+
+def fetch_hero_image(api_key: str, query: str, out_path: Path) -> Path:
+    """
+    Baixa a imagem hero do Pexels e salva como JPEG público.
+    Retorna o Path real do arquivo salvo (sempre .jpeg).
+    A extensão do out_path é ignorada — sempre salva como .jpeg.
+    """
+    jpeg_path = out_path.with_suffix(".jpeg")
     url = _pexels_photo_url(api_key, query, "landscape")
-    webp_path.parent.mkdir(parents=True, exist_ok=True)
-    
+    jpeg_path.parent.mkdir(parents=True, exist_ok=True)
+
     response = requests.get(url, stream=True, timeout=40)
     img = Image.open(response.raw).convert("RGB")
-    # Redimensiona para um tamanho razoável de hero (1200px largura)
+    # Redimensiona para hero: largura máx 1200px
     img.thumbnail((1200, 1200), Image.Resampling.LANCZOS)
-    img.save(webp_path, "WEBP", quality=80, method=6)
+    img.save(jpeg_path, "JPEG", quality=85, optimize=True)
+    return jpeg_path
+
 
 def create_pinterest_image(
     api_key: str,
@@ -40,20 +49,33 @@ def create_pinterest_image(
     out_path: Path,
     source_image_path: Path | None = None,
 ) -> None:
-    out_path.parent.mkdir(parents=True, exist_ok=True)
+    """
+    Cria a imagem com overlay de texto para o Pinterest e salva como PNG (1000×1500).
+    Esta imagem fica em generated/pinterest/ e é usada apenas localmente/no repo.
+    A URL pública no CSV aponta para a imagem hero (.jpeg), não para esta.
+    """
+    # Garante extensão .png
+    png_path = out_path.with_suffix(".png")
+    png_path.parent.mkdir(parents=True, exist_ok=True)
 
     if source_image_path and source_image_path.exists():
         img = Image.open(source_image_path)
     else:
-        url = _pexels_photo_url(api_key, query, "portrait")
-        img = Image.open(requests.get(url, stream=True, timeout=40).raw)
+        # Tenta usar .jpeg se existir
+        jpeg_alt = source_image_path.with_suffix(".jpeg") if source_image_path else None
+        if jpeg_alt and jpeg_alt.exists():
+            img = Image.open(jpeg_alt)
+        else:
+            url = _pexels_photo_url(api_key, query, "portrait")
+            img = Image.open(requests.get(url, stream=True, timeout=40).raw)
 
     img = img.convert("RGB")
-    # Redimensionar para o padrão Pinterest (1000x1500)
+
+    # Recorte para proporção Pinterest 2:3 (1000×1500)
     target_ratio = 1000 / 1500
     w, h = img.size
     current_ratio = w / h
-    
+
     if current_ratio > target_ratio:
         new_w = int(h * target_ratio)
         offset = (w - new_w) // 2
@@ -62,16 +84,20 @@ def create_pinterest_image(
         new_h = int(w / target_ratio)
         offset = (h - new_h) // 2
         img = img.crop((0, offset, w, offset + new_h))
-        
+
     img = img.resize((1000, 1500), Image.Resampling.LANCZOS)
     draw = ImageDraw.Draw(img, "RGBA")
-    
+
     try:
-        font_paths = ["arial.ttf", "LiberationSans-Regular.ttf", "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf"]
+        font_paths = [
+            "arial.ttf",
+            "LiberationSans-Regular.ttf",
+            "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf",
+        ]
         font_path = next((p for p in font_paths if Path(p).exists()), "arial.ttf")
         font_bold = ImageFont.truetype(font_path, 95)
         font_small = ImageFont.truetype(font_path, 40)
-    except:
+    except Exception:
         font_bold = ImageFont.load_default()
         font_small = ImageFont.load_default()
 
@@ -93,7 +119,8 @@ def create_pinterest_image(
         _draw_wrapped_text(draw, title, font_bold, (255, 255, 255, 255), 100, 550, 800)
         draw.text((400, 1070), site_name, font=font_small, fill=(255, 255, 255, 255))
 
-    img.save(out_path, "PNG", quality=85)
+    img.save(png_path, "PNG")
+
 
 def _draw_wrapped_text(draw, text, font, fill, x, y, max_width):
     words = text.split()
@@ -109,4 +136,4 @@ def _draw_wrapped_text(draw, text, font, fill, x, y, max_width):
     current_y = y
     for line in lines:
         draw.text((x, current_y), line, font=font, fill=fill)
-        current_y += 110 # Altura aproximada da linha
+        current_y += 110

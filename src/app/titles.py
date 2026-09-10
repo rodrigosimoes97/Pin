@@ -1,8 +1,54 @@
 from __future__ import annotations
 
-from .gemini_client import GeminiClient
+import random
+
 from .topics import Topic
 
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Geração de título local (sem Gemini) — usado como hint para o artigo
+# ──────────────────────────────────────────────────────────────────────────────
+
+_TITLE_TEMPLATES = [
+    "How to {verb} {topic} Without Giving Up Everything",
+    "{count} Practical Ways to {verb} {topic} Starting Today",
+    "Struggling with {topic}? Try This {adj} Reset",
+    "Feel More Energized with This {adj} {topic} Routine",
+    "The Honest Guide to {topic} for Busy People",
+    "What Nobody Tells You About {topic}",
+    "Stop Overcomplicating {topic} — Here's What Actually Works",
+    "A Realistic {topic} Plan That Fits Your Real Life",
+    "How I Finally Made {topic} Stick (And You Can Too)",
+    "{count} Science-Backed {topic} Habits Worth Trying",
+]
+
+_VERBS = ["improve", "simplify", "build", "manage", "restart", "boost", "fix", "optimize"]
+_ADJS = ["Simple", "Daily", "5-Minute", "Practical", "Effective", "Sustainable"]
+_COUNTS = ["3", "5", "7", "4", "6"]
+
+
+def _local_title_hint(topic: Topic) -> str:
+    """
+    Gera um hint de título localmente (sem Gemini).
+    O modelo refinará isso no prompt unificado de artigo.
+    """
+    template = random.choice(_TITLE_TEMPLATES)
+    title = template.format(
+        topic=topic.name,
+        verb=random.choice(_VERBS),
+        adj=random.choice(_ADJS),
+        count=random.choice(_COUNTS),
+    )
+    # Garante entre 40-80 chars para que seja um hint útil
+    if len(title) > 80:
+        title = title[:77].rsplit(" ", 1)[0] + "..."
+    return title
+
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Compatibilidade retroativa: generate_titles permanece disponível
+# mas NÃO é mais chamado no pipeline principal (economiza 1 chamada Gemini/slot)
+# ──────────────────────────────────────────────────────────────────────────────
 
 TITLE_PROMPT = """You are an expert SEO editor for a major US health publication.
 Return JSON only with schema: {{"titles": ["...", "..."]}}.
@@ -22,16 +68,26 @@ Rules for High-Quality Titles:
 """
 
 
-import random
+def generate_titles(
+    client: object,  # GeminiClient — tipo fraco para evitar importação circular
+    topic: Topic,
+    excluded_titles: list[str] | None = None,
+) -> list[str]:
+    """
+    Gera títulos via Gemini. Mantida para compatibilidade mas NÃO é chamada
+    no pipeline principal — use _local_title_hint() + prompt unificado.
+    """
+    from .gemini_client import GeminiClient  # importação local para evitar circular
 
-def generate_titles(client: GeminiClient, topic: Topic, excluded_titles: list[str] | None = None) -> list[str]:
+    assert isinstance(client, GeminiClient)
+
     excluded_text = ""
     if excluded_titles:
         excluded_text = f"\nAvoid these exact titles: {', '.join(excluded_titles[:10])}"
 
     payload = client.generate_json(
         TITLE_PROMPT.format(topic_name=topic.name, angle=topic.angle) + excluded_text,
-        max_output_tokens=500
+        max_output_tokens=500,
     )
     titles = payload.get("titles", [])
     clean = []
@@ -43,10 +99,9 @@ def generate_titles(client: GeminiClient, topic: Topic, excluded_titles: list[st
             if not excluded_titles or t not in excluded_titles:
                 clean.append(t)
     if len(clean) < 3:
-        # Fallback if too many were excluded
         for title in titles:
-             if isinstance(title, str) and title.strip():
-                 clean.append(title.strip())
+            if isinstance(title, str) and title.strip():
+                clean.append(title.strip())
 
     return clean[:10]
 
@@ -55,15 +110,14 @@ def pick_best_title(titles: list[str]) -> str:
     if not titles:
         return ""
 
-    # Score titles based on SEO factors but add a random element
     scored = []
     for t in titles:
         score = 0
-        if "?" in t: score += 2
+        if "?" in t:
+            score += 2
         for token in ["how", "what", "why", "tips", "foods", "routine", "guide", "checklist"]:
             if token in t.lower():
                 score += 1
-        # Add a bit of randomness to avoid picking the same style every time
         score += random.uniform(0, 1.5)
         scored.append((score, t))
 

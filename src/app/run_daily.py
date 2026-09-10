@@ -17,7 +17,7 @@ from .pinterest_api import create_pin
 from .pinterest_drafts import write_draft_pack
 from .site import publish_post
 from .state import load_state, save_state
-from .titles import generate_titles, pick_best_title
+from .titles import _local_title_hint  # fallback local, veja titles.py
 from .topics import pick_topic
 from .duplicate_checker import DuplicateChecker
 from .trend_research import get_trending_topics
@@ -27,24 +27,25 @@ from .indexing import index_new_post
 
 LOG = logging.getLogger(__name__)
 
+
 def _setup_logging(repo_root: Path) -> None:
     log_dir = repo_root / "generated" / "logs"
     log_dir.mkdir(parents=True, exist_ok=True)
-    
+
     logging.basicConfig(
         level=logging.INFO,
         format="%(asctime)s %(levelname)s %(name)s - %(message)s",
         handlers=[
             logging.FileHandler(log_dir / "system.log", encoding="utf-8"),
-            logging.StreamHandler()
-        ]
+            logging.StreamHandler(),
+        ],
     )
-    # Silence noisy logs
     logging.getLogger("sentence_transformers").setLevel(logging.WARNING)
     logging.getLogger("transformers").setLevel(logging.ERROR)
     logging.getLogger("httpx").setLevel(logging.WARNING)
     logging.getLogger("urllib3").setLevel(logging.WARNING)
     logging.getLogger("huggingface_hub").setLevel(logging.ERROR)
+
 
 def _log_to_file(repo_root: Path, filename: str, message: str) -> None:
     log_dir = repo_root / "generated" / "logs"
@@ -52,77 +53,67 @@ def _log_to_file(repo_root: Path, filename: str, message: str) -> None:
     with open(log_dir / filename, "a", encoding="utf-8") as f:
         f.write(f"{datetime.now(timezone.utc).isoformat()} - {message}\n")
 
+
 def _validate_quality(post: dict[str, Any], topic_name: str) -> bool:
-    """Checks word count and keyword presence."""
-    text = re.sub(r'<[^>]+>', ' ', post.get("html", ""))
+    """Verifica contagem de palavras e presença da keyword."""
+    text = re.sub(r"<[^>]+>", " ", post.get("html", ""))
     word_count = len(text.split())
-    
-    if word_count < 450: # Slightly lower threshold to be safe but target 500
-        LOG.warning("Quality check failed: word count %d < 450", word_count)
+
+    if word_count < 450:
+        LOG.warning("[Quality] word_count=%d < 450", word_count)
         return False
-        
+
     topic_name_lower = topic_name.lower()
     if topic_name_lower not in post.get("title", "").lower() and topic_name_lower not in text.lower():
-        LOG.warning("Quality check failed: keyword '%s' not found in title or body", topic_name)
+        LOG.warning("[Quality] keyword '%s' não encontrada no título ou corpo", topic_name)
         return False
-        
+
     return True
 
-def _create_topic_from_trend(client: GeminiClient, trend: str) -> Topic:
-    prompt = f"""Analyze this trending health topic: '{trend}'
-Categorize it into one of these tags: {', '.join(PRIORITY_TAGS)}
-Return a JSON object with:
-- slug: a URL-friendly version of the topic
-- name: a catchy, SEO-friendly name
-- angle: a unique angle for a health article (US-focused, conversational)
-- tag: the chosen tag from the list
-Strict JSON only.
-"""
-    try:
-        data = client.generate_json(prompt)
-        return Topic(
-            slug=str(data.get("slug", "")),
-            name=str(data.get("name", "")),
-            angle=str(data.get("angle", "")),
-            tag=str(data.get("tag", "health")),
-        )
-    except Exception as e:
-        LOG.warning("Failed to create topic from trend '%s': %s", trend, e)
-        return Topic(
-            slug=trend.lower().replace(" ", "-")[:50],
-            name=trend,
-            angle="latest insights and practical tips for daily health",
-            tag="health",
-        )
 
-def _generate_autonomous_topic(client: GeminiClient) -> Topic:
-    """Last resort: Ask Gemini to come up with a trending or evergreen health topic."""
-    LOG.info("Seeking autonomous health topic from Gemini...")
-    prompt = f"""Suggest a high-interest, trending or evergreen health/wellness topic for a US audience.
-Categorize it into one of these tags: {', '.join(PRIORITY_TAGS)}
-Return a JSON object with:
-- slug: a URL-friendly version of the topic
-- name: a catchy, SEO-friendly name (keyword-rich)
-- angle: a unique, practical angle (informational, conversational)
-- tag: the chosen tag from the list
-Strict JSON only.
-"""
-    try:
-        data = client.generate_json(prompt)
-        return Topic(
-            slug=str(data.get("slug", "")),
-            name=str(data.get("name", "")),
-            angle=str(data.get("angle", "")),
-            tag=str(data.get("tag", "health")),
-        )
-    except Exception as e:
-        LOG.error("Failed to generate autonomous topic: %s", e)
-        return Topic(
-            slug=f"health-tips-{random.randint(1000, 9999)}",
-            name="Essential Daily Health Habits",
-            angle="practical, science-backed habits for better energy and long-term wellness",
-            tag="healthy-habits",
-        )
+def _local_fallback_topic(recent_topics: list[str], recent_tags: list[str], tag_counts: dict, daily_topics: set[str], topic_rotation: dict) -> Topic:
+    """Seleciona tópico localmente sem chamar o Gemini."""
+    return pick_topic(
+        recent_topics=recent_topics,
+        recent_tags=recent_tags,
+        tag_counts=tag_counts,
+        excluded_slugs=daily_topics,
+        topic_rotation=topic_rotation,
+    )
+
+
+def _topic_from_trend_local(trend: str) -> Topic:
+    """
+    Converte uma trend em Topic usando apenas lógica local (sem Gemini).
+    Mapeia keywords para tags conhecidas.
+    """
+    TAG_KEYWORDS: dict[str, list[str]] = {
+        "sleep": ["sleep", "insomnia", "rest", "nap", "circadian"],
+        "stress": ["stress", "anxiety", "burnout", "mindful", "meditat"],
+        "gut": ["gut", "digest", "probiotic", "microbiome", "bloat"],
+        "weight": ["weight", "fat", "metabol", "calorie", "bmi"],
+        "recipes": ["recipe", "meal", "cook", "food", "diet", "eat", "protein"],
+        "home-workouts": ["workout", "exercise", "fitness", "gym", "yoga", "walk", "strength"],
+        "anti-inflammatory": ["inflam", "arthrit", "joint", "omega", "antioxidant"],
+        "longevity": ["longevity", "aging", "lifespan", "centenar"],
+        "mental-wellness": ["mental", "focus", "brain", "cognitive", "mood", "depress"],
+        "healthy-habits": ["habit", "routine", "morning", "evening", "productivity"],
+    }
+    trend_lower = trend.lower()
+    chosen_tag = "health"
+    for tag, keywords in TAG_KEYWORDS.items():
+        if any(kw in trend_lower for kw in keywords):
+            chosen_tag = tag
+            break
+
+    slug = re.sub(r"[^a-z0-9]+", "-", trend_lower).strip("-")[:50]
+    return Topic(
+        slug=slug,
+        name=trend.title(),
+        angle="practical, science-backed tips for US readers",
+        tag=chosen_tag,
+    )
+
 
 def _choose_mode(state: dict) -> str:
     runs = int(state.get("runs", 0))
@@ -134,23 +125,28 @@ def _choose_mode(state: dict) -> str:
         return "offer" if random.random() < 0.6 else "info"
     return "offer" if random.random() < 0.15 else "info"
 
+
 def _pick_offer(repo_root: Path, topic_tag: str) -> dict | None:
     offers_path = repo_root / "offers.json"
-    if not offers_path.exists(): return None
+    if not offers_path.exists():
+        return None
     offers = json.loads(offers_path.read_text(encoding="utf-8"))
     compatible = [item for item in offers if topic_tag in item.get("tags", []) or "us" in item.get("tags", [])]
     return random.choice(compatible or offers) if offers else None
 
+
 def _should_generate_today(posts_per_week: int) -> bool:
-    if posts_per_week >= 7: return True
+    if posts_per_week >= 7:
+        return True
     return datetime.now(timezone.utc).weekday() < posts_per_week
+
 
 def main() -> None:
     settings = load_settings()
     _setup_logging(settings.repo_root)
-    
+
     if not _should_generate_today(settings.posts_per_week):
-        LOG.info("Skipping generation today to maintain %s posts/week.", settings.posts_per_week)
+        LOG.info("Pulando geração hoje para manter %s posts/semana.", settings.posts_per_week)
         return
 
     today = datetime.now(timezone.utc).date()
@@ -160,11 +156,15 @@ def main() -> None:
     client = GeminiClient(api_keys=settings.gemini_api_keys, model=settings.gemini_model)
     checker = DuplicateChecker(index_path=settings.repo_root / "generated" / "content_index.json")
 
-    # Fetch and log trending topics
-    LOG.info("Fetching trending topics for USA...")
-    trends = get_trending_topics()
-    for trend in trends:
-        _log_to_file(settings.repo_root, "trends.log", f"Found trend: {trend}")
+    # Tendências (404 não interrompe o pipeline)
+    LOG.info("Buscando trending topics para USA...")
+    try:
+        trends = get_trending_topics()
+        for trend in trends:
+            _log_to_file(settings.repo_root, "trends.log", f"Found trend: {trend}")
+    except Exception as exc:
+        LOG.warning("Falha ao buscar trends (não fatal): %s", exc)
+        trends = []
 
     recent_topics = list(state.get("recent_topics", []))
     recent_tags = list(state.get("recent_tags", []))
@@ -182,78 +182,67 @@ def main() -> None:
         existing_posts = json.loads(posts_json_path.read_text(encoding="utf-8"))
 
     for slot in range(5):
+        LOG.info("═══ Slot %d/5 ═══", slot + 1)
         mode = _choose_mode(state)
-        topic = None
+
+        # ── Escolhe tópico (sem chamar Gemini) ───────────────────────────────
+        topic: Topic | None = None
         for trend in list(trends):
-            temp_slug = trend.lower().replace(" ", "-")[:50]
+            temp_slug = re.sub(r"[^a-z0-9]+", "-", trend.lower()).strip("-")[:50]
             if temp_slug not in recent_topics and temp_slug not in daily_topics:
-                LOG.info("Using trending topic: %s", trend)
-                topic = _create_topic_from_trend(client, trend)
+                LOG.info("[Slot %d] Usando trending topic local: %s", slot + 1, trend)
+                topic = _topic_from_trend_local(trend)
                 trends.remove(trend)
                 break
 
         if not topic:
-            topic = pick_topic(
-                recent_topics=recent_topics,
-                recent_tags=recent_tags,
-                tag_counts=tag_counts,
-                excluded_slugs=daily_topics,
-                topic_rotation=topic_rotation,
-            )
+            topic = _local_fallback_topic(recent_topics, recent_tags, tag_counts, daily_topics, topic_rotation)
+            LOG.info("[Slot %d] Tópico local: %s (%s)", slot + 1, topic.name, topic.tag)
 
         offer = _pick_offer(settings.repo_root, topic.tag) if mode == "offer" else None
 
-        try:
-            titles = generate_titles(client, topic, excluded_titles=recent_titles)
-            chosen_title = pick_best_title(titles)
+        # ── Hint de título local (sem chamar Gemini) ─────────────────────────
+        title_hint = _local_title_hint(topic)
+        LOG.info("[Slot %d] title_hint=%s", slot + 1, title_hint)
 
-            post = None
-            for attempt in range(3):
-                candidate = generate_article(client, topic, chosen_title, mode, offer)
+        try:
+            # ── 1 chamada Gemini por artigo ───────────────────────────────────
+            post: dict[str, Any] | None = None
+            try:
+                candidate = generate_article(client, topic, title_hint, mode, offer)
                 candidate["tag"] = normalize_tag(candidate.get("tag", "")) or normalize_tag(topic.tag) or "health"
 
                 if not _validate_quality(candidate, topic.name):
-                    continue
-
-                status, score = checker.check_similarity(candidate["title"], candidate["meta_description"], candidate["html"])
-                if status == "BLOCK":
-                    _log_to_file(settings.repo_root, "duplicate_blocked.log", f"BLOCKED: {candidate['title']} (score: {score})")
-                    break
-                if status == "REWRITE":
-                    continue
-
-                post = candidate
-                checker.add_to_index(post["title"], post["slug"], post["meta_description"], post["html"])
-                break
-
-            # LAST RESORT: If no post was generated after 3 attempts, try one last time with a brand new autonomous topic
-            if not post:
-                LOG.warning("Slot %s: No post generated after 3 attempts. Initiating rescue attempt...", slot + 1)
-                rescue_topic = _generate_autonomous_topic(client)
-                rescue_titles = generate_titles(client, rescue_topic, excluded_titles=recent_titles)
-                rescue_chosen_title = pick_best_title(rescue_titles)
-                
-                candidate = generate_article(client, rescue_topic, rescue_chosen_title, mode, offer)
-                candidate["tag"] = normalize_tag(candidate.get("tag", "")) or normalize_tag(rescue_topic.tag) or "health"
-                
-                if _validate_quality(candidate, rescue_topic.name):
-                    # Only check similarity for the rescue post to avoid infinite loops, but we use a loose check
-                    status, _ = checker.check_similarity(candidate["title"], candidate["meta_description"], candidate["html"])
-                    if status != "BLOCK":
+                    LOG.warning("[Slot %d] Qualidade insuficiente — artigo descartado", slot + 1)
+                else:
+                    status, score = checker.check_similarity(
+                        candidate["title"], candidate["meta_description"], candidate["html"]
+                    )
+                    if status == "BLOCK":
+                        _log_to_file(
+                            settings.repo_root,
+                            "duplicate_blocked.log",
+                            f"BLOCKED: {candidate['title']} (score: {score})",
+                        )
+                        LOG.warning("[Slot %d] Artigo bloqueado por similaridade (score=%.2f)", slot + 1, score)
+                    else:
                         post = candidate
-                        topic = rescue_topic # Update topic for state tracking
-                        chosen_title = rescue_chosen_title
                         checker.add_to_index(post["title"], post["slug"], post["meta_description"], post["html"])
-                        LOG.info("Slot %s: Rescue attempt successful with topic: %s", slot + 1, topic.name)
+
+            except ValueError as exc:
+                # MAX_TOKENS ou campo obrigatório ausente — não tenta repair, descarta o slot
+                LOG.error("[Slot %d] Geração falhou (não recuperável): %s", slot + 1, exc)
+            except RuntimeError as exc:
+                # Gemini esgotou todas as tentativas — não bloqueia os demais slots
+                LOG.error("[Slot %d] Gemini indisponível: %s", slot + 1, exc)
 
             if not post:
-                LOG.error("Slot %s: All attempts failed, including rescue.", slot + 1)
+                LOG.error("[Slot %d] Slot descartado.", slot + 1)
                 continue
 
-            # Internal linking
+            # ── Internal linking ──────────────────────────────────────────────
             related_for_links = get_related_internal_links(post["html"], existing_posts, post["slug"])
             if related_for_links:
-                # Add a "Recommended Reading" section at the end of HTML
                 links_html = "<h3>Recommended Reading</h3><ul>"
                 for rel in related_for_links:
                     links_html += f"<li><a href='{rel['url']}'>{rel['title']}</a></li>"
@@ -263,23 +252,42 @@ def main() -> None:
             if post["slug"] in set(recent_slugs[-40:]) or post["slug"] in daily_slugs:
                 post["slug"] = f"{post['slug']}-{today.strftime('%m%d')}-{slot + 1}"
 
-            hero_rel = f"assets/{today.isoformat()}_{post['slug']}.webp"
-            fetch_hero_image(settings.pexels_api_key, post["image_query"], settings.repo_root / "docs" / hero_rel)
+            # Hero pública: .jpeg (compatível com navegadores e Pinterest)
+            hero_rel = f"assets/{today.isoformat()}_{post['slug']}.jpeg"
+            actual_hero_path = fetch_hero_image(
+                settings.pexels_api_key,
+                post["image_query"],
+                settings.repo_root / "docs" / hero_rel,
+            )
 
+            # Imagem Pinterest com overlay: .png local (não publicada diretamente)
             pin_rel = f"generated/pinterest/{today.isoformat()}_{post['slug']}.png"
-            create_pinterest_image(settings.pexels_api_key, post["image_query"], post["pin_title"], settings.repo_root / pin_rel, source_image_path=settings.repo_root / "docs" / hero_rel)
+            create_pinterest_image(
+                settings.pexels_api_key,
+                post["image_query"],
+                post["pin_title"],
+                settings.repo_root / pin_rel,
+                source_image_path=actual_hero_path,
+            )
 
-            record = publish_post(docs_dir=settings.repo_root / "docs", base_url=settings.base_url, site_title=settings.site_title, post=post, hero_path_rel=hero_rel, run_date=today)
-            
+            record = publish_post(
+                docs_dir=settings.repo_root / "docs",
+                base_url=settings.base_url,
+                site_title=settings.site_title,
+                post=post,
+                hero_path_rel=hero_rel,
+                run_date=today,
+            )
+
             # Google Indexing
             post_url = f"{settings.base_url}/{record['url']}"
             if settings.google_indexing_json_path:
-                LOG.info("Submitting URL to Google Indexing: %s", post_url)
+                LOG.info("[Slot %d] Submetendo ao Google Indexing: %s", slot + 1, post_url)
                 index_new_post(settings.repo_root, settings.google_indexing_json_path, post_url)
 
             _log_to_file(settings.repo_root, "published_posts.log", f"Published: {record['url']} ({mode})")
 
-            # Gera CSV/JSON para Bulk Upload do Pinterest
+            # Pinterest CSV: Media URL aponta para a hero .jpeg pública
             post_link = f"https://health-ptg.pages.dev/{record['url']}"
             write_draft_pack(
                 out_dir=settings.repo_root / "generated" / "pinterest",
@@ -287,8 +295,8 @@ def main() -> None:
                 pin_title=post["pin_title"],
                 pin_description=post["pin_description"],
                 link=post_link,
-                image_path=pin_rel,
-                alt_text=post.get("alt_text", post["pin_title"]),
+                image_path=hero_rel,          # hero pública .jpeg — não a imagem de generated/
+                tag=post.get("tag", ""),
             )
 
             daily_slugs.add(post["slug"])
@@ -297,30 +305,30 @@ def main() -> None:
             recent_topics.append(topic.slug)
             recent_tags.append(post["tag"])
             recent_slugs.append(post["slug"])
-            recent_titles.append(chosen_title)
+            recent_titles.append(post["title"])
             tag_counts[post["tag"]] = int(tag_counts.get(post["tag"], 0)) + 1
             topic_rotation[topic.tag] = int(topic_rotation.get(topic.tag, 0)) + 1
 
-            LOG.info("Published %s (%s)", record["url"], mode)
-            
-            # Additional delay between slots to be extra safe with Gemini rate limits
-            time.sleep(5)
-        except Exception:
-            LOG.exception("Failed slot %s", slot + 1)
-            time.sleep(2)
+            LOG.info("[Slot %d] ✓ Publicado: %s (%s)", slot + 1, record["url"], mode)
 
-    state.update({
-        "runs": int(state.get("runs", 0)) + 1,
-        "recent_topics": recent_topics[-50:],
-        "recent_tags": recent_tags[-50:],
-        "recent_slugs": recent_slugs[-100:],
-        "recent_titles": recent_titles[-60:],
-        "tag_counts": tag_counts,
-        "topic_rotation": topic_rotation,
-        "last_run": today.isoformat()
-    })
+        except Exception:
+            LOG.exception("[Slot %d] Erro inesperado no slot", slot + 1)
+
+    state.update(
+        {
+            "runs": int(state.get("runs", 0)) + 1,
+            "recent_topics": recent_topics[-50:],
+            "recent_tags": recent_tags[-50:],
+            "recent_slugs": recent_slugs[-100:],
+            "recent_titles": recent_titles[-60:],
+            "tag_counts": tag_counts,
+            "topic_rotation": topic_rotation,
+            "last_run": today.isoformat(),
+        }
+    )
     save_state(state_path, state)
-    LOG.info("Run complete. Published %s/5 posts.", published_count)
+    LOG.info("Run completo. Publicados %d/5 posts.", published_count)
+
 
 if __name__ == "__main__":
     main()
