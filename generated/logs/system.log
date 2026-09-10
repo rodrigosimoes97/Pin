@@ -74777,3 +74777,267 @@ RuntimeError: Gemini failed after exhaustive retries: key#1 transient_status=429
     "message": "This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen
 2026-09-10 18:59:42,070 ERROR __main__ - [Slot 5] Slot descartado.
 2026-09-10 18:59:42,071 INFO __main__ - Run completo. Publicados 0/5 posts.
+2026-09-10 19:07:55,525 INFO __main__ - Buscando trending topics para USA...
+2026-09-10 19:07:55,783 WARNING src.app.trend_research - Failed to fetch Google Trends (404/Error): The request failed: Google returned a response with code 404. Moving to fallbacks.
+2026-09-10 19:07:59,042 INFO src.app.trend_research - Gathered 13 unique trending topics.
+2026-09-10 19:07:59,045 INFO __main__ - ═══ Slot 1/5 ═══
+2026-09-10 19:07:59,046 INFO __main__ - [Slot 1] Usando trending topic local: Experimental therapy gantenerumab fails to slow or improve Alzheimers memory loss in clinical trials
+2026-09-10 19:07:59,046 INFO __main__ - [Slot 1] title_hint=How I Finally Made Experimental Therapy Gantenerumab Fails To Slow Or...
+2026-09-10 19:07:59,046 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-09-10 19:08:06,167 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=5044
+2026-09-10 19:08:06,169 WARNING __main__ - [Quality] word_count=420 < 450
+2026-09-10 19:08:06,169 WARNING __main__ - [Slot 1] Qualidade insuficiente — artigo descartado
+2026-09-10 19:08:06,169 ERROR __main__ - [Slot 1] Slot descartado.
+2026-09-10 19:08:06,169 INFO __main__ - ═══ Slot 2/5 ═══
+2026-09-10 19:08:06,169 INFO __main__ - [Slot 2] Usando trending topic local: Desperate for heart surgery for their baby, a family feels the effects of pediatric hospital shortages
+2026-09-10 19:08:06,169 INFO __main__ - [Slot 2] title_hint=3 Practical Ways to manage Desperate For Heart Surgery For Their Baby, A...
+2026-09-10 19:08:06,169 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-09-10 19:08:12,688 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=4624
+2026-09-10 19:08:12,690 WARNING __main__ - [Quality] word_count=399 < 450
+2026-09-10 19:08:12,690 WARNING __main__ - [Slot 2] Qualidade insuficiente — artigo descartado
+2026-09-10 19:08:12,690 ERROR __main__ - [Slot 2] Slot descartado.
+2026-09-10 19:08:12,690 INFO __main__ - ═══ Slot 3/5 ═══
+2026-09-10 19:08:12,690 INFO __main__ - [Slot 3] Usando trending topic local: Popular brain supplement linked to shorter lifespan in men
+2026-09-10 19:08:12,690 INFO __main__ - [Slot 3] title_hint=How I Finally Made Popular Brain Supplement Linked To Shorter Lifespan In...
+2026-09-10 19:08:12,690 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-09-10 19:08:20,062 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=4957
+2026-09-10 19:08:20,063 WARNING __main__ - [Quality] word_count=422 < 450
+2026-09-10 19:08:20,063 WARNING __main__ - [Slot 3] Qualidade insuficiente — artigo descartado
+2026-09-10 19:08:20,063 ERROR __main__ - [Slot 3] Slot descartado.
+2026-09-10 19:08:20,063 INFO __main__ - ═══ Slot 4/5 ═══
+2026-09-10 19:08:20,063 INFO __main__ - [Slot 4] Usando trending topic local: Scientists discover a hidden problem with this popular sugar substitute
+2026-09-10 19:08:20,063 INFO __main__ - [Slot 4] title_hint=A Realistic Scientists Discover A Hidden Problem With This Popular Sugar...
+2026-09-10 19:08:20,063 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-09-10 19:08:28,523 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=5726
+2026-09-10 19:08:28,761 INFO src.app.duplicate_checker - Indexed post: scientists-discover-hidden-problem-with-popular-sugar-substitute (Total: 141)
+2026-09-10 19:08:30,248 INFO __main__ - [Slot 4] Submetendo ao Google Indexing: https://rodrigosimoes97.github.io/Pin/scientists-discover-hidden-problem-with-popular-sugar-substitute.html
+2026-09-10 19:08:30,290 INFO src.app.indexing - Loaded Google service account from raw JSON content.
+2026-09-10 19:08:30,651 WARNING src.app.indexing - Attempt 1: Failed to index https://rodrigosimoes97.github.io/Pin/scientists-discover-hidden-problem-with-popular-sugar-substitute.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Web Search Indexing API has not been used in project 711792695538 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.",
+    "status": "PERMISSION_DENIED",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+        "reason": "SERVICE_DISABLED",
+        "domain": "googleapis.com",
+        "metadata": {
+          "service": "indexing.googleapis.com",
+          "consumer": "projects/711792695538",
+          "containerInfo": "711792695538",
+          "activationUrl": "https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538",
+          "serviceTitle": "Web Search Indexing API"
+        }
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.LocalizedMessage",
+        "locale": "en-US",
+        "message": "Web Search Indexing API has not been used in project 711792695538 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.Help",
+        "links": [
+          {
+            "description": "Google developers console API activation",
+            "url": "https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538"
+          }
+        ]
+      }
+    ]
+  }
+}
+
+2026-09-10 19:08:31,825 WARNING src.app.indexing - Attempt 2: Failed to index https://rodrigosimoes97.github.io/Pin/scientists-discover-hidden-problem-with-popular-sugar-substitute.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Web Search Indexing API has not been used in project 711792695538 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.",
+    "status": "PERMISSION_DENIED",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+        "reason": "SERVICE_DISABLED",
+        "domain": "googleapis.com",
+        "metadata": {
+          "containerInfo": "711792695538",
+          "consumer": "projects/711792695538",
+          "serviceTitle": "Web Search Indexing API",
+          "activationUrl": "https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538",
+          "service": "indexing.googleapis.com"
+        }
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.LocalizedMessage",
+        "locale": "en-US",
+        "message": "Web Search Indexing API has not been used in project 711792695538 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.Help",
+        "links": [
+          {
+            "description": "Google developers console API activation",
+            "url": "https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538"
+          }
+        ]
+      }
+    ]
+  }
+}
+
+2026-09-10 19:08:33,990 WARNING src.app.indexing - Attempt 3: Failed to index https://rodrigosimoes97.github.io/Pin/scientists-discover-hidden-problem-with-popular-sugar-substitute.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Web Search Indexing API has not been used in project 711792695538 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.",
+    "status": "PERMISSION_DENIED",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+        "reason": "SERVICE_DISABLED",
+        "domain": "googleapis.com",
+        "metadata": {
+          "service": "indexing.googleapis.com",
+          "consumer": "projects/711792695538",
+          "containerInfo": "711792695538",
+          "activationUrl": "https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538",
+          "serviceTitle": "Web Search Indexing API"
+        }
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.LocalizedMessage",
+        "locale": "en-US",
+        "message": "Web Search Indexing API has not been used in project 711792695538 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.Help",
+        "links": [
+          {
+            "description": "Google developers console API activation",
+            "url": "https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538"
+          }
+        ]
+      }
+    ]
+  }
+}
+
+2026-09-10 19:08:33,992 INFO __main__ - [Slot 4] ✓ Publicado: scientists-discover-hidden-problem-with-popular-sugar-substitute.html (info)
+2026-09-10 19:08:33,992 INFO __main__ - ═══ Slot 5/5 ═══
+2026-09-10 19:08:33,992 INFO __main__ - [Slot 5] Usando trending topic local: This lifestyle program improved cognition 55% more than basic health advice
+2026-09-10 19:08:33,992 INFO __main__ - [Slot 5] title_hint=6 Practical Ways to fix This Lifestyle Program Improved Cognition 55% More...
+2026-09-10 19:08:33,992 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-09-10 19:08:38,873 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-09-10 19:08:43,874 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-09-10 19:08:52,345 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 OK finishReason=STOP len_chars=5965
+2026-09-10 19:08:52,526 INFO src.app.duplicate_checker - Indexed post: lifestyle-program-improved-cognition-55-percent-more (Total: 142)
+2026-09-10 19:08:53,702 INFO __main__ - [Slot 5] Submetendo ao Google Indexing: https://rodrigosimoes97.github.io/Pin/lifestyle-program-improved-cognition-55-percent-more.html
+2026-09-10 19:08:53,743 INFO src.app.indexing - Loaded Google service account from raw JSON content.
+2026-09-10 19:08:54,064 WARNING src.app.indexing - Attempt 1: Failed to index https://rodrigosimoes97.github.io/Pin/lifestyle-program-improved-cognition-55-percent-more.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Web Search Indexing API has not been used in project 711792695538 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.",
+    "status": "PERMISSION_DENIED",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+        "reason": "SERVICE_DISABLED",
+        "domain": "googleapis.com",
+        "metadata": {
+          "serviceTitle": "Web Search Indexing API",
+          "containerInfo": "711792695538",
+          "consumer": "projects/711792695538",
+          "service": "indexing.googleapis.com",
+          "activationUrl": "https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538"
+        }
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.LocalizedMessage",
+        "locale": "en-US",
+        "message": "Web Search Indexing API has not been used in project 711792695538 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.Help",
+        "links": [
+          {
+            "description": "Google developers console API activation",
+            "url": "https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538"
+          }
+        ]
+      }
+    ]
+  }
+}
+
+2026-09-10 19:08:55,152 WARNING src.app.indexing - Attempt 2: Failed to index https://rodrigosimoes97.github.io/Pin/lifestyle-program-improved-cognition-55-percent-more.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Web Search Indexing API has not been used in project 711792695538 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.",
+    "status": "PERMISSION_DENIED",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+        "reason": "SERVICE_DISABLED",
+        "domain": "googleapis.com",
+        "metadata": {
+          "serviceTitle": "Web Search Indexing API",
+          "containerInfo": "711792695538",
+          "service": "indexing.googleapis.com",
+          "activationUrl": "https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538",
+          "consumer": "projects/711792695538"
+        }
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.LocalizedMessage",
+        "locale": "en-US",
+        "message": "Web Search Indexing API has not been used in project 711792695538 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.Help",
+        "links": [
+          {
+            "description": "Google developers console API activation",
+            "url": "https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538"
+          }
+        ]
+      }
+    ]
+  }
+}
+
+2026-09-10 19:08:57,226 WARNING src.app.indexing - Attempt 3: Failed to index https://rodrigosimoes97.github.io/Pin/lifestyle-program-improved-cognition-55-percent-more.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Web Search Indexing API has not been used in project 711792695538 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.",
+    "status": "PERMISSION_DENIED",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+        "reason": "SERVICE_DISABLED",
+        "domain": "googleapis.com",
+        "metadata": {
+          "serviceTitle": "Web Search Indexing API",
+          "containerInfo": "711792695538",
+          "service": "indexing.googleapis.com",
+          "activationUrl": "https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538",
+          "consumer": "projects/711792695538"
+        }
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.LocalizedMessage",
+        "locale": "en-US",
+        "message": "Web Search Indexing API has not been used in project 711792695538 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.Help",
+        "links": [
+          {
+            "description": "Google developers console API activation",
+            "url": "https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538"
+          }
+        ]
+      }
+    ]
+  }
+}
+
+2026-09-10 19:08:57,228 INFO __main__ - [Slot 5] ✓ Publicado: lifestyle-program-improved-cognition-55-percent-more.html (info)
+2026-09-10 19:08:57,228 INFO __main__ - Run completo. Publicados 2/5 posts.

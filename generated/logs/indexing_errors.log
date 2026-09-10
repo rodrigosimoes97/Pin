@@ -1,0 +1,72 @@
+2026-09-10T19:08:33.990344+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/scientists-discover-hidden-problem-with-popular-sugar-substitute.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Web Search Indexing API has not been used in project 711792695538 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.",
+    "status": "PERMISSION_DENIED",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+        "reason": "SERVICE_DISABLED",
+        "domain": "googleapis.com",
+        "metadata": {
+          "service": "indexing.googleapis.com",
+          "consumer": "projects/711792695538",
+          "containerInfo": "711792695538",
+          "activationUrl": "https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538",
+          "serviceTitle": "Web Search Indexing API"
+        }
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.LocalizedMessage",
+        "locale": "en-US",
+        "message": "Web Search Indexing API has not been used in project 711792695538 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.Help",
+        "links": [
+          {
+            "description": "Google developers console API activation",
+            "url": "https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538"
+          }
+        ]
+      }
+    ]
+  }
+}
+
+2026-09-10T19:08:57.226617+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/lifestyle-program-improved-cognition-55-percent-more.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Web Search Indexing API has not been used in project 711792695538 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.",
+    "status": "PERMISSION_DENIED",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+        "reason": "SERVICE_DISABLED",
+        "domain": "googleapis.com",
+        "metadata": {
+          "serviceTitle": "Web Search Indexing API",
+          "containerInfo": "711792695538",
+          "service": "indexing.googleapis.com",
+          "activationUrl": "https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538",
+          "consumer": "projects/711792695538"
+        }
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.LocalizedMessage",
+        "locale": "en-US",
+        "message": "Web Search Indexing API has not been used in project 711792695538 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.Help",
+        "links": [
+          {
+            "description": "Google developers console API activation",
+            "url": "https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538"
+          }
+        ]
+      }
+    ]
+  }
+}
+
