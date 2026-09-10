@@ -65,14 +65,23 @@ class GeminiClient:
             },
         }
 
+        # Modelos para fallback caso o modelo principal esteja com 503 (capacidade esgotada)
+        candidate_models = [self.model]
+        for fb in ["gemini-2.5-flash", "gemini-1.5-flash", "gemini-2.0-flash"]:
+            if fb not in candidate_models:
+                candidate_models.append(fb)
+
         errors: list[str] = []
 
         for round_idx in range(_MAX_ROUNDS + 1):
+            # A cada rodada, se a anterior falhou totalmente, tenta o próximo modelo da lista
+            current_model = candidate_models[min(round_idx, len(candidate_models) - 1)]
+
             for key_idx, api_key in enumerate(self.api_keys, start=1):
-                endpoint = f"{API_BASE}/{self.model}:generateContent"
+                endpoint = f"{API_BASE}/{current_model}:generateContent"
                 LOG.info(
                     "[Gemini] modelo=%s key#%d rodada=%d enviando...",
-                    self.model,
+                    current_model,
                     key_idx,
                     round_idx + 1,
                 )
@@ -102,21 +111,24 @@ class GeminiClient:
 
                 status = response.status_code
 
-                # 429 Rate Limit — respeita Retry-After
+                # 429 Rate Limit
+                # Se ainda há outras keys para tentar nesta rodada, passe imediatamente para a próxima key!
+                # Não bloqueie o fluxo por dezenas de segundos se há outras chaves disponíveis.
                 if status == 429:
-                    wait = min(_parse_retry_after(response) or (15 * (round_idx + 1)), _BACKOFF_CAP)
-                    msg = f"key#{key_idx} status=429 aguardando={wait:.0f}s rodada={round_idx + 1}"
+                    retry_wait = min(_parse_retry_after(response) or (10 * (round_idx + 1)), _BACKOFF_CAP)
+                    msg = f"key#{key_idx} status=429 (quota/rate limit) retry_delay={retry_wait:.0f}s"
                     errors.append(msg)
-                    LOG.warning("[Gemini] %s", msg)
-                    time.sleep(wait)
+                    LOG.warning("[Gemini] %s — alternando para próxima key", msg)
+                    # Pequena pausa de 1s para não bombardear conexões
+                    time.sleep(1)
                     continue
 
-                # 5xx transitório — backoff exponencial
+                # 5xx transitório (503 Service Unavailable / alta demanda)
                 if status in {500, 502, 503, 504}:
-                    wait = min(_BACKOFF_5XX_BASE * (2 ** round_idx), _BACKOFF_CAP)
-                    msg = f"key#{key_idx} status={status} aguardando={wait:.0f}s rodada={round_idx + 1}"
+                    wait = min(_BACKOFF_5XX_BASE * (round_idx + 1), 15)
+                    msg = f"key#{key_idx} status={status} (alta demanda no modelo {current_model})"
                     errors.append(msg)
-                    LOG.warning("[Gemini] %s", msg)
+                    LOG.warning("[Gemini] %s — tentando próxima key", msg)
                     time.sleep(wait)
                     continue
 
@@ -142,7 +154,8 @@ class GeminiClient:
                 finish_reason = _extract_finish_reason(body)
 
                 LOG.info(
-                    "[Gemini] key#%d rodada=%d OK finishReason=%s len_chars=%d",
+                    "[Gemini] modelo=%s key#%d rodada=%d OK finishReason=%s len_chars=%d",
+                    current_model,
                     key_idx,
                     round_idx + 1,
                     finish_reason,
@@ -156,14 +169,17 @@ class GeminiClient:
                 errors.append(msg)
                 LOG.warning("[Gemini] %s", msg)
 
-            # Pausa entre rodadas
+            # Pausa breve entre rodadas completas (quando todas as 4 keys deram erro)
             if round_idx < _MAX_ROUNDS:
-                inter_wait = 12 * (round_idx + 1)
+                inter_wait = 5 * (round_idx + 1)
+                next_model = candidate_models[min(round_idx + 1, len(candidate_models) - 1)]
                 LOG.warning(
-                    "[Gemini] Todas as keys falharam na rodada %d. "
-                    "Aguardando %ds antes da próxima rodada.",
+                    "[Gemini] Todas as keys falharam no modelo %s na rodada %d. "
+                    "Aguardando %ds antes de tentar no modelo %s.",
+                    current_model,
                     round_idx + 1,
                     inter_wait,
+                    next_model,
                 )
                 time.sleep(inter_wait)
 

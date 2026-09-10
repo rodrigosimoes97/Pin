@@ -45,10 +45,10 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY_1 }}
         run: |
           # Testa conectividade apenas — 429/503 não interrompem o pipeline
-          # O pipeline principal tem retry inteligente próprio
+          MODEL_NAME="${{ vars.GEMINI_MODEL || 'gemini-2.5-flash' }}"
           curl -s --connect-timeout 10 --max-time 30 \
             -X POST \
-            "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key=${GEMINI_API_KEY}" \
+            "https://generativelanguage.googleapis.com/v1beta/models/${MODEL_NAME}:generateContent?key=${GEMINI_API_KEY}" \
             -H "Content-Type: application/json" \
             -d '{"contents":[{"parts":[{"text":"OK"}]}],"generationConfig":{"maxOutputTokens":5}}' \
             -o /dev/null -w "Gemini connectivity check HTTP status: %{http_code}\n" || true
@@ -70,6 +70,7 @@ jobs:
           HF_HUB_DISABLE_PROGRESS_BARS: "1"
           TRANSFORMERS_VERBOSITY: "error"
           GOOGLE_INDEXING_JSON_PATH: ${{ secrets.GOOGLE_INDEXING_JSON_PATH }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-2.5-flash' }}
         run: python -m src.app.run_daily
 
       - name: Validate internal links
