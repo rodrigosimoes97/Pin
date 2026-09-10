@@ -297,6 +297,7 @@ def main() -> None:
                 link=post_link,
                 image_path=hero_rel,          # hero pública .jpeg — não a imagem de generated/
                 tag=post.get("tag", ""),
+                slot_index=slot,
             )
 
             daily_slugs.add(post["slug"])

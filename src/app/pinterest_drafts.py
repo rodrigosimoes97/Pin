@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import csv
 import json
-from datetime import date, timezone, datetime
+from datetime import date
 from pathlib import Path
 
 # URL base pública do site
@@ -11,8 +11,19 @@ PUBLIC_BASE_URL = "https://health-ptg.pages.dev"
 # Nome do board conforme o teste.csv
 PINTEREST_BOARD = "Health & Wellness"
 
-# Horário de publicação padrão (meio-dia UTC)
-PUBLISH_TIME = "T12:00:00"
+# Melhores horários para postar no Pinterest (Horário dos EUA - Eastern Time / ET):
+# Slot 1: 10:00 AM (Início da manhã / pausas de trabalho)
+# Slot 2: 01:00 PM (13:00 - Almoço)
+# Slot 3: 03:30 PM (15:30 - Pausa da tarde)
+# Slot 4: 06:00 PM (18:00 - Pós-expediente / relaxamento)
+# Slot 5: 08:30 PM (20:30 - Horário nobre do Pinterest / noite)
+PINTEREST_BEST_HOURS_US = [
+    "T10:00:00",
+    "T13:00:00",
+    "T15:30:00",
+    "T18:00:00",
+    "T20:30:00",
+]
 
 
 def write_draft_pack(
@@ -24,12 +35,14 @@ def write_draft_pack(
     image_path: str,          # caminho relativo da imagem hero (assets/YYYY-MM-DD_slug.jpeg)
     tag: str = "",            # usado para gerar Keywords
     alt_text: str = "",       # ignorado — mantido por compatibilidade retroativa
+    slot_index: int | None = None,
 ) -> tuple[Path, Path]:
     """
     Gera CSV no formato exato do Pinterest Bulk Upload (mesmo padrão do teste.csv):
     Title, Media URL, Pinterest board, Thumbnail, Description, Link, Publish date, Keywords
 
     A Media URL aponta para a imagem hero pública (.jpeg) — não para generated/pinterest/.
+    O Publish date distribui horários distintos ao longo do dia (melhores horários dos EUA).
     """
     out_dir.mkdir(parents=True, exist_ok=True)
 
@@ -40,8 +53,25 @@ def write_draft_pack(
     # Gera keywords a partir do tag e do título
     keywords = _build_keywords(pin_title, tag)
 
-    # Publish date no formato ISO com hora, igual ao teste.csv
-    publish_date = f"{run_date.isoformat()}{PUBLISH_TIME}"
+    # Carrega pins já registrados no dia para determinar o slot atual caso não informado
+    json_path = out_dir / f"{run_date.isoformat()}_pins.json"
+    payload: list[dict[str, str]] = []
+    if json_path.exists():
+        try:
+            raw = json.loads(json_path.read_text(encoding="utf-8"))
+            if isinstance(raw, list):
+                payload = [dict(entry) for entry in raw if isinstance(entry, dict)]
+        except json.JSONDecodeError:
+            payload = []
+
+    # Determina o horário do post baseado no slot (0 a 4)
+    if slot_index is not None:
+        idx = min(max(0, slot_index), len(PINTEREST_BEST_HOURS_US) - 1)
+    else:
+        idx = min(len(payload), len(PINTEREST_BEST_HOURS_US) - 1)
+
+    publish_time = PINTEREST_BEST_HOURS_US[idx]
+    publish_date = f"{run_date.isoformat()}{publish_time}"
 
     item = {
         "Title": pin_title,
@@ -53,17 +83,6 @@ def write_draft_pack(
         "Publish date": publish_date,
         "Keywords": keywords,
     }
-
-    # Acumula no JSON do dia para não sobrescrever pins anteriores
-    json_path = out_dir / f"{run_date.isoformat()}_pins.json"
-    payload: list[dict[str, str]] = []
-    if json_path.exists():
-        try:
-            raw = json.loads(json_path.read_text(encoding="utf-8"))
-            if isinstance(raw, list):
-                payload = [dict(entry) for entry in raw if isinstance(entry, dict)]
-        except json.JSONDecodeError:
-            payload = []
 
     # Evita duplicados pelo link
     if not any(p.get("Link") == link for p in payload):
