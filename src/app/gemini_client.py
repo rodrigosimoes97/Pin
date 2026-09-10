@@ -67,19 +67,50 @@ class GeminiClient:
                     continue
 
                 if response.status_code == 429:
-                    msg = f"key#{key_idx} transient_status=429"
+                    body_preview = response.text[:1000]
+
+                    msg = (
+                        f"key#{key_idx} transient_status=429 "
+                        f"body={body_preview}"
+                    )
+
                     errors.append(msg)
+
+                    LOG.warning(
+                        "Gemini rate limit: key#%d body=%s",
+                        key_idx,
+                        body_preview,
+                    )
+
                     wait_time = 20 * (attempt + 1)
-                    LOG.warning("Gemini rate limit hit (429); waiting %ds before trying next key: %s", wait_time, msg)
-                    time.sleep(wait_time) 
+                    LOG.warning(
+                        "Waiting %ds before retrying Gemini",
+                        wait_time,
+                    )
+                    time.sleep(wait_time)
                     continue
 
+
                 if response.status_code in {500, 502, 503, 504}:
-                    msg = f"key#{key_idx} transient_status={response.status_code}"
+                    body_preview = response.text[:1000]
+
+                    msg = (
+                        f"key#{key_idx} transient_status={response.status_code} "
+                        f"body={body_preview}"
+                    )
+
                     errors.append(msg)
-                    LOG.warning("Gemini server error; trying next key: %s", msg)
+
+                    LOG.warning(
+                        "Gemini server error: key#%d status=%d body=%s",
+                        key_idx,
+                        response.status_code,
+                        body_preview,
+                    )
+
                     time.sleep(2)
                     continue
+
 
                 if response.status_code >= 400:
                     msg = f"key#{key_idx} http_error={response.status_code} body={response.text[:160]}"
