@@ -31,6 +31,16 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Test Gemini connectivity
+        run: |
+          echo "Testing DNS..."
+          getent hosts generativelanguage.googleapis.com
+
+          echo "Testing HTTPS..."
+          curl -I --connect-timeout 10 --max-time 20 \
+            https://generativelanguage.googleapis.com
+
+
       - name: Run pipeline
         env:
           GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }}
@@ -46,7 +56,7 @@ jobs:
           POSTS_PER_WEEK: "5"
           HF_HUB_DISABLE_PROGRESS_BARS: "1"
           TRANSFORMERS_VERBOSITY: "error"
-          GOOGLE_INDEXING_JSON: ${{ secrets.GOOGLE_INDEXING_JSON_PATH }}
+          GOOGLE_INDEXING_JSON_PATH: ${{ secrets.GOOGLE_INDEXING_JSON_PATH }}
         run: python -m src.app.run_daily
 
       - name: Validate internal links
