@@ -40,6 +40,33 @@ jobs:
           curl -I --connect-timeout 10 --max-time 20 \
             https://generativelanguage.googleapis.com
 
+      - name: Test Gemini API
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY_1 }}
+        run: |
+          set -o pipefail
+
+          curl -v \
+            --connect-timeout 10 \
+            --max-time 60 \
+            -X POST \
+            "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key=${GEMINI_API_KEY}" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "contents": [
+                {
+                  "parts": [
+                    {
+                      "text": "Responda apenas OK"
+                    }
+                  ]
+                }
+              ],
+              "generationConfig": {
+                "maxOutputTokens": 20
+              }
+            }'
+
 
       - name: Run pipeline
         env:

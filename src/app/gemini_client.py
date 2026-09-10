@@ -46,11 +46,22 @@ class GeminiClient:
                         json=payload,
                         timeout=self.timeout_seconds,
                     )
-                except requests.RequestException as exc:
-                    msg = f"key#{key_idx} network_error={type(exc).__name__}"
+                except requests.Timeout as exc:
+                    msg = f"key#{key_idx} timeout={type(exc).__name__}"
                     errors.append(msg)
-                    LOG.warning("Gemini request failed: %s", msg)
-                    time.sleep(2)
+                    LOG.warning("Gemini timeout: %s", msg)
+                    continue
+
+                except requests.ConnectionError as exc:
+                    msg = f"key#{key_idx} connection_error={type(exc).__name__}"
+                    errors.append(msg)
+                    LOG.warning("Gemini connection error: %s", msg)
+                    continue
+
+                except requests.RequestException as exc:
+                    msg = f"key#{key_idx} request_error={type(exc).__name__}"
+                    errors.append(msg)
+                    LOG.warning("Gemini request error: %s", msg)
                     continue
 
                 if response.status_code == 429:
