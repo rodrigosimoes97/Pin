@@ -1,9 +1,7 @@
 {
-  "runs": 171,
+  "runs": 172,
   "offer_runs": 21,
   "recent_topics": [
-    "optimizing-morning-routines-for-energy-and-focus",
-    "gut-health-for-beginners-microbiome-diet",
     "calcium-vitamin-d-bone-health-review",
     "vitamin-deficiency-mimics-aging",
     "vitamin-c-brain-health-link",
@@ -51,11 +49,11 @@
     "obesity-immune-cell-memory",
     "coffee-bone-health-study",
     "biohacking-for-better-sleep",
-    "sugar-substitute-hidden-problem"
+    "sugar-substitute-hidden-problem",
+    "scientists-discover-a-hidden-problem-with-this-pop",
+    "this-lifestyle-program-improved-cognition-55-more-"
   ],
   "recent_slugs": [
-    "biohacking-sleep-peak-performance",
-    "creatine-brain-energy-secrets",
     "daily-mindfulness-stress-relief",
     "unlock-better-sleep-essential-sleep-hygiene-tips",
     "unlock-your-metabolism-sleep-secrets-weight-loss",
@@ -153,12 +151,12 @@
     "obesity-immune-memory-impact",
     "coffees-bone-busting-secret-study-link",
     "biohacking-sleep-deeper-rest-optimal-health",
-    "popular-sugar-substitutes-secret-health-hazard"
+    "popular-sugar-substitutes-secret-health-hazard",
+    "scientists-discover-hidden-problem-with-popular-sugar-substitute",
+    "lifestyle-program-improved-cognition-55-percent-more"
   ],
   "last_run": "2026-09-10",
   "recent_tags": [
-    "healthy-habits",
-    "gut",
     "health",
     "health",
     "health",
@@ -206,20 +204,22 @@
     "health",
     "health",
     "sleep",
-    "gut"
+    "gut",
+    "health",
+    "healthy-habits"
   ],
   "tag_counts": {
     "sleep": 28,
     "gut": 21,
     "mental-wellness": 23,
     "stress": 10,
-    "healthy-habits": 40,
+    "healthy-habits": 41,
     "longevity": 15,
     "recipes": 8,
     "anti-inflammatory": 9,
     "home-workouts": 7,
     "weight": 19,
-    "health": 49
+    "health": 50
   },
   "topic_rotation": {
     "sleep": 28,
@@ -231,11 +231,10 @@
     "anti-inflammatory": 11,
     "home-workouts": 11,
     "weight": 25,
-    "mental-wellness": 1
+    "mental-wellness": 1,
+    "health": 2
   },
   "recent_titles": [
-    "Older Adults' Salt Intake: What a New Study Discovered",
-    "How Much Water for Better Health?",
     "NMN & Resveratrol: Science-Backed Longevity Boosts",
     "Dementia Risk: Is Your Tap Water to Blame?",
     "Aging Well: What Supplements Seniors Truly Need",
@@ -293,6 +292,8 @@
     "Immune Memory Loss? How Obesity Changes Your Defenses",
     "Morning Brew's Bone-Busting Secret? Study Says Yes",
     "The Biohacker's Guide to Superior Sleep Quality",
-    "Sweetener Swap? New Gut Health Concerns Emerge"
+    "Sweetener Swap? New Gut Health Concerns Emerge",
+    "A Realistic Look: Scientists Discover A Hidden Problem With This Popular Sugar Substitute",
+    "This Lifestyle Program Improved Cognition 55% More Than Basic Health Advice"
   ]
 }
