@@ -103,11 +103,9 @@ def main() -> None:
 
     # 4) Rebuild index/tag/sitemap/robots from cleaned posts.json
     base_url = (Path(".") / ".base_url.tmp").read_text().strip() if (Path(".") / ".base_url.tmp").exists() else ""
-    # Prefer env if running in Actions
+    # Prefer env if running in Actions, fallback to canonical Cloudflare Pages URL
     import os
-    base_url = (os.getenv("BASE_URL") or base_url).strip().rstrip("/")
-    if not base_url:
-        raise SystemExit("BASE_URL missing. Set env BASE_URL for repair_site.")
+    base_url = (os.getenv("BASE_URL") or base_url or "https://health-ptg.pages.dev").strip().rstrip("/")
 
     site_title = (os.getenv("SITE_TITLE") or "Practical US Health Notes").strip()
 

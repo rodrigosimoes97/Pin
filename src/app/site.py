@@ -108,9 +108,8 @@ def write_site_state(
 # ─────────────────────────────────────────────────────────────────────────────
 
 def _effective_base_url(base_url: str) -> str:
-    if "rodrigosimoes97.github.io/Pin" in PUBLIC_BASE_URL or "health-ptg.pages.dev" in PUBLIC_BASE_URL:
-        return PUBLIC_BASE_URL.rstrip("/")
-    return base_url.rstrip("/")
+    # Origem canônica obrigatória e exclusiva do site
+    return PUBLIC_BASE_URL.rstrip("/")
 
 
 def _load_posts(path: Path) -> list[dict[str, str]]:

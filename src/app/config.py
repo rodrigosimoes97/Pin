@@ -45,7 +45,7 @@ def load_settings() -> Settings:
         gemini_api_keys=_load_gemini_keys(),
         gemini_model=os.getenv("GEMINI_MODEL", "gemini-3.6-flash").strip(),
         pexels_api_key=_required("PEXELS_API_KEY"),
-        base_url=_required("BASE_URL").rstrip("/"),
+        base_url=(os.getenv("BASE_URL") or "https://health-ptg.pages.dev").strip().rstrip("/"),
         site_title=os.getenv("SITE_TITLE", "Practical US Health Notes").strip(),
         timezone=os.getenv("TZ", "UTC").strip(),
         pinterest_access_token=os.getenv("PINTEREST_ACCESS_TOKEN", "").strip(),
