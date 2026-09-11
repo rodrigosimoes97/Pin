@@ -70,3 +70,111 @@
   }
 }
 
+2026-09-11T14:41:10.292525+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/one-sugary-drink-a-day-linked-to-more-than-double-the-risk-of-stomach-cancer.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Web Search Indexing API has not been used in project 711792695538 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.",
+    "status": "PERMISSION_DENIED",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+        "reason": "SERVICE_DISABLED",
+        "domain": "googleapis.com",
+        "metadata": {
+          "serviceTitle": "Web Search Indexing API",
+          "activationUrl": "https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538",
+          "containerInfo": "711792695538",
+          "service": "indexing.googleapis.com",
+          "consumer": "projects/711792695538"
+        }
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.LocalizedMessage",
+        "locale": "en-US",
+        "message": "Web Search Indexing API has not been used in project 711792695538 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.Help",
+        "links": [
+          {
+            "description": "Google developers console API activation",
+            "url": "https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538"
+          }
+        ]
+      }
+    ]
+  }
+}
+
+2026-09-11T14:42:04.499721+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/popular-brain-supplement-linked-to-shorter-lifespan-in-men.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Web Search Indexing API has not been used in project 711792695538 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.",
+    "status": "PERMISSION_DENIED",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+        "reason": "SERVICE_DISABLED",
+        "domain": "googleapis.com",
+        "metadata": {
+          "activationUrl": "https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538",
+          "serviceTitle": "Web Search Indexing API",
+          "service": "indexing.googleapis.com",
+          "containerInfo": "711792695538",
+          "consumer": "projects/711792695538"
+        }
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.LocalizedMessage",
+        "locale": "en-US",
+        "message": "Web Search Indexing API has not been used in project 711792695538 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.Help",
+        "links": [
+          {
+            "description": "Google developers console API activation",
+            "url": "https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538"
+          }
+        ]
+      }
+    ]
+  }
+}
+
+2026-09-11T14:42:43.560888+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/compound-in-blueberries-may-help-muscle-cells-burn-excess-fat.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Web Search Indexing API has not been used in project 711792695538 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.",
+    "status": "PERMISSION_DENIED",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+        "reason": "SERVICE_DISABLED",
+        "domain": "googleapis.com",
+        "metadata": {
+          "activationUrl": "https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538",
+          "containerInfo": "711792695538",
+          "serviceTitle": "Web Search Indexing API",
+          "service": "indexing.googleapis.com",
+          "consumer": "projects/711792695538"
+        }
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.LocalizedMessage",
+        "locale": "en-US",
+        "message": "Web Search Indexing API has not been used in project 711792695538 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.Help",
+        "links": [
+          {
+            "description": "Google developers console API activation",
+            "url": "https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538"
+          }
+        ]
+      }
+    ]
+  }
+}
+

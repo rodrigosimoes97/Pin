@@ -75041,3 +75041,408 @@ RuntimeError: Gemini failed after exhaustive retries: key#1 transient_status=429
 
 2026-09-10 19:08:57,228 INFO __main__ - [Slot 5] ✓ Publicado: lifestyle-program-improved-cognition-55-percent-more.html (info)
 2026-09-10 19:08:57,228 INFO __main__ - Run completo. Publicados 2/5 posts.
+2026-09-11 14:29:47,558 INFO __main__ - Buscando trending topics para USA...
+2026-09-11 14:29:47,745 WARNING src.app.trend_research - Failed to fetch Google Trends (404/Error): The request failed: Google returned a response with code 404. Moving to fallbacks.
+2026-09-11 14:29:51,230 INFO src.app.trend_research - Gathered 13 unique trending topics.
+2026-09-11 14:29:51,234 INFO __main__ - ═══ Slot 1/5 ═══
+2026-09-11 14:29:51,234 INFO __main__ - [Slot 1] Usando trending topic local: Experimental therapy gantenerumab fails to slow or improve Alzheimers memory loss in clinical trials
+2026-09-11 14:29:51,234 INFO __main__ - [Slot 1] title_hint=Stop Overcomplicating Experimental Therapy Gantenerumab Fails To Slow Or...
+2026-09-11 14:29:51,235 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-09-11 14:29:54,470 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-09-11 14:29:59,471 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-09-11 14:30:31,744 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 OK finishReason=STOP len_chars=4398
+2026-09-11 14:30:31,746 WARNING __main__ - [Quality] word_count=374 < 450
+2026-09-11 14:30:31,746 WARNING __main__ - [Slot 1] Qualidade insuficiente — artigo descartado
+2026-09-11 14:30:31,746 ERROR __main__ - [Slot 1] Slot descartado.
+2026-09-11 14:30:31,746 INFO __main__ - ═══ Slot 2/5 ═══
+2026-09-11 14:30:31,747 INFO __main__ - [Slot 2] Usando trending topic local: Desperate for heart surgery for their baby, a family feels the effects of pediatric hospital shortages
+2026-09-11 14:30:31,747 INFO __main__ - [Slot 2] title_hint=Stop Overcomplicating Desperate For Heart Surgery For Their Baby, A Family...
+2026-09-11 14:30:31,747 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-09-11 14:30:34,062 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-09-11 14:30:39,063 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-09-11 14:30:41,224 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-09-11 14:30:46,225 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-09-11 14:31:30,135 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 OK finishReason=STOP len_chars=4532
+2026-09-11 14:31:30,136 WARNING __main__ - [Quality] word_count=377 < 450
+2026-09-11 14:31:30,136 WARNING __main__ - [Slot 2] Qualidade insuficiente — artigo descartado
+2026-09-11 14:31:30,136 ERROR __main__ - [Slot 2] Slot descartado.
+2026-09-11 14:31:30,136 INFO __main__ - ═══ Slot 3/5 ═══
+2026-09-11 14:31:30,136 INFO __main__ - [Slot 3] Usando trending topic local: One sugary drink a day linked to more than double the risk of stomach cancer
+2026-09-11 14:31:30,137 INFO __main__ - [Slot 3] title_hint=3 Science-Backed One Sugary Drink A Day Linked To More Than Double The Risk...
+2026-09-11 14:31:30,137 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-09-11 14:31:38,599 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-09-11 14:31:43,599 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-09-11 14:31:45,992 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-09-11 14:31:50,992 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-09-11 14:32:51,063 WARNING src.app.gemini_client - [Gemini] key#3 timeout
+2026-09-11 14:32:51,063 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 enviando...
+2026-09-11 14:32:54,289 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-09-11 14:32:59,290 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.6-flash na rodada 1. Aguardando 5s antes de tentar no modelo gemini-3.8-flash.
+2026-09-11 14:33:04,290 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=2 enviando...
+2026-09-11 14:34:04,361 WARNING src.app.gemini_client - [Gemini] key#1 timeout
+2026-09-11 14:34:04,361 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=2 enviando...
+2026-09-11 14:35:03,234 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-09-11 14:35:13,234 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=2 enviando...
+2026-09-11 14:36:13,335 WARNING src.app.gemini_client - [Gemini] key#3 timeout
+2026-09-11 14:36:13,336 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=2 enviando...
+2026-09-11 14:37:13,425 WARNING src.app.gemini_client - [Gemini] key#4 timeout
+2026-09-11 14:37:13,425 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.8-flash na rodada 2. Aguardando 10s antes de tentar no modelo gemini-3.8-flash.
+2026-09-11 14:37:23,425 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=3 enviando...
+2026-09-11 14:38:23,523 WARNING src.app.gemini_client - [Gemini] key#1 timeout
+2026-09-11 14:38:23,524 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=3 enviando...
+2026-09-11 14:39:23,597 WARNING src.app.gemini_client - [Gemini] key#2 timeout
+2026-09-11 14:39:23,597 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=3 enviando...
+2026-09-11 14:40:23,686 WARNING src.app.gemini_client - [Gemini] key#3 timeout
+2026-09-11 14:40:23,687 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=3 enviando...
+2026-09-11 14:41:04,479 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=3 OK finishReason=STOP len_chars=4922
+2026-09-11 14:41:04,687 INFO src.app.duplicate_checker - Indexed post: one-sugary-drink-a-day-linked-to-more-than-double-the-risk-of-stomach-cancer (Total: 143)
+2026-09-11 14:41:06,864 INFO __main__ - [Slot 3] Submetendo ao Google Indexing: https://rodrigosimoes97.github.io/Pin/one-sugary-drink-a-day-linked-to-more-than-double-the-risk-of-stomach-cancer.html
+2026-09-11 14:41:06,906 INFO src.app.indexing - Loaded Google service account from raw JSON content.
+2026-09-11 14:41:07,119 WARNING src.app.indexing - Attempt 1: Failed to index https://rodrigosimoes97.github.io/Pin/one-sugary-drink-a-day-linked-to-more-than-double-the-risk-of-stomach-cancer.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Web Search Indexing API has not been used in project 711792695538 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.",
+    "status": "PERMISSION_DENIED",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+        "reason": "SERVICE_DISABLED",
+        "domain": "googleapis.com",
+        "metadata": {
+          "consumer": "projects/711792695538",
+          "containerInfo": "711792695538",
+          "service": "indexing.googleapis.com",
+          "serviceTitle": "Web Search Indexing API",
+          "activationUrl": "https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538"
+        }
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.LocalizedMessage",
+        "locale": "en-US",
+        "message": "Web Search Indexing API has not been used in project 711792695538 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.Help",
+        "links": [
+          {
+            "description": "Google developers console API activation",
+            "url": "https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538"
+          }
+        ]
+      }
+    ]
+  }
+}
+
+2026-09-11 14:41:08,229 WARNING src.app.indexing - Attempt 2: Failed to index https://rodrigosimoes97.github.io/Pin/one-sugary-drink-a-day-linked-to-more-than-double-the-risk-of-stomach-cancer.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Web Search Indexing API has not been used in project 711792695538 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.",
+    "status": "PERMISSION_DENIED",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+        "reason": "SERVICE_DISABLED",
+        "domain": "googleapis.com",
+        "metadata": {
+          "consumer": "projects/711792695538",
+          "containerInfo": "711792695538",
+          "service": "indexing.googleapis.com",
+          "serviceTitle": "Web Search Indexing API",
+          "activationUrl": "https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538"
+        }
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.LocalizedMessage",
+        "locale": "en-US",
+        "message": "Web Search Indexing API has not been used in project 711792695538 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.Help",
+        "links": [
+          {
+            "description": "Google developers console API activation",
+            "url": "https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538"
+          }
+        ]
+      }
+    ]
+  }
+}
+
+2026-09-11 14:41:10,292 WARNING src.app.indexing - Attempt 3: Failed to index https://rodrigosimoes97.github.io/Pin/one-sugary-drink-a-day-linked-to-more-than-double-the-risk-of-stomach-cancer.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Web Search Indexing API has not been used in project 711792695538 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.",
+    "status": "PERMISSION_DENIED",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+        "reason": "SERVICE_DISABLED",
+        "domain": "googleapis.com",
+        "metadata": {
+          "serviceTitle": "Web Search Indexing API",
+          "activationUrl": "https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538",
+          "containerInfo": "711792695538",
+          "service": "indexing.googleapis.com",
+          "consumer": "projects/711792695538"
+        }
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.LocalizedMessage",
+        "locale": "en-US",
+        "message": "Web Search Indexing API has not been used in project 711792695538 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.Help",
+        "links": [
+          {
+            "description": "Google developers console API activation",
+            "url": "https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538"
+          }
+        ]
+      }
+    ]
+  }
+}
+
+2026-09-11 14:41:10,295 INFO __main__ - [Slot 3] ✓ Publicado: one-sugary-drink-a-day-linked-to-more-than-double-the-risk-of-stomach-cancer.html (offer)
+2026-09-11 14:41:10,296 INFO __main__ - ═══ Slot 4/5 ═══
+2026-09-11 14:41:10,296 INFO __main__ - [Slot 4] Usando trending topic local: Popular brain supplement linked to shorter lifespan in men
+2026-09-11 14:41:10,296 INFO __main__ - [Slot 4] title_hint=4 Science-Backed Popular Brain Supplement Linked To Shorter Lifespan In Men...
+2026-09-11 14:41:10,296 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-09-11 14:41:15,822 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-09-11 14:41:20,822 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-09-11 14:41:23,466 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-09-11 14:41:28,466 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-09-11 14:41:59,697 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 OK finishReason=STOP len_chars=5463
+2026-09-11 14:41:59,869 INFO src.app.duplicate_checker - Indexed post: popular-brain-supplement-linked-to-shorter-lifespan-in-men (Total: 144)
+2026-09-11 14:42:01,174 INFO __main__ - [Slot 4] Submetendo ao Google Indexing: https://rodrigosimoes97.github.io/Pin/popular-brain-supplement-linked-to-shorter-lifespan-in-men.html
+2026-09-11 14:42:01,215 INFO src.app.indexing - Loaded Google service account from raw JSON content.
+2026-09-11 14:42:01,399 WARNING src.app.indexing - Attempt 1: Failed to index https://rodrigosimoes97.github.io/Pin/popular-brain-supplement-linked-to-shorter-lifespan-in-men.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Web Search Indexing API has not been used in project 711792695538 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.",
+    "status": "PERMISSION_DENIED",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+        "reason": "SERVICE_DISABLED",
+        "domain": "googleapis.com",
+        "metadata": {
+          "service": "indexing.googleapis.com",
+          "consumer": "projects/711792695538",
+          "containerInfo": "711792695538",
+          "serviceTitle": "Web Search Indexing API",
+          "activationUrl": "https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538"
+        }
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.LocalizedMessage",
+        "locale": "en-US",
+        "message": "Web Search Indexing API has not been used in project 711792695538 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.Help",
+        "links": [
+          {
+            "description": "Google developers console API activation",
+            "url": "https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538"
+          }
+        ]
+      }
+    ]
+  }
+}
+
+2026-09-11 14:42:02,441 WARNING src.app.indexing - Attempt 2: Failed to index https://rodrigosimoes97.github.io/Pin/popular-brain-supplement-linked-to-shorter-lifespan-in-men.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Web Search Indexing API has not been used in project 711792695538 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.",
+    "status": "PERMISSION_DENIED",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+        "reason": "SERVICE_DISABLED",
+        "domain": "googleapis.com",
+        "metadata": {
+          "service": "indexing.googleapis.com",
+          "consumer": "projects/711792695538",
+          "containerInfo": "711792695538",
+          "serviceTitle": "Web Search Indexing API",
+          "activationUrl": "https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538"
+        }
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.LocalizedMessage",
+        "locale": "en-US",
+        "message": "Web Search Indexing API has not been used in project 711792695538 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.Help",
+        "links": [
+          {
+            "description": "Google developers console API activation",
+            "url": "https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538"
+          }
+        ]
+      }
+    ]
+  }
+}
+
+2026-09-11 14:42:04,499 WARNING src.app.indexing - Attempt 3: Failed to index https://rodrigosimoes97.github.io/Pin/popular-brain-supplement-linked-to-shorter-lifespan-in-men.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Web Search Indexing API has not been used in project 711792695538 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.",
+    "status": "PERMISSION_DENIED",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+        "reason": "SERVICE_DISABLED",
+        "domain": "googleapis.com",
+        "metadata": {
+          "activationUrl": "https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538",
+          "serviceTitle": "Web Search Indexing API",
+          "service": "indexing.googleapis.com",
+          "containerInfo": "711792695538",
+          "consumer": "projects/711792695538"
+        }
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.LocalizedMessage",
+        "locale": "en-US",
+        "message": "Web Search Indexing API has not been used in project 711792695538 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.Help",
+        "links": [
+          {
+            "description": "Google developers console API activation",
+            "url": "https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538"
+          }
+        ]
+      }
+    ]
+  }
+}
+
+2026-09-11 14:42:04,501 INFO __main__ - [Slot 4] ✓ Publicado: popular-brain-supplement-linked-to-shorter-lifespan-in-men.html (offer)
+2026-09-11 14:42:04,501 INFO __main__ - ═══ Slot 5/5 ═══
+2026-09-11 14:42:04,501 INFO __main__ - [Slot 5] Usando trending topic local: Compound in blueberries may help muscle cells burn excess fat
+2026-09-11 14:42:04,501 INFO __main__ - [Slot 5] title_hint=A Realistic Compound In Blueberries May Help Muscle Cells Burn Excess Fat...
+2026-09-11 14:42:04,502 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-09-11 14:42:39,075 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=5623
+2026-09-11 14:42:39,252 INFO src.app.duplicate_checker - Indexed post: compound-in-blueberries-may-help-muscle-cells-burn-excess-fat (Total: 145)
+2026-09-11 14:42:40,231 INFO __main__ - [Slot 5] Submetendo ao Google Indexing: https://rodrigosimoes97.github.io/Pin/compound-in-blueberries-may-help-muscle-cells-burn-excess-fat.html
+2026-09-11 14:42:40,272 INFO src.app.indexing - Loaded Google service account from raw JSON content.
+2026-09-11 14:42:40,394 WARNING src.app.indexing - Attempt 1: Failed to index https://rodrigosimoes97.github.io/Pin/compound-in-blueberries-may-help-muscle-cells-burn-excess-fat.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Web Search Indexing API has not been used in project 711792695538 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.",
+    "status": "PERMISSION_DENIED",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+        "reason": "SERVICE_DISABLED",
+        "domain": "googleapis.com",
+        "metadata": {
+          "activationUrl": "https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538",
+          "service": "indexing.googleapis.com",
+          "serviceTitle": "Web Search Indexing API",
+          "consumer": "projects/711792695538",
+          "containerInfo": "711792695538"
+        }
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.LocalizedMessage",
+        "locale": "en-US",
+        "message": "Web Search Indexing API has not been used in project 711792695538 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.Help",
+        "links": [
+          {
+            "description": "Google developers console API activation",
+            "url": "https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538"
+          }
+        ]
+      }
+    ]
+  }
+}
+
+2026-09-11 14:42:41,454 WARNING src.app.indexing - Attempt 2: Failed to index https://rodrigosimoes97.github.io/Pin/compound-in-blueberries-may-help-muscle-cells-burn-excess-fat.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Web Search Indexing API has not been used in project 711792695538 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.",
+    "status": "PERMISSION_DENIED",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+        "reason": "SERVICE_DISABLED",
+        "domain": "googleapis.com",
+        "metadata": {
+          "activationUrl": "https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538",
+          "containerInfo": "711792695538",
+          "serviceTitle": "Web Search Indexing API",
+          "service": "indexing.googleapis.com",
+          "consumer": "projects/711792695538"
+        }
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.LocalizedMessage",
+        "locale": "en-US",
+        "message": "Web Search Indexing API has not been used in project 711792695538 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.Help",
+        "links": [
+          {
+            "description": "Google developers console API activation",
+            "url": "https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538"
+          }
+        ]
+      }
+    ]
+  }
+}
+
+2026-09-11 14:42:43,560 WARNING src.app.indexing - Attempt 3: Failed to index https://rodrigosimoes97.github.io/Pin/compound-in-blueberries-may-help-muscle-cells-burn-excess-fat.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Web Search Indexing API has not been used in project 711792695538 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.",
+    "status": "PERMISSION_DENIED",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+        "reason": "SERVICE_DISABLED",
+        "domain": "googleapis.com",
+        "metadata": {
+          "activationUrl": "https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538",
+          "containerInfo": "711792695538",
+          "serviceTitle": "Web Search Indexing API",
+          "service": "indexing.googleapis.com",
+          "consumer": "projects/711792695538"
+        }
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.LocalizedMessage",
+        "locale": "en-US",
+        "message": "Web Search Indexing API has not been used in project 711792695538 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.Help",
+        "links": [
+          {
+            "description": "Google developers console API activation",
+            "url": "https://console.developers.google.com/apis/api/indexing.googleapis.com/overview?project=711792695538"
+          }
+        ]
+      }
+    ]
+  }
+}
+
+2026-09-11 14:42:43,563 INFO __main__ - [Slot 5] ✓ Publicado: compound-in-blueberries-may-help-muscle-cells-burn-excess-fat.html (info)
+2026-09-11 14:42:43,563 INFO __main__ - Run completo. Publicados 3/5 posts.

@@ -1,10 +1,7 @@
 {
-  "runs": 172,
+  "runs": 173,
   "offer_runs": 21,
   "recent_topics": [
-    "calcium-vitamin-d-bone-health-review",
-    "vitamin-deficiency-mimics-aging",
-    "vitamin-c-brain-health-link",
     "how-to-improve-sleep-quality-naturally",
     "vitamin-a-vision-discovery",
     "stress-management-techniques-for-busy-professionals",
@@ -51,12 +48,12 @@
     "biohacking-for-better-sleep",
     "sugar-substitute-hidden-problem",
     "scientists-discover-a-hidden-problem-with-this-pop",
-    "this-lifestyle-program-improved-cognition-55-more-"
+    "this-lifestyle-program-improved-cognition-55-more-",
+    "one-sugary-drink-a-day-linked-to-more-than-double-",
+    "popular-brain-supplement-linked-to-shorter-lifespa",
+    "compound-in-blueberries-may-help-muscle-cells-burn"
   ],
   "recent_slugs": [
-    "daily-mindfulness-stress-relief",
-    "unlock-better-sleep-essential-sleep-hygiene-tips",
-    "unlock-your-metabolism-sleep-secrets-weight-loss",
     "mindfulness-techniques-stress-management",
     "vitamin-c-anxiety-secret-weapon",
     "mindful-eating-techniques-digestion-weight",
@@ -153,13 +150,13 @@
     "biohacking-sleep-deeper-rest-optimal-health",
     "popular-sugar-substitutes-secret-health-hazard",
     "scientists-discover-hidden-problem-with-popular-sugar-substitute",
-    "lifestyle-program-improved-cognition-55-percent-more"
+    "lifestyle-program-improved-cognition-55-percent-more",
+    "one-sugary-drink-a-day-linked-to-more-than-double-the-risk-of-stomach-cancer",
+    "popular-brain-supplement-linked-to-shorter-lifespan-in-men",
+    "compound-in-blueberries-may-help-muscle-cells-burn-excess-fat"
   ],
-  "last_run": "2026-09-10",
+  "last_run": "2026-09-11",
   "recent_tags": [
-    "health",
-    "health",
-    "health",
     "sleep",
     "health",
     "stress",
@@ -206,15 +203,18 @@
     "sleep",
     "gut",
     "health",
+    "healthy-habits",
+    "gut",
+    "longevity",
     "healthy-habits"
   ],
   "tag_counts": {
     "sleep": 28,
-    "gut": 21,
+    "gut": 22,
     "mental-wellness": 23,
     "stress": 10,
-    "healthy-habits": 41,
-    "longevity": 15,
+    "healthy-habits": 42,
+    "longevity": 16,
     "recipes": 8,
     "anti-inflammatory": 9,
     "home-workouts": 7,
@@ -226,18 +226,15 @@
     "gut": 28,
     "stress": 23,
     "healthy-habits": 64,
-    "longevity": 27,
+    "longevity": 28,
     "recipes": 11,
     "anti-inflammatory": 11,
     "home-workouts": 11,
-    "weight": 25,
+    "weight": 26,
     "mental-wellness": 1,
-    "health": 2
+    "health": 3
   },
   "recent_titles": [
-    "NMN & Resveratrol: Science-Backed Longevity Boosts",
-    "Dementia Risk: Is Your Tap Water to Blame?",
-    "Aging Well: What Supplements Seniors Truly Need",
     "How to Sleep Better: Holistic Tips for Pros",
     "How to Sip Tea for a Longer, Healthier Life",
     "Tired Brain? Blame These Processed Foods",
@@ -294,6 +291,9 @@
     "The Biohacker's Guide to Superior Sleep Quality",
     "Sweetener Swap? New Gut Health Concerns Emerge",
     "A Realistic Look: Scientists Discover A Hidden Problem With This Popular Sugar Substitute",
-    "This Lifestyle Program Improved Cognition 55% More Than Basic Health Advice"
+    "This Lifestyle Program Improved Cognition 55% More Than Basic Health Advice",
+    "3 Science-Backed Lessons: Sugary Drinks & Stomach Cancer Risk",
+    "Popular Brain Supplement Linked To Shorter Lifespan In Men: 4 Tips",
+    "Compound In Blueberries May Help Muscle Cells Burn Excess Fat"
   ]
 }
