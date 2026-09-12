@@ -75446,3 +75446,4 @@ RuntimeError: Gemini failed after exhaustive retries: key#1 transient_status=429
 
 2026-09-11 14:42:43,563 INFO __main__ - [Slot 5] ✓ Publicado: compound-in-blueberries-may-help-muscle-cells-burn-excess-fat.html (info)
 2026-09-11 14:42:43,563 INFO __main__ - Run completo. Publicados 3/5 posts.
+2026-09-12 13:38:54,130 INFO __main__ - Pulando geração hoje para manter 5 posts/semana.
