@@ -178,3 +178,19 @@
   }
 }
 
+2026-09-14T16:25:01.357384+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/3-practical-ways-pediatric-hospital-shortages-stress.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-14T16:25:14.221682+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/scientists-discover-strange-link-between-low-vitamin-d-and-pain.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+

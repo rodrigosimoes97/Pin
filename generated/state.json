@@ -1,9 +1,7 @@
 {
-  "runs": 173,
+  "runs": 174,
   "offer_runs": 21,
   "recent_topics": [
-    "how-to-improve-sleep-quality-naturally",
-    "vitamin-a-vision-discovery",
     "stress-management-techniques-for-busy-professionals",
     "young-non-smokers-lung-cancer",
     "optimizing-gut-health-for-weight-loss",
@@ -51,11 +49,11 @@
     "this-lifestyle-program-improved-cognition-55-more-",
     "one-sugary-drink-a-day-linked-to-more-than-double-",
     "popular-brain-supplement-linked-to-shorter-lifespa",
-    "compound-in-blueberries-may-help-muscle-cells-burn"
+    "compound-in-blueberries-may-help-muscle-cells-burn",
+    "desperate-for-heart-surgery-for-their-baby-a-famil",
+    "scientists-discover-strange-link-between-low-vitam"
   ],
   "recent_slugs": [
-    "mindfulness-techniques-stress-management",
-    "vitamin-c-anxiety-secret-weapon",
     "mindful-eating-techniques-digestion-weight",
     "ditch-processed-foods-slash-heart-disease-risk",
     "biohacking-sleep-energy-focus",
@@ -153,12 +151,12 @@
     "lifestyle-program-improved-cognition-55-percent-more",
     "one-sugary-drink-a-day-linked-to-more-than-double-the-risk-of-stomach-cancer",
     "popular-brain-supplement-linked-to-shorter-lifespan-in-men",
-    "compound-in-blueberries-may-help-muscle-cells-burn-excess-fat"
+    "compound-in-blueberries-may-help-muscle-cells-burn-excess-fat",
+    "3-practical-ways-pediatric-hospital-shortages-stress",
+    "scientists-discover-strange-link-between-low-vitamin-d-and-pain"
   ],
-  "last_run": "2026-09-11",
+  "last_run": "2026-09-14",
   "recent_tags": [
-    "sleep",
-    "health",
     "stress",
     "health",
     "gut",
@@ -206,20 +204,22 @@
     "healthy-habits",
     "gut",
     "longevity",
-    "healthy-habits"
+    "healthy-habits",
+    "stress",
+    "health"
   ],
   "tag_counts": {
     "sleep": 28,
     "gut": 22,
     "mental-wellness": 23,
-    "stress": 10,
+    "stress": 11,
     "healthy-habits": 42,
     "longevity": 16,
     "recipes": 8,
     "anti-inflammatory": 9,
     "home-workouts": 7,
     "weight": 19,
-    "health": 50
+    "health": 51
   },
   "topic_rotation": {
     "sleep": 28,
@@ -232,11 +232,9 @@
     "home-workouts": 11,
     "weight": 26,
     "mental-wellness": 1,
-    "health": 3
+    "health": 5
   },
   "recent_titles": [
-    "How to Sleep Better: Holistic Tips for Pros",
-    "How to Sip Tea for a Longer, Healthier Life",
     "Tired Brain? Blame These Processed Foods",
     "Want More Energy? Master Your Sleep Now",
     "Is Your Brain Supplement Shortening Your Life?",
@@ -294,6 +292,8 @@
     "This Lifestyle Program Improved Cognition 55% More Than Basic Health Advice",
     "3 Science-Backed Lessons: Sugary Drinks & Stomach Cancer Risk",
     "Popular Brain Supplement Linked To Shorter Lifespan In Men: 4 Tips",
-    "Compound In Blueberries May Help Muscle Cells Burn Excess Fat"
+    "Compound In Blueberries May Help Muscle Cells Burn Excess Fat",
+    "3 Practical Ways to Handle Stress When Desperate For Heart Surgery For Their Baby, A Family Feels The Effects Of Pediatric Hospital Shortages",
+    "Scientists Discover Strange Link Between Low Vitamin D And Pain"
   ]
 }
