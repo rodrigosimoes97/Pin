@@ -194,3 +194,27 @@
   }
 }
 
+2026-09-15T15:05:02.550988+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/gantenerumab-fails-to-slow-alzheimers-memory-loss.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-15T15:05:33.642066+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/scientists-find-ozempic-may-slow-aging-itself-practical-guide.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-15T15:05:54.224862+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/stop-overcomplicating-the-corporate-playbook-behind-undermining-dietary-guidelin.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+

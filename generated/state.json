@@ -1,10 +1,7 @@
 {
-  "runs": 174,
+  "runs": 175,
   "offer_runs": 21,
   "recent_topics": [
-    "stress-management-techniques-for-busy-professionals",
-    "young-non-smokers-lung-cancer",
-    "optimizing-gut-health-for-weight-loss",
     "optimize-sleep-for-energy-and-focus",
     "holistic-sleep-optimization-for-busy-professionals",
     "intermittent-fasting-for-longevity",
@@ -51,12 +48,12 @@
     "popular-brain-supplement-linked-to-shorter-lifespa",
     "compound-in-blueberries-may-help-muscle-cells-burn",
     "desperate-for-heart-surgery-for-their-baby-a-famil",
-    "scientists-discover-strange-link-between-low-vitam"
+    "scientists-discover-strange-link-between-low-vitam",
+    "experimental-therapy-gantenerumab-fails-to-slow-or",
+    "scientists-find-ozempic-may-slow-aging-itself",
+    "the-corporate-playbook-behind-undermining-dietary-"
   ],
   "recent_slugs": [
-    "mindful-eating-techniques-digestion-weight",
-    "ditch-processed-foods-slash-heart-disease-risk",
-    "biohacking-sleep-energy-focus",
     "daily-habit-dementia-risk-35-percent",
     "can-diet-reverse-aging-science",
     "unlock-bodys-fat-burning-bone-boosting-switch",
@@ -153,13 +150,13 @@
     "popular-brain-supplement-linked-to-shorter-lifespan-in-men",
     "compound-in-blueberries-may-help-muscle-cells-burn-excess-fat",
     "3-practical-ways-pediatric-hospital-shortages-stress",
-    "scientists-discover-strange-link-between-low-vitamin-d-and-pain"
+    "scientists-discover-strange-link-between-low-vitamin-d-and-pain",
+    "gantenerumab-fails-to-slow-alzheimers-memory-loss",
+    "scientists-find-ozempic-may-slow-aging-itself-practical-guide",
+    "stop-overcomplicating-the-corporate-playbook-behind-undermining-dietary-guidelin"
   ],
-  "last_run": "2026-09-14",
+  "last_run": "2026-09-15",
   "recent_tags": [
-    "stress",
-    "health",
-    "gut",
     "sleep",
     "sleep",
     "longevity",
@@ -206,15 +203,18 @@
     "longevity",
     "healthy-habits",
     "stress",
-    "health"
+    "health",
+    "longevity",
+    "longevity",
+    "sleep"
   ],
   "tag_counts": {
-    "sleep": 28,
+    "sleep": 29,
     "gut": 22,
     "mental-wellness": 23,
     "stress": 11,
     "healthy-habits": 42,
-    "longevity": 16,
+    "longevity": 18,
     "recipes": 8,
     "anti-inflammatory": 9,
     "home-workouts": 7,
@@ -226,18 +226,15 @@
     "gut": 28,
     "stress": 23,
     "healthy-habits": 64,
-    "longevity": 28,
-    "recipes": 11,
+    "longevity": 29,
+    "recipes": 12,
     "anti-inflammatory": 11,
     "home-workouts": 11,
     "weight": 26,
-    "mental-wellness": 1,
+    "mental-wellness": 2,
     "health": 5
   },
   "recent_titles": [
-    "Tired Brain? Blame These Processed Foods",
-    "Want More Energy? Master Your Sleep Now",
-    "Is Your Brain Supplement Shortening Your Life?",
     "Struggling with Energy? Try This Morning Reset",
     "Unlock Your Gut Microbiome: Simple Diet Tips",
     "Your Bone Health: Is Your Calcium & D Routine Enough?",
@@ -294,6 +291,9 @@
     "Popular Brain Supplement Linked To Shorter Lifespan In Men: 4 Tips",
     "Compound In Blueberries May Help Muscle Cells Burn Excess Fat",
     "3 Practical Ways to Handle Stress When Desperate For Heart Surgery For Their Baby, A Family Feels The Effects Of Pediatric Hospital Shortages",
-    "Scientists Discover Strange Link Between Low Vitamin D And Pain"
+    "Scientists Discover Strange Link Between Low Vitamin D And Pain",
+    "Gantenerumab Fails To Slow Alzheimers Memory Loss: What Is Next?",
+    "Scientists Find Ozempic May Slow Aging Itself (Here is What I Did)",
+    "Stop Overcomplicating The Corporate Playbook Behind Undermining Dietary Guidelines"
   ]
 }

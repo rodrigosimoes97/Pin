@@ -75543,3 +75543,126 @@ RuntimeError: Gemini failed after exhaustive retries: key#1 transient_status=429
 2026-09-14 16:25:29,411 WARNING __main__ - [Slot 5] Qualidade insuficiente — artigo descartado
 2026-09-14 16:25:29,411 ERROR __main__ - [Slot 5] Slot descartado.
 2026-09-14 16:25:29,411 INFO __main__ - Run completo. Publicados 2/5 posts.
+2026-09-15 15:04:33,914 INFO __main__ - Buscando trending topics para USA...
+2026-09-15 15:04:34,197 WARNING src.app.trend_research - Failed to fetch Google Trends (404/Error): The request failed: Google returned a response with code 404. Moving to fallbacks.
+2026-09-15 15:04:41,533 INFO src.app.trend_research - Gathered 11 unique trending topics.
+2026-09-15 15:04:41,537 INFO __main__ - ═══ Slot 1/5 ═══
+2026-09-15 15:04:41,537 INFO __main__ - [Slot 1] Usando trending topic local: Experimental therapy gantenerumab fails to slow or improve Alzheimers memory loss in clinical trials
+2026-09-15 15:04:41,537 INFO __main__ - [Slot 1] title_hint=A Realistic Experimental Therapy Gantenerumab Fails To Slow Or Improve...
+2026-09-15 15:04:41,537 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-09-15 15:04:43,128 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-09-15 15:04:48,128 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-09-15 15:04:57,445 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 OK finishReason=STOP len_chars=6284
+2026-09-15 15:04:57,665 INFO src.app.duplicate_checker - Indexed post: gantenerumab-fails-to-slow-alzheimers-memory-loss (Total: 148)
+2026-09-15 15:04:58,679 INFO __main__ - [Slot 1] Submetendo ao Google Indexing: https://rodrigosimoes97.github.io/Pin/gantenerumab-fails-to-slow-alzheimers-memory-loss.html
+2026-09-15 15:04:58,726 INFO src.app.indexing - Loaded Google service account from raw JSON content.
+2026-09-15 15:04:59,109 WARNING src.app.indexing - Attempt 1: Failed to index https://rodrigosimoes97.github.io/Pin/gantenerumab-fails-to-slow-alzheimers-memory-loss.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-15 15:05:00,278 WARNING src.app.indexing - Attempt 2: Failed to index https://rodrigosimoes97.github.io/Pin/gantenerumab-fails-to-slow-alzheimers-memory-loss.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-15 15:05:02,550 WARNING src.app.indexing - Attempt 3: Failed to index https://rodrigosimoes97.github.io/Pin/gantenerumab-fails-to-slow-alzheimers-memory-loss.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-15 15:05:02,588 INFO __main__ - [Slot 1] ✓ Publicado: gantenerumab-fails-to-slow-alzheimers-memory-loss.html (info)
+2026-09-15 15:05:02,588 INFO __main__ - ═══ Slot 2/5 ═══
+2026-09-15 15:05:02,589 INFO __main__ - [Slot 2] Usando trending topic local: A hidden compound in healthy foods may worsen IBD
+2026-09-15 15:05:02,697 INFO __main__ - [Slot 2] title_hint=The Honest Guide to A Hidden Compound In Healthy Foods May Worsen Ibd for...
+2026-09-15 15:05:02,697 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-09-15 15:05:11,236 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=5026
+2026-09-15 15:05:11,238 WARNING __main__ - [Quality] word_count=419 < 450
+2026-09-15 15:05:11,238 WARNING __main__ - [Slot 2] Qualidade insuficiente — artigo descartado
+2026-09-15 15:05:11,238 ERROR __main__ - [Slot 2] Slot descartado.
+2026-09-15 15:05:11,238 INFO __main__ - ═══ Slot 3/5 ═══
+2026-09-15 15:05:11,238 INFO __main__ - [Slot 3] Usando trending topic local: Scientists find Ozempic may slow aging itself
+2026-09-15 15:05:11,238 INFO __main__ - [Slot 3] title_hint=How I Finally Made Scientists Find Ozempic May Slow Aging Itself Stick (And...
+2026-09-15 15:05:11,238 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-09-15 15:05:15,936 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-09-15 15:05:20,936 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-09-15 15:05:28,665 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 OK finishReason=STOP len_chars=5070
+2026-09-15 15:05:28,847 INFO src.app.duplicate_checker - Indexed post: scientists-find-ozempic-may-slow-aging-itself-practical-guide (Total: 149)
+2026-09-15 15:05:29,935 INFO __main__ - [Slot 3] Submetendo ao Google Indexing: https://rodrigosimoes97.github.io/Pin/scientists-find-ozempic-may-slow-aging-itself-practical-guide.html
+2026-09-15 15:05:29,981 INFO src.app.indexing - Loaded Google service account from raw JSON content.
+2026-09-15 15:05:30,295 WARNING src.app.indexing - Attempt 1: Failed to index https://rodrigosimoes97.github.io/Pin/scientists-find-ozempic-may-slow-aging-itself-practical-guide.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-15 15:05:31,464 WARNING src.app.indexing - Attempt 2: Failed to index https://rodrigosimoes97.github.io/Pin/scientists-find-ozempic-may-slow-aging-itself-practical-guide.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-15 15:05:33,641 WARNING src.app.indexing - Attempt 3: Failed to index https://rodrigosimoes97.github.io/Pin/scientists-find-ozempic-may-slow-aging-itself-practical-guide.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-15 15:05:33,643 INFO __main__ - [Slot 3] ✓ Publicado: scientists-find-ozempic-may-slow-aging-itself-practical-guide.html (offer)
+2026-09-15 15:05:33,643 INFO __main__ - ═══ Slot 4/5 ═══
+2026-09-15 15:05:33,643 INFO __main__ - [Slot 4] Usando trending topic local: Big Sugar Twists the Science behind the Dietary Guidelines
+2026-09-15 15:05:33,644 INFO __main__ - [Slot 4] title_hint=6 Science-Backed Big Sugar Twists The Science Behind The Dietary Guidelines...
+2026-09-15 15:05:33,644 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-09-15 15:05:40,978 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=4764
+2026-09-15 15:05:40,979 WARNING __main__ - [Quality] word_count=382 < 450
+2026-09-15 15:05:40,979 WARNING __main__ - [Slot 4] Qualidade insuficiente — artigo descartado
+2026-09-15 15:05:40,979 ERROR __main__ - [Slot 4] Slot descartado.
+2026-09-15 15:05:40,979 INFO __main__ - ═══ Slot 5/5 ═══
+2026-09-15 15:05:40,979 INFO __main__ - [Slot 5] Usando trending topic local: The Corporate Playbook behind Undermining Dietary Guidelines
+2026-09-15 15:05:40,980 INFO __main__ - [Slot 5] title_hint=Stop Overcomplicating The Corporate Playbook Behind Undermining Dietary...
+2026-09-15 15:05:40,980 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-09-15 15:05:49,364 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=5304
+2026-09-15 15:05:49,549 INFO src.app.duplicate_checker - Indexed post: stop-overcomplicating-the-corporate-playbook-behind-undermining-dietary-guidelin (Total: 150)
+2026-09-15 15:05:50,623 INFO __main__ - [Slot 5] Submetendo ao Google Indexing: https://rodrigosimoes97.github.io/Pin/stop-overcomplicating-the-corporate-playbook-behind-undermining-dietary-guidelin.html
+2026-09-15 15:05:50,669 INFO src.app.indexing - Loaded Google service account from raw JSON content.
+2026-09-15 15:05:50,972 WARNING src.app.indexing - Attempt 1: Failed to index https://rodrigosimoes97.github.io/Pin/stop-overcomplicating-the-corporate-playbook-behind-undermining-dietary-guidelin.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-15 15:05:52,142 WARNING src.app.indexing - Attempt 2: Failed to index https://rodrigosimoes97.github.io/Pin/stop-overcomplicating-the-corporate-playbook-behind-undermining-dietary-guidelin.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-15 15:05:54,224 WARNING src.app.indexing - Attempt 3: Failed to index https://rodrigosimoes97.github.io/Pin/stop-overcomplicating-the-corporate-playbook-behind-undermining-dietary-guidelin.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-15 15:05:54,226 INFO __main__ - [Slot 5] ✓ Publicado: stop-overcomplicating-the-corporate-playbook-behind-undermining-dietary-guidelin.html (offer)
+2026-09-15 15:05:54,227 INFO __main__ - Run completo. Publicados 3/5 posts.
