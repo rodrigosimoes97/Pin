@@ -218,3 +218,35 @@
   }
 }
 
+2026-09-16T15:01:37.195511+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/what-nobody-tells-you-about-the-whole-grain-sweet-spot.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-16T15:01:49.997710+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/ultra-processed-foods-linked-to-hidden-muscle-fat-that-may-threaten-your-knees.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-16T15:02:03.557031+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/struggling-with-gym-fatigue-how-smelling-chocolate-boosted-my-workout-reps.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-16T15:02:16.725186+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/fix-a-hidden-compound-in-healthy-foods-may-worsen-ibd.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
