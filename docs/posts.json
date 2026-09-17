@@ -1,5 +1,32 @@
 [
   {
+    "slug": "how-i-finally-made-home-workouts-stick",
+    "title": "How I Finally Made Home Workouts Stick in a Tiny Apartment",
+    "description": "Discover how I made Home Workouts stick in a small apartment using no equipment. Build strength and stay consistent without a gym membership.",
+    "date": "2026-09-17",
+    "url": "how-i-finally-made-home-workouts-stick.html",
+    "hero": "assets/2026-09-17_how-i-finally-made-home-workouts-stick.jpeg",
+    "tag": "home-workouts"
+  },
+  {
+    "slug": "yoga-and-mobility-for-busy-people",
+    "title": "Yoga and Mobility for Busy People: A No-BS Daily Guide",
+    "description": "Transform your stiff desk body with this honest guide to Yoga and Mobility designed for busy, sedentary workers who lack free time.",
+    "date": "2026-09-17",
+    "url": "yoga-and-mobility-for-busy-people.html",
+    "hero": "assets/2026-09-17_yoga-and-mobility-for-busy-people.jpeg",
+    "tag": "healthy-habits"
+  },
+  {
+    "slug": "stop-overcomplicating-the-burden-of-weight-bias-what-works",
+    "title": "Stop Overcomplicating The Burden Of Weight Bias: What Works",
+    "description": "Overcome the burden of weight bias with practical, science-backed tips. Learn how to navigate healthcare, internal bias, and build lasting health.",
+    "date": "2026-09-17",
+    "url": "stop-overcomplicating-the-burden-of-weight-bias-what-works.html",
+    "hero": "assets/2026-09-17_stop-overcomplicating-the-burden-of-weight-bias-what-works.jpeg",
+    "tag": "healthy-habits"
+  },
+  {
     "slug": "fix-a-hidden-compound-in-healthy-foods-may-worsen-ibd",
     "title": "Fix A Hidden Compound In Healthy Foods May Worsen Ibd Fast",
     "description": "Discover how a hidden compound in healthy foods may worsen Ibd and learn 4 practical ways to calm your gut naturally starting today.",
@@ -1770,33 +1797,6 @@
     "date": "2026-03-19",
     "url": "effortless-calorie-awareness-lasting-weight-loss.html",
     "hero": "assets/2026-03-19_effortless-calorie-awareness-lasting-weight-loss.webp",
-    "tag": "healthy-habits"
-  },
-  {
-    "slug": "blood-sugar-energy-levels",
-    "title": "Is Your Blood Sugar Affecting Your Energy Levels?",
-    "description": "Feeling tired all the time? Discover how blood sugar fluctuations impact your energy and learn practical ways to balance it for sustained vitality. Your personal guide to understanding metabolic health.",
-    "date": "2026-03-19",
-    "url": "blood-sugar-energy-levels.html",
-    "hero": "assets/2026-03-19_blood-sugar-energy-levels.webp",
-    "tag": "healthy-habits"
-  },
-  {
-    "slug": "mindful-eating-calorie-awareness-guide",
-    "title": "Your Guide to Mindful Eating and Calorie Awareness",
-    "description": "Learn sustainable calorie awareness and mindful eating techniques for lasting weight loss without restriction. A personal guide from a health mentor.",
-    "date": "2026-03-19",
-    "url": "mindful-eating-calorie-awareness-guide.html",
-    "hero": "assets/2026-03-19_mindful-eating-calorie-awareness-guide.webp",
-    "tag": "healthy-habits"
-  },
-  {
-    "slug": "managing-blood-sugar-energy",
-    "title": "How to Boost Energy by Managing Blood Sugar",
-    "description": "Feeling tired all the time? Learn how managing your blood sugar levels can unlock sustained energy and transform your daily life. Get practical tips and insights.",
-    "date": "2026-03-19",
-    "url": "managing-blood-sugar-energy.html",
-    "hero": "assets/2026-03-19_managing-blood-sugar-energy.webp",
     "tag": "healthy-habits"
   }
 ]

@@ -1,10 +1,7 @@
 {
-  "runs": 176,
+  "runs": 177,
   "offer_runs": 21,
   "recent_topics": [
-    "coffee-heart-health-vs-energy-drinks-risk",
-    "intermittent-fasting-benefits-for-women",
-    "optimizing-sleep-for-energy-and-focus",
     "microwave-frying-healthier-french-fries",
     "ultra-processed-toddler-foods-alarming",
     "sparkling-water-teeth-health",
@@ -51,12 +48,12 @@
     "scientists-find-the-whole-grain-sweet-spot-for-bet",
     "ultra-processed-foods-linked-to-hidden-muscle-fat-",
     "smelling-chocolate-helped-men-complete-more-reps-w",
-    "a-hidden-compound-in-healthy-foods-may-worsen-ibd"
+    "a-hidden-compound-in-healthy-foods-may-worsen-ibd",
+    "the-burden-of-weight-bias",
+    "yoga-for-flexibility",
+    "home-workouts"
   ],
   "recent_slugs": [
-    "watermelon-health-boost-science",
-    "7-day-fasting-transformation",
-    "smarter-mediterranean-diet-diabetes-risk",
     "vitamin-d-pain-connection",
     "mindful-eating-gut-health-digestion-0520-5",
     "microbiome-diet-gut-health",
@@ -153,13 +150,13 @@
     "what-nobody-tells-you-about-the-whole-grain-sweet-spot",
     "ultra-processed-foods-linked-to-hidden-muscle-fat-that-may-threaten-your-knees",
     "struggling-with-gym-fatigue-how-smelling-chocolate-boosted-my-workout-reps",
-    "fix-a-hidden-compound-in-healthy-foods-may-worsen-ibd"
+    "fix-a-hidden-compound-in-healthy-foods-may-worsen-ibd",
+    "stop-overcomplicating-the-burden-of-weight-bias-what-works",
+    "yoga-and-mobility-for-busy-people",
+    "how-i-finally-made-home-workouts-stick"
   ],
-  "last_run": "2026-09-16",
+  "last_run": "2026-09-17",
   "recent_tags": [
-    "health",
-    "weight",
-    "sleep",
     "recipes",
     "health",
     "healthy-habits",
@@ -206,18 +203,21 @@
     "healthy-habits",
     "healthy-habits",
     "healthy-habits",
-    "gut"
+    "gut",
+    "healthy-habits",
+    "healthy-habits",
+    "home-workouts"
   ],
   "tag_counts": {
     "sleep": 29,
     "gut": 23,
     "mental-wellness": 23,
     "stress": 11,
-    "healthy-habits": 45,
+    "healthy-habits": 47,
     "longevity": 18,
     "recipes": 8,
     "anti-inflammatory": 9,
-    "home-workouts": 7,
+    "home-workouts": 8,
     "weight": 19,
     "health": 51
   },
@@ -229,15 +229,12 @@
     "longevity": 29,
     "recipes": 13,
     "anti-inflammatory": 11,
-    "home-workouts": 11,
-    "weight": 27,
+    "home-workouts": 13,
+    "weight": 28,
     "mental-wellness": 2,
     "health": 7
   },
   "recent_titles": [
-    "Vitamin C for a Smarter Brain? Find Out Now",
-    "Struggling with Sleep? Try These Natural Fixes",
-    "New Vitamin A Discovery: How It Rewrites Vision Science",
     "Stressed at Work? Simple Daily Coping Strategies",
     "Lung Cancer in Healthy Young People: Causes?",
     "Can Gut Bacteria Aid Your Weight Loss Journey?",
@@ -294,6 +291,9 @@
     "What Nobody Tells You About The Whole Grain Sweet Spot",
     "Ultra-Processed Foods Linked To Hidden Muscle Fat That May Threaten Your Knees",
     "Struggling with Gym Fatigue? How Smelling Chocolate Boosted My Workout Reps",
-    "Fix A Hidden Compound In Healthy Foods May Worsen Ibd Fast"
+    "Fix A Hidden Compound In Healthy Foods May Worsen Ibd Fast",
+    "Stop Overcomplicating The Burden Of Weight Bias: What Works",
+    "Yoga and Mobility for Busy People: A No-BS Daily Guide",
+    "How I Finally Made Home Workouts Stick in a Tiny Apartment"
   ]
 }

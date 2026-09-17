@@ -75810,3 +75810,122 @@ RuntimeError: Gemini failed after exhaustive retries: key#1 transient_status=429
 2026-09-16 15:02:23,281 WARNING __main__ - [Slot 5] Qualidade insuficiente — artigo descartado
 2026-09-16 15:02:23,281 ERROR __main__ - [Slot 5] Slot descartado.
 2026-09-16 15:02:23,282 INFO __main__ - Run completo. Publicados 4/5 posts.
+2026-09-17 15:04:43,147 INFO __main__ - Buscando trending topics para USA...
+2026-09-17 15:04:43,329 WARNING src.app.trend_research - Failed to fetch Google Trends (404/Error): The request failed: Google returned a response with code 404. Moving to fallbacks.
+2026-09-17 15:04:46,152 INFO src.app.trend_research - Gathered 10 unique trending topics.
+2026-09-17 15:04:46,155 INFO __main__ - ═══ Slot 1/5 ═══
+2026-09-17 15:04:46,155 INFO __main__ - [Slot 1] Usando trending topic local: Scientists find a hidden health advantage in black and green rice
+2026-09-17 15:04:46,155 INFO __main__ - [Slot 1] title_hint=Stop Overcomplicating Scientists Find A Hidden Health Advantage In Black And...
+2026-09-17 15:04:46,155 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-09-17 15:04:53,384 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=5077
+2026-09-17 15:04:53,386 WARNING __main__ - [Quality] word_count=444 < 450
+2026-09-17 15:04:53,386 WARNING __main__ - [Slot 1] Qualidade insuficiente — artigo descartado
+2026-09-17 15:04:53,386 ERROR __main__ - [Slot 1] Slot descartado.
+2026-09-17 15:04:53,386 INFO __main__ - ═══ Slot 2/5 ═══
+2026-09-17 15:04:53,386 INFO __main__ - [Slot 2] Usando trending topic local: Big Sugar Twists the Science behind the Dietary Guidelines
+2026-09-17 15:04:53,386 INFO __main__ - [Slot 2] title_hint=A Realistic Big Sugar Twists The Science Behind The Dietary Guidelines Plan...
+2026-09-17 15:04:53,386 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-09-17 15:04:59,903 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=4556
+2026-09-17 15:04:59,904 WARNING __main__ - [Quality] word_count=391 < 450
+2026-09-17 15:04:59,905 WARNING __main__ - [Slot 2] Qualidade insuficiente — artigo descartado
+2026-09-17 15:04:59,905 ERROR __main__ - [Slot 2] Slot descartado.
+2026-09-17 15:04:59,905 INFO __main__ - ═══ Slot 3/5 ═══
+2026-09-17 15:04:59,905 INFO __main__ - [Slot 3] Usando trending topic local: The Burden of Weight Bias
+2026-09-17 15:04:59,905 INFO __main__ - [Slot 3] title_hint=Stop Overcomplicating The Burden Of Weight Bias — Here's What Actually Works
+2026-09-17 15:04:59,905 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-09-17 15:05:08,487 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=5942
+2026-09-17 15:05:08,679 INFO src.app.duplicate_checker - Indexed post: stop-overcomplicating-the-burden-of-weight-bias-what-works (Total: 155)
+2026-09-17 15:05:09,516 INFO __main__ - [Slot 3] Submetendo ao Google Indexing: https://rodrigosimoes97.github.io/Pin/stop-overcomplicating-the-burden-of-weight-bias-what-works.html
+2026-09-17 15:05:09,558 INFO src.app.indexing - Loaded Google service account from raw JSON content.
+2026-09-17 15:05:09,753 WARNING src.app.indexing - Attempt 1: Failed to index https://rodrigosimoes97.github.io/Pin/stop-overcomplicating-the-burden-of-weight-bias-what-works.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-17 15:05:10,854 WARNING src.app.indexing - Attempt 2: Failed to index https://rodrigosimoes97.github.io/Pin/stop-overcomplicating-the-burden-of-weight-bias-what-works.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-17 15:05:13,003 WARNING src.app.indexing - Attempt 3: Failed to index https://rodrigosimoes97.github.io/Pin/stop-overcomplicating-the-burden-of-weight-bias-what-works.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-17 15:05:13,005 INFO __main__ - [Slot 3] ✓ Publicado: stop-overcomplicating-the-burden-of-weight-bias-what-works.html (info)
+2026-09-17 15:05:13,005 INFO __main__ - ═══ Slot 4/5 ═══
+2026-09-17 15:05:13,006 INFO __main__ - [Slot 4] Tópico local: Yoga and Mobility (home-workouts)
+2026-09-17 15:05:13,006 INFO __main__ - [Slot 4] title_hint=The Honest Guide to Yoga and Mobility for Busy People
+2026-09-17 15:05:13,006 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-09-17 15:05:21,685 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=5283
+2026-09-17 15:05:21,851 INFO src.app.duplicate_checker - Indexed post: yoga-and-mobility-for-busy-people (Total: 156)
+2026-09-17 15:05:22,709 INFO __main__ - [Slot 4] Submetendo ao Google Indexing: https://rodrigosimoes97.github.io/Pin/yoga-and-mobility-for-busy-people.html
+2026-09-17 15:05:22,751 INFO src.app.indexing - Loaded Google service account from raw JSON content.
+2026-09-17 15:05:22,984 WARNING src.app.indexing - Attempt 1: Failed to index https://rodrigosimoes97.github.io/Pin/yoga-and-mobility-for-busy-people.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-17 15:05:24,141 WARNING src.app.indexing - Attempt 2: Failed to index https://rodrigosimoes97.github.io/Pin/yoga-and-mobility-for-busy-people.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-17 15:05:26,301 WARNING src.app.indexing - Attempt 3: Failed to index https://rodrigosimoes97.github.io/Pin/yoga-and-mobility-for-busy-people.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-17 15:05:26,302 INFO __main__ - [Slot 4] ✓ Publicado: yoga-and-mobility-for-busy-people.html (info)
+2026-09-17 15:05:26,303 INFO __main__ - ═══ Slot 5/5 ═══
+2026-09-17 15:05:26,303 INFO __main__ - [Slot 5] Tópico local: Home Workouts (home-workouts)
+2026-09-17 15:05:26,303 INFO __main__ - [Slot 5] title_hint=How I Finally Made Home Workouts Stick (And You Can Too)
+2026-09-17 15:05:26,303 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-09-17 15:05:33,835 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=4761
+2026-09-17 15:05:34,003 INFO src.app.duplicate_checker - Indexed post: how-i-finally-made-home-workouts-stick (Total: 157)
+2026-09-17 15:05:34,860 INFO __main__ - [Slot 5] Submetendo ao Google Indexing: https://rodrigosimoes97.github.io/Pin/how-i-finally-made-home-workouts-stick.html
+2026-09-17 15:05:34,901 INFO src.app.indexing - Loaded Google service account from raw JSON content.
+2026-09-17 15:05:35,055 WARNING src.app.indexing - Attempt 1: Failed to index https://rodrigosimoes97.github.io/Pin/how-i-finally-made-home-workouts-stick.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-17 15:05:36,154 WARNING src.app.indexing - Attempt 2: Failed to index https://rodrigosimoes97.github.io/Pin/how-i-finally-made-home-workouts-stick.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-17 15:05:38,316 WARNING src.app.indexing - Attempt 3: Failed to index https://rodrigosimoes97.github.io/Pin/how-i-finally-made-home-workouts-stick.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-17 15:05:38,318 INFO __main__ - [Slot 5] ✓ Publicado: how-i-finally-made-home-workouts-stick.html (info)
+2026-09-17 15:05:38,319 INFO __main__ - Run completo. Publicados 3/5 posts.

@@ -250,3 +250,27 @@
   }
 }
 
+2026-09-17T15:05:13.004416+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/stop-overcomplicating-the-burden-of-weight-bias-what-works.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-17T15:05:26.301509+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/yoga-and-mobility-for-busy-people.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-17T15:05:38.316888+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/how-i-finally-made-home-workouts-stick.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
