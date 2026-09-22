@@ -274,3 +274,19 @@
   }
 }
 
+2026-09-22T16:11:22.320787+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/8-common-food-additives-linked-to-high-blood-pressure-and-heart-disease.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-22T16:11:42.269685+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/millions-take-calcium-and-vitamin-d-for-bone-health-a-major-review-finds-little-.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+

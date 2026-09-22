@@ -76232,3 +76232,166 @@ RuntimeError: Gemini failed after exhaustive retries: key#1 transient_status=429
 2026-09-21 16:45:45,106 ERROR __main__ - [Slot 5] Gemini indisponível: Gemini falhou após 3 rodadas com 4 key(s). Últimos erros: key#3 status=503 (alta demanda no modelo gemini-3.8-flash); key#4 status=503 (alta demanda no modelo gemini-3.8-flash); key#1 status=503 (alta demanda no modelo gemini-3.8-flash); key#2 status=503 (alta demanda no modelo gemini-3.8-flash); key#3 status=503 (alta demanda no modelo gemini-3.8-flash); key#4 status=503 (alta demanda no modelo gemini-3.8-flash)
 2026-09-21 16:45:45,107 ERROR __main__ - [Slot 5] Slot descartado.
 2026-09-21 16:45:45,108 INFO __main__ - Run completo. Publicados 0/5 posts.
+2026-09-22 16:10:31,738 INFO __main__ - Buscando trending topics para USA...
+2026-09-22 16:10:31,914 WARNING src.app.trend_research - Failed to fetch Google Trends (404/Error): The request failed: Google returned a response with code 404. Moving to fallbacks.
+2026-09-22 16:10:35,343 INFO src.app.trend_research - Gathered 10 unique trending topics.
+2026-09-22 16:10:35,346 INFO __main__ - ═══ Slot 1/5 ═══
+2026-09-22 16:10:35,346 INFO __main__ - [Slot 1] Usando trending topic local: 8 common food additives linked to high blood pressure and heart disease
+2026-09-22 16:10:35,346 INFO __main__ - [Slot 1] title_hint=How I Finally Made 8 Common Food Additives Linked To High Blood Pressure And...
+2026-09-22 16:10:35,346 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-09-22 16:11:17,044 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=5829
+2026-09-22 16:11:17,224 INFO src.app.duplicate_checker - Indexed post: 8-common-food-additives-linked-to-high-blood-pressure-and-heart-disease (Total: 158)
+2026-09-22 16:11:18,567 INFO __main__ - [Slot 1] Submetendo ao Google Indexing: https://rodrigosimoes97.github.io/Pin/8-common-food-additives-linked-to-high-blood-pressure-and-heart-disease.html
+2026-09-22 16:11:18,609 INFO src.app.indexing - Loaded Google service account from raw JSON content.
+2026-09-22 16:11:18,980 WARNING src.app.indexing - Attempt 1: Failed to index https://rodrigosimoes97.github.io/Pin/8-common-food-additives-linked-to-high-blood-pressure-and-heart-disease.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-22 16:11:20,239 WARNING src.app.indexing - Attempt 2: Failed to index https://rodrigosimoes97.github.io/Pin/8-common-food-additives-linked-to-high-blood-pressure-and-heart-disease.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-22 16:11:22,320 WARNING src.app.indexing - Attempt 3: Failed to index https://rodrigosimoes97.github.io/Pin/8-common-food-additives-linked-to-high-blood-pressure-and-heart-disease.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-22 16:11:22,322 INFO __main__ - [Slot 1] ✓ Publicado: 8-common-food-additives-linked-to-high-blood-pressure-and-heart-disease.html (info)
+2026-09-22 16:11:22,322 INFO __main__ - ═══ Slot 2/5 ═══
+2026-09-22 16:11:22,322 INFO __main__ - [Slot 2] Usando trending topic local: Millions take calcium and vitamin D for bone health. A major review finds little benefit
+2026-09-22 16:11:22,322 INFO __main__ - [Slot 2] title_hint=How I Finally Made Millions Take Calcium And Vitamin D For Bone Health. A...
+2026-09-22 16:11:22,322 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-09-22 16:11:37,280 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=5654
+2026-09-22 16:11:37,451 INFO src.app.duplicate_checker - Indexed post: millions-take-calcium-and-vitamin-d-for-bone-health-a-major-review-finds-little- (Total: 159)
+2026-09-22 16:11:38,615 INFO __main__ - [Slot 2] Submetendo ao Google Indexing: https://rodrigosimoes97.github.io/Pin/millions-take-calcium-and-vitamin-d-for-bone-health-a-major-review-finds-little-.html
+2026-09-22 16:11:38,656 INFO src.app.indexing - Loaded Google service account from raw JSON content.
+2026-09-22 16:11:38,804 WARNING src.app.indexing - Attempt 1: Failed to index https://rodrigosimoes97.github.io/Pin/millions-take-calcium-and-vitamin-d-for-bone-health-a-major-review-finds-little-.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-22 16:11:40,047 WARNING src.app.indexing - Attempt 2: Failed to index https://rodrigosimoes97.github.io/Pin/millions-take-calcium-and-vitamin-d-for-bone-health-a-major-review-finds-little-.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-22 16:11:42,269 WARNING src.app.indexing - Attempt 3: Failed to index https://rodrigosimoes97.github.io/Pin/millions-take-calcium-and-vitamin-d-for-bone-health-a-major-review-finds-little-.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-22 16:11:42,271 INFO __main__ - [Slot 2] ✓ Publicado: millions-take-calcium-and-vitamin-d-for-bone-health-a-major-review-finds-little-.html (offer)
+2026-09-22 16:11:42,271 INFO __main__ - ═══ Slot 3/5 ═══
+2026-09-22 16:11:42,271 INFO __main__ - [Slot 3] Usando trending topic local: Scientists restore a brain protein and reverse signs of aging in mice
+2026-09-22 16:11:42,271 INFO __main__ - [Slot 3] title_hint=Stop Overcomplicating Scientists Restore A Brain Protein And Reverse Signs...
+2026-09-22 16:11:42,271 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-09-22 16:12:04,767 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-09-22 16:12:09,768 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-09-22 16:12:30,215 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-09-22 16:12:35,215 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-09-22 16:12:55,641 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-09-22 16:13:00,642 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 enviando...
+2026-09-22 16:13:09,400 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-09-22 16:13:14,400 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.6-flash na rodada 1. Aguardando 5s antes de tentar no modelo gemini-3.8-flash.
+2026-09-22 16:13:19,401 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=2 enviando...
+2026-09-22 16:13:28,944 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-09-22 16:13:38,944 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=2 enviando...
+2026-09-22 16:13:58,662 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-09-22 16:14:08,662 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=2 enviando...
+2026-09-22 16:14:11,097 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-09-22 16:14:21,097 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=2 enviando...
+2026-09-22 16:14:26,507 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-09-22 16:14:36,508 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.8-flash na rodada 2. Aguardando 10s antes de tentar no modelo gemini-3.8-flash.
+2026-09-22 16:14:46,508 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=3 enviando...
+2026-09-22 16:15:04,801 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-09-22 16:15:19,801 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=3 enviando...
+2026-09-22 16:15:25,868 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-09-22 16:15:40,869 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=3 enviando...
+2026-09-22 16:15:44,681 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-09-22 16:15:59,682 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=3 enviando...
+2026-09-22 16:16:21,513 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-09-22 16:16:36,514 ERROR __main__ - [Slot 3] Gemini indisponível: Gemini falhou após 3 rodadas com 4 key(s). Últimos erros: key#3 status=503 (alta demanda no modelo gemini-3.8-flash); key#4 status=503 (alta demanda no modelo gemini-3.8-flash); key#1 status=503 (alta demanda no modelo gemini-3.8-flash); key#2 status=503 (alta demanda no modelo gemini-3.8-flash); key#3 status=503 (alta demanda no modelo gemini-3.8-flash); key#4 status=503 (alta demanda no modelo gemini-3.8-flash)
+2026-09-22 16:16:36,515 ERROR __main__ - [Slot 3] Slot descartado.
+2026-09-22 16:16:36,516 INFO __main__ - ═══ Slot 4/5 ═══
+2026-09-22 16:16:36,516 INFO __main__ - [Slot 4] Usando trending topic local: Scientists find a hidden health advantage in black and green rice
+2026-09-22 16:16:36,516 INFO __main__ - [Slot 4] title_hint=A Realistic Scientists Find A Hidden Health Advantage In Black And Green...
+2026-09-22 16:16:36,516 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-09-22 16:17:19,821 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-09-22 16:17:24,822 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-09-22 16:18:24,914 WARNING src.app.gemini_client - [Gemini] key#2 timeout
+2026-09-22 16:18:24,914 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-09-22 16:18:45,889 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-09-22 16:18:50,890 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 enviando...
+2026-09-22 16:19:50,946 WARNING src.app.gemini_client - [Gemini] key#4 timeout
+2026-09-22 16:19:50,946 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.6-flash na rodada 1. Aguardando 5s antes de tentar no modelo gemini-3.8-flash.
+2026-09-22 16:19:55,946 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=2 enviando...
+2026-09-22 16:20:05,127 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-09-22 16:20:15,127 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=2 enviando...
+2026-09-22 16:20:24,065 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-09-22 16:20:34,065 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=2 enviando...
+2026-09-22 16:20:56,116 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-09-22 16:21:06,117 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=2 enviando...
+2026-09-22 16:21:14,924 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-09-22 16:21:24,925 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.8-flash na rodada 2. Aguardando 10s antes de tentar no modelo gemini-3.8-flash.
+2026-09-22 16:21:34,925 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=3 enviando...
+2026-09-22 16:21:53,059 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-09-22 16:22:08,060 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=3 enviando...
+2026-09-22 16:22:10,945 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-09-22 16:22:25,946 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=3 enviando...
+2026-09-22 16:22:28,702 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-09-22 16:22:43,703 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=3 enviando...
+2026-09-22 16:22:44,712 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-09-22 16:22:59,712 ERROR __main__ - [Slot 4] Gemini indisponível: Gemini falhou após 3 rodadas com 4 key(s). Últimos erros: key#3 status=503 (alta demanda no modelo gemini-3.8-flash); key#4 status=503 (alta demanda no modelo gemini-3.8-flash); key#1 status=503 (alta demanda no modelo gemini-3.8-flash); key#2 status=503 (alta demanda no modelo gemini-3.8-flash); key#3 status=503 (alta demanda no modelo gemini-3.8-flash); key#4 status=503 (alta demanda no modelo gemini-3.8-flash)
+2026-09-22 16:22:59,713 ERROR __main__ - [Slot 4] Slot descartado.
+2026-09-22 16:22:59,713 INFO __main__ - ═══ Slot 5/5 ═══
+2026-09-22 16:22:59,713 INFO __main__ - [Slot 5] Usando trending topic local: Big Sugar Twists the Science behind the Dietary Guidelines
+2026-09-22 16:22:59,713 INFO __main__ - [Slot 5] title_hint=Stop Overcomplicating Big Sugar Twists The Science Behind The Dietary...
+2026-09-22 16:22:59,713 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-09-22 16:23:06,207 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-09-22 16:23:11,208 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-09-22 16:23:20,877 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-09-22 16:23:25,878 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-09-22 16:23:30,098 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-09-22 16:23:35,099 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 enviando...
+2026-09-22 16:23:40,083 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-09-22 16:23:45,084 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.6-flash na rodada 1. Aguardando 5s antes de tentar no modelo gemini-3.8-flash.
+2026-09-22 16:23:50,084 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=2 enviando...
+2026-09-22 16:23:50,383 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-09-22 16:24:00,383 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=2 enviando...
+2026-09-22 16:24:24,573 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-09-22 16:24:34,573 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=2 enviando...
+2026-09-22 16:24:35,229 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-09-22 16:24:45,229 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=2 enviando...
+2026-09-22 16:25:45,318 WARNING src.app.gemini_client - [Gemini] key#4 timeout
+2026-09-22 16:25:45,318 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.8-flash na rodada 2. Aguardando 10s antes de tentar no modelo gemini-3.8-flash.
+2026-09-22 16:25:55,318 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=3 enviando...
+2026-09-22 16:26:05,929 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-09-22 16:26:20,929 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=3 enviando...
+2026-09-22 16:26:47,848 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-09-22 16:27:02,849 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=3 enviando...
+2026-09-22 16:27:03,556 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-09-22 16:27:18,557 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=3 enviando...
+2026-09-22 16:27:29,576 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-09-22 16:27:44,577 ERROR __main__ - [Slot 5] Gemini indisponível: Gemini falhou após 3 rodadas com 4 key(s). Últimos erros: key#3 status=503 (alta demanda no modelo gemini-3.8-flash); key#4 timeout; key#1 status=503 (alta demanda no modelo gemini-3.8-flash); key#2 status=503 (alta demanda no modelo gemini-3.8-flash); key#3 status=503 (alta demanda no modelo gemini-3.8-flash); key#4 status=503 (alta demanda no modelo gemini-3.8-flash)
+2026-09-22 16:27:44,577 ERROR __main__ - [Slot 5] Slot descartado.
+2026-09-22 16:27:44,578 INFO __main__ - Run completo. Publicados 2/5 posts.
