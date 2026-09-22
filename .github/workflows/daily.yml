@@ -3,7 +3,7 @@ name: Daily Health Content Engine
 on:
   workflow_dispatch:
   schedule:
-    - cron: "00 07 * * *"
+    - cron: "32 09 * * *"
 
 permissions:
   contents: write
