@@ -587,6 +587,18 @@ def _render_post_card(post: dict[str, str], docs_dir: Path, link_prefix: str) ->
         f"</article>"
     )
 
+def _google_analytics() -> str:
+    return """<!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-QHJBWL5WXE"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-QHJBWL5WXE');
+        </script>"""
+
+
 
 def _render_post_card_wide(post: dict[str, str], link_prefix: str) -> str:
     """Horizontal card for 'continue reading' section."""
@@ -766,6 +778,7 @@ def _write_index(
 <title>{escape(site_title)}: Practical Health Habits That Actually Work</title>
 <meta name='description' content='Evidence-informed US health content on sleep, gut health, stress, recipes, and daily habits. Practical guides built for real schedules.'>
 <meta name='robots' content='index,follow'>
+{_google_analytics()}
 <link rel='canonical' href='{public_base}/'>
 <meta property='og:type' content='website'>
 <meta property='og:title' content='{escape(site_title)}'>
@@ -973,6 +986,7 @@ def _write_tag_pages(
 <meta name='robots' content='index,follow'>
 <link rel='canonical' href='{public_base}/tag/{escape(file_name)}'>
 {fonts}
+{_google_analytics()}
 <link rel='stylesheet' href='../assets/style.css'>
 </head>
 <body>
@@ -1031,6 +1045,7 @@ def _write_about_page(docs_dir: Path, base_url: str, site_title: str) -> None:
 <meta name='robots' content='index,follow'>
 <link rel='canonical' href='{public_base}/about.html'>
 {fonts}
+{_google_analytics()}
 <link rel='stylesheet' href='assets/style.css'>
 </head>
 <body>
