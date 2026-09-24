@@ -1,9 +1,7 @@
 {
-  "runs": 180,
+  "runs": 181,
   "offer_runs": 21,
   "recent_topics": [
-    "sparkling-water-teeth-health",
-    "once-a-week-workout-belly-fat-study",
     "eating-less-protein-slows-aging",
     "intermittent-fasting-benefits-weight-loss-energy",
     "brain-wired-regain-lost-weight",
@@ -51,11 +49,11 @@
     "yoga-for-flexibility",
     "home-workouts",
     "8-common-food-additives-linked-to-high-blood-press",
-    "millions-take-calcium-and-vitamin-d-for-bone-healt"
+    "millions-take-calcium-and-vitamin-d-for-bone-healt",
+    "glp-1-weight-loss-and-diabetes-drugs-linked-to-nut",
+    "scientists-restore-a-brain-protein-and-reverse-sig"
   ],
   "recent_slugs": [
-    "microbiome-diet-gut-health",
-    "mits-gut-healing-breakthrough-amino-acid",
     "cellular-energy-nutrient",
     "morning-hydration-unlock-your-day-best-water-habits",
     "unlock-your-energy-nutrient-powers-cells",
@@ -153,12 +151,12 @@
     "yoga-and-mobility-for-busy-people",
     "how-i-finally-made-home-workouts-stick",
     "8-common-food-additives-linked-to-high-blood-pressure-and-heart-disease",
-    "millions-take-calcium-and-vitamin-d-for-bone-health-a-major-review-finds-little-"
+    "millions-take-calcium-and-vitamin-d-for-bone-health-a-major-review-finds-little-",
+    "glp-1-weight-loss-and-diabetes-drugs-linked-to-nutritional-deficiencies-in-nearl",
+    "scientists-restore-a-brain-protein-and-reverse-signs-of-aging-in-mice"
   ],
-  "last_run": "2026-09-22",
+  "last_run": "2026-09-24",
   "recent_tags": [
-    "healthy-habits",
-    "weight",
     "longevity",
     "healthy-habits",
     "weight",
@@ -206,7 +204,9 @@
     "healthy-habits",
     "home-workouts",
     "healthy-habits",
-    "healthy-habits"
+    "healthy-habits",
+    "weight",
+    "longevity"
   ],
   "tag_counts": {
     "sleep": 29,
@@ -214,15 +214,15 @@
     "mental-wellness": 23,
     "stress": 11,
     "healthy-habits": 49,
-    "longevity": 18,
+    "longevity": 19,
     "recipes": 8,
     "anti-inflammatory": 9,
     "home-workouts": 8,
-    "weight": 19,
+    "weight": 20,
     "health": 51
   },
   "topic_rotation": {
-    "sleep": 28,
+    "sleep": 29,
     "gut": 28,
     "stress": 23,
     "healthy-habits": 64,
@@ -230,13 +230,11 @@
     "recipes": 14,
     "anti-inflammatory": 11,
     "home-workouts": 13,
-    "weight": 28,
+    "weight": 29,
     "mental-wellness": 2,
     "health": 8
   },
   "recent_titles": [
-    "Can Gut Bacteria Aid Your Weight Loss Journey?",
-    "Your Daily Sleep Routine for Peak Energy",
     "Tired All the Time? Fix Your Sleep for More Power",
     "How IF Boosts Healthspan: The Science Explained",
     "Fight Aging & Stress: The Coffee Cellular Link",
@@ -294,6 +292,8 @@
     "Yoga and Mobility for Busy People: A No-BS Daily Guide",
     "How I Finally Made Home Workouts Stick in a Tiny Apartment",
     "8 Common Food Additives Linked To High Blood Pressure And Heart Disease",
-    "Millions Take Calcium And Vitamin D For Bone Health. A Major Review Finds Little Benefit"
+    "Millions Take Calcium And Vitamin D For Bone Health. A Major Review Finds Little Benefit",
+    "A Realistic GLP-1 Weight Loss and Diabetes Drugs Linked to Nutritional Deficiencies in Nearly 1 in 6 Children",
+    "Scientists Restore A Brain Protein And Reverse Signs Of Aging In Mice: Real Takeaways"
   ]
 }

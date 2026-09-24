@@ -290,3 +290,19 @@
   }
 }
 
+2026-09-24T12:21:12.456447+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/glp-1-weight-loss-and-diabetes-drugs-linked-to-nutritional-deficiencies-in-nearl.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-24T12:22:11.735768+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/scientists-restore-a-brain-protein-and-reverse-signs-of-aging-in-mice.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
