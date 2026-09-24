@@ -1,8 +1,7 @@
 {
-  "runs": 181,
+  "runs": 182,
   "offer_runs": 21,
   "recent_topics": [
-    "eating-less-protein-slows-aging",
     "intermittent-fasting-benefits-weight-loss-energy",
     "brain-wired-regain-lost-weight",
     "immune-boosting-supplement-cancer-virus-fighter",
@@ -51,10 +50,10 @@
     "8-common-food-additives-linked-to-high-blood-press",
     "millions-take-calcium-and-vitamin-d-for-bone-healt",
     "glp-1-weight-loss-and-diabetes-drugs-linked-to-nut",
-    "scientists-restore-a-brain-protein-and-reverse-sig"
+    "scientists-restore-a-brain-protein-and-reverse-sig",
+    "high-protein-breakfast"
   ],
   "recent_slugs": [
-    "cellular-energy-nutrient",
     "morning-hydration-unlock-your-day-best-water-habits",
     "unlock-your-energy-nutrient-powers-cells",
     "junk-food-childhood-brain-rewired",
@@ -153,11 +152,11 @@
     "8-common-food-additives-linked-to-high-blood-pressure-and-heart-disease",
     "millions-take-calcium-and-vitamin-d-for-bone-health-a-major-review-finds-little-",
     "glp-1-weight-loss-and-diabetes-drugs-linked-to-nutritional-deficiencies-in-nearl",
-    "scientists-restore-a-brain-protein-and-reverse-signs-of-aging-in-mice"
+    "scientists-restore-a-brain-protein-and-reverse-signs-of-aging-in-mice",
+    "what-nobody-tells-you-about-high-protein-breakfast"
   ],
   "last_run": "2026-09-24",
   "recent_tags": [
-    "longevity",
     "healthy-habits",
     "weight",
     "anti-inflammatory",
@@ -206,14 +205,15 @@
     "healthy-habits",
     "healthy-habits",
     "weight",
-    "longevity"
+    "longevity",
+    "healthy-habits"
   ],
   "tag_counts": {
     "sleep": 29,
     "gut": 23,
     "mental-wellness": 23,
     "stress": 11,
-    "healthy-habits": 49,
+    "healthy-habits": 50,
     "longevity": 19,
     "recipes": 8,
     "anti-inflammatory": 9,
@@ -227,7 +227,7 @@
     "stress": 23,
     "healthy-habits": 64,
     "longevity": 29,
-    "recipes": 14,
+    "recipes": 15,
     "anti-inflammatory": 11,
     "home-workouts": 13,
     "weight": 29,
@@ -235,7 +235,6 @@
     "health": 8
   },
   "recent_titles": [
-    "Tired All the Time? Fix Your Sleep for More Power",
     "How IF Boosts Healthspan: The Science Explained",
     "Fight Aging & Stress: The Coffee Cellular Link",
     "Energy Drinks vs. Coffee: What's Best for Your Heart?",
@@ -294,6 +293,7 @@
     "8 Common Food Additives Linked To High Blood Pressure And Heart Disease",
     "Millions Take Calcium And Vitamin D For Bone Health. A Major Review Finds Little Benefit",
     "A Realistic GLP-1 Weight Loss and Diabetes Drugs Linked to Nutritional Deficiencies in Nearly 1 in 6 Children",
-    "Scientists Restore A Brain Protein And Reverse Signs Of Aging In Mice: Real Takeaways"
+    "Scientists Restore A Brain Protein And Reverse Signs Of Aging In Mice: Real Takeaways",
+    "What Nobody Tells You About High Protein Breakfast"
   ]
 }

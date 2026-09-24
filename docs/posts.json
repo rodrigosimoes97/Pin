@@ -1,5 +1,14 @@
 [
   {
+    "slug": "what-nobody-tells-you-about-high-protein-breakfast",
+    "title": "What Nobody Tells You About High Protein Breakfast",
+    "description": "Discover why a high protein breakfast transformed my energy levels, fueled my active days, and finally ended my 10 AM mid-morning crash.",
+    "date": "2026-09-24",
+    "url": "what-nobody-tells-you-about-high-protein-breakfast.html",
+    "hero": "assets/2026-09-24_what-nobody-tells-you-about-high-protein-breakfast.jpeg",
+    "tag": "healthy-habits"
+  },
+  {
     "slug": "scientists-restore-a-brain-protein-and-reverse-signs-of-aging-in-mice",
     "title": "Scientists Restore A Brain Protein And Reverse Signs Of Aging In Mice: Real Takeaways",
     "description": "Scientists restore a brain protein and reverse signs of aging in mice. Here is what this longevity breakthrough means for everyday human brain health.",
@@ -1789,14 +1798,5 @@
     "url": "how-to-meditate-simply-beginners-breathing-guide.html",
     "hero": "assets/2026-03-20_how-to-meditate-simply-beginners-breathing-guide.webp",
     "tag": "mental-wellness"
-  },
-  {
-    "slug": "eating-fermented-foods-today",
-    "title": "Practical Tips for Eating Fermented Foods Today",
-    "description": "Discover easy ways to incorporate traditional fermented foods like kimchi, sauerkraut, and kefir into your daily US diet for better gut health. Get practical tips and debunk myths.",
-    "date": "2026-03-20",
-    "url": "eating-fermented-foods-today.html",
-    "hero": "assets/2026-03-20_eating-fermented-foods-today.webp",
-    "tag": "gut"
   }
 ]
