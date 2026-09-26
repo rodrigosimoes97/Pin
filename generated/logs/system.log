@@ -77212,3 +77212,4 @@ RuntimeError: Gemini failed after exhaustive retries: key#1 transient_status=429
 
 2026-09-25 14:21:18,651 INFO __main__ - [Slot 5] ✓ Publicado: struggling-with-healthy-recipes-try-this-effective-reset.html (info)
 2026-09-25 14:21:18,652 INFO __main__ - Run completo. Publicados 1/5 posts.
+2026-09-26 13:24:53,450 INFO __main__ - Pulando geração hoje para manter 5 posts/semana.
