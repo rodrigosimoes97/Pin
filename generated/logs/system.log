@@ -77721,3 +77721,147 @@ RuntimeError: Gemini failed after exhaustive retries: key#1 transient_status=429
 ; key#3 status=503 (alta demanda no modelo gemini-3.8-flash); key#4 status=503 (alta demanda no modelo gemini-3.8-flash)
 2026-09-29 15:21:41,413 ERROR __main__ - [Slot 5] Slot descartado.
 2026-09-29 15:21:41,413 INFO __main__ - Run completo. Publicados 0/5 posts.
+2026-09-30 11:57:10,044 INFO __main__ - Buscando trending topics para USA...
+2026-09-30 11:57:10,211 WARNING src.app.trend_research - Failed to fetch Google Trends (404/Error): The request failed: Google returned a response with code 404. Moving to fallbacks.
+2026-09-30 11:57:13,344 INFO src.app.trend_research - Gathered 9 unique trending topics.
+2026-09-30 11:57:13,347 INFO __main__ - ═══ Slot 1/5 ═══
+2026-09-30 11:57:13,347 INFO __main__ - [Slot 1] Usando trending topic local: Scientists just discovered what coffee really does to your gut and brain
+2026-09-30 11:57:13,347 INFO __main__ - [Slot 1] title_hint=4 Science-Backed Scientists Just Discovered What Coffee Really Does To Your...
+2026-09-30 11:57:13,347 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-09-30 11:57:21,147 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=5363
+2026-09-30 11:57:21,149 WARNING __main__ - [Quality] word_count=433 < 450
+2026-09-30 11:57:21,149 WARNING __main__ - [Slot 1] Qualidade insuficiente — artigo descartado
+2026-09-30 11:57:21,149 ERROR __main__ - [Slot 1] Slot descartado.
+2026-09-30 11:57:21,149 INFO __main__ - ═══ Slot 2/5 ═══
+2026-09-30 11:57:21,149 INFO __main__ - [Slot 2] Usando trending topic local: Zepbound and Mounjaro may turn on the body’s calorie-burning brown fat
+2026-09-30 11:57:21,149 INFO __main__ - [Slot 2] title_hint=How to restart Zepbound And Mounjaro May Turn On The Body’S Calorie-Burning...
+2026-09-30 11:57:21,149 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-09-30 11:57:29,408 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=5329
+2026-09-30 11:57:29,601 INFO src.app.duplicate_checker - Indexed post: zepbound-and-mounjaro-may-turn-on-the-bodys-calorie-burning-brown-fat (Total: 164)
+2026-09-30 11:57:31,011 INFO __main__ - [Slot 2] Submetendo ao Google Indexing: https://rodrigosimoes97.github.io/Pin/zepbound-and-mounjaro-may-turn-on-the-bodys-calorie-burning-brown-fat.html
+2026-09-30 11:57:31,053 INFO src.app.indexing - Loaded Google service account from raw JSON content.
+2026-09-30 11:57:31,415 WARNING src.app.indexing - Attempt 1: Failed to index https://rodrigosimoes97.github.io/Pin/zepbound-and-mounjaro-may-turn-on-the-bodys-calorie-burning-brown-fat.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-30 11:57:32,660 WARNING src.app.indexing - Attempt 2: Failed to index https://rodrigosimoes97.github.io/Pin/zepbound-and-mounjaro-may-turn-on-the-bodys-calorie-burning-brown-fat.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-30 11:57:34,883 WARNING src.app.indexing - Attempt 3: Failed to index https://rodrigosimoes97.github.io/Pin/zepbound-and-mounjaro-may-turn-on-the-bodys-calorie-burning-brown-fat.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-30 11:57:34,884 INFO __main__ - [Slot 2] ✓ Publicado: zepbound-and-mounjaro-may-turn-on-the-bodys-calorie-burning-brown-fat.html (info)
+2026-09-30 11:57:34,884 INFO __main__ - ═══ Slot 3/5 ═══
+2026-09-30 11:57:34,885 INFO __main__ - [Slot 3] Usando trending topic local: Pomegranate compound improves heart function by up to 80% in study
+2026-09-30 11:57:34,885 INFO __main__ - [Slot 3] title_hint=How I Finally Made Pomegranate Compound Improves Heart Function By Up To 80%...
+2026-09-30 11:57:34,885 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-09-30 11:57:40,332 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-09-30 11:57:45,333 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-09-30 11:57:45,462 ERROR src.app.gemini_client - [Gemini] key#2 status=403 PERMANENTE body={
+  "error": {
+    "code": 403,
+    "message": "Your project has been denied access. Please contact support.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-30 11:57:45,462 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-09-30 11:57:48,848 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-09-30 11:57:53,848 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 enviando...
+2026-09-30 11:58:02,473 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 OK finishReason=STOP len_chars=5542
+2026-09-30 11:58:02,656 INFO src.app.duplicate_checker - Indexed post: how-pomegranate-compound-improves-heart-function-by-up-to-80-in-study (Total: 165)
+2026-09-30 11:58:04,055 INFO __main__ - [Slot 3] Submetendo ao Google Indexing: https://rodrigosimoes97.github.io/Pin/how-pomegranate-compound-improves-heart-function-by-up-to-80-in-study.html
+2026-09-30 11:58:04,096 INFO src.app.indexing - Loaded Google service account from raw JSON content.
+2026-09-30 11:58:04,287 WARNING src.app.indexing - Attempt 1: Failed to index https://rodrigosimoes97.github.io/Pin/how-pomegranate-compound-improves-heart-function-by-up-to-80-in-study.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-30 11:58:05,385 WARNING src.app.indexing - Attempt 2: Failed to index https://rodrigosimoes97.github.io/Pin/how-pomegranate-compound-improves-heart-function-by-up-to-80-in-study.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-30 11:58:07,632 WARNING src.app.indexing - Attempt 3: Failed to index https://rodrigosimoes97.github.io/Pin/how-pomegranate-compound-improves-heart-function-by-up-to-80-in-study.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-30 11:58:07,635 INFO __main__ - [Slot 3] ✓ Publicado: how-pomegranate-compound-improves-heart-function-by-up-to-80-in-study.html (info)
+2026-09-30 11:58:07,635 INFO __main__ - ═══ Slot 4/5 ═══
+2026-09-30 11:58:07,635 INFO __main__ - [Slot 4] Tópico local: Walking for Health (home-workouts)
+2026-09-30 11:58:07,635 INFO __main__ - [Slot 4] title_hint=How I Finally Made Walking for Health Stick (And You Can Too)
+2026-09-30 11:58:07,635 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-09-30 11:58:16,296 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=5426
+2026-09-30 11:58:16,478 INFO src.app.duplicate_checker - Indexed post: how-i-made-walking-for-health-stick-for-real-weight-loss (Total: 166)
+2026-09-30 11:58:17,907 INFO __main__ - [Slot 4] Submetendo ao Google Indexing: https://rodrigosimoes97.github.io/Pin/how-i-made-walking-for-health-stick-for-real-weight-loss.html
+2026-09-30 11:58:17,948 INFO src.app.indexing - Loaded Google service account from raw JSON content.
+2026-09-30 11:58:18,253 WARNING src.app.indexing - Attempt 1: Failed to index https://rodrigosimoes97.github.io/Pin/how-i-made-walking-for-health-stick-for-real-weight-loss.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-30 11:58:19,475 WARNING src.app.indexing - Attempt 2: Failed to index https://rodrigosimoes97.github.io/Pin/how-i-made-walking-for-health-stick-for-real-weight-loss.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-30 11:58:21,753 WARNING src.app.indexing - Attempt 3: Failed to index https://rodrigosimoes97.github.io/Pin/how-i-made-walking-for-health-stick-for-real-weight-loss.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-30 11:58:21,755 INFO __main__ - [Slot 4] ✓ Publicado: how-i-made-walking-for-health-stick-for-real-weight-loss.html (info)
+2026-09-30 11:58:21,755 INFO __main__ - ═══ Slot 5/5 ═══
+2026-09-30 11:58:21,756 INFO __main__ - [Slot 5] Tópico local: Home Workouts (home-workouts)
+2026-09-30 11:58:21,756 INFO __main__ - [Slot 5] title_hint=How I Finally Made Home Workouts Stick (And You Can Too)
+2026-09-30 11:58:21,756 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-09-30 11:58:22,903 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-09-30 11:58:27,903 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-09-30 11:58:28,051 ERROR src.app.gemini_client - [Gemini] key#2 status=403 PERMANENTE body={
+  "error": {
+    "code": 403,
+    "message": "Your project has been denied access. Please contact support.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-30 11:58:28,051 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-09-30 11:59:01,319 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-09-30 11:59:06,319 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 enviando...
+2026-09-30 11:59:14,458 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 OK finishReason=STOP len_chars=4912
+2026-09-30 11:59:14,518 WARNING __main__ - [Slot 5] Artigo bloqueado por similaridade (score=0.88)
+2026-09-30 11:59:14,518 ERROR __main__ - [Slot 5] Slot descartado.
+2026-09-30 11:59:14,519 INFO __main__ - Run completo. Publicados 3/5 posts.

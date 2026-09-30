@@ -322,3 +322,27 @@
   }
 }
 
+2026-09-30T11:57:34.883459+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/zepbound-and-mounjaro-may-turn-on-the-bodys-calorie-burning-brown-fat.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-30T11:58:07.633361+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/how-pomegranate-compound-improves-heart-function-by-up-to-80-in-study.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-09-30T11:58:21.753753+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/how-i-made-walking-for-health-stick-for-real-weight-loss.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
