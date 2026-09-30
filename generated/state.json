@@ -1,8 +1,7 @@
 {
-  "runs": 186,
+  "runs": 187,
   "offer_runs": 21,
   "recent_topics": [
-    "sugar-cravings-health-myth",
     "fruit-juice-depression-link",
     "daily-gratitude-practice-stress-relief",
     "ozempic-brain-craving-center",
@@ -51,10 +50,10 @@
     "healthy-recipes",
     "zepbound-and-mounjaro-may-turn-on-the-body-s-calor",
     "pomegranate-compound-improves-heart-function-by-up",
-    "walking-for-fitness"
+    "walking-for-fitness",
+    "creatine-may-help-build-muscle-even-without-exerci"
   ],
   "recent_slugs": [
-    "beef-blood-sugar-diabetes-study",
     "daily-hydration-boost-energy-wellness",
     "hidden-cancer-culprits-groceries",
     "biohacking-for-beginners-simple-daily-tweaks",
@@ -153,11 +152,11 @@
     "struggling-with-healthy-recipes-try-this-effective-reset",
     "zepbound-and-mounjaro-may-turn-on-the-bodys-calorie-burning-brown-fat",
     "how-pomegranate-compound-improves-heart-function-by-up-to-80-in-study",
-    "how-i-made-walking-for-health-stick-for-real-weight-loss"
+    "how-i-made-walking-for-health-stick-for-real-weight-loss",
+    "creatine-may-help-build-muscle-even-without-exercise-researchers-find"
   ],
   "last_run": "2026-09-30",
   "recent_tags": [
-    "healthy-habits",
     "mental-wellness",
     "mental-wellness",
     "weight",
@@ -206,7 +205,8 @@
     "recipes",
     "weight",
     "longevity",
-    "healthy-habits"
+    "healthy-habits",
+    "health"
   ],
   "tag_counts": {
     "sleep": 29,
@@ -219,7 +219,7 @@
     "anti-inflammatory": 9,
     "home-workouts": 8,
     "weight": 21,
-    "health": 51
+    "health": 52
   },
   "topic_rotation": {
     "sleep": 29,
@@ -227,7 +227,7 @@
     "stress": 23,
     "healthy-habits": 64,
     "longevity": 29,
-    "recipes": 16,
+    "recipes": 17,
     "anti-inflammatory": 11,
     "home-workouts": 14,
     "weight": 30,
@@ -235,7 +235,6 @@
     "health": 9
   },
   "recent_titles": [
-    "Struggling with Sleep? Try These Energy Hacks",
     "New Microwave Fry Method: Healthier Indulgence?",
     "Toddler Foods: 80% Ultra-Processed? What to Do",
     "Your Smile & Sparkling Water: What's the Deal?",
@@ -294,6 +293,7 @@
     "Struggling with Healthy Recipes? Try This Busy Professional Reset",
     "Zepbound And Mounjaro May Turn On The Body'S Calorie-Burning Brown Fat",
     "How I Finally Made Pomegranate Compound Improves Heart Function By Up To 80% In Study Work For Me",
-    "How I Made Walking for Health Stick for Real Weight Loss"
+    "How I Made Walking for Health Stick for Real Weight Loss",
+    "Creatine May Help Build Muscle Even Without Exercise, Researchers Find"
   ]
 }
