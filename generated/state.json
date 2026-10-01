@@ -1,8 +1,7 @@
 {
-  "runs": 188,
+  "runs": 189,
   "offer_runs": 21,
   "recent_topics": [
-    "fruit-juice-depression-link",
     "daily-gratitude-practice-stress-relief",
     "ozempic-brain-craving-center",
     "vitamin-deficiency-belly-fat-danger",
@@ -51,10 +50,10 @@
     "zepbound-and-mounjaro-may-turn-on-the-body-s-calor",
     "pomegranate-compound-improves-heart-function-by-up",
     "walking-for-fitness",
-    "creatine-may-help-build-muscle-even-without-exerci"
+    "creatine-may-help-build-muscle-even-without-exerci",
+    "could-quitting-ultra-processed-food-boost-your-men"
   ],
   "recent_slugs": [
-    "daily-hydration-boost-energy-wellness",
     "hidden-cancer-culprits-groceries",
     "biohacking-for-beginners-simple-daily-tweaks",
     "unlock-your-best-sleep-energy-focus-secrets",
@@ -153,11 +152,11 @@
     "zepbound-and-mounjaro-may-turn-on-the-bodys-calorie-burning-brown-fat",
     "how-pomegranate-compound-improves-heart-function-by-up-to-80-in-study",
     "how-i-made-walking-for-health-stick-for-real-weight-loss",
-    "creatine-may-help-build-muscle-even-without-exercise-researchers-find"
+    "creatine-may-help-build-muscle-even-without-exercise-researchers-find",
+    "could-quitting-ultra-processed-food-boost-your-mental-health"
   ],
   "last_run": "2026-10-01",
   "recent_tags": [
-    "mental-wellness",
     "mental-wellness",
     "weight",
     "weight",
@@ -206,12 +205,13 @@
     "weight",
     "longevity",
     "healthy-habits",
-    "health"
+    "health",
+    "mental-wellness"
   ],
   "tag_counts": {
     "sleep": 29,
     "gut": 23,
-    "mental-wellness": 23,
+    "mental-wellness": 24,
     "stress": 11,
     "healthy-habits": 51,
     "longevity": 20,
@@ -227,7 +227,7 @@
     "stress": 23,
     "healthy-habits": 64,
     "longevity": 29,
-    "recipes": 17,
+    "recipes": 18,
     "anti-inflammatory": 11,
     "home-workouts": 14,
     "weight": 30,
@@ -235,7 +235,6 @@
     "health": 9
   },
   "recent_titles": [
-    "New Microwave Fry Method: Healthier Indulgence?",
     "Toddler Foods: 80% Ultra-Processed? What to Do",
     "Your Smile & Sparkling Water: What's the Deal?",
     "Want a Flat Stomach? Try This Weekly Routine",
@@ -294,6 +293,7 @@
     "Zepbound And Mounjaro May Turn On The Body'S Calorie-Burning Brown Fat",
     "How I Finally Made Pomegranate Compound Improves Heart Function By Up To 80% In Study Work For Me",
     "How I Made Walking for Health Stick for Real Weight Loss",
-    "Creatine May Help Build Muscle Even Without Exercise, Researchers Find"
+    "Creatine May Help Build Muscle Even Without Exercise, Researchers Find",
+    "Could Quitting Ultra-Processed Food Boost Your Mental Health?"
   ]
 }

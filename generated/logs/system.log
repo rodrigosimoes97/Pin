@@ -78320,3 +78320,247 @@ RuntimeError: Gemini failed after exhaustive retries: key#1 transient_status=429
 ; key#3 status=503 (alta demanda no modelo gemini-3.8-flash); key#4 status=503 (alta demanda no modelo gemini-3.8-flash)
 2026-10-01 15:19:55,475 ERROR __main__ - [Slot 5] Slot descartado.
 2026-10-01 15:19:55,475 INFO __main__ - Run completo. Publicados 0/5 posts.
+2026-10-01 15:42:15,748 INFO __main__ - Buscando trending topics para USA...
+2026-10-01 15:42:15,888 WARNING src.app.trend_research - Failed to fetch Google Trends (404/Error): The request failed: Google returned a response with code 404. Moving to fallbacks.
+2026-10-01 15:42:30,991 INFO src.app.trend_research - Gathered 10 unique trending topics.
+2026-10-01 15:42:30,993 INFO __main__ - ═══ Slot 1/5 ═══
+2026-10-01 15:42:30,993 INFO __main__ - [Slot 1] Usando trending topic local: This diet may slow brain aging by 2.5 years
+2026-10-01 15:42:30,993 INFO __main__ - [Slot 1] title_hint=4 Science-Backed This Diet May Slow Brain Aging By 2.5 Years Habits Worth Trying
+2026-10-01 15:42:30,993 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-01 15:42:39,114 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-01 15:42:44,115 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-01 15:42:44,241 ERROR src.app.gemini_client - [Gemini] key#2 status=403 PERMANENTE body={
+  "error": {
+    "code": 403,
+    "message": "Your project has been denied access. Please contact support.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-01 15:42:44,241 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-10-01 15:42:47,606 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-01 15:42:52,606 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 enviando...
+2026-10-01 15:42:56,257 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-01 15:43:01,257 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.6-flash na rodada 1. Aguardando 5s antes de tentar no modelo gemini-3.8-flash.
+2026-10-01 15:43:06,257 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=2 enviando...
+2026-10-01 15:43:07,651 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-01 15:43:17,652 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=2 enviando...
+2026-10-01 15:43:17,768 ERROR src.app.gemini_client - [Gemini] key#2 status=403 PERMANENTE body={
+  "error": {
+    "code": 403,
+    "message": "Your project has been denied access. Please contact support.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-01 15:43:17,768 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=2 enviando...
+2026-10-01 15:43:18,082 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-01 15:43:28,082 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=2 enviando...
+2026-10-01 15:43:42,725 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-01 15:43:52,725 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.8-flash na rodada 2. Aguardando 10s antes de tentar no modelo gemini-3.8-flash.
+2026-10-01 15:44:02,725 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=3 enviando...
+2026-10-01 15:44:24,274 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-01 15:44:39,274 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=3 enviando...
+2026-10-01 15:44:39,392 ERROR src.app.gemini_client - [Gemini] key#2 status=403 PERMANENTE body={
+  "error": {
+    "code": 403,
+    "message": "Your project has been denied access. Please contact support.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-01 15:44:39,392 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=3 enviando...
+2026-10-01 15:44:41,822 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-01 15:44:56,822 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=3 enviando...
+2026-10-01 15:45:01,068 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-01 15:45:16,068 ERROR __main__ - [Slot 1] Gemini indisponível: Gemini falhou após 3 rodadas com 4 key(s). Últimos erros: key#3 status=503 (alta demanda no modelo gemini-3.8-flash); key#4 status=503 (alta demanda no modelo gemini-3.8-flash); key#1 status=503 (alta demanda no modelo gemini-3.8-flash); key#2 status=403 PERMANENTE body={
+  "error": {
+    "code": 403,
+    "message": "Your project has been denied access. Please contact support.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+; key#3 status=503 (alta demanda no modelo gemini-3.8-flash); key#4 status=503 (alta demanda no modelo gemini-3.8-flash)
+2026-10-01 15:45:16,069 ERROR __main__ - [Slot 1] Slot descartado.
+2026-10-01 15:45:16,070 INFO __main__ - ═══ Slot 2/5 ═══
+2026-10-01 15:45:16,070 INFO __main__ - [Slot 2] Usando trending topic local: Could quitting ultra-processed food boost your mental health?
+2026-10-01 15:45:16,070 INFO __main__ - [Slot 2] title_hint=A Realistic Could Quitting Ultra-Processed Food Boost Your Mental Health?...
+2026-10-01 15:45:16,070 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-01 15:45:17,655 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-01 15:45:22,656 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-01 15:45:22,771 ERROR src.app.gemini_client - [Gemini] key#2 status=403 PERMANENTE body={
+  "error": {
+    "code": 403,
+    "message": "Your project has been denied access. Please contact support.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-01 15:45:22,771 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-10-01 15:45:31,716 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 OK finishReason=STOP len_chars=6174
+2026-10-01 15:45:31,986 INFO src.app.duplicate_checker - Indexed post: could-quitting-ultra-processed-food-boost-your-mental-health (Total: 168)
+2026-10-01 15:45:33,141 INFO __main__ - [Slot 2] Submetendo ao Google Indexing: https://rodrigosimoes97.github.io/Pin/could-quitting-ultra-processed-food-boost-your-mental-health.html
+2026-10-01 15:45:33,178 INFO src.app.indexing - Loaded Google service account from raw JSON content.
+2026-10-01 15:45:33,492 WARNING src.app.indexing - Attempt 1: Failed to index https://rodrigosimoes97.github.io/Pin/could-quitting-ultra-processed-food-boost-your-mental-health.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-01 15:45:34,728 WARNING src.app.indexing - Attempt 2: Failed to index https://rodrigosimoes97.github.io/Pin/could-quitting-ultra-processed-food-boost-your-mental-health.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-01 15:45:36,975 WARNING src.app.indexing - Attempt 3: Failed to index https://rodrigosimoes97.github.io/Pin/could-quitting-ultra-processed-food-boost-your-mental-health.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-01 15:45:36,978 INFO __main__ - [Slot 2] ✓ Publicado: could-quitting-ultra-processed-food-boost-your-mental-health.html (info)
+2026-10-01 15:45:36,978 INFO __main__ - ═══ Slot 3/5 ═══
+2026-10-01 15:45:36,978 INFO __main__ - [Slot 3] Usando trending topic local: Scientists just discovered what coffee really does to your gut and brain
+2026-10-01 15:45:36,979 INFO __main__ - [Slot 3] title_hint=How I Finally Made Scientists Just Discovered What Coffee Really Does To...
+2026-10-01 15:45:36,979 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-01 15:45:37,921 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-01 15:45:42,921 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-01 15:45:43,033 ERROR src.app.gemini_client - [Gemini] key#2 status=403 PERMANENTE body={
+  "error": {
+    "code": 403,
+    "message": "Your project has been denied access. Please contact support.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-01 15:45:43,033 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-10-01 15:45:45,004 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-01 15:45:50,005 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 enviando...
+2026-10-01 15:46:15,408 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-01 15:46:20,409 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.6-flash na rodada 1. Aguardando 5s antes de tentar no modelo gemini-3.8-flash.
+2026-10-01 15:46:25,409 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=2 enviando...
+2026-10-01 15:46:26,137 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-01 15:46:36,137 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=2 enviando...
+2026-10-01 15:46:36,254 ERROR src.app.gemini_client - [Gemini] key#2 status=403 PERMANENTE body={
+  "error": {
+    "code": 403,
+    "message": "Your project has been denied access. Please contact support.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-01 15:46:36,254 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=2 enviando...
+2026-10-01 15:46:42,667 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-01 15:46:52,667 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=2 enviando...
+2026-10-01 15:46:56,492 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-01 15:47:06,492 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.8-flash na rodada 2. Aguardando 10s antes de tentar no modelo gemini-3.8-flash.
+2026-10-01 15:47:16,492 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=3 enviando...
+2026-10-01 15:48:16,565 WARNING src.app.gemini_client - [Gemini] key#1 timeout
+2026-10-01 15:48:16,565 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=3 enviando...
+2026-10-01 15:48:16,705 ERROR src.app.gemini_client - [Gemini] key#2 status=403 PERMANENTE body={
+  "error": {
+    "code": 403,
+    "message": "Your project has been denied access. Please contact support.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-01 15:48:16,705 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=3 enviando...
+2026-10-01 15:49:07,100 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-01 15:49:22,100 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=3 enviando...
+2026-10-01 15:49:22,254 WARNING src.app.gemini_client - [Gemini] key#4 status=429 (quota/rate limit) retry_delay=37s — alternando para próxima key
+2026-10-01 15:49:23,254 ERROR __main__ - [Slot 3] Gemini indisponível: Gemini falhou após 3 rodadas com 4 key(s). Últimos erros: key#3 status=503 (alta demanda no modelo gemini-3.8-flash); key#4 status=503 (alta demanda no modelo gemini-3.8-flash); key#1 timeout; key#2 status=403 PERMANENTE body={
+  "error": {
+    "code": 403,
+    "message": "Your project has been denied access. Please contact support.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+; key#3 status=503 (alta demanda no modelo gemini-3.8-flash); key#4 status=429 (quota/rate limit) retry_delay=37s
+2026-10-01 15:49:23,254 ERROR __main__ - [Slot 3] Slot descartado.
+2026-10-01 15:49:23,254 INFO __main__ - ═══ Slot 4/5 ═══
+2026-10-01 15:49:23,255 INFO __main__ - [Slot 4] Usando trending topic local: Fenugreek May Help Sexual Function, Period Pain, and Lactation
+2026-10-01 15:49:23,255 INFO __main__ - [Slot 4] title_hint=The Honest Guide to Fenugreek May Help Sexual Function, Period Pain, And...
+2026-10-01 15:49:23,255 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-01 15:49:25,649 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-01 15:49:30,650 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-01 15:49:30,769 ERROR src.app.gemini_client - [Gemini] key#2 status=403 PERMANENTE body={
+  "error": {
+    "code": 403,
+    "message": "Your project has been denied access. Please contact support.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-01 15:49:30,769 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-10-01 15:49:33,230 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-01 15:49:38,230 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 enviando...
+2026-10-01 15:49:41,334 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-01 15:49:46,334 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.6-flash na rodada 1. Aguardando 5s antes de tentar no modelo gemini-3.8-flash.
+2026-10-01 15:49:51,334 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=2 enviando...
+2026-10-01 15:49:51,502 WARNING src.app.gemini_client - [Gemini] key#1 status=429 (quota/rate limit) retry_delay=8s — alternando para próxima key
+2026-10-01 15:49:52,503 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=2 enviando...
+2026-10-01 15:49:52,630 ERROR src.app.gemini_client - [Gemini] key#2 status=403 PERMANENTE body={
+  "error": {
+    "code": 403,
+    "message": "Your project has been denied access. Please contact support.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-01 15:49:52,630 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=2 enviando...
+2026-10-01 15:49:56,125 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-01 15:50:06,126 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=2 enviando...
+2026-10-01 15:50:06,249 WARNING src.app.gemini_client - [Gemini] key#4 status=429 (quota/rate limit) retry_delay=53s — alternando para próxima key
+2026-10-01 15:50:07,249 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.8-flash na rodada 2. Aguardando 10s antes de tentar no modelo gemini-3.8-flash.
+2026-10-01 15:50:17,250 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=3 enviando...
+2026-10-01 15:50:17,365 WARNING src.app.gemini_client - [Gemini] key#1 status=429 (quota/rate limit) retry_delay=42s — alternando para próxima key
+2026-10-01 15:50:18,366 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=3 enviando...
+2026-10-01 15:50:18,478 ERROR src.app.gemini_client - [Gemini] key#2 status=403 PERMANENTE body={
+  "error": {
+    "code": 403,
+    "message": "Your project has been denied access. Please contact support.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-01 15:50:18,478 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=3 enviando...
+2026-10-01 15:50:22,542 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-01 15:50:37,543 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=3 enviando...
+2026-10-01 15:50:37,664 WARNING src.app.gemini_client - [Gemini] key#4 status=429 (quota/rate limit) retry_delay=22s — alternando para próxima key
+2026-10-01 15:50:38,665 ERROR __main__ - [Slot 4] Gemini indisponível: Gemini falhou após 3 rodadas com 4 key(s). Últimos erros: key#3 status=503 (alta demanda no modelo gemini-3.8-flash); key#4 status=429 (quota/rate limit) retry_delay=53s; key#1 status=429 (quota/rate limit) retry_delay=42s; key#2 status=403 PERMANENTE body={
+  "error": {
+    "code": 403,
+    "message": "Your project has been denied access. Please contact support.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+; key#3 status=503 (alta demanda no modelo gemini-3.8-flash); key#4 status=429 (quota/rate limit) retry_delay=22s
+2026-10-01 15:50:38,666 ERROR __main__ - [Slot 4] Slot descartado.
+2026-10-01 15:50:38,666 INFO __main__ - ═══ Slot 5/5 ═══
+2026-10-01 15:50:38,666 INFO __main__ - [Slot 5] Tópico local: Yoga and Mobility (home-workouts)
+2026-10-01 15:50:38,666 INFO __main__ - [Slot 5] title_hint=How to fix Yoga and Mobility Without Giving Up Everything
+2026-10-01 15:50:38,666 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-01 15:50:42,860 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-01 15:50:47,860 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-01 15:50:47,989 ERROR src.app.gemini_client - [Gemini] key#2 status=403 PERMANENTE body={
+  "error": {
+    "code": 403,
+    "message": "Your project has been denied access. Please contact support.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-01 15:50:47,989 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-10-01 15:51:13,699 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 OK finishReason=STOP len_chars=4746
+2026-10-01 15:51:13,700 WARNING __main__ - [Quality] word_count=401 < 450
+2026-10-01 15:51:13,700 WARNING __main__ - [Slot 5] Qualidade insuficiente — artigo descartado
+2026-10-01 15:51:13,700 ERROR __main__ - [Slot 5] Slot descartado.
+2026-10-01 15:51:13,701 INFO __main__ - Run completo. Publicados 1/5 posts.
