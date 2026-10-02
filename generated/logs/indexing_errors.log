@@ -362,3 +362,35 @@
   }
 }
 
+2026-10-02T12:26:47.281763+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/what-nobody-tells-you-about-how-this-diet-may-slow-brain-aging-by-25-years.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-02T12:27:17.662052+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/fenugreek-may-help-sexual-function-period-pain-and-lactation.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-02T12:27:30.748958+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/feel-more-energized-with-this-practical-home-workouts-routine.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-02T12:28:05.870366+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/what-nobody-tells-you-about-budget-meal-prep.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+

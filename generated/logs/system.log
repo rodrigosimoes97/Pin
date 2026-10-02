@@ -78564,3 +78564,181 @@ RuntimeError: Gemini failed after exhaustive retries: key#1 transient_status=429
 2026-10-01 15:51:13,700 WARNING __main__ - [Slot 5] Qualidade insuficiente — artigo descartado
 2026-10-01 15:51:13,700 ERROR __main__ - [Slot 5] Slot descartado.
 2026-10-01 15:51:13,701 INFO __main__ - Run completo. Publicados 1/5 posts.
+2026-10-02 12:26:23,648 INFO __main__ - Buscando trending topics para USA...
+2026-10-02 12:26:23,802 WARNING src.app.trend_research - Failed to fetch Google Trends (404/Error): The request failed: Google returned a response with code 404. Moving to fallbacks.
+2026-10-02 12:26:26,249 INFO src.app.trend_research - Gathered 10 unique trending topics.
+2026-10-02 12:26:26,251 INFO __main__ - ═══ Slot 1/5 ═══
+2026-10-02 12:26:26,251 INFO __main__ - [Slot 1] Usando trending topic local: This diet may slow brain aging by 2.5 years
+2026-10-02 12:26:26,251 INFO __main__ - [Slot 1] title_hint=What Nobody Tells You About This Diet May Slow Brain Aging By 2.5 Years
+2026-10-02 12:26:26,251 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-02 12:26:28,575 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-02 12:26:33,575 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-02 12:26:33,714 ERROR src.app.gemini_client - [Gemini] key#2 status=403 PERMANENTE body={
+  "error": {
+    "code": 403,
+    "message": "Your project has been denied access. Please contact support.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-02 12:26:33,715 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-10-02 12:26:42,346 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 OK finishReason=STOP len_chars=5551
+2026-10-02 12:26:42,541 INFO src.app.duplicate_checker - Indexed post: what-nobody-tells-you-about-how-this-diet-may-slow-brain-aging-by-25-years (Total: 169)
+2026-10-02 12:26:43,848 INFO __main__ - [Slot 1] Submetendo ao Google Indexing: https://rodrigosimoes97.github.io/Pin/what-nobody-tells-you-about-how-this-diet-may-slow-brain-aging-by-25-years.html
+2026-10-02 12:26:43,890 INFO src.app.indexing - Loaded Google service account from raw JSON content.
+2026-10-02 12:26:44,064 WARNING src.app.indexing - Attempt 1: Failed to index https://rodrigosimoes97.github.io/Pin/what-nobody-tells-you-about-how-this-diet-may-slow-brain-aging-by-25-years.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-02 12:26:45,200 WARNING src.app.indexing - Attempt 2: Failed to index https://rodrigosimoes97.github.io/Pin/what-nobody-tells-you-about-how-this-diet-may-slow-brain-aging-by-25-years.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-02 12:26:47,281 WARNING src.app.indexing - Attempt 3: Failed to index https://rodrigosimoes97.github.io/Pin/what-nobody-tells-you-about-how-this-diet-may-slow-brain-aging-by-25-years.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-02 12:26:47,283 INFO __main__ - [Slot 1] ✓ Publicado: what-nobody-tells-you-about-how-this-diet-may-slow-brain-aging-by-25-years.html (offer)
+2026-10-02 12:26:47,283 INFO __main__ - ═══ Slot 2/5 ═══
+2026-10-02 12:26:47,283 INFO __main__ - [Slot 2] Usando trending topic local: Scientists just discovered what coffee really does to your gut and brain
+2026-10-02 12:26:47,283 INFO __main__ - [Slot 2] title_hint=The Honest Guide to Scientists Just Discovered What Coffee Really Does To...
+2026-10-02 12:26:47,283 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-02 12:26:49,627 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-02 12:26:54,627 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-02 12:26:54,774 ERROR src.app.gemini_client - [Gemini] key#2 status=403 PERMANENTE body={
+  "error": {
+    "code": 403,
+    "message": "Your project has been denied access. Please contact support.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-02 12:26:54,774 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-10-02 12:27:02,341 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 OK finishReason=STOP len_chars=5176
+2026-10-02 12:27:02,402 WARNING __main__ - [Slot 2] Artigo bloqueado por similaridade (score=0.87)
+2026-10-02 12:27:02,402 ERROR __main__ - [Slot 2] Slot descartado.
+2026-10-02 12:27:02,402 INFO __main__ - ═══ Slot 3/5 ═══
+2026-10-02 12:27:02,403 INFO __main__ - [Slot 3] Usando trending topic local: Fenugreek May Help Sexual Function, Period Pain, and Lactation
+2026-10-02 12:27:02,403 INFO __main__ - [Slot 3] title_hint=How to manage Fenugreek May Help Sexual Function, Period Pain, And Lactation...
+2026-10-02 12:27:02,403 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-02 12:27:13,367 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=7716
+2026-10-02 12:27:13,550 INFO src.app.duplicate_checker - Indexed post: fenugreek-may-help-sexual-function-period-pain-and-lactation (Total: 170)
+2026-10-02 12:27:14,330 INFO __main__ - [Slot 3] Submetendo ao Google Indexing: https://rodrigosimoes97.github.io/Pin/fenugreek-may-help-sexual-function-period-pain-and-lactation.html
+2026-10-02 12:27:14,371 INFO src.app.indexing - Loaded Google service account from raw JSON content.
+2026-10-02 12:27:14,503 WARNING src.app.indexing - Attempt 1: Failed to index https://rodrigosimoes97.github.io/Pin/fenugreek-may-help-sexual-function-period-pain-and-lactation.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-02 12:27:15,583 WARNING src.app.indexing - Attempt 2: Failed to index https://rodrigosimoes97.github.io/Pin/fenugreek-may-help-sexual-function-period-pain-and-lactation.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-02 12:27:17,661 WARNING src.app.indexing - Attempt 3: Failed to index https://rodrigosimoes97.github.io/Pin/fenugreek-may-help-sexual-function-period-pain-and-lactation.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-02 12:27:17,663 INFO __main__ - [Slot 3] ✓ Publicado: fenugreek-may-help-sexual-function-period-pain-and-lactation.html (offer)
+2026-10-02 12:27:17,663 INFO __main__ - ═══ Slot 4/5 ═══
+2026-10-02 12:27:17,663 INFO __main__ - [Slot 4] Tópico local: Home Workouts (home-workouts)
+2026-10-02 12:27:17,664 INFO __main__ - [Slot 4] title_hint=Feel More Energized with This Practical Home Workouts Routine
+2026-10-02 12:27:17,664 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-02 12:27:26,024 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=5210
+2026-10-02 12:27:26,202 INFO src.app.duplicate_checker - Indexed post: feel-more-energized-with-this-practical-home-workouts-routine (Total: 171)
+2026-10-02 12:27:27,417 INFO __main__ - [Slot 4] Submetendo ao Google Indexing: https://rodrigosimoes97.github.io/Pin/feel-more-energized-with-this-practical-home-workouts-routine.html
+2026-10-02 12:27:27,458 INFO src.app.indexing - Loaded Google service account from raw JSON content.
+2026-10-02 12:27:27,589 WARNING src.app.indexing - Attempt 1: Failed to index https://rodrigosimoes97.github.io/Pin/feel-more-energized-with-this-practical-home-workouts-routine.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-02 12:27:28,668 WARNING src.app.indexing - Attempt 2: Failed to index https://rodrigosimoes97.github.io/Pin/feel-more-energized-with-this-practical-home-workouts-routine.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-02 12:27:30,748 WARNING src.app.indexing - Attempt 3: Failed to index https://rodrigosimoes97.github.io/Pin/feel-more-energized-with-this-practical-home-workouts-routine.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-02 12:27:30,750 INFO __main__ - [Slot 4] ✓ Publicado: feel-more-energized-with-this-practical-home-workouts-routine.html (offer)
+2026-10-02 12:27:30,751 INFO __main__ - ═══ Slot 5/5 ═══
+2026-10-02 12:27:30,751 INFO __main__ - [Slot 5] Tópico local: Budget Meal Prep (recipes)
+2026-10-02 12:27:30,751 INFO __main__ - [Slot 5] title_hint=What Nobody Tells You About Budget Meal Prep
+2026-10-02 12:27:30,751 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-02 12:27:36,916 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-02 12:27:41,916 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-02 12:27:42,045 ERROR src.app.gemini_client - [Gemini] key#2 status=403 PERMANENTE body={
+  "error": {
+    "code": 403,
+    "message": "Your project has been denied access. Please contact support.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-02 12:27:42,045 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-10-02 12:27:47,872 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-02 12:27:52,873 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 enviando...
+2026-10-02 12:28:01,328 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 OK finishReason=STOP len_chars=5684
+2026-10-02 12:28:01,517 INFO src.app.duplicate_checker - Indexed post: what-nobody-tells-you-about-budget-meal-prep (Total: 172)
+2026-10-02 12:28:02,489 INFO __main__ - [Slot 5] Submetendo ao Google Indexing: https://rodrigosimoes97.github.io/Pin/what-nobody-tells-you-about-budget-meal-prep.html
+2026-10-02 12:28:02,530 INFO src.app.indexing - Loaded Google service account from raw JSON content.
+2026-10-02 12:28:02,656 WARNING src.app.indexing - Attempt 1: Failed to index https://rodrigosimoes97.github.io/Pin/what-nobody-tells-you-about-budget-meal-prep.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-02 12:28:03,736 WARNING src.app.indexing - Attempt 2: Failed to index https://rodrigosimoes97.github.io/Pin/what-nobody-tells-you-about-budget-meal-prep.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-02 12:28:05,869 WARNING src.app.indexing - Attempt 3: Failed to index https://rodrigosimoes97.github.io/Pin/what-nobody-tells-you-about-budget-meal-prep.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-02 12:28:05,872 INFO __main__ - [Slot 5] ✓ Publicado: what-nobody-tells-you-about-budget-meal-prep.html (offer)
+2026-10-02 12:28:05,872 INFO __main__ - Run completo. Publicados 4/5 posts.
