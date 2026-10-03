@@ -78963,3 +78963,4 @@ RuntimeError: Gemini failed after exhaustive retries: key#1 transient_status=429
 ; key#3 status=503 (alta demanda no modelo gemini-3.8-flash); key#4 status=503 (alta demanda no modelo gemini-3.8-flash)
 2026-10-02 15:12:08,048 ERROR __main__ - [Slot 5] Slot descartado.
 2026-10-02 15:12:08,049 INFO __main__ - Run completo. Publicados 0/5 posts.
+2026-10-03 13:55:59,846 INFO __main__ - Pulando geração hoje para manter 5 posts/semana.
