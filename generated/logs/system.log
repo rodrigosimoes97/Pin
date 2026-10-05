@@ -78965,3 +78965,142 @@ RuntimeError: Gemini failed after exhaustive retries: key#1 transient_status=429
 2026-10-02 15:12:08,049 INFO __main__ - Run completo. Publicados 0/5 posts.
 2026-10-03 13:55:59,846 INFO __main__ - Pulando geração hoje para manter 5 posts/semana.
 2026-10-04 14:24:02,302 INFO __main__ - Pulando geração hoje para manter 5 posts/semana.
+2026-10-05 17:10:55,352 INFO __main__ - Buscando trending topics para USA...
+2026-10-05 17:10:55,673 WARNING src.app.trend_research - Failed to fetch Google Trends (404/Error): The request failed: Google returned a response with code 404. Moving to fallbacks.
+2026-10-05 17:10:59,175 INFO src.app.trend_research - Gathered 11 unique trending topics.
+2026-10-05 17:10:59,178 INFO __main__ - ═══ Slot 1/5 ═══
+2026-10-05 17:10:59,178 INFO __main__ - [Slot 1] Usando trending topic local: Scientists reveal what seven days of fasting does to the human body
+2026-10-05 17:10:59,178 INFO __main__ - [Slot 1] title_hint=Stop Overcomplicating Scientists Reveal What Seven Days Of Fasting Does To...
+2026-10-05 17:10:59,178 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-05 17:11:07,503 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=5620
+2026-10-05 17:11:07,634 INFO src.app.duplicate_checker - Indexed post: scientists-reveal-what-seven-days-of-fasting-does-to-the-human-body (Total: 173)
+2026-10-05 17:11:08,819 INFO __main__ - [Slot 1] Submetendo ao Google Indexing: https://rodrigosimoes97.github.io/Pin/scientists-reveal-what-seven-days-of-fasting-does-to-the-human-body.html
+2026-10-05 17:11:08,849 INFO src.app.indexing - Loaded Google service account from raw JSON content.
+2026-10-05 17:11:09,281 WARNING src.app.indexing - Attempt 1: Failed to index https://rodrigosimoes97.github.io/Pin/scientists-reveal-what-seven-days-of-fasting-does-to-the-human-body.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-05 17:11:10,467 WARNING src.app.indexing - Attempt 2: Failed to index https://rodrigosimoes97.github.io/Pin/scientists-reveal-what-seven-days-of-fasting-does-to-the-human-body.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-05 17:11:12,649 WARNING src.app.indexing - Attempt 3: Failed to index https://rodrigosimoes97.github.io/Pin/scientists-reveal-what-seven-days-of-fasting-does-to-the-human-body.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-05 17:11:12,651 INFO __main__ - [Slot 1] ✓ Publicado: scientists-reveal-what-seven-days-of-fasting-does-to-the-human-body.html (info)
+2026-10-05 17:11:12,651 INFO __main__ - ═══ Slot 2/5 ═══
+2026-10-05 17:11:12,651 INFO __main__ - [Slot 2] Usando trending topic local: Diet drinks work as well as water for weight loss, major trial finds
+2026-10-05 17:11:12,651 INFO __main__ - [Slot 2] title_hint=How to fix Diet Drinks Work As Well As Water For Weight Loss, Major Trial...
+2026-10-05 17:11:12,651 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-05 17:11:13,954 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-05 17:11:18,955 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-05 17:11:19,079 ERROR src.app.gemini_client - [Gemini] key#2 status=403 PERMANENTE body={
+  "error": {
+    "code": 403,
+    "message": "Your project has been denied access. Please contact support.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-05 17:11:19,079 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-10-05 17:11:20,561 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-05 17:11:25,561 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 enviando...
+2026-10-05 17:11:27,054 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-05 17:11:32,055 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.6-flash na rodada 1. Aguardando 5s antes de tentar no modelo gemini-3.8-flash.
+2026-10-05 17:11:37,055 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=2 enviando...
+2026-10-05 17:11:37,525 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-05 17:11:47,525 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=2 enviando...
+2026-10-05 17:12:06,501 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=2 OK finishReason=STOP len_chars=4544
+2026-10-05 17:12:06,502 WARNING __main__ - [Quality] word_count=433 < 450
+2026-10-05 17:12:06,502 WARNING __main__ - [Slot 2] Qualidade insuficiente — artigo descartado
+2026-10-05 17:12:06,502 ERROR __main__ - [Slot 2] Slot descartado.
+2026-10-05 17:12:06,502 INFO __main__ - ═══ Slot 3/5 ═══
+2026-10-05 17:12:06,502 INFO __main__ - [Slot 3] Usando trending topic local: Leucine does more than build muscle. It powers up your cells
+2026-10-05 17:12:06,502 INFO __main__ - [Slot 3] title_hint=3 Practical Ways to build Leucine Does More Than Build Muscle. It Powers Up...
+2026-10-05 17:12:06,502 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-05 17:12:41,446 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-05 17:12:46,446 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-05 17:12:56,273 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-05 17:13:01,274 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-10-05 17:13:10,446 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 OK finishReason=STOP len_chars=5670
+2026-10-05 17:13:10,553 INFO src.app.duplicate_checker - Indexed post: leucine-does-more-than-build-muscle-it-powers-up-your-cells (Total: 174)
+2026-10-05 17:13:11,362 INFO __main__ - [Slot 3] Submetendo ao Google Indexing: https://rodrigosimoes97.github.io/Pin/leucine-does-more-than-build-muscle-it-powers-up-your-cells.html
+2026-10-05 17:13:11,390 INFO src.app.indexing - Loaded Google service account from raw JSON content.
+2026-10-05 17:13:11,704 WARNING src.app.indexing - Attempt 1: Failed to index https://rodrigosimoes97.github.io/Pin/leucine-does-more-than-build-muscle-it-powers-up-your-cells.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-05 17:13:12,837 WARNING src.app.indexing - Attempt 2: Failed to index https://rodrigosimoes97.github.io/Pin/leucine-does-more-than-build-muscle-it-powers-up-your-cells.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-05 17:13:15,022 WARNING src.app.indexing - Attempt 3: Failed to index https://rodrigosimoes97.github.io/Pin/leucine-does-more-than-build-muscle-it-powers-up-your-cells.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-05 17:13:15,025 INFO __main__ - [Slot 3] ✓ Publicado: leucine-does-more-than-build-muscle-it-powers-up-your-cells.html (info)
+2026-10-05 17:13:15,025 INFO __main__ - ═══ Slot 4/5 ═══
+2026-10-05 17:13:15,025 INFO __main__ - [Slot 4] Usando trending topic local: Vitamin D drug may help crack pancreatic cancer’s protective shield
+2026-10-05 17:13:15,025 INFO __main__ - [Slot 4] title_hint=A Realistic Vitamin D Drug May Help Crack Pancreatic Cancer’S Protective...
+2026-10-05 17:13:15,025 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-05 17:13:22,038 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=4387
+2026-10-05 17:13:22,039 WARNING __main__ - [Quality] word_count=347 < 450
+2026-10-05 17:13:22,039 WARNING __main__ - [Slot 4] Qualidade insuficiente — artigo descartado
+2026-10-05 17:13:22,039 ERROR __main__ - [Slot 4] Slot descartado.
+2026-10-05 17:13:22,039 INFO __main__ - ═══ Slot 5/5 ═══
+2026-10-05 17:13:22,039 INFO __main__ - [Slot 5] Usando trending topic local: Your gut may be making a molecule that raises Alzheimer’s risk
+2026-10-05 17:13:22,039 INFO __main__ - [Slot 5] title_hint=Stop Overcomplicating Your Gut May Be Making A Molecule That Raises...
+2026-10-05 17:13:22,039 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-05 17:13:29,086 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-05 17:13:34,087 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-05 17:13:35,805 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-05 17:13:40,805 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-10-05 17:13:45,162 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-05 17:13:50,163 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 enviando...
+2026-10-05 17:13:51,715 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-05 17:13:56,716 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.6-flash na rodada 1. Aguardando 5s antes de tentar no modelo gemini-3.8-flash.
+2026-10-05 17:14:01,716 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=2 enviando...
+2026-10-05 17:14:02,353 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-05 17:14:12,354 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=2 enviando...
+2026-10-05 17:14:15,106 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-05 17:14:25,107 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=2 enviando...
+2026-10-05 17:14:31,204 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-05 17:14:41,204 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=2 enviando...
+2026-10-05 17:14:41,886 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-05 17:14:51,886 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.8-flash na rodada 2. Aguardando 10s antes de tentar no modelo gemini-3.8-flash.
+2026-10-05 17:15:01,887 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=3 enviando...
+2026-10-05 17:15:04,736 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-05 17:15:19,736 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=3 enviando...
+2026-10-05 17:15:27,770 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-05 17:15:42,770 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=3 enviando...
+2026-10-05 17:15:45,748 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-05 17:16:00,748 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=3 enviando...
+2026-10-05 17:16:01,765 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-05 17:16:16,765 ERROR __main__ - [Slot 5] Gemini indisponível: Gemini falhou após 3 rodadas com 4 key(s). Últimos erros: key#3 status=503 (alta demanda no modelo gemini-3.8-flash); key#4 status=503 (alta demanda no modelo gemini-3.8-flash); key#1 status=503 (alta demanda no modelo gemini-3.8-flash); key#2 status=503 (alta demanda no modelo gemini-3.8-flash); key#3 status=503 (alta demanda no modelo gemini-3.8-flash); key#4 status=503 (alta demanda no modelo gemini-3.8-flash)
+2026-10-05 17:16:16,767 ERROR __main__ - [Slot 5] Slot descartado.
+2026-10-05 17:16:16,768 INFO __main__ - Run completo. Publicados 2/5 posts.

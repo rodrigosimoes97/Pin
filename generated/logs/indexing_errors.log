@@ -394,3 +394,19 @@
   }
 }
 
+2026-10-05T17:11:12.649920+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/scientists-reveal-what-seven-days-of-fasting-does-to-the-human-body.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-05T17:13:15.023016+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/leucine-does-more-than-build-muscle-it-powers-up-your-cells.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
