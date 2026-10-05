@@ -2,8 +2,11 @@ from __future__ import annotations
 
 import csv
 import json
+import logging
 from datetime import date
 from pathlib import Path
+
+LOG = logging.getLogger(__name__)
 
 # URL base pública do site
 PUBLIC_BASE_URL = "https://health-ptg.pages.dev"
@@ -33,9 +36,12 @@ def write_draft_pack(
     pin_description: str,
     link: str,
     image_path: str,          # caminho relativo da imagem hero (assets/YYYY-MM-DD_slug.jpeg)
-    tag: str = "",            # usado para gerar Keywords
+    tag: str = "",            # usado para gerar Keywords caso não informadas
     alt_text: str = "",       # ignorado — mantido por compatibilidade retroativa
     slot_index: int | None = None,
+    keywords: str = "",       # Frases de busca pré-geradas (opcional)
+    intent: str = "",         # Search intent (opcional)
+    primary_keyword: str = "",# Keyword principal (opcional)
 ) -> tuple[Path, Path]:
     """
     Gera CSV no formato exato do Pinterest Bulk Upload (mesmo padrão do teste.csv):
@@ -50,8 +56,15 @@ def write_draft_pack(
     normalized = Path(image_path).as_posix().lstrip("/")
     media_url = f"{PUBLIC_BASE_URL}/{normalized}"
 
-    # Gera keywords a partir do tag e do título
-    keywords = _build_keywords(pin_title, tag)
+    # Usa as keywords fornecidas ou gera 5-8 long-tail search phrases
+    final_keywords = (keywords or "").strip()
+    if not final_keywords:
+        final_keywords = _build_keywords(
+            title=pin_title,
+            tag=tag,
+            intent=intent,
+            primary_keyword=primary_keyword,
+        )
 
     # Carrega pins já registrados no dia para determinar o slot atual caso não informado
     json_path = out_dir / f"{run_date.isoformat()}_pins.json"
@@ -81,7 +94,7 @@ def write_draft_pack(
         "Description": pin_description,
         "Link": link,
         "Publish date": publish_date,
-        "Keywords": keywords,
+        "Keywords": final_keywords,
     }
 
     # Evita duplicados pelo link
@@ -109,36 +122,27 @@ def write_draft_pack(
         writer.writerows(payload)
 
     json_path.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
+    LOG.info("[PinterestDrafts] Draft salvo: %s com %d keywords", csv_path.name, len(final_keywords.split(",")))
     return csv_path, json_path
 
 
-def _build_keywords(title: str, tag: str) -> str:
-    """Gera keywords a partir do tag e das palavras-chave do título."""
-    keywords: list[str] = []
+def _build_keywords(
+    title: str,
+    tag: str,
+    intent: str = "",
+    primary_keyword: str = "",
+) -> str:
+    """
+    Gera de 5 a 8 frases de busca / long-tail keywords naturais para o Pinterest.
+    NÃO gera palavras isoladas soltas.
+    """
+    from .pinterest_seo import generate_search_keywords
 
-    # Tag do artigo como keyword principal
-    if tag:
-        keywords.append(tag.replace("-", " "))
-
-    # Extrai substantivos/adjetivos relevantes do título (palavras longas, sem stopwords)
-    STOPWORDS = {
-        "a", "an", "the", "and", "or", "but", "for", "with", "this",
-        "that", "your", "from", "how", "to", "of", "in", "on", "at",
-        "is", "it", "my", "me", "i", "you", "we", "be", "do", "get",
-        "can", "more", "less", "what", "why", "when", "which", "make",
-        "feel", "start", "try", "stop", "build", "help", "keep", "give",
-    }
-    for word in title.lower().split():
-        clean = word.strip("?!.,:")
-        if len(clean) > 4 and clean not in STOPWORDS and clean not in keywords:
-            keywords.append(clean)
-        if len(keywords) >= 5:
-            break
-
-    # Adiciona termos de saúde sempre relevantes
-    health_terms = ["healthy eating", "wellness"]
-    for term in health_terms:
-        if term not in keywords and len(keywords) < 6:
-            keywords.append(term)
-
-    return ",".join(keywords[:6])
+    kws = generate_search_keywords(
+        topic_name=title,
+        title=title,
+        tag=tag,
+        intent=intent or "guide",
+        primary_keyword=primary_keyword,
+    )
+    return ", ".join(kws)

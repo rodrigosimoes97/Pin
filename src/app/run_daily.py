@@ -24,6 +24,8 @@ from .trend_research import get_trending_topics
 from .topics import Topic, PRIORITY_TAGS
 from .internal_links import get_related_internal_links
 from .indexing import index_new_post
+from .pinterest_performance import PinterestPerformanceTracker
+from .pinterest_seo import generate_pinterest_seo
 
 LOG = logging.getLogger(__name__)
 
@@ -155,6 +157,7 @@ def main() -> None:
 
     client = GeminiClient(api_keys=settings.gemini_api_keys, model=settings.gemini_model)
     checker = DuplicateChecker(index_path=settings.repo_root / "generated" / "content_index.json")
+    tracker = PinterestPerformanceTracker(storage_path=settings.repo_root / "generated" / "pinterest_performance.json")
 
     # Tendências (404 não interrompe o pipeline)
     LOG.info("Buscando trending topics para USA...")
@@ -252,6 +255,23 @@ def main() -> None:
             if post["slug"] in set(recent_slugs[-40:]) or post["slug"] in daily_slugs:
                 post["slug"] = f"{post['slug']}-{today.strftime('%m%d')}-{slot + 1}"
 
+            # ── Camada de Pinterest SEO (Search Intent + Keywords + Pin Copy) ──
+            pin_seo = generate_pinterest_seo(
+                topic=topic,
+                article_data=post,
+                performance_tracker=tracker,
+            )
+            post["pin_title"] = pin_seo["pin_title"]
+            post["pin_description"] = pin_seo["pin_description"]
+            LOG.info(
+                "[Slot %d] Pinterest SEO: Intent=%s | PrimaryKW='%s' | Title='%s' | %d Keywords",
+                slot + 1,
+                pin_seo["intent"],
+                pin_seo["primary_keyword"],
+                pin_seo["pin_title"],
+                len(pin_seo["keywords_list"]),
+            )
+
             # Hero pública: .jpeg (compatível com navegadores e Pinterest)
             hero_rel = f"assets/{today.isoformat()}_{post['slug']}.jpeg"
             actual_hero_path = fetch_hero_image(
@@ -298,6 +318,20 @@ def main() -> None:
                 image_path=hero_rel,          # hero pública .jpeg — não a imagem de generated/
                 tag=post.get("tag", ""),
                 slot_index=slot,
+                keywords=pin_seo["keywords"],
+                intent=pin_seo["intent"],
+                primary_keyword=pin_seo["primary_keyword"],
+            )
+
+            # Registra no histórico de aprendizado e performance do Pinterest
+            tracker.record_pin(
+                pin_date=today.isoformat(),
+                url=post_link,
+                topic=topic.name,
+                tag=post["tag"],
+                intent=pin_seo["intent"],
+                primary_keyword=pin_seo["primary_keyword"],
+                title=post["pin_title"],
             )
 
             daily_slugs.add(post["slug"])
