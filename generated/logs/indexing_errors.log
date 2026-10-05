@@ -410,3 +410,19 @@
   }
 }
 
+2026-10-05T17:29:52.972694+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/diet-drinks-work-as-well-as-water-for-weight-loss-major-trial-finds.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-05T17:30:04.811520+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/vitamin-d-drug-may-help-crack-pancreatic-cancers-protective-shield.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+

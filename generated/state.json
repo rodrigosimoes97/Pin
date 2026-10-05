@@ -1,9 +1,7 @@
 {
-  "runs": 192,
+  "runs": 193,
   "offer_runs": 21,
   "recent_topics": [
-    "daily-mindfulness-for-stress-relief",
-    "coffee-drinkers-body-composition-hormones",
     "biohacking-for-better-sleep",
     "experimental-compound-burns-fat-no-muscle-loss",
     "quitting-alcohol-brain-relapse-risk",
@@ -51,11 +49,11 @@
     "home-workouts",
     "budget-meal-prep",
     "scientists-reveal-what-seven-days-of-fasting-does-",
-    "leucine-does-more-than-build-muscle-it-powers-up-y"
+    "leucine-does-more-than-build-muscle-it-powers-up-y",
+    "diet-drinks-work-as-well-as-water-for-weight-loss-",
+    "vitamin-d-drug-may-help-crack-pancreatic-cancer-s-"
   ],
   "recent_slugs": [
-    "gut-brain-protein-cravings",
-    "intermittent-fasting-brain-potential",
     "beat-fatigue-b12-folate",
     "unlock-better-sleep-quality-strategies",
     "french-fries-diabetes-science-surprises",
@@ -153,12 +151,12 @@
     "feel-more-energized-with-this-practical-home-workouts-routine",
     "what-nobody-tells-you-about-budget-meal-prep",
     "scientists-reveal-what-seven-days-of-fasting-does-to-the-human-body",
-    "leucine-does-more-than-build-muscle-it-powers-up-your-cells"
+    "leucine-does-more-than-build-muscle-it-powers-up-your-cells",
+    "diet-drinks-work-as-well-as-water-for-weight-loss-major-trial-finds",
+    "vitamin-d-drug-may-help-crack-pancreatic-cancers-protective-shield"
   ],
   "last_run": "2026-10-05",
   "recent_tags": [
-    "mental-wellness",
-    "health",
     "sleep",
     "weight",
     "mental-wellness",
@@ -206,7 +204,9 @@
     "home-workouts",
     "gut",
     "longevity",
-    "healthy-habits"
+    "healthy-habits",
+    "weight",
+    "longevity"
   ],
   "tag_counts": {
     "sleep": 29,
@@ -214,11 +214,11 @@
     "mental-wellness": 24,
     "stress": 11,
     "healthy-habits": 53,
-    "longevity": 22,
+    "longevity": 23,
     "recipes": 9,
     "anti-inflammatory": 9,
     "home-workouts": 9,
-    "weight": 21,
+    "weight": 22,
     "health": 52
   },
   "topic_rotation": {
@@ -227,16 +227,14 @@
     "stress": 23,
     "healthy-habits": 64,
     "longevity": 29,
-    "recipes": 20,
+    "recipes": 21,
     "anti-inflammatory": 11,
     "home-workouts": 15,
-    "weight": 30,
+    "weight": 31,
     "mental-wellness": 2,
     "health": 12
   },
   "recent_titles": [
-    "Can This Supplement Fight Cancer and Viruses? Experts Say Yes",
-    "Is There a 'Healthier' Drink? Let's Find Out",
     "Craving Sugar? Why 'All or Nothing' Fails You",
     "Fruit Juice for Mood: Sip Your Way to Happy?",
     "How to Boost Your Mood with Simple Daily Gratitude",
@@ -294,6 +292,8 @@
     "Feel More Energized with This Practical Home Workouts Routine",
     "What Nobody Tells You About Budget Meal Prep",
     "Scientists Reveal What Seven Days Of Fasting Does To The Human Body",
-    "3 Practical Ways Leucine Does More Than Build Muscle"
+    "3 Practical Ways Leucine Does More Than Build Muscle",
+    "Diet Drinks Work As Well As Water For Weight Loss, Major Trial Finds",
+    "Vitamin D Drug May Help Crack Pancreatic Cancer\u2019S Protective Shield"
   ]
 }
