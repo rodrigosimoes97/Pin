@@ -1,8 +1,7 @@
 {
-  "runs": 194,
+  "runs": 195,
   "offer_runs": 21,
   "recent_topics": [
-    "experimental-compound-burns-fat-no-muscle-loss",
     "quitting-alcohol-brain-relapse-risk",
     "genes-low-carb-cholesterol",
     "mindful-eating-for-better-digestion",
@@ -51,10 +50,10 @@
     "leucine-does-more-than-build-muscle-it-powers-up-y",
     "diet-drinks-work-as-well-as-water-for-weight-loss-",
     "vitamin-d-drug-may-help-crack-pancreatic-cancer-s-",
-    "high-protein-breakfast"
+    "high-protein-breakfast",
+    "vitamin-c-linked-to-fewer-deaths-in-blood-disorder"
   ],
   "recent_slugs": [
-    "unlock-better-sleep-quality-strategies",
     "french-fries-diabetes-science-surprises",
     "glp-1-drugs-addiction-overdose-prevention",
     "older-adults-surprising-salt-habit-revealed-new-study",
@@ -153,11 +152,11 @@
     "leucine-does-more-than-build-muscle-it-powers-up-your-cells",
     "diet-drinks-work-as-well-as-water-for-weight-loss-major-trial-finds",
     "vitamin-d-drug-may-help-crack-pancreatic-cancers-protective-shield",
-    "high-protein-breakfast-guide-busy-mornings"
+    "high-protein-breakfast-guide-busy-mornings",
+    "vitamin-c-linked-to-fewer-deaths-in-blood-disorder-trial"
   ],
   "last_run": "2026-10-06",
   "recent_tags": [
-    "weight",
     "mental-wellness",
     "health",
     "health",
@@ -206,7 +205,8 @@
     "healthy-habits",
     "weight",
     "longevity",
-    "healthy-habits"
+    "healthy-habits",
+    "health"
   ],
   "tag_counts": {
     "sleep": 29,
@@ -219,7 +219,7 @@
     "anti-inflammatory": 9,
     "home-workouts": 9,
     "weight": 22,
-    "health": 52
+    "health": 53
   },
   "topic_rotation": {
     "sleep": 29,
@@ -227,7 +227,7 @@
     "stress": 23,
     "healthy-habits": 64,
     "longevity": 29,
-    "recipes": 22,
+    "recipes": 23,
     "anti-inflammatory": 11,
     "home-workouts": 15,
     "weight": 31,
@@ -235,7 +235,6 @@
     "health": 12
   },
   "recent_titles": [
-    "Fruit Juice for Mood: Sip Your Way to Happy?",
     "How to Boost Your Mood with Simple Daily Gratitude",
     "How Ozempic Reveals Your Hidden 'Gotta Have It' Button",
     "Is Your Belly Fat Hiding a Vitamin Deficiency?",
@@ -294,6 +293,7 @@
     "3 Practical Ways Leucine Does More Than Build Muscle",
     "Diet Drinks Work As Well As Water For Weight Loss, Major Trial Finds",
     "Vitamin D Drug May Help Crack Pancreatic Cancer\u2019S Protective Shield",
-    "High Protein Breakfast Guide for Ultra-Busy Mornings"
+    "High Protein Breakfast Guide for Ultra-Busy Mornings",
+    "Vitamin C Linked To Fewer Deaths In Blood Disorder Trial: Key Steps"
   ]
 }

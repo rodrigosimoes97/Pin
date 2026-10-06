@@ -434,3 +434,11 @@
   }
 }
 
+2026-10-06T15:47:17.068788+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/vitamin-c-linked-to-fewer-deaths-in-blood-disorder-trial.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+

@@ -14,7 +14,22 @@
       "outbound_clicks": 0,
       "created_at": "2026-10-06T13:00:19.267358+00:00",
       "last_updated": "2026-10-06T13:00:19.267358+00:00"
+    },
+    {
+      "date": "2026-10-06",
+      "url": "https://health-ptg.pages.dev/vitamin-c-linked-to-fewer-deaths-in-blood-disorder-trial.html",
+      "topic": "Vitamin C Linked To Fewer Deaths In Blood Disorder Trial",
+      "tag": "health",
+      "intent": "mistakes",
+      "primary_keyword": "vitamin linked fewer deaths",
+      "title": "Vitamin C & Blood Health: What Clinical Trials Show",
+      "impressions": 0,
+      "engagements": 0,
+      "saves": 0,
+      "outbound_clicks": 0,
+      "created_at": "2026-10-06T15:47:17.070648+00:00",
+      "last_updated": "2026-10-06T15:47:17.070648+00:00"
     }
   ],
-  "last_updated": "2026-10-06T13:00:19.267379+00:00"
+  "last_updated": "2026-10-06T15:47:17.070689+00:00"
 }
