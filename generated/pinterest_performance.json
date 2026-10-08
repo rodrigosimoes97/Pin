@@ -29,7 +29,22 @@
       "outbound_clicks": 0,
       "created_at": "2026-10-06T15:47:17.070648+00:00",
       "last_updated": "2026-10-06T15:47:17.070648+00:00"
+    },
+    {
+      "date": "2026-10-08",
+      "url": "https://health-ptg.pages.dev/not-all-trans-fats-are-bad-major-review-finds-daily-energy.html",
+      "topic": "Not All Trans Fats Are Bad, Major Review Finds",
+      "tag": "health",
+      "intent": "guide",
+      "primary_keyword": "not trans fats bad",
+      "title": "Why Some Trans Fats Actually Boost Energy",
+      "impressions": 0,
+      "engagements": 0,
+      "saves": 0,
+      "outbound_clicks": 0,
+      "created_at": "2026-10-08T12:19:05.423093+00:00",
+      "last_updated": "2026-10-08T12:19:05.423093+00:00"
     }
   ],
-  "last_updated": "2026-10-06T15:47:17.070689+00:00"
+  "last_updated": "2026-10-08T12:19:05.423114+00:00"
 }

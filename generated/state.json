@@ -1,8 +1,7 @@
 {
-  "runs": 196,
+  "runs": 197,
   "offer_runs": 21,
   "recent_topics": [
-    "quitting-alcohol-brain-relapse-risk",
     "genes-low-carb-cholesterol",
     "mindful-eating-for-better-digestion",
     "vitamin-c-cold-prevention-myths",
@@ -51,10 +50,10 @@
     "diet-drinks-work-as-well-as-water-for-weight-loss-",
     "vitamin-d-drug-may-help-crack-pancreatic-cancer-s-",
     "high-protein-breakfast",
-    "vitamin-c-linked-to-fewer-deaths-in-blood-disorder"
+    "vitamin-c-linked-to-fewer-deaths-in-blood-disorder",
+    "not-all-trans-fats-are-bad-major-review-finds"
   ],
   "recent_slugs": [
-    "french-fries-diabetes-science-surprises",
     "glp-1-drugs-addiction-overdose-prevention",
     "older-adults-surprising-salt-habit-revealed-new-study",
     "unlock-your-best-health-surprising-benefits-daily-hydration",
@@ -153,11 +152,11 @@
     "diet-drinks-work-as-well-as-water-for-weight-loss-major-trial-finds",
     "vitamin-d-drug-may-help-crack-pancreatic-cancers-protective-shield",
     "high-protein-breakfast-guide-busy-mornings",
-    "vitamin-c-linked-to-fewer-deaths-in-blood-disorder-trial"
+    "vitamin-c-linked-to-fewer-deaths-in-blood-disorder-trial",
+    "not-all-trans-fats-are-bad-major-review-finds-daily-energy"
   ],
-  "last_run": "2026-10-07",
+  "last_run": "2026-10-08",
   "recent_tags": [
-    "mental-wellness",
     "health",
     "health",
     "health",
@@ -206,6 +205,7 @@
     "weight",
     "longevity",
     "healthy-habits",
+    "health",
     "health"
   ],
   "tag_counts": {
@@ -219,7 +219,7 @@
     "anti-inflammatory": 9,
     "home-workouts": 9,
     "weight": 22,
-    "health": 53
+    "health": 54
   },
   "topic_rotation": {
     "sleep": 29,
@@ -230,12 +230,11 @@
     "recipes": 23,
     "anti-inflammatory": 11,
     "home-workouts": 15,
-    "weight": 31,
+    "weight": 32,
     "mental-wellness": 2,
     "health": 12
   },
   "recent_titles": [
-    "How to Boost Your Mood with Simple Daily Gratitude",
     "How Ozempic Reveals Your Hidden 'Gotta Have It' Button",
     "Is Your Belly Fat Hiding a Vitamin Deficiency?",
     "Cheese Bacteria: Your Gut's New Best Friend?",
@@ -294,6 +293,7 @@
     "Diet Drinks Work As Well As Water For Weight Loss, Major Trial Finds",
     "Vitamin D Drug May Help Crack Pancreatic Cancer\u2019S Protective Shield",
     "High Protein Breakfast Guide for Ultra-Busy Mornings",
-    "Vitamin C Linked To Fewer Deaths In Blood Disorder Trial: Key Steps"
+    "Vitamin C Linked To Fewer Deaths In Blood Disorder Trial: Key Steps",
+    "Not All Trans Fats Are Bad, Major Review Finds: Daily Energy"
   ]
 }

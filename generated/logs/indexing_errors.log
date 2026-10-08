@@ -442,3 +442,11 @@
   }
 }
 
+2026-10-08T12:19:05.421178+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/not-all-trans-fats-are-bad-major-review-finds-daily-energy.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
