@@ -1,8 +1,7 @@
 {
-  "runs": 197,
+  "runs": 198,
   "offer_runs": 21,
   "recent_topics": [
-    "genes-low-carb-cholesterol",
     "mindful-eating-for-better-digestion",
     "vitamin-c-cold-prevention-myths",
     "calorie-restriction-shortcut-anti-aging",
@@ -51,10 +50,10 @@
     "vitamin-d-drug-may-help-crack-pancreatic-cancer-s-",
     "high-protein-breakfast",
     "vitamin-c-linked-to-fewer-deaths-in-blood-disorder",
-    "not-all-trans-fats-are-bad-major-review-finds"
+    "not-all-trans-fats-are-bad-major-review-finds",
+    "feeding-our-gut-microbiome-for-better-health"
   ],
   "recent_slugs": [
-    "glp-1-drugs-addiction-overdose-prevention",
     "older-adults-surprising-salt-habit-revealed-new-study",
     "unlock-your-best-health-surprising-benefits-daily-hydration",
     "top-biohacking-supplements-longevity-peak-performance",
@@ -153,11 +152,11 @@
     "vitamin-d-drug-may-help-crack-pancreatic-cancers-protective-shield",
     "high-protein-breakfast-guide-busy-mornings",
     "vitamin-c-linked-to-fewer-deaths-in-blood-disorder-trial",
-    "not-all-trans-fats-are-bad-major-review-finds-daily-energy"
+    "not-all-trans-fats-are-bad-major-review-finds-daily-energy",
+    "realistic-feeding-our-gut-microbiome-for-better-health-plan"
   ],
   "last_run": "2026-10-08",
   "recent_tags": [
-    "health",
     "health",
     "health",
     "longevity",
@@ -206,11 +205,12 @@
     "longevity",
     "healthy-habits",
     "health",
-    "health"
+    "health",
+    "gut"
   ],
   "tag_counts": {
     "sleep": 29,
-    "gut": 24,
+    "gut": 25,
     "mental-wellness": 24,
     "stress": 11,
     "healthy-habits": 54,
@@ -223,7 +223,7 @@
   },
   "topic_rotation": {
     "sleep": 29,
-    "gut": 28,
+    "gut": 29,
     "stress": 23,
     "healthy-habits": 64,
     "longevity": 29,
@@ -235,7 +235,6 @@
     "health": 12
   },
   "recent_titles": [
-    "How Ozempic Reveals Your Hidden 'Gotta Have It' Button",
     "Is Your Belly Fat Hiding a Vitamin Deficiency?",
     "Cheese Bacteria: Your Gut's New Best Friend?",
     "Unlock Peak Brain Function with These Foods",
@@ -294,6 +293,7 @@
     "Vitamin D Drug May Help Crack Pancreatic Cancer\u2019S Protective Shield",
     "High Protein Breakfast Guide for Ultra-Busy Mornings",
     "Vitamin C Linked To Fewer Deaths In Blood Disorder Trial: Key Steps",
-    "Not All Trans Fats Are Bad, Major Review Finds: Daily Energy"
+    "Not All Trans Fats Are Bad, Major Review Finds: Daily Energy",
+    "A Realistic Feeding Our Gut Microbiome For Better Health Plan"
   ]
 }

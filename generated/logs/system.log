@@ -79863,3 +79863,126 @@ RuntimeError: Gemini failed after exhaustive retries: key#1 transient_status=429
 2026-10-08 12:32:29,984 WARNING __main__ - [Slot 5] Qualidade insuficiente — artigo descartado
 2026-10-08 12:32:29,984 ERROR __main__ - [Slot 5] Slot descartado.
 2026-10-08 12:32:29,985 INFO __main__ - Run completo. Publicados 1/5 posts.
+2026-10-08 15:53:17,693 INFO __main__ - Buscando trending topics para USA...
+2026-10-08 15:53:17,833 WARNING src.app.trend_research - Failed to fetch Google Trends (404/Error): The request failed: Google returned a response with code 404. Moving to fallbacks.
+2026-10-08 15:53:21,952 INFO src.app.trend_research - Gathered 12 unique trending topics.
+2026-10-08 15:53:21,955 INFO __main__ - ═══ Slot 1/5 ═══
+2026-10-08 15:53:21,955 INFO __main__ - [Slot 1] Usando trending topic local: Taking antibiotics? Sugar may be making the damage worse
+2026-10-08 15:53:21,955 INFO __main__ - [Slot 1] title_hint=Stop Overcomplicating Taking Antibiotics? Sugar May Be Making The Damage...
+2026-10-08 15:53:21,955 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-08 15:54:22,061 WARNING src.app.gemini_client - [Gemini] key#1 timeout
+2026-10-08 15:54:22,061 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-08 15:54:35,638 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-08 15:54:40,638 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-10-08 15:54:49,949 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-08 15:54:54,950 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 enviando...
+2026-10-08 15:55:15,604 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-08 15:55:20,605 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.6-flash na rodada 1. Aguardando 5s antes de tentar no modelo gemini-3.8-flash.
+2026-10-08 15:55:25,605 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=2 enviando...
+2026-10-08 15:56:06,776 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-08 15:56:16,776 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=2 enviando...
+2026-10-08 15:56:21,065 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-08 15:56:31,065 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=2 enviando...
+2026-10-08 15:56:37,027 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-08 15:56:47,028 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=2 enviando...
+2026-10-08 15:56:47,998 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-08 15:56:57,998 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.8-flash na rodada 2. Aguardando 10s antes de tentar no modelo gemini-3.8-flash.
+2026-10-08 15:57:07,999 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=3 enviando...
+2026-10-08 15:57:14,401 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-08 15:57:29,402 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=3 enviando...
+2026-10-08 15:57:52,406 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-08 15:58:07,407 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=3 enviando...
+2026-10-08 15:58:11,477 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-08 15:58:26,478 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=3 enviando...
+2026-10-08 15:59:26,570 WARNING src.app.gemini_client - [Gemini] key#4 timeout
+2026-10-08 15:59:26,570 ERROR __main__ - [Slot 1] Gemini indisponível: Gemini falhou após 3 rodadas com 4 key(s). Últimos erros: key#3 status=503 (alta demanda no modelo gemini-3.8-flash); key#4 status=503 (alta demanda no modelo gemini-3.8-flash); key#1 status=503 (alta demanda no modelo gemini-3.8-flash); key#2 status=503 (alta demanda no modelo gemini-3.8-flash); key#3 status=503 (alta demanda no modelo gemini-3.8-flash); key#4 timeout
+2026-10-08 15:59:26,570 ERROR __main__ - [Slot 1] Slot descartado.
+2026-10-08 15:59:26,570 INFO __main__ - ═══ Slot 2/5 ═══
+2026-10-08 15:59:26,570 INFO __main__ - [Slot 2] Usando trending topic local: Just 7 days of strength training started shrinking fat cells in mice
+2026-10-08 15:59:26,571 INFO __main__ - [Slot 2] title_hint=4 Practical Ways to manage Just 7 Days Of Strength Training Started...
+2026-10-08 15:59:26,571 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-08 15:59:46,207 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-08 15:59:51,207 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-08 16:00:51,297 WARNING src.app.gemini_client - [Gemini] key#2 timeout
+2026-10-08 16:00:51,297 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-10-08 16:01:34,640 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-08 16:01:39,641 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 enviando...
+2026-10-08 16:02:39,737 WARNING src.app.gemini_client - [Gemini] key#4 timeout
+2026-10-08 16:02:39,737 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.6-flash na rodada 1. Aguardando 5s antes de tentar no modelo gemini-3.8-flash.
+2026-10-08 16:02:44,738 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=2 enviando...
+2026-10-08 16:03:30,802 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-08 16:03:40,803 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=2 enviando...
+2026-10-08 16:03:43,935 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-08 16:03:53,935 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=2 enviando...
+2026-10-08 16:03:56,640 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-08 16:04:06,640 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=2 enviando...
+2026-10-08 16:04:14,329 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-08 16:04:24,329 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.8-flash na rodada 2. Aguardando 10s antes de tentar no modelo gemini-3.8-flash.
+2026-10-08 16:04:34,330 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=3 enviando...
+2026-10-08 16:04:52,945 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-08 16:05:07,946 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=3 enviando...
+2026-10-08 16:05:14,244 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-08 16:05:29,244 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=3 enviando...
+2026-10-08 16:05:33,058 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-08 16:05:48,058 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=3 enviando...
+2026-10-08 16:06:22,011 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-08 16:06:37,011 ERROR __main__ - [Slot 2] Gemini indisponível: Gemini falhou após 3 rodadas com 4 key(s). Últimos erros: key#3 status=503 (alta demanda no modelo gemini-3.8-flash); key#4 status=503 (alta demanda no modelo gemini-3.8-flash); key#1 status=503 (alta demanda no modelo gemini-3.8-flash); key#2 status=503 (alta demanda no modelo gemini-3.8-flash); key#3 status=503 (alta demanda no modelo gemini-3.8-flash); key#4 status=503 (alta demanda no modelo gemini-3.8-flash)
+2026-10-08 16:06:37,012 ERROR __main__ - [Slot 2] Slot descartado.
+2026-10-08 16:06:37,012 INFO __main__ - ═══ Slot 3/5 ═══
+2026-10-08 16:06:37,012 INFO __main__ - [Slot 3] Usando trending topic local: MIT scientists find a hidden cancer risk of the keto diet
+2026-10-08 16:06:37,012 INFO __main__ - [Slot 3] title_hint=Feel More Energized with This Effective Mit Scientists Find A Hidden Cancer...
+2026-10-08 16:06:37,012 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-08 16:06:38,268 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-08 16:06:43,268 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-08 16:06:48,804 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 OK finishReason=STOP len_chars=4331
+2026-10-08 16:06:48,805 WARNING __main__ - [Quality] word_count=318 < 450
+2026-10-08 16:06:48,805 WARNING __main__ - [Slot 3] Qualidade insuficiente — artigo descartado
+2026-10-08 16:06:48,805 ERROR __main__ - [Slot 3] Slot descartado.
+2026-10-08 16:06:48,805 INFO __main__ - ═══ Slot 4/5 ═══
+2026-10-08 16:06:48,805 INFO __main__ - [Slot 4] Usando trending topic local: Feeding Our Gut Microbiome for Better Health
+2026-10-08 16:06:48,806 INFO __main__ - [Slot 4] title_hint=A Realistic Feeding Our Gut Microbiome For Better Health Plan That Fits Your...
+2026-10-08 16:06:48,806 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-08 16:06:50,657 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-08 16:06:55,658 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-08 16:07:04,615 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 OK finishReason=STOP len_chars=6230
+2026-10-08 16:07:04,815 INFO src.app.duplicate_checker - Indexed post: realistic-feeding-our-gut-microbiome-for-better-health-plan (Total: 180)
+2026-10-08 16:07:04,820 INFO src.app.pinterest_seo - [PinterestSEO] 'A Realistic Feeding Our Gut Microbi' → Intent=tips | KW='feeding gut microbiome better' | Title='A Simple Feeding Our Gut Microbiome For Better Health Plan' (58 chars) | 6 keywords
+2026-10-08 16:07:04,820 INFO __main__ - [Slot 4] Pinterest SEO: Intent=tips | PrimaryKW='feeding gut microbiome better' | Title='A Simple Feeding Our Gut Microbiome For Better Health Plan' | 6 Keywords
+2026-10-08 16:07:06,218 INFO __main__ - [Slot 4] Submetendo ao Google Indexing: https://rodrigosimoes97.github.io/Pin/realistic-feeding-our-gut-microbiome-for-better-health-plan.html
+2026-10-08 16:07:06,258 INFO src.app.indexing - Loaded Google service account from raw JSON content.
+2026-10-08 16:07:06,580 WARNING src.app.indexing - Attempt 1: Failed to index https://rodrigosimoes97.github.io/Pin/realistic-feeding-our-gut-microbiome-for-better-health-plan.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-08 16:07:07,809 WARNING src.app.indexing - Attempt 2: Failed to index https://rodrigosimoes97.github.io/Pin/realistic-feeding-our-gut-microbiome-for-better-health-plan.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-08 16:07:10,043 WARNING src.app.indexing - Attempt 3: Failed to index https://rodrigosimoes97.github.io/Pin/realistic-feeding-our-gut-microbiome-for-better-health-plan.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-08 16:07:10,045 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-10-08_pins.csv com 6 keywords
+2026-10-08 16:07:10,046 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'A Simple Feeding Our Gut Microbiome For Better Health Plan' (intent=tips)
+2026-10-08 16:07:10,046 INFO __main__ - [Slot 4] ✓ Publicado: realistic-feeding-our-gut-microbiome-for-better-health-plan.html (offer)
+2026-10-08 16:07:10,046 INFO __main__ - ═══ Slot 5/5 ═══
+2026-10-08 16:07:10,046 INFO __main__ - [Slot 5] Usando trending topic local: Why Don’t Health Insurers Promote a Healthier Diet?
+2026-10-08 16:07:10,046 INFO __main__ - [Slot 5] title_hint=Struggling with Why Don’T Health Insurers Promote A Healthier Diet?? Try...
+2026-10-08 16:07:10,046 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-08 16:07:15,936 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=4630
+2026-10-08 16:07:15,937 WARNING __main__ - [Quality] word_count=428 < 450
+2026-10-08 16:07:15,937 WARNING __main__ - [Slot 5] Qualidade insuficiente — artigo descartado
+2026-10-08 16:07:15,937 ERROR __main__ - [Slot 5] Slot descartado.
+2026-10-08 16:07:15,938 INFO __main__ - Run completo. Publicados 1/5 posts.
