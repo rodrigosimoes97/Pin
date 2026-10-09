@@ -59,7 +59,52 @@
       "outbound_clicks": 0,
       "created_at": "2026-10-08T16:07:10.045838+00:00",
       "last_updated": "2026-10-08T16:07:10.045838+00:00"
+    },
+    {
+      "date": "2026-10-09",
+      "url": "https://health-ptg.pages.dev/only-one-workout-helped-older-adults-lose-fat-and-keep-muscle.html",
+      "topic": "Only One Workout Helped Older Adults Lose Fat And Keep Muscle",
+      "tag": "home-workouts",
+      "intent": "routine",
+      "primary_keyword": "only one workout helped",
+      "title": "The Workout That Helps Older Adults Lose Fat Keep Muscle",
+      "impressions": 0,
+      "engagements": 0,
+      "saves": 0,
+      "outbound_clicks": 0,
+      "created_at": "2026-10-09T15:36:29.184614+00:00",
+      "last_updated": "2026-10-09T15:36:29.184614+00:00"
+    },
+    {
+      "date": "2026-10-09",
+      "url": "https://health-ptg.pages.dev/taking-antibiotics-sugar-may-be-making-the-damage-worse.html",
+      "topic": "Taking Antibiotics? Sugar May Be Making The Damage Worse",
+      "tag": "gut",
+      "intent": "mistakes",
+      "primary_keyword": "taking antibiotics sugar making",
+      "title": "Taking Antibiotics? Why Sugar Makes It Worse",
+      "impressions": 0,
+      "engagements": 0,
+      "saves": 0,
+      "outbound_clicks": 0,
+      "created_at": "2026-10-09T15:40:34.489987+00:00",
+      "last_updated": "2026-10-09T15:40:34.489987+00:00"
+    },
+    {
+      "date": "2026-10-09",
+      "url": "https://health-ptg.pages.dev/just-7-days-of-strength-training-started-shrinking-fat-cells-in-mice.html",
+      "topic": "Just 7 Days Of Strength Training Started Shrinking Fat Cells In Mice",
+      "tag": "weight",
+      "intent": "list",
+      "primary_keyword": "just days strength training",
+      "title": "How 7 Days of Lifting Changes Fat Cells Fast",
+      "impressions": 0,
+      "engagements": 0,
+      "saves": 0,
+      "outbound_clicks": 0,
+      "created_at": "2026-10-09T15:43:42.046807+00:00",
+      "last_updated": "2026-10-09T15:43:42.046807+00:00"
     }
   ],
-  "last_updated": "2026-10-08T16:07:10.045879+00:00"
+  "last_updated": "2026-10-09T15:43:42.046852+00:00"
 }

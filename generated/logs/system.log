@@ -79986,3 +79986,203 @@ RuntimeError: Gemini failed after exhaustive retries: key#1 transient_status=429
 2026-10-08 16:07:15,937 WARNING __main__ - [Slot 5] Qualidade insuficiente — artigo descartado
 2026-10-08 16:07:15,937 ERROR __main__ - [Slot 5] Slot descartado.
 2026-10-08 16:07:15,938 INFO __main__ - Run completo. Publicados 1/5 posts.
+2026-10-09 15:35:53,084 INFO __main__ - Buscando trending topics para USA...
+2026-10-09 15:35:53,512 WARNING src.app.trend_research - Failed to fetch Google Trends (404/Error): The request failed: Google returned a response with code 404. Moving to fallbacks.
+2026-10-09 15:35:56,686 INFO src.app.trend_research - Gathered 12 unique trending topics.
+2026-10-09 15:35:56,689 INFO __main__ - ═══ Slot 1/5 ═══
+2026-10-09 15:35:56,689 INFO __main__ - [Slot 1] Usando trending topic local: Only one workout helped older adults lose fat and keep muscle
+2026-10-09 15:35:56,689 INFO __main__ - [Slot 1] title_hint=5 Science-Backed Only One Workout Helped Older Adults Lose Fat And Keep...
+2026-10-09 15:35:56,689 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-09 15:35:59,227 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-09 15:36:04,228 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-09 15:36:11,708 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-09 15:36:16,708 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-10-09 15:36:24,238 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 OK finishReason=STOP len_chars=5509
+2026-10-09 15:36:24,457 INFO src.app.duplicate_checker - Indexed post: only-one-workout-helped-older-adults-lose-fat-and-keep-muscle (Total: 181)
+2026-10-09 15:36:24,462 INFO src.app.pinterest_seo - [PinterestSEO] 'Only One Workout Helped Older Adult' → Intent=routine | KW='only one workout helped' | Title='The Workout That Helps Older Adults Lose Fat Keep Muscle' (56 chars) | 8 keywords
+2026-10-09 15:36:24,462 INFO __main__ - [Slot 1] Pinterest SEO: Intent=routine | PrimaryKW='only one workout helped' | Title='The Workout That Helps Older Adults Lose Fat Keep Muscle' | 8 Keywords
+2026-10-09 15:36:25,473 INFO __main__ - [Slot 1] Submetendo ao Google Indexing: https://rodrigosimoes97.github.io/Pin/only-one-workout-helped-older-adults-lose-fat-and-keep-muscle.html
+2026-10-09 15:36:25,515 INFO src.app.indexing - Loaded Google service account from raw JSON content.
+2026-10-09 15:36:25,849 WARNING src.app.indexing - Attempt 1: Failed to index https://rodrigosimoes97.github.io/Pin/only-one-workout-helped-older-adults-lose-fat-and-keep-muscle.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-09 15:36:27,014 WARNING src.app.indexing - Attempt 2: Failed to index https://rodrigosimoes97.github.io/Pin/only-one-workout-helped-older-adults-lose-fat-and-keep-muscle.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-09 15:36:29,182 WARNING src.app.indexing - Attempt 3: Failed to index https://rodrigosimoes97.github.io/Pin/only-one-workout-helped-older-adults-lose-fat-and-keep-muscle.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-09 15:36:29,184 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-10-09_pins.csv com 8 keywords
+2026-10-09 15:36:29,185 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'The Workout That Helps Older Adults Lose Fat Keep Muscle' (intent=routine)
+2026-10-09 15:36:29,185 INFO __main__ - [Slot 1] ✓ Publicado: only-one-workout-helped-older-adults-lose-fat-and-keep-muscle.html (offer)
+2026-10-09 15:36:29,185 INFO __main__ - ═══ Slot 2/5 ═══
+2026-10-09 15:36:29,185 INFO __main__ - [Slot 2] Usando trending topic local: Taking antibiotics? Sugar may be making the damage worse
+2026-10-09 15:36:29,185 INFO __main__ - [Slot 2] title_hint=The Honest Guide to Taking Antibiotics? Sugar May Be Making The Damage Worse...
+2026-10-09 15:36:29,185 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-09 15:36:30,171 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-09 15:36:35,171 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-09 15:36:40,429 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-09 15:36:45,429 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-10-09 15:36:50,845 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-09 15:36:55,845 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 enviando...
+2026-10-09 15:37:00,049 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-09 15:37:05,050 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.6-flash na rodada 1. Aguardando 5s antes de tentar no modelo gemini-3.8-flash.
+2026-10-09 15:37:10,050 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=2 enviando...
+2026-10-09 15:37:18,862 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-09 15:37:28,862 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=2 enviando...
+2026-10-09 15:37:37,887 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-09 15:37:47,887 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=2 enviando...
+2026-10-09 15:37:50,400 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-09 15:38:00,401 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=2 enviando...
+2026-10-09 15:38:00,898 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-09 15:38:10,899 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.8-flash na rodada 2. Aguardando 10s antes de tentar no modelo gemini-3.8-flash.
+2026-10-09 15:38:20,899 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=3 enviando...
+2026-10-09 15:38:46,478 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-09 15:39:01,479 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=3 enviando...
+2026-10-09 15:39:25,118 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-09 15:39:40,119 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=3 enviando...
+2026-10-09 15:40:00,847 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-09 15:40:15,847 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=3 enviando...
+2026-10-09 15:40:29,504 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=3 OK finishReason=STOP len_chars=4967
+2026-10-09 15:40:29,683 INFO src.app.duplicate_checker - Indexed post: taking-antibiotics-sugar-may-be-making-the-damage-worse (Total: 182)
+2026-10-09 15:40:29,686 INFO src.app.pinterest_seo - [PinterestSEO] 'Taking Antibiotics? Sugar May Be Ma' → Intent=mistakes | KW='taking antibiotics sugar making' | Title='Taking Antibiotics? Why Sugar Makes It Worse' (44 chars) | 6 keywords
+2026-10-09 15:40:29,686 INFO __main__ - [Slot 2] Pinterest SEO: Intent=mistakes | PrimaryKW='taking antibiotics sugar making' | Title='Taking Antibiotics? Why Sugar Makes It Worse' | 6 Keywords
+2026-10-09 15:40:30,874 INFO __main__ - [Slot 2] Submetendo ao Google Indexing: https://rodrigosimoes97.github.io/Pin/taking-antibiotics-sugar-may-be-making-the-damage-worse.html
+2026-10-09 15:40:30,914 INFO src.app.indexing - Loaded Google service account from raw JSON content.
+2026-10-09 15:40:31,231 WARNING src.app.indexing - Attempt 1: Failed to index https://rodrigosimoes97.github.io/Pin/taking-antibiotics-sugar-may-be-making-the-damage-worse.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-09 15:40:32,316 WARNING src.app.indexing - Attempt 2: Failed to index https://rodrigosimoes97.github.io/Pin/taking-antibiotics-sugar-may-be-making-the-damage-worse.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-09 15:40:34,487 WARNING src.app.indexing - Attempt 3: Failed to index https://rodrigosimoes97.github.io/Pin/taking-antibiotics-sugar-may-be-making-the-damage-worse.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-09 15:40:34,489 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-10-09_pins.csv com 6 keywords
+2026-10-09 15:40:34,490 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'Taking Antibiotics? Why Sugar Makes It Worse' (intent=mistakes)
+2026-10-09 15:40:34,490 INFO __main__ - [Slot 2] ✓ Publicado: taking-antibiotics-sugar-may-be-making-the-damage-worse.html (info)
+2026-10-09 15:40:34,490 INFO __main__ - ═══ Slot 3/5 ═══
+2026-10-09 15:40:34,490 INFO __main__ - [Slot 3] Usando trending topic local: Just 7 days of strength training started shrinking fat cells in mice
+2026-10-09 15:40:34,490 INFO __main__ - [Slot 3] title_hint=How I Finally Made Just 7 Days Of Strength Training Started Shrinking Fat...
+2026-10-09 15:40:34,490 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-09 15:40:36,820 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-09 15:40:41,821 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-09 15:40:42,770 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-09 15:40:47,771 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-10-09 15:40:52,134 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-09 15:40:57,135 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 enviando...
+2026-10-09 15:40:59,880 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-09 15:41:04,881 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.6-flash na rodada 1. Aguardando 5s antes de tentar no modelo gemini-3.8-flash.
+2026-10-09 15:41:09,881 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=2 enviando...
+2026-10-09 15:42:09,949 WARNING src.app.gemini_client - [Gemini] key#1 timeout
+2026-10-09 15:42:09,950 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=2 enviando...
+2026-10-09 15:42:10,361 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-09 15:42:20,361 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=2 enviando...
+2026-10-09 15:42:24,083 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-09 15:42:34,084 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=2 enviando...
+2026-10-09 15:42:47,871 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-09 15:42:57,871 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.8-flash na rodada 2. Aguardando 10s antes de tentar no modelo gemini-3.8-flash.
+2026-10-09 15:43:07,871 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=3 enviando...
+2026-10-09 15:43:09,166 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-09 15:43:24,167 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=3 enviando...
+2026-10-09 15:43:35,884 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=3 OK finishReason=STOP len_chars=5058
+2026-10-09 15:43:36,064 INFO src.app.duplicate_checker - Indexed post: just-7-days-of-strength-training-started-shrinking-fat-cells-in-mice (Total: 183)
+2026-10-09 15:43:36,067 INFO src.app.pinterest_seo - [PinterestSEO] 'Just 7 Days Of Strength Training St' → Intent=list | KW='just days strength training' | Title='How 7 Days of Lifting Changes Fat Cells Fast' (44 chars) | 6 keywords
+2026-10-09 15:43:36,067 INFO __main__ - [Slot 3] Pinterest SEO: Intent=list | PrimaryKW='just days strength training' | Title='How 7 Days of Lifting Changes Fat Cells Fast' | 6 Keywords
+2026-10-09 15:43:38,451 INFO __main__ - [Slot 3] Submetendo ao Google Indexing: https://rodrigosimoes97.github.io/Pin/just-7-days-of-strength-training-started-shrinking-fat-cells-in-mice.html
+2026-10-09 15:43:38,492 INFO src.app.indexing - Loaded Google service account from raw JSON content.
+2026-10-09 15:43:38,865 WARNING src.app.indexing - Attempt 1: Failed to index https://rodrigosimoes97.github.io/Pin/just-7-days-of-strength-training-started-shrinking-fat-cells-in-mice.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-09 15:43:39,947 WARNING src.app.indexing - Attempt 2: Failed to index https://rodrigosimoes97.github.io/Pin/just-7-days-of-strength-training-started-shrinking-fat-cells-in-mice.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-09 15:43:42,036 WARNING src.app.indexing - Attempt 3: Failed to index https://rodrigosimoes97.github.io/Pin/just-7-days-of-strength-training-started-shrinking-fat-cells-in-mice.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-09 15:43:42,046 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-10-09_pins.csv com 6 keywords
+2026-10-09 15:43:42,047 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'How 7 Days of Lifting Changes Fat Cells Fast' (intent=list)
+2026-10-09 15:43:42,047 INFO __main__ - [Slot 3] ✓ Publicado: just-7-days-of-strength-training-started-shrinking-fat-cells-in-mice.html (offer)
+2026-10-09 15:43:42,047 INFO __main__ - ═══ Slot 4/5 ═══
+2026-10-09 15:43:42,047 INFO __main__ - [Slot 4] Usando trending topic local: MIT scientists find a hidden cancer risk of the keto diet
+2026-10-09 15:43:42,047 INFO __main__ - [Slot 4] title_hint=A Realistic Mit Scientists Find A Hidden Cancer Risk Of The Keto Diet Plan...
+2026-10-09 15:43:42,047 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-09 15:43:43,377 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-09 15:43:48,378 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-09 15:43:51,683 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-09 15:43:56,683 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-10-09 15:43:58,137 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-09 15:44:03,138 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 enviando...
+2026-10-09 15:44:10,431 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 OK finishReason=STOP len_chars=5075
+2026-10-09 15:44:10,432 WARNING __main__ - [Quality] word_count=442 < 450
+2026-10-09 15:44:10,433 WARNING __main__ - [Slot 4] Qualidade insuficiente — artigo descartado
+2026-10-09 15:44:10,433 ERROR __main__ - [Slot 4] Slot descartado.
+2026-10-09 15:44:10,433 INFO __main__ - ═══ Slot 5/5 ═══
+2026-10-09 15:44:10,433 INFO __main__ - [Slot 5] Usando trending topic local: Why Don’t Health Insurers Promote a Healthier Diet?
+2026-10-09 15:44:10,433 INFO __main__ - [Slot 5] title_hint=Stop Overcomplicating Why Don’T Health Insurers Promote A Healthier Diet? —...
+2026-10-09 15:44:10,433 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-09 15:44:17,648 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-09 15:44:22,648 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-09 15:44:27,606 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-09 15:44:32,607 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-10-09 15:44:33,259 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-09 15:44:38,260 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 enviando...
+2026-10-09 15:44:40,592 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-09 15:44:45,592 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.6-flash na rodada 1. Aguardando 5s antes de tentar no modelo gemini-3.8-flash.
+2026-10-09 15:44:50,593 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=2 enviando...
+2026-10-09 15:44:51,321 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-09 15:45:01,322 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=2 enviando...
+2026-10-09 15:45:01,624 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-09 15:45:11,624 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=2 enviando...
+2026-10-09 15:45:12,044 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-09 15:45:22,044 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=2 enviando...
+2026-10-09 15:45:36,443 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=2 OK finishReason=STOP len_chars=5097
+2026-10-09 15:45:36,444 WARNING __main__ - [Quality] keyword 'Why Don’T Health Insurers Promote A Healthier Diet?' não encontrada no título ou corpo
+2026-10-09 15:45:36,445 WARNING __main__ - [Slot 5] Qualidade insuficiente — artigo descartado
+2026-10-09 15:45:36,445 ERROR __main__ - [Slot 5] Slot descartado.
+2026-10-09 15:45:36,446 INFO __main__ - Run completo. Publicados 3/5 posts.

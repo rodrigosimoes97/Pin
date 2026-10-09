@@ -1,10 +1,7 @@
 {
-  "runs": 198,
+  "runs": 199,
   "offer_runs": 21,
   "recent_topics": [
-    "mindful-eating-for-better-digestion",
-    "vitamin-c-cold-prevention-myths",
-    "calorie-restriction-shortcut-anti-aging",
     "gut-health-microbiome-diversity",
     "long-term-melatonin-heart-failure-risk",
     "sustainable-spirulina-vitamin-b12-solution",
@@ -51,12 +48,12 @@
     "high-protein-breakfast",
     "vitamin-c-linked-to-fewer-deaths-in-blood-disorder",
     "not-all-trans-fats-are-bad-major-review-finds",
-    "feeding-our-gut-microbiome-for-better-health"
+    "feeding-our-gut-microbiome-for-better-health",
+    "only-one-workout-helped-older-adults-lose-fat-and-",
+    "taking-antibiotics-sugar-may-be-making-the-damage-",
+    "just-7-days-of-strength-training-started-shrinking"
   ],
   "recent_slugs": [
-    "older-adults-surprising-salt-habit-revealed-new-study",
-    "unlock-your-best-health-surprising-benefits-daily-hydration",
-    "top-biohacking-supplements-longevity-peak-performance",
     "tap-water-dementia-risk-nitrates",
     "older-adults-supplements-essentials-vs-skip",
     "unlock-deep-sleep-holistic-optimization-busy-professionals",
@@ -153,13 +150,13 @@
     "high-protein-breakfast-guide-busy-mornings",
     "vitamin-c-linked-to-fewer-deaths-in-blood-disorder-trial",
     "not-all-trans-fats-are-bad-major-review-finds-daily-energy",
-    "realistic-feeding-our-gut-microbiome-for-better-health-plan"
+    "realistic-feeding-our-gut-microbiome-for-better-health-plan",
+    "only-one-workout-helped-older-adults-lose-fat-and-keep-muscle",
+    "taking-antibiotics-sugar-may-be-making-the-damage-worse",
+    "just-7-days-of-strength-training-started-shrinking-fat-cells-in-mice"
   ],
-  "last_run": "2026-10-08",
+  "last_run": "2026-10-09",
   "recent_tags": [
-    "health",
-    "health",
-    "longevity",
     "gut",
     "sleep",
     "health",
@@ -206,19 +203,22 @@
     "healthy-habits",
     "health",
     "health",
-    "gut"
+    "gut",
+    "home-workouts",
+    "gut",
+    "weight"
   ],
   "tag_counts": {
     "sleep": 29,
-    "gut": 25,
+    "gut": 26,
     "mental-wellness": 24,
     "stress": 11,
     "healthy-habits": 54,
     "longevity": 23,
     "recipes": 9,
     "anti-inflammatory": 9,
-    "home-workouts": 9,
-    "weight": 22,
+    "home-workouts": 10,
+    "weight": 23,
     "health": 54
   },
   "topic_rotation": {
@@ -230,14 +230,11 @@
     "recipes": 23,
     "anti-inflammatory": 11,
     "home-workouts": 15,
-    "weight": 32,
+    "weight": 34,
     "mental-wellness": 2,
-    "health": 12
+    "health": 13
   },
   "recent_titles": [
-    "Is Your Belly Fat Hiding a Vitamin Deficiency?",
-    "Cheese Bacteria: Your Gut's New Best Friend?",
-    "Unlock Peak Brain Function with These Foods",
     "How to Lose Weight with a Low-Fat Vegan Diet",
     "Stressed? Try These Simple Daily Mindfulness Hacks",
     "Coffee for a Leaner Body: Fat Loss and Muscle Gain Tips",
@@ -294,6 +291,9 @@
     "High Protein Breakfast Guide for Ultra-Busy Mornings",
     "Vitamin C Linked To Fewer Deaths In Blood Disorder Trial: Key Steps",
     "Not All Trans Fats Are Bad, Major Review Finds: Daily Energy",
-    "A Realistic Feeding Our Gut Microbiome For Better Health Plan"
+    "A Realistic Feeding Our Gut Microbiome For Better Health Plan",
+    "Only One Workout Helped Older Adults Lose Fat And Keep Muscle",
+    "Taking Antibiotics? Sugar May Be Making The Damage Worse",
+    "Just 7 Days Of Strength Training Started Shrinking Fat Cells In Mice"
   ]
 }

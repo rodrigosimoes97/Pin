@@ -458,3 +458,27 @@
   }
 }
 
+2026-10-09T15:36:29.182867+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/only-one-workout-helped-older-adults-lose-fat-and-keep-muscle.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-09T15:40:34.487963+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/taking-antibiotics-sugar-may-be-making-the-damage-worse.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-09T15:43:42.036250+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/just-7-days-of-strength-training-started-shrinking-fat-cells-in-mice.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
