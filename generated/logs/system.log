@@ -80186,3 +80186,4 @@ RuntimeError: Gemini failed after exhaustive retries: key#1 transient_status=429
 2026-10-09 15:45:36,445 WARNING __main__ - [Slot 5] Qualidade insuficiente — artigo descartado
 2026-10-09 15:45:36,445 ERROR __main__ - [Slot 5] Slot descartado.
 2026-10-09 15:45:36,446 INFO __main__ - Run completo. Publicados 3/5 posts.
+2026-10-10 14:46:01,503 INFO __main__ - Pulando geração hoje para manter 5 posts/semana.
