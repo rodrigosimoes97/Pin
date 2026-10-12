@@ -1,10 +1,7 @@
 {
-  "runs": 199,
+  "runs": 200,
   "offer_runs": 21,
   "recent_topics": [
-    "gut-health-microbiome-diversity",
-    "long-term-melatonin-heart-failure-risk",
-    "sustainable-spirulina-vitamin-b12-solution",
     "obesity-immune-cell-memory",
     "coffee-bone-health-study",
     "biohacking-for-better-sleep",
@@ -51,12 +48,12 @@
     "feeding-our-gut-microbiome-for-better-health",
     "only-one-workout-helped-older-adults-lose-fat-and-",
     "taking-antibiotics-sugar-may-be-making-the-damage-",
-    "just-7-days-of-strength-training-started-shrinking"
+    "just-7-days-of-strength-training-started-shrinking",
+    "popular-weight-loss-drugs-linked-to-a-surprising-f",
+    "eating-olive-oil-before-carbs-has-a-surprising-eff",
+    "why-don-t-health-insurers-promote-a-healthier-diet"
   ],
   "recent_slugs": [
-    "tap-water-dementia-risk-nitrates",
-    "older-adults-supplements-essentials-vs-skip",
-    "unlock-deep-sleep-holistic-optimization-busy-professionals",
     "sip-tea-healthier-life",
     "ultra-processed-foods-focus-thief",
     "unlock-best-sleep-energy-focus-health",
@@ -153,13 +150,13 @@
     "realistic-feeding-our-gut-microbiome-for-better-health-plan",
     "only-one-workout-helped-older-adults-lose-fat-and-keep-muscle",
     "taking-antibiotics-sugar-may-be-making-the-damage-worse",
-    "just-7-days-of-strength-training-started-shrinking-fat-cells-in-mice"
+    "just-7-days-of-strength-training-started-shrinking-fat-cells-in-mice",
+    "popular-weight-loss-drugs-linked-to-a-surprising-fingernail-problem",
+    "eating-olive-oil-before-carbs-has-a-surprising-effect-on-blood-sugar",
+    "stop-overcomplicating-why-dont-health-insurers-promote-a-healthier-diet"
   ],
-  "last_run": "2026-10-09",
+  "last_run": "2026-10-12",
   "recent_tags": [
-    "gut",
-    "sleep",
-    "health",
     "health",
     "health",
     "sleep",
@@ -206,20 +203,23 @@
     "gut",
     "home-workouts",
     "gut",
-    "weight"
+    "weight",
+    "health",
+    "healthy-habits",
+    "health"
   ],
   "tag_counts": {
     "sleep": 29,
     "gut": 26,
     "mental-wellness": 24,
     "stress": 11,
-    "healthy-habits": 54,
+    "healthy-habits": 55,
     "longevity": 23,
     "recipes": 9,
     "anti-inflammatory": 9,
     "home-workouts": 10,
     "weight": 23,
-    "health": 54
+    "health": 56
   },
   "topic_rotation": {
     "sleep": 29,
@@ -227,17 +227,14 @@
     "stress": 23,
     "healthy-habits": 64,
     "longevity": 29,
-    "recipes": 23,
+    "recipes": 25,
     "anti-inflammatory": 11,
     "home-workouts": 15,
-    "weight": 34,
+    "weight": 35,
     "mental-wellness": 2,
     "health": 13
   },
   "recent_titles": [
-    "How to Lose Weight with a Low-Fat Vegan Diet",
-    "Stressed? Try These Simple Daily Mindfulness Hacks",
-    "Coffee for a Leaner Body: Fat Loss and Muscle Gain Tips",
     "Optimize Sleep Quality: Practical Biohacking Tips",
     "Fat Loss Without Muscle Loss? New Compound Shows Promise",
     "Quitting Alcohol? Your Brain's Fight Against Relapse",
@@ -294,6 +291,9 @@
     "A Realistic Feeding Our Gut Microbiome For Better Health Plan",
     "Only One Workout Helped Older Adults Lose Fat And Keep Muscle",
     "Taking Antibiotics? Sugar May Be Making The Damage Worse",
-    "Just 7 Days Of Strength Training Started Shrinking Fat Cells In Mice"
+    "Just 7 Days Of Strength Training Started Shrinking Fat Cells In Mice",
+    "Popular Weight Loss Drugs Linked To A Surprising Fingernail Problem",
+    "Eating Olive Oil Before Carbs Has A Surprising Effect On Blood Sugar",
+    "Stop Overcomplicating Why Don\u2019t Health Insurers Promote A Healthier Diet?"
   ]
 }

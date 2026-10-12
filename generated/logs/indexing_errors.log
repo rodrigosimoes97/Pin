@@ -482,3 +482,27 @@
   }
 }
 
+2026-10-12T18:16:20.092775+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/popular-weight-loss-drugs-linked-to-a-surprising-fingernail-problem.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-12T18:19:08.667806+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/eating-olive-oil-before-carbs-has-a-surprising-effect-on-blood-sugar.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-12T18:20:58.003466+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/stop-overcomplicating-why-dont-health-insurers-promote-a-healthier-diet.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+

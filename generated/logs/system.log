@@ -80188,3 +80188,209 @@ RuntimeError: Gemini failed after exhaustive retries: key#1 transient_status=429
 2026-10-09 15:45:36,446 INFO __main__ - Run completo. Publicados 3/5 posts.
 2026-10-10 14:46:01,503 INFO __main__ - Pulando geração hoje para manter 5 posts/semana.
 2026-10-11 15:06:32,116 INFO __main__ - Pulando geração hoje para manter 5 posts/semana.
+2026-10-12 18:14:20,868 INFO __main__ - Buscando trending topics para USA...
+2026-10-12 18:14:21,036 WARNING src.app.trend_research - Failed to fetch Google Trends (404/Error): The request failed: Google returned a response with code 404. Moving to fallbacks.
+2026-10-12 18:14:24,867 INFO src.app.trend_research - Gathered 10 unique trending topics.
+2026-10-12 18:14:24,869 INFO __main__ - ═══ Slot 1/5 ═══
+2026-10-12 18:14:24,869 INFO __main__ - [Slot 1] Usando trending topic local: Popular weight loss drugs linked to a surprising fingernail problem
+2026-10-12 18:14:24,870 INFO __main__ - [Slot 1] title_hint=3 Science-Backed Popular Weight Loss Drugs Linked To A Surprising Fingernail...
+2026-10-12 18:14:24,870 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-12 18:14:26,640 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-12 18:14:31,641 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-12 18:14:33,286 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-12 18:14:38,286 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-10-12 18:14:39,415 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-12 18:14:44,416 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 enviando...
+2026-10-12 18:14:45,781 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-12 18:14:50,782 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.6-flash na rodada 1. Aguardando 5s antes de tentar no modelo gemini-3.8-flash.
+2026-10-12 18:14:55,782 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=2 enviando...
+2026-10-12 18:14:57,320 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-12 18:15:07,321 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=2 enviando...
+2026-10-12 18:15:08,356 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-12 18:15:18,356 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=2 enviando...
+2026-10-12 18:15:18,614 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-12 18:15:28,615 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=2 enviando...
+2026-10-12 18:15:29,237 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-12 18:15:39,238 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.8-flash na rodada 2. Aguardando 10s antes de tentar no modelo gemini-3.8-flash.
+2026-10-12 18:15:49,238 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=3 enviando...
+2026-10-12 18:15:49,886 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-12 18:16:04,887 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=3 enviando...
+2026-10-12 18:16:15,508 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=3 OK finishReason=STOP len_chars=5114
+2026-10-12 18:16:15,711 INFO src.app.duplicate_checker - Indexed post: popular-weight-loss-drugs-linked-to-a-surprising-fingernail-problem (Total: 184)
+2026-10-12 18:16:15,714 INFO src.app.pinterest_seo - [PinterestSEO] 'Popular Weight Loss Drugs Linked To' → Intent=mistakes | KW='popular weight loss drugs' | Title='Fix Brittle Nails From Weight Loss Drugs' (40 chars) | 6 keywords
+2026-10-12 18:16:15,714 INFO __main__ - [Slot 1] Pinterest SEO: Intent=mistakes | PrimaryKW='popular weight loss drugs' | Title='Fix Brittle Nails From Weight Loss Drugs' | 6 Keywords
+2026-10-12 18:16:16,674 INFO __main__ - [Slot 1] Submetendo ao Google Indexing: https://rodrigosimoes97.github.io/Pin/popular-weight-loss-drugs-linked-to-a-surprising-fingernail-problem.html
+2026-10-12 18:16:16,716 INFO src.app.indexing - Loaded Google service account from raw JSON content.
+2026-10-12 18:16:16,934 WARNING src.app.indexing - Attempt 1: Failed to index https://rodrigosimoes97.github.io/Pin/popular-weight-loss-drugs-linked-to-a-surprising-fingernail-problem.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-12 18:16:18,013 WARNING src.app.indexing - Attempt 2: Failed to index https://rodrigosimoes97.github.io/Pin/popular-weight-loss-drugs-linked-to-a-surprising-fingernail-problem.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-12 18:16:20,092 WARNING src.app.indexing - Attempt 3: Failed to index https://rodrigosimoes97.github.io/Pin/popular-weight-loss-drugs-linked-to-a-surprising-fingernail-problem.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-12 18:16:20,094 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-10-12_pins.csv com 6 keywords
+2026-10-12 18:16:20,095 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'Fix Brittle Nails From Weight Loss Drugs' (intent=mistakes)
+2026-10-12 18:16:20,095 INFO __main__ - [Slot 1] ✓ Publicado: popular-weight-loss-drugs-linked-to-a-surprising-fingernail-problem.html (info)
+2026-10-12 18:16:20,095 INFO __main__ - ═══ Slot 2/5 ═══
+2026-10-12 18:16:20,095 INFO __main__ - [Slot 2] Usando trending topic local: Scientists find hidden driver of aging and a simple amino acid that fights memory loss in mice
+2026-10-12 18:16:20,095 INFO __main__ - [Slot 2] title_hint=How I Finally Made Scientists Find Hidden Driver Of Aging And A Simple Amino...
+2026-10-12 18:16:20,095 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-12 18:16:24,433 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-12 18:16:29,433 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-12 18:16:32,145 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-12 18:16:37,145 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-10-12 18:16:48,754 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-12 18:16:53,755 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 enviando...
+2026-10-12 18:16:54,877 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-12 18:16:59,877 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.6-flash na rodada 1. Aguardando 5s antes de tentar no modelo gemini-3.8-flash.
+2026-10-12 18:17:04,878 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=2 enviando...
+2026-10-12 18:17:13,655 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=2 OK finishReason=STOP len_chars=4898
+2026-10-12 18:17:13,656 WARNING __main__ - [Quality] word_count=426 < 450
+2026-10-12 18:17:13,656 WARNING __main__ - [Slot 2] Qualidade insuficiente — artigo descartado
+2026-10-12 18:17:13,656 ERROR __main__ - [Slot 2] Slot descartado.
+2026-10-12 18:17:13,656 INFO __main__ - ═══ Slot 3/5 ═══
+2026-10-12 18:17:13,656 INFO __main__ - [Slot 3] Usando trending topic local: Eating olive oil before carbs has a surprising effect on blood sugar
+2026-10-12 18:17:13,657 INFO __main__ - [Slot 3] title_hint=The Honest Guide to Eating Olive Oil Before Carbs Has A Surprising Effect On...
+2026-10-12 18:17:13,657 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-12 18:17:15,521 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-12 18:17:20,521 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-12 18:17:22,845 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-12 18:17:27,846 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-10-12 18:17:29,201 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-12 18:17:34,202 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 enviando...
+2026-10-12 18:17:38,536 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-12 18:17:43,537 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.6-flash na rodada 1. Aguardando 5s antes de tentar no modelo gemini-3.8-flash.
+2026-10-12 18:17:48,537 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=2 enviando...
+2026-10-12 18:17:51,520 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-12 18:18:01,520 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=2 enviando...
+2026-10-12 18:18:03,887 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-12 18:18:13,887 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=2 enviando...
+2026-10-12 18:18:14,904 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-12 18:18:24,904 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=2 enviando...
+2026-10-12 18:18:26,014 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-12 18:18:36,015 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.8-flash na rodada 2. Aguardando 10s antes de tentar no modelo gemini-3.8-flash.
+2026-10-12 18:18:46,015 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=3 enviando...
+2026-10-12 18:19:04,214 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=3 OK finishReason=STOP len_chars=5090
+2026-10-12 18:19:04,394 INFO src.app.duplicate_checker - Indexed post: eating-olive-oil-before-carbs-has-a-surprising-effect-on-blood-sugar (Total: 185)
+2026-10-12 18:19:04,399 INFO src.app.pinterest_seo - [PinterestSEO] 'Eating Olive Oil Before Carbs Has A' → Intent=checklist | KW='eating olive oil before' | Title='The Olive Oil Hack That Flattens Blood Sugar Spikes' (51 chars) | 8 keywords
+2026-10-12 18:19:04,399 INFO __main__ - [Slot 3] Pinterest SEO: Intent=checklist | PrimaryKW='eating olive oil before' | Title='The Olive Oil Hack That Flattens Blood Sugar Spikes' | 8 Keywords
+2026-10-12 18:19:05,294 INFO __main__ - [Slot 3] Submetendo ao Google Indexing: https://rodrigosimoes97.github.io/Pin/eating-olive-oil-before-carbs-has-a-surprising-effect-on-blood-sugar.html
+2026-10-12 18:19:05,335 INFO src.app.indexing - Loaded Google service account from raw JSON content.
+2026-10-12 18:19:05,525 WARNING src.app.indexing - Attempt 1: Failed to index https://rodrigosimoes97.github.io/Pin/eating-olive-oil-before-carbs-has-a-surprising-effect-on-blood-sugar.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-12 18:19:06,592 WARNING src.app.indexing - Attempt 2: Failed to index https://rodrigosimoes97.github.io/Pin/eating-olive-oil-before-carbs-has-a-surprising-effect-on-blood-sugar.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-12 18:19:08,667 WARNING src.app.indexing - Attempt 3: Failed to index https://rodrigosimoes97.github.io/Pin/eating-olive-oil-before-carbs-has-a-surprising-effect-on-blood-sugar.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-12 18:19:08,669 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-10-12_pins.csv com 8 keywords
+2026-10-12 18:19:08,670 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'The Olive Oil Hack That Flattens Blood Sugar Spikes' (intent=checklist)
+2026-10-12 18:19:08,670 INFO __main__ - [Slot 3] ✓ Publicado: eating-olive-oil-before-carbs-has-a-surprising-effect-on-blood-sugar.html (offer)
+2026-10-12 18:19:08,670 INFO __main__ - ═══ Slot 4/5 ═══
+2026-10-12 18:19:08,670 INFO __main__ - [Slot 4] Usando trending topic local: Why Don’t Health Insurers Promote a Healthier Diet?
+2026-10-12 18:19:08,670 INFO __main__ - [Slot 4] title_hint=Stop Overcomplicating Why Don’T Health Insurers Promote A Healthier Diet? —...
+2026-10-12 18:19:08,671 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-12 18:19:09,554 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-12 18:19:14,554 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-12 18:19:18,317 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-12 18:19:23,318 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-10-12 18:19:26,227 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-12 18:19:31,227 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 enviando...
+2026-10-12 18:19:34,693 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-12 18:19:39,694 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.6-flash na rodada 1. Aguardando 5s antes de tentar no modelo gemini-3.8-flash.
+2026-10-12 18:19:44,694 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=2 enviando...
+2026-10-12 18:19:52,905 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-12 18:20:02,905 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=2 enviando...
+2026-10-12 18:20:05,532 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-12 18:20:15,532 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=2 enviando...
+2026-10-12 18:20:19,158 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-12 18:20:29,158 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=2 enviando...
+2026-10-12 18:20:52,861 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=2 OK finishReason=STOP len_chars=5737
+2026-10-12 18:20:53,042 INFO src.app.duplicate_checker - Indexed post: stop-overcomplicating-why-dont-health-insurers-promote-a-healthier-diet (Total: 186)
+2026-10-12 18:20:53,045 INFO src.app.pinterest_seo - [PinterestSEO] 'Stop Overcomplicating Why Don’t Hea' → Intent=guide | KW='dont health insurers promote' | Title='Why Health Insurers Don't Promote Healthy Food' (46 chars) | 6 keywords
+2026-10-12 18:20:53,045 INFO __main__ - [Slot 4] Pinterest SEO: Intent=guide | PrimaryKW='dont health insurers promote' | Title='Why Health Insurers Don't Promote Healthy Food' | 6 Keywords
+2026-10-12 18:20:54,643 INFO __main__ - [Slot 4] Submetendo ao Google Indexing: https://rodrigosimoes97.github.io/Pin/stop-overcomplicating-why-dont-health-insurers-promote-a-healthier-diet.html
+2026-10-12 18:20:54,684 INFO src.app.indexing - Loaded Google service account from raw JSON content.
+2026-10-12 18:20:54,827 WARNING src.app.indexing - Attempt 1: Failed to index https://rodrigosimoes97.github.io/Pin/stop-overcomplicating-why-dont-health-insurers-promote-a-healthier-diet.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-12 18:20:55,901 WARNING src.app.indexing - Attempt 2: Failed to index https://rodrigosimoes97.github.io/Pin/stop-overcomplicating-why-dont-health-insurers-promote-a-healthier-diet.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-12 18:20:58,003 WARNING src.app.indexing - Attempt 3: Failed to index https://rodrigosimoes97.github.io/Pin/stop-overcomplicating-why-dont-health-insurers-promote-a-healthier-diet.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-12 18:20:58,005 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-10-12_pins.csv com 6 keywords
+2026-10-12 18:20:58,006 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'Why Health Insurers Don't Promote Healthy Food' (intent=guide)
+2026-10-12 18:20:58,006 INFO __main__ - [Slot 4] ✓ Publicado: stop-overcomplicating-why-dont-health-insurers-promote-a-healthier-diet.html (info)
+2026-10-12 18:20:58,006 INFO __main__ - ═══ Slot 5/5 ═══
+2026-10-12 18:20:58,006 INFO __main__ - [Slot 5] Tópico local: Healthy Recipes (recipes)
+2026-10-12 18:20:58,006 INFO __main__ - [Slot 5] title_hint=How to optimize Healthy Recipes Without Giving Up Everything
+2026-10-12 18:20:58,006 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-12 18:20:59,454 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-12 18:21:04,454 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-12 18:21:06,516 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-12 18:21:11,517 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-10-12 18:21:14,454 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-12 18:21:19,455 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 enviando...
+2026-10-12 18:21:24,499 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-12 18:21:29,500 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.6-flash na rodada 1. Aguardando 5s antes de tentar no modelo gemini-3.8-flash.
+2026-10-12 18:21:34,500 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=2 enviando...
+2026-10-12 18:21:35,931 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-12 18:21:45,931 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=2 enviando...
+2026-10-12 18:21:46,729 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-12 18:21:56,730 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=2 enviando...
+2026-10-12 18:22:10,673 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=2 OK finishReason=STOP len_chars=6016
+2026-10-12 18:22:10,674 WARNING __main__ - [Quality] word_count=405 < 450
+2026-10-12 18:22:10,674 WARNING __main__ - [Slot 5] Qualidade insuficiente — artigo descartado
+2026-10-12 18:22:10,674 ERROR __main__ - [Slot 5] Slot descartado.
+2026-10-12 18:22:10,675 INFO __main__ - Run completo. Publicados 3/5 posts.
