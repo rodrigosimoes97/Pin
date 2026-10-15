@@ -80655,3 +80655,107 @@ RuntimeError: Gemini failed after exhaustive retries: key#1 transient_status=429
 2026-10-14 14:20:01,833 ERROR __main__ - [Slot 5] Gemini indisponível: Gemini falhou após 3 rodadas com 4 key(s). Últimos erros: key#3 status=503 (alta demanda no modelo gemini-3.8-flash); key#4 status=503 (alta demanda no modelo gemini-3.8-flash); key#1 status=503 (alta demanda no modelo gemini-3.8-flash); key#2 status=503 (alta demanda no modelo gemini-3.8-flash); key#3 status=503 (alta demanda no modelo gemini-3.8-flash); key#4 status=503 (alta demanda no modelo gemini-3.8-flash)
 2026-10-14 14:20:01,834 ERROR __main__ - [Slot 5] Slot descartado.
 2026-10-14 14:20:01,835 INFO __main__ - Run completo. Publicados 0/5 posts.
+2026-10-15 13:43:19,516 INFO __main__ - Buscando trending topics para USA...
+2026-10-15 13:43:20,272 WARNING src.app.trend_research - Failed to fetch Google Trends (404/Error): The request failed: Google returned a response with code 404. Moving to fallbacks.
+2026-10-15 13:43:24,093 INFO src.app.trend_research - Gathered 10 unique trending topics.
+2026-10-15 13:43:24,096 INFO __main__ - ═══ Slot 1/5 ═══
+2026-10-15 13:43:24,096 INFO __main__ - [Slot 1] Usando trending topic local: Scientists reveal why some workout recovery tricks can backfire
+2026-10-15 13:43:24,097 INFO __main__ - [Slot 1] title_hint=Feel More Energized with This Practical Scientists Reveal Why Some Workout...
+2026-10-15 13:43:24,097 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-15 13:43:25,054 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-15 13:43:30,054 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-15 13:43:30,401 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-15 13:43:35,402 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-10-15 13:43:35,948 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-15 13:43:40,949 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 enviando...
+2026-10-15 13:44:10,137 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 OK finishReason=STOP len_chars=5091
+2026-10-15 13:44:10,473 INFO src.app.duplicate_checker - Indexed post: scientists-reveal-why-some-workout-recovery-tricks-can-backfire (Total: 187)
+2026-10-15 13:44:10,476 INFO src.app.pinterest_seo - [PinterestSEO] 'Scientists Reveal Why Some Workout ' → Intent=tips | KW='scientists reveal some workout' | Title='Why Workout Recovery Tricks Can Backfire On You' (47 chars) | 6 keywords
+2026-10-15 13:44:10,476 INFO __main__ - [Slot 1] Pinterest SEO: Intent=tips | PrimaryKW='scientists reveal some workout' | Title='Why Workout Recovery Tricks Can Backfire On You' | 6 Keywords
+2026-10-15 13:44:11,580 INFO __main__ - [Slot 1] Submetendo ao Google Indexing: https://rodrigosimoes97.github.io/Pin/scientists-reveal-why-some-workout-recovery-tricks-can-backfire.html
+2026-10-15 13:44:11,617 INFO src.app.indexing - Loaded Google service account from raw JSON content.
+2026-10-15 13:44:12,050 WARNING src.app.indexing - Attempt 1: Failed to index https://rodrigosimoes97.github.io/Pin/scientists-reveal-why-some-workout-recovery-tricks-can-backfire.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-15 13:44:13,235 WARNING src.app.indexing - Attempt 2: Failed to index https://rodrigosimoes97.github.io/Pin/scientists-reveal-why-some-workout-recovery-tricks-can-backfire.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-15 13:44:15,415 WARNING src.app.indexing - Attempt 3: Failed to index https://rodrigosimoes97.github.io/Pin/scientists-reveal-why-some-workout-recovery-tricks-can-backfire.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-15 13:44:15,417 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-10-15_pins.csv com 6 keywords
+2026-10-15 13:44:15,418 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'Why Workout Recovery Tricks Can Backfire On You' (intent=tips)
+2026-10-15 13:44:15,418 INFO __main__ - [Slot 1] ✓ Publicado: scientists-reveal-why-some-workout-recovery-tricks-can-backfire.html (offer)
+2026-10-15 13:44:15,418 INFO __main__ - ═══ Slot 2/5 ═══
+2026-10-15 13:44:15,418 INFO __main__ - [Slot 2] Usando trending topic local: Your gut bacteria could be changing how many calories you absorb
+2026-10-15 13:44:15,418 INFO __main__ - [Slot 2] title_hint=A Realistic Your Gut Bacteria Could Be Changing How Many Calories You Absorb...
+2026-10-15 13:44:15,418 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-15 13:44:50,948 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-15 13:44:55,948 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-15 13:45:22,800 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-15 13:45:27,801 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-10-15 13:46:03,441 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 OK finishReason=STOP len_chars=4667
+2026-10-15 13:46:03,442 WARNING __main__ - [Quality] word_count=432 < 450
+2026-10-15 13:46:03,442 WARNING __main__ - [Slot 2] Qualidade insuficiente — artigo descartado
+2026-10-15 13:46:03,442 ERROR __main__ - [Slot 2] Slot descartado.
+2026-10-15 13:46:03,442 INFO __main__ - ═══ Slot 3/5 ═══
+2026-10-15 13:46:03,443 INFO __main__ - [Slot 3] Usando trending topic local: Scientists find hidden driver of aging and a simple amino acid that fights memory loss in mice
+2026-10-15 13:46:03,443 INFO __main__ - [Slot 3] title_hint=What Nobody Tells You About Scientists Find Hidden Driver Of Aging And A...
+2026-10-15 13:46:03,443 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-15 13:46:21,213 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-15 13:46:26,213 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-15 13:46:49,994 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-15 13:46:54,994 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-10-15 13:46:59,348 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-15 13:47:04,349 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 enviando...
+2026-10-15 13:47:07,367 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-15 13:47:12,367 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.6-flash na rodada 1. Aguardando 5s antes de tentar no modelo gemini-3.8-flash.
+2026-10-15 13:47:17,368 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=2 enviando...
+2026-10-15 13:47:17,847 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-15 13:47:27,847 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=2 enviando...
+2026-10-15 13:47:28,836 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-15 13:47:38,837 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=2 enviando...
+2026-10-15 13:47:43,038 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-15 13:47:53,039 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=2 enviando...
+2026-10-15 13:47:53,808 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-15 13:48:03,809 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.8-flash na rodada 2. Aguardando 10s antes de tentar no modelo gemini-3.8-flash.
+2026-10-15 13:48:13,809 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=3 enviando...
+2026-10-15 13:48:23,843 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=3 OK finishReason=STOP len_chars=4606
+2026-10-15 13:48:23,844 WARNING __main__ - [Quality] word_count=389 < 450
+2026-10-15 13:48:23,844 WARNING __main__ - [Slot 3] Qualidade insuficiente — artigo descartado
+2026-10-15 13:48:23,844 ERROR __main__ - [Slot 3] Slot descartado.
+2026-10-15 13:48:23,844 INFO __main__ - ═══ Slot 4/5 ═══
+2026-10-15 13:48:23,844 INFO __main__ - [Slot 4] Usando trending topic local: Can Coffee Help Parkinson’s Symptoms?
+2026-10-15 13:48:23,844 INFO __main__ - [Slot 4] title_hint=5 Science-Backed Can Coffee Help Parkinson’S Symptoms? Habits Worth Trying
+2026-10-15 13:48:23,844 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-15 13:48:49,442 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-15 13:48:54,443 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-15 13:48:55,998 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-15 13:49:00,999 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-10-15 13:49:30,389 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 OK finishReason=STOP len_chars=5036
+2026-10-15 13:49:30,391 WARNING __main__ - [Quality] word_count=422 < 450
+2026-10-15 13:49:30,391 WARNING __main__ - [Slot 4] Qualidade insuficiente — artigo descartado
+2026-10-15 13:49:30,391 ERROR __main__ - [Slot 4] Slot descartado.
+2026-10-15 13:49:30,391 INFO __main__ - ═══ Slot 5/5 ═══
+2026-10-15 13:49:30,391 INFO __main__ - [Slot 5] Tópico local: Healthy Recipes (recipes)
+2026-10-15 13:49:30,391 INFO __main__ - [Slot 5] title_hint=How to manage Healthy Recipes Without Giving Up Everything
+2026-10-15 13:49:30,391 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-15 13:50:11,556 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=6459
+2026-10-15 13:50:11,558 ERROR __main__ - [Slot 5] Geração falhou (não recuperável): Missing or invalid recipe field: cook_time_minutes
+2026-10-15 13:50:11,558 ERROR __main__ - [Slot 5] Slot descartado.
+2026-10-15 13:50:11,559 INFO __main__ - Run completo. Publicados 1/5 posts.

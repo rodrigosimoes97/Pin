@@ -506,3 +506,11 @@
   }
 }
 
+2026-10-15T13:44:15.416031+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/scientists-reveal-why-some-workout-recovery-tricks-can-backfire.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+

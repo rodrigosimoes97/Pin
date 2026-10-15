@@ -149,7 +149,22 @@
       "outbound_clicks": 0,
       "created_at": "2026-10-12T18:20:58.005674+00:00",
       "last_updated": "2026-10-12T18:20:58.005674+00:00"
+    },
+    {
+      "date": "2026-10-15",
+      "url": "https://health-ptg.pages.dev/scientists-reveal-why-some-workout-recovery-tricks-can-backfire.html",
+      "topic": "Scientists Reveal Why Some Workout Recovery Tricks Can Backfire",
+      "tag": "healthy-habits",
+      "intent": "tips",
+      "primary_keyword": "scientists reveal some workout",
+      "title": "Why Workout Recovery Tricks Can Backfire On You",
+      "impressions": 0,
+      "engagements": 0,
+      "saves": 0,
+      "outbound_clicks": 0,
+      "created_at": "2026-10-15T13:44:15.417922+00:00",
+      "last_updated": "2026-10-15T13:44:15.417922+00:00"
     }
   ],
-  "last_updated": "2026-10-12T18:20:58.005715+00:00"
+  "last_updated": "2026-10-15T13:44:15.417947+00:00"
 }
