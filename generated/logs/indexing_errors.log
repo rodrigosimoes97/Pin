@@ -514,3 +514,11 @@
   }
 }
 
+2026-10-16T13:36:38.038325+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/gut-bacteria-calories-absorbed-guide.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+

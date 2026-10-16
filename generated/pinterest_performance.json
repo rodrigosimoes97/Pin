@@ -164,7 +164,22 @@
       "outbound_clicks": 0,
       "created_at": "2026-10-15T13:44:15.417922+00:00",
       "last_updated": "2026-10-15T13:44:15.417922+00:00"
+    },
+    {
+      "date": "2026-10-16",
+      "url": "https://health-ptg.pages.dev/gut-bacteria-calories-absorbed-guide.html",
+      "topic": "Your Gut Bacteria Could Be Changing How Many Calories You Absorb",
+      "tag": "gut",
+      "intent": "tips",
+      "primary_keyword": "gut bacteria changing many",
+      "title": "How Gut Bacteria Alter Your Calorie Absorption",
+      "impressions": 0,
+      "engagements": 0,
+      "saves": 0,
+      "outbound_clicks": 0,
+      "created_at": "2026-10-16T13:36:38.039593+00:00",
+      "last_updated": "2026-10-16T13:36:38.039593+00:00"
     }
   ],
-  "last_updated": "2026-10-15T13:44:15.417947+00:00"
+  "last_updated": "2026-10-16T13:36:38.039620+00:00"
 }

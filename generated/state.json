@@ -1,8 +1,7 @@
 {
-  "runs": 203,
+  "runs": 204,
   "offer_runs": 21,
   "recent_topics": [
-    "coffee-bone-health-study",
     "biohacking-for-better-sleep",
     "sugar-substitute-hidden-problem",
     "scientists-discover-a-hidden-problem-with-this-pop",
@@ -51,10 +50,10 @@
     "popular-weight-loss-drugs-linked-to-a-surprising-f",
     "eating-olive-oil-before-carbs-has-a-surprising-eff",
     "why-don-t-health-insurers-promote-a-healthier-diet",
-    "scientists-reveal-why-some-workout-recovery-tricks"
+    "scientists-reveal-why-some-workout-recovery-tricks",
+    "your-gut-bacteria-could-be-changing-how-many-calor"
   ],
   "recent_slugs": [
-    "ultra-processed-foods-focus-thief",
     "unlock-best-sleep-energy-focus-health",
     "brain-supplement-lifespan-men",
     "morning-routines-energy-focus-boost-day",
@@ -153,11 +152,11 @@
     "popular-weight-loss-drugs-linked-to-a-surprising-fingernail-problem",
     "eating-olive-oil-before-carbs-has-a-surprising-effect-on-blood-sugar",
     "stop-overcomplicating-why-dont-health-insurers-promote-a-healthier-diet",
-    "scientists-reveal-why-some-workout-recovery-tricks-can-backfire"
+    "scientists-reveal-why-some-workout-recovery-tricks-can-backfire",
+    "gut-bacteria-calories-absorbed-guide"
   ],
-  "last_run": "2026-10-15",
+  "last_run": "2026-10-16",
   "recent_tags": [
-    "health",
     "sleep",
     "gut",
     "health",
@@ -206,11 +205,12 @@
     "health",
     "healthy-habits",
     "health",
-    "healthy-habits"
+    "healthy-habits",
+    "gut"
   ],
   "tag_counts": {
     "sleep": 29,
-    "gut": 26,
+    "gut": 27,
     "mental-wellness": 24,
     "stress": 11,
     "healthy-habits": 56,
@@ -223,7 +223,7 @@
   },
   "topic_rotation": {
     "sleep": 29,
-    "gut": 29,
+    "gut": 30,
     "stress": 23,
     "healthy-habits": 64,
     "longevity": 29,
@@ -235,7 +235,6 @@
     "health": 13
   },
   "recent_titles": [
-    "Fat Loss Without Muscle Loss? New Compound Shows Promise",
     "Quitting Alcohol? Your Brain's Fight Against Relapse",
     "Genes vs. Low-Carb: What About Your Cholesterol?",
     "How to Eat Mindfully for a Happier Gut",
@@ -294,6 +293,7 @@
     "Popular Weight Loss Drugs Linked To A Surprising Fingernail Problem",
     "Eating Olive Oil Before Carbs Has A Surprising Effect On Blood Sugar",
     "Stop Overcomplicating Why Don\u2019t Health Insurers Promote A Healthier Diet?",
-    "Scientists Reveal Why Some Workout Recovery Tricks Can Backfire"
+    "Scientists Reveal Why Some Workout Recovery Tricks Can Backfire",
+    "Stop Overcomplicating Your Gut Bacteria and Calorie Burn"
   ]
 }

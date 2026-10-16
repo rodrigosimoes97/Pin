@@ -80759,3 +80759,103 @@ RuntimeError: Gemini failed after exhaustive retries: key#1 transient_status=429
 2026-10-15 13:50:11,558 ERROR __main__ - [Slot 5] Geração falhou (não recuperável): Missing or invalid recipe field: cook_time_minutes
 2026-10-15 13:50:11,558 ERROR __main__ - [Slot 5] Slot descartado.
 2026-10-15 13:50:11,559 INFO __main__ - Run completo. Publicados 1/5 posts.
+2026-10-16 13:33:38,209 INFO __main__ - Buscando trending topics para USA...
+2026-10-16 13:33:38,554 WARNING src.app.trend_research - Failed to fetch Google Trends (404/Error): The request failed: Google returned a response with code 404. Moving to fallbacks.
+2026-10-16 13:33:41,705 INFO src.app.trend_research - Gathered 10 unique trending topics.
+2026-10-16 13:33:41,706 INFO __main__ - ═══ Slot 1/5 ═══
+2026-10-16 13:33:41,706 INFO __main__ - [Slot 1] Usando trending topic local: Your gut bacteria could be changing how many calories you absorb
+2026-10-16 13:33:41,707 INFO __main__ - [Slot 1] title_hint=Stop Overcomplicating Your Gut Bacteria Could Be Changing How Many Calories...
+2026-10-16 13:33:41,707 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-16 13:33:43,116 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-16 13:33:48,116 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-16 13:33:52,024 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-16 13:33:57,025 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-10-16 13:34:20,902 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-16 13:34:25,903 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 enviando...
+2026-10-16 13:34:29,963 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-16 13:34:34,963 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.6-flash na rodada 1. Aguardando 5s antes de tentar no modelo gemini-3.8-flash.
+2026-10-16 13:34:39,963 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=2 enviando...
+2026-10-16 13:34:40,355 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-16 13:34:50,355 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=2 enviando...
+2026-10-16 13:34:50,778 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-16 13:35:00,778 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=2 enviando...
+2026-10-16 13:35:02,073 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-16 13:35:12,073 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=2 enviando...
+2026-10-16 13:35:12,529 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-16 13:35:22,530 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.8-flash na rodada 2. Aguardando 10s antes de tentar no modelo gemini-3.8-flash.
+2026-10-16 13:35:32,530 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=3 enviando...
+2026-10-16 13:35:35,633 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-16 13:35:50,634 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=3 enviando...
+2026-10-16 13:35:51,115 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-16 13:36:06,116 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=3 enviando...
+2026-10-16 13:36:06,438 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-16 13:36:21,438 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=3 enviando...
+2026-10-16 13:36:33,053 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=3 OK finishReason=STOP len_chars=5278
+2026-10-16 13:36:33,200 INFO src.app.duplicate_checker - Indexed post: gut-bacteria-calories-absorbed-guide (Total: 188)
+2026-10-16 13:36:33,203 INFO src.app.pinterest_seo - [PinterestSEO] 'Stop Overcomplicating Your Gut Bact' → Intent=tips | KW='gut bacteria changing many' | Title='How Gut Bacteria Alter Your Calorie Absorption' (46 chars) | 6 keywords
+2026-10-16 13:36:33,203 INFO __main__ - [Slot 1] Pinterest SEO: Intent=tips | PrimaryKW='gut bacteria changing many' | Title='How Gut Bacteria Alter Your Calorie Absorption' | 6 Keywords
+2026-10-16 13:36:34,224 INFO __main__ - [Slot 1] Submetendo ao Google Indexing: https://rodrigosimoes97.github.io/Pin/gut-bacteria-calories-absorbed-guide.html
+2026-10-16 13:36:34,251 INFO src.app.indexing - Loaded Google service account from raw JSON content.
+2026-10-16 13:36:34,593 WARNING src.app.indexing - Attempt 1: Failed to index https://rodrigosimoes97.github.io/Pin/gut-bacteria-calories-absorbed-guide.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-16 13:36:35,769 WARNING src.app.indexing - Attempt 2: Failed to index https://rodrigosimoes97.github.io/Pin/gut-bacteria-calories-absorbed-guide.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-16 13:36:38,038 WARNING src.app.indexing - Attempt 3: Failed to index https://rodrigosimoes97.github.io/Pin/gut-bacteria-calories-absorbed-guide.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-16 13:36:38,039 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-10-16_pins.csv com 6 keywords
+2026-10-16 13:36:38,040 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'How Gut Bacteria Alter Your Calorie Absorption' (intent=tips)
+2026-10-16 13:36:38,040 INFO __main__ - [Slot 1] ✓ Publicado: gut-bacteria-calories-absorbed-guide.html (offer)
+2026-10-16 13:36:38,040 INFO __main__ - ═══ Slot 2/5 ═══
+2026-10-16 13:36:38,040 INFO __main__ - [Slot 2] Usando trending topic local: Scientists find hidden driver of aging and a simple amino acid that fights memory loss in mice
+2026-10-16 13:36:38,040 INFO __main__ - [Slot 2] title_hint=What Nobody Tells You About Scientists Find Hidden Driver Of Aging And A...
+2026-10-16 13:36:38,040 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-16 13:36:39,629 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-16 13:36:44,629 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-16 13:36:52,141 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 OK finishReason=STOP len_chars=5249
+2026-10-16 13:36:52,142 WARNING __main__ - [Quality] word_count=419 < 450
+2026-10-16 13:36:52,142 WARNING __main__ - [Slot 2] Qualidade insuficiente — artigo descartado
+2026-10-16 13:36:52,142 ERROR __main__ - [Slot 2] Slot descartado.
+2026-10-16 13:36:52,142 INFO __main__ - ═══ Slot 3/5 ═══
+2026-10-16 13:36:52,142 INFO __main__ - [Slot 3] Usando trending topic local: Can Coffee Help Parkinson’s Symptoms?
+2026-10-16 13:36:52,142 INFO __main__ - [Slot 3] title_hint=The Honest Guide to Can Coffee Help Parkinson’S Symptoms? for Busy People
+2026-10-16 13:36:52,143 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-16 13:36:54,438 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-16 13:36:59,439 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-16 13:37:06,445 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 OK finishReason=STOP len_chars=4633
+2026-10-16 13:37:06,446 WARNING __main__ - [Quality] word_count=383 < 450
+2026-10-16 13:37:06,446 WARNING __main__ - [Slot 3] Qualidade insuficiente — artigo descartado
+2026-10-16 13:37:06,446 ERROR __main__ - [Slot 3] Slot descartado.
+2026-10-16 13:37:06,446 INFO __main__ - ═══ Slot 4/5 ═══
+2026-10-16 13:37:06,446 INFO __main__ - [Slot 4] Tópico local: Healthy Recipes (recipes)
+2026-10-16 13:37:06,446 INFO __main__ - [Slot 4] title_hint=Struggling with Healthy Recipes? Try This Sustainable Reset
+2026-10-16 13:37:06,446 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-16 13:37:15,699 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=5443
+2026-10-16 13:37:15,700 ERROR __main__ - [Slot 4] Geração falhou (não recuperável): Missing or invalid recipe field: cook_time_minutes
+2026-10-16 13:37:15,700 ERROR __main__ - [Slot 4] Slot descartado.
+2026-10-16 13:37:15,700 INFO __main__ - ═══ Slot 5/5 ═══
+2026-10-16 13:37:15,700 INFO __main__ - [Slot 5] Tópico local: Healthy Recipes (recipes)
+2026-10-16 13:37:15,700 INFO __main__ - [Slot 5] title_hint=Stop Overcomplicating Healthy Recipes — Here's What Actually Works
+2026-10-16 13:37:15,700 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-16 13:37:25,060 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=6018
+2026-10-16 13:37:25,061 WARNING __main__ - [Quality] word_count=447 < 450
+2026-10-16 13:37:25,061 WARNING __main__ - [Slot 5] Qualidade insuficiente — artigo descartado
+2026-10-16 13:37:25,061 ERROR __main__ - [Slot 5] Slot descartado.
+2026-10-16 13:37:25,061 INFO __main__ - Run completo. Publicados 1/5 posts.
