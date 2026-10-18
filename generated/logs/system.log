@@ -80860,3 +80860,4 @@ RuntimeError: Gemini failed after exhaustive retries: key#1 transient_status=429
 2026-10-16 13:37:25,061 ERROR __main__ - [Slot 5] Slot descartado.
 2026-10-16 13:37:25,061 INFO __main__ - Run completo. Publicados 1/5 posts.
 2026-10-17 12:26:15,628 INFO __main__ - Pulando geração hoje para manter 5 posts/semana.
+2026-10-18 12:49:03,894 INFO __main__ - Pulando geração hoje para manter 5 posts/semana.
