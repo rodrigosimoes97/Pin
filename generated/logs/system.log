@@ -80861,3 +80861,131 @@ RuntimeError: Gemini failed after exhaustive retries: key#1 transient_status=429
 2026-10-16 13:37:25,061 INFO __main__ - Run completo. Publicados 1/5 posts.
 2026-10-17 12:26:15,628 INFO __main__ - Pulando geração hoje para manter 5 posts/semana.
 2026-10-18 12:49:03,894 INFO __main__ - Pulando geração hoje para manter 5 posts/semana.
+2026-10-20 13:52:46,569 INFO __main__ - Buscando trending topics para USA...
+2026-10-20 13:52:46,926 WARNING src.app.trend_research - Failed to fetch Google Trends (404/Error): The request failed: Google returned a response with code 404. Moving to fallbacks.
+2026-10-20 13:52:50,582 INFO src.app.trend_research - Gathered 13 unique trending topics.
+2026-10-20 13:52:50,583 INFO __main__ - ═══ Slot 1/5 ═══
+2026-10-20 13:52:50,584 INFO __main__ - [Slot 1] Usando trending topic local: Scientists discover a surprising link between vitamin C and cancer survival
+2026-10-20 13:52:50,584 INFO __main__ - [Slot 1] title_hint=A Realistic Scientists Discover A Surprising Link Between Vitamin C And...
+2026-10-20 13:52:50,584 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-20 13:52:52,495 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-20 13:52:57,496 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-20 13:52:58,724 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-20 13:53:03,725 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-10-20 13:53:03,960 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-20 13:53:08,960 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 enviando...
+2026-10-20 13:53:09,386 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-20 13:53:14,396 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.6-flash na rodada 1. Aguardando 5s antes de tentar no modelo gemini-3.8-flash.
+2026-10-20 13:53:19,396 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=2 enviando...
+2026-10-20 13:54:19,501 WARNING src.app.gemini_client - [Gemini] key#1 timeout
+2026-10-20 13:54:19,501 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=2 enviando...
+2026-10-20 13:54:19,989 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-20 13:54:29,989 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=2 enviando...
+2026-10-20 13:54:30,574 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-20 13:54:40,574 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=2 enviando...
+2026-10-20 13:55:40,667 WARNING src.app.gemini_client - [Gemini] key#4 timeout
+2026-10-20 13:55:40,667 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.8-flash na rodada 2. Aguardando 10s antes de tentar no modelo gemini-3.8-flash.
+2026-10-20 13:55:50,667 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=3 enviando...
+2026-10-20 13:56:50,775 WARNING src.app.gemini_client - [Gemini] key#1 timeout
+2026-10-20 13:56:50,775 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=3 enviando...
+2026-10-20 13:56:58,968 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-20 13:57:13,968 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=3 enviando...
+2026-10-20 13:58:14,069 WARNING src.app.gemini_client - [Gemini] key#3 timeout
+2026-10-20 13:58:14,069 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=3 enviando...
+2026-10-20 13:58:14,376 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-20 13:58:29,376 ERROR __main__ - [Slot 1] Gemini indisponível: Gemini falhou após 3 rodadas com 4 key(s). Últimos erros: key#3 status=503 (alta demanda no modelo gemini-3.8-flash); key#4 timeout; key#1 timeout; key#2 status=503 (alta demanda no modelo gemini-3.8-flash); key#3 timeout; key#4 status=503 (alta demanda no modelo gemini-3.8-flash)
+2026-10-20 13:58:29,377 ERROR __main__ - [Slot 1] Slot descartado.
+2026-10-20 13:58:29,377 INFO __main__ - ═══ Slot 2/5 ═══
+2026-10-20 13:58:29,377 INFO __main__ - [Slot 2] Usando trending topic local: Scientists discover why some people still can’t taste food after COVID-19
+2026-10-20 13:58:29,377 INFO __main__ - [Slot 2] title_hint=Struggling with Scientists Discover Why Some People Still Can’T Taste Food...
+2026-10-20 13:58:29,378 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-20 13:59:16,875 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=4980
+2026-10-20 13:59:16,876 WARNING __main__ - [Quality] word_count=388 < 450
+2026-10-20 13:59:16,876 WARNING __main__ - [Slot 2] Qualidade insuficiente — artigo descartado
+2026-10-20 13:59:16,876 ERROR __main__ - [Slot 2] Slot descartado.
+2026-10-20 13:59:16,876 INFO __main__ - ═══ Slot 3/5 ═══
+2026-10-20 13:59:16,877 INFO __main__ - [Slot 3] Usando trending topic local: Scientists discover a natural compound that could protect the brain from too much salt
+2026-10-20 13:59:16,877 INFO __main__ - [Slot 3] title_hint=Struggling with Scientists Discover A Natural Compound That Could Protect...
+2026-10-20 13:59:16,877 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-20 13:59:36,845 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-20 13:59:41,845 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-20 14:00:10,315 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-20 14:00:15,315 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-10-20 14:00:39,828 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-20 14:00:44,829 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 enviando...
+2026-10-20 14:00:46,620 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-20 14:00:51,620 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.6-flash na rodada 1. Aguardando 5s antes de tentar no modelo gemini-3.8-flash.
+2026-10-20 14:00:56,620 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=2 enviando...
+2026-10-20 14:00:57,184 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-20 14:01:07,184 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=2 enviando...
+2026-10-20 14:01:07,731 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-20 14:01:17,732 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=2 enviando...
+2026-10-20 14:01:18,115 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-20 14:01:28,116 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=2 enviando...
+2026-10-20 14:01:33,293 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-20 14:01:43,293 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.8-flash na rodada 2. Aguardando 10s antes de tentar no modelo gemini-3.8-flash.
+2026-10-20 14:01:53,294 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=3 enviando...
+2026-10-20 14:02:16,085 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-20 14:02:31,086 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=3 enviando...
+2026-10-20 14:03:31,195 WARNING src.app.gemini_client - [Gemini] key#2 timeout
+2026-10-20 14:03:31,195 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=3 enviando...
+2026-10-20 14:03:32,109 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-10-20 14:03:47,109 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=3 enviando...
+2026-10-20 14:04:47,183 WARNING src.app.gemini_client - [Gemini] key#4 timeout
+2026-10-20 14:04:47,183 ERROR __main__ - [Slot 3] Gemini indisponível: Gemini falhou após 3 rodadas com 4 key(s). Últimos erros: key#3 status=503 (alta demanda no modelo gemini-3.8-flash); key#4 status=503 (alta demanda no modelo gemini-3.8-flash); key#1 status=503 (alta demanda no modelo gemini-3.8-flash); key#2 timeout; key#3 status=503 (alta demanda no modelo gemini-3.8-flash); key#4 timeout
+2026-10-20 14:04:47,183 ERROR __main__ - [Slot 3] Slot descartado.
+2026-10-20 14:04:47,183 INFO __main__ - ═══ Slot 4/5 ═══
+2026-10-20 14:04:47,183 INFO __main__ - [Slot 4] Usando trending topic local: Scientists link a strange sugar in red meat to a 63% higher diabetes risk
+2026-10-20 14:04:47,183 INFO __main__ - [Slot 4] title_hint=What Nobody Tells You About Scientists Link A Strange Sugar In Red Meat To A...
+2026-10-20 14:04:47,183 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-20 14:05:14,106 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=4991
+2026-10-20 14:05:14,107 WARNING __main__ - [Quality] word_count=435 < 450
+2026-10-20 14:05:14,107 WARNING __main__ - [Slot 4] Qualidade insuficiente — artigo descartado
+2026-10-20 14:05:14,107 ERROR __main__ - [Slot 4] Slot descartado.
+2026-10-20 14:05:14,107 INFO __main__ - ═══ Slot 5/5 ═══
+2026-10-20 14:05:14,108 INFO __main__ - [Slot 5] Usando trending topic local: Scientists discover how deep sleep builds muscle, burns fat, and boosts the brain
+2026-10-20 14:05:14,108 INFO __main__ - [Slot 5] title_hint=3 Practical Ways to restart Scientists Discover How Deep Sleep Builds...
+2026-10-20 14:05:14,108 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-20 14:05:23,124 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-20 14:05:28,125 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-20 14:06:28,188 WARNING src.app.gemini_client - [Gemini] key#2 timeout
+2026-10-20 14:06:28,188 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-10-20 14:07:28,270 WARNING src.app.gemini_client - [Gemini] key#3 timeout
+2026-10-20 14:07:28,271 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 enviando...
+2026-10-20 14:07:50,872 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-20 14:07:55,873 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.6-flash na rodada 1. Aguardando 5s antes de tentar no modelo gemini-3.8-flash.
+2026-10-20 14:08:00,873 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=2 enviando...
+2026-10-20 14:08:43,522 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=2 OK finishReason=STOP len_chars=5282
+2026-10-20 14:08:43,676 INFO src.app.duplicate_checker - Indexed post: scientists-discover-how-deep-sleep-builds-muscle-burns-fat-and-boosts-the-brain (Total: 189)
+2026-10-20 14:08:43,679 INFO src.app.pinterest_seo - [PinterestSEO] 'Scientists Discover How Deep Sleep ' → Intent=routine | KW='scientists discover deep sleep' | Title='How Deep Sleep Builds Muscle And Burns Fat' (42 chars) | 8 keywords
+2026-10-20 14:08:43,679 INFO __main__ - [Slot 5] Pinterest SEO: Intent=routine | PrimaryKW='scientists discover deep sleep' | Title='How Deep Sleep Builds Muscle And Burns Fat' | 8 Keywords
+2026-10-20 14:08:44,505 INFO __main__ - [Slot 5] Submetendo ao Google Indexing: https://rodrigosimoes97.github.io/Pin/scientists-discover-how-deep-sleep-builds-muscle-burns-fat-and-boosts-the-brain.html
+2026-10-20 14:08:44,534 INFO src.app.indexing - Loaded Google service account from raw JSON content.
+2026-10-20 14:08:44,838 WARNING src.app.indexing - Attempt 1: Failed to index https://rodrigosimoes97.github.io/Pin/scientists-discover-how-deep-sleep-builds-muscle-burns-fat-and-boosts-the-brain.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-20 14:08:46,060 WARNING src.app.indexing - Attempt 2: Failed to index https://rodrigosimoes97.github.io/Pin/scientists-discover-how-deep-sleep-builds-muscle-burns-fat-and-boosts-the-brain.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-20 14:08:48,345 WARNING src.app.indexing - Attempt 3: Failed to index https://rodrigosimoes97.github.io/Pin/scientists-discover-how-deep-sleep-builds-muscle-burns-fat-and-boosts-the-brain.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-20 14:08:48,347 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-10-20_pins.csv com 8 keywords
+2026-10-20 14:08:48,347 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'How Deep Sleep Builds Muscle And Burns Fat' (intent=routine)
+2026-10-20 14:08:48,347 INFO __main__ - [Slot 5] ✓ Publicado: scientists-discover-how-deep-sleep-builds-muscle-burns-fat-and-boosts-the-brain.html (info)
+2026-10-20 14:08:48,348 INFO __main__ - Run completo. Publicados 1/5 posts.

@@ -522,3 +522,11 @@
   }
 }
 
+2026-10-20T14:08:48.345866+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/scientists-discover-how-deep-sleep-builds-muscle-burns-fat-and-boosts-the-brain.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+

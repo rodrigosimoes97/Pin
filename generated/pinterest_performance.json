@@ -179,7 +179,22 @@
       "outbound_clicks": 0,
       "created_at": "2026-10-16T13:36:38.039593+00:00",
       "last_updated": "2026-10-16T13:36:38.039593+00:00"
+    },
+    {
+      "date": "2026-10-20",
+      "url": "https://health-ptg.pages.dev/scientists-discover-how-deep-sleep-builds-muscle-burns-fat-and-boosts-the-brain.html",
+      "topic": "Scientists Discover How Deep Sleep Builds Muscle, Burns Fat, And Boosts The Brain",
+      "tag": "sleep",
+      "intent": "routine",
+      "primary_keyword": "scientists discover deep sleep",
+      "title": "How Deep Sleep Builds Muscle And Burns Fat",
+      "impressions": 0,
+      "engagements": 0,
+      "saves": 0,
+      "outbound_clicks": 0,
+      "created_at": "2026-10-20T14:08:48.347230+00:00",
+      "last_updated": "2026-10-20T14:08:48.347230+00:00"
     }
   ],
-  "last_updated": "2026-10-16T13:36:38.039620+00:00"
+  "last_updated": "2026-10-20T14:08:48.347250+00:00"
 }

@@ -1,8 +1,7 @@
 {
-  "runs": 204,
+  "runs": 205,
   "offer_runs": 21,
   "recent_topics": [
-    "biohacking-for-better-sleep",
     "sugar-substitute-hidden-problem",
     "scientists-discover-a-hidden-problem-with-this-pop",
     "this-lifestyle-program-improved-cognition-55-more-",
@@ -51,10 +50,10 @@
     "eating-olive-oil-before-carbs-has-a-surprising-eff",
     "why-don-t-health-insurers-promote-a-healthier-diet",
     "scientists-reveal-why-some-workout-recovery-tricks",
-    "your-gut-bacteria-could-be-changing-how-many-calor"
+    "your-gut-bacteria-could-be-changing-how-many-calor",
+    "scientists-discover-how-deep-sleep-builds-muscle-b"
   ],
   "recent_slugs": [
-    "unlock-best-sleep-energy-focus-health",
     "brain-supplement-lifespan-men",
     "morning-routines-energy-focus-boost-day",
     "gut-health-beginners-microbiome-diet",
@@ -153,11 +152,11 @@
     "eating-olive-oil-before-carbs-has-a-surprising-effect-on-blood-sugar",
     "stop-overcomplicating-why-dont-health-insurers-promote-a-healthier-diet",
     "scientists-reveal-why-some-workout-recovery-tricks-can-backfire",
-    "gut-bacteria-calories-absorbed-guide"
+    "gut-bacteria-calories-absorbed-guide",
+    "scientists-discover-how-deep-sleep-builds-muscle-burns-fat-and-boosts-the-brain"
   ],
-  "last_run": "2026-10-16",
+  "last_run": "2026-10-20",
   "recent_tags": [
-    "sleep",
     "gut",
     "health",
     "healthy-habits",
@@ -206,10 +205,11 @@
     "healthy-habits",
     "health",
     "healthy-habits",
-    "gut"
+    "gut",
+    "sleep"
   ],
   "tag_counts": {
-    "sleep": 29,
+    "sleep": 30,
     "gut": 27,
     "mental-wellness": 24,
     "stress": 11,
@@ -222,7 +222,7 @@
     "health": 56
   },
   "topic_rotation": {
-    "sleep": 29,
+    "sleep": 30,
     "gut": 30,
     "stress": 23,
     "healthy-habits": 64,
@@ -235,7 +235,6 @@
     "health": 13
   },
   "recent_titles": [
-    "Quitting Alcohol? Your Brain's Fight Against Relapse",
     "Genes vs. Low-Carb: What About Your Cholesterol?",
     "How to Eat Mindfully for a Happier Gut",
     "Vitamin C & Colds: What the Latest Research Shows",
@@ -294,6 +293,7 @@
     "Eating Olive Oil Before Carbs Has A Surprising Effect On Blood Sugar",
     "Stop Overcomplicating Why Don\u2019t Health Insurers Promote A Healthier Diet?",
     "Scientists Reveal Why Some Workout Recovery Tricks Can Backfire",
-    "Stop Overcomplicating Your Gut Bacteria and Calorie Burn"
+    "Stop Overcomplicating Your Gut Bacteria and Calorie Burn",
+    "Scientists Discover How Deep Sleep Builds Muscle, Burns Fat, And Boosts The Brain"
   ]
 }
