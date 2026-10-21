@@ -1,10 +1,7 @@
 {
-  "runs": 205,
+  "runs": 206,
   "offer_runs": 21,
   "recent_topics": [
-    "sugar-substitute-hidden-problem",
-    "scientists-discover-a-hidden-problem-with-this-pop",
-    "this-lifestyle-program-improved-cognition-55-more-",
     "one-sugary-drink-a-day-linked-to-more-than-double-",
     "popular-brain-supplement-linked-to-shorter-lifespa",
     "compound-in-blueberries-may-help-muscle-cells-burn",
@@ -51,12 +48,12 @@
     "why-don-t-health-insurers-promote-a-healthier-diet",
     "scientists-reveal-why-some-workout-recovery-tricks",
     "your-gut-bacteria-could-be-changing-how-many-calor",
-    "scientists-discover-how-deep-sleep-builds-muscle-b"
+    "scientists-discover-how-deep-sleep-builds-muscle-b",
+    "massive-study-of-460-000-people-challenges-ultra-p",
+    "scientists-find-10-different-diets-linked-to-slowe",
+    "scientists-discover-a-natural-compound-that-could-"
   ],
   "recent_slugs": [
-    "brain-supplement-lifespan-men",
-    "morning-routines-energy-focus-boost-day",
-    "gut-health-beginners-microbiome-diet",
     "calcium-vitamin-d-bone-health-science-update",
     "aging-vs-vitamin-deficiency-signs",
     "vitamin-c-brainpower",
@@ -153,13 +150,13 @@
     "stop-overcomplicating-why-dont-health-insurers-promote-a-healthier-diet",
     "scientists-reveal-why-some-workout-recovery-tricks-can-backfire",
     "gut-bacteria-calories-absorbed-guide",
-    "scientists-discover-how-deep-sleep-builds-muscle-burns-fat-and-boosts-the-brain"
+    "scientists-discover-how-deep-sleep-builds-muscle-burns-fat-and-boosts-the-brain",
+    "massive-study-of-460000-people-challenges-ultra-processed-food-cancer-fears",
+    "scientists-find-10-different-diets-linked-to-slower-aging",
+    "scientists-discover-a-natural-compound-that-could-protect-the-brain-from-too-muc"
   ],
-  "last_run": "2026-10-20",
+  "last_run": "2026-10-21",
   "recent_tags": [
-    "gut",
-    "health",
-    "healthy-habits",
     "gut",
     "longevity",
     "healthy-habits",
@@ -206,15 +203,18 @@
     "health",
     "healthy-habits",
     "gut",
-    "sleep"
+    "sleep",
+    "gut",
+    "longevity",
+    "gut"
   ],
   "tag_counts": {
     "sleep": 30,
-    "gut": 27,
+    "gut": 29,
     "mental-wellness": 24,
     "stress": 11,
     "healthy-habits": 56,
-    "longevity": 23,
+    "longevity": 24,
     "recipes": 9,
     "anti-inflammatory": 9,
     "home-workouts": 10,
@@ -227,17 +227,14 @@
     "stress": 23,
     "healthy-habits": 64,
     "longevity": 29,
-    "recipes": 25,
+    "recipes": 27,
     "anti-inflammatory": 11,
     "home-workouts": 16,
     "weight": 35,
-    "mental-wellness": 2,
+    "mental-wellness": 3,
     "health": 13
   },
   "recent_titles": [
-    "Genes vs. Low-Carb: What About Your Cholesterol?",
-    "How to Eat Mindfully for a Happier Gut",
-    "Vitamin C & Colds: What the Latest Research Shows",
     "Calorie Restriction Benefits? A Diet-Free Path",
     "How to Diversify Gut Bacteria for Peak Well-being",
     "Can Melatonin Hurt Your Heart? Study Reveals Risk",
@@ -294,6 +291,9 @@
     "Stop Overcomplicating Why Don\u2019t Health Insurers Promote A Healthier Diet?",
     "Scientists Reveal Why Some Workout Recovery Tricks Can Backfire",
     "Stop Overcomplicating Your Gut Bacteria and Calorie Burn",
-    "Scientists Discover How Deep Sleep Builds Muscle, Burns Fat, And Boosts The Brain"
+    "Scientists Discover How Deep Sleep Builds Muscle, Burns Fat, And Boosts The Brain",
+    "Massive Study Of 460,000 People Challenges Ultra-Processed Food Cancer Fears: 4 Real Fixes",
+    "Stop Overcomplicating: Scientists Find 10 Different Diets Linked To Slower Aging",
+    "Scientists Discover A Natural Compound That Could Protect The Brain From Too Much Salt"
   ]
 }

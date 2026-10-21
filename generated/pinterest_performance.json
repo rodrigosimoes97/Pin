@@ -194,7 +194,52 @@
       "outbound_clicks": 0,
       "created_at": "2026-10-20T14:08:48.347230+00:00",
       "last_updated": "2026-10-20T14:08:48.347230+00:00"
+    },
+    {
+      "date": "2026-10-21",
+      "url": "https://health-ptg.pages.dev/massive-study-of-460000-people-challenges-ultra-processed-food-cancer-fears.html",
+      "topic": "Massive Study Of 460,000 People Challenges Ultra-Processed Food Cancer Fears",
+      "tag": "gut",
+      "intent": "mistakes",
+      "primary_keyword": "massive study 460000 people",
+      "title": "Ultra-Processed Food Fears Debunked: 4 Practical Steps",
+      "impressions": 0,
+      "engagements": 0,
+      "saves": 0,
+      "outbound_clicks": 0,
+      "created_at": "2026-10-21T14:10:07.298295+00:00",
+      "last_updated": "2026-10-21T14:10:07.298295+00:00"
+    },
+    {
+      "date": "2026-10-21",
+      "url": "https://health-ptg.pages.dev/scientists-find-10-different-diets-linked-to-slower-aging.html",
+      "topic": "Scientists Find 10 Different Diets Linked To Slower Aging",
+      "tag": "longevity",
+      "intent": "mistakes",
+      "primary_keyword": "scientists different diets",
+      "title": "10 Diets Proven to Slow Down Biological Aging",
+      "impressions": 0,
+      "engagements": 0,
+      "saves": 0,
+      "outbound_clicks": 0,
+      "created_at": "2026-10-21T14:10:59.235365+00:00",
+      "last_updated": "2026-10-21T14:10:59.235365+00:00"
+    },
+    {
+      "date": "2026-10-21",
+      "url": "https://health-ptg.pages.dev/scientists-discover-a-natural-compound-that-could-protect-the-brain-from-too-muc.html",
+      "topic": "Scientists Discover A Natural Compound That Could Protect The Brain From Too Much Salt",
+      "tag": "gut",
+      "intent": "tips",
+      "primary_keyword": "scientists discover natural compound",
+      "title": "Protect Your Brain From Salt Damage Naturally",
+      "impressions": 0,
+      "engagements": 0,
+      "saves": 0,
+      "outbound_clicks": 0,
+      "created_at": "2026-10-21T14:14:48.441784+00:00",
+      "last_updated": "2026-10-21T14:14:48.441784+00:00"
     }
   ],
-  "last_updated": "2026-10-20T14:08:48.347250+00:00"
+  "last_updated": "2026-10-21T14:14:48.441823+00:00"
 }

@@ -530,3 +530,27 @@
   }
 }
 
+2026-10-21T14:10:07.296635+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/massive-study-of-460000-people-challenges-ultra-processed-food-cancer-fears.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-21T14:10:59.233152+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/scientists-find-10-different-diets-linked-to-slower-aging.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-21T14:14:48.439425+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/scientists-discover-a-natural-compound-that-could-protect-the-brain-from-too-muc.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+

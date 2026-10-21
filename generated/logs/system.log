@@ -80989,3 +80989,200 @@ RuntimeError: Gemini failed after exhaustive retries: key#1 transient_status=429
 2026-10-20 14:08:48,347 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'How Deep Sleep Builds Muscle And Burns Fat' (intent=routine)
 2026-10-20 14:08:48,347 INFO __main__ - [Slot 5] ✓ Publicado: scientists-discover-how-deep-sleep-builds-muscle-burns-fat-and-boosts-the-brain.html (info)
 2026-10-20 14:08:48,348 INFO __main__ - Run completo. Publicados 1/5 posts.
+2026-10-21 14:08:52,192 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+2026-10-21 14:08:52,212 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-10-21 14:08:52,230 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-21 14:08:52,238 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Fmodules.json=&etag=%22952a9b81c0bfd99800fabf352f69c7ccd46c5e43%22 "HTTP/1.1 200 OK"
+2026-10-21 14:08:52,256 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-21 14:08:52,262 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Fconfig_sentence_transformers.json=&etag=%22fd1b291129c607e5d49799f87cb219b27f98acdf%22 "HTTP/1.1 200 OK"
+2026-10-21 14:08:52,280 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-10-21 14:08:52,287 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2FREADME.md=&etag=%2244af2e3b0fa3a0b6239e48422972bf755f28fde0%22 "HTTP/1.1 200 OK"
+2026-10-21 14:08:52,293 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2FREADME.md=&etag=%2244af2e3b0fa3a0b6239e48422972bf755f28fde0%22 "HTTP/1.1 200 OK"
+2026-10-21 14:08:52,307 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-21 14:08:52,313 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Fsentence_bert_config.json=&etag=%2259d594003bf59880a884c574bf88ef7555bb0202%22 "HTTP/1.1 200 OK"
+2026-10-21 14:08:52,333 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-10-21 14:08:52,348 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-21 14:08:52,354 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Fconfig.json=&etag=%2272b987fd805cfa2b58c4c8c952b274a11bfd5a00%22 "HTTP/1.1 200 OK"
+2026-10-21 14:08:52,397 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/model.safetensors "HTTP/1.1 302 Found"
+2026-10-21 14:08:52,523 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/processor_config.json "HTTP/1.1 404 Not Found"
+2026-10-21 14:08:52,540 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-10-21 14:08:52,558 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-10-21 14:08:52,574 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-21 14:08:52,579 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Ftokenizer_config.json=&etag=%22c79f2b6a0cea6f4b564fed1938984bace9d30ff0%22 "HTTP/1.1 200 OK"
+2026-10-21 14:08:52,602 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-21 14:08:52,620 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-21 14:08:52,635 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/vocab.txt "HTTP/1.1 307 Temporary Redirect"
+2026-10-21 14:08:52,641 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/vocab.txt?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Fvocab.txt=&etag=%22fb140275c155a9c7c5a3b3e0e77a9e839594a938%22 "HTTP/1.1 200 OK"
+2026-10-21 14:08:52,656 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-21 14:08:52,662 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Ftokenizer.json=&etag=%22cb202bfe2e3c98645018a6d12f182a434c9d3e02%22 "HTTP/1.1 200 OK"
+2026-10-21 14:08:52,676 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/added_tokens.json "HTTP/1.1 404 Not Found"
+2026-10-21 14:08:52,689 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/special_tokens_map.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-21 14:08:52,695 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/special_tokens_map.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Fspecial_tokens_map.json=&etag=%22e7b0375001f109a6b8873d756ad4f7bbb15fbaa5%22 "HTTP/1.1 200 OK"
+2026-10-21 14:08:52,714 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/chat_template.jinja "HTTP/1.1 404 Not Found"
+2026-10-21 14:08:52,757 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-21 14:08:52,763 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2F1_Pooling%2Fconfig.json=&etag=%22d1514c3162bbe87b343f565fadc62e6c06f04f03%22 "HTTP/1.1 200 OK"
+2026-10-21 14:08:52,786 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/2_Normalize/config.json "HTTP/1.1 404 Not Found"
+2026-10-21 14:08:52,818 INFO __main__ - Buscando trending topics para USA...
+2026-10-21 14:08:52,917 WARNING src.app.trend_research - Failed to fetch Google Trends (404/Error): The request failed: Google returned a response with code 404. Moving to fallbacks.
+2026-10-21 14:08:56,169 INFO src.app.trend_research - Gathered 15 unique trending topics.
+2026-10-21 14:08:56,172 INFO __main__ - ═══ Slot 1/5 ═══
+2026-10-21 14:08:56,172 INFO __main__ - [Slot 1] Usando trending topic local: Massive study of 460,000 people challenges ultra-processed food cancer fears
+2026-10-21 14:08:56,172 INFO __main__ - [Slot 1] title_hint=4 Practical Ways to boost Massive Study Of 460,000 People Challenges...
+2026-10-21 14:08:56,172 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-21 14:08:56,646 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-21 14:09:01,647 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-21 14:09:28,153 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-21 14:09:33,154 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-10-21 14:09:33,535 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-21 14:09:38,535 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 enviando...
+2026-10-21 14:09:38,898 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-21 14:09:43,899 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.6-flash na rodada 1. Aguardando 5s antes de tentar no modelo gemini-3.8-flash.
+2026-10-21 14:09:48,899 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=2 enviando...
+2026-10-21 14:10:02,688 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=2 OK finishReason=STOP len_chars=5285
+2026-10-21 14:10:02,911 INFO src.app.duplicate_checker - Indexed post: massive-study-of-460000-people-challenges-ultra-processed-food-cancer-fears (Total: 190)
+2026-10-21 14:10:02,914 INFO src.app.pinterest_seo - [PinterestSEO] 'Massive Study Of 460,000 People Cha' → Intent=mistakes | KW='massive study 460000 people' | Title='Ultra-Processed Food Fears Debunked: 4 Practical Steps' (54 chars) | 6 keywords
+2026-10-21 14:10:02,915 INFO __main__ - [Slot 1] Pinterest SEO: Intent=mistakes | PrimaryKW='massive study 460000 people' | Title='Ultra-Processed Food Fears Debunked: 4 Practical Steps' | 6 Keywords
+2026-10-21 14:10:03,810 INFO __main__ - [Slot 1] Submetendo ao Google Indexing: https://rodrigosimoes97.github.io/Pin/massive-study-of-460000-people-challenges-ultra-processed-food-cancer-fears.html
+2026-10-21 14:10:03,852 INFO src.app.indexing - Loaded Google service account from raw JSON content.
+2026-10-21 14:10:04,059 WARNING src.app.indexing - Attempt 1: Failed to index https://rodrigosimoes97.github.io/Pin/massive-study-of-460000-people-challenges-ultra-processed-food-cancer-fears.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-21 14:10:05,213 WARNING src.app.indexing - Attempt 2: Failed to index https://rodrigosimoes97.github.io/Pin/massive-study-of-460000-people-challenges-ultra-processed-food-cancer-fears.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-21 14:10:07,296 WARNING src.app.indexing - Attempt 3: Failed to index https://rodrigosimoes97.github.io/Pin/massive-study-of-460000-people-challenges-ultra-processed-food-cancer-fears.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-21 14:10:07,298 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-10-21_pins.csv com 6 keywords
+2026-10-21 14:10:07,298 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'Ultra-Processed Food Fears Debunked: 4 Practical Steps' (intent=mistakes)
+2026-10-21 14:10:07,298 INFO __main__ - [Slot 1] ✓ Publicado: massive-study-of-460000-people-challenges-ultra-processed-food-cancer-fears.html (offer)
+2026-10-21 14:10:07,298 INFO __main__ - ═══ Slot 2/5 ═══
+2026-10-21 14:10:07,299 INFO __main__ - [Slot 2] Usando trending topic local: Scientists find 10 different diets linked to slower aging
+2026-10-21 14:10:07,299 INFO __main__ - [Slot 2] title_hint=Stop Overcomplicating Scientists Find 10 Different Diets Linked To Slower...
+2026-10-21 14:10:07,299 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-21 14:10:54,514 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=5333
+2026-10-21 14:10:54,702 INFO src.app.duplicate_checker - Indexed post: scientists-find-10-different-diets-linked-to-slower-aging (Total: 191)
+2026-10-21 14:10:54,705 INFO src.app.pinterest_seo - [PinterestSEO] 'Stop Overcomplicating: Scientists F' → Intent=mistakes | KW='scientists different diets' | Title='10 Diets Proven to Slow Down Biological Aging' (45 chars) | 8 keywords
+2026-10-21 14:10:54,705 INFO __main__ - [Slot 2] Pinterest SEO: Intent=mistakes | PrimaryKW='scientists different diets' | Title='10 Diets Proven to Slow Down Biological Aging' | 8 Keywords
+2026-10-21 14:10:55,760 INFO __main__ - [Slot 2] Submetendo ao Google Indexing: https://rodrigosimoes97.github.io/Pin/scientists-find-10-different-diets-linked-to-slower-aging.html
+2026-10-21 14:10:55,801 INFO src.app.indexing - Loaded Google service account from raw JSON content.
+2026-10-21 14:10:55,996 WARNING src.app.indexing - Attempt 1: Failed to index https://rodrigosimoes97.github.io/Pin/scientists-find-10-different-diets-linked-to-slower-aging.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-21 14:10:57,085 WARNING src.app.indexing - Attempt 2: Failed to index https://rodrigosimoes97.github.io/Pin/scientists-find-10-different-diets-linked-to-slower-aging.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-21 14:10:59,232 WARNING src.app.indexing - Attempt 3: Failed to index https://rodrigosimoes97.github.io/Pin/scientists-find-10-different-diets-linked-to-slower-aging.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-21 14:10:59,235 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-10-21_pins.csv com 8 keywords
+2026-10-21 14:10:59,235 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: '10 Diets Proven to Slow Down Biological Aging' (intent=mistakes)
+2026-10-21 14:10:59,236 INFO __main__ - [Slot 2] ✓ Publicado: scientists-find-10-different-diets-linked-to-slower-aging.html (offer)
+2026-10-21 14:10:59,236 INFO __main__ - ═══ Slot 3/5 ═══
+2026-10-21 14:10:59,236 INFO __main__ - [Slot 3] Usando trending topic local: Scientists discover a surprising link between vitamin C and cancer survival
+2026-10-21 14:10:59,236 INFO __main__ - [Slot 3] title_hint=The Honest Guide to Scientists Discover A Surprising Link Between Vitamin C...
+2026-10-21 14:10:59,236 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-21 14:10:59,666 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-21 14:11:04,666 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-21 14:11:06,260 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-21 14:11:11,260 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-10-21 14:11:11,581 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-21 14:11:16,582 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 enviando...
+2026-10-21 14:11:17,021 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-21 14:11:22,021 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.6-flash na rodada 1. Aguardando 5s antes de tentar no modelo gemini-3.8-flash.
+2026-10-21 14:11:27,021 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=2 enviando...
+2026-10-21 14:11:48,009 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=2 OK finishReason=STOP len_chars=4351
+2026-10-21 14:11:48,011 WARNING __main__ - [Quality] word_count=359 < 450
+2026-10-21 14:11:48,011 WARNING __main__ - [Slot 3] Qualidade insuficiente — artigo descartado
+2026-10-21 14:11:48,011 ERROR __main__ - [Slot 3] Slot descartado.
+2026-10-21 14:11:48,011 INFO __main__ - ═══ Slot 4/5 ═══
+2026-10-21 14:11:48,011 INFO __main__ - [Slot 4] Usando trending topic local: Scientists discover why some people still can’t taste food after COVID-19
+2026-10-21 14:11:48,011 INFO __main__ - [Slot 4] title_hint=How to optimize Scientists Discover Why Some People Still Can’T Taste Food...
+2026-10-21 14:11:48,011 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-21 14:11:49,428 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-21 14:11:54,429 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-21 14:11:54,917 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-21 14:11:59,917 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-10-21 14:12:00,458 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-21 14:12:05,458 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 enviando...
+2026-10-21 14:12:39,082 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 OK finishReason=STOP len_chars=4766
+2026-10-21 14:12:39,083 WARNING __main__ - [Quality] word_count=383 < 450
+2026-10-21 14:12:39,084 WARNING __main__ - [Slot 4] Qualidade insuficiente — artigo descartado
+2026-10-21 14:12:39,084 ERROR __main__ - [Slot 4] Slot descartado.
+2026-10-21 14:12:39,084 INFO __main__ - ═══ Slot 5/5 ═══
+2026-10-21 14:12:39,084 INFO __main__ - [Slot 5] Usando trending topic local: Scientists discover a natural compound that could protect the brain from too much salt
+2026-10-21 14:12:39,084 INFO __main__ - [Slot 5] title_hint=The Honest Guide to Scientists Discover A Natural Compound That Could...
+2026-10-21 14:12:39,084 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-21 14:12:46,507 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-21 14:12:51,507 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-21 14:13:19,383 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-21 14:13:24,383 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-10-21 14:14:07,198 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-21 14:14:12,199 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 enviando...
+2026-10-21 14:14:19,640 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-21 14:14:24,641 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.6-flash na rodada 1. Aguardando 5s antes de tentar no modelo gemini-3.8-flash.
+2026-10-21 14:14:29,641 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=2 enviando...
+2026-10-21 14:14:43,567 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=2 OK finishReason=STOP len_chars=5215
+2026-10-21 14:14:43,749 INFO src.app.duplicate_checker - Indexed post: scientists-discover-a-natural-compound-that-could-protect-the-brain-from-too-muc (Total: 192)
+2026-10-21 14:14:43,753 INFO src.app.pinterest_seo - [PinterestSEO] 'Scientists Discover A Natural Compo' → Intent=tips | KW='scientists discover natural compound' | Title='Protect Your Brain From Salt Damage Naturally' (45 chars) | 6 keywords
+2026-10-21 14:14:43,753 INFO __main__ - [Slot 5] Pinterest SEO: Intent=tips | PrimaryKW='scientists discover natural compound' | Title='Protect Your Brain From Salt Damage Naturally' | 6 Keywords
+2026-10-21 14:14:45,037 INFO __main__ - [Slot 5] Submetendo ao Google Indexing: https://rodrigosimoes97.github.io/Pin/scientists-discover-a-natural-compound-that-could-protect-the-brain-from-too-muc.html
+2026-10-21 14:14:45,078 INFO src.app.indexing - Loaded Google service account from raw JSON content.
+2026-10-21 14:14:45,220 WARNING src.app.indexing - Attempt 1: Failed to index https://rodrigosimoes97.github.io/Pin/scientists-discover-a-natural-compound-that-could-protect-the-brain-from-too-muc.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-21 14:14:46,362 WARNING src.app.indexing - Attempt 2: Failed to index https://rodrigosimoes97.github.io/Pin/scientists-discover-a-natural-compound-that-could-protect-the-brain-from-too-muc.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-21 14:14:48,438 WARNING src.app.indexing - Attempt 3: Failed to index https://rodrigosimoes97.github.io/Pin/scientists-discover-a-natural-compound-that-could-protect-the-brain-from-too-muc.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-21 14:14:48,441 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-10-21_pins.csv com 6 keywords
+2026-10-21 14:14:48,442 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'Protect Your Brain From Salt Damage Naturally' (intent=tips)
+2026-10-21 14:14:48,442 INFO __main__ - [Slot 5] ✓ Publicado: scientists-discover-a-natural-compound-that-could-protect-the-brain-from-too-muc.html (offer)
+2026-10-21 14:14:48,442 INFO __main__ - Run completo. Publicados 3/5 posts.

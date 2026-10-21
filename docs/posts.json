@@ -1,5 +1,32 @@
 [
   {
+    "slug": "scientists-discover-a-natural-compound-that-could-protect-the-brain-from-too-muc",
+    "title": "Scientists Discover A Natural Compound That Could Protect The Brain From Too Much Salt",
+    "description": "Scientists discover a natural compound that could protect the brain from too much salt. Learn how gut health curbs sodium-induced cognitive decline.",
+    "date": "2026-10-21",
+    "url": "scientists-discover-a-natural-compound-that-could-protect-the-brain-from-too-muc.html",
+    "hero": "assets/2026-10-21_scientists-discover-a-natural-compound-that-could-protect-the-brain-from-too-muc.jpeg",
+    "tag": "gut"
+  },
+  {
+    "slug": "scientists-find-10-different-diets-linked-to-slower-aging",
+    "title": "Stop Overcomplicating: Scientists Find 10 Different Diets Linked To Slower Aging",
+    "description": "Scientists find 10 different diets linked to slower aging. Learn how simple food choices and restorative sleep can transform your long-term health.",
+    "date": "2026-10-21",
+    "url": "scientists-find-10-different-diets-linked-to-slower-aging.html",
+    "hero": "assets/2026-10-21_scientists-find-10-different-diets-linked-to-slower-aging.jpeg",
+    "tag": "longevity"
+  },
+  {
+    "slug": "massive-study-of-460000-people-challenges-ultra-processed-food-cancer-fears",
+    "title": "Massive Study Of 460,000 People Challenges Ultra-Processed Food Cancer Fears: 4 Real Fixes",
+    "description": "Massive Study Of 460,000 People Challenges Ultra-Processed Food Cancer Fears: discover practical, science-backed steps to support daily gut balance and health.",
+    "date": "2026-10-21",
+    "url": "massive-study-of-460000-people-challenges-ultra-processed-food-cancer-fears.html",
+    "hero": "assets/2026-10-21_massive-study-of-460000-people-challenges-ultra-processed-food-cancer-fears.jpeg",
+    "tag": "gut"
+  },
+  {
     "slug": "scientists-discover-how-deep-sleep-builds-muscle-burns-fat-and-boosts-the-brain",
     "title": "Scientists Discover How Deep Sleep Builds Muscle, Burns Fat, And Boosts The Brain",
     "description": "Scientists discover how deep sleep builds muscle, burns fat, and boosts the brain. Learn 3 simple, practical shifts to trigger recovery tonight.",
@@ -1771,32 +1798,5 @@
     "url": "healthy-eating-budget-families.html",
     "hero": "assets/2026-03-30_healthy-eating-budget-families.webp",
     "tag": "recipes"
-  },
-  {
-    "slug": "high-protein-breakfasts-active-lifestyle",
-    "title": "Feel Fuller, Move More: High-Protein Breakfasts for Your Active Life",
-    "description": "Discover delicious and satiating high-protein breakfast ideas designed for active lifestyles. Learn how to fuel your day and stay energized.",
-    "date": "2026-03-30",
-    "url": "high-protein-breakfasts-active-lifestyle.html",
-    "hero": "assets/2026-03-30_high-protein-breakfasts-active-lifestyle.webp",
-    "tag": "healthy-habits"
-  },
-  {
-    "slug": "maintain-strength-independence-age",
-    "title": "How to Maintain Strength and Independence as You Age",
-    "description": "Learn practical strategies to keep your strength and independence as you age. This guide offers expert advice and personal insights for a vibrant, active future.",
-    "date": "2026-03-30",
-    "url": "maintain-strength-independence-age.html",
-    "hero": "assets/2026-03-30_maintain-strength-independence-age.webp",
-    "tag": "longevity"
-  },
-  {
-    "slug": "stress-support-nervous-system-hacks",
-    "title": "Feeling Stressed? Try These Nervous System Hacks",
-    "description": "Discover practical, science-backed techniques to calm your nervous system and manage stress. Learn how to hack your stress response for a more peaceful life.",
-    "date": "2026-03-30",
-    "url": "stress-support-nervous-system-hacks.html",
-    "hero": "assets/2026-03-30_stress-support-nervous-system-hacks.webp",
-    "tag": "stress"
   }
 ]
