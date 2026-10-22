@@ -1,5 +1,23 @@
 [
   {
+    "slug": "scientists-discover-a-surprising-link-between-vitamin-c-and-cancer-survival",
+    "title": "Scientists Discover A Surprising Link Between Vitamin C And Cancer Survival",
+    "description": "Scientists Discover A Surprising Link Between Vitamin C And Cancer Survival. Learn how high-dose IV therapies and gut health change the game.",
+    "date": "2026-10-22",
+    "url": "scientists-discover-a-surprising-link-between-vitamin-c-and-cancer-survival.html",
+    "hero": "assets/2026-10-22_scientists-discover-a-surprising-link-between-vitamin-c-and-cancer-survival.jpeg",
+    "tag": "longevity"
+  },
+  {
+    "slug": "people-are-taking-an-unapproved-weight-loss-drug-ai-found-something-surprising",
+    "title": "People Are Taking An Unapproved Weight-Loss Drug. Ai Found Something Surprising",
+    "description": "People Are Taking An Unapproved Weight-Loss Drug. Ai Found Something Surprising about off-label compounds and sustainable weight management.",
+    "date": "2026-10-22",
+    "url": "people-are-taking-an-unapproved-weight-loss-drug-ai-found-something-surprising.html",
+    "hero": "assets/2026-10-22_people-are-taking-an-unapproved-weight-loss-drug-ai-found-something-surprising.jpeg",
+    "tag": "weight"
+  },
+  {
     "slug": "scientists-discover-a-natural-compound-that-could-protect-the-brain-from-too-muc",
     "title": "Scientists Discover A Natural Compound That Could Protect The Brain From Too Much Salt",
     "description": "Scientists discover a natural compound that could protect the brain from too much salt. Learn how gut health curbs sodium-induced cognitive decline.",
@@ -1780,23 +1798,5 @@
     "url": "walk-weight-loss-routines.html",
     "hero": "assets/2026-03-31_walk-weight-loss-routines.webp",
     "tag": "weight"
-  },
-  {
-    "slug": "anti-inflammatory-foods-repair-body",
-    "title": "Practical Foods to Repair Your Body Now: Heal with Antioxidants & Healthy Fats",
-    "description": "Discover anti-inflammatory foods packed with antioxidants and healthy fats to help your body heal. Learn practical tips and easy recipes.",
-    "date": "2026-03-31",
-    "url": "anti-inflammatory-foods-repair-body.html",
-    "hero": "assets/2026-03-31_anti-inflammatory-foods-repair-body.webp",
-    "tag": "anti-inflammatory"
-  },
-  {
-    "slug": "healthy-eating-budget-families",
-    "title": "How to Eat Healthy on a Budget for Families",
-    "description": "Discover practical tips and budget-friendly meal prep strategies for US families to eat healthy without breaking the bank. Learn how to save money and nourish your loved ones.",
-    "date": "2026-03-30",
-    "url": "healthy-eating-budget-families.html",
-    "hero": "assets/2026-03-30_healthy-eating-budget-families.webp",
-    "tag": "recipes"
   }
 ]

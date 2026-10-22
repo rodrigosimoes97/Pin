@@ -554,3 +554,19 @@
   }
 }
 
+2026-10-22T14:08:48.164385+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/people-are-taking-an-unapproved-weight-loss-drug-ai-found-something-surprising.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-22T14:09:01.810374+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/scientists-discover-a-surprising-link-between-vitamin-c-and-cancer-survival.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+

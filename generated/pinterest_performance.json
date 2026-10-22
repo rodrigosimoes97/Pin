@@ -239,7 +239,37 @@
       "outbound_clicks": 0,
       "created_at": "2026-10-21T14:14:48.441784+00:00",
       "last_updated": "2026-10-21T14:14:48.441784+00:00"
+    },
+    {
+      "date": "2026-10-22",
+      "url": "https://health-ptg.pages.dev/people-are-taking-an-unapproved-weight-loss-drug-ai-found-something-surprising.html",
+      "topic": "People Are Taking An Unapproved Weight-Loss Drug. Ai Found Something Surprising",
+      "tag": "weight",
+      "intent": "guide",
+      "primary_keyword": "people taking unapproved weight-loss",
+      "title": "The Truth Behind Unapproved Weight-Loss Drugs",
+      "impressions": 0,
+      "engagements": 0,
+      "saves": 0,
+      "outbound_clicks": 0,
+      "created_at": "2026-10-22T14:08:48.166596+00:00",
+      "last_updated": "2026-10-22T14:08:48.166596+00:00"
+    },
+    {
+      "date": "2026-10-22",
+      "url": "https://health-ptg.pages.dev/scientists-discover-a-surprising-link-between-vitamin-c-and-cancer-survival.html",
+      "topic": "Scientists Discover A Surprising Link Between Vitamin C And Cancer Survival",
+      "tag": "longevity",
+      "intent": "mistakes",
+      "primary_keyword": "scientists discover surprising link",
+      "title": "Stop Making These Longevity Mistakes (Longevity Guide)",
+      "impressions": 0,
+      "engagements": 0,
+      "saves": 0,
+      "outbound_clicks": 0,
+      "created_at": "2026-10-22T14:09:01.812815+00:00",
+      "last_updated": "2026-10-22T14:09:01.812815+00:00"
     }
   ],
-  "last_updated": "2026-10-21T14:14:48.441823+00:00"
+  "last_updated": "2026-10-22T14:09:01.812857+00:00"
 }
