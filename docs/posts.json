@@ -1,5 +1,23 @@
 [
   {
+    "slug": "yoga-put-to-the-test-what-the-science-really-shows",
+    "title": "Yoga Put To The Test: What The Science Really Shows for Health",
+    "description": "We examine Yoga Put To The Test: What The Science Really Shows to reveal how targeted poses lower cortisol, boost heart health, and calm the mind.",
+    "date": "2026-10-23",
+    "url": "yoga-put-to-the-test-what-the-science-really-shows.html",
+    "hero": "assets/2026-10-23_yoga-put-to-the-test-what-the-science-really-shows.jpeg",
+    "tag": "healthy-habits"
+  },
+  {
+    "slug": "millions-take-fish-oil-for-brain-health-a-two-year-study-found-no-benefit",
+    "title": "Millions Take Fish Oil For Brain Health. A Two-Year Study Found No Benefit",
+    "description": "Millions Take Fish Oil For Brain Health. A Two-Year Study Found No Benefit. Learn what actually boosts your memory and brain focus naturally.",
+    "date": "2026-10-23",
+    "url": "millions-take-fish-oil-for-brain-health-a-two-year-study-found-no-benefit.html",
+    "hero": "assets/2026-10-23_millions-take-fish-oil-for-brain-health-a-two-year-study-found-no-benefit.jpeg",
+    "tag": "healthy-habits"
+  },
+  {
     "slug": "scientists-discover-a-surprising-link-between-vitamin-c-and-cancer-survival",
     "title": "Scientists Discover A Surprising Link Between Vitamin C And Cancer Survival",
     "description": "Scientists Discover A Surprising Link Between Vitamin C And Cancer Survival. Learn how high-dose IV therapies and gut health change the game.",
@@ -1780,23 +1798,5 @@
     "url": "use-light-for-perfect-sleep.html",
     "hero": "assets/2026-03-31_use-light-for-perfect-sleep.webp",
     "tag": "sleep"
-  },
-  {
-    "slug": "quick-home-strength-workouts-any-space",
-    "title": "Quick Home Strength Workouts for Any Space",
-    "description": "Discover effective no-equipment strength training routines you can do at home, even in the smallest spaces. Get stronger without a gym!",
-    "date": "2026-03-31",
-    "url": "quick-home-strength-workouts-any-space.html",
-    "hero": "assets/2026-03-31_quick-home-strength-workouts-any-space.webp",
-    "tag": "home-workouts"
-  },
-  {
-    "slug": "walk-weight-loss-routines",
-    "title": "Walk Your Way to Weight Loss: Simple Routines",
-    "description": "Discover how low-impact walking routines can be your secret weapon for weight management. Learn simple, effective strategies to get moving and shed pounds.",
-    "date": "2026-03-31",
-    "url": "walk-weight-loss-routines.html",
-    "hero": "assets/2026-03-31_walk-weight-loss-routines.webp",
-    "tag": "weight"
   }
 ]

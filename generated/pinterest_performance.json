@@ -269,7 +269,37 @@
       "outbound_clicks": 0,
       "created_at": "2026-10-22T14:09:01.812815+00:00",
       "last_updated": "2026-10-22T14:09:01.812815+00:00"
+    },
+    {
+      "date": "2026-10-23",
+      "url": "https://health-ptg.pages.dev/millions-take-fish-oil-for-brain-health-a-two-year-study-found-no-benefit.html",
+      "topic": "Millions Take Fish Oil For Brain Health. A Two-Year Study Found No Benefit",
+      "tag": "healthy-habits",
+      "intent": "guide",
+      "primary_keyword": "millions take fish oil",
+      "title": "Millions Take Fish Oil For Brain Health: The Truth",
+      "impressions": 0,
+      "engagements": 0,
+      "saves": 0,
+      "outbound_clicks": 0,
+      "created_at": "2026-10-23T13:51:12.698745+00:00",
+      "last_updated": "2026-10-23T13:51:12.698745+00:00"
+    },
+    {
+      "date": "2026-10-23",
+      "url": "https://health-ptg.pages.dev/yoga-put-to-the-test-what-the-science-really-shows.html",
+      "topic": "Yoga Put To The Test: What The Science Really Shows",
+      "tag": "healthy-habits",
+      "intent": "guide",
+      "primary_keyword": "yoga put test science",
+      "title": "Yoga Put To The Test: What The Science Really Shows",
+      "impressions": 0,
+      "engagements": 0,
+      "saves": 0,
+      "outbound_clicks": 0,
+      "created_at": "2026-10-23T13:52:04.121805+00:00",
+      "last_updated": "2026-10-23T13:52:04.121805+00:00"
     }
   ],
-  "last_updated": "2026-10-22T14:09:01.812857+00:00"
+  "last_updated": "2026-10-23T13:52:04.121842+00:00"
 }

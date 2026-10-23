@@ -570,3 +570,19 @@
   }
 }
 
+2026-10-23T13:51:12.696653+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/millions-take-fish-oil-for-brain-health-a-two-year-study-found-no-benefit.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-23T13:52:04.119274+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/yoga-put-to-the-test-what-the-science-really-shows.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
