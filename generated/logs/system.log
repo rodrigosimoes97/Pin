@@ -81471,3 +81471,4 @@ RuntimeError: Gemini failed after exhaustive retries: key#1 transient_status=429
 2026-10-23 13:52:04,122 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'Yoga Put To The Test: What The Science Really Shows' (intent=guide)
 2026-10-23 13:52:04,122 INFO __main__ - [Slot 5] ✓ Publicado: yoga-put-to-the-test-what-the-science-really-shows.html (info)
 2026-10-23 13:52:04,122 INFO __main__ - Run completo. Publicados 2/5 posts.
+2026-10-24 12:56:56,630 INFO __main__ - Pulando geração hoje para manter 5 posts/semana.
