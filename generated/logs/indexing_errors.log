@@ -586,3 +586,35 @@
   }
 }
 
+2026-10-26T15:32:05.599710+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/4-action-steps-desperate-for-heart-surgery-for-their-baby-a-family-feels-hospita.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-26T15:34:17.865991+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/mediterranean-diet-may-boost-tiny-proteins-that-protect-the-heart-and-brain.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-26T15:34:48.862158+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/coffee-calories-have-jumped-nearly-40-percent-sugar-isnt-the-biggest-culprit.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-26T15:35:21.734209+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/best-foods-to-fight-h-pylori-habits.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+

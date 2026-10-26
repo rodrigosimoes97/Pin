@@ -299,7 +299,67 @@
       "outbound_clicks": 0,
       "created_at": "2026-10-23T13:52:04.121805+00:00",
       "last_updated": "2026-10-23T13:52:04.121805+00:00"
+    },
+    {
+      "date": "2026-10-26",
+      "url": "https://health-ptg.pages.dev/4-action-steps-desperate-for-heart-surgery-for-their-baby-a-family-feels-hospita.html",
+      "topic": "Desperate For Heart Surgery For Their Baby, A Family Feels The Effects Of Pediatric Hospital Shortages",
+      "tag": "health",
+      "intent": "list",
+      "primary_keyword": "desperate heart surgery baby",
+      "title": "Navigating Pediatric Care Shortages: 4 Steps for Parents",
+      "impressions": 0,
+      "engagements": 0,
+      "saves": 0,
+      "outbound_clicks": 0,
+      "created_at": "2026-10-26T15:32:05.601968+00:00",
+      "last_updated": "2026-10-26T15:32:05.601968+00:00"
+    },
+    {
+      "date": "2026-10-26",
+      "url": "https://health-ptg.pages.dev/mediterranean-diet-may-boost-tiny-proteins-that-protect-the-heart-and-brain.html",
+      "topic": "Mediterranean Diet May Boost Tiny Proteins That Protect The Heart And Brain",
+      "tag": "longevity",
+      "intent": "guide",
+      "primary_keyword": "mediterranean diet boost tiny",
+      "title": "Boost Proteins That Protect Your Heart And Brain",
+      "impressions": 0,
+      "engagements": 0,
+      "saves": 0,
+      "outbound_clicks": 0,
+      "created_at": "2026-10-26T15:34:17.867675+00:00",
+      "last_updated": "2026-10-26T15:34:17.867675+00:00"
+    },
+    {
+      "date": "2026-10-26",
+      "url": "https://health-ptg.pages.dev/coffee-calories-have-jumped-nearly-40-percent-sugar-isnt-the-biggest-culprit.html",
+      "topic": "Coffee Calories Have Jumped Nearly 40%. Sugar Isnt The Biggest Culprit",
+      "tag": "healthy-habits",
+      "intent": "list",
+      "primary_keyword": "coffee calories jumped nearly",
+      "title": "Why Coffee Calories Jumped 40 Percent (Not Sugar)",
+      "impressions": 0,
+      "engagements": 0,
+      "saves": 0,
+      "outbound_clicks": 0,
+      "created_at": "2026-10-26T15:34:48.864009+00:00",
+      "last_updated": "2026-10-26T15:34:48.864009+00:00"
+    },
+    {
+      "date": "2026-10-26",
+      "url": "https://health-ptg.pages.dev/best-foods-to-fight-h-pylori-habits.html",
+      "topic": "The Best Foods To Fight H. Pylori",
+      "tag": "gut",
+      "intent": "list",
+      "primary_keyword": "best foods fight pylori",
+      "title": "3 Natural Foods That Fight H. Pylori Fast",
+      "impressions": 0,
+      "engagements": 0,
+      "saves": 0,
+      "outbound_clicks": 0,
+      "created_at": "2026-10-26T15:35:21.735895+00:00",
+      "last_updated": "2026-10-26T15:35:21.735895+00:00"
     }
   ],
-  "last_updated": "2026-10-23T13:52:04.121842+00:00"
+  "last_updated": "2026-10-26T15:35:21.735928+00:00"
 }

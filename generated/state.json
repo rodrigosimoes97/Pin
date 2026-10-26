@@ -1,11 +1,7 @@
 {
-  "runs": 208,
+  "runs": 209,
   "offer_runs": 21,
   "recent_topics": [
-    "scientists-discover-strange-link-between-low-vitam",
-    "experimental-therapy-gantenerumab-fails-to-slow-or",
-    "scientists-find-ozempic-may-slow-aging-itself",
-    "the-corporate-playbook-behind-undermining-dietary-",
     "scientists-find-the-whole-grain-sweet-spot-for-bet",
     "ultra-processed-foods-linked-to-hidden-muscle-fat-",
     "smelling-chocolate-helped-men-complete-more-reps-w",
@@ -51,13 +47,13 @@
     "people-are-taking-an-unapproved-weight-loss-drug-a",
     "scientists-discover-a-surprising-link-between-vita",
     "millions-take-fish-oil-for-brain-health-a-two-year",
-    "yoga-put-to-the-test-what-the-science-really-shows"
+    "yoga-put-to-the-test-what-the-science-really-shows",
+    "desperate-for-heart-surgery-for-their-baby-a-famil",
+    "mediterranean-diet-may-boost-tiny-proteins-that-pr",
+    "coffee-calories-have-jumped-nearly-40-sugar-isnt-t",
+    "the-best-foods-to-fight-h-pylori"
   ],
   "recent_slugs": [
-    "new-vitamin-a-discovery-rewrites-vision-science",
-    "stress-management-techniques-busy-professionals",
-    "lung-cancer-young-non-smokers-causes",
-    "gut-health-weight-loss-microbiome-connection",
     "unlock-your-best-sleep-daily-habits-for-more-energy-focus",
     "holistic-sleep-optimization-boost-energy-productivity",
     "intermittent-fasting-longevity-healthspan",
@@ -153,14 +149,14 @@
     "people-are-taking-an-unapproved-weight-loss-drug-ai-found-something-surprising",
     "scientists-discover-a-surprising-link-between-vitamin-c-and-cancer-survival",
     "millions-take-fish-oil-for-brain-health-a-two-year-study-found-no-benefit",
-    "yoga-put-to-the-test-what-the-science-really-shows"
+    "yoga-put-to-the-test-what-the-science-really-shows",
+    "4-action-steps-desperate-for-heart-surgery-for-their-baby-a-family-feels-hospita",
+    "mediterranean-diet-may-boost-tiny-proteins-that-protect-the-heart-and-brain",
+    "coffee-calories-have-jumped-nearly-40-percent-sugar-isnt-the-biggest-culprit",
+    "best-foods-to-fight-h-pylori-habits"
   ],
-  "last_run": "2026-10-23",
+  "last_run": "2026-10-26",
   "recent_tags": [
-    "health",
-    "longevity",
-    "longevity",
-    "sleep",
     "healthy-habits",
     "healthy-habits",
     "healthy-habits",
@@ -206,20 +202,24 @@
     "weight",
     "longevity",
     "healthy-habits",
-    "healthy-habits"
+    "healthy-habits",
+    "health",
+    "longevity",
+    "healthy-habits",
+    "gut"
   ],
   "tag_counts": {
     "sleep": 30,
-    "gut": 29,
+    "gut": 30,
     "mental-wellness": 24,
     "stress": 11,
-    "healthy-habits": 58,
-    "longevity": 25,
+    "healthy-habits": 59,
+    "longevity": 26,
     "recipes": 9,
     "anti-inflammatory": 9,
     "home-workouts": 10,
     "weight": 24,
-    "health": 56
+    "health": 57
   },
   "topic_rotation": {
     "sleep": 31,
@@ -227,18 +227,14 @@
     "stress": 23,
     "healthy-habits": 64,
     "longevity": 29,
-    "recipes": 27,
+    "recipes": 29,
     "anti-inflammatory": 11,
     "home-workouts": 17,
-    "weight": 35,
+    "weight": 36,
     "mental-wellness": 4,
-    "health": 14
+    "health": 15
   },
   "recent_titles": [
-    "Immune Memory Loss? How Obesity Changes Your Defenses",
-    "Morning Brew's Bone-Busting Secret? Study Says Yes",
-    "The Biohacker's Guide to Superior Sleep Quality",
-    "Sweetener Swap? New Gut Health Concerns Emerge",
     "A Realistic Look: Scientists Discover A Hidden Problem With This Popular Sugar Substitute",
     "This Lifestyle Program Improved Cognition 55% More Than Basic Health Advice",
     "3 Science-Backed Lessons: Sugary Drinks & Stomach Cancer Risk",
@@ -294,6 +290,10 @@
     "People Are Taking An Unapproved Weight-Loss Drug. Ai Found Something Surprising",
     "Scientists Discover A Surprising Link Between Vitamin C And Cancer Survival",
     "Millions Take Fish Oil For Brain Health. A Two-Year Study Found No Benefit",
-    "Yoga Put To The Test: What The Science Really Shows for Health"
+    "Yoga Put To The Test: What The Science Really Shows for Health",
+    "4 Action Steps: Desperate For Heart Surgery For Their Baby, A Family Feels Hospital Shortages",
+    "Mediterranean Diet May Boost Tiny Proteins That Protect The Heart And Brain",
+    "Coffee Calories Have Jumped Nearly 40%. Sugar Isnt The Biggest Culprit",
+    "3 Science-Backed The Best Foods To Fight H. Pylori Habits"
   ]
 }
