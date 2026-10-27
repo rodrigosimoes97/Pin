@@ -359,7 +359,37 @@
       "outbound_clicks": 0,
       "created_at": "2026-10-26T15:35:21.735895+00:00",
       "last_updated": "2026-10-26T15:35:21.735895+00:00"
+    },
+    {
+      "date": "2026-10-27",
+      "url": "https://health-ptg.pages.dev/low-testosterone-may-make-sugar-far-more-harmful-to-your-liver.html",
+      "topic": "Low Testosterone May Make Sugar Far More Harmful To Your Liver",
+      "tag": "gut",
+      "intent": "list",
+      "primary_keyword": "low testosterone sugar far",
+      "title": "6 Ways Low Testosterone May Make Sugar Far More Harmful To Your Liver",
+      "impressions": 0,
+      "engagements": 0,
+      "saves": 0,
+      "outbound_clicks": 0,
+      "created_at": "2026-10-27T14:57:22.589019+00:00",
+      "last_updated": "2026-10-27T14:57:22.589019+00:00"
+    },
+    {
+      "date": "2026-10-27",
+      "url": "https://health-ptg.pages.dev/6-science-backed-habits-are-supplements-the-new-snake-oil.html",
+      "topic": "Are Supplements The New Snake Oil?",
+      "tag": "healthy-habits",
+      "intent": "list",
+      "primary_keyword": "supplements snake oil",
+      "title": "Are Supplements The New Snake Oil? 6 Science-Backed Habits",
+      "impressions": 0,
+      "engagements": 0,
+      "saves": 0,
+      "outbound_clicks": 0,
+      "created_at": "2026-10-27T14:57:54.229427+00:00",
+      "last_updated": "2026-10-27T14:57:54.229427+00:00"
     }
   ],
-  "last_updated": "2026-10-26T15:35:21.735928+00:00"
+  "last_updated": "2026-10-27T14:57:54.229467+00:00"
 }

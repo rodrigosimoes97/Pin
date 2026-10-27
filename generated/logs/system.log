@@ -81676,3 +81676,148 @@ RuntimeError: Gemini failed after exhaustive retries: key#1 transient_status=429
 2026-10-26 15:35:21,736 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: '3 Natural Foods That Fight H. Pylori Fast' (intent=list)
 2026-10-26 15:35:21,736 INFO __main__ - [Slot 5] ✓ Publicado: best-foods-to-fight-h-pylori-habits.html (offer)
 2026-10-26 15:35:21,737 INFO __main__ - Run completo. Publicados 4/5 posts.
+2026-10-27 14:56:39,570 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+2026-10-27 14:56:39,640 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-10-27 14:56:39,711 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-27 14:56:39,717 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Fmodules.json=&etag=%22952a9b81c0bfd99800fabf352f69c7ccd46c5e43%22 "HTTP/1.1 200 OK"
+2026-10-27 14:56:39,785 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-27 14:56:39,791 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Fconfig_sentence_transformers.json=&etag=%22fd1b291129c607e5d49799f87cb219b27f98acdf%22 "HTTP/1.1 200 OK"
+2026-10-27 14:56:39,858 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-10-27 14:56:39,863 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2FREADME.md=&etag=%2244af2e3b0fa3a0b6239e48422972bf755f28fde0%22 "HTTP/1.1 200 OK"
+2026-10-27 14:56:39,868 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2FREADME.md=&etag=%2244af2e3b0fa3a0b6239e48422972bf755f28fde0%22 "HTTP/1.1 200 OK"
+2026-10-27 14:56:39,936 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-27 14:56:39,941 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Fsentence_bert_config.json=&etag=%2259d594003bf59880a884c574bf88ef7555bb0202%22 "HTTP/1.1 200 OK"
+2026-10-27 14:56:40,009 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-10-27 14:56:40,075 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-27 14:56:40,081 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Fconfig.json=&etag=%2272b987fd805cfa2b58c4c8c952b274a11bfd5a00%22 "HTTP/1.1 200 OK"
+2026-10-27 14:56:40,177 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/model.safetensors "HTTP/1.1 302 Found"
+2026-10-27 14:56:40,370 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/processor_config.json "HTTP/1.1 404 Not Found"
+2026-10-27 14:56:40,438 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-10-27 14:56:40,504 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-10-27 14:56:40,573 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-27 14:56:40,578 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Ftokenizer_config.json=&etag=%22c79f2b6a0cea6f4b564fed1938984bace9d30ff0%22 "HTTP/1.1 200 OK"
+2026-10-27 14:56:40,653 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-27 14:56:40,723 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-27 14:56:40,789 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/vocab.txt "HTTP/1.1 307 Temporary Redirect"
+2026-10-27 14:56:40,795 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/vocab.txt?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Fvocab.txt=&etag=%22fb140275c155a9c7c5a3b3e0e77a9e839594a938%22 "HTTP/1.1 200 OK"
+2026-10-27 14:56:40,859 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-27 14:56:40,865 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Ftokenizer.json=&etag=%22cb202bfe2e3c98645018a6d12f182a434c9d3e02%22 "HTTP/1.1 200 OK"
+2026-10-27 14:56:40,931 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/added_tokens.json "HTTP/1.1 404 Not Found"
+2026-10-27 14:56:40,998 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/special_tokens_map.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-27 14:56:41,004 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/special_tokens_map.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Fspecial_tokens_map.json=&etag=%22e7b0375001f109a6b8873d756ad4f7bbb15fbaa5%22 "HTTP/1.1 200 OK"
+2026-10-27 14:56:41,073 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/chat_template.jinja "HTTP/1.1 404 Not Found"
+2026-10-27 14:56:41,169 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-27 14:56:41,176 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2F1_Pooling%2Fconfig.json=&etag=%22d1514c3162bbe87b343f565fadc62e6c06f04f03%22 "HTTP/1.1 200 OK"
+2026-10-27 14:56:41,248 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/2_Normalize/config.json "HTTP/1.1 404 Not Found"
+2026-10-27 14:56:41,279 INFO __main__ - Buscando trending topics para USA...
+2026-10-27 14:56:41,591 WARNING src.app.trend_research - Failed to fetch Google Trends (404/Error): The request failed: Google returned a response with code 404. Moving to fallbacks.
+2026-10-27 14:56:45,014 INFO src.app.trend_research - Gathered 15 unique trending topics.
+2026-10-27 14:56:45,016 INFO __main__ - ═══ Slot 1/5 ═══
+2026-10-27 14:56:45,016 INFO __main__ - [Slot 1] Usando trending topic local: Experimental therapy gantenerumab fails to slow or improve Alzheimers memory loss in clinical trials
+2026-10-27 14:56:45,017 INFO __main__ - [Slot 1] title_hint=Feel More Energized with This Effective Experimental Therapy Gantenerumab...
+2026-10-27 14:56:45,017 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-27 14:56:55,558 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=4928
+2026-10-27 14:56:55,559 WARNING __main__ - [Quality] word_count=415 < 450
+2026-10-27 14:56:55,559 WARNING __main__ - [Slot 1] Qualidade insuficiente — artigo descartado
+2026-10-27 14:56:55,559 ERROR __main__ - [Slot 1] Slot descartado.
+2026-10-27 14:56:55,559 INFO __main__ - ═══ Slot 2/5 ═══
+2026-10-27 14:56:55,559 INFO __main__ - [Slot 2] Usando trending topic local: Low testosterone may make sugar far more harmful to your liver
+2026-10-27 14:56:55,560 INFO __main__ - [Slot 2] title_hint=6 Science-Backed Low Testosterone May Make Sugar Far More Harmful To Your...
+2026-10-27 14:56:55,560 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-27 14:56:58,480 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-27 14:57:03,480 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-27 14:57:17,464 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 OK finishReason=STOP len_chars=5399
+2026-10-27 14:57:17,670 INFO src.app.duplicate_checker - Indexed post: low-testosterone-may-make-sugar-far-more-harmful-to-your-liver (Total: 201)
+2026-10-27 14:57:17,675 INFO src.app.pinterest_seo - [PinterestSEO] '6 Ways Low Testosterone May Make Su' → Intent=list | KW='low testosterone sugar far' | Title='6 Ways Low Testosterone May Make Sugar Far More Harmful To Your Liver' (69 chars) | 6 keywords
+2026-10-27 14:57:17,675 INFO __main__ - [Slot 2] Pinterest SEO: Intent=list | PrimaryKW='low testosterone sugar far' | Title='6 Ways Low Testosterone May Make Sugar Far More Harmful To Your Liver' | 6 Keywords
+2026-10-27 14:57:18,699 INFO __main__ - [Slot 2] Submetendo ao Google Indexing: https://rodrigosimoes97.github.io/Pin/low-testosterone-may-make-sugar-far-more-harmful-to-your-liver.html
+2026-10-27 14:57:18,740 INFO src.app.indexing - Loaded Google service account from raw JSON content.
+2026-10-27 14:57:19,117 WARNING src.app.indexing - Attempt 1: Failed to index https://rodrigosimoes97.github.io/Pin/low-testosterone-may-make-sugar-far-more-harmful-to-your-liver.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-27 14:57:20,360 WARNING src.app.indexing - Attempt 2: Failed to index https://rodrigosimoes97.github.io/Pin/low-testosterone-may-make-sugar-far-more-harmful-to-your-liver.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-27 14:57:22,586 WARNING src.app.indexing - Attempt 3: Failed to index https://rodrigosimoes97.github.io/Pin/low-testosterone-may-make-sugar-far-more-harmful-to-your-liver.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-27 14:57:22,588 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-10-27_pins.csv com 6 keywords
+2026-10-27 14:57:22,589 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: '6 Ways Low Testosterone May Make Sugar Far More Harmful To Your Liver' (intent=list)
+2026-10-27 14:57:22,589 INFO __main__ - [Slot 2] ✓ Publicado: low-testosterone-may-make-sugar-far-more-harmful-to-your-liver.html (offer)
+2026-10-27 14:57:22,589 INFO __main__ - ═══ Slot 3/5 ═══
+2026-10-27 14:57:22,590 INFO __main__ - [Slot 3] Usando trending topic local: Popular cannabis sleep gummies may have a hidden dark side
+2026-10-27 14:57:22,590 INFO __main__ - [Slot 3] title_hint=Struggling with Popular Cannabis Sleep Gummies May Have A Hidden Dark Side?...
+2026-10-27 14:57:22,590 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-27 14:57:24,362 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-27 14:57:29,362 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-27 14:57:40,528 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 OK finishReason=STOP len_chars=4506
+2026-10-27 14:57:40,529 WARNING __main__ - [Quality] word_count=391 < 450
+2026-10-27 14:57:40,529 WARNING __main__ - [Slot 3] Qualidade insuficiente — artigo descartado
+2026-10-27 14:57:40,529 ERROR __main__ - [Slot 3] Slot descartado.
+2026-10-27 14:57:40,529 INFO __main__ - ═══ Slot 4/5 ═══
+2026-10-27 14:57:40,529 INFO __main__ - [Slot 4] Usando trending topic local: Are Supplements the New Snake Oil?
+2026-10-27 14:57:40,529 INFO __main__ - [Slot 4] title_hint=6 Science-Backed Are Supplements The New Snake Oil? Habits Worth Trying
+2026-10-27 14:57:40,529 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-27 14:57:48,600 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=5449
+2026-10-27 14:57:48,789 INFO src.app.duplicate_checker - Indexed post: 6-science-backed-habits-are-supplements-the-new-snake-oil (Total: 202)
+2026-10-27 14:57:48,792 INFO src.app.pinterest_seo - [PinterestSEO] '6 Science-Backed Habits: Are Supple' → Intent=list | KW='supplements snake oil' | Title='Are Supplements The New Snake Oil? 6 Science-Backed Habits' (58 chars) | 8 keywords
+2026-10-27 14:57:48,792 INFO __main__ - [Slot 4] Pinterest SEO: Intent=list | PrimaryKW='supplements snake oil' | Title='Are Supplements The New Snake Oil? 6 Science-Backed Habits' | 8 Keywords
+2026-10-27 14:57:50,333 INFO __main__ - [Slot 4] Submetendo ao Google Indexing: https://rodrigosimoes97.github.io/Pin/6-science-backed-habits-are-supplements-the-new-snake-oil.html
+2026-10-27 14:57:50,374 INFO src.app.indexing - Loaded Google service account from raw JSON content.
+2026-10-27 14:57:50,665 WARNING src.app.indexing - Attempt 1: Failed to index https://rodrigosimoes97.github.io/Pin/6-science-backed-habits-are-supplements-the-new-snake-oil.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-27 14:57:51,913 WARNING src.app.indexing - Attempt 2: Failed to index https://rodrigosimoes97.github.io/Pin/6-science-backed-habits-are-supplements-the-new-snake-oil.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-27 14:57:54,226 WARNING src.app.indexing - Attempt 3: Failed to index https://rodrigosimoes97.github.io/Pin/6-science-backed-habits-are-supplements-the-new-snake-oil.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-27 14:57:54,229 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-10-27_pins.csv com 8 keywords
+2026-10-27 14:57:54,230 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'Are Supplements The New Snake Oil? 6 Science-Backed Habits' (intent=list)
+2026-10-27 14:57:54,230 INFO __main__ - [Slot 4] ✓ Publicado: 6-science-backed-habits-are-supplements-the-new-snake-oil.html (info)
+2026-10-27 14:57:54,230 INFO __main__ - ═══ Slot 5/5 ═══
+2026-10-27 14:57:54,230 INFO __main__ - [Slot 5] Usando trending topic local: Can Coffee Help Parkinson’s Symptoms?
+2026-10-27 14:57:54,230 INFO __main__ - [Slot 5] title_hint=How I Finally Made Can Coffee Help Parkinson’S Symptoms? Stick (And You Can Too)
+2026-10-27 14:57:54,230 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-27 14:57:56,523 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-27 14:58:01,523 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-27 14:58:02,018 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-27 14:58:07,019 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-10-27 14:58:07,379 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-27 14:58:12,380 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 enviando...
+2026-10-27 14:58:20,826 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 OK finishReason=STOP len_chars=4465
+2026-10-27 14:58:20,827 WARNING __main__ - [Quality] word_count=346 < 450
+2026-10-27 14:58:20,827 WARNING __main__ - [Slot 5] Qualidade insuficiente — artigo descartado
+2026-10-27 14:58:20,827 ERROR __main__ - [Slot 5] Slot descartado.
+2026-10-27 14:58:20,828 INFO __main__ - Run completo. Publicados 2/5 posts.

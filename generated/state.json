@@ -1,9 +1,7 @@
 {
-  "runs": 209,
+  "runs": 210,
   "offer_runs": 21,
   "recent_topics": [
-    "scientists-find-the-whole-grain-sweet-spot-for-bet",
-    "ultra-processed-foods-linked-to-hidden-muscle-fat-",
     "smelling-chocolate-helped-men-complete-more-reps-w",
     "a-hidden-compound-in-healthy-foods-may-worsen-ibd",
     "the-burden-of-weight-bias",
@@ -51,11 +49,11 @@
     "desperate-for-heart-surgery-for-their-baby-a-famil",
     "mediterranean-diet-may-boost-tiny-proteins-that-pr",
     "coffee-calories-have-jumped-nearly-40-sugar-isnt-t",
-    "the-best-foods-to-fight-h-pylori"
+    "the-best-foods-to-fight-h-pylori",
+    "low-testosterone-may-make-sugar-far-more-harmful-t",
+    "are-supplements-the-new-snake-oil"
   ],
   "recent_slugs": [
-    "unlock-your-best-sleep-daily-habits-for-more-energy-focus",
-    "holistic-sleep-optimization-boost-energy-productivity",
     "intermittent-fasting-longevity-healthspan",
     "coffee-cellular-power-youth-stress-resilience",
     "coffee-vs-energy-drinks-heart-health",
@@ -153,12 +151,12 @@
     "4-action-steps-desperate-for-heart-surgery-for-their-baby-a-family-feels-hospita",
     "mediterranean-diet-may-boost-tiny-proteins-that-protect-the-heart-and-brain",
     "coffee-calories-have-jumped-nearly-40-percent-sugar-isnt-the-biggest-culprit",
-    "best-foods-to-fight-h-pylori-habits"
+    "best-foods-to-fight-h-pylori-habits",
+    "low-testosterone-may-make-sugar-far-more-harmful-to-your-liver",
+    "6-science-backed-habits-are-supplements-the-new-snake-oil"
   ],
-  "last_run": "2026-10-26",
+  "last_run": "2026-10-27",
   "recent_tags": [
-    "healthy-habits",
-    "healthy-habits",
     "healthy-habits",
     "gut",
     "healthy-habits",
@@ -206,14 +204,16 @@
     "health",
     "longevity",
     "healthy-habits",
-    "gut"
+    "gut",
+    "gut",
+    "healthy-habits"
   ],
   "tag_counts": {
     "sleep": 30,
-    "gut": 30,
+    "gut": 31,
     "mental-wellness": 24,
     "stress": 11,
-    "healthy-habits": 59,
+    "healthy-habits": 60,
     "longevity": 26,
     "recipes": 9,
     "anti-inflammatory": 9,
@@ -232,11 +232,9 @@
     "home-workouts": 17,
     "weight": 36,
     "mental-wellness": 4,
-    "health": 15
+    "health": 17
   },
   "recent_titles": [
-    "A Realistic Look: Scientists Discover A Hidden Problem With This Popular Sugar Substitute",
-    "This Lifestyle Program Improved Cognition 55% More Than Basic Health Advice",
     "3 Science-Backed Lessons: Sugary Drinks & Stomach Cancer Risk",
     "Popular Brain Supplement Linked To Shorter Lifespan In Men: 4 Tips",
     "Compound In Blueberries May Help Muscle Cells Burn Excess Fat",
@@ -294,6 +292,8 @@
     "4 Action Steps: Desperate For Heart Surgery For Their Baby, A Family Feels Hospital Shortages",
     "Mediterranean Diet May Boost Tiny Proteins That Protect The Heart And Brain",
     "Coffee Calories Have Jumped Nearly 40%. Sugar Isnt The Biggest Culprit",
-    "3 Science-Backed The Best Foods To Fight H. Pylori Habits"
+    "3 Science-Backed The Best Foods To Fight H. Pylori Habits",
+    "6 Ways Low Testosterone May Make Sugar Far More Harmful To Your Liver",
+    "6 Science-Backed Habits: Are Supplements The New Snake Oil?"
   ]
 }
