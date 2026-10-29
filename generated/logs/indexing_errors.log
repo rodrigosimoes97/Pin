@@ -642,3 +642,19 @@
   }
 }
 
+2026-10-29T15:37:04.463645+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/simple-daily-fiber-supplement-reduced-arthritis-pain-and-improved-strength.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-29T15:38:24.149899+00:00 - ERROR: https://rodrigosimoes97.github.io/Pin/can-coffee-help-parkinsons-symptoms.html - HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+

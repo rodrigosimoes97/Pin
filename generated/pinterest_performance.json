@@ -404,7 +404,37 @@
       "outbound_clicks": 0,
       "created_at": "2026-10-28T15:30:27.799882+00:00",
       "last_updated": "2026-10-28T15:30:27.799882+00:00"
+    },
+    {
+      "date": "2026-10-29",
+      "url": "https://health-ptg.pages.dev/simple-daily-fiber-supplement-reduced-arthritis-pain-and-improved-strength.html",
+      "topic": "A Simple Daily Fiber Supplement Reduced Arthritis Pain And Improved Strength",
+      "tag": "anti-inflammatory",
+      "intent": "list",
+      "primary_keyword": "simple daily fiber supplement",
+      "title": "How A Fiber Supplement Reduced Arthritis Pain & Restored Strength",
+      "impressions": 0,
+      "engagements": 0,
+      "saves": 0,
+      "outbound_clicks": 0,
+      "created_at": "2026-10-29T15:37:04.465352+00:00",
+      "last_updated": "2026-10-29T15:37:04.465352+00:00"
+    },
+    {
+      "date": "2026-10-29",
+      "url": "https://health-ptg.pages.dev/can-coffee-help-parkinsons-symptoms.html",
+      "topic": "Can Coffee Help Parkinson’S Symptoms?",
+      "tag": "healthy-habits",
+      "intent": "guide",
+      "primary_keyword": "coffee parkinsons symptoms",
+      "title": "Can Coffee Help Parkinson’S Symptoms? The Real Science",
+      "impressions": 0,
+      "engagements": 0,
+      "saves": 0,
+      "outbound_clicks": 0,
+      "created_at": "2026-10-29T15:38:24.152054+00:00",
+      "last_updated": "2026-10-29T15:38:24.152054+00:00"
     }
   ],
-  "last_updated": "2026-10-28T15:30:27.799915+00:00"
+  "last_updated": "2026-10-29T15:38:24.152088+00:00"
 }

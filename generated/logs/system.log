@@ -81957,3 +81957,147 @@ RuntimeError: Gemini failed after exhaustive retries: key#1 transient_status=429
 2026-10-28 15:32:59,264 WARNING __main__ - [Slot 5] Qualidade insuficiente — artigo descartado
 2026-10-28 15:32:59,264 ERROR __main__ - [Slot 5] Slot descartado.
 2026-10-28 15:32:59,265 INFO __main__ - Run completo. Publicados 1/5 posts.
+2026-10-29 15:34:50,817 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+2026-10-29 15:34:50,856 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-10-29 15:34:50,890 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-29 15:34:50,896 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Fmodules.json=&etag=%22952a9b81c0bfd99800fabf352f69c7ccd46c5e43%22 "HTTP/1.1 200 OK"
+2026-10-29 15:34:50,934 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-29 15:34:50,940 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Fconfig_sentence_transformers.json=&etag=%22fd1b291129c607e5d49799f87cb219b27f98acdf%22 "HTTP/1.1 200 OK"
+2026-10-29 15:34:50,973 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-10-29 15:34:50,979 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2FREADME.md=&etag=%2244af2e3b0fa3a0b6239e48422972bf755f28fde0%22 "HTTP/1.1 200 OK"
+2026-10-29 15:34:50,985 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2FREADME.md=&etag=%2244af2e3b0fa3a0b6239e48422972bf755f28fde0%22 "HTTP/1.1 200 OK"
+2026-10-29 15:34:51,091 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-29 15:34:51,097 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Fsentence_bert_config.json=&etag=%2259d594003bf59880a884c574bf88ef7555bb0202%22 "HTTP/1.1 200 OK"
+2026-10-29 15:34:51,135 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-10-29 15:34:51,173 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-29 15:34:51,179 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Fconfig.json=&etag=%2272b987fd805cfa2b58c4c8c952b274a11bfd5a00%22 "HTTP/1.1 200 OK"
+2026-10-29 15:34:51,297 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/model.safetensors "HTTP/1.1 302 Found"
+2026-10-29 15:34:51,639 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/processor_config.json "HTTP/1.1 404 Not Found"
+2026-10-29 15:34:51,674 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-10-29 15:34:51,709 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-10-29 15:34:51,745 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-29 15:34:51,752 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Ftokenizer_config.json=&etag=%22c79f2b6a0cea6f4b564fed1938984bace9d30ff0%22 "HTTP/1.1 200 OK"
+2026-10-29 15:34:51,795 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-29 15:34:51,841 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-29 15:34:51,873 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/vocab.txt "HTTP/1.1 307 Temporary Redirect"
+2026-10-29 15:34:51,879 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/vocab.txt?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Fvocab.txt=&etag=%22fb140275c155a9c7c5a3b3e0e77a9e839594a938%22 "HTTP/1.1 200 OK"
+2026-10-29 15:34:51,914 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-29 15:34:51,920 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Ftokenizer.json=&etag=%22cb202bfe2e3c98645018a6d12f182a434c9d3e02%22 "HTTP/1.1 200 OK"
+2026-10-29 15:34:51,958 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/added_tokens.json "HTTP/1.1 404 Not Found"
+2026-10-29 15:34:51,994 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/special_tokens_map.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-29 15:34:52,000 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/special_tokens_map.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Fspecial_tokens_map.json=&etag=%22e7b0375001f109a6b8873d756ad4f7bbb15fbaa5%22 "HTTP/1.1 200 OK"
+2026-10-29 15:34:52,040 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/chat_template.jinja "HTTP/1.1 404 Not Found"
+2026-10-29 15:34:52,105 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-29 15:34:52,111 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2F1_Pooling%2Fconfig.json=&etag=%22d1514c3162bbe87b343f565fadc62e6c06f04f03%22 "HTTP/1.1 200 OK"
+2026-10-29 15:34:52,145 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/2_Normalize/config.json "HTTP/1.1 404 Not Found"
+2026-10-29 15:34:52,176 INFO __main__ - Buscando trending topics para USA...
+2026-10-29 15:34:52,485 WARNING src.app.trend_research - Failed to fetch Google Trends (404/Error): The request failed: Google returned a response with code 404. Moving to fallbacks.
+2026-10-29 15:34:55,522 INFO src.app.trend_research - Gathered 14 unique trending topics.
+2026-10-29 15:34:55,525 INFO __main__ - ═══ Slot 1/5 ═══
+2026-10-29 15:34:55,525 INFO __main__ - [Slot 1] Usando trending topic local: Experimental therapy gantenerumab fails to slow or improve Alzheimers memory loss in clinical trials
+2026-10-29 15:34:55,525 INFO __main__ - [Slot 1] title_hint=Stop Overcomplicating Experimental Therapy Gantenerumab Fails To Slow Or...
+2026-10-29 15:34:55,525 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-29 15:35:11,173 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-29 15:35:16,173 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-29 15:35:46,350 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 OK finishReason=STOP len_chars=5266
+2026-10-29 15:35:46,452 WARNING __main__ - [Slot 1] Artigo bloqueado por similaridade (score=0.93)
+2026-10-29 15:35:46,453 ERROR __main__ - [Slot 1] Slot descartado.
+2026-10-29 15:35:46,453 INFO __main__ - ═══ Slot 2/5 ═══
+2026-10-29 15:35:46,453 INFO __main__ - [Slot 2] Usando trending topic local: Six popular sugar substitutes linked to faster brain aging
+2026-10-29 15:35:46,453 INFO __main__ - [Slot 2] title_hint=3 Science-Backed Six Popular Sugar Substitutes Linked To Faster Brain Aging...
+2026-10-29 15:35:46,453 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-29 15:35:59,943 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-29 15:36:04,943 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-29 15:36:28,450 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 OK finishReason=STOP len_chars=4792
+2026-10-29 15:36:28,451 WARNING __main__ - [Quality] word_count=385 < 450
+2026-10-29 15:36:28,451 WARNING __main__ - [Slot 2] Qualidade insuficiente — artigo descartado
+2026-10-29 15:36:28,451 ERROR __main__ - [Slot 2] Slot descartado.
+2026-10-29 15:36:28,451 INFO __main__ - ═══ Slot 3/5 ═══
+2026-10-29 15:36:28,451 INFO __main__ - [Slot 3] Usando trending topic local: A simple daily fiber supplement reduced arthritis pain and improved strength
+2026-10-29 15:36:28,452 INFO __main__ - [Slot 3] title_hint=Struggling with A Simple Daily Fiber Supplement Reduced Arthritis Pain And...
+2026-10-29 15:36:28,452 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-29 15:36:28,875 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-29 15:36:33,875 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-29 15:36:59,240 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 OK finishReason=STOP len_chars=5485
+2026-10-29 15:36:59,432 INFO src.app.duplicate_checker - Indexed post: simple-daily-fiber-supplement-reduced-arthritis-pain-and-improved-strength (Total: 204)
+2026-10-29 15:36:59,436 INFO src.app.pinterest_seo - [PinterestSEO] 'A Simple Daily Fiber Supplement Red' → Intent=list | KW='simple daily fiber supplement' | Title='How A Fiber Supplement Reduced Arthritis Pain & Restored Strength' (65 chars) | 6 keywords
+2026-10-29 15:36:59,436 INFO __main__ - [Slot 3] Pinterest SEO: Intent=list | PrimaryKW='simple daily fiber supplement' | Title='How A Fiber Supplement Reduced Arthritis Pain & Restored Strength' | 6 Keywords
+2026-10-29 15:37:00,728 INFO __main__ - [Slot 3] Submetendo ao Google Indexing: https://rodrigosimoes97.github.io/Pin/simple-daily-fiber-supplement-reduced-arthritis-pain-and-improved-strength.html
+2026-10-29 15:37:00,775 INFO src.app.indexing - Loaded Google service account from raw JSON content.
+2026-10-29 15:37:01,155 WARNING src.app.indexing - Attempt 1: Failed to index https://rodrigosimoes97.github.io/Pin/simple-daily-fiber-supplement-reduced-arthritis-pain-and-improved-strength.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-29 15:37:02,321 WARNING src.app.indexing - Attempt 2: Failed to index https://rodrigosimoes97.github.io/Pin/simple-daily-fiber-supplement-reduced-arthritis-pain-and-improved-strength.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-29 15:37:04,463 WARNING src.app.indexing - Attempt 3: Failed to index https://rodrigosimoes97.github.io/Pin/simple-daily-fiber-supplement-reduced-arthritis-pain-and-improved-strength.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-29 15:37:04,465 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-10-29_pins.csv com 6 keywords
+2026-10-29 15:37:04,466 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'How A Fiber Supplement Reduced Arthritis Pain & Restored Strength' (intent=list)
+2026-10-29 15:37:04,466 INFO __main__ - [Slot 3] ✓ Publicado: simple-daily-fiber-supplement-reduced-arthritis-pain-and-improved-strength.html (info)
+2026-10-29 15:37:04,466 INFO __main__ - ═══ Slot 4/5 ═══
+2026-10-29 15:37:04,466 INFO __main__ - [Slot 4] Usando trending topic local: The Best Foods to Protect Against Atrial Fibrillation
+2026-10-29 15:37:04,466 INFO __main__ - [Slot 4] title_hint=Feel More Energized with This Daily The Best Foods To Protect Against Atrial...
+2026-10-29 15:37:04,466 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-29 15:37:21,294 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-29 15:37:26,295 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-29 15:37:40,516 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-29 15:37:45,517 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-10-29 15:38:03,534 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 OK finishReason=STOP len_chars=5096
+2026-10-29 15:38:03,535 WARNING __main__ - [Quality] word_count=424 < 450
+2026-10-29 15:38:03,535 WARNING __main__ - [Slot 4] Qualidade insuficiente — artigo descartado
+2026-10-29 15:38:03,535 ERROR __main__ - [Slot 4] Slot descartado.
+2026-10-29 15:38:03,535 INFO __main__ - ═══ Slot 5/5 ═══
+2026-10-29 15:38:03,536 INFO __main__ - [Slot 5] Usando trending topic local: Can Coffee Help Parkinson’s Symptoms?
+2026-10-29 15:38:03,536 INFO __main__ - [Slot 5] title_hint=How I Finally Made Can Coffee Help Parkinson’S Symptoms? Stick (And You Can Too)
+2026-10-29 15:38:03,536 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-29 15:38:19,331 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=5542
+2026-10-29 15:38:19,525 INFO src.app.duplicate_checker - Indexed post: can-coffee-help-parkinsons-symptoms (Total: 205)
+2026-10-29 15:38:19,528 INFO src.app.pinterest_seo - [PinterestSEO] 'Can Coffee Help Parkinson’S Symptom' → Intent=guide | KW='coffee parkinsons symptoms' | Title='Can Coffee Help Parkinson’S Symptoms? The Real Science' (54 chars) | 8 keywords
+2026-10-29 15:38:19,528 INFO __main__ - [Slot 5] Pinterest SEO: Intent=guide | PrimaryKW='coffee parkinsons symptoms' | Title='Can Coffee Help Parkinson’S Symptoms? The Real Science' | 8 Keywords
+2026-10-29 15:38:20,563 INFO __main__ - [Slot 5] Submetendo ao Google Indexing: https://rodrigosimoes97.github.io/Pin/can-coffee-help-parkinsons-symptoms.html
+2026-10-29 15:38:20,609 INFO src.app.indexing - Loaded Google service account from raw JSON content.
+2026-10-29 15:38:20,851 WARNING src.app.indexing - Attempt 1: Failed to index https://rodrigosimoes97.github.io/Pin/can-coffee-help-parkinsons-symptoms.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-29 15:38:22,011 WARNING src.app.indexing - Attempt 2: Failed to index https://rodrigosimoes97.github.io/Pin/can-coffee-help-parkinsons-symptoms.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-29 15:38:24,149 WARNING src.app.indexing - Attempt 3: Failed to index https://rodrigosimoes97.github.io/Pin/can-coffee-help-parkinsons-symptoms.html: HTTP 403: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Failed to verify the URL ownership.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2026-10-29 15:38:24,151 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-10-29_pins.csv com 8 keywords
+2026-10-29 15:38:24,152 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'Can Coffee Help Parkinson’S Symptoms? The Real Science' (intent=guide)
+2026-10-29 15:38:24,152 INFO __main__ - [Slot 5] ✓ Publicado: can-coffee-help-parkinsons-symptoms.html (info)
+2026-10-29 15:38:24,153 INFO __main__ - Run completo. Publicados 2/5 posts.

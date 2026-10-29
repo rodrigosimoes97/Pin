@@ -1,9 +1,7 @@
 {
-  "runs": 211,
+  "runs": 212,
   "offer_runs": 21,
   "recent_topics": [
-    "a-hidden-compound-in-healthy-foods-may-worsen-ibd",
-    "the-burden-of-weight-bias",
     "yoga-for-flexibility",
     "home-workouts",
     "8-common-food-additives-linked-to-high-blood-press",
@@ -51,11 +49,11 @@
     "the-best-foods-to-fight-h-pylori",
     "low-testosterone-may-make-sugar-far-more-harmful-t",
     "are-supplements-the-new-snake-oil",
-    "popular-cannabis-sleep-gummies-may-have-a-hidden-d"
+    "popular-cannabis-sleep-gummies-may-have-a-hidden-d",
+    "a-simple-daily-fiber-supplement-reduced-arthritis-",
+    "can-coffee-help-parkinson-s-symptoms"
   ],
   "recent_slugs": [
-    "coffee-cellular-power-youth-stress-resilience",
-    "coffee-vs-energy-drinks-heart-health",
     "intermittent-fasting-women-health-weight-loss",
     "unlock-best-sleep-energy-focus-hacks-americans",
     "healthier-french-fries-microwave-method",
@@ -153,12 +151,12 @@
     "best-foods-to-fight-h-pylori-habits",
     "low-testosterone-may-make-sugar-far-more-harmful-to-your-liver",
     "6-science-backed-habits-are-supplements-the-new-snake-oil",
-    "popular-cannabis-sleep-gummies-may-have-a-hidden-dark-side"
+    "popular-cannabis-sleep-gummies-may-have-a-hidden-dark-side",
+    "simple-daily-fiber-supplement-reduced-arthritis-pain-and-improved-strength",
+    "can-coffee-help-parkinsons-symptoms"
   ],
-  "last_run": "2026-10-28",
+  "last_run": "2026-10-29",
   "recent_tags": [
-    "gut",
-    "healthy-habits",
     "healthy-habits",
     "home-workouts",
     "healthy-habits",
@@ -206,17 +204,19 @@
     "gut",
     "gut",
     "healthy-habits",
-    "sleep"
+    "sleep",
+    "anti-inflammatory",
+    "healthy-habits"
   ],
   "tag_counts": {
     "sleep": 31,
     "gut": 31,
     "mental-wellness": 24,
     "stress": 11,
-    "healthy-habits": 60,
+    "healthy-habits": 61,
     "longevity": 26,
     "recipes": 9,
-    "anti-inflammatory": 9,
+    "anti-inflammatory": 10,
     "home-workouts": 10,
     "weight": 24,
     "health": 57
@@ -229,14 +229,12 @@
     "longevity": 29,
     "recipes": 29,
     "anti-inflammatory": 11,
-    "home-workouts": 17,
+    "home-workouts": 18,
     "weight": 36,
     "mental-wellness": 4,
-    "health": 17
+    "health": 18
   },
   "recent_titles": [
-    "Popular Brain Supplement Linked To Shorter Lifespan In Men: 4 Tips",
-    "Compound In Blueberries May Help Muscle Cells Burn Excess Fat",
     "3 Practical Ways to Handle Stress When Desperate For Heart Surgery For Their Baby, A Family Feels The Effects Of Pediatric Hospital Shortages",
     "Scientists Discover Strange Link Between Low Vitamin D And Pain",
     "Gantenerumab Fails To Slow Alzheimers Memory Loss: What Is Next?",
@@ -294,6 +292,8 @@
     "3 Science-Backed The Best Foods To Fight H. Pylori Habits",
     "6 Ways Low Testosterone May Make Sugar Far More Harmful To Your Liver",
     "6 Science-Backed Habits: Are Supplements The New Snake Oil?",
-    "Popular Cannabis Sleep Gummies May Have A Hidden Dark Side You Need to Know"
+    "Popular Cannabis Sleep Gummies May Have A Hidden Dark Side You Need to Know",
+    "A Simple Daily Fiber Supplement Reduced Arthritis Pain And Improved Strength",
+    "Can Coffee Help Parkinson\u2019S Symptoms? What Science Says"
   ]
 }
