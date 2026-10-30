@@ -67,7 +67,11 @@ class GeminiClient:
 
         # Modelos suportados pela API: gemini-3.6-flash e gemini-3.8-flash
         candidate_models = [self.model]
+<<<<<<< HEAD
         for fb in ["gemini-3.6-flash", "gemini-3.8-flash"]:
+=======
+        for fb in ["gemini-2.5-flash"]:
+>>>>>>> 909d83c00dcef4a37158093c4566cf08974b737c
             if fb not in candidate_models:
                 candidate_models.append(fb)
 
