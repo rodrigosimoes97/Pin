@@ -148,6 +148,29 @@ def test_titles_and_descriptions():
         f"Título do Gemini válido preservado: '{seo_1['pin_title']}'"
     )
 
+    # Verifica que descrição natural do Gemini válida é preservada
+    gemini_custom_desc = (
+        "Feeling constantly stressed and on edge? Discover 5 science-backed nervous system resets "
+        "that take under 3 minutes. Save this pin for instant daily calm!"
+    )
+    article_with_desc = {
+        "title": "Natural Ways to Reset Your Nervous System",
+        "tag": "stress",
+        "meta_description": "Learn how to calm anxiety and regulate cortisol.",
+        "html": "<p>Content</p>",
+        "pin_title": "5 Natural Ways to Reset Your Nervous System",
+        "pin_description": gemini_custom_desc,
+    }
+    seo_custom = generate_pinterest_seo(Topic("stress-reset", "Stress Support", "", "stress"), article_with_desc)
+    check(
+        seo_custom["pin_description"] == gemini_custom_desc,
+        f"Descrição natural do Gemini preservada com sucesso: '{seo_custom['pin_description'][:50]}...'"
+    )
+    check(
+        seo_custom["board"] == "Stress Relief & Mindfulness",
+        f"Board nichado correto para tag 'stress': '{seo_custom['board']}'"
+    )
+
     # Verifica que título genérico de fallback é substituído
     seo_2 = generate_pinterest_seo(test_cases[1]["topic"], test_cases[1]["article"])
     check(
@@ -275,6 +298,27 @@ def test_draft_pack():
         kws_in_csv = seo["keywords"]
         all_single_word = all(len(kw.strip().split()) <= 1 for kw in kws_in_csv.split(","))
         check(not all_single_word, "Keywords não são palavras soltas (todas têm 2+ palavras)")
+
+        # Verifica board segmentado no CSV
+        check("Daily Healthy Habits" in csv_content, "CSV contém o board nichado da tag")
+
+        # Teste de atualização por deduplicação (reprocessamento de pin existente)
+        import json
+        write_draft_pack(
+            out_dir=out_dir,
+            run_date=date(2026, 10, 5),
+            pin_title="Updated Title For Existing Pin",
+            pin_description="Updated description that should overwrite the previous entry in the draft.",
+            link="https://health-ptg.pages.dev/test.html",
+            image_path="assets/2026-10-05_test.jpeg",
+            tag="healthy-habits",
+            slot_index=0,
+            keywords="updated keywords, new search term",
+            board="Daily Healthy Habits",
+        )
+        json_data = json.loads(json_file.read_text(encoding="utf-8"))
+        check(len(json_data) == 1, "Deduplicação manteve exatamente 1 item (não duplicou)")
+        check(json_data[0]["Title"] == "Updated Title For Existing Pin", "Deduplicação atualizou os dados do item existente com sucesso")
 
         print(f"\n  CSV Preview:")
         for line in csv_content.splitlines()[:3]:

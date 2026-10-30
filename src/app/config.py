@@ -18,6 +18,7 @@ class Settings:
     pinterest_enable_publish: bool
     google_indexing_json_path: str
     posts_per_week: int
+    posts_per_day: int
     repo_root: Path
 
 
@@ -43,7 +44,7 @@ def _load_gemini_keys() -> list[str]:
 def load_settings() -> Settings:
     return Settings(
         gemini_api_keys=_load_gemini_keys(),
-        gemini_model=os.getenv("GEMINI_MODEL", "gemini-3.6-flash").strip(),
+        gemini_model=os.getenv("GEMINI_MODEL", "gemini-2.5-flash").strip(),
         pexels_api_key=_required("PEXELS_API_KEY"),
         base_url=(os.getenv("BASE_URL") or "https://health-ptg.pages.dev").strip().rstrip("/"),
         site_title=os.getenv("SITE_TITLE", "Practical US Health Notes").strip(),
@@ -52,6 +53,7 @@ def load_settings() -> Settings:
         pinterest_board_id=os.getenv("PINTEREST_BOARD_ID", "").strip(),
         pinterest_enable_publish=_bool_flag("PINTEREST_ENABLE_PUBLISH"),
         google_indexing_json_path=os.getenv("GOOGLE_INDEXING_JSON_PATH", "").strip(),
-        posts_per_week=int(os.getenv("POSTS_PER_WEEK", "10").strip()),
+        posts_per_week=int(os.getenv("POSTS_PER_WEEK", "7").strip()),
+        posts_per_day=int(os.getenv("POSTS_PER_DAY", "3").strip()),
         repo_root=Path(__file__).resolve().parents[2],
     )

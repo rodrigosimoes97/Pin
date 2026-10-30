@@ -48,6 +48,37 @@ _GENERIC_TITLE_PREFIXES = [
     "better ",
 ]
 
+# Prefixos de descrições genéricas/templates antigos para descartar em favor do texto natural
+_GENERIC_DESC_PREFIXES = [
+    "most people make these",
+    "your no-nonsense guide to",
+    "not sure what works for",
+    "build a consistent",
+    "use this simple",
+    "get science-backed",
+    "struggling to get results with",
+    "feeling overwhelmed lately",
+    "having trouble making",
+    "if you cannot seem to keep up with",
+    "tired of generic advice about",
+    "stop overcomplicating",
+]
+
+# Mapeamento de tags para pastas focadas no Pinterest (US audience)
+US_PINTEREST_BOARDS: dict[str, str] = {
+    "recipes": "Healthy Recipes & Meal Prep",
+    "home-workouts": "Home Workouts & Fitness",
+    "healthy-habits": "Daily Healthy Habits",
+    "stress": "Stress Relief & Mindfulness",
+    "gut": "Gut Health & Digestion",
+    "sleep": "Better Sleep & Rest",
+    "weight": "Healthy Weight Loss Tips",
+    "anti-inflammatory": "Anti-Inflammatory Living",
+    "mental-wellness": "Mental Wellness & Self Care",
+    "longevity": "Healthy Aging & Longevity",
+    "health": "Health & Wellness",
+}
+
 
 def _normalize_whitespace(text: str) -> str:
     return re.sub(r"\s+", " ", text or "").strip()
@@ -72,6 +103,12 @@ def _is_generic_fallback_title(title: str) -> bool:
     """Verifica se o pin_title vem de um template de fallback local genérico."""
     low = title.lower().strip()
     return any(low.startswith(p) for p in _GENERIC_TITLE_PREFIXES)
+
+
+def _is_generic_fallback_description(desc: str) -> bool:
+    """Verifica se a pin_description vem de um template antigo/genérico de fallback."""
+    low = desc.lower().strip()
+    return any(low.startswith(p) for p in _GENERIC_DESC_PREFIXES)
 
 
 def extract_core_topic_phrase(topic_name: str, title: str = "") -> str:
@@ -209,154 +246,181 @@ def detect_search_intent(
     return tag_defaults.get(tag, "guide")
 
 
+AUTHENTIC_US_PINTEREST_KEYWORDS: dict[str, list[str]] = {
+    "recipes": [
+        "healthy dinner ideas",
+        "easy meal prep",
+        "clean eating recipes",
+        "high protein meals",
+        "quick healthy recipes",
+        "healthy lunch ideas",
+    ],
+    "gut": [
+        "gut health tips",
+        "gut healing foods",
+        "bloating remedies",
+        "digestive health",
+        "healthy gut diet",
+        "improve gut health",
+    ],
+    "anti-inflammatory": [
+        "anti inflammatory diet",
+        "foods that fight inflammation",
+        "anti inflammatory recipes",
+        "natural inflammation remedies",
+        "joint health diet",
+        "anti inflammatory meal plan",
+    ],
+    "sleep": [
+        "how to sleep better naturally",
+        "bedtime routine for adults",
+        "natural sleep remedies",
+        "deep sleep habits",
+        "nighttime routine",
+        "fall asleep fast",
+    ],
+    "stress": [
+        "stress relief tips",
+        "how to lower cortisol naturally",
+        "nervous system regulation",
+        "daily mindfulness habits",
+        "anxiety relief techniques",
+        "calm mind routine",
+    ],
+    "home-workouts": [
+        "home workout routine",
+        "no equipment workout",
+        "daily stretching routine",
+        "beginner workout at home",
+        "quick morning workout",
+        "mobility exercises",
+    ],
+    "healthy-habits": [
+        "healthy daily routine",
+        "simple wellness habits",
+        "healthy lifestyle tips",
+        "daily healthy habits",
+        "wellness routine for women",
+        "easy habit reset",
+    ],
+    "weight": [
+        "sustainable weight loss habits",
+        "realistic healthy weight tips",
+        "healthy metabolism habits",
+        "habits for weight loss",
+        "clean eating for weight loss",
+        "healthy body reset",
+    ],
+    "longevity": [
+        "daily habits to live longer",
+        "longevity lifestyle tips",
+        "healthy aging secrets",
+        "anti aging daily habits",
+        "cellular health nutrition",
+        "vitality daily routine",
+    ],
+    "mental-wellness": [
+        "mental wellness habits",
+        "daily self care routine",
+        "improve mental clarity naturally",
+        "brain health habits",
+        "mindset habits for calm",
+        "emotional wellness tips",
+    ],
+    "health": [
+        "healthy lifestyle tips",
+        "daily wellness inspiration",
+        "natural health remedies",
+        "simple healthy habits",
+        "healthy living guide",
+        "wellness daily reset",
+    ],
+}
+
+
 def generate_search_keywords(
     topic_name: str,
     title: str,
     tag: str,
     intent: str,
-    primary_keyword: str,
+    primary_keyword: str = "",
+    article_keywords: str = "",
 ) -> list[str]:
     """
-    Gera de 5 a 8 frases de busca / long-tail keywords naturais em US English para o Pinterest.
-    NÃO gera palavras isoladas soltas.
-    Prioriza diversidade — evita repetir o mesmo core em todas as frases.
+    Gera de 5 a 8 termos de busca autênticos em US English para o Pinterest.
+    Prioriza termos naturais pesquisados por usuários reais nos EUA,
+    sem 'keyword stuffing' e sem frases sintéticas gramaticalmente quebradas.
     """
-    tag_clean = tag.replace("-", " ").strip()
-    core = primary_keyword.strip() if primary_keyword else extract_core_topic_phrase(topic_name, title)
-
-    # ── Grupo 1: frases contextuais por tag (sem usar core, mais naturais) ──
-    tag_contextual_phrases: dict[str, list[str]] = {
-        "recipes": [
-            "healthy meal prep ideas",
-            f"quick {tag_clean} recipes for beginners",
-            "clean eating dinner ideas",
-        ],
-        "home-workouts": [
-            "at home workout plan no equipment",
-            "beginner home fitness routine",
-            "quick daily exercise routine",
-        ],
-        "sleep": [
-            "how to sleep better naturally",
-            "bedtime routine for adults",
-            "nighttime habits for deeper sleep",
-        ],
-        "stress": [
-            "natural stress relief techniques",
-            "how to lower cortisol naturally",
-            "daily calm habits for anxiety",
-        ],
-        "gut": [
-            "how to improve gut microbiome",
-            "gut health foods for beginners",
-            "bloating relief tips that work",
-        ],
-        "weight": [
-            "sustainable weight loss habits",
-            "realistic healthy weight tips",
-            "how to lose weight without dieting",
-        ],
-        "anti-inflammatory": [
-            "anti inflammatory foods list",
-            "natural ways to reduce inflammation",
-            "anti inflammatory meal plan ideas",
-        ],
-        "longevity": [
-            "daily habits to live longer",
-            "longevity lifestyle tips for adults",
-            "healthy aging secrets that work",
-        ],
-        "mental-wellness": [
-            "daily mental wellness habits",
-            "how to improve mental clarity naturally",
-            "mindset habits for stress relief",
-        ],
-        "healthy-habits": [
-            "healthy daily routine for beginners",
-            "simple wellness habits that stick",
-            "easy healthy lifestyle changes",
-        ],
-    }
-
-    # ── Grupo 2: frases baseadas no intent (usam core mas com prefixo variado) ──
-    intent_phrase_templates: dict[str, list[str]] = {
-        "how_to": [
-            f"how to {core} step by step",
-            f"easy ways to manage {core}",
-            f"beginner guide to {core}",
-            f"simple {core} tips for daily life",
-        ],
-        "list": [
-            f"best {core} options to try",
-            f"top foods for {core}",
-            f"daily {tag_clean} ideas that work",
-            f"simple {core} swaps for beginners",
-        ],
-        "checklist": [
-            f"{core} checklist for beginners",
-            f"daily {tag_clean} habit tracker",
-            f"simple {core} action plan",
-            f"healthy {tag_clean} checklist ideas",
-        ],
-        "tips": [
-            f"practical {core} tips for everyday",
-            f"science backed {tag_clean} advice",
-            f"easy {core} hacks that actually work",
-            f"top {tag_clean} tips for better health",
-        ],
-        "mistakes": [
-            f"common {core} mistakes to avoid",
-            f"{tag_clean} mistakes that hurt your health",
-            f"hidden signs of bad {core}",
-            f"what to avoid for better {tag_clean}",
-        ],
-        "guide": [
-            f"complete {core} guide for beginners",
-            f"practical {tag_clean} guide for busy people",
-            f"everything about {core} explained",
-            f"how {core} affects your health",
-        ],
-        "routine": [
-            f"simple daily {core} routine",
-            f"realistic {tag_clean} morning routine",
-            f"easy {core} habit plan",
-            f"daily {tag_clean} schedule for beginners",
-        ],
-    }
+    tag_clean = tag.replace("-", " ").strip().lower()
+    core = (primary_keyword or "").strip().lower()
+    if not core:
+        core = extract_core_topic_phrase(topic_name, title)
 
     candidates: list[str] = []
 
-    # 1. Primary keyword (se tiver pelo menos 2 palavras)
-    if core and len(core.split()) >= 2:
-        candidates.append(core)
+    def _add_candidate(cand: str) -> None:
+        c = re.sub(r"[^\w\s-]", "", cand).strip().lower()
+        c = _normalize_whitespace(c)
+        words = c.split()
+        if 2 <= len(words) <= 5 and c not in candidates:
+            candidates.append(c)
 
-    # 2. Frases contextuais da tag (não repetem core diretamente)
-    for phrase in tag_contextual_phrases.get(tag, [
-        f"healthy {tag_clean} tips for beginners",
-        f"simple {tag_clean} wellness guide",
-        f"daily {tag_clean} habits that work",
-    ]):
-        clean_p = _normalize_whitespace(phrase.lower())
-        if clean_p not in candidates and len(clean_p.split()) >= 2:
-            candidates.append(clean_p)
+    # 1. Palavras-chave vindas do Gemini (se geradas)
+    if article_keywords:
+        for kw in article_keywords.split(","):
+            _add_candidate(kw)
 
-    # 3. Frases do intent (usam core)
-    for phrase in intent_phrase_templates.get(intent, intent_phrase_templates["guide"]):
-        clean_p = _normalize_whitespace(phrase.lower())
-        if clean_p not in candidates and len(clean_p.split()) >= 2:
-            candidates.append(clean_p)
+    # 2. Primary keyword (se for válida e natural, 2 a 4 palavras)
+    if core and 2 <= len(core.split()) <= 4:
+        _add_candidate(core)
 
-    # ── Filtro e normalização final ──
-    final_keywords: list[str] = []
-    for kw in candidates:
-        kw_clean = re.sub(r"[^\w\s-]", "", kw).strip()
-        word_count = len(kw_clean.split())
-        if 2 <= word_count <= 7 and kw_clean not in final_keywords:
-            final_keywords.append(kw_clean)
-        if len(final_keywords) >= 8:
-            break
+    # 3. Termos autênticos curados do Pinterest US para o nicho/tag
+    pool = AUTHENTIC_US_PINTEREST_KEYWORDS.get(tag, AUTHENTIC_US_PINTEREST_KEYWORDS["health"])
+    for kw in pool:
+        _add_candidate(kw)
 
-    # Fallback se tiver menos de 5
+    # 4. Termos baseados no intent com linguagem natural e fluida
+    intent_keywords: dict[str, list[str]] = {
+        "how_to": [
+            f"how to improve {tag_clean}",
+            f"beginner {tag_clean} guide",
+            f"easy {tag_clean} tips",
+        ],
+        "list": [
+            f"best {tag_clean} ideas",
+            f"top {tag_clean} tips",
+            f"simple {tag_clean} swaps",
+        ],
+        "checklist": [
+            f"daily {tag_clean} checklist",
+            f"{tag_clean} habit tracker",
+            f"healthy {tag_clean} plan",
+        ],
+        "tips": [
+            f"practical {tag_clean} tips",
+            f"daily {tag_clean} advice",
+            f"simple {tag_clean} habits",
+        ],
+        "mistakes": [
+            f"common {tag_clean} mistakes to avoid",
+            f"{tag_clean} habits to stop",
+            f"what to avoid for {tag_clean}",
+        ],
+        "guide": [
+            f"complete {tag_clean} guide for beginners",
+            f"practical {tag_clean} guide",
+            f"simple guide to {tag_clean}",
+        ],
+        "routine": [
+            f"simple daily {tag_clean} routine",
+            f"realistic {tag_clean} habits",
+            f"daily {tag_clean} schedule",
+        ],
+    }
+    for kw in intent_keywords.get(intent, intent_keywords["guide"]):
+        _add_candidate(kw)
+
+    # Garante mínimo de 5 e máximo de 8 termos
     fallback_pool = [
         f"healthy {tag_clean} routine for beginners",
         f"daily {tag_clean} wellness tips",
@@ -365,13 +429,11 @@ def generate_search_keywords(
         "easy healthy lifestyle tips",
     ]
     for fb in fallback_pool:
-        if len(final_keywords) >= 5:
+        if len(candidates) >= 5:
             break
-        clean_fb = _normalize_whitespace(fb.lower())
-        if clean_fb not in final_keywords:
-            final_keywords.append(clean_fb)
+        _add_candidate(fb)
 
-    return final_keywords[:8]
+    return candidates[:8]
 
 
 def build_pinterest_title(
@@ -384,61 +446,62 @@ def build_pinterest_title(
     """
     Gera um título otimizado para o Pinterest (40 a 70 caracteres).
     Preserva o título original se já for bom e não for um template genérico de fallback.
+    Se for longo, corta na fronteira de palavras sem quebrar.
     """
     clean_title = _normalize_whitespace(title)
 
-    # Usa título original se: tamanho certo E não é um fallback genérico
+    # 1. Se já está entre 40 e 70 chars e não é genérico, preserva
     if 40 <= len(clean_title) <= 70 and not _is_generic_fallback_title(clean_title):
         return clean_title
 
-    core = _trim_at_word_boundary(
-        primary_keyword.title() if primary_keyword else topic_name.title(), 38
-    )
+    # 2. Se for ligeiramente mais longo que 70 chars, corta no limite de palavras
+    if len(clean_title) > 70:
+        trimmed = _trim_at_word_boundary(clean_title, 70)
+        if 40 <= len(trimmed) <= 70 and not _is_generic_fallback_title(trimmed):
+            return trimmed
+
+    # 3. Fallback seguro se não houver título do modelo ou for genérico
     tag_clean = tag.replace("-", " ").title()
+    core = _trim_at_word_boundary(
+        primary_keyword.title() if primary_keyword else topic_name.title(), 35
+    )
     seed = f"{title}-{topic_name}-{intent}"
 
     intent_title_templates: dict[str, list[str]] = {
         "how_to": [
-            "How to {core}: Simple Step-by-Step",
-            "How to Master {core} in Real Life",
-            "How to {core} Without the Stress",
-            "A Realistic Way to {core} That Works",
+            "How to Improve Your {tag} Step-by-Step",
+            "A Realistic Way to Master {tag} That Works",
+            "How to Build Better {tag} Without Stress",
         ],
         "list": [
-            "Top {core} Ideas You Should Try",
-            "The Best {core} for Better Health",
-            "Key {core} Swaps That Make a Difference",
-            "Essential {core} to Transform Your Day",
+            "The Best {tag} Ideas for Everyday Wellness",
+            "Top Science-Backed {tag} Tips to Try",
+            "Key {tag} Swaps That Make a Real Difference",
         ],
         "checklist": [
-            "The Ultimate {core} Checklist",
-            "Daily {core} Checklist for Beginners",
-            "Your Simple {tag} Checklist: {core}",
-            "The Quick {core} Action Plan",
+            "The Ultimate Daily {tag} Checklist",
+            "A Simple {tag} Action Plan for Beginners",
+            "Your Daily {tag} Reset: Simple Checklist",
         ],
         "tips": [
-            "Practical {core} Tips That Actually Work",
-            "Top {tag} Tips: {core} Made Easy",
-            "Simple {core} Tips for Busy Days",
-            "Science-Backed {core} Tips You Need",
+            "Practical {tag} Tips That Actually Work",
+            "Science-Backed {tag} Tips for Busy Days",
+            "Simple {tag} Habits for Better Health",
         ],
         "mistakes": [
-            "Common {core} Mistakes to Avoid",
-            "Stop Making These {tag} Mistakes",
-            "The Hidden {core} Mistake Hurting You",
-            "Are You Making These {core} Errors?",
+            "Common {tag} Mistakes and How to Avoid Them",
+            "Stop Making These Common {tag} Mistakes",
+            "Hidden {tag} Mistakes That Hurt Your Health",
         ],
         "guide": [
-            "The Busy Person's Guide to {core}",
-            "Complete Guide: {core} Simplified",
-            "Your Practical Blueprint for {core}",
-            "Everything You Need to Know About {core}",
+            "The Complete Beginner's Guide to {tag}",
+            "Everything You Need to Know About {tag}",
+            "Your Practical Blueprint for Better {tag}",
         ],
         "routine": [
-            "A Simple {tag} Routine That Sticks",
-            "Daily {core} Routine for Real Life",
-            "The 5-Minute Reset for {core}",
-            "Your Realistic {core} Daily Routine",
+            "A Simple Daily {tag} Routine That Sticks",
+            "Realistic {tag} Habits for Everyday Life",
+            "The 5-Minute Daily Reset for {tag}",
         ],
     }
 
@@ -465,47 +528,56 @@ def build_pinterest_description(
     html: str = "",
 ) -> str:
     """
-    Gera uma descrição otimizada para o Pinterest (140 a 260 caracteres).
-    Incorpora a primary keyword naturalmente e uma CTA alinhada ao intent.
+    Gera uma descrição otimizada para o Pinterest (140 a 260 caracteres)
+    usada como fallback quando a descrição original do Gemini não estiver disponível
+    ou for um template genérico repetitivo.
     """
-    tag_clean = tag.replace("-", " ")
-    core = primary_keyword.lower() if primary_keyword else tag_clean
+    tag_clean = tag.replace("-", " ").strip()
+    clean_meta = _normalize_whitespace(meta_description)
 
     intent_ctas: dict[str, str] = {
-        "how_to": "Save this pin and follow these simple steps today.",
-        "list": "Save this list and reference it every week.",
-        "checklist": "Save this checklist and start your reset today.",
-        "tips": "Save this for your daily wellness inspiration.",
-        "mistakes": "Save this guide and stop making these common mistakes.",
-        "guide": "Save this guide and read the full breakdown.",
-        "routine": "Save this routine and make healthy habits stick.",
+        "how_to": "Save this pin to follow these simple steps today!",
+        "list": "Save this pin to keep these ideas handy whenever you need them!",
+        "checklist": "Save this checklist and start your daily reset today!",
+        "tips": "Save this pin for your daily health inspiration!",
+        "mistakes": "Save this pin and stop making these common mistakes!",
+        "guide": "Save this pin and read the complete breakdown!",
+        "routine": "Save this routine and make healthy habits stick!",
     }
-    cta = intent_ctas.get(intent, "Save this pin for practical health tips.")
+    cta = intent_ctas.get(intent, "Save this pin for practical health tips!")
 
-    intent_openings: dict[str, str] = {
-        "how_to": f"Struggling to get results with {core}? Here is a clear, actionable breakdown you can follow on any schedule.",
-        "list": f"Not sure what works for {core}? This curated list shows you exactly what to focus on for real, lasting results.",
-        "checklist": f"Use this simple {core} checklist to stay on track without the overwhelm — built for real daily life.",
-        "tips": f"Get science-backed {core} tips that actually fit your routine. No fluff, just practical steps that make a difference.",
-        "mistakes": f"Most people make these {core} mistakes without realizing it. Here is what to avoid and what actually works.",
-        "guide": f"Your no-nonsense guide to {core}. Practical steps, real answers, and zero generic advice — made for busy lives.",
-        "routine": f"Build a consistent {core} routine that fits your real schedule. Start simple, stay consistent, see results.",
+    # 1. Se meta_description for de bom tamanho (80 a 190 chars), combina com CTA natural
+    if 80 <= len(clean_meta) <= 190:
+        base = clean_meta.rstrip(".!?")
+        combined = f"{base}. {cta}"
+        if 140 <= len(combined) <= 260:
+            return combined
+
+    # 2. Construção fluida baseada em tag + intent (sem recorte de strings desconexas)
+    intent_descriptions: dict[str, str] = {
+        "how_to": f"Looking for simple, realistic ways to improve your {tag_clean}? Discover practical steps designed for real life and busy schedules. {cta}",
+        "list": f"Explore the best science-backed {tag_clean} ideas to help you feel better every day. Simple, manageable tips with zero generic advice. {cta}",
+        "checklist": f"Use this practical {tag_clean} action plan to stay on track without the overwhelm. Designed for real daily schedules. {cta}",
+        "tips": f"Get science-backed {tag_clean} tips that actually fit your daily routine. Realistic steps that make a noticeable difference. {cta}",
+        "mistakes": f"Are you making common {tag_clean} mistakes without realizing it? Discover what to avoid and what actually works for lasting results. {cta}",
+        "guide": f"Your practical, no-nonsense guide to {tag_clean}. Real answers and actionable steps designed for everyday life. {cta}",
+        "routine": f"Build a consistent {tag_clean} routine that fits your actual schedule. Start small, stay consistent, and see lasting progress. {cta}",
     }
 
-    opening = intent_openings.get(intent, f"Discover practical {core} tips designed for everyday life and real schedules.")
-    combined = _normalize_whitespace(f"{opening} {cta}")
+    desc = intent_descriptions.get(
+        intent,
+        f"Discover practical, science-backed {tag_clean} tips designed for everyday life. Simple steps to feel your best without stress. {cta}",
+    )
+    desc = _normalize_whitespace(desc)
+    if len(desc) > 260:
+        desc = _trim_at_word_boundary(desc, 260)
+        if not desc.endswith((".", "!", "?")):
+            desc = desc.rstrip() + "."
 
-    if len(combined) > 260:
-        combined = _trim_at_word_boundary(combined, 260)
-        if not combined.endswith((".", "!", "?")):
-            combined = combined.rstrip() + "."
+    if len(desc) < 140:
+        desc = _trim_at_word_boundary(f"{desc} Built for real daily schedules with simple steps.", 260)
 
-    if len(combined) < 140:
-        supplement = f" Focused on {tag_clean} wellness with simple, manageable steps."
-        combined = _normalize_whitespace(f"{opening}{supplement} {cta}")
-        combined = _trim_at_word_boundary(combined, 260)
-
-    return combined
+    return desc
 
 
 def generate_pinterest_seo(
@@ -521,10 +593,11 @@ def generate_pinterest_seo(
     - intent         : "how_to" | "list" | "checklist" | "tips" | "mistakes" | "guide" | "routine"
     - primary_keyword: frase focal de 2-3 palavras (long-tail)
     - secondary_keywords: list[str] de frases de apoio
-    - pin_title      : str 40-70 chars, otimizado Pinterest
-    - pin_description: str 140-260 chars, otimizado Pinterest
-    - keywords       : str CSV de 5-8 frases de busca (para o campo Keywords do Bulk Upload)
+    - pin_title      : str 40-70 chars, otimizado Pinterest US
+    - pin_description: str 140-260 chars, linguagem natural e persuasiva US
+    - keywords       : str CSV de 5-8 termos autênticos do Pinterest US
     - keywords_list  : list[str] das mesmas frases
+    - board          : str pasta recomendada para o Pin (US audience)
     """
     from .topics import Topic as _Topic
     topic_name = topic.name if isinstance(topic, _Topic) else str(topic)
@@ -546,42 +619,53 @@ def generate_pinterest_seo(
     # ── 2. Primary Keyword ────────────────────────────────────────────────────
     primary_kw = extract_core_topic_phrase(topic_name, title)
 
-    # ── 3. Long-tail Keywords (5–8 frases) ───────────────────────────────────
+    # ── 3. Keywords Autênticas do Pinterest US (5–8 termos) ───────────────────
     keywords_list = generate_search_keywords(
         topic_name=topic_name,
         title=title,
         tag=tag,
         intent=intent,
         primary_keyword=primary_kw,
+        article_keywords=article_data.get("pin_keywords", ""),
     )
     keywords_csv = ", ".join(keywords_list)
     secondary_kws = [kw for kw in keywords_list if kw != primary_kw][:4]
 
     # ── 4. Pin Title ──────────────────────────────────────────────────────────
-    # Tenta preservar o título gerado pelo Gemini; só gera novo se for inválido ou genérico
+    # Preserva o título do Gemini se válido (ou corta suavemente em 70 chars); fallback seguro
     gemini_pin_title = _normalize_whitespace(article_data.get("pin_title", ""))
     if 40 <= len(gemini_pin_title) <= 70 and not _is_generic_fallback_title(gemini_pin_title):
         pin_title = gemini_pin_title
         LOG.debug("[PinterestSEO] Usando pin_title do Gemini: '%s'", pin_title)
     else:
         pin_title = build_pinterest_title(
-            title=title,
+            title=gemini_pin_title or title,
             topic_name=topic_name,
             tag=tag,
             intent=intent,
             primary_keyword=primary_kw,
         )
-        LOG.debug("[PinterestSEO] pin_title gerado localmente: '%s'", pin_title)
+        LOG.debug("[PinterestSEO] pin_title gerado/refinado: '%s'", pin_title)
 
     # ── 5. Pin Description ────────────────────────────────────────────────────
-    pin_description = build_pinterest_description(
-        title=title,
-        meta_description=meta_desc,
-        tag=tag,
-        intent=intent,
-        primary_keyword=primary_kw,
-        html=html,
-    )
+    # Prioridade máxima: descrição natural gerada pelo Gemini
+    gemini_pin_desc = _normalize_whitespace(article_data.get("pin_description", ""))
+    if 140 <= len(gemini_pin_desc) <= 260 and not _is_generic_fallback_description(gemini_pin_desc):
+        pin_description = gemini_pin_desc
+        LOG.debug("[PinterestSEO] Preservando pin_description natural do Gemini: '%s'", pin_description)
+    else:
+        pin_description = build_pinterest_description(
+            title=title,
+            meta_description=meta_desc,
+            tag=tag,
+            intent=intent,
+            primary_keyword=primary_kw,
+            html=html,
+        )
+        LOG.debug("[PinterestSEO] pin_description gerado/fallback: '%s'", pin_description)
+
+    # ── 6. Board Segmentado para o Nicho (US Audience) ────────────────────────
+    board = US_PINTEREST_BOARDS.get(tag, "Health & Wellness")
 
     seo_result = {
         "intent": intent,
@@ -591,13 +675,14 @@ def generate_pinterest_seo(
         "pin_description": pin_description,
         "keywords": keywords_csv,
         "keywords_list": keywords_list,
+        "board": board,
     }
 
     LOG.info(
-        "[PinterestSEO] '%s' → Intent=%s | KW='%s' | Title='%s' (%d chars) | %d keywords",
+        "[PinterestSEO] '%s' → Intent=%s | Board='%s' | Title='%s' (%d chars) | %d keywords",
         title[:35],
         intent,
-        primary_kw,
+        board,
         pin_title,
         len(pin_title),
         len(keywords_list),

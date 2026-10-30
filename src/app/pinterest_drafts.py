@@ -42,6 +42,7 @@ def write_draft_pack(
     keywords: str = "",       # Frases de busca pré-geradas (opcional)
     intent: str = "",         # Search intent (opcional)
     primary_keyword: str = "",# Keyword principal (opcional)
+    board: str = "",          # Pasta do Pinterest (opcional)
 ) -> tuple[Path, Path]:
     """
     Gera CSV no formato exato do Pinterest Bulk Upload (mesmo padrão do teste.csv):
@@ -66,6 +67,12 @@ def write_draft_pack(
             primary_keyword=primary_keyword,
         )
 
+    # Determina o board alvo (prioridade: informado > mapeado por tag > padrão)
+    target_board = (board or "").strip()
+    if not target_board:
+        from .pinterest_seo import US_PINTEREST_BOARDS
+        target_board = US_PINTEREST_BOARDS.get(tag, PINTEREST_BOARD)
+
     # Carrega pins já registrados no dia para determinar o slot atual caso não informado
     json_path = out_dir / f"{run_date.isoformat()}_pins.json"
     payload: list[dict[str, str]] = []
@@ -89,7 +96,7 @@ def write_draft_pack(
     item = {
         "Title": pin_title,
         "Media URL": media_url,
-        "Pinterest board": PINTEREST_BOARD,
+        "Pinterest board": target_board,
         "Thumbnail": "",          # Pinterest Bulk Upload aceita vazio
         "Description": pin_description,
         "Link": link,
@@ -97,8 +104,14 @@ def write_draft_pack(
         "Keywords": final_keywords,
     }
 
-    # Evita duplicados pelo link
-    if not any(p.get("Link") == link for p in payload):
+    # Atualiza entrada existente pelo link ou adiciona novo pin
+    replaced = False
+    for i, p in enumerate(payload):
+        if p.get("Link") == link:
+            payload[i] = item
+            replaced = True
+            break
+    if not replaced:
         payload.append(item)
 
     # Fieldnames na ordem exata do teste.csv

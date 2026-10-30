@@ -65,9 +65,9 @@ class GeminiClient:
             },
         }
 
-        # Modelos recomendados pela API: gemini-3.6-flash e gemini-3.8-flash
+        # Modelos recomendados pela API: gemini-2.5-flash e gemini-2.0-flash
         candidate_models = [self.model]
-        for fb in ["gemini-3.6-flash", "gemini-3.8-flash"]:
+        for fb in ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"]:
             if fb not in candidate_models:
                 candidate_models.append(fb)
 
@@ -135,7 +135,12 @@ class GeminiClient:
                 # Erros permanentes — sem espera, sem retry na mesma key
                 if status in _PERMANENT_HTTP_ERRORS:
                     body_preview = response.text[:200]
-                    msg = f"key#{key_idx} status={status} PERMANENTE body={body_preview}"
+                    if status == 404:
+                        msg = f"key#{key_idx} status=404: Modelo '{current_model}' não encontrado na API"
+                    elif status in {401, 403}:
+                        msg = f"key#{key_idx} status={status}: Chave de API inválida ou sem permissão"
+                    else:
+                        msg = f"key#{key_idx} status={status} PERMANENTE body={body_preview}"
                     errors.append(msg)
                     LOG.error("[Gemini] %s", msg)
                     continue
@@ -183,11 +188,29 @@ class GeminiClient:
                 )
                 time.sleep(inter_wait)
 
-        raise RuntimeError(
-            f"Gemini falhou após {_MAX_ROUNDS + 1} rodadas "
-            f"com {len(self.api_keys)} key(s). "
-            f"Últimos erros: {'; '.join(errors[-6:])}"
-        )
+        all_429 = all("429" in e for e in errors) if errors else False
+        has_404 = any("404" in e for e in errors)
+        has_auth = any("401" in e or "403" in e for e in errors)
+
+        if all_429:
+            raise RuntimeError(
+                f"Cota do Gemini esgotada (HTTP 429) em todas as {len(self.api_keys)} chaves de API. "
+                "Limite por minuto ou limite diário atingido."
+            )
+        elif has_404:
+            raise RuntimeError(
+                f"Modelo do Gemini não encontrado (HTTP 404): O modelo '{current_model}' "
+                "não foi reconhecido pela API. Verifique a variável GEMINI_MODEL (recomendado: 'gemini-2.5-flash')."
+            )
+        elif has_auth:
+            raise RuntimeError(
+                f"Chave de API do Gemini rejeitada (HTTP 401/403): Verifique se os secrets GEMINI_API_KEY_1..4 estão corretos."
+            )
+        else:
+            raise RuntimeError(
+                f"Gemini indisponível após {_MAX_ROUNDS + 1} rodadas. "
+                f"Últimos erros: {'; '.join(errors[-4:])}"
+            )
 
 
 # ──────────────────────────────────────────────────────────────

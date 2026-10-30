@@ -27,7 +27,7 @@ ALLOWED_TAGS = {
 CONTENT_PROMPT = """\
 Write a high-quality, US-focused health article.
 Return a strict JSON object only (no markdown, no code fences) with EXACTLY these keys:
-title, slug, meta_description, html, image_query, pin_title, pin_description, alt_text, tag, faq
+title, slug, meta_description, html, image_query, pin_title, pin_description, pin_keywords, alt_text, tag, faq
 
 CRITICAL JSON RULES (read carefully before generating):
 - NO literal newlines inside any JSON string value — use \\n instead.
@@ -81,8 +81,9 @@ For "title": create one high-CTR SEO title (40–70 chars) based on title_hint.
 For "slug": URL-friendly version of the title (lowercase, hyphens, max 80 chars).
 For "meta_description": 140–160 chars, keyword-rich.
 For "image_query": 3–5 word Pexels search query (no special chars).
-For "pin_title": 40–70 chars, benefit-driven.
-For "pin_description": 140–260 chars, engaging.
+For "pin_title": 40–70 chars, benefit-driven and clickable for US Pinterest audience.
+For "pin_description": 150–250 chars. Highly engaging, conversational US English. Hook the reader with a clear benefit, pain point, or curiosity gap, naturally weave in 2-3 relevant keywords, and end with a natural CTA (e.g. "Save this pin for later!", "Click to read the full guide!"). Do NOT use repetitive boilerplate templates.
+For "pin_keywords": 4–6 authentic US Pinterest search phrases (2–3 words each, comma-separated, e.g. "anti inflammatory diet, foods that fight inflammation, healthy meal prep ideas").
 For "alt_text": descriptive image alt text, 10–20 words.
 
 If tag=recipes, include an additional key "recipe" with this exact shape:
@@ -168,6 +169,9 @@ def generate_article(
             payload.get("html", ""),
         )
     payload["pin_description"] = pin_desc
+
+    pin_kws = str(payload.get("pin_keywords", "")).strip()
+    payload["pin_keywords"] = pin_kws
 
     if mode == "info":
         payload["html"] = payload["html"].replace("Disclosure: This page may contain affiliate links.", "")

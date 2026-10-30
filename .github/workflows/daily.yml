@@ -43,11 +43,13 @@ jobs:
           PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
           PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
           PINTEREST_ENABLE_PUBLISH: ${{ secrets.PINTEREST_ENABLE_PUBLISH }}
-          POSTS_PER_WEEK: "5"
+          POSTS_PER_DAY: "3"
+          POSTS_PER_WEEK: "7"
           HF_HUB_DISABLE_PROGRESS_BARS: "1"
           TRANSFORMERS_VERBOSITY: "error"
           GOOGLE_INDEXING_JSON_PATH: ${{ secrets.GOOGLE_INDEXING_JSON_PATH }}
-          GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-3.6-flash' }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-2.5-flash' }}
+          PYTHONUNBUFFERED: "1"
         run: python -m src.app.run_daily
 
       - name: Validate internal links
