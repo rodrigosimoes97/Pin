@@ -67,7 +67,7 @@ class GeminiClient:
 
         # Modelos recomendados pela API: gemini-2.5-flash e gemini-2.0-flash
         candidate_models = [self.model]
-        for fb in ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"]:
+        for fb in ["gemini-2.5-flash"]:
             if fb not in candidate_models:
                 candidate_models.append(fb)
 
