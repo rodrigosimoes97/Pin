@@ -1,8 +1,7 @@
 {
-  "runs": 213,
+  "runs": 214,
   "offer_runs": 21,
   "recent_topics": [
-    "yoga-for-flexibility",
     "home-workouts",
     "8-common-food-additives-linked-to-high-blood-press",
     "millions-take-calcium-and-vitamin-d-for-bone-healt",
@@ -51,10 +50,10 @@
     "are-supplements-the-new-snake-oil",
     "popular-cannabis-sleep-gummies-may-have-a-hidden-d",
     "a-simple-daily-fiber-supplement-reduced-arthritis-",
-    "can-coffee-help-parkinson-s-symptoms"
+    "can-coffee-help-parkinson-s-symptoms",
+    "six-popular-sugar-substitutes-linked-to-faster-bra"
   ],
   "recent_slugs": [
-    "intermittent-fasting-women-health-weight-loss",
     "unlock-best-sleep-energy-focus-hacks-americans",
     "healthier-french-fries-microwave-method",
     "toddler-ultra-processed-foods-shocking-truth",
@@ -153,11 +152,11 @@
     "6-science-backed-habits-are-supplements-the-new-snake-oil",
     "popular-cannabis-sleep-gummies-may-have-a-hidden-dark-side",
     "simple-daily-fiber-supplement-reduced-arthritis-pain-and-improved-strength",
-    "can-coffee-help-parkinsons-symptoms"
+    "can-coffee-help-parkinsons-symptoms",
+    "six-popular-sugar-substitutes-linked-to-faster-brain-aging"
   ],
   "last_run": "2026-10-30",
   "recent_tags": [
-    "healthy-habits",
     "home-workouts",
     "healthy-habits",
     "healthy-habits",
@@ -206,7 +205,8 @@
     "healthy-habits",
     "sleep",
     "anti-inflammatory",
-    "healthy-habits"
+    "healthy-habits",
+    "longevity"
   ],
   "tag_counts": {
     "sleep": 31,
@@ -214,7 +214,7 @@
     "mental-wellness": 24,
     "stress": 11,
     "healthy-habits": 61,
-    "longevity": 26,
+    "longevity": 27,
     "recipes": 9,
     "anti-inflammatory": 10,
     "home-workouts": 10,
@@ -226,7 +226,7 @@
     "gut": 30,
     "stress": 23,
     "healthy-habits": 64,
-    "longevity": 29,
+    "longevity": 30,
     "recipes": 29,
     "anti-inflammatory": 11,
     "home-workouts": 18,
@@ -235,7 +235,6 @@
     "health": 18
   },
   "recent_titles": [
-    "3 Practical Ways to Handle Stress When Desperate For Heart Surgery For Their Baby, A Family Feels The Effects Of Pediatric Hospital Shortages",
     "Scientists Discover Strange Link Between Low Vitamin D And Pain",
     "Gantenerumab Fails To Slow Alzheimers Memory Loss: What Is Next?",
     "Scientists Find Ozempic May Slow Aging Itself (Here is What I Did)",
@@ -294,6 +293,7 @@
     "6 Science-Backed Habits: Are Supplements The New Snake Oil?",
     "Popular Cannabis Sleep Gummies May Have A Hidden Dark Side You Need to Know",
     "A Simple Daily Fiber Supplement Reduced Arthritis Pain And Improved Strength",
-    "Can Coffee Help Parkinson\u2019S Symptoms? What Science Says"
+    "Can Coffee Help Parkinson\u2019S Symptoms? What Science Says",
+    "Six Popular Sugar Substitutes Linked To Faster Brain Aging: What to Know"
   ]
 }
