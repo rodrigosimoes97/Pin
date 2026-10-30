@@ -44,7 +44,7 @@ def _load_gemini_keys() -> list[str]:
 def load_settings() -> Settings:
     return Settings(
         gemini_api_keys=_load_gemini_keys(),
-        gemini_model=os.getenv("GEMINI_MODEL", "gemini-2.5-flash").strip(),
+        gemini_model=os.getenv("GEMINI_MODEL", "gemini-3.6-flash").strip(),
         pexels_api_key=_required("PEXELS_API_KEY"),
         base_url=(os.getenv("BASE_URL") or "https://health-ptg.pages.dev").strip().rstrip("/"),
         site_title=os.getenv("SITE_TITLE", "Practical US Health Notes").strip(),

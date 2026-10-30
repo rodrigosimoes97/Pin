@@ -48,7 +48,7 @@ jobs:
           HF_HUB_DISABLE_PROGRESS_BARS: "1"
           TRANSFORMERS_VERBOSITY: "error"
           GOOGLE_INDEXING_JSON_PATH: ${{ secrets.GOOGLE_INDEXING_JSON_PATH }}
-          GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-2.5-flash' }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-3.6-flash' }}
           PYTHONUNBUFFERED: "1"
         run: python -m src.app.run_daily
 
