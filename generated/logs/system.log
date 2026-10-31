@@ -82389,3 +82389,82 @@ RuntimeError: Gemini failed after exhaustive retries: key#1 transient_status=429
 2026-10-30 17:49:48,368 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=5518
 2026-10-30 17:49:48,434 WARNING __main__ - [Tentativa 5 (Post 2/3)] Artigo descartado por similaridade excessiva com post anterior (sobreposição: 0.9%)
 2026-10-30 17:49:48,435 WARNING __main__ - [Tentativa 5 (Post 2/3)] Tentativa descartada sem publicação.
+2026-10-31 13:37:46,382 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+2026-10-31 13:37:46,447 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-10-31 13:37:46,508 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-31 13:37:46,529 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Fmodules.json=&etag=%22952a9b81c0bfd99800fabf352f69c7ccd46c5e43%22 "HTTP/1.1 200 OK"
+2026-10-31 13:37:46,591 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-31 13:37:46,613 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Fconfig_sentence_transformers.json=&etag=%22fd1b291129c607e5d49799f87cb219b27f98acdf%22 "HTTP/1.1 200 OK"
+2026-10-31 13:37:46,672 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-10-31 13:37:46,694 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2FREADME.md=&etag=%2244af2e3b0fa3a0b6239e48422972bf755f28fde0%22 "HTTP/1.1 200 OK"
+2026-10-31 13:37:46,715 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2FREADME.md=&etag=%2244af2e3b0fa3a0b6239e48422972bf755f28fde0%22 "HTTP/1.1 200 OK"
+2026-10-31 13:37:46,777 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-31 13:37:46,800 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Fsentence_bert_config.json=&etag=%2259d594003bf59880a884c574bf88ef7555bb0202%22 "HTTP/1.1 200 OK"
+2026-10-31 13:37:46,862 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-10-31 13:37:46,921 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-31 13:37:46,942 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Fconfig.json=&etag=%2272b987fd805cfa2b58c4c8c952b274a11bfd5a00%22 "HTTP/1.1 200 OK"
+2026-10-31 13:37:47,038 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/model.safetensors "HTTP/1.1 302 Found"
+2026-10-31 13:37:47,409 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/processor_config.json "HTTP/1.1 404 Not Found"
+2026-10-31 13:37:47,470 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-10-31 13:37:47,530 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-10-31 13:37:47,590 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-31 13:37:47,611 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Ftokenizer_config.json=&etag=%22c79f2b6a0cea6f4b564fed1938984bace9d30ff0%22 "HTTP/1.1 200 OK"
+2026-10-31 13:37:47,685 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-31 13:37:47,749 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-31 13:37:47,811 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/vocab.txt "HTTP/1.1 307 Temporary Redirect"
+2026-10-31 13:37:47,833 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/vocab.txt?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Fvocab.txt=&etag=%22fb140275c155a9c7c5a3b3e0e77a9e839594a938%22 "HTTP/1.1 200 OK"
+2026-10-31 13:37:47,891 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-31 13:37:47,913 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Ftokenizer.json=&etag=%22cb202bfe2e3c98645018a6d12f182a434c9d3e02%22 "HTTP/1.1 200 OK"
+2026-10-31 13:37:47,978 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/added_tokens.json "HTTP/1.1 404 Not Found"
+2026-10-31 13:37:48,037 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/special_tokens_map.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-31 13:37:48,058 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/special_tokens_map.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Fspecial_tokens_map.json=&etag=%22e7b0375001f109a6b8873d756ad4f7bbb15fbaa5%22 "HTTP/1.1 200 OK"
+2026-10-31 13:37:48,117 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/chat_template.jinja "HTTP/1.1 404 Not Found"
+2026-10-31 13:37:48,209 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-31 13:37:48,230 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2F1_Pooling%2Fconfig.json=&etag=%22d1514c3162bbe87b343f565fadc62e6c06f04f03%22 "HTTP/1.1 200 OK"
+2026-10-31 13:37:48,296 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/2_Normalize/config.json "HTTP/1.1 404 Not Found"
+2026-10-31 13:37:48,328 INFO __main__ - Buscando trending topics para USA...
+2026-10-31 13:37:48,706 WARNING src.app.trend_research - Failed to fetch Google Trends (404/Error): The request failed: Google returned a response with code 404. Moving to fallbacks.
+2026-10-31 13:37:52,479 INFO src.app.trend_research - Gathered 14 unique trending topics.
+2026-10-31 13:37:52,482 INFO __main__ - ═══ INICIANDO RUN DIÁRIO (Meta: 3 posts/dia | Até 5 tentativas) ═══
+2026-10-31 13:37:52,482 INFO __main__ - ─── Tentativa 1 (Post 1/3) ───
+2026-10-31 13:37:52,482 INFO __main__ - [Tentativa 1 (Post 1/3)] Usando trending topic: Experimental therapy gantenerumab fails to slow or improve Alzheimers memory loss in clinical trials
+2026-10-31 13:37:52,482 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-31 13:38:00,293 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=5046
+2026-10-31 13:38:00,294 WARNING __main__ - [Tentativa 1 (Post 1/3)] Qualidade insuficiente: Artigo muito curto: 425 palavras geradas (mínimo exigido: 450)
+2026-10-31 13:38:00,294 WARNING __main__ - [Tentativa 1 (Post 1/3)] Tentativa descartada sem publicação.
+2026-10-31 13:38:00,294 INFO __main__ - ─── Tentativa 2 (Post 1/3) ───
+2026-10-31 13:38:00,294 INFO __main__ - [Tentativa 2 (Post 1/3)] Usando trending topic: The Best Foods to Protect Against Atrial Fibrillation
+2026-10-31 13:38:00,295 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-31 13:38:13,613 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-31 13:38:18,613 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-31 13:38:24,360 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-31 13:38:29,360 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-10-31 13:38:34,922 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-31 13:38:39,923 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 enviando...
+2026-10-31 13:39:07,243 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 OK finishReason=STOP len_chars=6073
+2026-10-31 13:39:07,462 INFO src.app.duplicate_checker - Indexed post: what-nobody-tells-you-about-the-best-foods-to-protect-against-atrial-fibrillatio (Total: 207)
+2026-10-31 13:39:07,466 INFO src.app.pinterest_seo - [PinterestSEO] 'What Nobody Tells You About The Bes' → Intent=list | Board='Daily Healthy Habits' | Title='The Best Foods To Protect Against Atrial Fibrillation Naturally' (63 chars) | 8 keywords
+2026-10-31 13:39:10,701 WARNING src.app.indexing - [GoogleIndexing] HTTP 403: Permissão negada no Google Search Console para https://rodrigosimoes97.github.io/Pin/what-nobody-tells-you-about-the-best-foods-to-protect-against-atrial-fibrillatio.html. Certifique-se de adicionar o email da conta de serviço como proprietário no Search Console.
+2026-10-31 13:39:10,702 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-10-31_pins.csv com 8 keywords
+2026-10-31 13:39:10,704 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'The Best Foods To Protect Against Atrial Fibrillation Naturally' (intent=list)
+2026-10-31 13:39:10,704 INFO __main__ - [Tentativa 2 (Post 1/3)] ✓ Publicado com sucesso: 'The Best Foods To Protect Against Atrial Fibrillation Naturally' | Board='Daily Healthy Habits'
+2026-10-31 13:39:10,704 INFO __main__ - ─── Tentativa 3 (Post 2/3) ───
+2026-10-31 13:39:10,704 INFO __main__ - [Tentativa 3 (Post 2/3)] Tópico selecionado: Budget Meal Prep (tag: recipes)
+2026-10-31 13:39:10,704 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-31 13:39:32,590 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-10-31 13:39:37,590 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-10-31 13:40:01,408 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 OK finishReason=STOP len_chars=5465
+2026-10-31 13:40:01,409 WARNING __main__ - [Tentativa 3 (Post 2/3)] Qualidade insuficiente: Artigo muito curto: 395 palavras geradas (mínimo exigido: 450)
+2026-10-31 13:40:01,409 WARNING __main__ - [Tentativa 3 (Post 2/3)] Tentativa descartada sem publicação.
+2026-10-31 13:40:01,409 INFO __main__ - ─── Tentativa 4 (Post 2/3) ───
+2026-10-31 13:40:01,409 INFO __main__ - [Tentativa 4 (Post 2/3)] Tópico selecionado: Budget Meal Prep (tag: recipes)
+2026-10-31 13:40:01,409 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-31 13:40:15,674 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=5237
+2026-10-31 13:40:15,743 WARNING __main__ - [Tentativa 4 (Post 2/3)] Artigo descartado por similaridade excessiva com post anterior (sobreposição: 0.9%)
+2026-10-31 13:40:15,743 WARNING __main__ - [Tentativa 4 (Post 2/3)] Tentativa descartada sem publicação.
+2026-10-31 13:40:15,743 INFO __main__ - ─── Tentativa 5 (Post 2/3) ───
+2026-10-31 13:40:15,743 INFO __main__ - [Tentativa 5 (Post 2/3)] Tópico selecionado: Budget Meal Prep (tag: recipes)
+2026-10-31 13:40:15,743 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-10-31 13:40:39,841 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=6123
+2026-10-31 13:40:39,908 WARNING __main__ - [Tentativa 5 (Post 2/3)] Artigo descartado por similaridade excessiva com post anterior (sobreposição: 0.9%)
+2026-10-31 13:40:39,908 WARNING __main__ - [Tentativa 5 (Post 2/3)] Tentativa descartada sem publicação.

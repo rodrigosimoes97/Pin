@@ -1,8 +1,7 @@
 {
-  "runs": 214,
+  "runs": 215,
   "offer_runs": 21,
   "recent_topics": [
-    "home-workouts",
     "8-common-food-additives-linked-to-high-blood-press",
     "millions-take-calcium-and-vitamin-d-for-bone-healt",
     "glp-1-weight-loss-and-diabetes-drugs-linked-to-nut",
@@ -51,10 +50,10 @@
     "popular-cannabis-sleep-gummies-may-have-a-hidden-d",
     "a-simple-daily-fiber-supplement-reduced-arthritis-",
     "can-coffee-help-parkinson-s-symptoms",
-    "six-popular-sugar-substitutes-linked-to-faster-bra"
+    "six-popular-sugar-substitutes-linked-to-faster-bra",
+    "the-best-foods-to-protect-against-atrial-fibrillat"
   ],
   "recent_slugs": [
-    "unlock-best-sleep-energy-focus-hacks-americans",
     "healthier-french-fries-microwave-method",
     "toddler-ultra-processed-foods-shocking-truth",
     "sparkling-water-smile-dentist-advice",
@@ -153,11 +152,11 @@
     "popular-cannabis-sleep-gummies-may-have-a-hidden-dark-side",
     "simple-daily-fiber-supplement-reduced-arthritis-pain-and-improved-strength",
     "can-coffee-help-parkinsons-symptoms",
-    "six-popular-sugar-substitutes-linked-to-faster-brain-aging"
+    "six-popular-sugar-substitutes-linked-to-faster-brain-aging",
+    "what-nobody-tells-you-about-the-best-foods-to-protect-against-atrial-fibrillatio"
   ],
-  "last_run": "2026-10-30",
+  "last_run": "2026-10-31",
   "recent_tags": [
-    "home-workouts",
     "healthy-habits",
     "healthy-habits",
     "weight",
@@ -206,14 +205,15 @@
     "sleep",
     "anti-inflammatory",
     "healthy-habits",
-    "longevity"
+    "longevity",
+    "healthy-habits"
   ],
   "tag_counts": {
     "sleep": 31,
     "gut": 31,
     "mental-wellness": 24,
     "stress": 11,
-    "healthy-habits": 61,
+    "healthy-habits": 62,
     "longevity": 27,
     "recipes": 9,
     "anti-inflammatory": 10,
@@ -227,7 +227,7 @@
     "stress": 23,
     "healthy-habits": 64,
     "longevity": 30,
-    "recipes": 29,
+    "recipes": 30,
     "anti-inflammatory": 11,
     "home-workouts": 18,
     "weight": 36,
@@ -235,7 +235,6 @@
     "health": 18
   },
   "recent_titles": [
-    "Scientists Discover Strange Link Between Low Vitamin D And Pain",
     "Gantenerumab Fails To Slow Alzheimers Memory Loss: What Is Next?",
     "Scientists Find Ozempic May Slow Aging Itself (Here is What I Did)",
     "Stop Overcomplicating The Corporate Playbook Behind Undermining Dietary Guidelines",
@@ -294,6 +293,7 @@
     "Popular Cannabis Sleep Gummies May Have A Hidden Dark Side You Need to Know",
     "A Simple Daily Fiber Supplement Reduced Arthritis Pain And Improved Strength",
     "Can Coffee Help Parkinson\u2019S Symptoms? What Science Says",
-    "Six Popular Sugar Substitutes Linked To Faster Brain Aging: What to Know"
+    "Six Popular Sugar Substitutes Linked To Faster Brain Aging: What to Know",
+    "What Nobody Tells You About The Best Foods To Protect Against Atrial Fibrillation"
   ]
 }
