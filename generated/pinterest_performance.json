@@ -464,7 +464,37 @@
       "outbound_clicks": 0,
       "created_at": "2026-10-31T13:39:10.703353+00:00",
       "last_updated": "2026-10-31T13:39:10.703353+00:00"
+    },
+    {
+      "date": "2026-11-01",
+      "url": "https://health-ptg.pages.dev/drinking-tea-may-help-protect-your-heart-but-theres-a-surprising-catch.html",
+      "topic": "Drinking Tea May Help Protect Your Heart, But There’S A Surprising Catch",
+      "tag": "healthy-habits",
+      "intent": "checklist",
+      "primary_keyword": "drinking tea protect heart",
+      "title": "Drinking Tea May Help Protect Your Heart, But There’S A Catch",
+      "impressions": 0,
+      "engagements": 0,
+      "saves": 0,
+      "outbound_clicks": 0,
+      "created_at": "2026-11-01T14:17:04.533498+00:00",
+      "last_updated": "2026-11-01T14:17:04.533498+00:00"
+    },
+    {
+      "date": "2026-11-01",
+      "url": "https://health-ptg.pages.dev/scientists-discover-a-surprising-brain-benefit-of-eating-peanuts-every-day.html",
+      "topic": "Scientists Discover A Surprising Brain Benefit Of Eating Peanuts Every Day",
+      "tag": "longevity",
+      "intent": "guide",
+      "primary_keyword": "scientists discover surprising brain",
+      "title": "Daily Peanut Habit: Surprising Brain Benefits Revealed",
+      "impressions": 0,
+      "engagements": 0,
+      "saves": 0,
+      "outbound_clicks": 0,
+      "created_at": "2026-11-01T14:17:18.117661+00:00",
+      "last_updated": "2026-11-01T14:17:18.117661+00:00"
     }
   ],
-  "last_updated": "2026-10-31T13:39:10.703393+00:00"
+  "last_updated": "2026-11-01T14:17:18.117686+00:00"
 }

@@ -1,9 +1,7 @@
 {
-  "runs": 215,
+  "runs": 216,
   "offer_runs": 21,
   "recent_topics": [
-    "8-common-food-additives-linked-to-high-blood-press",
-    "millions-take-calcium-and-vitamin-d-for-bone-healt",
     "glp-1-weight-loss-and-diabetes-drugs-linked-to-nut",
     "scientists-restore-a-brain-protein-and-reverse-sig",
     "high-protein-breakfast",
@@ -51,11 +49,11 @@
     "a-simple-daily-fiber-supplement-reduced-arthritis-",
     "can-coffee-help-parkinson-s-symptoms",
     "six-popular-sugar-substitutes-linked-to-faster-bra",
-    "the-best-foods-to-protect-against-atrial-fibrillat"
+    "the-best-foods-to-protect-against-atrial-fibrillat",
+    "drinking-tea-may-help-protect-your-heart-but-there",
+    "scientists-discover-a-surprising-brain-benefit-of-"
   ],
   "recent_slugs": [
-    "healthier-french-fries-microwave-method",
-    "toddler-ultra-processed-foods-shocking-truth",
     "sparkling-water-smile-dentist-advice",
     "burn-belly-fat-fast-weekly-workout",
     "unlock-longevity-eating-less-protein",
@@ -153,12 +151,12 @@
     "simple-daily-fiber-supplement-reduced-arthritis-pain-and-improved-strength",
     "can-coffee-help-parkinsons-symptoms",
     "six-popular-sugar-substitutes-linked-to-faster-brain-aging",
-    "what-nobody-tells-you-about-the-best-foods-to-protect-against-atrial-fibrillatio"
+    "what-nobody-tells-you-about-the-best-foods-to-protect-against-atrial-fibrillatio",
+    "drinking-tea-may-help-protect-your-heart-but-theres-a-surprising-catch",
+    "scientists-discover-a-surprising-brain-benefit-of-eating-peanuts-every-day"
   ],
-  "last_run": "2026-10-31",
+  "last_run": "2026-11-01",
   "recent_tags": [
-    "healthy-habits",
-    "healthy-habits",
     "weight",
     "longevity",
     "healthy-habits",
@@ -206,15 +204,17 @@
     "anti-inflammatory",
     "healthy-habits",
     "longevity",
-    "healthy-habits"
+    "healthy-habits",
+    "healthy-habits",
+    "longevity"
   ],
   "tag_counts": {
     "sleep": 31,
     "gut": 31,
     "mental-wellness": 24,
     "stress": 11,
-    "healthy-habits": 62,
-    "longevity": 27,
+    "healthy-habits": 63,
+    "longevity": 28,
     "recipes": 9,
     "anti-inflammatory": 10,
     "home-workouts": 10,
@@ -227,16 +227,14 @@
     "stress": 23,
     "healthy-habits": 64,
     "longevity": 30,
-    "recipes": 30,
+    "recipes": 31,
     "anti-inflammatory": 11,
     "home-workouts": 18,
     "weight": 36,
     "mental-wellness": 4,
-    "health": 18
+    "health": 19
   },
   "recent_titles": [
-    "Gantenerumab Fails To Slow Alzheimers Memory Loss: What Is Next?",
-    "Scientists Find Ozempic May Slow Aging Itself (Here is What I Did)",
     "Stop Overcomplicating The Corporate Playbook Behind Undermining Dietary Guidelines",
     "What Nobody Tells You About The Whole Grain Sweet Spot",
     "Ultra-Processed Foods Linked To Hidden Muscle Fat That May Threaten Your Knees",
@@ -294,6 +292,8 @@
     "A Simple Daily Fiber Supplement Reduced Arthritis Pain And Improved Strength",
     "Can Coffee Help Parkinson\u2019S Symptoms? What Science Says",
     "Six Popular Sugar Substitutes Linked To Faster Brain Aging: What to Know",
-    "What Nobody Tells You About The Best Foods To Protect Against Atrial Fibrillation"
+    "What Nobody Tells You About The Best Foods To Protect Against Atrial Fibrillation",
+    "Drinking Tea May Help Protect Your Heart, But There'S A Surprising Catch",
+    "Scientists Discover A Surprising Brain Benefit Of Eating Peanuts Every Day"
   ]
 }

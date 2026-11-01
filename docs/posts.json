@@ -1,5 +1,23 @@
 [
   {
+    "slug": "scientists-discover-a-surprising-brain-benefit-of-eating-peanuts-every-day",
+    "title": "Scientists Discover A Surprising Brain Benefit Of Eating Peanuts Every Day",
+    "description": "Scientists discover a surprising brain benefit of eating peanuts every day. Boost your memory, lower stress, and improve focus with a daily handful.",
+    "date": "2026-11-01",
+    "url": "scientists-discover-a-surprising-brain-benefit-of-eating-peanuts-every-day.html",
+    "hero": "assets/2026-11-01_scientists-discover-a-surprising-brain-benefit-of-eating-peanuts-every-day.jpeg",
+    "tag": "longevity"
+  },
+  {
+    "slug": "drinking-tea-may-help-protect-your-heart-but-theres-a-surprising-catch",
+    "title": "Drinking Tea May Help Protect Your Heart, But There'S A Surprising Catch",
+    "description": "Drinking Tea May Help Protect Your Heart, But There\u2019S A Surprising Catch. Discover how temperature, milk, and timing impact your cardiovascular health.",
+    "date": "2026-11-01",
+    "url": "drinking-tea-may-help-protect-your-heart-but-theres-a-surprising-catch.html",
+    "hero": "assets/2026-11-01_drinking-tea-may-help-protect-your-heart-but-theres-a-surprising-catch.jpeg",
+    "tag": "healthy-habits"
+  },
+  {
     "slug": "what-nobody-tells-you-about-the-best-foods-to-protect-against-atrial-fibrillatio",
     "title": "What Nobody Tells You About The Best Foods To Protect Against Atrial Fibrillation",
     "description": "Discover The Best Foods To Protect Against Atrial Fibrillation. Simple, science-backed nutritional swaps to support your heart rhythm starting today.",
@@ -1780,23 +1798,5 @@
     "url": "mastering-stress-mindfulness-techniques-modern-life.html",
     "hero": "assets/2026-04-13_mastering-stress-mindfulness-techniques-modern-life.webp",
     "tag": "stress"
-  },
-  {
-    "slug": "intermittent-fasting-weight-loss-beginner-guide",
-    "title": "Intermittent Fasting for Weight Loss: Benefits & How-To Guide for Beginners",
-    "description": "Discover the science-backed benefits of intermittent fasting for sustainable weight loss. This beginner's guide covers different IF schedules and practical tips to help you get started.",
-    "date": "2026-04-10",
-    "url": "intermittent-fasting-weight-loss-beginner-guide.html",
-    "hero": "assets/2026-04-10_intermittent-fasting-weight-loss-beginner-guide.webp",
-    "tag": "weight"
-  },
-  {
-    "slug": "biohacking-beginners-health-energy",
-    "title": "Biohacking for Beginners: Unlock Your Best Health & Energy Naturally",
-    "description": "Discover Biohacking for Beginners: Unlock Your Best Health & Energy Naturally with simple, actionable steps for sleep, nutrition, and daily routines. Boost energy and feel amazing.",
-    "date": "2026-04-10",
-    "url": "biohacking-beginners-health-energy.html",
-    "hero": "assets/2026-04-10_biohacking-beginners-health-energy.webp",
-    "tag": "health"
   }
 ]
