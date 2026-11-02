@@ -1,5 +1,23 @@
 [
   {
+    "slug": "struggling-with-healthy-recipes-try-this-simple-reset",
+    "title": "Struggling with Healthy Recipes? Try This Simple Reset",
+    "description": "Struggling with healthy recipes after long workdays? Discover fast, nutrient-dense meals for busy professionals that cut stress and boost energy.",
+    "date": "2026-11-02",
+    "url": "struggling-with-healthy-recipes-try-this-simple-reset.html",
+    "hero": "assets/2026-11-02_struggling-with-healthy-recipes-try-this-simple-reset.jpeg",
+    "tag": "recipes"
+  },
+  {
+    "slug": "how-a-surprising-vitamin-a-discovery-is-changing-what-scientists-know-about-visi",
+    "title": "How A Surprising Vitamin A Discovery Is Changing What Scientists Know About Vision",
+    "description": "A Surprising Vitamin A Discovery Is Changing What Scientists Know About Vision and nutrient absorption. Learn how gut health transforms your eye wellness today.",
+    "date": "2026-11-02",
+    "url": "how-a-surprising-vitamin-a-discovery-is-changing-what-scientists-know-about-visi.html",
+    "hero": "assets/2026-11-02_how-a-surprising-vitamin-a-discovery-is-changing-what-scientists-know-about-visi.jpeg",
+    "tag": "health"
+  },
+  {
     "slug": "scientists-discover-a-surprising-brain-benefit-of-eating-peanuts-every-day",
     "title": "Scientists Discover A Surprising Brain Benefit Of Eating Peanuts Every Day",
     "description": "Scientists discover a surprising brain benefit of eating peanuts every day. Boost your memory, lower stress, and improve focus with a daily handful.",
@@ -1780,23 +1798,5 @@
     "url": "vitamin-b1-health-boost-theory.html",
     "hero": "assets/2026-04-13_vitamin-b1-health-boost-theory.webp",
     "tag": "health"
-  },
-  {
-    "slug": "unlock-healthier-weight-easy-habits",
-    "title": "Unlock a Healthier Weight: 2 Easy Eating Habits Revealed by Science",
-    "description": "Discover 2 simple, science-backed eating habits to help you unlock a healthier weight. Learn practical tips to make lasting changes without extreme diets.",
-    "date": "2026-04-13",
-    "url": "unlock-healthier-weight-easy-habits.html",
-    "hero": "assets/2026-04-13_unlock-healthier-weight-easy-habits.webp",
-    "tag": "weight"
-  },
-  {
-    "slug": "mastering-stress-mindfulness-techniques-modern-life",
-    "title": "Mastering Stress: Mindfulness Techniques for Modern Life",
-    "description": "Struggling with stress? Discover practical, science-backed mindfulness techniques for modern life to reduce anxiety, boost focus, and enhance well-being. Learn simple exercises you can do anywhere.",
-    "date": "2026-04-13",
-    "url": "mastering-stress-mindfulness-techniques-modern-life.html",
-    "hero": "assets/2026-04-13_mastering-stress-mindfulness-techniques-modern-life.webp",
-    "tag": "stress"
   }
 ]

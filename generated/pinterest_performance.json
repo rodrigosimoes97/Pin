@@ -494,7 +494,37 @@
       "outbound_clicks": 0,
       "created_at": "2026-11-01T14:17:18.117661+00:00",
       "last_updated": "2026-11-01T14:17:18.117661+00:00"
+    },
+    {
+      "date": "2026-11-02",
+      "url": "https://health-ptg.pages.dev/how-a-surprising-vitamin-a-discovery-is-changing-what-scientists-know-about-visi.html",
+      "topic": "A Surprising Vitamin A Discovery Is Changing What Scientists Know About Vision",
+      "tag": "health",
+      "intent": "guide",
+      "primary_keyword": "surprising vitamin discovery changing",
+      "title": "Everything You Need to Know About Health",
+      "impressions": 0,
+      "engagements": 0,
+      "saves": 0,
+      "outbound_clicks": 0,
+      "created_at": "2026-11-02T17:03:10.100550+00:00",
+      "last_updated": "2026-11-02T17:03:10.100550+00:00"
+    },
+    {
+      "date": "2026-11-02",
+      "url": "https://health-ptg.pages.dev/struggling-with-healthy-recipes-try-this-simple-reset.html",
+      "topic": "Healthy Recipes",
+      "tag": "recipes",
+      "intent": "list",
+      "primary_keyword": "healthy recipes",
+      "title": "Struggling with Healthy Recipes? Try This Simple Reset",
+      "impressions": 0,
+      "engagements": 0,
+      "saves": 0,
+      "outbound_clicks": 0,
+      "created_at": "2026-11-02T17:03:31.421361+00:00",
+      "last_updated": "2026-11-02T17:03:31.421361+00:00"
     }
   ],
-  "last_updated": "2026-11-01T14:17:18.117686+00:00"
+  "last_updated": "2026-11-02T17:03:31.421393+00:00"
 }

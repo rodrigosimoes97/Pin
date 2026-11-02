@@ -1,9 +1,7 @@
 {
-  "runs": 216,
+  "runs": 217,
   "offer_runs": 21,
   "recent_topics": [
-    "glp-1-weight-loss-and-diabetes-drugs-linked-to-nut",
-    "scientists-restore-a-brain-protein-and-reverse-sig",
     "high-protein-breakfast",
     "healthy-recipes",
     "zepbound-and-mounjaro-may-turn-on-the-body-s-calor",
@@ -51,11 +49,11 @@
     "six-popular-sugar-substitutes-linked-to-faster-bra",
     "the-best-foods-to-protect-against-atrial-fibrillat",
     "drinking-tea-may-help-protect-your-heart-but-there",
-    "scientists-discover-a-surprising-brain-benefit-of-"
+    "scientists-discover-a-surprising-brain-benefit-of-",
+    "a-surprising-vitamin-a-discovery-is-changing-what-",
+    "healthy-recipes"
   ],
   "recent_slugs": [
-    "sparkling-water-smile-dentist-advice",
-    "burn-belly-fat-fast-weekly-workout",
     "unlock-longevity-eating-less-protein",
     "intermittent-fasting-guide",
     "why-brain-fights-back-weight-loss",
@@ -153,12 +151,12 @@
     "six-popular-sugar-substitutes-linked-to-faster-brain-aging",
     "what-nobody-tells-you-about-the-best-foods-to-protect-against-atrial-fibrillatio",
     "drinking-tea-may-help-protect-your-heart-but-theres-a-surprising-catch",
-    "scientists-discover-a-surprising-brain-benefit-of-eating-peanuts-every-day"
+    "scientists-discover-a-surprising-brain-benefit-of-eating-peanuts-every-day",
+    "how-a-surprising-vitamin-a-discovery-is-changing-what-scientists-know-about-visi",
+    "struggling-with-healthy-recipes-try-this-simple-reset"
   ],
-  "last_run": "2026-11-01",
+  "last_run": "2026-11-02",
   "recent_tags": [
-    "weight",
-    "longevity",
     "healthy-habits",
     "recipes",
     "weight",
@@ -206,7 +204,9 @@
     "longevity",
     "healthy-habits",
     "healthy-habits",
-    "longevity"
+    "longevity",
+    "health",
+    "recipes"
   ],
   "tag_counts": {
     "sleep": 31,
@@ -215,11 +215,11 @@
     "stress": 11,
     "healthy-habits": 63,
     "longevity": 28,
-    "recipes": 9,
+    "recipes": 10,
     "anti-inflammatory": 10,
     "home-workouts": 10,
     "weight": 24,
-    "health": 57
+    "health": 58
   },
   "topic_rotation": {
     "sleep": 32,
@@ -227,16 +227,14 @@
     "stress": 23,
     "healthy-habits": 64,
     "longevity": 30,
-    "recipes": 31,
+    "recipes": 32,
     "anti-inflammatory": 11,
     "home-workouts": 18,
     "weight": 36,
     "mental-wellness": 4,
-    "health": 19
+    "health": 20
   },
   "recent_titles": [
-    "Stop Overcomplicating The Corporate Playbook Behind Undermining Dietary Guidelines",
-    "What Nobody Tells You About The Whole Grain Sweet Spot",
     "Ultra-Processed Foods Linked To Hidden Muscle Fat That May Threaten Your Knees",
     "Struggling with Gym Fatigue? How Smelling Chocolate Boosted My Workout Reps",
     "Fix A Hidden Compound In Healthy Foods May Worsen Ibd Fast",
@@ -294,6 +292,8 @@
     "Six Popular Sugar Substitutes Linked To Faster Brain Aging: What to Know",
     "What Nobody Tells You About The Best Foods To Protect Against Atrial Fibrillation",
     "Drinking Tea May Help Protect Your Heart, But There'S A Surprising Catch",
-    "Scientists Discover A Surprising Brain Benefit Of Eating Peanuts Every Day"
+    "Scientists Discover A Surprising Brain Benefit Of Eating Peanuts Every Day",
+    "How A Surprising Vitamin A Discovery Is Changing What Scientists Know About Vision",
+    "Struggling with Healthy Recipes? Try This Simple Reset"
   ]
 }
