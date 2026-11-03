@@ -1,8 +1,7 @@
 {
-  "runs": 217,
+  "runs": 218,
   "offer_runs": 21,
   "recent_topics": [
-    "high-protein-breakfast",
     "healthy-recipes",
     "zepbound-and-mounjaro-may-turn-on-the-body-s-calor",
     "pomegranate-compound-improves-heart-function-by-up",
@@ -51,10 +50,10 @@
     "drinking-tea-may-help-protect-your-heart-but-there",
     "scientists-discover-a-surprising-brain-benefit-of-",
     "a-surprising-vitamin-a-discovery-is-changing-what-",
-    "healthy-recipes"
+    "healthy-recipes",
+    "even-moderate-drinking-linked-to-cancer-and-early-"
   ],
   "recent_slugs": [
-    "unlock-longevity-eating-less-protein",
     "intermittent-fasting-guide",
     "why-brain-fights-back-weight-loss",
     "extra-virgin-olive-oil-immune-booster",
@@ -153,11 +152,11 @@
     "drinking-tea-may-help-protect-your-heart-but-theres-a-surprising-catch",
     "scientists-discover-a-surprising-brain-benefit-of-eating-peanuts-every-day",
     "how-a-surprising-vitamin-a-discovery-is-changing-what-scientists-know-about-visi",
-    "struggling-with-healthy-recipes-try-this-simple-reset"
+    "struggling-with-healthy-recipes-try-this-simple-reset",
+    "even-moderate-drinking-linked-to-cancer-and-early-death-major-study-finds-5-fixe"
   ],
-  "last_run": "2026-11-02",
+  "last_run": "2026-11-03",
   "recent_tags": [
-    "healthy-habits",
     "recipes",
     "weight",
     "longevity",
@@ -206,7 +205,8 @@
     "healthy-habits",
     "longevity",
     "health",
-    "recipes"
+    "recipes",
+    "longevity"
   ],
   "tag_counts": {
     "sleep": 31,
@@ -214,7 +214,7 @@
     "mental-wellness": 24,
     "stress": 11,
     "healthy-habits": 63,
-    "longevity": 28,
+    "longevity": 29,
     "recipes": 10,
     "anti-inflammatory": 10,
     "home-workouts": 10,
@@ -227,7 +227,7 @@
     "stress": 23,
     "healthy-habits": 64,
     "longevity": 30,
-    "recipes": 32,
+    "recipes": 33,
     "anti-inflammatory": 11,
     "home-workouts": 18,
     "weight": 36,
@@ -235,7 +235,6 @@
     "health": 20
   },
   "recent_titles": [
-    "Ultra-Processed Foods Linked To Hidden Muscle Fat That May Threaten Your Knees",
     "Struggling with Gym Fatigue? How Smelling Chocolate Boosted My Workout Reps",
     "Fix A Hidden Compound In Healthy Foods May Worsen Ibd Fast",
     "Stop Overcomplicating The Burden Of Weight Bias: What Works",
@@ -294,6 +293,7 @@
     "Drinking Tea May Help Protect Your Heart, But There'S A Surprising Catch",
     "Scientists Discover A Surprising Brain Benefit Of Eating Peanuts Every Day",
     "How A Surprising Vitamin A Discovery Is Changing What Scientists Know About Vision",
-    "Struggling with Healthy Recipes? Try This Simple Reset"
+    "Struggling with Healthy Recipes? Try This Simple Reset",
+    "Even Moderate Drinking Linked To Cancer And Early Death, Major Study Finds: 5 Fixes"
   ]
 }
