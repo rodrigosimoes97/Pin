@@ -539,7 +539,37 @@
       "outbound_clicks": 0,
       "created_at": "2026-11-03T15:06:01.472523+00:00",
       "last_updated": "2026-11-03T15:06:01.472523+00:00"
+    },
+    {
+      "date": "2026-11-04",
+      "url": "https://health-ptg.pages.dev/kids-who-eat-more-ultra-processed-foods-show-a-troubling-brain-response.html",
+      "topic": "Kids Who Eat More Ultra-Processed Foods Show A Troubling Brain Response",
+      "tag": "healthy-habits",
+      "intent": "list",
+      "primary_keyword": "kids who eat ultra-processed",
+      "title": "Why Kids' Brains React Differently to Processed Snacks",
+      "impressions": 0,
+      "engagements": 0,
+      "saves": 0,
+      "outbound_clicks": 0,
+      "created_at": "2026-11-04T15:25:42.583649+00:00",
+      "last_updated": "2026-11-04T15:25:42.583649+00:00"
+    },
+    {
+      "date": "2026-11-04",
+      "url": "https://health-ptg.pages.dev/simple-protein-swap-for-healthy-aging.html",
+      "topic": "A Simple Protein Swap For Healthy Aging",
+      "tag": "healthy-habits",
+      "intent": "checklist",
+      "primary_keyword": "simple protein swap healthy",
+      "title": "A Simple Protein Swap For Healthy Aging That Works",
+      "impressions": 0,
+      "engagements": 0,
+      "saves": 0,
+      "outbound_clicks": 0,
+      "created_at": "2026-11-04T15:26:12.800084+00:00",
+      "last_updated": "2026-11-04T15:26:12.800084+00:00"
     }
   ],
-  "last_updated": "2026-11-03T15:06:01.472550+00:00"
+  "last_updated": "2026-11-04T15:26:12.800109+00:00"
 }

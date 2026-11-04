@@ -82749,3 +82749,80 @@ RuntimeError: Gemini failed after exhaustive retries: key#1 transient_status=429
 2026-11-03 15:12:18,838 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
 2026-11-03 15:12:33,838 ERROR __main__ - [Tentativa 5 (Post 2/3)] Gemini indisponível após 3 rodadas. Últimos erros: key#1 status=503 (alta demanda no modelo gemini-3.8-flash); key#2 status=503 (alta demanda no modelo gemini-3.8-flash); key#3 status=503 (alta demanda no modelo gemini-3.8-flash); key#4 status=503 (alta demanda no modelo gemini-3.8-flash)
 2026-11-03 15:12:33,839 WARNING __main__ - [Tentativa 5 (Post 2/3)] Tentativa descartada sem publicação.
+2026-11-04 15:24:41,370 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+2026-11-04 15:24:41,419 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-11-04 15:24:41,465 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-11-04 15:24:41,483 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Fmodules.json=&etag=%22952a9b81c0bfd99800fabf352f69c7ccd46c5e43%22 "HTTP/1.1 200 OK"
+2026-11-04 15:24:41,523 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-11-04 15:24:41,539 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Fconfig_sentence_transformers.json=&etag=%22fd1b291129c607e5d49799f87cb219b27f98acdf%22 "HTTP/1.1 200 OK"
+2026-11-04 15:24:41,583 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-11-04 15:24:41,600 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2FREADME.md=&etag=%2244af2e3b0fa3a0b6239e48422972bf755f28fde0%22 "HTTP/1.1 200 OK"
+2026-11-04 15:24:41,616 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2FREADME.md=&etag=%2244af2e3b0fa3a0b6239e48422972bf755f28fde0%22 "HTTP/1.1 200 OK"
+2026-11-04 15:24:41,660 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-11-04 15:24:41,676 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Fsentence_bert_config.json=&etag=%2259d594003bf59880a884c574bf88ef7555bb0202%22 "HTTP/1.1 200 OK"
+2026-11-04 15:24:41,721 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-11-04 15:24:41,766 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-11-04 15:24:41,782 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Fconfig.json=&etag=%2272b987fd805cfa2b58c4c8c952b274a11bfd5a00%22 "HTTP/1.1 200 OK"
+2026-11-04 15:24:41,844 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/model.safetensors "HTTP/1.1 302 Found"
+2026-11-04 15:24:42,199 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/processor_config.json "HTTP/1.1 404 Not Found"
+2026-11-04 15:24:42,246 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-11-04 15:24:42,293 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-11-04 15:24:42,336 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-11-04 15:24:42,356 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Ftokenizer_config.json=&etag=%22c79f2b6a0cea6f4b564fed1938984bace9d30ff0%22 "HTTP/1.1 200 OK"
+2026-11-04 15:24:42,408 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-11-04 15:24:42,459 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-11-04 15:24:42,505 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/vocab.txt "HTTP/1.1 307 Temporary Redirect"
+2026-11-04 15:24:42,521 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/vocab.txt?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Fvocab.txt=&etag=%22fb140275c155a9c7c5a3b3e0e77a9e839594a938%22 "HTTP/1.1 200 OK"
+2026-11-04 15:24:42,565 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer.json "HTTP/1.1 307 Temporary Redirect"
+2026-11-04 15:24:42,581 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Ftokenizer.json=&etag=%22cb202bfe2e3c98645018a6d12f182a434c9d3e02%22 "HTTP/1.1 200 OK"
+2026-11-04 15:24:42,628 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/added_tokens.json "HTTP/1.1 404 Not Found"
+2026-11-04 15:24:42,670 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/special_tokens_map.json "HTTP/1.1 307 Temporary Redirect"
+2026-11-04 15:24:42,686 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/special_tokens_map.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Fspecial_tokens_map.json=&etag=%22e7b0375001f109a6b8873d756ad4f7bbb15fbaa5%22 "HTTP/1.1 200 OK"
+2026-11-04 15:24:42,730 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/chat_template.jinja "HTTP/1.1 404 Not Found"
+2026-11-04 15:24:42,789 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-11-04 15:24:42,805 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2F1_Pooling%2Fconfig.json=&etag=%22d1514c3162bbe87b343f565fadc62e6c06f04f03%22 "HTTP/1.1 200 OK"
+2026-11-04 15:24:42,853 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/2_Normalize/config.json "HTTP/1.1 404 Not Found"
+2026-11-04 15:24:42,882 INFO __main__ - Buscando trending topics para USA...
+2026-11-04 15:24:43,180 WARNING src.app.trend_research - Failed to fetch Google Trends (404/Error): The request failed: Google returned a response with code 404. Moving to fallbacks.
+2026-11-04 15:24:47,186 INFO src.app.trend_research - Gathered 14 unique trending topics.
+2026-11-04 15:24:47,188 INFO __main__ - ═══ INICIANDO RUN DIÁRIO (Meta: 3 posts/dia | Até 5 tentativas) ═══
+2026-11-04 15:24:47,188 INFO __main__ - ─── Tentativa 1 (Post 1/3) ───
+2026-11-04 15:24:47,188 INFO __main__ - [Tentativa 1 (Post 1/3)] Usando trending topic: Experimental therapy gantenerumab fails to slow or improve Alzheimers memory loss in clinical trials
+2026-11-04 15:24:47,188 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-11-04 15:25:07,781 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=5712
+2026-11-04 15:25:07,878 WARNING __main__ - [Tentativa 1 (Post 1/3)] Artigo descartado por similaridade excessiva com post anterior (sobreposição: 0.9%)
+2026-11-04 15:25:07,878 WARNING __main__ - [Tentativa 1 (Post 1/3)] Tentativa descartada sem publicação.
+2026-11-04 15:25:07,879 INFO __main__ - ─── Tentativa 2 (Post 1/3) ───
+2026-11-04 15:25:07,879 INFO __main__ - [Tentativa 2 (Post 1/3)] Usando trending topic: Kids who eat more ultra-processed foods show a troubling brain response
+2026-11-04 15:25:07,879 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-11-04 15:25:41,241 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=5672
+2026-11-04 15:25:41,385 INFO src.app.duplicate_checker - Indexed post: kids-who-eat-more-ultra-processed-foods-show-a-troubling-brain-response (Total: 213)
+2026-11-04 15:25:41,388 INFO src.app.pinterest_seo - [PinterestSEO] 'Kids Who Eat More Ultra-Processed F' → Intent=list | Board='Daily Healthy Habits' | Title='Why Kids' Brains React Differently to Processed Snacks' (54 chars) | 8 keywords
+2026-11-04 15:25:42,582 WARNING src.app.indexing - [GoogleIndexing] HTTP 403: Permissão negada no Google Search Console para https://rodrigosimoes97.github.io/Pin/kids-who-eat-more-ultra-processed-foods-show-a-troubling-brain-response.html. Certifique-se de adicionar o email da conta de serviço como proprietário no Search Console.
+2026-11-04 15:25:42,583 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-11-04_pins.csv com 8 keywords
+2026-11-04 15:25:42,584 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'Why Kids' Brains React Differently to Processed Snacks' (intent=list)
+2026-11-04 15:25:42,584 INFO __main__ - [Tentativa 2 (Post 1/3)] ✓ Publicado com sucesso: 'Why Kids' Brains React Differently to Processed Snacks' | Board='Daily Healthy Habits'
+2026-11-04 15:25:42,584 INFO __main__ - ─── Tentativa 3 (Post 2/3) ───
+2026-11-04 15:25:42,584 INFO __main__ - [Tentativa 3 (Post 2/3)] Usando trending topic: Scientists discover surprising heart benefits of eating avocado and mango every day
+2026-11-04 15:25:42,584 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-11-04 15:25:46,917 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-11-04 15:25:51,918 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-11-04 15:26:01,400 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 OK finishReason=STOP len_chars=5286
+2026-11-04 15:26:01,401 WARNING __main__ - [Tentativa 3 (Post 2/3)] Qualidade insuficiente: Artigo muito curto: 414 palavras geradas (mínimo exigido: 450)
+2026-11-04 15:26:01,401 WARNING __main__ - [Tentativa 3 (Post 2/3)] Tentativa descartada sem publicação.
+2026-11-04 15:26:01,401 INFO __main__ - ─── Tentativa 4 (Post 2/3) ───
+2026-11-04 15:26:01,401 INFO __main__ - [Tentativa 4 (Post 2/3)] Usando trending topic: A Simple Protein Swap for Healthy Aging
+2026-11-04 15:26:01,401 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-11-04 15:26:11,329 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=5622
+2026-11-04 15:26:11,453 INFO src.app.duplicate_checker - Indexed post: simple-protein-swap-for-healthy-aging (Total: 214)
+2026-11-04 15:26:11,455 INFO src.app.pinterest_seo - [PinterestSEO] 'A Simple Protein Swap For Healthy A' → Intent=checklist | Board='Daily Healthy Habits' | Title='A Simple Protein Swap For Healthy Aging That Works' (50 chars) | 8 keywords
+2026-11-04 15:26:12,798 WARNING src.app.indexing - [GoogleIndexing] HTTP 403: Permissão negada no Google Search Console para https://rodrigosimoes97.github.io/Pin/simple-protein-swap-for-healthy-aging.html. Certifique-se de adicionar o email da conta de serviço como proprietário no Search Console.
+2026-11-04 15:26:12,799 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-11-04_pins.csv com 8 keywords
+2026-11-04 15:26:12,800 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'A Simple Protein Swap For Healthy Aging That Works' (intent=checklist)
+2026-11-04 15:26:12,800 INFO __main__ - [Tentativa 4 (Post 2/3)] ✓ Publicado com sucesso: 'A Simple Protein Swap For Healthy Aging That Works' | Board='Daily Healthy Habits'
+2026-11-04 15:26:12,800 INFO __main__ - ─── Tentativa 5 (Post 3/3) ───
+2026-11-04 15:26:12,800 INFO __main__ - [Tentativa 5 (Post 3/3)] Tópico selecionado: High Protein Breakfast (tag: recipes)
+2026-11-04 15:26:12,801 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-11-04 15:26:23,284 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=5590
+2026-11-04 15:26:23,329 WARNING __main__ - [Tentativa 5 (Post 3/3)] Artigo descartado por similaridade excessiva com post anterior (sobreposição: 0.9%)
+2026-11-04 15:26:23,329 WARNING __main__ - [Tentativa 5 (Post 3/3)] Tentativa descartada sem publicação.
