@@ -339,6 +339,7 @@ def _render_post_html(
     reading_time = _reading_time_minutes_from_html(article_html)
     key_takeaways = _build_key_takeaways(article_html, quick_answer)
 
+    _word_count = max(300, len(re.findall(r"\b\w+\b", re.sub(r"<[^>]+>", " ", article_html))))
     article_schema = {
         "@context": "https://schema.org",
         "@type": "Article",
@@ -351,8 +352,24 @@ def _render_post_html(
             "name": "RodrigoS",
             "url": f"{public_base}/about.html",
         },
+        "publisher": {
+            "@type": "Organization",
+            "name": site_title,
+            "url": public_base,
+            "logo": {
+                "@type": "ImageObject",
+                "url": f"{public_base}/assets/logo.png",
+            },
+        },
         "mainEntityOfPage": canonical,
-        "image": og_image,
+        "image": {
+            "@type": "ImageObject",
+            "url": og_image,
+            "width": 1200,
+            "height": 630,
+        },
+        "wordCount": _word_count,
+        "articleSection": str(tag).title(),
         "about": tag,
     }
 
@@ -427,8 +444,11 @@ def _render_post_html(
 
     takeaway_items = "".join(f"<li>{escape(item)}</li>" for item in key_takeaways)
 
-    hero_webp = hero_path_rel.replace(".jpg", ".webp").replace(".png", ".webp")
-    alt_text_safe = escape(str(post.get("alt_text", "")))
+    # Gera srcset WebP correto para jpg, jpeg e png
+    _hero_stem, _dot, _hero_ext_only = hero_path_rel.rpartition(".")
+    hero_webp = (_hero_stem + ".webp") if _hero_ext_only.lower() in ("jpg", "jpeg", "png") else hero_path_rel
+    # Fallback: usa titulo do post se alt_text nao estiver definido
+    alt_text_safe = escape(str(post.get("alt_text", "") or post.get("title", "")))
     hero_picture = (
         f"<picture>"
         f"<source srcset='{hero_webp}' type='image/webp'>"
@@ -460,6 +480,9 @@ def _render_post_html(
 <meta property='og:description' content='{escape(description)}'>
 <meta property='og:url' content='{canonical}'>
 <meta property='og:image' content='{og_image}'>
+<meta property='og:image:width' content='1200'>
+<meta property='og:image:height' content='630'>
+<meta property='og:image:alt' content='{alt_text_safe}'>
 <meta property='article:published_time' content='{published_date}'>
 <meta property='article:modified_time' content='{modified_date}'>
 <meta property='article:section' content='{escape(str(tag))}'>
@@ -467,6 +490,7 @@ def _render_post_html(
 <meta name='twitter:title' content='{escape(str(post["title"]))}'>
 <meta name='twitter:description' content='{escape(description)}'>
 <meta name='twitter:image' content='{og_image}'>
+<meta name='theme-color' content='#FAF8F4'>
 <script type='application/ld+json'>{json.dumps(article_schema)}</script>
 {faq_jsonld}
 <script type='application/ld+json'>{json.dumps(breadcrumb_schema)}</script>
@@ -784,7 +808,9 @@ def _write_index(
 <meta property='og:title' content='{escape(site_title)}'>
 <meta property='og:description' content='Practical US health guides on sleep, gut, stress and habits.'>
 <meta property='og:url' content='{public_base}/'>
+<meta property='og:site_name' content='{escape(site_title)}'>
 <meta name='twitter:card' content='summary'>
+<meta name='theme-color' content='#FAF8F4'>
 {fonts}
 <link rel='stylesheet' href='assets/style.css'>
 <script type='application/ld+json'>{org_schema}</script>
@@ -985,6 +1011,15 @@ def _write_tag_pages(
 <meta name='description' content='{escape(intro)}'>
 <meta name='robots' content='index,follow'>
 <link rel='canonical' href='{public_base}/tag/{escape(file_name)}'>
+<meta property='og:type' content='website'>
+<meta property='og:title' content='{escape(tag.replace("-"," ").title())} | {escape(site_title)}'>
+<meta property='og:description' content='{escape(intro)}'>
+<meta property='og:url' content='{public_base}/tag/{escape(file_name)}'>
+<meta property='og:site_name' content='{escape(site_title)}'>
+<meta name='twitter:card' content='summary'>
+<meta name='twitter:title' content='{escape(tag.replace("-"," ").title())} | {escape(site_title)}'>
+<meta name='twitter:description' content='{escape(intro)}'>
+<meta name='theme-color' content='#FAF8F4'>
 {fonts}
 {_google_analytics()}
 <link rel='stylesheet' href='../assets/style.css'>
@@ -1103,7 +1138,9 @@ def _write_sitemap(
             lastmod = _iso_date_or_fallback(post.get("date"), today)
             rows.append(
                 f"<url><loc>{public_base}/{escape(post['url'])}</loc>"
-                f"<lastmod>{lastmod}</lastmod></url>"
+                f"<lastmod>{lastmod}</lastmod>"
+                f"<changefreq>weekly</changefreq>"
+                f"<priority>0.8</priority></url>"
             )
             seen_slugs.add(slug)
 
