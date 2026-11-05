@@ -569,7 +569,37 @@
       "outbound_clicks": 0,
       "created_at": "2026-11-04T15:26:12.800084+00:00",
       "last_updated": "2026-11-04T15:26:12.800084+00:00"
+    },
+    {
+      "date": "2026-11-05",
+      "url": "https://health-ptg.pages.dev/scientists-discover-surprising-heart-benefits-of-eating-avocado-and-mango-every-.html",
+      "topic": "Scientists Discover Surprising Heart Benefits Of Eating Avocado And Mango Every Day",
+      "tag": "healthy-habits",
+      "intent": "checklist",
+      "primary_keyword": "scientists discover surprising heart",
+      "title": "The Daily Avocado Mango Combo That Protects Your Heart",
+      "impressions": 0,
+      "engagements": 0,
+      "saves": 0,
+      "outbound_clicks": 0,
+      "created_at": "2026-11-05T15:29:34.725526+00:00",
+      "last_updated": "2026-11-05T15:29:34.725526+00:00"
+    },
+    {
+      "date": "2026-11-05",
+      "url": "https://health-ptg.pages.dev/struggling-with-can-allulose-replace-sugar-try-this-daily-reset.html",
+      "topic": "Can Allulose Replace Sugar?",
+      "tag": "healthy-habits",
+      "intent": "checklist",
+      "primary_keyword": "allulose replace sugar",
+      "title": "Can Allulose Replace Sugar? The Truth About Low Carb Sweets",
+      "impressions": 0,
+      "engagements": 0,
+      "saves": 0,
+      "outbound_clicks": 0,
+      "created_at": "2026-11-05T15:31:35.893967+00:00",
+      "last_updated": "2026-11-05T15:31:35.893967+00:00"
     }
   ],
-  "last_updated": "2026-11-04T15:26:12.800109+00:00"
+  "last_updated": "2026-11-05T15:31:35.894005+00:00"
 }
