@@ -82919,3 +82919,74 @@ RuntimeError: Gemini failed after exhaustive retries: key#1 transient_status=429
 2026-11-05 15:33:31,336 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 OK finishReason=STOP len_chars=6282
 2026-11-05 15:33:31,405 WARNING __main__ - [Tentativa 5 (Post 3/3)] Artigo descartado por similaridade excessiva com post anterior (sobreposição: 0.9%)
 2026-11-05 15:33:31,405 WARNING __main__ - [Tentativa 5 (Post 3/3)] Tentativa descartada sem publicação.
+2026-11-06 15:00:12,197 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+2026-11-06 15:00:12,287 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-11-06 15:00:12,375 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-11-06 15:00:12,390 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Fmodules.json=&etag=%22952a9b81c0bfd99800fabf352f69c7ccd46c5e43%22 "HTTP/1.1 200 OK"
+2026-11-06 15:00:12,481 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-11-06 15:00:12,496 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Fconfig_sentence_transformers.json=&etag=%22fd1b291129c607e5d49799f87cb219b27f98acdf%22 "HTTP/1.1 200 OK"
+2026-11-06 15:00:12,586 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-11-06 15:00:12,599 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2FREADME.md=&etag=%2244af2e3b0fa3a0b6239e48422972bf755f28fde0%22 "HTTP/1.1 200 OK"
+2026-11-06 15:00:12,613 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2FREADME.md=&etag=%2244af2e3b0fa3a0b6239e48422972bf755f28fde0%22 "HTTP/1.1 200 OK"
+2026-11-06 15:00:12,777 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-11-06 15:00:12,795 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Fsentence_bert_config.json=&etag=%2259d594003bf59880a884c574bf88ef7555bb0202%22 "HTTP/1.1 200 OK"
+2026-11-06 15:00:12,889 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-11-06 15:00:12,983 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-11-06 15:00:12,997 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Fconfig.json=&etag=%2272b987fd805cfa2b58c4c8c952b274a11bfd5a00%22 "HTTP/1.1 200 OK"
+2026-11-06 15:00:13,111 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/model.safetensors "HTTP/1.1 302 Found"
+2026-11-06 15:00:13,488 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/processor_config.json "HTTP/1.1 404 Not Found"
+2026-11-06 15:00:13,578 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-11-06 15:00:13,819 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-11-06 15:00:13,913 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-11-06 15:00:13,927 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Ftokenizer_config.json=&etag=%22c79f2b6a0cea6f4b564fed1938984bace9d30ff0%22 "HTTP/1.1 200 OK"
+2026-11-06 15:00:14,025 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-11-06 15:00:14,125 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-11-06 15:00:14,220 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/vocab.txt "HTTP/1.1 307 Temporary Redirect"
+2026-11-06 15:00:14,233 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/vocab.txt?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Fvocab.txt=&etag=%22fb140275c155a9c7c5a3b3e0e77a9e839594a938%22 "HTTP/1.1 200 OK"
+2026-11-06 15:00:14,322 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer.json "HTTP/1.1 307 Temporary Redirect"
+2026-11-06 15:00:14,335 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Ftokenizer.json=&etag=%22cb202bfe2e3c98645018a6d12f182a434c9d3e02%22 "HTTP/1.1 200 OK"
+2026-11-06 15:00:14,434 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/added_tokens.json "HTTP/1.1 404 Not Found"
+2026-11-06 15:00:14,526 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/special_tokens_map.json "HTTP/1.1 307 Temporary Redirect"
+2026-11-06 15:00:14,545 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/special_tokens_map.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2Fspecial_tokens_map.json=&etag=%22e7b0375001f109a6b8873d756ad4f7bbb15fbaa5%22 "HTTP/1.1 200 OK"
+2026-11-06 15:00:14,635 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/chat_template.jinja "HTTP/1.1 404 Not Found"
+2026-11-06 15:00:14,751 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-11-06 15:00:14,765 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2F1110a243fdf4706b3f48f1d95db1a4f5529b4d41%2F1_Pooling%2Fconfig.json=&etag=%22d1514c3162bbe87b343f565fadc62e6c06f04f03%22 "HTTP/1.1 200 OK"
+2026-11-06 15:00:14,860 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/2_Normalize/config.json "HTTP/1.1 404 Not Found"
+2026-11-06 15:00:14,885 INFO __main__ - Buscando trending topics para USA...
+2026-11-06 15:00:15,001 WARNING src.app.trend_research - Failed to fetch Google Trends (404/Error): The request failed: Google returned a response with code 404. Moving to fallbacks.
+2026-11-06 15:00:17,946 INFO src.app.trend_research - Gathered 14 unique trending topics.
+2026-11-06 15:00:17,947 INFO __main__ - ═══ INICIANDO RUN DIÁRIO (Meta: 3 posts/dia | Até 5 tentativas) ═══
+2026-11-06 15:00:17,948 INFO __main__ - ─── Tentativa 1 (Post 1/3) ───
+2026-11-06 15:00:17,948 INFO __main__ - [Tentativa 1 (Post 1/3)] Usando trending topic: Experimental therapy gantenerumab fails to slow or improve Alzheimers memory loss in clinical trials
+2026-11-06 15:00:17,948 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-11-06 15:00:31,231 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=5517
+2026-11-06 15:00:31,342 WARNING __main__ - [Tentativa 1 (Post 1/3)] Artigo descartado por similaridade excessiva com post anterior (sobreposição: 0.9%)
+2026-11-06 15:00:31,342 WARNING __main__ - [Tentativa 1 (Post 1/3)] Tentativa descartada sem publicação.
+2026-11-06 15:00:31,342 INFO __main__ - ─── Tentativa 2 (Post 1/3) ───
+2026-11-06 15:00:31,342 INFO __main__ - [Tentativa 2 (Post 1/3)] Usando trending topic: For decades, we were told to avoid full-fat dairy. New research says otherwise
+2026-11-06 15:00:31,342 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-11-06 15:00:37,700 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=4296
+2026-11-06 15:00:37,701 WARNING __main__ - [Tentativa 2 (Post 1/3)] Qualidade insuficiente: Artigo muito curto: 346 palavras geradas (mínimo exigido: 450)
+2026-11-06 15:00:37,701 WARNING __main__ - [Tentativa 2 (Post 1/3)] Tentativa descartada sem publicação.
+2026-11-06 15:00:37,701 INFO __main__ - ─── Tentativa 3 (Post 1/3) ───
+2026-11-06 15:00:37,702 INFO __main__ - [Tentativa 3 (Post 1/3)] Tópico selecionado: Budget Meal Prep (tag: recipes)
+2026-11-06 15:00:37,702 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-11-06 15:00:48,406 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=5531
+2026-11-06 15:00:48,407 WARNING __main__ - [Tentativa 3 (Post 1/3)] Qualidade insuficiente: Artigo muito curto: 363 palavras geradas (mínimo exigido: 450)
+2026-11-06 15:00:48,407 WARNING __main__ - [Tentativa 3 (Post 1/3)] Tentativa descartada sem publicação.
+2026-11-06 15:00:48,407 INFO __main__ - ─── Tentativa 4 (Post 1/3) ───
+2026-11-06 15:00:48,408 INFO __main__ - [Tentativa 4 (Post 1/3)] Tópico selecionado: Budget Meal Prep (tag: recipes)
+2026-11-06 15:00:48,408 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-11-06 15:01:00,679 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=6273
+2026-11-06 15:01:00,883 INFO src.app.duplicate_checker - Indexed post: daily-budget-meal-prep-routine-for-energy (Total: 217)
+2026-11-06 15:01:00,886 INFO src.app.pinterest_seo - [PinterestSEO] 'Feel More Energized with This Daily' → Intent=routine | Board='Healthy Recipes & Meal Prep' | Title='Feel More Energized with This Easy Budget Meal Prep Routine' (59 chars) | 8 keywords
+2026-11-06 15:01:02,245 WARNING src.app.indexing - [GoogleIndexing] HTTP 403: Permissão negada no Google Search Console para https://rodrigosimoes97.github.io/Pin/daily-budget-meal-prep-routine-for-energy.html. Certifique-se de adicionar o email da conta de serviço como proprietário no Search Console.
+2026-11-06 15:01:02,246 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-11-06_pins.csv com 8 keywords
+2026-11-06 15:01:02,247 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'Feel More Energized with This Easy Budget Meal Prep Routine' (intent=routine)
+2026-11-06 15:01:02,247 INFO __main__ - [Tentativa 4 (Post 1/3)] ✓ Publicado com sucesso: 'Feel More Energized with This Easy Budget Meal Prep Routine' | Board='Healthy Recipes & Meal Prep'
+2026-11-06 15:01:02,247 INFO __main__ - ─── Tentativa 5 (Post 2/3) ───
+2026-11-06 15:01:02,248 INFO __main__ - [Tentativa 5 (Post 2/3)] Tópico selecionado: Joint Health (tag: anti-inflammatory)
+2026-11-06 15:01:02,248 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-11-06 15:01:11,705 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=4766
+2026-11-06 15:01:11,706 WARNING __main__ - [Tentativa 5 (Post 2/3)] Qualidade insuficiente: Artigo muito curto: 383 palavras geradas (mínimo exigido: 450)
+2026-11-06 15:01:11,706 WARNING __main__ - [Tentativa 5 (Post 2/3)] Tentativa descartada sem publicação.

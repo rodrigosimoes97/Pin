@@ -599,7 +599,22 @@
       "outbound_clicks": 0,
       "created_at": "2026-11-05T15:31:35.893967+00:00",
       "last_updated": "2026-11-05T15:31:35.893967+00:00"
+    },
+    {
+      "date": "2026-11-06",
+      "url": "https://health-ptg.pages.dev/daily-budget-meal-prep-routine-for-energy.html",
+      "topic": "Budget Meal Prep",
+      "tag": "recipes",
+      "intent": "routine",
+      "primary_keyword": "budget meal prep",
+      "title": "Feel More Energized with This Easy Budget Meal Prep Routine",
+      "impressions": 0,
+      "engagements": 0,
+      "saves": 0,
+      "outbound_clicks": 0,
+      "created_at": "2026-11-06T15:01:02.246970+00:00",
+      "last_updated": "2026-11-06T15:01:02.246970+00:00"
     }
   ],
-  "last_updated": "2026-11-05T15:31:35.894005+00:00"
+  "last_updated": "2026-11-06T15:01:02.246995+00:00"
 }

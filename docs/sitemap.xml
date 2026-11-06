@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://health-ptg.pages.dev/index.html</loc><lastmod>2026-11-05</lastmod><priority>1.0</priority></url>
-<url><loc>https://health-ptg.pages.dev/about.html</loc><lastmod>2026-11-05</lastmod></url>
+<url><loc>https://health-ptg.pages.dev/index.html</loc><lastmod>2026-11-06</lastmod><priority>1.0</priority></url>
+<url><loc>https://health-ptg.pages.dev/about.html</loc><lastmod>2026-11-06</lastmod></url>
+<url><loc>https://health-ptg.pages.dev/daily-budget-meal-prep-routine-for-energy.html</loc><lastmod>2026-11-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
 <url><loc>https://health-ptg.pages.dev/struggling-with-can-allulose-replace-sugar-try-this-daily-reset.html</loc><lastmod>2026-11-05</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
 <url><loc>https://health-ptg.pages.dev/scientists-discover-surprising-heart-benefits-of-eating-avocado-and-mango-every-.html</loc><lastmod>2026-11-05</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
 <url><loc>https://health-ptg.pages.dev/simple-protein-swap-for-healthy-aging.html</loc><lastmod>2026-11-04</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
@@ -202,5 +203,4 @@
 <url><loc>https://health-ptg.pages.dev/biohacking-sleep-guide.html</loc><lastmod>2026-04-20</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
 <url><loc>https://health-ptg.pages.dev/sparkling-water-weight-loss-metabolism-myth.html</loc><lastmod>2026-04-17</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
 <url><loc>https://health-ptg.pages.dev/intermittent-fasting-women-guide.html</loc><lastmod>2026-04-17</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://health-ptg.pages.dev/boost-your-morning-energy-focus-hacks.html</loc><lastmod>2026-04-16</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
 </urlset>
