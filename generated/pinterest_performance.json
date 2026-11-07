@@ -614,7 +614,52 @@
       "outbound_clicks": 0,
       "created_at": "2026-11-06T15:01:02.246970+00:00",
       "last_updated": "2026-11-06T15:01:02.246970+00:00"
+    },
+    {
+      "date": "2026-11-07",
+      "url": "https://health-ptg.pages.dev/for-decades-we-were-told-to-avoid-full-fat-dairy-new-research-says-otherwise.html",
+      "topic": "For Decades, We Were Told To Avoid Full-Fat Dairy. New Research Says Otherwise",
+      "tag": "healthy-habits",
+      "intent": "mistakes",
+      "primary_keyword": "decades told avoid full-fat",
+      "title": "Why You Should Stop Buying Low Fat Dairy Right Now",
+      "impressions": 0,
+      "engagements": 0,
+      "saves": 0,
+      "outbound_clicks": 0,
+      "created_at": "2026-11-07T13:58:47.837377+00:00",
+      "last_updated": "2026-11-07T13:58:47.837377+00:00"
+    },
+    {
+      "date": "2026-11-07",
+      "url": "https://health-ptg.pages.dev/struggling-with-joint-health-try-this-simple-daily-reset.html",
+      "topic": "Joint Health",
+      "tag": "healthy-habits",
+      "intent": "checklist",
+      "primary_keyword": "joint health",
+      "title": "Fix Stiff Joints Naturally: Simple Daily Mobility Reset",
+      "impressions": 0,
+      "engagements": 0,
+      "saves": 0,
+      "outbound_clicks": 0,
+      "created_at": "2026-11-07T13:59:11.043738+00:00",
+      "last_updated": "2026-11-07T13:59:11.043738+00:00"
+    },
+    {
+      "date": "2026-11-07",
+      "url": "https://health-ptg.pages.dev/7-ways-to-simplify-anti-inflammatory-foods-today.html",
+      "topic": "Anti-Inflammatory Foods",
+      "tag": "anti-inflammatory",
+      "intent": "how_to",
+      "primary_keyword": "anti-inflammatory foods",
+      "title": "7 Easy Ways to Heal with Anti-Inflammatory Foods",
+      "impressions": 0,
+      "engagements": 0,
+      "saves": 0,
+      "outbound_clicks": 0,
+      "created_at": "2026-11-07T13:59:28.109554+00:00",
+      "last_updated": "2026-11-07T13:59:28.109554+00:00"
     }
   ],
-  "last_updated": "2026-11-06T15:01:02.246995+00:00"
+  "last_updated": "2026-11-07T13:59:28.109585+00:00"
 }
