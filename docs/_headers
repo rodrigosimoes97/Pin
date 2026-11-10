@@ -2,6 +2,8 @@
 /sitemap.xml
   Content-Type: application/xml; charset=utf-8
 
-# Redirecionamento e canonicidade de URLs sem .html
+# Security and SEO headers for all pages
 /*
-  Link: <https://health-ptg.pages.dev/:splat.html>; rel="canonical"
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin

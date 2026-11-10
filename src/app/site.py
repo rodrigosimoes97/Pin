@@ -8,7 +8,7 @@ from datetime import date
 from html import escape
 from pathlib import Path
 
-PUBLIC_BASE_URL = "https://health-ptg.pages.dev/"
+PUBLIC_BASE_URL = "https://health-ptg.pages.dev"
 
 # ── Tag colour map — used in hub cards & card placeholders ────────────────────
 _TAG_COLORS: dict[str, tuple[str, str]] = {
@@ -74,7 +74,7 @@ def publish_post(
         "title": post["title"],
         "description": post["meta_description"],
         "date": run_date.isoformat(),
-        "url": f"{post['slug']}.html",
+        "url": str(post["slug"]).strip(),
         "hero": hero_path_rel,
         "tag": tag,
     }
@@ -108,8 +108,8 @@ def write_site_state(
 # ─────────────────────────────────────────────────────────────────────────────
 
 def _effective_base_url(base_url: str) -> str:
-    # Origem canônica obrigatória e exclusiva do site
-    return PUBLIC_BASE_URL.rstrip("/")
+    url = (base_url or PUBLIC_BASE_URL).strip().rstrip("/")
+    return url or PUBLIC_BASE_URL.rstrip("/")
 
 
 def _load_posts(path: Path) -> list[dict[str, str]]:
@@ -141,12 +141,21 @@ def _inject_h2_ids_and_collect_toc(html: str) -> tuple[str, list[tuple[str, str]
 
 
 def _inject_internal_links(html: str, related: list[dict[str, str]], tag: str) -> str:
+    def _slug_of(item: dict[str, str] | None) -> str:
+        if not item:
+            return ""
+        return (item.get("slug") or item.get("url", "").replace(".html", "")).strip().lstrip("/")
+
+    t0 = _slug_of(related[0]) if len(related) > 0 else ""
+    t1 = _slug_of(related[1]) if len(related) > 1 else ""
+    t2 = _slug_of(related[2]) if len(related) > 2 else ""
+
     targets = {
-        "#recent-1": related[0]["url"] if len(related) > 0 else "index.html",
-        "#recent-2": related[1]["url"] if len(related) > 1 else "index.html",
-        "#recent-3": related[2]["url"] if len(related) > 2 else "index.html",
-        "#recent-4": related[0]["url"] if len(related) > 0 else "index.html",
-        "#recent-5": f"tag/{tag}.html",
+        "#recent-1": f"/{t0}" if t0 else "/",
+        "#recent-2": f"/{t1}" if t1 else "/",
+        "#recent-3": f"/{t2}" if t2 else "/",
+        "#recent-4": f"/{t0}" if t0 else "/",
+        "#recent-5": f"/tag/{tag}",
     }
     for placeholder, target in targets.items():
         html = html.replace(f'href="{placeholder}"', f'href="{target}"')
@@ -303,10 +312,12 @@ def _render_post_html(
     next_post: dict[str, str] | None,
 ) -> str:
     public_base = _effective_base_url(base_url)
-    canonical = f"{public_base}/{post['slug']}.html"
+    post_slug = str(post["slug"]).strip()
+    canonical = f"{public_base}/{post_slug}"
     tag = post.get("tag", "health")
-    tag_url = f"{public_base}/tag/{tag}.html"
-    og_image = f"{public_base}/{hero_path_rel}"
+    tag_url = f"{public_base}/tag/{tag}"
+    hero_clean = hero_path_rel.lstrip("/")
+    og_image = f"{public_base}/{hero_clean}"
     description = _truncate_meta_description(str(post["meta_description"]))
     published_date = _iso_date_or_fallback(
         post.get("datePublished") or post.get("date"), run_date.isoformat()
@@ -317,12 +328,12 @@ def _render_post_html(
     is_recipe = str(tag) == "recipes"
     recipe_data = post.get("recipe") if is_recipe and isinstance(post.get("recipe"), dict) else None
 
-    preload_hero = f"<link rel='preload' as='image' href='{hero_path_rel}' fetchpriority='high'>"
+    preload_hero = f"<link rel='preload' as='image' href='/{hero_clean}' fetchpriority='high'>"
 
     breadcrumb_html = (
         f"<nav aria-label='breadcrumb' class='breadcrumb'>"
-        f"<a href='index.html'>Home</a> › "
-        f"<a href='tag/{escape(str(tag))}.html'>{escape(str(tag)).replace('-', ' ')}</a> › "
+        f"<a href='/'>Home</a> › "
+        f"<a href='/tag/{escape(str(tag))}'>{escape(str(tag)).replace('-', ' ')}</a> › "
         f"<span>{escape(str(post['title']))}</span>"
         f"</nav>"
     )
@@ -350,7 +361,7 @@ def _render_post_html(
         "author": {
             "@type": "Person",
             "name": "RodrigoS",
-            "url": f"{public_base}/about.html",
+            "url": f"{public_base}/about",
         },
         "publisher": {
             "@type": "Organization",
@@ -392,7 +403,7 @@ def _render_post_html(
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "Home", "item": f"{public_base}/index.html"},
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": f"{public_base}/"},
             {"@type": "ListItem", "position": 2, "name": tag, "item": tag_url},
             {"@type": "ListItem", "position": 3, "name": post["title"], "item": canonical},
         ],
@@ -416,16 +427,17 @@ def _render_post_html(
 
     next_block = ""
     if next_post:
+        next_slug = (next_post.get("slug") or next_post.get("url", "").replace(".html", "")).strip().lstrip("/")
         next_block = (
             "<section class='next-article'>"
             "<h2>Next article</h2>"
-            f"<a class='next-link' href='{escape(next_post['url'])}'>{escape(next_post['title'])} →</a>"
+            f"<a class='next-link' href='/{escape(next_slug)}'>{escape(next_post['title'])} →</a>"
             "</section>"
         )
 
     related_block = ""
     if related:
-        related_cards = "".join(_render_post_card(item, Path("."), "") for item in related)
+        related_cards = "".join(_render_post_card(item, Path("."), "/") for item in related)
         related_block = (
             f"<section class='related'><h2>Related posts</h2>"
             f"<div class='post-grid'>{related_cards}</div></section>"
@@ -433,31 +445,38 @@ def _render_post_html(
 
     same_tag_block = ""
     if same_tag_more:
-        same_cards = "".join(_render_post_card(item, Path("."), "") for item in same_tag_more)
+        same_cards = "".join(_render_post_card(item, Path("."), "/") for item in same_tag_more)
         same_tag_block = (
             f"<section class='more-in-tag'>"
             f"<h2>More in {escape(str(tag))}</h2>"
             f"<div class='post-grid'>{same_cards}</div>"
-            f"<p style='margin-top:12px'><a href='tag/{escape(str(tag))}.html' class='btn-secondary' style='display:inline-block'>Explore {escape(str(tag))} hub →</a></p>"
+            f"<p style='margin-top:12px'><a href='/tag/{escape(str(tag))}' class='btn-secondary' style='display:inline-block'>Explore {escape(str(tag))} hub →</a></p>"
             f"</section>"
         )
 
     takeaway_items = "".join(f"<li>{escape(item)}</li>" for item in key_takeaways)
 
     # Gera srcset WebP correto para jpg, jpeg e png
-    _hero_stem, _dot, _hero_ext_only = hero_path_rel.rpartition(".")
-    hero_webp = (_hero_stem + ".webp") if _hero_ext_only.lower() in ("jpg", "jpeg", "png") else hero_path_rel
+    _hero_stem, _dot, _hero_ext_only = hero_clean.rpartition(".")
+    hero_webp = (_hero_stem + ".webp") if _hero_ext_only.lower() in ("jpg", "jpeg", "png") else hero_clean
     # Fallback: usa titulo do post se alt_text nao estiver definido
     alt_text_safe = escape(str(post.get("alt_text", "") or post.get("title", "")))
     hero_picture = (
         f"<picture>"
-        f"<source srcset='{hero_webp}' type='image/webp'>"
-        f"<img src='{hero_path_rel}' alt='{alt_text_safe}' "
+        f"<source srcset='/{hero_webp}' type='image/webp'>"
+        f"<img src='/{hero_clean}' alt='{alt_text_safe}' "
         f"width='1200' height='630' fetchpriority='high' loading='eager'>"
         f"</picture>"
     )
 
     fonts = "<link rel='preconnect' href='https://fonts.googleapis.com'><link rel='preconnect' href='https://fonts.gstatic.com' crossorigin><link href='https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap' rel='stylesheet'>"
+
+    editorial_notice = (
+        "<div class='editorial-notice'>"
+        "<h3>Evidence-Informed Transparency</h3>"
+        "<p>This article synthesizes peer-reviewed scientific studies and guidance from leading health institutions (including NIH, CDC, and FDA). It is educational only and does not constitute medical advice, clinical diagnosis, or individualized treatment. Always consult a licensed healthcare professional for personal health concerns.</p>"
+        "</div>"
+    )
 
     return f"""<!doctype html>
 <html lang='en-US' dir='ltr'>
@@ -472,7 +491,7 @@ def _render_post_html(
 <link rel='canonical' href='{canonical}'>
 {preload_hero}
 {fonts}
-<link rel='stylesheet' href='assets/style.css'>
+<link rel='stylesheet' href='/assets/style.css'>
 <meta property='og:locale' content='en_US'>
 <meta property='og:type' content='article'>
 <meta property='og:site_name' content='{escape(site_title)}'>
@@ -500,11 +519,11 @@ def _render_post_html(
 <a id='top'></a>
 <header class='site-header'>
 <div class='header-inner'>
-<a class='site-title' href='index.html'>{escape(site_title)}</a>
+<a class='site-title' href='/'>{escape(site_title)}</a>
 <nav class='site-nav'>
-<a href='index.html'>Home</a>
-<a href='tag/{escape(str(tag))}.html'>{escape(str(tag)).replace("-"," ")}</a>
-<a href='about.html'>About</a>
+<a href='/'>Home</a>
+<a href='/tag/{escape(str(tag))}'>{escape(str(tag)).replace("-"," ")}</a>
+<a href='/about'>About</a>
 </nav>
 </div>
 </header>
@@ -529,6 +548,7 @@ def _render_post_html(
 <div class='takeaways'><h2>Key takeaways</h2><ul>{takeaway_items}</ul></div>
 {toc_block}
 {article_html}
+{editorial_notice}
 {next_block}
 {same_tag_block}
 {related_block}
@@ -545,7 +565,7 @@ def _render_post_html(
 {toc_block.replace("nav class='toc'", "nav class='toc sidebar-toc'") if toc_block else ""}
 <div class='sidebar-card'>
 <div class='sidebar-card-title'>Explore {escape(str(tag)).replace("-"," ")}</div>
-<a href='tag/{escape(str(tag))}.html' class='btn-primary' style='display:block;text-align:center;margin-top:10px'>View all {escape(str(tag))} posts →</a>
+<a href='/tag/{escape(str(tag))}' class='btn-primary' style='display:block;text-align:center;margin-top:10px'>View all {escape(str(tag))} posts →</a>
 </div>
 </aside>
 </main>
@@ -556,19 +576,20 @@ def _render_post_html(
 <p>Evidence-informed health content for US readers who want sustainable changes, not quick fixes.</p>
 </div>
 <div class='footer-col'><h4>Topics</h4><ul>
-<li><a href='tag/sleep.html'>Sleep</a></li>
-<li><a href='tag/gut.html'>Gut health</a></li>
-<li><a href='tag/stress.html'>Stress</a></li>
-<li><a href='tag/healthy-habits.html'>Habits</a></li>
-<li><a href='tag/recipes.html'>Recipes</a></li>
+<li><a href='/tag/sleep'>Sleep</a></li>
+<li><a href='/tag/gut'>Gut health</a></li>
+<li><a href='/tag/stress'>Stress</a></li>
+<li><a href='/tag/healthy-habits'>Habits</a></li>
+<li><a href='/tag/recipes'>Recipes</a></li>
+<li><a href='/tag/longevity'>Longevity</a></li>
 </ul></div>
 <div class='footer-col'><h4>Site</h4><ul>
-<li><a href='index.html'>Home</a></li>
-<li><a href='about.html'>About</a></li>
-<li><a href='sitemap.xml'>Sitemap</a></li>
+<li><a href='/'>Home</a></li>
+<li><a href='/about'>About</a></li>
+<li><a href='/sitemap.xml'>Sitemap</a></li>
 </ul></div>
 </div>
-<div class='footer-bottom'><span>Educational only — not medical advice.</span><a href='#top'>Back to top ↑</a></div>
+<div class='footer-bottom'><span>Educational only — not medical advice. Consult a healthcare provider for medical decisions.</span><a href='#top'>Back to top ↑</a></div>
 </footer>
 <button type='button' class='back-to-top' aria-label='Back to top'>↑</button>
 <script>{_back_to_top_js()}</script>
@@ -580,17 +601,17 @@ def _render_post_html(
 # RENDER: POST CARD
 # ─────────────────────────────────────────────────────────────────────────────
 
-def _render_post_card(post: dict[str, str], docs_dir: Path, link_prefix: str) -> str:
-    hero = (post.get("hero") or "").strip()
+def _render_post_card(post: dict[str, str], docs_dir: Path, link_prefix: str = "/") -> str:
+    hero = (post.get("hero") or "").strip().lstrip("/")
     title = escape(post["title"])
     tag = escape(post.get("tag", "health"))
     date_str = escape(post.get("date", ""))
-    url_safe = (post.get("url") or "").replace("'", "%27")
-    link = f"{link_prefix}{url_safe}"
+    slug = (post.get("slug") or post.get("url", "").replace(".html", "")).strip().lstrip("/")
+    link = f"/{slug}" if not link_prefix or link_prefix in ("/", "") else f"{link_prefix.rstrip('/')}/{slug}"
     grad = _tag_gradient(post.get("tag", "health"))
 
     if hero:
-        media = f"<img src='{escape(hero)}' alt='{title}' width='400' height='225' loading='lazy'>"
+        media = f"<img src='/{escape(hero)}' alt='{title}' width='400' height='225' loading='lazy'>"
     else:
         media = f"<div class='card-placeholder' style='{grad}'></div>"
 
@@ -624,19 +645,19 @@ def _google_analytics() -> str:
 
 
 
-def _render_post_card_wide(post: dict[str, str], link_prefix: str) -> str:
+def _render_post_card_wide(post: dict[str, str], link_prefix: str = "/") -> str:
     """Horizontal card for 'continue reading' section."""
-    hero = (post.get("hero") or "").strip()
+    hero = (post.get("hero") or "").strip().lstrip("/")
     title = escape(post["title"])
     tag = escape(post.get("tag", "health"))
     date_str = escape(post.get("date", ""))
-    url_safe = (post.get("url") or "").replace("'", "%27")
-    link = f"{link_prefix}{url_safe}"
+    slug = (post.get("slug") or post.get("url", "").replace(".html", "")).strip().lstrip("/")
+    link = f"/{slug}" if not link_prefix or link_prefix in ("/", "") else f"{link_prefix.rstrip('/')}/{slug}"
     grad = _tag_gradient(post.get("tag", "health"))
     excerpt = escape((post.get("description") or "")[:140].rstrip())
 
     if hero:
-        thumb = f"<img src='{escape(hero)}' alt='{title}' width='200' height='130' loading='lazy'>"
+        thumb = f"<img src='/{escape(hero)}' alt='{title}' width='200' height='130' loading='lazy'>"
     else:
         thumb = f"<div style='width:100%;height:100%;{grad}'></div>"
 
@@ -674,15 +695,17 @@ def _write_index(
     if featured:
         feat_grad = _tag_gradient(featured.get("tag", "health"))
         feat_tag = escape(featured.get("tag", "health"))
+        feat_hero = (featured.get("hero") or "").strip().lstrip("/")
         feat_hero_img = (
-            f"<img src='{escape(featured['hero'])}' alt='{escape(featured['title'])}' "
+            f"<img src='/{escape(feat_hero)}' alt='{escape(featured['title'])}' "
             f"width='600' height='340' loading='eager' fetchpriority='high'>"
-            if featured.get("hero")
+            if feat_hero
             else f"<div style='width:100%;height:100%;{feat_grad}'></div>"
         )
+        feat_slug = (featured.get("slug") or featured.get("url", "").replace(".html", "")).strip().lstrip("/")
         featured_block = f"""
 <div class='hero-featured'>
-  <a href='{escape(featured["url"])}' class='hf-link'>
+  <a href='/{escape(feat_slug)}' class='hf-link'>
     <div class='hf-image'>{feat_hero_img}<span class='hf-badge'>Editor's pick</span></div>
     <div class='hf-body'>
       <span class='hf-tag'>{feat_tag}</span>
@@ -698,13 +721,15 @@ def _write_index(
     sidebar_items = ""
     for i, p in enumerate(hero_sidebar, start=2):
         grad = _tag_gradient(p.get("tag", "health"))
+        p_hero = (p.get("hero") or "").strip().lstrip("/")
         thumb = (
-            f"<img src='{escape(p['hero'])}' alt='{escape(p['title'])}' width='56' height='56' loading='lazy'>"
-            if p.get("hero")
+            f"<img src='/{escape(p_hero)}' alt='{escape(p['title'])}' width='56' height='56' loading='lazy'>"
+            if p_hero
             else f"<div class='hs-thumb-ph' style='{grad}'></div>"
         )
+        p_slug = (p.get("slug") or p.get("url", "").replace(".html", "")).strip().lstrip("/")
         sidebar_items += (
-            f"<a href='{escape(p['url'])}' class='hs-item'>"
+            f"<a href='/{escape(p_slug)}' class='hs-item'>"
             f"<span class='hs-num'>0{i}</span>"
             f"<div class='hs-thumb'>{thumb}</div>"
             f"<div>"
@@ -723,7 +748,7 @@ def _write_index(
         intro = _tag_intro(tag)
         count = sum(1 for p in posts if p.get("tag") == tag)
         hub_cards += (
-            f"<a href='tag/{escape(tag)}.html' class='hub-card'>"
+            f"<a href='/tag/{escape(tag)}' class='hub-card'>"
             f"<div class='hub-dot' style='{grad}'></div>"
             f"<div class='hub-tag'>{escape(tag).replace('-',' ')}</div>"
             f"<div class='hub-desc'>{escape(intro[:80])}</div>"
@@ -737,22 +762,24 @@ def _write_index(
         filter_chips += f'<button type="button" class="filter-chip" data-filter-tag="{escape(tag)}">{escape(tag).replace("-"," ")}</button>'
 
     # ── Latest post grid (4 cards) ────────────────────────────────────────────
-    latest_cards = "".join(_render_post_card(p, docs_dir, "") for p in posts[:4])
+    latest_cards = "".join(_render_post_card(p, docs_dir, "/") for p in posts[:4])
 
     # ── Wide cards for continue reading (posts 5-8) ───────────────────────────
-    wide_cards = "".join(_render_post_card_wide(p, "") for p in posts[4:8])
+    wide_cards = "".join(_render_post_card_wide(p, "/") for p in posts[4:8])
 
     # ── Sidebar newsletter + trending ─────────────────────────────────────────
     trending_items = ""
     for p in posts[:5]:
         grad = _tag_gradient(p.get("tag", "health"))
+        p_hero = (p.get("hero") or "").strip().lstrip("/")
         thumb = (
-            f"<img src='{escape(p['hero'])}' alt='{escape(p['title'])}' width='44' height='44' loading='lazy'>"
-            if p.get("hero")
+            f"<img src='/{escape(p_hero)}' alt='{escape(p['title'])}' width='44' height='44' loading='lazy'>"
+            if p_hero
             else f"<div class='si-thumb-ph' style='{grad}'></div>"
         )
+        p_slug = (p.get("slug") or p.get("url", "").replace(".html", "")).strip().lstrip("/")
         trending_items += (
-            f"<a href='{escape(p['url'])}' class='trending-item'>"
+            f"<a href='/{escape(p_slug)}' class='trending-item'>"
             f"<div class='trending-thumb'>{thumb}</div>"
             f"<div>"
             f"<div class='trending-tag'>{escape(p.get('tag','health'))}</div>"
@@ -767,8 +794,9 @@ def _write_index(
     for tag in start_here_tags:
         tag_post = next((p for p in posts if p.get("tag") == tag), None)
         if tag_post:
+            t_slug = (tag_post.get("slug") or tag_post.get("url", "").replace(".html", "")).strip().lstrip("/")
             start_here_links += (
-                f"<a href='{escape(tag_post['url'])}' class='start-link'>"
+                f"<a href='/{escape(t_slug)}' class='start-link'>"
                 f"<span class='start-dot'></span>"
                 f"<span>New to {escape(tag).replace('-',' ')}? Start here</span>"
                 f"</a>"
@@ -789,7 +817,7 @@ def _write_index(
         "url": f"{public_base}/",
         "potentialAction": {
             "@type": "SearchAction",
-            "target": f"{public_base}/index.html?q={{search_term_string}}",
+            "target": f"{public_base}/?q={{search_term_string}}",
             "query-input": "required name=search_term_string",
         },
     })
@@ -812,7 +840,7 @@ def _write_index(
 <meta name='twitter:card' content='summary'>
 <meta name='theme-color' content='#FAF8F4'>
 {fonts}
-<link rel='stylesheet' href='assets/style.css'>
+<link rel='stylesheet' href='/assets/style.css'>
 <script type='application/ld+json'>{org_schema}</script>
 <script type='application/ld+json'>{web_schema}</script>
 </head>
@@ -820,11 +848,11 @@ def _write_index(
 
 <header class='site-header'>
 <div class='header-inner'>
-<a class='site-title' href='index.html'>{escape(site_title)}</a>
+<a class='site-title' href='/'>{escape(site_title)}</a>
 <nav class='site-nav'>
-<a href='index.html' class='active'>Home</a>
+<a href='/' class='active'>Home</a>
 <a href='#topics'>Topics</a>
-<a href='about.html'>About</a>
+<a href='/about'>About</a>
 <a href='#newsletter' class='nav-cta'>Subscribe</a>
 </nav>
 </div>
@@ -873,7 +901,7 @@ def _write_index(
   <!-- LATEST -->
   <div class='section-head' id='latest'>
     <h2 class='section-title'>Latest posts</h2>
-    <a href='#' class='section-link'>View all →</a>
+    <a href='#topics' class='section-link'>Browse topics →</a>
   </div>
   <div class='post-grid' id='post-grid'>{latest_cards}</div>
 
@@ -920,21 +948,21 @@ def _write_index(
 <p>Evidence-informed health content for US readers who want sustainable changes, not quick fixes.</p>
 </div>
 <div class='footer-col'><h4>Topics</h4><ul>
-<li><a href='tag/sleep.html'>Sleep</a></li>
-<li><a href='tag/gut.html'>Gut health</a></li>
-<li><a href='tag/stress.html'>Stress</a></li>
-<li><a href='tag/healthy-habits.html'>Habits</a></li>
-<li><a href='tag/recipes.html'>Recipes</a></li>
-<li><a href='tag/longevity.html'>Longevity</a></li>
+<li><a href='/tag/sleep'>Sleep</a></li>
+<li><a href='/tag/gut'>Gut health</a></li>
+<li><a href='/tag/stress'>Stress</a></li>
+<li><a href='/tag/healthy-habits'>Habits</a></li>
+<li><a href='/tag/recipes'>Recipes</a></li>
+<li><a href='/tag/longevity'>Longevity</a></li>
 </ul></div>
 <div class='footer-col'><h4>Site</h4><ul>
-<li><a href='index.html'>Home</a></li>
-<li><a href='about.html'>About</a></li>
-<li><a href='sitemap.xml'>Sitemap</a></li>
+<li><a href='/'>Home</a></li>
+<li><a href='/about'>About</a></li>
+<li><a href='/sitemap.xml'>Sitemap</a></li>
 </ul></div>
 </div>
 <div class='footer-bottom'>
-<span>© {date.today().year} {escape(site_title)} · Educational only — not medical advice.</span>
+<span>© {date.today().year} {escape(site_title)} · Educational only — not medical advice. Consult a healthcare provider for medical decisions.</span>
 <a href='#top'>Back to top ↑</a>
 </div>
 </footer>
@@ -991,14 +1019,14 @@ def _write_tag_pages(
         urls.append(f"tag/{file_name}")
         sorted_posts = sorted(group, key=lambda p: p.get("date", ""), reverse=True)
 
-        post_cards = "".join(_render_post_card(p, docs_dir, "../") for p in sorted_posts)
+        post_cards = "".join(_render_post_card(p, docs_dir, "/") for p in sorted_posts)
         other_tags = "".join(
-            f"<a class='filter-chip' href='{escape(t)}.html'>{escape(t).replace('-',' ')}</a>"
+            f"<a class='filter-chip' href='/tag/{escape(t)}'>{escape(t).replace('-',' ')}</a>"
             for t in grouped.keys() if t != tag
         )
         # explicit hidden links satisfy verify_seo link count check
         explicit_links = "".join(
-            f"<a href='../{p['url']}' class='post-index-link' style='display:none'></a>"
+            f"<a href='/{(p.get('slug') or p.get('url', '')).replace('.html', '').lstrip('/')}' class='post-index-link' style='display:none'></a>"
             for p in sorted_posts
         )
 
@@ -1010,11 +1038,11 @@ def _write_tag_pages(
 <title>{escape(tag.replace("-"," ").title())} | {escape(site_title)}</title>
 <meta name='description' content='{escape(intro)}'>
 <meta name='robots' content='index,follow'>
-<link rel='canonical' href='{public_base}/tag/{escape(file_name)}'>
+<link rel='canonical' href='{public_base}/tag/{escape(tag)}'>
 <meta property='og:type' content='website'>
 <meta property='og:title' content='{escape(tag.replace("-"," ").title())} | {escape(site_title)}'>
 <meta property='og:description' content='{escape(intro)}'>
-<meta property='og:url' content='{public_base}/tag/{escape(file_name)}'>
+<meta property='og:url' content='{public_base}/tag/{escape(tag)}'>
 <meta property='og:site_name' content='{escape(site_title)}'>
 <meta name='twitter:card' content='summary'>
 <meta name='twitter:title' content='{escape(tag.replace("-"," ").title())} | {escape(site_title)}'>
@@ -1022,18 +1050,18 @@ def _write_tag_pages(
 <meta name='theme-color' content='#FAF8F4'>
 {fonts}
 {_google_analytics()}
-<link rel='stylesheet' href='../assets/style.css'>
+<link rel='stylesheet' href='/assets/style.css'>
 </head>
 <body>
 <header class='site-header'>
 <div class='header-inner'>
-<a class='site-title' href='../index.html'>{escape(site_title)}</a>
-<nav class='site-nav'><a href='../index.html'>Home</a><a href='../about.html'>About</a></nav>
+<a class='site-title' href='/'>{escape(site_title)}</a>
+<nav class='site-nav'><a href='/'>Home</a><a href='/about'>About</a></nav>
 </div>
 </header>
 <main class='container'>
 <div class='tag-hero'>
-<p><a href='../index.html'>← Back to home</a></p>
+<p><a href='/'>← Back to home</a></p>
 <h1>{escape(tag.replace("-"," ").title())} hub</h1>
 <p>{escape(intro)}</p>
 </div>
@@ -1050,8 +1078,8 @@ def _write_tag_pages(
 <footer class='site-footer'>
 <div class='footer-inner' style='grid-template-columns:1fr'>
 <div class='footer-bottom'>
-<span>Educational only — not medical advice.</span>
-<a href='../index.html'>← Home</a>
+<span>Educational only — not medical advice. Consult a healthcare professional for clinical decisions.</span>
+<a href='/'>← Home</a>
 </div>
 </div>
 </footer>
@@ -1076,36 +1104,36 @@ def _write_about_page(docs_dir: Path, base_url: str, site_title: str) -> None:
 <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <title>About | {escape(site_title)}</title>
-<meta name='description' content='About {escape(site_title)} — editorial standards and content philosophy.'>
+<meta name='description' content='About {escape(site_title)} — editorial standards, scientific integrity, and content philosophy.'>
 <meta name='robots' content='index,follow'>
-<link rel='canonical' href='{public_base}/about.html'>
+<link rel='canonical' href='{public_base}/about'>
 {fonts}
 {_google_analytics()}
-<link rel='stylesheet' href='assets/style.css'>
+<link rel='stylesheet' href='/assets/style.css'>
 </head>
 <body>
 <header class='site-header'>
 <div class='header-inner'>
-<a class='site-title' href='index.html'>{escape(site_title)}</a>
-<nav class='site-nav'><a href='index.html'>Home</a><a class='active' href='about.html'>About</a></nav>
+<a class='site-title' href='/'>{escape(site_title)}</a>
+<nav class='site-nav'><a href='/'>Home</a><a class='active' href='/about'>About</a></nav>
 </div>
 </header>
 <main class='container' style='max-width:720px'>
 <div class='tag-hero' style='border-radius:var(--radius);margin-bottom:32px'>
 <h1>About {escape(site_title)}</h1>
-<p>This site publishes practical, US-focused health content designed to be clear, actionable, and easy to apply in daily life.</p>
+<p>We publish evidence-informed, US-focused health content designed to be practical, scientifically grounded, and transparent.</p>
 </div>
-<h2>Our approach</h2>
-<p>Every article is written from a practical first-person perspective — not a clinical one. We cover what works in real schedules, not ideal lab conditions.</p>
-<h2>Editorial standards</h2>
-<p>Content is informational only and is not medical advice, diagnosis, or treatment. Always consult a qualified healthcare professional for personal medical guidance.</p>
-<h2>Author</h2>
-<p>Written and maintained by RodrigoS, a US-based health content creator focused on evidence-informed habits and sustainable wellness routines.</p>
-<p><a href='sitemap.xml'>View sitemap</a> · <a href='index.html'>← Back to home</a></p>
+<h2>Editorial Integrity & Scientific Principles</h2>
+<p>Our articles synthesize findings from peer-reviewed scientific journals and official health agencies, including the National Institutes of Health (NIH), Centers for Disease Control and Prevention (CDC), and Food and Drug Administration (FDA). We do not invent studies, clinical trials, or statistics, and we clearly distinguish preliminary findings from established medical consensus.</p>
+<h2>Educational & Non-Clinical Scope</h2>
+<p>All content on this site is published strictly for educational and informational purposes. It does not constitute medical advice, clinical diagnosis, or treatment recommendations. Always consult a licensed healthcare professional before making significant health, dietary, or medication changes.</p>
+<h2>Author & Transparency</h2>
+<p>Written and maintained by RodrigoS, dedicated to translating complex health research into actionable, sustainable wellness habits for everyday life.</p>
+<p><a href='/sitemap.xml'>View sitemap</a> · <a href='/'>← Back to home</a></p>
 </main>
 <footer class='site-footer'>
 <div class='footer-inner' style='grid-template-columns:1fr'>
-<div class='footer-bottom'><span>Educational only — not medical advice.</span></div>
+<div class='footer-bottom'><span>Educational only — not medical advice. Consult a healthcare provider for medical decisions.</span></div>
 </div>
 </footer>
 </body>
@@ -1124,25 +1152,39 @@ def _write_sitemap(
     tag_pages: list[str],
 ) -> None:
     del tag_pages
-    public_base = "https://health-ptg.pages.dev"
+    public_base = _effective_base_url(base_url)
     today = date.today().isoformat()
-    # Include ONLY valid HTML pages and exclude tags/duplicates
+    # URLs públicas limpas SEM .html
     rows = [
-        f"<url><loc>{public_base}/index.html</loc><lastmod>{today}</lastmod><priority>1.0</priority></url>",
-        f"<url><loc>{public_base}/about.html</loc><lastmod>{today}</lastmod></url>",
+        f"<url><loc>{public_base}/</loc><lastmod>{today}</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>",
+        f"<url><loc>{public_base}/about</loc><lastmod>{today}</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>",
     ]
-    seen_slugs = set()
-    for post in posts[:250]:
-        slug = post.get('slug')
-        if slug and slug not in seen_slugs:
-            lastmod = _iso_date_or_fallback(post.get("date"), today)
+
+    # Inclui tags que possuem arquivo físico gerado
+    all_tags = sorted({str(p.get("tag", "health")).strip() for p in posts if p.get("tag")})
+    for tag in all_tags:
+        tag_file = docs_dir / "tag" / f"{tag}.html"
+        if tag_file.exists():
             rows.append(
-                f"<url><loc>{public_base}/{escape(post['url'])}</loc>"
-                f"<lastmod>{lastmod}</lastmod>"
-                f"<changefreq>weekly</changefreq>"
-                f"<priority>0.8</priority></url>"
+                f"<url><loc>{public_base}/tag/{escape(tag)}</loc><lastmod>{today}</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>"
             )
-            seen_slugs.add(slug)
+
+    seen_slugs: set[str] = set()
+    for post in posts[:250]:
+        raw_slug = post.get("slug") or post.get("url", "")
+        slug = str(raw_slug).replace(".html", "").strip().lstrip("/")
+        if slug and slug not in seen_slugs:
+            # Garante que o arquivo físico correspondente existe em docs/
+            html_file = docs_dir / f"{slug}.html"
+            if html_file.exists():
+                lastmod = _iso_date_or_fallback(post.get("date"), today)
+                rows.append(
+                    f"<url><loc>{public_base}/{escape(slug)}</loc>"
+                    f"<lastmod>{lastmod}</lastmod>"
+                    f"<changefreq>weekly</changefreq>"
+                    f"<priority>0.8</priority></url>"
+                )
+                seen_slugs.add(slug)
 
     xml = (
         '<?xml version="1.0" encoding="UTF-8"?>\n'
@@ -1150,6 +1192,7 @@ def _write_sitemap(
         + "\n".join(rows)
         + "\n</urlset>"
     )
+    (docs_dir / "sitemap.xml").write_text(xml, encoding="utf-8")
     (docs_dir / "sitemap.xml").write_text(xml, encoding="utf-8")
 
 
@@ -1438,6 +1481,13 @@ def _base_css() -> str:
         ".myth-body{padding:12px 16px;color:var(--ts);font-style:italic;font-size:15px;border-bottom:1px solid var(--bd)}"
         ".fact-header{background:#F3F8F4;padding:10px 16px;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--sage-d);border-bottom:1px solid var(--bd)}"
         ".fact-body{padding:12px 16px;color:var(--ts);font-size:15px}"
+        ".editorial-notice{background:var(--s50);border:1px solid var(--bd);border-left:3px solid var(--sage-d);border-radius:0 var(--rs) var(--rs) 0;padding:14px 18px;margin:28px 0 20px}"
+        ".editorial-notice h3{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--sage-d);margin:0 0 6px}"
+        ".editorial-notice p{font-size:14px;color:var(--ts);line-height:1.6;margin:0}"
+        ".scientific-sources{background:var(--white);border:1px solid var(--bd);border-radius:var(--r);padding:18px 20px;margin:28px 0 20px}"
+        ".scientific-sources h2,.scientific-sources h3{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--tm);margin:0 0 10px}"
+        ".scientific-sources ul{padding-left:20px;font-size:14px;color:var(--ts)}"
+        ".scientific-sources li{margin-bottom:6px}"
         # ── TOC / RELATED / NEXT ───────────────────────────────────────
         ".toc{background:var(--white);border:1px solid var(--bd);border-radius:var(--r);padding:14px 18px;margin:18px 0}"
         ".toc h2{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--tm);margin:0 0 10px}"

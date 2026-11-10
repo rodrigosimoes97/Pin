@@ -11,7 +11,7 @@ from pathlib import Path
 from typing import Any
 
 from .config import load_settings
-from .content import generate_article, normalize_tag
+from .content import generate_article, normalize_tag, validate_article_quality
 from .gemini_client import GeminiClient
 from .images import create_pinterest_image, fetch_hero_image
 from .pinterest_api import create_pin
@@ -61,18 +61,8 @@ def _log_to_file(repo_root: Path, filename: str, message: str) -> None:
 
 
 def _validate_quality(post: dict[str, Any], topic_name: str) -> tuple[bool, str]:
-    """Verifica contagem de palavras e presença da keyword principal."""
-    text = re.sub(r"<[^>]+>", " ", post.get("html", ""))
-    word_count = len(text.split())
-
-    if word_count < 450:
-        return False, f"Artigo muito curto: {word_count} palavras geradas (mínimo exigido: 450)"
-
-    topic_name_lower = topic_name.lower()
-    if topic_name_lower not in post.get("title", "").lower() and topic_name_lower not in text.lower():
-        return False, f"Tópico focal '{topic_name}' ausente no título e no corpo do texto"
-
-    return True, ""
+    """Executa a validação editorial e científica avançada do artigo."""
+    return validate_article_quality(post, topic_name)
 
 
 def _local_fallback_topic(
@@ -393,25 +383,30 @@ def main() -> None:
                 run_date=today,
             )
 
-            # Google Indexing
-            post_url = f"{settings.base_url}/{record['url']}"
-            if settings.google_indexing_json_path:
-                index_new_post(settings.repo_root, settings.google_indexing_json_path, post_url)
+            # URL canônica definitiva sem .html
+            post_slug = str(record.get("slug") or record["url"]).replace(".html", "").strip().lstrip("/")
+            canonical_url = f"{settings.base_url.rstrip('/')}/{post_slug}"
 
-            _log_to_file(settings.repo_root, "published_posts.log", f"Published: {record['url']} ({mode})")
+            # Google Indexing recebe a URL canônica definitiva
+            if settings.google_indexing_json_path:
+                index_new_post(settings.repo_root, settings.google_indexing_json_path, canonical_url)
+
+            _log_to_file(settings.repo_root, "published_posts.log", f"Published: {canonical_url} ({mode})")
 
             # Slot index baseado na ordem real dos posts publicados
             slot_idx = published_count
             time_idx = min(slot_idx, len(PINTEREST_BEST_HOURS_US) - 1)
             publish_hour_str = PINTEREST_BEST_HOURS_US[time_idx]
 
-            post_link = f"https://health-ptg.pages.dev/{record['url']}"
+            # URL do Pinterest configurada com UTMs obrigatórios:
+            # utm_source=pinterest, utm_medium=organic_social e utm_campaign com slug do artigo
+            pinterest_link = f"https://health-ptg.pages.dev/{post_slug}?utm_source=pinterest&utm_medium=organic_social&utm_campaign={post_slug}"
             write_draft_pack(
                 out_dir=settings.repo_root / "generated" / "pinterest",
                 run_date=today,
                 pin_title=post["pin_title"],
                 pin_description=post["pin_description"],
-                link=post_link,
+                link=pinterest_link,
                 image_path=hero_rel,
                 tag=post.get("tag", ""),
                 slot_index=slot_idx,
@@ -421,10 +416,23 @@ def main() -> None:
                 board=pin_seo.get("board", ""),
             )
 
+            # Se publicação direta via API estiver ativada
+            if settings.pinterest_enable_publish and settings.pinterest_access_token and settings.pinterest_board_id:
+                create_pin(
+                    access_token=settings.pinterest_access_token,
+                    board_id=settings.pinterest_board_id,
+                    title=post["pin_title"],
+                    description=post["pin_description"],
+                    link=pinterest_link,
+                    image_url=f"https://health-ptg.pages.dev/{hero_rel}",
+                    alt_text=post.get("alt_text", post["title"]),
+                    log_path=settings.repo_root / "generated" / "logs" / "pinterest.log",
+                )
+
             # Registra no histórico de aprendizado do Pinterest
             tracker.record_pin(
                 pin_date=today.isoformat(),
-                url=post_link,
+                url=pinterest_link,
                 topic=topic.name,
                 tag=post["tag"],
                 intent=pin_seo["intent"],
