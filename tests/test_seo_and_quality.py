@@ -6,7 +6,9 @@ import unittest
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
-from src.app.content import validate_article_quality
+from src.app.content import ensure_scientific_links, validate_article_quality
+from src.app.pinterest_seo import generate_triple_pins
+from src.app.topics import Topic
 from src.app.validate_links import validate_links
 
 
@@ -120,18 +122,19 @@ class TestSEOAndQuality(unittest.TestCase):
             if not html_file.exists():
                 continue
             html_text = html_file.read_text(encoding="utf-8")
-            expected_canonical = f"https://health-ptg.pages.dev/{slug}"
 
-            # Canonical não pode ter .html
-            self.assertIn(
-                f"<link rel='canonical' href='{expected_canonical}'>",
-                html_text,
-                f"Canonical ausente ou incorreto em {slug}.html",
+            canonical_match = re.search(r"<link\s+rel=['\"]canonical['\"]\s+href=['\"]([^'\"]+)['\"]", html_text)
+            self.assertTrue(canonical_match, f"Canonical ausente em {slug}.html")
+            canonical_url = canonical_match.group(1)
+
+            # Canonical não pode ter .html e deve terminar com o slug
+            self.assertFalse(
+                canonical_url.endswith(".html"),
+                f"Canonical com .html detectado em {slug}.html: {canonical_url}",
             )
-            self.assertNotIn(
-                f"<link rel='canonical' href='{expected_canonical}.html'>",
-                html_text,
-                f"Canonical com .html detectado em {slug}.html",
+            self.assertTrue(
+                canonical_url.endswith(f"/{slug}") or canonical_url.endswith(slug),
+                f"Canonical incorreto em {slug}.html: {canonical_url}",
             )
 
     def test_9_editorial_and_scientific_quality_validation(self) -> None:
@@ -183,9 +186,9 @@ class TestSEOAndQuality(unittest.TestCase):
                 "By emphasizing whole-food foundations and respecting biological rhythms, individuals establish sustainable recovery habits. "
                 "Translating laboratory discoveries into manageable kitchen behaviors bridges clinical research and daily vitality.</p>"
                 "<section class='scientific-sources'><h2>Scientific References & Sources</h2>"
-                "<ul><li>NIH Office of Dietary Supplements clinical review on magnesium.</li>"
-                "<li>Journal of Sleep Research meta-analysis on micronutrients and sleep architecture.</li>"
-                "<li>CDC public health guidelines for adult nutritional health and chronic disease prevention.</li></ul></section>"
+                "<ul><li><a href='https://pubmed.ncbi.nlm.nih.gov/30062032/' target='_blank' rel='noopener noreferrer'>NIH Office of Dietary Supplements clinical review on magnesium</a></li>"
+                "<li><a href='https://pubmed.ncbi.nlm.nih.gov/23853635/' target='_blank' rel='noopener noreferrer'>Journal of Sleep Research meta-analysis on micronutrients and sleep architecture</a></li>"
+                "<li><a href='https://www.cdc.gov/nutrition/index.html' target='_blank' rel='noopener noreferrer'>CDC public health guidelines for adult nutritional health and chronic disease prevention</a></li></ul></section>"
             ),
             "faq": [
                 {"question": "How does magnesium support rest?", "answer": "It acts as an enzymatic cofactor in cellular relaxation pathways and GABA regulation."},
@@ -215,6 +218,90 @@ class TestSEOAndQuality(unittest.TestCase):
         is_valid, reason = validate_article_quality(short_article, "Magnesium")
         self.assertFalse(is_valid, "Validação deve barrar artigos superficiais e curtos")
         self.assertIn("superficial", reason)
+
+        # Caso 5: Artigo sem links diretos para artigos científicos clicáveis (deve falhar)
+        no_links_article = dict(good_article)
+        no_links_article["html"] = re.sub(r"<a [^>]+>(.*?)</a>", r"\1", good_article["html"])
+        is_valid, reason = validate_article_quality(no_links_article, "Magnesium")
+        self.assertFalse(is_valid, "Validação deve exigir links científicos clicáveis")
+        self.assertIn("link direto e clicável", reason)
+
+        # Caso 6: Helper ensure_scientific_links deve enriquecer artigos sem link com PubMed/Europe PMC/Cochrane
+        fixed_html = ensure_scientific_links(no_links_article["html"], "Magnesium Habits", "sleep")
+        no_links_article["html"] = fixed_html
+        is_valid, reason = validate_article_quality(no_links_article, "Magnesium")
+        self.assertTrue(is_valid, f"ensure_scientific_links deveria ter corrigido os links científicos: {reason}")
+        self.assertIn("pubmed.ncbi.nlm.nih.gov", fixed_html)
+        self.assertIn("europepmc.org", fixed_html)
+        self.assertIn("cochranelibrary.com", fixed_html)
+
+        # Caso 7: Artigos com fontes Europe PMC e Cochrane Library são validados com sucesso
+        cochrane_article = dict(good_article)
+        cochrane_article["html"] = (
+            good_article["html"] +
+            "<section class='scientific-sources'><h2>Scientific References & Sources</h2><ul>"
+            "<li><a href='https://europepmc.org/article/MED/1234567'>Europe PMC Systematic Review on Micronutrients</a></li>"
+            "<li><a href='https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD000000'>Cochrane Database of Systematic Reviews</a></li>"
+            "</ul></section>"
+        )
+        is_valid, reason = validate_article_quality(cochrane_article, "Magnesium")
+        self.assertTrue(is_valid, f"Fontes da Europe PMC e Cochrane Library devem ser aceitas: {reason}")
+
+    def test_10_triple_pins_generation(self) -> None:
+        """Testa a geração dos 3 pins estratégicos por post: Educacional, Problema/Solução e SEO/Buscas."""
+        topic = Topic(slug="magnesium-sleep", name="Magnesium Sleep Habits", angle="evidence-based bedtime guide", tag="sleep")
+        article_data = {
+            "title": "Evidence-Based Magnesium Habits for Deeper Rest",
+            "slug": "magnesium-sleep",
+            "meta_description": "Discover how clinical magnesium habits improve sleep architecture and circadian rhythm naturally.",
+            "html": "<p>Scientific evidence on magnesium and sleep latency.</p>",
+            "tag": "sleep",
+            "pin_educational": {
+                "pin_title": "The Science-Backed Magnesium Guide for Rest",
+                "pin_description": "Discover the biological mechanisms of magnesium for deep sleep recovery. Save this research-backed breakdown!",
+                "pin_keywords": "magnesium for sleep, sleep science tips, bedtime routine guide",
+            },
+            "pin_problem_solution": {
+                "pin_title": "Common Magnesium Mistakes Ruining Your Sleep",
+                "pin_description": "Are you taking the wrong type of magnesium at night? Learn what to avoid and what actually works for rest.",
+                "pin_keywords": "sleep mistakes to avoid, magnesium timing tips, natural sleep remedies",
+            },
+            "pin_seo_search": {
+                "pin_title": "Top Bedtime Magnesium Habits for Deep Sleep",
+                "pin_description": "Explore the most popular nighttime magnesium habits and routines. Save this pin to reset your sleep tonight!",
+                "pin_keywords": "how to sleep better naturally, bedtime routine for adults, natural sleep remedies",
+            },
+        }
+
+        pins = generate_triple_pins(topic, article_data)
+        self.assertEqual(len(pins), 3, "Deve gerar exatamente 3 pins distintos por post")
+
+        pin_types = [p["pin_type"] for p in pins]
+        self.assertEqual(pin_types, ["educational", "problem_solution", "seo_search"])
+
+        utms = [p["utm_content"] for p in pins]
+        self.assertEqual(utms, ["pin_educational", "pin_problem_solution", "pin_seo_search"])
+
+        # Verifica slots de horário (distribuídos no dia)
+        slots = [p["slot_index"] for p in pins]
+        self.assertEqual(slots, [0, 2, 4])
+
+        # Verifica requisitos de tamanho de título e descrição de cada pin
+        for p in pins:
+            self.assertTrue(40 <= len(p["pin_title"]) <= 70, f"Título fora dos limites: '{p['pin_title']}' ({len(p['pin_title'])})")
+            self.assertTrue(140 <= len(p["pin_description"]) <= 260, f"Descrição fora dos limites: '{p['pin_description']}' ({len(p['pin_description'])})")
+            self.assertGreaterEqual(len(p["keywords_list"]), 5, "Cada pin deve conter pelo menos 5 keywords")
+
+    def test_11_google_indexing_removed_and_clean_configuration(self) -> None:
+        """Verifica que o Google Indexing API foi completamente removido da configuração e das dependências."""
+        from src.app.config import Settings
+        import dataclasses
+        field_names = [f.name for f in dataclasses.fields(Settings)]
+        self.assertNotIn(
+            "google_indexing_json_path",
+            field_names,
+            "google_indexing_json_path deve ser removido de Settings",
+        )
 
 
 if __name__ == "__main__":

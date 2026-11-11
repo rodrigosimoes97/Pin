@@ -23,9 +23,8 @@ from .topics import pick_topic, Topic, PRIORITY_TAGS
 from .duplicate_checker import DuplicateChecker
 from .trend_research import get_trending_topics
 from .internal_links import get_related_internal_links
-from .indexing import index_new_post
 from .pinterest_performance import PinterestPerformanceTracker
-from .pinterest_seo import generate_pinterest_seo
+from .pinterest_seo import generate_pinterest_seo, generate_triple_pins
 
 LOG = logging.getLogger(__name__)
 
@@ -155,13 +154,17 @@ def _write_execution_summary(
     if successful_posts:
         banner.append("\n📝 POSTS E PINS CRIADOS COM SUCESSO:")
         for idx, item in enumerate(successful_posts, 1):
+            pins_info = item.get("pins", [])
             banner.append(
-                f"{idx}. \"{item['title']}\"\n"
-                f"   • Board: {item['board']}\n"
-                f"   • Tag: {item['tag']} | Intent: {item['intent']} | Horário: {item['publish_time']}\n"
-                f"   • Keywords ({item['keywords_count']}): {item['keywords_preview']}\n"
-                f"   • Link: {item['url']}"
+                f"{idx}. Artigo: \"{item['title']}\"\n"
+                f"   • Tag: {item['tag']} | Board: {item.get('board', 'Health & Wellness')}\n"
+                f"   • Link do Artigo: {item['url']}\n"
+                f"   • 3 Pins Estratégicos Gerados:"
             )
+            for p in pins_info:
+                banner.append(
+                    f"     - [{p.get('pin_type', '').upper()}] \"{p.get('title')}\" ({p.get('publish_time')})"
+                )
     else:
         banner.append("\n⚠️ Nenhum post publicado com sucesso nesta execução.")
 
@@ -180,20 +183,22 @@ def _write_execution_summary(
             md_lines = [
                 f"## 🚀 Resumo do Pipeline — {today_str}",
                 "",
-                f"- **Status da Meta:** `{len(successful_posts)}/{target_posts}` posts e pins gerados com sucesso",
-                f"- **Meta Diária Configurada:** `{target_posts}` posts/dia",
+                f"- **Status da Meta:** `{len(successful_posts)}/{target_posts}` posts publicados com sucesso",
+                f"- **Total de Pins Criados:** `{len(successful_posts) * 3}` pins (3 por post: Educacional, Problema/Solução, Buscas/Keywords)",
+                f"- **Meta Diária Configurada:** `{target_posts}` post(s)/dia",
                 "",
             ]
             if successful_posts:
                 md_lines.extend([
                     "### 📝 Posts e Pins Criados",
-                    "| # | Título do Pin | Pasta (Board) | Tag | Horário (ET) | Keywords |",
-                    "|:---:|:---|:---|:---:|:---:|:---:|",
+                    "| # | Artigo | Tipo de Pin | Título do Pin | Horário (ET) |",
+                    "|:---:|:---|:---:|:---|:---:|",
                 ])
                 for idx, item in enumerate(successful_posts, 1):
-                    md_lines.append(
-                        f"| {idx} | [{item['title']}]({item['url']}) | `{item['board']}` | `{item['tag']}` | `{item['publish_time']}` | {item['keywords_count']} termos |"
-                    )
+                    for p in item.get("pins", []):
+                        md_lines.append(
+                            f"| {idx} | [{item['title']}]({item['url']}) | `{p.get('pin_type')}` | {p.get('title')} | `{p.get('publish_time')}` |"
+                        )
                 md_lines.append("")
 
             if failed_slots:
@@ -253,9 +258,9 @@ def main() -> None:
     if posts_json_path.exists():
         existing_posts = json.loads(posts_json_path.read_text(encoding="utf-8"))
 
-    # Meta diária configurável (padrão: 3 posts por dia)
+    # Meta diária configurável (garante pelo menos 1 post por dia com resiliência de até 6 tentativas)
     target_posts = max(1, settings.posts_per_day)
-    max_attempts = target_posts + 2  # permite até 2 tentativas extras caso algum artigo seja descartado
+    max_attempts = max(6, target_posts * 5)
 
     successful_posts: list[dict[str, Any]] = []
     failed_slots: list[dict[str, str]] = []
@@ -347,14 +352,15 @@ def main() -> None:
             if post["slug"] in set(recent_slugs[-40:]) or post["slug"] in daily_slugs:
                 post["slug"] = f"{post['slug']}-{today.strftime('%m%d')}-{published_count + 1}"
 
-            # ── Camada de Pinterest SEO ───────────────────────────────────────
-            pin_seo = generate_pinterest_seo(
+            # ── Camada de Pinterest SEO: 3 Pins Estratégicos por Post ──────────
+            # 1. Educacional (pin_educational)
+            # 2. Problema / Solução (pin_problem_solution)
+            # 3. Pesquisas e Palavras-chave do Pinterest (pin_seo_search)
+            triple_pins = generate_triple_pins(
                 topic=topic,
                 article_data=post,
                 performance_tracker=tracker,
             )
-            post["pin_title"] = pin_seo["pin_title"]
-            post["pin_description"] = pin_seo["pin_description"]
 
             # Hero pública: .jpeg
             hero_rel = f"assets/{today.isoformat()}_{post['slug']}.jpeg"
@@ -362,16 +368,6 @@ def main() -> None:
                 settings.pexels_api_key,
                 post["image_query"],
                 settings.repo_root / "docs" / hero_rel,
-            )
-
-            # Imagem Pinterest com overlay: .png local
-            pin_rel = f"generated/pinterest/{today.isoformat()}_{post['slug']}.png"
-            create_pinterest_image(
-                settings.pexels_api_key,
-                post["image_query"],
-                post["pin_title"],
-                settings.repo_root / pin_rel,
-                source_image_path=actual_hero_path,
             )
 
             record = publish_post(
@@ -387,58 +383,80 @@ def main() -> None:
             post_slug = str(record.get("slug") or record["url"]).replace(".html", "").strip().lstrip("/")
             canonical_url = f"{settings.base_url.rstrip('/')}/{post_slug}"
 
-            # Google Indexing recebe a URL canônica definitiva
-            if settings.google_indexing_json_path:
-                index_new_post(settings.repo_root, settings.google_indexing_json_path, canonical_url)
-
             _log_to_file(settings.repo_root, "published_posts.log", f"Published: {canonical_url} ({mode})")
 
-            # Slot index baseado na ordem real dos posts publicados
-            slot_idx = published_count
-            time_idx = min(slot_idx, len(PINTEREST_BEST_HOURS_US) - 1)
-            publish_hour_str = PINTEREST_BEST_HOURS_US[time_idx]
+            # Itera sobre os 3 Pins estratégicos do artigo
+            created_pins_for_summary: list[dict[str, str]] = []
+            for pin_info in triple_pins:
+                pin_type = pin_info["pin_type"]
+                pin_title = pin_info["pin_title"]
+                pin_desc = pin_info["pin_description"]
+                pin_slot = pin_info["slot_index"]
+                pin_intent = pin_info["intent"]
+                pin_board = pin_info.get("board", "Health & Wellness")
+                pin_kws = pin_info["keywords"]
 
-            # URL do Pinterest configurada com UTMs obrigatórios:
-            # utm_source=pinterest, utm_medium=organic_social e utm_campaign com slug do artigo
-            pinterest_link = f"https://health-ptg.pages.dev/{post_slug}?utm_source=pinterest&utm_medium=organic_social&utm_campaign={post_slug}"
-            write_draft_pack(
-                out_dir=settings.repo_root / "generated" / "pinterest",
-                run_date=today,
-                pin_title=post["pin_title"],
-                pin_description=post["pin_description"],
-                link=pinterest_link,
-                image_path=hero_rel,
-                tag=post.get("tag", ""),
-                slot_index=slot_idx,
-                keywords=pin_seo["keywords"],
-                intent=pin_seo["intent"],
-                primary_keyword=pin_seo["primary_keyword"],
-                board=pin_seo.get("board", ""),
-            )
-
-            # Se publicação direta via API estiver ativada
-            if settings.pinterest_enable_publish and settings.pinterest_access_token and settings.pinterest_board_id:
-                create_pin(
-                    access_token=settings.pinterest_access_token,
-                    board_id=settings.pinterest_board_id,
-                    title=post["pin_title"],
-                    description=post["pin_description"],
-                    link=pinterest_link,
-                    image_url=f"https://health-ptg.pages.dev/{hero_rel}",
-                    alt_text=post.get("alt_text", post["title"]),
-                    log_path=settings.repo_root / "generated" / "logs" / "pinterest.log",
+                # Imagem Pinterest vertical (.png local) com overlay dedicada ao título do pin
+                pin_rel = f"generated/pinterest/{today.isoformat()}_{post['slug']}_{pin_type}.png"
+                create_pinterest_image(
+                    settings.pexels_api_key,
+                    post["image_query"],
+                    pin_title,
+                    settings.repo_root / pin_rel,
+                    source_image_path=actual_hero_path,
                 )
 
-            # Registra no histórico de aprendizado do Pinterest
-            tracker.record_pin(
-                pin_date=today.isoformat(),
-                url=pinterest_link,
-                topic=topic.name,
-                tag=post["tag"],
-                intent=pin_seo["intent"],
-                primary_keyword=pin_seo["primary_keyword"],
-                title=post["pin_title"],
-            )
+                # URL com UTM dedicado para rastrear cada um dos 3 pins individualmente
+                pinterest_link = f"https://health-ptg.pages.dev/{post_slug}?utm_source=pinterest&utm_medium=organic_social&utm_campaign={post_slug}&utm_content={pin_info['utm_content']}"
+
+                write_draft_pack(
+                    out_dir=settings.repo_root / "generated" / "pinterest",
+                    run_date=today,
+                    pin_title=pin_title,
+                    pin_description=pin_desc,
+                    link=pinterest_link,
+                    image_path=hero_rel,
+                    tag=post.get("tag", ""),
+                    slot_index=pin_slot,
+                    keywords=pin_kws,
+                    intent=pin_intent,
+                    primary_keyword=pin_info["primary_keyword"],
+                    board=pin_board,
+                )
+
+                # Se publicação direta via API estiver ativada
+                if settings.pinterest_enable_publish and settings.pinterest_access_token and settings.pinterest_board_id:
+                    create_pin(
+                        access_token=settings.pinterest_access_token,
+                        board_id=settings.pinterest_board_id,
+                        title=pin_title,
+                        description=pin_desc,
+                        link=pinterest_link,
+                        image_url=f"https://health-ptg.pages.dev/{hero_rel}",
+                        alt_text=post.get("alt_text", post["title"]),
+                        log_path=settings.repo_root / "generated" / "logs" / "pinterest.log",
+                    )
+
+                # Registra no histórico de aprendizado do Pinterest
+                tracker.record_pin(
+                    pin_date=today.isoformat(),
+                    url=pinterest_link,
+                    topic=topic.name,
+                    tag=post["tag"],
+                    intent=pin_intent,
+                    primary_keyword=pin_info["primary_keyword"],
+                    title=pin_title,
+                )
+
+                time_idx = min(pin_slot, len(PINTEREST_BEST_HOURS_US) - 1)
+                publish_hour_str = PINTEREST_BEST_HOURS_US[time_idx]
+                created_pins_for_summary.append({
+                    "pin_type": pin_type,
+                    "title": pin_title,
+                    "intent": pin_intent,
+                    "publish_time": publish_hour_str,
+                    "link": pinterest_link,
+                })
 
             daily_slugs.add(post["slug"])
             daily_topics.add(topic.slug)
@@ -451,22 +469,18 @@ def main() -> None:
             topic_rotation[topic.tag] = int(topic_rotation.get(topic.tag, 0)) + 1
 
             successful_posts.append({
-                "title": post["pin_title"],
+                "title": post["title"],
                 "slug": post["slug"],
-                "url": post_link,
+                "url": canonical_url,
                 "tag": post["tag"],
-                "board": pin_seo.get("board", "Health & Wellness"),
-                "intent": pin_seo["intent"],
-                "keywords_count": len(pin_seo["keywords_list"]),
-                "keywords_preview": ", ".join(pin_seo["keywords_list"][:3]) + "...",
-                "publish_time": publish_hour_str,
+                "board": triple_pins[0].get("board", "Health & Wellness"),
+                "pins": created_pins_for_summary,
             })
 
             LOG.info(
-                "[%s] ✓ Publicado com sucesso: '%s' | Board='%s'",
+                "[%s] ✓ Publicado com sucesso: '%s' | 3 Pins gerados",
                 slot_label,
-                post["pin_title"],
-                pin_seo.get("board"),
+                post["title"],
             )
 
         except Exception:

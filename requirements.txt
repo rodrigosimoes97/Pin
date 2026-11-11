@@ -5,5 +5,3 @@ beautifulsoup4
 scikit-learn
 numpy
 pytrends
-google-auth
-google-api-python-client

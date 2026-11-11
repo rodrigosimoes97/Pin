@@ -689,3 +689,184 @@ def generate_pinterest_seo(
     )
 
     return seo_result
+
+
+def generate_triple_pins(
+    topic: "Topic | str",
+    article_data: dict[str, Any],
+    performance_tracker: PinterestPerformanceTracker | None = None,
+) -> list[dict[str, Any]]:
+    """
+    Gera exatamente 3 variações estratégicas de Pins para o mesmo artigo:
+    1. Educacional (pin_educational): foco em ciência, mecanismos e guia passo a passo.
+    2. Problema/Solução (pin_problem_solution): foco em erros comuns a evitar, mitos e soluções práticas.
+    3. Pesquisas e Palavras-chave do Pinterest (pin_seo_search): foco em termos de alto volume do Pinterest US e ideias acionáveis.
+    """
+    from .topics import Topic as _Topic
+    topic_name = topic.name if isinstance(topic, _Topic) else str(topic)
+    topic_tag = topic.tag if isinstance(topic, _Topic) else ""
+    tag = article_data.get("tag") or topic_tag or "health"
+    title = article_data.get("title", "")
+    html = article_data.get("html", "")
+    meta_desc = article_data.get("meta_description", "")
+    primary_kw = extract_core_topic_phrase(topic_name, title)
+    board = US_PINTEREST_BOARDS.get(tag, "Health & Wellness")
+
+    # Extrai os sub-pins do payload do Gemini caso existam
+    gemini_edu = article_data.get("pin_educational") if isinstance(article_data.get("pin_educational"), dict) else {}
+    gemini_prob = article_data.get("pin_problem_solution") if isinstance(article_data.get("pin_problem_solution"), dict) else {}
+    gemini_seo = article_data.get("pin_seo_search") if isinstance(article_data.get("pin_seo_search"), dict) else {}
+
+    # ── 1. Pin Educacional ───────────────────────────────────────────────────
+    edu_intent = "guide"
+    edu_keywords_list = generate_search_keywords(
+        topic_name=topic_name,
+        title=title,
+        tag=tag,
+        intent=edu_intent,
+        primary_keyword=primary_kw,
+        article_keywords=gemini_edu.get("pin_keywords", article_data.get("pin_keywords", "")),
+    )
+    raw_edu_title = _normalize_whitespace(gemini_edu.get("pin_title", ""))
+    if 40 <= len(raw_edu_title) <= 70 and not _is_generic_fallback_title(raw_edu_title):
+        edu_title = raw_edu_title
+    else:
+        edu_title = build_pinterest_title(
+            title=f"The Science-Backed Guide to {primary_kw.title()}" if primary_kw else title,
+            topic_name=topic_name,
+            tag=tag,
+            intent=edu_intent,
+            primary_keyword=primary_kw,
+        )
+
+    raw_edu_desc = _normalize_whitespace(gemini_edu.get("pin_description", ""))
+    if 140 <= len(raw_edu_desc) <= 260 and not _is_generic_fallback_description(raw_edu_desc):
+        edu_desc = raw_edu_desc
+    else:
+        edu_desc = build_pinterest_description(
+            title=title,
+            meta_description=meta_desc,
+            tag=tag,
+            intent=edu_intent,
+            primary_keyword=primary_kw,
+            html=html,
+        )
+
+    pin_1 = {
+        "pin_type": "educational",
+        "intent": edu_intent,
+        "primary_keyword": primary_kw,
+        "pin_title": edu_title,
+        "pin_description": edu_desc,
+        "keywords": ", ".join(edu_keywords_list),
+        "keywords_list": edu_keywords_list,
+        "board": board,
+        "slot_index": 0,  # 10:00 AM ET
+        "utm_content": "pin_educational",
+    }
+
+    # ── 2. Pin Problema / Solução ────────────────────────────────────────────
+    prob_intent = "mistakes"
+    prob_keywords_list = generate_search_keywords(
+        topic_name=topic_name,
+        title=title,
+        tag=tag,
+        intent=prob_intent,
+        primary_keyword=primary_kw,
+        article_keywords=gemini_prob.get("pin_keywords", article_data.get("pin_keywords", "")),
+    )
+    raw_prob_title = _normalize_whitespace(gemini_prob.get("pin_title", ""))
+    if 40 <= len(raw_prob_title) <= 70 and not _is_generic_fallback_title(raw_prob_title):
+        prob_title = raw_prob_title
+    else:
+        prob_title = build_pinterest_title(
+            title=f"Common {tag.replace('-', ' ').title()} Mistakes and How to Avoid Them",
+            topic_name=topic_name,
+            tag=tag,
+            intent=prob_intent,
+            primary_keyword=primary_kw,
+        )
+
+    raw_prob_desc = _normalize_whitespace(gemini_prob.get("pin_description", ""))
+    if 140 <= len(raw_prob_desc) <= 260 and not _is_generic_fallback_description(raw_prob_desc):
+        prob_desc = raw_prob_desc
+    else:
+        prob_desc = build_pinterest_description(
+            title=title,
+            meta_description=f"Avoid frustrating setbacks with {primary_kw}. Learn what commonly goes wrong and simple proven solutions.",
+            tag=tag,
+            intent=prob_intent,
+            primary_keyword=primary_kw,
+            html=html,
+        )
+
+    pin_2 = {
+        "pin_type": "problem_solution",
+        "intent": prob_intent,
+        "primary_keyword": primary_kw,
+        "pin_title": prob_title,
+        "pin_description": prob_desc,
+        "keywords": ", ".join(prob_keywords_list),
+        "keywords_list": prob_keywords_list,
+        "board": board,
+        "slot_index": 2,  # 15:30 PM ET
+        "utm_content": "pin_problem_solution",
+    }
+
+    # ── 3. Pin SEO / Pesquisas de Alto Volume ────────────────────────────────
+    seo_intent = "list"
+    seo_keywords_list = generate_search_keywords(
+        topic_name=topic_name,
+        title=title,
+        tag=tag,
+        intent=seo_intent,
+        primary_keyword=primary_kw,
+        article_keywords=gemini_seo.get("pin_keywords", article_data.get("pin_keywords", "")),
+    )
+    raw_seo_title = _normalize_whitespace(gemini_seo.get("pin_title", ""))
+    if 40 <= len(raw_seo_title) <= 70 and not _is_generic_fallback_title(raw_seo_title):
+        seo_title = raw_seo_title
+    else:
+        seo_title = build_pinterest_title(
+            title=f"Top {tag.replace('-', ' ').title()} Ideas for Everyday Wellness",
+            topic_name=topic_name,
+            tag=tag,
+            intent=seo_intent,
+            primary_keyword=primary_kw,
+        )
+
+    raw_seo_desc = _normalize_whitespace(gemini_seo.get("pin_description", ""))
+    if 140 <= len(raw_seo_desc) <= 260 and not _is_generic_fallback_description(raw_seo_desc):
+        seo_desc = raw_seo_desc
+    else:
+        seo_desc = build_pinterest_description(
+            title=title,
+            meta_description=meta_desc,
+            tag=tag,
+            intent=seo_intent,
+            primary_keyword=primary_kw,
+            html=html,
+        )
+
+    pin_3 = {
+        "pin_type": "seo_search",
+        "intent": seo_intent,
+        "primary_keyword": primary_kw,
+        "pin_title": seo_title,
+        "pin_description": seo_desc,
+        "keywords": ", ".join(seo_keywords_list),
+        "keywords_list": seo_keywords_list,
+        "board": board,
+        "slot_index": 4,  # 20:30 PM ET (horário nobre)
+        "utm_content": "pin_seo_search",
+    }
+
+    LOG.info(
+        "[PinterestSEO] Gerados 3 pins para '%s': [1] %s | [2] %s | [3] %s",
+        title[:30],
+        pin_1["pin_title"][:25],
+        pin_2["pin_title"][:25],
+        pin_3["pin_title"][:25],
+    )
+
+    return [pin_1, pin_2, pin_3]

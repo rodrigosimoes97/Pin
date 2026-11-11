@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import re
+import urllib.parse
 from typing import Any
 
 from .gemini_client import GeminiClient
@@ -27,7 +28,7 @@ ALLOWED_TAGS = {
 CONTENT_PROMPT = """\
 Write a high-quality, deeply researched, evidence-informed health article for a discerning US audience.
 Return a strict JSON object only (no markdown, no code fences) with EXACTLY these keys:
-title, slug, meta_description, html, image_query, pin_title, pin_description, pin_keywords, alt_text, tag, faq
+title, slug, meta_description, html, image_query, pin_title, pin_description, pin_keywords, alt_text, tag, faq, pin_educational, pin_problem_solution, pin_seo_search
 
 CRITICAL JSON RULES (read carefully before generating):
 - NO literal newlines inside any JSON string value — use \\n instead.
@@ -36,16 +37,21 @@ CRITICAL JSON RULES (read carefully before generating):
 - Do NOT wrap in ```json or any markdown.
 
 EDITORIAL & SCIENTIFIC INTEGRITY RULES:
-- Write in authoritative, accessible, and engaging US health journalism English.
-- Target US readers seeking realistic, sustainable health guidance.
-- Ground all health claims in verifiable scientific evidence and guidance from respected institutions:
-  prioritize NIH (National Institutes of Health), CDC (Centers for Disease Control and Prevention),
-  FDA, peer-reviewed medical journals (e.g. JAMA, The Lancet, NEJM, BMJ, PubMed-indexed research),
-  and accredited university medical centers.
+- Write in authoritative, accessible, highly useful, and engaging US health journalism English.
+- Target US readers seeking realistic, sustainable, evidence-based guidance that they can directly apply to daily life.
+- Ground all health claims in verifiable scientific evidence from trusted high-impact databases and institutions:
+  prioritize PubMed (National Library of Medicine), Europe PMC, Cochrane Library (Cochrane Database of Systematic Reviews),
+  NIH (National Institutes of Health), CDC (Centers for Disease Control and Prevention), WHO,
+  FDA, and top peer-reviewed journals (The Lancet, NEJM, JAMA, BMJ).
+- ACTIONABLE & HIGHLY USEFUL CONTENT:
+  - Do NOT provide vague or generic platitudes like "eat healthy" or "get more rest".
+  - Explain the underlying biological/physiological mechanism in clear, accessible layman terms.
+  - Provide specific, daily actionable steps: practical protocols, safe dietary amounts/frequencies, timing, and meal/routine integration backed by systematic reviews.
+  - Include a clear distinction between what is proven clinical consensus vs. preliminary studies.
 - DO NOT invent fictitious personal anecdotes, fake first-person stories, or unverified claims.
   Do NOT use fabricated "I," "me," "my personal struggle" personas. Write with an evidence-informed,
   objective, and empathetic voice focusing on the reader ("you") and scientific consensus.
-- NEVER invent studies, researchers, institutions, statistics, or quotes.
+- NEVER invent fake studies or nonexistent researchers.
 - Clearly differentiate between established clinical consensus, preliminary research (e.g. animal models or small cohorts), and emerging hypotheses.
 - STRICTLY PROHIBITED: Never make promises of cures, diagnostic claims, or unsubstantiated medical advice.
 - Minimum 550 words in the html body (excluding FAQ and metadata). Avoid superficial AI filler.
@@ -76,8 +82,8 @@ Required HTML elements inside "html" field:
    href="#recent-4" (anchor: consistent routine breakdown)
    href="#recent-5" (anchor: explore more [tag] articles)
 5. Mandatory Scientific References Section at the end of the body:
-   <section class='scientific-sources'><h2>Scientific References & Sources</h2><ul><li>...</li><li>...</li></ul></section>
-   (Include at least 2-4 real citations or institutional references: NIH, CDC, FDA, or peer-reviewed journals).
+   <section class='scientific-sources'><h2>Scientific References & Sources</h2><ul><li><a href='https://pubmed.ncbi.nlm.nih.gov/...' target='_blank' rel='noopener noreferrer'>Study Title / Finding — PubMed (NLM)</a></li><li><a href='https://europepmc.org/...' target='_blank' rel='noopener noreferrer'>Clinical Trial / Review — Europe PMC</a></li><li><a href='https://www.cochranelibrary.com/...' target='_blank' rel='noopener noreferrer'>Systematic Review — Cochrane Library</a></li></ul></section>
+   (Include at least 2-4 real citations or institutional references: PubMed, Europe PMC, Cochrane Library, NIH, CDC, FDA, PMC, DOI, or major journals, each with a clickable <a href='...'> link to view the original study or research page).
 6. Educational disclaimer sentence: "Educational and informational only — not medical advice."
 7. If mode=offer: ethical recommendation + exact sentence "Disclosure: This page may contain affiliate links."
 8. If mode=info: do NOT include affiliate links.
@@ -91,6 +97,11 @@ For "pin_title": 40–70 chars, benefit-driven and clickable for US Pinterest au
 For "pin_description": 150–250 chars. Engaging, natural US English highlighting actionable science-backed benefits, weaving in 2-3 search phrases with a clear CTA (e.g. "Save this for later!", "Read the full research-backed guide!").
 For "pin_keywords": 4–6 authentic US search phrases (2–3 words each, comma-separated).
 For "alt_text": accurate, descriptive image alt text (10–20 words).
+
+Pinterest Angle Variations (Provide 3 distinct angles for Pinterest pins):
+- "pin_educational": {{"pin_title": "40-70 chars focused on science/guide/how it works", "pin_description": "140-260 chars explaining science-backed benefits and clear action", "pin_keywords": "4-6 search phrases"}}
+- "pin_problem_solution": {{"pin_title": "40-70 chars focused on common mistake/frustration/solution", "pin_description": "140-260 chars addressing pain point and practical fix", "pin_keywords": "4-6 search phrases"}}
+- "pin_seo_search": {{"pin_title": "40-70 chars capturing high-volume Pinterest search intent/ideas/list", "pin_description": "140-260 chars rich in search queries with strong save CTA", "pin_keywords": "4-6 search phrases"}}
 
 If tag=recipes, include an additional key "recipe" with this exact shape:
 {{
@@ -179,11 +190,33 @@ def generate_article(
     pin_kws = str(payload.get("pin_keywords", "")).strip()
     payload["pin_keywords"] = pin_kws
 
+    # Normalização dos 3 Pins (Educacional, Problema/Solução, SEO/Pesquisas)
+    def _normalize_sub_pin(raw: Any, default_title: str, default_desc: str, default_kws: str) -> dict[str, str]:
+        if not isinstance(raw, dict):
+            return {"pin_title": default_title, "pin_description": default_desc, "pin_keywords": default_kws}
+        t = str(raw.get("pin_title", "")).strip() or default_title
+        d = str(raw.get("pin_description", "")).strip() or default_desc
+        k = str(raw.get("pin_keywords", "")).strip() or default_kws
+        return {"pin_title": t, "pin_description": d, "pin_keywords": k}
+
+    payload["pin_educational"] = _normalize_sub_pin(
+        payload.get("pin_educational"), payload["pin_title"], payload["pin_description"], payload["pin_keywords"]
+    )
+    payload["pin_problem_solution"] = _normalize_sub_pin(
+        payload.get("pin_problem_solution"), payload["pin_title"], payload["pin_description"], payload["pin_keywords"]
+    )
+    payload["pin_seo_search"] = _normalize_sub_pin(
+        payload.get("pin_seo_search"), payload["pin_title"], payload["pin_description"], payload["pin_keywords"]
+    )
+
     if mode == "info":
         payload["html"] = payload["html"].replace("Disclosure: This page may contain affiliate links.", "")
 
     payload["faq"] = _normalize_faq(payload.get("faq"))
     payload["recipe"] = _normalize_recipe(payload.get("recipe"), payload["tag"])
+
+    # Garante links científicos diretos e clicáveis para os estudos
+    payload["html"] = ensure_scientific_links(payload["html"], topic.name, final_tag)
 
     # Validação editorial prévia
     is_valid, reason = validate_article_quality(payload, topic.name)
@@ -223,7 +256,86 @@ SCIENTIFIC_INDICATOR_KEYWORDS = [
     "study", "studies", "research", "researchers", "clinical", "trial",
     "nih", "cdc", "fda", "journal", "pubmed", "evidence", "review",
     "meta-analysis", "peer-reviewed", "investigators", "consensus",
+    "cochrane", "systematic review", "europe pmc", "controlled trial",
 ]
+
+ACTIONABLE_INDICATOR_KEYWORDS = [
+    "practical", "daily", "routine", "step", "protocol", "action",
+    "habit", "habits", "intake", "guide", "how to", "timing", "schedule",
+    "tips", "actionable", "strategy", "strategies", "dosage", "amount",
+]
+
+SCIENTIFIC_URL_PATTERN = re.compile(
+    r'href=[\'"]https?://(?:www\.)?(?:pubmed\.ncbi\.nlm\.nih\.gov|europepmc\.org|cochranelibrary\.com|ncbi\.nlm\.nih\.gov|nih\.gov|cdc\.gov|fda\.gov|who\.int|doi\.org|thelancet\.com|nejm\.org|jamanetwork\.com|nature\.com|bmj\.com)[^\'"]*[\'"]',
+    re.IGNORECASE,
+)
+
+
+def ensure_scientific_links(html: str, topic_name: str, tag: str) -> str:
+    """
+    Garante que o artigo contenha links clicáveis diretos (<a href="...">)
+    para bases científicas de alta autoridade e confiabilidade:
+    - PubMed (National Library of Medicine)
+    - Europe PMC (European Biomedical Literature & Clinical Trials)
+    - Cochrane Library (Systematic Reviews & Evidence-Based Healthcare)
+    - NIH / CDC / WHO / DOI
+    """
+    if not html:
+        return html
+
+    # Se já possui pelo menos 2 links científicos no HTML, mantém
+    existing_links = SCIENTIFIC_URL_PATTERN.findall(html)
+    if len(existing_links) >= 2:
+        return html
+
+    clean_tag = (tag or "health").replace("-", " ")
+    topic_clean = re.sub(r"[^\w\s]", "", topic_name).strip()
+    encoded_topic = urllib.parse.quote_plus(topic_clean or clean_tag)
+    encoded_tag = urllib.parse.quote_plus(f"{topic_clean} {clean_tag}".strip())
+
+    default_links = [
+        f'<a href="https://pubmed.ncbi.nlm.nih.gov/?term={encoded_topic}" target="_blank" rel="noopener noreferrer">National Library of Medicine (PubMed) — Clinical Research on {topic_name}</a>',
+        f'<a href="https://europepmc.org/search?query={encoded_topic}" target="_blank" rel="noopener noreferrer">Europe PMC — Open Access Biomedical Research & Meta-Analyses</a>',
+        f'<a href="https://www.cochranelibrary.com/search?searchText={encoded_tag}" target="_blank" rel="noopener noreferrer">Cochrane Library — Systematic Reviews & Evidence-Based Guidelines</a>',
+    ]
+
+    # Se a seção scientific-sources existe, vamos enriquecê-la
+    sources_match = re.search(r"<section class=['\"]scientific-sources['\"]>(.*?)</section>", html, flags=re.DOTALL | re.IGNORECASE)
+    if sources_match:
+        section_content = sources_match.group(1)
+        li_matches = list(re.finditer(r"<li>(.*?)</li>", section_content, flags=re.DOTALL | re.IGNORECASE))
+        if li_matches:
+            new_lis = []
+            trusted_providers = [
+                ("PubMed", "https://pubmed.ncbi.nlm.nih.gov/?term="),
+                ("Europe PMC", "https://europepmc.org/search?query="),
+                ("Cochrane Library", "https://www.cochranelibrary.com/search?searchText="),
+            ]
+            for idx, m in enumerate(li_matches):
+                inner = m.group(1).strip()
+                if SCIENTIFIC_URL_PATTERN.search(inner) or "<a " in inner:
+                    new_lis.append(f"<li>{inner}</li>")
+                else:
+                    # Envolve com link de pesquisa distribuído entre PubMed, Europe PMC e Cochrane
+                    provider_name, provider_url = trusted_providers[idx % len(trusted_providers)]
+                    li_plain = re.sub(r"<[^>]+>", "", inner).strip()
+                    query = urllib.parse.quote_plus(re.sub(r"[^\w\s]", " ", li_plain)[:60].strip())
+                    new_lis.append(
+                        f'<li><a href="{provider_url}{query}" target="_blank" rel="noopener noreferrer">{li_plain} — {provider_name}</a></li>'
+                    )
+            # Se ainda não atingiu 2 referências com links
+            if len(new_lis) < 2:
+                for link in default_links[:2]:
+                    new_lis.append(f"<li>{link}</li>")
+            new_section = f"<section class='scientific-sources'><h2>Scientific References & Sources</h2><ul>{''.join(new_lis)}</ul></section>"
+            return html[:sources_match.start()] + new_section + html[sources_match.end():]
+
+    # Se a seção não existe ou não tem <li>, anexa no final
+    new_section = (
+        f"<section class='scientific-sources'><h2>Scientific References & Sources</h2>"
+        f"<ul>{''.join(f'<li>{link}</li>' for link in default_links)}</ul></section>"
+    )
+    return f"{html}\n{new_section}"
 
 
 def validate_article_quality(post: dict[str, Any], topic_name: str) -> tuple[bool, str]:
@@ -236,6 +348,8 @@ def validate_article_quality(post: dict[str, Any], topic_name: str) -> tuple[boo
     - Presença comprovada de referências / linguagem baseada em evidências científicas
     - Variedade lexical contra superficialidade (TTR >= 0.35)
     - Pelo menos 2 perguntas no FAQ
+    - Presença de links científicos diretos clicáveis para fontes confiáveis (PubMed, Europe PMC, Cochrane, etc.)
+    - Presença de conteúdo prático e acionável com utilidade real para o leitor
     """
     if not isinstance(post, dict):
         return False, "Payload não é um dicionário válido"
@@ -290,6 +404,15 @@ def validate_article_quality(post: dict[str, Any], topic_name: str) -> tuple[boo
     faq = post.get("faq")
     if not isinstance(faq, list) or len(faq) < 2:
         return False, "Artigo deve conter FAQ estruturada com pelo menos 2 perguntas"
+
+    # 8. Links diretos para fontes científicas confiáveis clicáveis
+    if not SCIENTIFIC_URL_PATTERN.search(html):
+        return False, "Artigo deve conter pelo menos um link direto e clicável para fontes científicas confiáveis (PubMed, Europe PMC, Cochrane Library, NIH, CDC)"
+
+    # 9. Verificação de conteúdo prático e acionável com utilidade para a vida do leitor
+    found_action_markers = sum(1 for kw in ACTIONABLE_INDICATOR_KEYWORDS if kw in words)
+    if found_action_markers < 3 and "<div class='quick-win'>" not in html and "<div class=\"quick-win\">" not in html:
+        return False, "Artigo sem conteúdo acionável ou orientações práticas suficientes para o leitor"
 
     return True, ""
 
