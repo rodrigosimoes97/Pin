@@ -1,8 +1,7 @@
 {
-  "runs": 220,
+  "runs": 221,
   "offer_runs": 21,
   "recent_topics": [
-    "pomegranate-compound-improves-heart-function-by-up",
     "walking-for-fitness",
     "creatine-may-help-build-muscle-even-without-exerci",
     "could-quitting-ultra-processed-food-boost-your-men",
@@ -51,10 +50,10 @@
     "healthy-recipes",
     "even-moderate-drinking-linked-to-cancer-and-early-",
     "common-supplement-could-help-fight-psoriasis-scien",
-    "energy-drinks-linked-to-11-times-more-reports-of-c"
+    "energy-drinks-linked-to-11-times-more-reports-of-c",
+    "eating-less-protein-could-slow-aging-review-of-350"
   ],
   "recent_slugs": [
-    "extra-virgin-olive-oil-immune-booster",
     "booze-breakdown-healthiest-drink",
     "sweet-tooth-survival-why-cutting-sugar-wont-beat-cravings",
     "daily-fruit-juice-mood-boost",
@@ -153,11 +152,11 @@
     "struggling-with-healthy-recipes-try-this-simple-reset",
     "even-moderate-drinking-linked-to-cancer-and-early-death-major-study-finds-5-fixe",
     "common-supplement-could-help-fight-psoriasis-scientists-discover",
-    "energy-drinks-linked-to-11-times-more-reports-of-cardiac-arrest"
+    "energy-drinks-linked-to-11-times-more-reports-of-cardiac-arrest",
+    "eating-less-protein-could-slow-aging-review-of-350-studies-finds"
   ],
   "last_run": "2026-11-11",
   "recent_tags": [
-    "longevity",
     "healthy-habits",
     "health",
     "mental-wellness",
@@ -206,7 +205,8 @@
     "recipes",
     "longevity",
     "anti-inflammatory",
-    "healthy-habits"
+    "healthy-habits",
+    "longevity"
   ],
   "tag_counts": {
     "sleep": 31,
@@ -214,7 +214,7 @@
     "mental-wellness": 24,
     "stress": 11,
     "healthy-habits": 64,
-    "longevity": 29,
+    "longevity": 30,
     "recipes": 10,
     "anti-inflammatory": 11,
     "home-workouts": 10,
@@ -227,7 +227,7 @@
     "stress": 23,
     "healthy-habits": 64,
     "longevity": 30,
-    "recipes": 33,
+    "recipes": 34,
     "anti-inflammatory": 11,
     "home-workouts": 18,
     "weight": 36,
@@ -235,7 +235,6 @@
     "health": 21
   },
   "recent_titles": [
-    "Stop Overcomplicating The Burden Of Weight Bias: What Works",
     "Yoga and Mobility for Busy People: A No-BS Daily Guide",
     "How I Finally Made Home Workouts Stick in a Tiny Apartment",
     "8 Common Food Additives Linked To High Blood Pressure And Heart Disease",
@@ -294,6 +293,7 @@
     "Struggling with Healthy Recipes? Try This Simple Reset",
     "Even Moderate Drinking Linked To Cancer And Early Death, Major Study Finds: 5 Fixes",
     "Common Supplement Could Help Fight Psoriasis, Scientists Discover",
-    "Energy Drinks Linked To 11 Times More Reports Of Cardiac Arrest"
+    "Energy Drinks Linked To 11 Times More Reports Of Cardiac Arrest",
+    "Eating Less Protein Could Slow Aging, Review Of 350 Studies Finds"
   ]
 }
