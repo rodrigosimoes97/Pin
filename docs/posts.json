@@ -1,5 +1,14 @@
 [
   {
+    "slug": "energy-drinks-linked-to-11-times-more-reports-of-cardiac-arrest",
+    "title": "Energy Drinks Linked To 11 Times More Reports Of Cardiac Arrest",
+    "description": "New data reveals energy drinks linked to 11 times more reports of cardiac arrest. Learn the risks and science-backed strategies for safe daily energy.",
+    "date": "2026-11-11",
+    "url": "energy-drinks-linked-to-11-times-more-reports-of-cardiac-arrest",
+    "hero": "assets/2026-11-11_energy-drinks-linked-to-11-times-more-reports-of-cardiac-arrest.jpeg",
+    "tag": "healthy-habits"
+  },
+  {
     "slug": "common-supplement-could-help-fight-psoriasis-scientists-discover",
     "title": "Common Supplement Could Help Fight Psoriasis, Scientists Discover",
     "description": "Common Supplement Could Help Fight Psoriasis, Scientists Discover. Explore evidence-based insights, anti-inflammatory nutrients, and daily habits.",
@@ -1789,14 +1798,5 @@
     "url": "weighty-issues-obesity-differences",
     "hero": "assets/2026-04-14_weighty-issues-obesity-differences.webp",
     "tag": "weight"
-  },
-  {
-    "slug": "biohacking-your-sleep-optimize-rest-for-peak-performance",
-    "title": "Biohacking Your Sleep: Optimize Rest for Peak Performance",
-    "description": "Struggling with sleep? Discover science-backed biohacking techniques to optimize rest for peak performance. Learn about light, temperature, and supplements to improve your sleep quality.",
-    "date": "2026-04-14",
-    "url": "biohacking-your-sleep-optimize-rest-for-peak-performance",
-    "hero": "assets/2026-04-14_biohacking-your-sleep-optimize-rest-for-peak-performance.webp",
-    "tag": "sleep"
   }
 ]

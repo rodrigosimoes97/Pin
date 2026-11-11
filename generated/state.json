@@ -1,8 +1,7 @@
 {
-  "runs": 219,
+  "runs": 220,
   "offer_runs": 21,
   "recent_topics": [
-    "zepbound-and-mounjaro-may-turn-on-the-body-s-calor",
     "pomegranate-compound-improves-heart-function-by-up",
     "walking-for-fitness",
     "creatine-may-help-build-muscle-even-without-exerci",
@@ -51,10 +50,10 @@
     "a-surprising-vitamin-a-discovery-is-changing-what-",
     "healthy-recipes",
     "even-moderate-drinking-linked-to-cancer-and-early-",
-    "common-supplement-could-help-fight-psoriasis-scien"
+    "common-supplement-could-help-fight-psoriasis-scien",
+    "energy-drinks-linked-to-11-times-more-reports-of-c"
   ],
   "recent_slugs": [
-    "why-brain-fights-back-weight-loss",
     "extra-virgin-olive-oil-immune-booster",
     "booze-breakdown-healthiest-drink",
     "sweet-tooth-survival-why-cutting-sugar-wont-beat-cravings",
@@ -153,11 +152,11 @@
     "how-a-surprising-vitamin-a-discovery-is-changing-what-scientists-know-about-visi",
     "struggling-with-healthy-recipes-try-this-simple-reset",
     "even-moderate-drinking-linked-to-cancer-and-early-death-major-study-finds-5-fixe",
-    "common-supplement-could-help-fight-psoriasis-scientists-discover"
+    "common-supplement-could-help-fight-psoriasis-scientists-discover",
+    "energy-drinks-linked-to-11-times-more-reports-of-cardiac-arrest"
   ],
-  "last_run": "2026-11-10",
+  "last_run": "2026-11-11",
   "recent_tags": [
-    "weight",
     "longevity",
     "healthy-habits",
     "health",
@@ -206,14 +205,15 @@
     "health",
     "recipes",
     "longevity",
-    "anti-inflammatory"
+    "anti-inflammatory",
+    "healthy-habits"
   ],
   "tag_counts": {
     "sleep": 31,
     "gut": 31,
     "mental-wellness": 24,
     "stress": 11,
-    "healthy-habits": 63,
+    "healthy-habits": 64,
     "longevity": 29,
     "recipes": 10,
     "anti-inflammatory": 11,
@@ -222,7 +222,7 @@
     "health": 58
   },
   "topic_rotation": {
-    "sleep": 32,
+    "sleep": 33,
     "gut": 30,
     "stress": 23,
     "healthy-habits": 64,
@@ -235,7 +235,6 @@
     "health": 21
   },
   "recent_titles": [
-    "Fix A Hidden Compound In Healthy Foods May Worsen Ibd Fast",
     "Stop Overcomplicating The Burden Of Weight Bias: What Works",
     "Yoga and Mobility for Busy People: A No-BS Daily Guide",
     "How I Finally Made Home Workouts Stick in a Tiny Apartment",
@@ -294,6 +293,7 @@
     "How A Surprising Vitamin A Discovery Is Changing What Scientists Know About Vision",
     "Struggling with Healthy Recipes? Try This Simple Reset",
     "Even Moderate Drinking Linked To Cancer And Early Death, Major Study Finds: 5 Fixes",
-    "Common Supplement Could Help Fight Psoriasis, Scientists Discover"
+    "Common Supplement Could Help Fight Psoriasis, Scientists Discover",
+    "Energy Drinks Linked To 11 Times More Reports Of Cardiac Arrest"
   ]
 }
