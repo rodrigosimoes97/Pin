@@ -1,8 +1,7 @@
 {
-  "runs": 221,
+  "runs": 222,
   "offer_runs": 21,
   "recent_topics": [
-    "walking-for-fitness",
     "creatine-may-help-build-muscle-even-without-exerci",
     "could-quitting-ultra-processed-food-boost-your-men",
     "this-diet-may-slow-brain-aging-by-2-5-years",
@@ -51,10 +50,10 @@
     "even-moderate-drinking-linked-to-cancer-and-early-",
     "common-supplement-could-help-fight-psoriasis-scien",
     "energy-drinks-linked-to-11-times-more-reports-of-c",
-    "eating-less-protein-could-slow-aging-review-of-350"
+    "eating-less-protein-could-slow-aging-review-of-350",
+    "scientists-discover-a-common-sugar-may-help-cancer"
   ],
   "recent_slugs": [
-    "booze-breakdown-healthiest-drink",
     "sweet-tooth-survival-why-cutting-sugar-wont-beat-cravings",
     "daily-fruit-juice-mood-boost",
     "daily-gratitude-practice-mood-stress-natural",
@@ -153,11 +152,11 @@
     "even-moderate-drinking-linked-to-cancer-and-early-death-major-study-finds-5-fixe",
     "common-supplement-could-help-fight-psoriasis-scientists-discover",
     "energy-drinks-linked-to-11-times-more-reports-of-cardiac-arrest",
-    "eating-less-protein-could-slow-aging-review-of-350-studies-finds"
+    "eating-less-protein-could-slow-aging-review-of-350-studies-finds",
+    "scientists-discover-a-common-sugar-may-help-cancer-cells-break-free-and-spread"
   ],
-  "last_run": "2026-11-11",
+  "last_run": "2026-11-12",
   "recent_tags": [
-    "healthy-habits",
     "health",
     "mental-wellness",
     "longevity",
@@ -206,7 +205,8 @@
     "longevity",
     "anti-inflammatory",
     "healthy-habits",
-    "longevity"
+    "longevity",
+    "anti-inflammatory"
   ],
   "tag_counts": {
     "sleep": 31,
@@ -216,7 +216,7 @@
     "healthy-habits": 64,
     "longevity": 30,
     "recipes": 10,
-    "anti-inflammatory": 11,
+    "anti-inflammatory": 12,
     "home-workouts": 10,
     "weight": 24,
     "health": 58
@@ -232,10 +232,9 @@
     "home-workouts": 18,
     "weight": 36,
     "mental-wellness": 4,
-    "health": 21
+    "health": 22
   },
   "recent_titles": [
-    "Yoga and Mobility for Busy People: A No-BS Daily Guide",
     "How I Finally Made Home Workouts Stick in a Tiny Apartment",
     "8 Common Food Additives Linked To High Blood Pressure And Heart Disease",
     "Millions Take Calcium And Vitamin D For Bone Health. A Major Review Finds Little Benefit",
@@ -294,6 +293,7 @@
     "Even Moderate Drinking Linked To Cancer And Early Death, Major Study Finds: 5 Fixes",
     "Common Supplement Could Help Fight Psoriasis, Scientists Discover",
     "Energy Drinks Linked To 11 Times More Reports Of Cardiac Arrest",
-    "Eating Less Protein Could Slow Aging, Review Of 350 Studies Finds"
+    "Eating Less Protein Could Slow Aging, Review Of 350 Studies Finds",
+    "Scientists Discover A Common Sugar May Help Cancer Cells Break Free And Spread"
   ]
 }

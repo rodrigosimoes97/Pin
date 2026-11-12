@@ -82927,3 +82927,58 @@ NameError: name 'post_link' is not defined
 2026-11-11 16:34:21,617 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-11-11_pins.csv com 8 keywords
 2026-11-11 16:34:21,618 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'Eating Less Protein Could Slow Aging - 350 Study Review' (intent=list)
 2026-11-11 16:34:21,618 INFO __main__ - [Tentativa 2 (Post 1/1)] ✓ Publicado com sucesso: 'Eating Less Protein Could Slow Aging, Review Of 350 Studies Finds' | 3 Pins gerados
+2026-11-12 15:58:33,553 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-11-12 15:58:33,924 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-11-12 15:58:33,997 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-11-12 15:58:34,088 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/2_Normalize/config.json "HTTP/1.1 404 Not Found"
+2026-11-12 15:58:34,114 INFO __main__ - Buscando trending topics para USA...
+2026-11-12 15:58:34,204 WARNING src.app.trend_research - Failed to fetch Google Trends (404/Error): The request failed: Google returned a response with code 404. Moving to fallbacks.
+2026-11-12 15:58:37,378 INFO src.app.trend_research - Gathered 15 unique trending topics.
+2026-11-12 15:58:37,380 INFO __main__ - ═══ INICIANDO RUN DIÁRIO (Meta: 1 posts/dia | Até 6 tentativas) ═══
+2026-11-12 15:58:37,380 INFO __main__ - ─── Tentativa 1 (Post 1/1) ───
+2026-11-12 15:58:37,380 INFO __main__ - [Tentativa 1 (Post 1/1)] Usando trending topic: Experimental therapy gantenerumab fails to slow or improve Alzheimers memory loss in clinical trials
+2026-11-12 15:58:37,380 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-11-12 15:58:45,299 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-11-12 15:58:50,300 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-11-12 15:58:53,732 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-11-12 15:58:58,732 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-11-12 15:59:02,477 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-11-12 15:59:07,478 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 enviando...
+2026-11-12 15:59:08,710 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-11-12 15:59:13,710 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.6-flash na rodada 1. Aguardando 5s antes de tentar no modelo gemini-3.8-flash.
+2026-11-12 15:59:18,710 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=2 enviando...
+2026-11-12 16:00:18,733 WARNING src.app.gemini_client - [Gemini] key#1 timeout
+2026-11-12 16:00:18,733 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=2 enviando...
+2026-11-12 16:00:29,908 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-11-12 16:00:39,908 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=2 enviando...
+2026-11-12 16:00:40,731 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-11-12 16:00:50,731 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=2 enviando...
+2026-11-12 16:00:51,084 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-11-12 16:01:01,084 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.8-flash na rodada 2. Aguardando 10s antes de tentar no modelo gemini-3.8-flash.
+2026-11-12 16:01:11,084 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=3 enviando...
+2026-11-12 16:01:12,179 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-11-12 16:01:27,179 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=3 enviando...
+2026-11-12 16:01:28,093 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-11-12 16:01:43,093 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=3 enviando...
+2026-11-12 16:02:43,167 WARNING src.app.gemini_client - [Gemini] key#3 timeout
+2026-11-12 16:02:43,167 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=3 enviando...
+2026-11-12 16:03:18,507 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-11-12 16:03:33,507 ERROR __main__ - [Tentativa 1 (Post 1/1)] Gemini indisponível após 3 rodadas. Últimos erros: key#1 status=503 (alta demanda no modelo gemini-3.8-flash); key#2 status=503 (alta demanda no modelo gemini-3.8-flash); key#3 timeout; key#4 status=503 (alta demanda no modelo gemini-3.8-flash)
+2026-11-12 16:03:33,507 WARNING __main__ - [Tentativa 1 (Post 1/1)] Tentativa descartada sem publicação.
+2026-11-12 16:03:33,507 INFO __main__ - ─── Tentativa 2 (Post 1/1) ───
+2026-11-12 16:03:33,507 INFO __main__ - [Tentativa 2 (Post 1/1)] Usando trending topic: Scientists discover a common sugar may help cancer cells break free and spread
+2026-11-12 16:03:33,508 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-11-12 16:04:33,594 WARNING src.app.gemini_client - [Gemini] key#1 timeout
+2026-11-12 16:04:33,594 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-11-12 16:04:36,029 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-11-12 16:04:41,029 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-11-12 16:04:56,106 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 OK finishReason=STOP len_chars=8083
+2026-11-12 16:04:56,278 INFO src.app.duplicate_checker - Indexed post: scientists-discover-a-common-sugar-may-help-cancer-cells-break-free-and-spread (Total: 216)
+2026-11-12 16:04:56,281 INFO src.app.pinterest_seo - [PinterestSEO] Gerados 3 pins para 'Scientists Discover A Common S': [1] Scientists Discover A Com | [2] Confused About Sugar and  | [3] 3 Ways to Fix Sugar Risks
+2026-11-12 16:04:58,056 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-11-12_pins.csv com 8 keywords
+2026-11-12 16:04:58,057 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'Scientists Discover A Common Sugar May Help Cancer Spread' (intent=guide)
+2026-11-12 16:04:58,479 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-11-12_pins.csv com 8 keywords
+2026-11-12 16:04:58,481 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'Confused About Sugar and Cancer? Here Is What Science Says' (intent=mistakes)
+2026-11-12 16:04:58,882 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-11-12_pins.csv com 8 keywords
+2026-11-12 16:04:58,883 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: '3 Ways to Fix Sugar Risks: Science-Backed Health Tips' (intent=list)
+2026-11-12 16:04:58,883 INFO __main__ - [Tentativa 2 (Post 1/1)] ✓ Publicado com sucesso: 'Scientists Discover A Common Sugar May Help Cancer Cells Break Free And Spread' | 3 Pins gerados
