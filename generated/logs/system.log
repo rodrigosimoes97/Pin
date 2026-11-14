@@ -83010,3 +83010,31 @@ NameError: name 'post_link' is not defined
 2026-11-13 15:21:46,747 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-11-13_pins.csv com 8 keywords
 2026-11-13 15:21:46,748 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'Animal Vs. Plant Protein Reveals A Surprising Testosterone Divide' (intent=list)
 2026-11-13 15:21:46,748 INFO __main__ - [Tentativa 2 (Post 1/1)] ✓ Publicado com sucesso: 'Animal Vs. Plant Protein Reveals A Surprising Testosterone Divide' | 3 Pins gerados
+2026-11-14 14:07:33,464 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+2026-11-14 14:07:33,559 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-11-14 14:07:33,747 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-11-14 14:07:33,847 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-11-14 14:07:33,965 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/2_Normalize/config.json "HTTP/1.1 404 Not Found"
+2026-11-14 14:07:33,990 INFO __main__ - Buscando trending topics para USA...
+2026-11-14 14:07:34,091 WARNING src.app.trend_research - Failed to fetch Google Trends (404/Error): The request failed: Google returned a response with code 404. Moving to fallbacks.
+2026-11-14 14:07:38,944 INFO src.app.trend_research - Gathered 16 unique trending topics.
+2026-11-14 14:07:38,946 INFO __main__ - ═══ INICIANDO RUN DIÁRIO (Meta: 1 posts/dia | Até 6 tentativas) ═══
+2026-11-14 14:07:38,946 INFO __main__ - ─── Tentativa 1 (Post 1/1) ───
+2026-11-14 14:07:38,946 INFO __main__ - [Tentativa 1 (Post 1/1)] Usando trending topic: Experimental therapy gantenerumab fails to slow or improve Alzheimers memory loss in clinical trials
+2026-11-14 14:07:38,947 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-11-14 14:08:15,872 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=9504
+2026-11-14 14:08:15,875 ERROR __main__ - [Tentativa 1 (Post 1/1)] Erro no retorno estruturado do Gemini: Artigo gerado rejeitado no controle editorial: Artigo contém alegação ou promessa de cura perigosa proibida: '\binstant cure\b'
+2026-11-14 14:08:15,875 WARNING __main__ - [Tentativa 1 (Post 1/1)] Tentativa descartada sem publicação.
+2026-11-14 14:08:15,875 INFO __main__ - ─── Tentativa 2 (Post 1/1) ───
+2026-11-14 14:08:15,875 INFO __main__ - [Tentativa 2 (Post 1/1)] Usando trending topic: Yale scientists reveal what really slows aging and what doesnt
+2026-11-14 14:08:15,875 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-11-14 14:08:28,960 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=9211
+2026-11-14 14:08:29,139 INFO src.app.duplicate_checker - Indexed post: yale-scientists-reveal-what-really-slows-aging-and-what-doesnt (Total: 218)
+2026-11-14 14:08:29,141 INFO src.app.pinterest_seo - [PinterestSEO] Gerados 3 pins para 'Yale Scientists Reveal What Re': [1] Yale Scientists Reveal Wh | [2] Wasting Money on Anti-Agi | [3] Yale Scientists Reveal Wh
+2026-11-14 14:08:30,236 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-11-14_pins.csv com 8 keywords
+2026-11-14 14:08:30,237 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'Yale Scientists Reveal What Really Slows Aging And What Doesnt' (intent=guide)
+2026-11-14 14:08:30,629 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-11-14_pins.csv com 8 keywords
+2026-11-14 14:08:30,630 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'Wasting Money on Anti-Aging Trends? What Actually Works' (intent=mistakes)
+2026-11-14 14:08:31,021 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-11-14_pins.csv com 8 keywords
+2026-11-14 14:08:31,023 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'Yale Scientists Reveal What Really Slows Aging: Daily Habits' (intent=list)
+2026-11-14 14:08:31,023 INFO __main__ - [Tentativa 2 (Post 1/1)] ✓ Publicado com sucesso: 'Yale Scientists Reveal What Really Slows Aging And What Doesnt' | 3 Pins gerados
