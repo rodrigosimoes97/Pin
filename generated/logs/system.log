@@ -83066,3 +83066,57 @@ NameError: name 'post_link' is not defined
 2026-11-15 14:44:45,050 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-11-15_pins.csv com 8 keywords
 2026-11-15 14:44:45,051 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: '4 Ways Vitamin C Could Help Block Cancer Chemicals' (intent=list)
 2026-11-15 14:44:45,051 INFO __main__ - [Tentativa 2 (Post 1/1)] ✓ Publicado com sucesso: 'Vitamin C Could Help Block Cancer-Linked Chemicals In Your Stomach, Study Finds' | 3 Pins gerados
+2026-11-16 16:59:24,429 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+2026-11-16 16:59:24,501 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-11-16 16:59:24,651 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-11-16 16:59:24,724 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-11-16 16:59:24,808 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/2_Normalize/config.json "HTTP/1.1 404 Not Found"
+2026-11-16 16:59:24,827 INFO __main__ - Buscando trending topics para USA...
+2026-11-16 16:59:25,059 WARNING src.app.trend_research - Failed to fetch Google Trends (404/Error): The request failed: Google returned a response with code 404. Moving to fallbacks.
+2026-11-16 16:59:33,634 INFO src.app.trend_research - Gathered 18 unique trending topics.
+2026-11-16 16:59:33,636 INFO __main__ - ═══ INICIANDO RUN DIÁRIO (Meta: 1 posts/dia | Até 6 tentativas) ═══
+2026-11-16 16:59:33,636 INFO __main__ - ─── Tentativa 1 (Post 1/1) ───
+2026-11-16 16:59:33,636 INFO __main__ - [Tentativa 1 (Post 1/1)] Usando trending topic: Experimental therapy gantenerumab fails to slow or improve Alzheimers memory loss in clinical trials
+2026-11-16 16:59:33,636 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-11-16 17:00:33,731 WARNING src.app.gemini_client - [Gemini] key#1 timeout
+2026-11-16 17:00:33,731 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-11-16 17:00:34,277 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-11-16 17:00:39,277 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-11-16 17:00:45,661 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-11-16 17:00:50,662 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 enviando...
+2026-11-16 17:00:51,054 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-11-16 17:00:56,054 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.6-flash na rodada 1. Aguardando 5s antes de tentar no modelo gemini-3.8-flash.
+2026-11-16 17:01:01,054 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=2 enviando...
+2026-11-16 17:01:33,342 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-11-16 17:01:43,342 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=2 enviando...
+2026-11-16 17:02:43,388 WARNING src.app.gemini_client - [Gemini] key#2 timeout
+2026-11-16 17:02:43,388 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=2 enviando...
+2026-11-16 17:02:45,058 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-11-16 17:02:55,059 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=2 enviando...
+2026-11-16 17:02:55,323 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-11-16 17:03:05,324 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.8-flash na rodada 2. Aguardando 10s antes de tentar no modelo gemini-3.8-flash.
+2026-11-16 17:03:15,324 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=3 enviando...
+2026-11-16 17:03:31,832 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-11-16 17:03:46,832 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=3 enviando...
+2026-11-16 17:03:52,050 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-11-16 17:04:07,050 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=3 enviando...
+2026-11-16 17:04:07,702 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-11-16 17:04:22,703 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=3 enviando...
+2026-11-16 17:04:24,718 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-11-16 17:04:39,719 ERROR __main__ - [Tentativa 1 (Post 1/1)] Gemini indisponível após 3 rodadas. Últimos erros: key#1 status=503 (alta demanda no modelo gemini-3.8-flash); key#2 status=503 (alta demanda no modelo gemini-3.8-flash); key#3 status=503 (alta demanda no modelo gemini-3.8-flash); key#4 status=503 (alta demanda no modelo gemini-3.8-flash)
+2026-11-16 17:04:39,719 WARNING __main__ - [Tentativa 1 (Post 1/1)] Tentativa descartada sem publicação.
+2026-11-16 17:04:39,719 INFO __main__ - ─── Tentativa 2 (Post 1/1) ───
+2026-11-16 17:04:39,719 INFO __main__ - [Tentativa 2 (Post 1/1)] Usando trending topic: Vitamin B12 may hold the key to treating a rare genetic disorder
+2026-11-16 17:04:39,719 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-11-16 17:05:01,603 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-11-16 17:05:06,604 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-11-16 17:06:01,360 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 OK finishReason=STOP len_chars=8634
+2026-11-16 17:06:01,517 INFO src.app.duplicate_checker - Indexed post: vitamin-b12-may-hold-the-key-to-treating-a-rare-genetic-disorder (Total: 220)
+2026-11-16 17:06:01,519 INFO src.app.pinterest_seo - [PinterestSEO] Gerados 3 pins para 'Vitamin B12 May Hold The Key T': [1] Vitamin B12 May Hold The  | [2] Struggling With Low Energ | [3] 3 Science-Backed Tips: B1
+2026-11-16 17:06:02,413 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-11-16_pins.csv com 8 keywords
+2026-11-16 17:06:02,414 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'Vitamin B12 May Hold The Key To Treating A Rare Genetic Disorder' (intent=guide)
+2026-11-16 17:06:02,644 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-11-16_pins.csv com 8 keywords
+2026-11-16 17:06:02,645 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'Struggling With Low Energy? The Genetic B12 Connection' (intent=mistakes)
+2026-11-16 17:06:02,875 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-11-16_pins.csv com 8 keywords
+2026-11-16 17:06:02,877 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: '3 Science-Backed Tips: B12 For Metabolic & Genetic Health' (intent=list)
+2026-11-16 17:06:02,877 INFO __main__ - [Tentativa 2 (Post 1/1)] ✓ Publicado com sucesso: 'Vitamin B12 May Hold The Key To Treating A Rare Genetic Disorder' | 3 Pins gerados
