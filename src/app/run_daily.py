@@ -396,15 +396,23 @@ def main() -> None:
                 pin_board = pin_info.get("board", "Health & Wellness")
                 pin_kws = pin_info["keywords"]
 
-                # Imagem Pinterest vertical (.png local) com overlay dedicada ao título do pin
-                pin_rel = f"generated/pinterest/{today.isoformat()}_{post['slug']}_{pin_type}.png"
+                # Imagem Pinterest vertical (.png pública e local) com overlay dedicada ao título do pin
+                pin_filename = f"{today.isoformat()}_{post['slug']}_{pin_type}.png"
+                pin_public_rel = f"assets/pins/{pin_filename}"
+                pin_docs_path = settings.repo_root / "docs" / pin_public_rel
+                pin_gen_path = settings.repo_root / "generated" / "pinterest" / pin_filename
+
                 create_pinterest_image(
                     settings.pexels_api_key,
-                    post["image_query"],
+                    f"{post['image_query']} {pin_type.replace('_', ' ')}",
                     pin_title,
-                    settings.repo_root / pin_rel,
+                    pin_docs_path,
                     source_image_path=actual_hero_path,
+                    prefer_fresh_photo=True,
                 )
+                import shutil
+                pin_gen_path.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(pin_docs_path, pin_gen_path)
 
                 # URL com UTM dedicado para rastrear cada um dos 3 pins individualmente
                 pinterest_link = f"https://health-ptg.pages.dev/{post_slug}?utm_source=pinterest&utm_medium=organic_social&utm_campaign={post_slug}&utm_content={pin_info['utm_content']}"
@@ -415,7 +423,7 @@ def main() -> None:
                     pin_title=pin_title,
                     pin_description=pin_desc,
                     link=pinterest_link,
-                    image_path=hero_rel,
+                    image_path=pin_public_rel,
                     tag=post.get("tag", ""),
                     slot_index=pin_slot,
                     keywords=pin_kws,
@@ -432,8 +440,8 @@ def main() -> None:
                         title=pin_title,
                         description=pin_desc,
                         link=pinterest_link,
-                        image_url=f"https://health-ptg.pages.dev/{hero_rel}",
-                        alt_text=post.get("alt_text", post["title"]),
+                        image_url=f"https://health-ptg.pages.dev/{pin_public_rel}",
+                        alt_text=post.get("alt_text", pin_title),
                         log_path=settings.repo_root / "generated" / "logs" / "pinterest.log",
                     )
 

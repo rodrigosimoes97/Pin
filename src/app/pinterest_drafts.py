@@ -53,9 +53,12 @@ def write_draft_pack(
     """
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    # Garante URL pública da imagem hero (ex: /assets/2026-09-10_slug.jpeg)
-    normalized = Path(image_path).as_posix().lstrip("/")
-    media_url = f"{PUBLIC_BASE_URL}/{normalized}"
+    # Garante URL pública da imagem dedicada do pin (ex: assets/pins/2026-11-16_slug_educational.png)
+    if image_path.startswith(("http://", "https://")):
+        media_url = image_path
+    else:
+        normalized = Path(image_path).as_posix().lstrip("/")
+        media_url = f"{PUBLIC_BASE_URL}/{normalized}"
 
     # Usa as keywords fornecidas ou gera 5-8 long-tail search phrases
     final_keywords = (keywords or "").strip()

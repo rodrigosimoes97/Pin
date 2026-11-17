@@ -1,10 +1,13 @@
 from __future__ import annotations
 
+import logging
 import random
 from pathlib import Path
 
 import requests
 from PIL import Image, ImageDraw, ImageFont
+
+LOG = logging.getLogger(__name__)
 
 
 def _pexels_photo_url(api_key: str, query: str, orientation: str = "landscape") -> str:
@@ -26,11 +29,12 @@ def _pexels_photo_url(api_key: str, query: str, orientation: str = "landscape") 
 
 def fetch_hero_image(api_key: str, query: str, out_path: Path) -> Path:
     """
-    Baixa a imagem hero do Pexels e salva como JPEG público.
-    Retorna o Path real do arquivo salvo (sempre .jpeg).
-    A extensão do out_path é ignorada — sempre salva como .jpeg.
+    Baixa a imagem hero do Pexels e salva tanto como JPEG quanto WebP.
+    Retorna o Path real do arquivo JPEG salvo.
+    Ambas as versões (.jpeg e .webp) são gravadas para compatibilidade e performance.
     """
     jpeg_path = out_path.with_suffix(".jpeg")
+    webp_path = out_path.with_suffix(".webp")
     url = _pexels_photo_url(api_key, query, "landscape")
     jpeg_path.parent.mkdir(parents=True, exist_ok=True)
 
@@ -39,6 +43,7 @@ def fetch_hero_image(api_key: str, query: str, out_path: Path) -> Path:
     # Redimensiona para hero: largura máx 1200px
     img.thumbnail((1200, 1200), Image.Resampling.LANCZOS)
     img.save(jpeg_path, "JPEG", quality=85, optimize=True)
+    img.save(webp_path, "WEBP", quality=80, method=6)
     return jpeg_path
 
 
@@ -48,26 +53,42 @@ def create_pinterest_image(
     title: str,
     out_path: Path,
     source_image_path: Path | None = None,
-) -> None:
+    prefer_fresh_photo: bool = False,
+    branding: str = "HEALTH-PTG.PAGES.DEV",
+) -> Path:
     """
     Cria a imagem com overlay de texto para o Pinterest e salva como PNG (1000×1500).
-    Esta imagem fica em generated/pinterest/ e é usada apenas localmente/no repo.
-    A URL pública no CSV aponta para a imagem hero (.jpeg), não para esta.
+    Pode ser salva em docs/assets/pins/ (pública no Cloudflare Pages) ou generated/pinterest/.
+    Retorna o Path real do arquivo salvo (.png).
     """
     # Garante extensão .png
     png_path = out_path.with_suffix(".png")
     png_path.parent.mkdir(parents=True, exist_ok=True)
 
-    if source_image_path and source_image_path.exists():
-        img = Image.open(source_image_path)
-    else:
-        # Tenta usar .jpeg se existir
-        jpeg_alt = source_image_path.with_suffix(".jpeg") if source_image_path else None
-        if jpeg_alt and jpeg_alt.exists():
-            img = Image.open(jpeg_alt)
-        else:
+    img = None
+    if prefer_fresh_photo and api_key:
+        try:
             url = _pexels_photo_url(api_key, query, "portrait")
             img = Image.open(requests.get(url, stream=True, timeout=40).raw)
+        except Exception as exc:
+            LOG.warning(f"Could not fetch fresh Pexels portrait: {exc}. Falling back to source image.")
+            img = None
+
+    if img is None:
+        if source_image_path and source_image_path.exists():
+            img = Image.open(source_image_path)
+        else:
+            jpeg_alt = source_image_path.with_suffix(".jpeg") if source_image_path else None
+            if jpeg_alt and jpeg_alt.exists():
+                img = Image.open(jpeg_alt)
+            elif api_key:
+                try:
+                    url = _pexels_photo_url(api_key, query, "portrait")
+                    img = Image.open(requests.get(url, stream=True, timeout=40).raw)
+                except Exception:
+                    img = Image.new("RGB", (1000, 1500), color=(240, 244, 248))
+            else:
+                img = Image.new("RGB", (1000, 1500), color=(240, 244, 248))
 
     img = img.convert("RGB")
 
@@ -102,13 +123,13 @@ def create_pinterest_image(
         font_small = ImageFont.load_default()
 
     style = random.choice(["modern", "classic", "bold"])
-    site_name = "PRACTICALHABITS.NET"
+    site_name = branding.upper()
 
     if style == "modern":
         draw.rectangle([0, 0, 1000, 450], fill=(255, 255, 255, 220))
         _draw_wrapped_text(draw, title.upper(), font_bold, (20, 20, 20, 255), 50, 80, 900)
         draw.rectangle([0, 1430, 1000, 1500], fill=(29, 78, 216, 255))
-        draw.text((350, 1445), site_name, font=font_small, fill=(255, 255, 255, 255))
+        draw.text((320, 1445), site_name, font=font_small, fill=(255, 255, 255, 255))
     elif style == "classic":
         draw.rectangle([0, 1000, 1000, 1500], fill=(0, 0, 0, 180))
         _draw_wrapped_text(draw, title, font_bold, (255, 255, 255, 255), 50, 1050, 900)
@@ -117,9 +138,10 @@ def create_pinterest_image(
         draw.rectangle([50, 450, 950, 1050], fill=(29, 78, 216, 230))
         draw.rectangle([60, 460, 940, 1040], outline=(255, 255, 255, 255), width=5)
         _draw_wrapped_text(draw, title, font_bold, (255, 255, 255, 255), 100, 550, 800)
-        draw.text((400, 1070), site_name, font=font_small, fill=(255, 255, 255, 255))
+        draw.text((320, 1070), site_name, font=font_small, fill=(255, 255, 255, 255))
 
     img.save(png_path, "PNG")
+    return png_path
 
 
 def _draw_wrapped_text(draw, text, font, fill, x, y, max_width):

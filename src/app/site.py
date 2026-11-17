@@ -66,6 +66,7 @@ def publish_post(
         related=related,
         same_tag_more=same_tag_more,
         next_post=next_post,
+        docs_dir=docs_dir,
     )
     (docs_dir / f"{post['slug']}.html").write_text(page_html, encoding="utf-8")
 
@@ -310,6 +311,7 @@ def _render_post_html(
     related: list[dict[str, str]],
     same_tag_more: list[dict[str, str]],
     next_post: dict[str, str] | None,
+    docs_dir: Path | None = None,
 ) -> str:
     public_base = _effective_base_url(base_url)
     post_slug = str(post["slug"]).strip()
@@ -456,18 +458,27 @@ def _render_post_html(
 
     takeaway_items = "".join(f"<li>{escape(item)}</li>" for item in key_takeaways)
 
-    # Gera srcset WebP correto para jpg, jpeg e png
+    # Gera srcset WebP correto para jpg, jpeg e png SE o arquivo existir
     _hero_stem, _dot, _hero_ext_only = hero_clean.rpartition(".")
     hero_webp = (_hero_stem + ".webp") if _hero_ext_only.lower() in ("jpg", "jpeg", "png") else hero_clean
-    # Fallback: usa titulo do post se alt_text nao estiver definido
     alt_text_safe = escape(str(post.get("alt_text", "") or post.get("title", "")))
-    hero_picture = (
-        f"<picture>"
-        f"<source srcset='/{hero_webp}' type='image/webp'>"
-        f"<img src='/{hero_clean}' alt='{alt_text_safe}' "
-        f"width='1200' height='630' fetchpriority='high' loading='eager'>"
-        f"</picture>"
-    )
+
+    webp_file = (docs_dir / hero_webp) if docs_dir else Path("docs") / hero_webp
+    has_webp = webp_file.exists() and hero_webp != hero_clean
+
+    if has_webp:
+        hero_picture = (
+            f"<picture>"
+            f"<source srcset='/{hero_webp}' type='image/webp'>"
+            f"<img src='/{hero_clean}' alt='{alt_text_safe}' "
+            f"width='1200' height='630' fetchpriority='high' loading='eager'>"
+            f"</picture>"
+        )
+    else:
+        hero_picture = (
+            f"<img src='/{hero_clean}' alt='{alt_text_safe}' "
+            f"width='1200' height='630' fetchpriority='high' loading='eager'>"
+        )
 
     fonts = "<link rel='preconnect' href='https://fonts.googleapis.com'><link rel='preconnect' href='https://fonts.gstatic.com' crossorigin><link href='https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap' rel='stylesheet'>"
 
