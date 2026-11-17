@@ -1,8 +1,7 @@
 {
-  "runs": 226,
+  "runs": 227,
   "offer_runs": 21,
   "recent_topics": [
-    "home-workouts",
     "budget-meal-prep",
     "scientists-reveal-what-seven-days-of-fasting-does-",
     "leucine-does-more-than-build-muscle-it-powers-up-y",
@@ -51,10 +50,10 @@
     "animal-vs-plant-protein-reveals-a-surprising-testo",
     "yale-scientists-reveal-what-really-slows-aging-and",
     "vitamin-c-could-help-block-cancer-linked-chemicals",
-    "vitamin-b12-may-hold-the-key-to-treating-a-rare-ge"
+    "vitamin-b12-may-hold-the-key-to-treating-a-rare-ge",
+    "a-common-osteoporosis-drug-blocked-spinal-damage-i"
   ],
   "recent_slugs": [
-    "belly-fat-vitamin-deficiency",
     "cheese-bacteria-gut-health",
     "top-longevity-foods-brain-health",
     "slim-down-vegan-low-fat-weight-loss",
@@ -153,11 +152,11 @@
     "animal-vs-plant-protein-reveals-a-surprising-testosterone-divide",
     "yale-scientists-reveal-what-really-slows-aging-and-what-doesnt",
     "vitamin-c-could-help-block-cancer-linked-chemicals-in-your-stomach-study-finds",
-    "vitamin-b12-may-hold-the-key-to-treating-a-rare-genetic-disorder"
+    "vitamin-b12-may-hold-the-key-to-treating-a-rare-genetic-disorder",
+    "common-osteoporosis-drug-blocked-spinal-damage-new-study"
   ],
-  "last_run": "2026-11-16",
+  "last_run": "2026-11-17",
   "recent_tags": [
-    "home-workouts",
     "gut",
     "longevity",
     "healthy-habits",
@@ -206,14 +205,15 @@
     "health",
     "longevity",
     "health",
-    "longevity"
+    "longevity",
+    "healthy-habits"
   ],
   "tag_counts": {
     "sleep": 31,
     "gut": 31,
     "mental-wellness": 24,
     "stress": 11,
-    "healthy-habits": 64,
+    "healthy-habits": 65,
     "longevity": 32,
     "recipes": 10,
     "anti-inflammatory": 12,
@@ -232,10 +232,9 @@
     "home-workouts": 18,
     "weight": 36,
     "mental-wellness": 4,
-    "health": 23
+    "health": 24
   },
   "recent_titles": [
-    "Scientists Restore A Brain Protein And Reverse Signs Of Aging In Mice: Real Takeaways",
     "What Nobody Tells You About High Protein Breakfast",
     "Struggling with Healthy Recipes? Try This Busy Professional Reset",
     "Zepbound And Mounjaro May Turn On The Body'S Calorie-Burning Brown Fat",
@@ -294,6 +293,7 @@
     "Animal Vs. Plant Protein Reveals A Surprising Testosterone Divide",
     "Yale Scientists Reveal What Really Slows Aging And What Doesnt",
     "Vitamin C Could Help Block Cancer-Linked Chemicals In Your Stomach, Study Finds",
-    "Vitamin B12 May Hold The Key To Treating A Rare Genetic Disorder"
+    "Vitamin B12 May Hold The Key To Treating A Rare Genetic Disorder",
+    "A Common Osteoporosis Drug Blocked Spinal Damage In A Surprising New Study"
   ]
 }
