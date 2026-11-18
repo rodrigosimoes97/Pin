@@ -409,6 +409,7 @@ def main() -> None:
                     pin_docs_path,
                     source_image_path=actual_hero_path,
                     prefer_fresh_photo=True,
+                    overlay_text=settings.pinterest_overlay_text,
                 )
                 import shutil
                 pin_gen_path.parent.mkdir(parents=True, exist_ok=True)

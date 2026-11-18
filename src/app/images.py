@@ -55,11 +55,13 @@ def create_pinterest_image(
     source_image_path: Path | None = None,
     prefer_fresh_photo: bool = False,
     branding: str = "HEALTH-PTG.PAGES.DEV",
+    overlay_text: bool = False,
 ) -> Path:
     """
-    Cria a imagem com overlay de texto para o Pinterest e salva como PNG (1000×1500).
-    Pode ser salva em docs/assets/pins/ (pública no Cloudflare Pages) ou generated/pinterest/.
-    Retorna o Path real do arquivo salvo (.png).
+    Cria a imagem vertical para o Pinterest (1000×1500, proporção 2:3).
+    Por padrão (overlay_text=False), gera uma fotografia limpa e em alta resolução
+    sem textos ou tarjas por cima, otimizando o apelo visual e o algoritmo do Pinterest.
+    Caso overlay_text=True, aplica uma edição editorial sutil e minimalista.
     """
     # Garante extensão .png
     png_path = out_path.with_suffix(".png")
@@ -107,55 +109,97 @@ def create_pinterest_image(
         img = img.crop((0, offset, w, offset + new_h))
 
     img = img.resize((1000, 1500), Image.Resampling.LANCZOS)
-    draw = ImageDraw.Draw(img, "RGBA")
 
-    try:
-        font_paths = [
-            "arial.ttf",
-            "LiberationSans-Regular.ttf",
-            "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf",
-        ]
-        font_path = next((p for p in font_paths if Path(p).exists()), "arial.ttf")
-        font_bold = ImageFont.truetype(font_path, 95)
-        font_small = ImageFont.truetype(font_path, 40)
-    except Exception:
-        font_bold = ImageFont.load_default()
-        font_small = ImageFont.load_default()
+    # Se overlay_text estiver desativado (padrão recomendado), salva a foto 100% limpa
+    if not overlay_text:
+        img.save(png_path, "PNG", optimize=True)
+        return png_path
 
-    style = random.choice(["modern", "classic", "bold"])
-    site_name = branding.upper()
-
-    if style == "modern":
-        draw.rectangle([0, 0, 1000, 450], fill=(255, 255, 255, 220))
-        _draw_wrapped_text(draw, title.upper(), font_bold, (20, 20, 20, 255), 50, 80, 900)
-        draw.rectangle([0, 1430, 1000, 1500], fill=(29, 78, 216, 255))
-        draw.text((320, 1445), site_name, font=font_small, fill=(255, 255, 255, 255))
-    elif style == "classic":
-        draw.rectangle([0, 1000, 1000, 1500], fill=(0, 0, 0, 180))
-        _draw_wrapped_text(draw, title, font_bold, (255, 255, 255, 255), 50, 1050, 900)
-        draw.text((50, 1420), site_name, font=font_small, fill=(200, 200, 200, 255))
-    else:
-        draw.rectangle([50, 450, 950, 1050], fill=(29, 78, 216, 230))
-        draw.rectangle([60, 460, 940, 1040], outline=(255, 255, 255, 255), width=5)
-        _draw_wrapped_text(draw, title, font_bold, (255, 255, 255, 255), 100, 550, 800)
-        draw.text((320, 1070), site_name, font=font_small, fill=(255, 255, 255, 255))
-
-    img.save(png_path, "PNG")
+    # Se overlay_text estiver ativado, aplica edição editorial suave
+    _apply_editorial_overlay(img, title, branding)
+    img.save(png_path, "PNG", optimize=True)
     return png_path
 
 
-def _draw_wrapped_text(draw, text, font, fill, x, y, max_width):
-    words = text.split()
+def _apply_editorial_overlay(img: Image.Image, title: str, branding: str) -> None:
+    """
+    Aplica um overlay de texto moderno e sutil estilo editorial.
+    Usa um gradiente suave na base e tipografia auto-ajustável.
+    """
+    w, h = img.size
+    overlay = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    draw_ov = ImageDraw.Draw(overlay)
+
+    # Gradiente escuro suave na base (de y=850 a y=1500)
+    gradient_start = int(h * 0.58)
+    for y in range(gradient_start, h):
+        factor = (y - gradient_start) / (h - gradient_start)
+        alpha = int(185 * (factor ** 1.3))
+        draw_ov.line([(0, y), (w, y)], fill=(12, 18, 28, alpha))
+
+    # Badge sutil no topo (marca)
+    font_paths = [
+        "arial.ttf",
+        "LiberationSans-Regular.ttf",
+        "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf",
+    ]
+    font_path = next((p for p in font_paths if Path(p).exists()), "arial.ttf")
+
+    try:
+        badge_font = ImageFont.truetype(font_path, 28)
+    except Exception:
+        badge_font = ImageFont.load_default()
+
+    brand_text = branding.upper()
+    tb = draw_ov.textbbox((0, 0), brand_text, font=badge_font)
+    bw, bh = tb[2] - tb[0], tb[3] - tb[1]
+    bx, by = 60, 60
+    draw_ov.rounded_rectangle([bx, by, bx + bw + 36, by + bh + 24], radius=12, fill=(0, 0, 0, 110))
+    draw_ov.text((bx + 18, by + 10), brand_text, font=badge_font, fill=(240, 245, 250, 240))
+
+    # Título com auto-fit
+    title_clean = title.strip()
+    words = title_clean.split()
+    if len(title_clean) > 60:
+        base_size = 52
+        line_height = 66
+    elif len(title_clean) > 40:
+        base_size = 62
+        line_height = 78
+    else:
+        base_size = 72
+        line_height = 90
+
+    try:
+        title_font = ImageFont.truetype(font_path, base_size)
+    except Exception:
+        title_font = ImageFont.load_default()
+
+    max_text_width = w - 140
     lines = []
-    current_line = []
+    cur = []
     for word in words:
-        current_line.append(word)
-        if draw.textlength(" ".join(current_line), font=font) > max_width:
-            current_line.pop()
-            lines.append(" ".join(current_line))
-            current_line = [word]
-    lines.append(" ".join(current_line))
-    current_y = y
-    for line in lines:
-        draw.text((x, current_y), line, font=font, fill=fill)
-        current_y += 110
+        cur.append(word)
+        if draw_ov.textlength(" ".join(cur), font=title_font) > max_text_width:
+            cur.pop()
+            if cur:
+                lines.append(" ".join(cur))
+            cur = [word]
+    if cur:
+        lines.append(" ".join(cur))
+
+    lines = lines[:4]
+    total_text_h = len(lines) * line_height
+    start_y = h - total_text_h - 100
+
+    for i, line in enumerate(lines):
+        line_y = start_y + (i * line_height)
+        draw_ov.text((72, line_y + 2), line, font=title_font, fill=(0, 0, 0, 160))
+        draw_ov.text((70, line_y), line, font=title_font, fill=(255, 255, 255, 255))
+
+    img_rgba = img.convert("RGBA")
+    composed = Image.alpha_composite(img_rgba, overlay)
+    img.paste(composed.convert("RGB"))
+
+
+
