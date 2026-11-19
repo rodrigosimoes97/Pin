@@ -1,5 +1,14 @@
 [
   {
+    "slug": "how-a-plant-based-diet-could-help-close-racial-health-gaps",
+    "title": "How A Plant-Based Diet Could Help Close Racial Health Gaps",
+    "description": "Discover how a plant-based diet could help close racial health gaps by targeting cardiometabolic risk, hypertension, and inflammation with evidence-based steps.",
+    "date": "2026-11-19",
+    "url": "how-a-plant-based-diet-could-help-close-racial-health-gaps",
+    "hero": "assets/2026-11-19_how-a-plant-based-diet-could-help-close-racial-health-gaps.jpeg",
+    "tag": "health"
+  },
+  {
     "slug": "a-new-fiber-supplement-could-help-millions-suffering-from-irritable-bowel-syndro",
     "title": "A New Fiber Supplement Could Help Millions Suffering From Irritable Bowel Syndrome",
     "description": "Discover how a new fiber supplement could help millions suffering from irritable bowel syndrome naturally with science-backed, practical daily strategies.",
@@ -1789,14 +1798,5 @@
     "url": "biohacking-longevity-secrets",
     "hero": "assets/2026-04-21_biohacking-longevity-secrets.webp",
     "tag": "longevity"
-  },
-  {
-    "slug": "personalized-nutrition-gut-health-custom-blueprint",
-    "title": "Personalized Nutrition for Optimal Gut Health: Your Custom Blueprint",
-    "description": "Unlock optimal gut health with personalized nutrition. Discover how tailoring your diet to your unique microbiome can transform your digestive wellness, boost energy, and improve mood. Your custom blueprint awaits!",
-    "date": "2026-04-21",
-    "url": "personalized-nutrition-gut-health-custom-blueprint",
-    "hero": "assets/2026-04-21_personalized-nutrition-gut-health-custom-blueprint.webp",
-    "tag": "gut"
   }
 ]
