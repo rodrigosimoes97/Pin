@@ -83636,3 +83636,57 @@ NameError: name 'post_link' is not defined
 2026-11-20 16:42:21,635 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-11-20_pins.csv com 8 keywords
 2026-11-20 16:42:21,636 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'The Science Behind Bad Gas Smell and Gut Health' (intent=list)
 2026-11-20 16:42:21,636 INFO __main__ - [Tentativa 5 (Post 1/1)] ✓ Publicado com sucesso: 'Why Do Farts Smell So Bad? The Secret Is Brewing In Your Gut' | 3 Pins gerados
+2026-11-21 15:19:53,947 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+2026-11-21 15:19:53,969 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-11-21 15:19:54,183 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-11-21 15:19:54,209 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-11-21 15:19:54,258 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/2_Normalize/config.json "HTTP/1.1 404 Not Found"
+2026-11-21 15:19:54,293 INFO __main__ - Buscando trending topics para USA...
+2026-11-21 15:19:54,431 WARNING src.app.trend_research - Failed to fetch Google Trends (404/Error): The request failed: Google returned a response with code 404. Moving to fallbacks.
+2026-11-21 15:19:59,236 INFO src.app.trend_research - Gathered 17 unique trending topics.
+2026-11-21 15:19:59,238 INFO __main__ - ═══ INICIANDO RUN DIÁRIO (Meta: 1 posts/dia | Até 6 tentativas) ═══
+2026-11-21 15:19:59,238 INFO __main__ - ─── Tentativa 1 (Post 1/1) ───
+2026-11-21 15:19:59,238 INFO __main__ - [Tentativa 1 (Post 1/1)] Usando trending topic: Experimental therapy gantenerumab fails to slow or improve Alzheimers memory loss in clinical trials
+2026-11-21 15:19:59,238 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-11-21 15:19:59,547 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-11-21 15:20:04,547 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-11-21 15:20:05,360 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-11-21 15:20:10,360 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-11-21 15:21:10,422 WARNING src.app.gemini_client - [Gemini] key#3 timeout
+2026-11-21 15:21:10,422 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 enviando...
+2026-11-21 15:22:10,489 WARNING src.app.gemini_client - [Gemini] key#4 timeout
+2026-11-21 15:22:10,489 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.6-flash na rodada 1. Aguardando 5s antes de tentar no modelo gemini-3.8-flash.
+2026-11-21 15:22:15,490 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=2 enviando...
+2026-11-21 15:22:16,313 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-11-21 15:22:26,314 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=2 enviando...
+2026-11-21 15:22:33,808 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-11-21 15:22:43,809 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=2 enviando...
+2026-11-21 15:23:43,882 WARNING src.app.gemini_client - [Gemini] key#3 timeout
+2026-11-21 15:23:43,882 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=2 enviando...
+2026-11-21 15:24:33,010 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-11-21 15:24:43,010 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.8-flash na rodada 2. Aguardando 10s antes de tentar no modelo gemini-3.8-flash.
+2026-11-21 15:24:53,011 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=3 enviando...
+2026-11-21 15:24:57,079 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-11-21 15:25:12,080 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=3 enviando...
+2026-11-21 15:26:12,127 WARNING src.app.gemini_client - [Gemini] key#2 timeout
+2026-11-21 15:26:12,127 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=3 enviando...
+2026-11-21 15:26:19,309 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-11-21 15:26:34,309 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=3 enviando...
+2026-11-21 15:27:02,300 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-11-21 15:27:17,301 ERROR __main__ - [Tentativa 1 (Post 1/1)] Gemini indisponível após 3 rodadas. Últimos erros: key#1 status=503 (alta demanda no modelo gemini-3.8-flash); key#2 timeout; key#3 status=503 (alta demanda no modelo gemini-3.8-flash); key#4 status=503 (alta demanda no modelo gemini-3.8-flash)
+2026-11-21 15:27:17,301 WARNING __main__ - [Tentativa 1 (Post 1/1)] Tentativa descartada sem publicação.
+2026-11-21 15:27:17,301 INFO __main__ - ─── Tentativa 2 (Post 1/1) ───
+2026-11-21 15:27:17,301 INFO __main__ - [Tentativa 2 (Post 1/1)] Usando trending topic: Keto diet slashes liver fat by 67% in just 4 months
+2026-11-21 15:27:17,301 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-11-21 15:28:17,375 WARNING src.app.gemini_client - [Gemini] key#1 timeout
+2026-11-21 15:28:17,376 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-11-21 15:28:45,665 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 OK finishReason=STOP len_chars=8787
+2026-11-21 15:28:45,892 INFO src.app.duplicate_checker - Indexed post: keto-diet-slashes-liver-fat-by-67-in-just-4-months (Total: 225)
+2026-11-21 15:28:45,895 INFO src.app.pinterest_seo - [PinterestSEO] Gerados 3 pins para 'Keto Diet Slashes Liver Fat By': [1] Science Behind Reversing  | [2] Struggling With Fatty Liv | [3] Keto Diet Slashes Liver F
+2026-11-21 15:28:49,078 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-11-21_pins.csv com 8 keywords
+2026-11-21 15:28:49,080 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'Science Behind Reversing Liver Fat in 4 Months' (intent=guide)
+2026-11-21 15:28:51,029 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-11-21_pins.csv com 8 keywords
+2026-11-21 15:28:51,031 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'Struggling With Fatty Liver? Try This Carb Protocol' (intent=mistakes)
+2026-11-21 15:28:52,932 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-11-21_pins.csv com 8 keywords
+2026-11-21 15:28:52,934 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'Keto Diet Slashes Liver Fat By 67% In Just 4 Months' (intent=list)
+2026-11-21 15:28:52,934 INFO __main__ - [Tentativa 2 (Post 1/1)] ✓ Publicado com sucesso: 'Keto Diet Slashes Liver Fat By 67% In Just 4 Months: Science Guide' | 3 Pins gerados
