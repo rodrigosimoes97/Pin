@@ -83690,3 +83690,31 @@ NameError: name 'post_link' is not defined
 2026-11-21 15:28:52,932 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-11-21_pins.csv com 8 keywords
 2026-11-21 15:28:52,934 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'Keto Diet Slashes Liver Fat By 67% In Just 4 Months' (intent=list)
 2026-11-21 15:28:52,934 INFO __main__ - [Tentativa 2 (Post 1/1)] ✓ Publicado com sucesso: 'Keto Diet Slashes Liver Fat By 67% In Just 4 Months: Science Guide' | 3 Pins gerados
+2026-11-22 15:16:56,964 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+2026-11-22 15:16:57,042 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-11-22 15:16:57,291 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-11-22 15:16:57,371 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-11-22 15:16:57,476 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/2_Normalize/config.json "HTTP/1.1 404 Not Found"
+2026-11-22 15:16:57,509 INFO __main__ - Buscando trending topics para USA...
+2026-11-22 15:16:57,623 WARNING src.app.trend_research - Failed to fetch Google Trends (404/Error): The request failed: Google returned a response with code 404. Moving to fallbacks.
+2026-11-22 15:17:01,886 INFO src.app.trend_research - Gathered 17 unique trending topics.
+2026-11-22 15:17:01,888 INFO __main__ - ═══ INICIANDO RUN DIÁRIO (Meta: 1 posts/dia | Até 6 tentativas) ═══
+2026-11-22 15:17:01,888 INFO __main__ - ─── Tentativa 1 (Post 1/1) ───
+2026-11-22 15:17:01,889 INFO __main__ - [Tentativa 1 (Post 1/1)] Usando trending topic: Experimental therapy gantenerumab fails to slow or improve Alzheimers memory loss in clinical trials
+2026-11-22 15:17:01,889 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-11-22 15:17:14,794 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=9477
+2026-11-22 15:17:14,797 ERROR __main__ - [Tentativa 1 (Post 1/1)] Erro no retorno estruturado do Gemini: Artigo gerado rejeitado no controle editorial: Artigo contém alegação ou promessa de cura perigosa proibida: '\bguaranteed cure\b'
+2026-11-22 15:17:14,797 WARNING __main__ - [Tentativa 1 (Post 1/1)] Tentativa descartada sem publicação.
+2026-11-22 15:17:14,797 INFO __main__ - ─── Tentativa 2 (Post 1/1) ───
+2026-11-22 15:17:14,797 INFO __main__ - [Tentativa 2 (Post 1/1)] Usando trending topic: Experimental compound burns fat without sacrificing muscle
+2026-11-22 15:17:14,797 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-11-22 15:17:23,747 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=8748
+2026-11-22 15:17:23,966 INFO src.app.duplicate_checker - Indexed post: experimental-compound-burns-fat-without-sacrificing-muscle (Total: 226)
+2026-11-22 15:17:23,969 INFO src.app.pinterest_seo - [PinterestSEO] Gerados 3 pins para 'Stop Overcomplicating: How an ': [1] The Science of Burning Fa | [2] Losing Muscle While Dieti | [3] Experimental Compound Bur
+2026-11-22 15:17:26,753 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-11-22_pins.csv com 8 keywords
+2026-11-22 15:17:26,754 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'The Science of Burning Fat While Preserving Lean Muscle' (intent=guide)
+2026-11-22 15:17:28,297 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-11-22_pins.csv com 8 keywords
+2026-11-22 15:17:28,299 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'Losing Muscle While Dieting? Here Is What Science Says' (intent=mistakes)
+2026-11-22 15:17:30,041 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-11-22_pins.csv com 8 keywords
+2026-11-22 15:17:30,043 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'Experimental Compound Burns Fat Without Sacrificing Muscle' (intent=list)
+2026-11-22 15:17:30,043 INFO __main__ - [Tentativa 2 (Post 1/1)] ✓ Publicado com sucesso: 'Stop Overcomplicating: How an Experimental Compound Burns Fat Without Sacrificing Muscle' | 3 Pins gerados
