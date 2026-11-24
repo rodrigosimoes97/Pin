@@ -83802,3 +83802,25 @@ NameError: name 'post_link' is not defined
 2026-11-23 19:23:15,572 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-11-23_pins.csv com 8 keywords
 2026-11-23 19:23:15,574 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'Why GLP-1 Weight-Loss Drugs Fail & How To Fix It' (intent=list)
 2026-11-23 19:23:15,574 INFO __main__ - [Tentativa 3 (Post 1/1)] ✓ Publicado com sucesso: 'Why Dont Weight-Loss Drugs Like Ozempic And Wegovy Work For Everyone?' | 3 Pins gerados
+2026-11-24 18:52:44,792 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+2026-11-24 18:52:44,815 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-11-24 18:52:45,021 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-11-24 18:52:45,039 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-11-24 18:52:45,091 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/2_Normalize/config.json "HTTP/1.1 404 Not Found"
+2026-11-24 18:52:45,127 INFO __main__ - Buscando trending topics para USA...
+2026-11-24 18:52:45,259 WARNING src.app.trend_research - Failed to fetch Google Trends (404/Error): The request failed: Google returned a response with code 404. Moving to fallbacks.
+2026-11-24 18:52:47,932 INFO src.app.trend_research - Gathered 16 unique trending topics.
+2026-11-24 18:52:47,935 INFO __main__ - ═══ INICIANDO RUN DIÁRIO (Meta: 1 posts/dia | Até 6 tentativas) ═══
+2026-11-24 18:52:47,935 INFO __main__ - ─── Tentativa 1 (Post 1/1) ───
+2026-11-24 18:52:47,936 INFO __main__ - [Tentativa 1 (Post 1/1)] Usando trending topic: Experimental therapy gantenerumab fails to slow or improve Alzheimers memory loss in clinical trials
+2026-11-24 18:52:47,936 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-11-24 18:53:04,913 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=10938
+2026-11-24 18:53:05,153 INFO src.app.duplicate_checker - Indexed post: gantenerumab-fails-to-slow-alzheimers-memory-loss (Total: 228)
+2026-11-24 18:53:05,157 INFO src.app.pinterest_seo - [PinterestSEO] Gerados 3 pins para 'Gantenerumab Fails To Slow Alz': [1] Understanding Ganteneruma | [2] Memory Loss Concerns? Pro | [3] Gantenerumab Alzheimers T
+2026-11-24 18:53:08,427 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-11-24_pins.csv com 8 keywords
+2026-11-24 18:53:08,430 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'Understanding Gantenerumab Trial Results & Brain Resilience' (intent=guide)
+2026-11-24 18:53:09,897 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-11-24_pins.csv com 8 keywords
+2026-11-24 18:53:09,899 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'Memory Loss Concerns? Proven Science-Backed Steps for Brain Health' (intent=mistakes)
+2026-11-24 18:53:12,121 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-11-24_pins.csv com 8 keywords
+2026-11-24 18:53:12,124 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'Gantenerumab Alzheimers Trial Fail: What It Means for Brain Health' (intent=list)
+2026-11-24 18:53:12,124 INFO __main__ - [Tentativa 1 (Post 1/1)] ✓ Publicado com sucesso: 'Gantenerumab Fails To Slow Alzheimers Memory Loss: What Science Says' | 3 Pins gerados
