@@ -83824,3 +83824,25 @@ NameError: name 'post_link' is not defined
 2026-11-24 18:53:12,121 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-11-24_pins.csv com 8 keywords
 2026-11-24 18:53:12,124 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'Gantenerumab Alzheimers Trial Fail: What It Means for Brain Health' (intent=list)
 2026-11-24 18:53:12,124 INFO __main__ - [Tentativa 1 (Post 1/1)] ✓ Publicado com sucesso: 'Gantenerumab Fails To Slow Alzheimers Memory Loss: What Science Says' | 3 Pins gerados
+2026-11-25 17:57:45,947 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+2026-11-25 17:57:46,037 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-11-25 17:57:46,231 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-11-25 17:57:46,323 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-11-25 17:57:46,432 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/2_Normalize/config.json "HTTP/1.1 404 Not Found"
+2026-11-25 17:57:46,457 INFO __main__ - Buscando trending topics para USA...
+2026-11-25 17:57:46,597 WARNING src.app.trend_research - Failed to fetch Google Trends (404/Error): The request failed: Google returned a response with code 404. Moving to fallbacks.
+2026-11-25 17:57:51,090 INFO src.app.trend_research - Gathered 16 unique trending topics.
+2026-11-25 17:57:51,091 INFO __main__ - ═══ INICIANDO RUN DIÁRIO (Meta: 1 posts/dia | Até 6 tentativas) ═══
+2026-11-25 17:57:51,091 INFO __main__ - ─── Tentativa 1 (Post 1/1) ───
+2026-11-25 17:57:51,092 INFO __main__ - [Tentativa 1 (Post 1/1)] Usando trending topic: Scientists tested 212 plant-based foods. Every single one contained fungal toxins
+2026-11-25 17:57:51,092 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-11-25 17:58:12,420 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=8758
+2026-11-25 17:58:12,572 INFO src.app.duplicate_checker - Indexed post: scientists-tested-212-plant-based-foods-every-single-one-contained-fungal-toxins (Total: 229)
+2026-11-25 17:58:12,574 INFO src.app.pinterest_seo - [PinterestSEO] Gerados 3 pins para 'Scientists Tested 212 Plant-Ba': [1] The Science of Fungal Tox | [2] Concerned About Mold in F | [3] 212 Plant Foods Tested: E
+2026-11-25 17:58:15,517 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-11-25_pins.csv com 8 keywords
+2026-11-25 17:58:15,518 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'The Science of Fungal Toxins in 212 Plant Foods Explained' (intent=guide)
+2026-11-25 17:58:18,046 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-11-25_pins.csv com 8 keywords
+2026-11-25 17:58:18,048 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'Concerned About Mold in Food? Simple Kitchen Fixes' (intent=mistakes)
+2026-11-25 17:58:20,486 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-11-25_pins.csv com 8 keywords
+2026-11-25 17:58:20,487 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: '212 Plant Foods Tested: Evidence-Based Safe Eating Guide' (intent=list)
+2026-11-25 17:58:20,487 INFO __main__ - [Tentativa 1 (Post 1/1)] ✓ Publicado com sucesso: 'Scientists Tested 212 Plant-Based Foods. Every Single One Contained Fungal Toxins' | 3 Pins gerados
