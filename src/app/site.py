@@ -502,6 +502,7 @@ def _render_post_html(
 <link rel='canonical' href='{canonical}'>
 {preload_hero}
 {fonts}
+{_google_analytics()}
 <link rel='stylesheet' href='/assets/style.css'>
 <meta property='og:locale' content='en_US'>
 <meta property='og:type' content='article'>
@@ -841,6 +842,7 @@ def _write_index(
 <title>{escape(site_title)}: Practical Health Habits That Actually Work</title>
 <meta name='description' content='Evidence-informed US health content on sleep, gut health, stress, recipes, and daily habits. Practical guides built for real schedules.'>
 <meta name='robots' content='index,follow'>
+<meta name='google-site-verification' content='google6133bcf6ce3a132f'>
 {_google_analytics()}
 <link rel='canonical' href='{public_base}/'>
 <meta property='og:type' content='website'>
