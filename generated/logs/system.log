@@ -83846,3 +83846,59 @@ NameError: name 'post_link' is not defined
 2026-11-25 17:58:20,486 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-11-25_pins.csv com 8 keywords
 2026-11-25 17:58:20,487 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: '212 Plant Foods Tested: Evidence-Based Safe Eating Guide' (intent=list)
 2026-11-25 17:58:20,487 INFO __main__ - [Tentativa 1 (Post 1/1)] ✓ Publicado com sucesso: 'Scientists Tested 212 Plant-Based Foods. Every Single One Contained Fungal Toxins' | 3 Pins gerados
+2026-11-26 17:42:45,201 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+2026-11-26 17:42:45,248 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-11-26 17:42:45,391 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-11-26 17:42:45,464 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-11-26 17:42:45,530 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/2_Normalize/config.json "HTTP/1.1 404 Not Found"
+2026-11-26 17:42:45,550 INFO __main__ - Buscando trending topics para USA...
+2026-11-26 17:42:45,891 WARNING src.app.trend_research - Failed to fetch Google Trends (404/Error): The request failed: Google returned a response with code 404. Moving to fallbacks.
+2026-11-26 17:42:49,234 INFO src.app.trend_research - Gathered 17 unique trending topics.
+2026-11-26 17:42:49,235 INFO __main__ - ═══ INICIANDO RUN DIÁRIO (Meta: 1 posts/dia | Até 6 tentativas) ═══
+2026-11-26 17:42:49,235 INFO __main__ - ─── Tentativa 1 (Post 1/1) ───
+2026-11-26 17:42:49,236 INFO __main__ - [Tentativa 1 (Post 1/1)] Usando trending topic: Scientists discover a surprising twist in how the body burns calories
+2026-11-26 17:42:49,236 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-11-26 17:42:51,284 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-11-26 17:42:56,285 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-11-26 17:43:36,911 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-11-26 17:43:41,911 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-11-26 17:43:47,395 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.6-flash) — tentando próxima key
+2026-11-26 17:43:52,395 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#4 rodada=1 enviando...
+2026-11-26 17:44:52,521 WARNING src.app.gemini_client - [Gemini] key#4 timeout
+2026-11-26 17:44:52,521 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.6-flash na rodada 1. Aguardando 5s antes de tentar no modelo gemini-3.8-flash.
+2026-11-26 17:44:57,522 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=2 enviando...
+2026-11-26 17:44:59,346 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-11-26 17:45:09,347 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=2 enviando...
+2026-11-26 17:45:15,172 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-11-26 17:45:25,172 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=2 enviando...
+2026-11-26 17:45:27,787 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-11-26 17:45:37,787 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=2 enviando...
+2026-11-26 17:45:38,499 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-11-26 17:45:48,499 WARNING src.app.gemini_client - [Gemini] Todas as keys falharam no modelo gemini-3.8-flash na rodada 2. Aguardando 10s antes de tentar no modelo gemini-3.8-flash.
+2026-11-26 17:45:58,499 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#1 rodada=3 enviando...
+2026-11-26 17:46:02,704 WARNING src.app.gemini_client - [Gemini] key#1 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-11-26 17:46:17,704 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#2 rodada=3 enviando...
+2026-11-26 17:46:26,611 WARNING src.app.gemini_client - [Gemini] key#2 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-11-26 17:46:41,611 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#3 rodada=3 enviando...
+2026-11-26 17:46:43,393 WARNING src.app.gemini_client - [Gemini] key#3 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-11-26 17:46:58,393 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.8-flash key#4 rodada=3 enviando...
+2026-11-26 17:47:00,157 WARNING src.app.gemini_client - [Gemini] key#4 status=503 (alta demanda no modelo gemini-3.8-flash) — tentando próxima key
+2026-11-26 17:47:15,157 ERROR __main__ - [Tentativa 1 (Post 1/1)] Gemini indisponível após 3 rodadas. Últimos erros: key#1 status=503 (alta demanda no modelo gemini-3.8-flash); key#2 status=503 (alta demanda no modelo gemini-3.8-flash); key#3 status=503 (alta demanda no modelo gemini-3.8-flash); key#4 status=503 (alta demanda no modelo gemini-3.8-flash)
+2026-11-26 17:47:15,157 WARNING __main__ - [Tentativa 1 (Post 1/1)] Tentativa descartada sem publicação.
+2026-11-26 17:47:15,157 INFO __main__ - ─── Tentativa 2 (Post 1/1) ───
+2026-11-26 17:47:15,157 INFO __main__ - [Tentativa 2 (Post 1/1)] Usando trending topic: Too much of this common nutrient could be accelerating blood vessel aging
+2026-11-26 17:47:15,157 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-11-26 17:48:15,256 WARNING src.app.gemini_client - [Gemini] key#1 timeout
+2026-11-26 17:48:15,256 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#2 rodada=1 enviando...
+2026-11-26 17:49:15,374 WARNING src.app.gemini_client - [Gemini] key#2 timeout
+2026-11-26 17:49:15,374 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 enviando...
+2026-11-26 17:50:07,798 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#3 rodada=1 OK finishReason=STOP len_chars=9016
+2026-11-26 17:50:07,939 INFO src.app.duplicate_checker - Indexed post: too-much-of-this-common-nutrient-could-be-accelerating-blood-vessel-aging (Total: 230)
+2026-11-26 17:50:07,941 INFO src.app.pinterest_seo - [PinterestSEO] Gerados 3 pins para 'Too Much Of This Common Nutrie': [1] How Excess Dietary Phosph | [2] Stop Premature Arterial A | [3] Top Longevity Ideas for E
+2026-11-26 17:50:10,749 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-11-26_pins.csv com 8 keywords
+2026-11-26 17:50:10,750 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'How Excess Dietary Phosphorus Accelerates Blood Vessel Aging' (intent=guide)
+2026-11-26 17:50:12,340 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-11-26_pins.csv com 8 keywords
+2026-11-26 17:50:12,341 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'Stop Premature Arterial Aging: Lower Your Additive Mineral Intake' (intent=mistakes)
+2026-11-26 17:50:14,079 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-11-26_pins.csv com 8 keywords
+2026-11-26 17:50:14,081 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'Top Longevity Ideas for Everyday Wellness' (intent=list)
+2026-11-26 17:50:14,081 INFO __main__ - [Tentativa 2 (Post 1/1)] ✓ Publicado com sucesso: 'Too Much Of This Common Nutrient Could Be Accelerating Blood Vessel Aging' | 3 Pins gerados

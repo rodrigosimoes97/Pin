@@ -1,8 +1,7 @@
 {
-  "runs": 235,
+  "runs": 236,
   "offer_runs": 21,
   "recent_topics": [
-    "feeding-our-gut-microbiome-for-better-health",
     "only-one-workout-helped-older-adults-lose-fat-and-",
     "taking-antibiotics-sugar-may-be-making-the-damage-",
     "just-7-days-of-strength-training-started-shrinking",
@@ -51,10 +50,10 @@
     "experimental-compound-burns-fat-without-sacrificin",
     "why-dont-weight-loss-drugs-like-ozempic-and-wegovy",
     "experimental-therapy-gantenerumab-fails-to-slow-or",
-    "scientists-tested-212-plant-based-foods-every-sing"
+    "scientists-tested-212-plant-based-foods-every-sing",
+    "too-much-of-this-common-nutrient-could-be-accelera"
   ],
   "recent_slugs": [
-    "low-carb-diet-genes-cholesterol-us",
     "mindful-eating-gut-health",
     "vitamin-c-colds-science-says",
     "calorie-restriction-diet-free-path",
@@ -153,11 +152,11 @@
     "experimental-compound-burns-fat-without-sacrificing-muscle",
     "why-dont-weight-loss-drugs-like-ozempic-and-wegovy-work-for-everyone",
     "gantenerumab-fails-to-slow-alzheimers-memory-loss",
-    "scientists-tested-212-plant-based-foods-every-single-one-contained-fungal-toxins"
+    "scientists-tested-212-plant-based-foods-every-single-one-contained-fungal-toxins",
+    "too-much-of-this-common-nutrient-could-be-accelerating-blood-vessel-aging"
   ],
-  "last_run": "2026-11-25",
+  "last_run": "2026-11-26",
   "recent_tags": [
-    "gut",
     "home-workouts",
     "gut",
     "weight",
@@ -206,7 +205,8 @@
     "weight",
     "weight",
     "longevity",
-    "gut"
+    "gut",
+    "longevity"
   ],
   "tag_counts": {
     "sleep": 31,
@@ -214,7 +214,7 @@
     "mental-wellness": 24,
     "stress": 11,
     "healthy-habits": 66,
-    "longevity": 33,
+    "longevity": 34,
     "recipes": 10,
     "anti-inflammatory": 12,
     "home-workouts": 10,
@@ -226,7 +226,7 @@
     "gut": 31,
     "stress": 23,
     "healthy-habits": 64,
-    "longevity": 31,
+    "longevity": 32,
     "recipes": 38,
     "anti-inflammatory": 11,
     "home-workouts": 18,
@@ -235,7 +235,6 @@
     "health": 25
   },
   "recent_titles": [
-    "Fenugreek May Help Sexual Function, Period Pain, And Lactation",
     "Feel More Energized with This Practical Home Workouts Routine",
     "What Nobody Tells You About Budget Meal Prep",
     "Scientists Reveal What Seven Days Of Fasting Does To The Human Body",
@@ -294,6 +293,7 @@
     "Stop Overcomplicating: How an Experimental Compound Burns Fat Without Sacrificing Muscle",
     "Why Dont Weight-Loss Drugs Like Ozempic And Wegovy Work For Everyone?",
     "Gantenerumab Fails To Slow Alzheimers Memory Loss: What Science Says",
-    "Scientists Tested 212 Plant-Based Foods. Every Single One Contained Fungal Toxins"
+    "Scientists Tested 212 Plant-Based Foods. Every Single One Contained Fungal Toxins",
+    "Too Much Of This Common Nutrient Could Be Accelerating Blood Vessel Aging"
   ]
 }
