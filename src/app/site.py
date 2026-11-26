@@ -110,6 +110,8 @@ def write_site_state(
 
 def _effective_base_url(base_url: str) -> str:
     url = (base_url or PUBLIC_BASE_URL).strip().rstrip("/")
+    if "github.io" in url.lower():
+        return PUBLIC_BASE_URL.rstrip("/")
     return url or PUBLIC_BASE_URL.rstrip("/")
 
 

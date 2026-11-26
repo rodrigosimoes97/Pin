@@ -41,12 +41,19 @@ def _load_gemini_keys() -> list[str]:
     return keys
 
 
+def _effective_base_url() -> str:
+    url = (os.getenv("BASE_URL") or "https://health-ptg.pages.dev").strip().rstrip("/")
+    if "github.io" in url.lower():
+        return "https://health-ptg.pages.dev"
+    return url or "https://health-ptg.pages.dev"
+
+
 def load_settings() -> Settings:
     return Settings(
         gemini_api_keys=_load_gemini_keys(),
         gemini_model=os.getenv("GEMINI_MODEL", "gemini-3.6-flash").strip(),
         pexels_api_key=_required("PEXELS_API_KEY"),
-        base_url=(os.getenv("BASE_URL") or "https://health-ptg.pages.dev").strip().rstrip("/"),
+        base_url=_effective_base_url(),
         site_title=os.getenv("SITE_TITLE", "Practical US Health Notes").strip(),
         timezone=os.getenv("TZ", "UTC").strip(),
         pinterest_access_token=os.getenv("PINTEREST_ACCESS_TOKEN", "").strip(),
