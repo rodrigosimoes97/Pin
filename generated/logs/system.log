@@ -83902,3 +83902,25 @@ NameError: name 'post_link' is not defined
 2026-11-26 17:50:14,079 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-11-26_pins.csv com 8 keywords
 2026-11-26 17:50:14,081 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'Top Longevity Ideas for Everyday Wellness' (intent=list)
 2026-11-26 17:50:14,081 INFO __main__ - [Tentativa 2 (Post 1/1)] ✓ Publicado com sucesso: 'Too Much Of This Common Nutrient Could Be Accelerating Blood Vessel Aging' | 3 Pins gerados
+2026-11-27 17:27:16,433 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+2026-11-27 17:27:16,504 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-11-27 17:27:16,694 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-11-27 17:27:16,769 INFO httpx2 - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-11-27 17:27:16,972 INFO httpx2 - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/2_Normalize/config.json "HTTP/1.1 404 Not Found"
+2026-11-27 17:27:16,999 INFO __main__ - Buscando trending topics para USA...
+2026-11-27 17:27:17,151 WARNING src.app.trend_research - Failed to fetch Google Trends (404/Error): The request failed: Google returned a response with code 404. Moving to fallbacks.
+2026-11-27 17:27:20,965 INFO src.app.trend_research - Gathered 17 unique trending topics.
+2026-11-27 17:27:20,967 INFO __main__ - ═══ INICIANDO RUN DIÁRIO (Meta: 1 posts/dia | Até 6 tentativas) ═══
+2026-11-27 17:27:20,967 INFO __main__ - ─── Tentativa 1 (Post 1/1) ───
+2026-11-27 17:27:20,967 INFO __main__ - [Tentativa 1 (Post 1/1)] Usando trending topic: This dietary supplement may have an unexpected benefit for the brain
+2026-11-27 17:27:20,967 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 enviando...
+2026-11-27 17:28:06,668 INFO src.app.gemini_client - [Gemini] modelo=gemini-3.6-flash key#1 rodada=1 OK finishReason=STOP len_chars=8203
+2026-11-27 17:28:06,895 INFO src.app.duplicate_checker - Indexed post: this-dietary-supplement-may-have-an-unexpected-benefit-for-the-brain (Total: 231)
+2026-11-27 17:28:06,897 INFO src.app.pinterest_seo - [PinterestSEO] Gerados 3 pins para 'This Dietary Supplement May Ha': [1] Science Explains: Unexpec | [2] Struggling With Brain Fog | [3] This Dietary Supplement M
+2026-11-27 17:28:09,025 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-11-27_pins.csv com 8 keywords
+2026-11-27 17:28:09,027 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'Science Explains: Unexpected Brain Benefits of Daily Supplements' (intent=guide)
+2026-11-27 17:28:10,341 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-11-27_pins.csv com 8 keywords
+2026-11-27 17:28:10,343 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'Struggling With Brain Fog? Try This Science-Backed Strategy' (intent=mistakes)
+2026-11-27 17:28:11,795 INFO src.app.pinterest_drafts - [PinterestDrafts] Draft salvo: 2026-11-27_pins.csv com 8 keywords
+2026-11-27 17:28:11,797 INFO src.app.pinterest_performance - [PinterestPerformance] Pin registrado/atualizado: 'This Dietary Supplement May Have An Unexpected Benefit For The Brain' (intent=list)
+2026-11-27 17:28:11,797 INFO __main__ - [Tentativa 1 (Post 1/1)] ✓ Publicado com sucesso: 'This Dietary Supplement May Have An Unexpected Benefit For The Brain' | 3 Pins gerados
